@@ -6,7 +6,9 @@ This repo includes samples of policy configuraions for Scribe's ```valint``` too
 
 Install valint:
 
-```curl -sSfL https://get.scribesecurity.com/install.sh  | sh -s -- -t valint```
+```bash
+curl -sSfL https://get.scribesecurity.com/install.sh  | sh -s -- -t valint
+```
 
 Clone this repo.
 
@@ -15,7 +17,9 @@ Clone this repo.
 This policy verifies that the SBOM does not include licenses in the list of risky licenses. 
 
 Create an sbom attestation, for example:
-```valint bom kibana:8.6.2 -o statement-cyclonedx-json```
+```bash
+valint bom ubuntu:latest -o statement-cyclonedx-json
+```
 
 Edit the list of the risky licenses in the config object, within the rego code in file ```sbom-license-policy.yml```:
 
@@ -28,7 +32,9 @@ Edit the list of the risky licenses in the config object, within the rego code i
 
 
 Verify the attestation against the policy:
-```valint verify kibana:8.6.2 -i statement-cyclonedx-json -c sbom-license-policy.yml```
+```bash
+valint verify ubuntu:latest -i statement-cyclonedx-json -c sbom-license-policy.yml
+```
 
 
 ## SBOM Packages Policy
@@ -36,7 +42,9 @@ Verify the attestation against the policy:
 This policy verifies that an SBOM does not include packages in the list of risky packages.
 
 If you have not created before an SBOM for experiencing with the licenses policy, create an sbom attestation, for example:
-```valint bom kibana:8.6.2 -o statement-cyclonedx-json```
+```bash
+valint bom ubuntu:latest -o statement-cyclonedx-json
+```
 
 Edit the list of the risky licenses in the config object, within the rego code in file ```sbom-packages-policy.yml```:
 
@@ -50,15 +58,21 @@ Edit the list of the risky licenses in the config object, within the rego code i
 
 
 Verify the attestation against the policy:
-```valint verify kibana:8.6.2 -i statement-cyclonedx-json -c sbom-packages-policy.yml```
+```bash
+valint verify ubuntu:latest -i statement-cyclonedx-json -c sbom-packages-policy.yml
+```
 
 ## Image CVE Policy
 
 Create a trivy sarif report of the vulnerabilities of an image:
-```trivy image kibana:8.6.2 -f sarif -o kibana-trivy.json```
+```bash
+trivy image ubuntu:latest -f sarif -o ubuntu-cve.json
+```
 
 Create an attestation from this report:
-```valint bom kibana-trivy.json --predicate-type http://scribesecurity.com/evidence/generic/v0.1  -o statement-generic```
+```bash
+valint bom ubuntu-cve.json --predicate-type http://scribesecurity.com/evidence/generic/v0.1  -o statement-generic
+```
 
 Edit the policy in the config object, within the rego code in file ```cve-policy.yml```:
 
@@ -71,5 +85,15 @@ Edit the policy in the config object, within the rego code in file ```cve-policy
 ```
 
 Verify the attestation against the policy:
-```valint verify kibana:8.6.2 -i statement-cyclonedx-json -c cve-policy.yml```
+```bash
+valint verify ubuntu-cve.json -i statement-generic -c cve-policy.yml 
+```
 
+## Writing policy files
+
+The rego policies can be written either as snippets in the yml file, or as separate rego files. The advantage of using separate rego files is that one can enjoy the IDE support for rego, such as syntax highlighting and linting, and one can test the rego code more easily.
+
+An example of such a rego file is give in the ```cve.rego``` file, that is consumed by the ```cve-policy-rego-file.yml``` configuraion file. To evaluate the policy:
+```bash
+valint verify ubuntu-cve.json -i statement-generic -c cve-policy-rego-file.yml
+```

@@ -18,26 +18,31 @@ attest:
                   
                   config := {
                     "blacklist": {"GPL", "MPL"},
-                    "blacklisted_limit" : 200
+                    "blacklisted_limit" : 0
                   }
 
+                  default allow = false
+                  default violations = []
+                  
                   verify = v {
-                    v := {
-                      "allow": allow,
-                      "reason": "Some licenses are realy riksy.",
-                      "details": json.marshal(violations(input.evidence.predicate.bom.components)),
-                      "violations": count(violations(input.evidence.predicate.bom.components))
-                    }
+                          v := {
+                          "allow": allow,
+                          "violations": violations,
+                              "summary": [{
+                              "allow": allow,
+                              "reason":  "Errors are BIG No-No",
+                              "violations": count(violations),
+                          }]
+                      }
                   }
-
-                  default allow := false
 
                   allow {
-                    count(violations(input.evidence.predicate.bom.components))  < config.blacklisted_limit
+                    count(violations)  < config.blacklisted_limit
                   }
 
-                  violations(components) = j {
-                    j := { str |
+                  violations = j {
+                    j := { r |
+                        components := input.evidence.predicate.bom.components
                         some i 
                         comp := components[i]
                         comp.licenses != null
@@ -47,7 +52,13 @@ attest:
                         b := config.blacklist[k]
                         lname := l.license.name
                         startswith(lname, b)
-                        str = concat("#", [comp.purl,lname])
+                        r = {
+                          "type":"license",
+                          "details": {
+                            "package":comp.purl,
+                            "license":b
+                          }
+                        }
                       }
                   }
 
