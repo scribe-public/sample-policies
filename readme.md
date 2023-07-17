@@ -19,7 +19,7 @@ Create an sbom attestation, for example:
 
 Edit the list of the risky licenses in the config object, within the rego code in file ```sbom-license-policy.yml```:
 
-```json
+```rego
                   config := {
                     "blacklist": {"GPL", "MPL"},
                     "blacklisted_limit" : 200
