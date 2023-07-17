@@ -1,0 +1,53 @@
+attest:
+  cocosign:
+    policies:
+    - name: sbom-policy
+      enable: true
+      modules:
+      - name: blacklist-licenses
+        type: verify-artifact
+        enable: true
+        input:
+          signed: false
+          format: statement-cyclonedx-json
+          match:
+            target_type: image
+          rego:
+                script: |
+                  package verify
+                  
+                  config := {
+                    "blacklist": {"GPL", "MPL"},
+                    "blacklisted_limit" : 200
+                  }
+
+                  verify = v {
+                    v := {
+                      "allow": allow,
+                      "reason": "Some licenses are realy riksy.",
+                      "details": json.marshal(violations(input.evidence.predicate.bom.components)),
+                      "violations": count(violations(input.evidence.predicate.bom.components))
+                    }
+                  }
+
+                  default allow := false
+
+                  allow {
+                    count(violations(input.evidence.predicate.bom.components))  < config.blacklisted_limit
+                  }
+
+                  violations(components) = j {
+                    j := { str |
+                        some i 
+                        comp := components[i]
+                        comp.licenses != null
+                        some j
+                        l := comp[licenses][j]
+                        some k
+                        b := config.blacklist[k]
+                        lname := l.license.name
+                        startswith(lname, b)
+                        str = concat("#", [comp.purl,lname])
+                      }
+                  }
+
