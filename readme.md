@@ -40,7 +40,7 @@ If you have not created before an SBOM for experiencing with the licenses policy
 
 Edit the list of the risky licenses in the config object, within the rego code in file ```sbom-packages-policy.yml```:
 
-```json
+```rego
                   config := {
                     "blacklist": ["pkg:npm/readable-stream@1.0.34", "pkg:npm/trim@1.0.1"],
                     "blacklisted_limit":0
@@ -62,7 +62,7 @@ Create an attestation from this report:
 
 Edit the policy in the config object, within the rego code in file ```cve-policy.yml```:
 
-```json
+```rego
                   config := {
                     "cve_count_bar": 0,
                     "cve_error_level":"error"
