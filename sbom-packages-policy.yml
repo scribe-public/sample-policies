@@ -20,7 +20,7 @@ attest:
 
                   config := {
                     "blacklist": ["pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"],
-                    "blacklisted_limit":1
+                    "blacklisted_limit":0
                   }
 
                   verify = v {
@@ -33,7 +33,7 @@ attest:
                   }
 
                   allow {
-                    count(violations)  <  config.blacklisted_limit
+                    count(violations)  <=  config.blacklisted_limit
                   }
 
                   violations = j {
