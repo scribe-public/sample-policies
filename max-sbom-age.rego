@@ -5,7 +5,7 @@ default exceeding = 0
 import future.keywords.if
 
 config := {
-    "max_days" : 1
+    "max_days" : 30
 }
 
 
