@@ -12,7 +12,17 @@ curl -sSfL https://get.scribesecurity.com/install.sh  | sh -s -- -t valint
 
 Clone this repo.
 
-## SBOM License Policy
+## Policy catalogue
+
+The following policies are included in this repo:
+
+* [SBOM License Policy](#sbom-license-policy)
+* [SBOM Packages Policy](#sbom-packages-policy)
+* [Image CVE Policy](#image-cve-policy)
+* [Max SBOM Age Policy](#max-sbom-age-policy)
+* [Max Image Age Policy](#max-image-age-policy)
+
+### SBOM License Policy
 
 This policy verifies that the SBOM does not include licenses in the list of risky licenses. 
 
@@ -37,7 +47,7 @@ valint verify ubuntu:latest -i statement-cyclonedx-json -c sbom-license-policy.y
 ```
 
 
-## SBOM Packages Policy
+### SBOM Packages Policy
 
 This policy verifies that an SBOM does not include packages in the list of risky packages.
 
@@ -62,7 +72,7 @@ Verify the attestation against the policy:
 valint verify ubuntu:latest -i statement-cyclonedx-json -c sbom-packages-policy.yml
 ```
 
-## Image CVE Policy
+### Image CVE Policy
 
 Create a trivy sarif report of the vulnerabilities of an image:
 ```bash
@@ -87,6 +97,50 @@ Edit the policy in the config object, within the rego code in file ```cve-policy
 Verify the attestation against the policy:
 ```bash
 valint verify ubuntu-cve.json -i statement-generic -c cve-policy.yml 
+```
+
+### Max SBOM Age Policy
+
+This policy verifies that the SBOM is not older than a given number of days.
+
+If you have not created before an SBOM for experiencing with the licenses policy, create an sbom attestation, for example:
+```bash
+valint bom ubuntu:latest -o statement-cyclonedx-json
+```
+
+Edit the policy in the config object, within the rego code in file ```max-sbom-age.rego```:
+
+```rego
+config := {
+    "max_days" : 30
+}
+```
+
+Verify the attestation against the policy:
+```bash
+valint verify ubuntu:latest -i statement-cyclonedx-json -c max-sbom-age.yml
+```
+
+### Max Image Age Policy
+
+This policy verifies that the image is not older than a given number of days.
+
+If you have not created before an SBOM for experiencing with the licenses policy, create an sbom attestation, for example:
+```bash
+valint bom ubuntu:latest -o statement-cyclonedx-json
+```
+
+Edit the policy in the config object, within the rego code in file ```max-image-age.rego```:
+
+```rego
+config := {
+    "max_days" : 183
+}
+```
+
+Verify the attestation against the policy:
+```bash
+valint verify ubuntu:latest -i statement-cyclonedx-json -c max-image-age.yml
 ```
 
 ## Writing policy files
