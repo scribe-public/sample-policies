@@ -30,7 +30,7 @@ attest:
                           "violations": violations,
                               "summary": [{
                               "allow": allow,
-                              "reason":  "Errors are BIG No-No",
+                              "reason":  "Some packages use blacklisted licenses",
                               "violations": count(violations),
                           }]
                       }

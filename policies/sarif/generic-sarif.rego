@@ -7,9 +7,9 @@ default violations := []
 config := {
    "ruleLevel": ["note"],
    "precision": [],
-   "ruleIDs": ["CVE-2016-2781","CVE-2016-20013"],
+   "ruleIDs": ["CVE-2022-0563"],
    "ignore": [],
-   "maxAllowed": 3
+   "maxAllowed": 1
 }
 
 verify = v {

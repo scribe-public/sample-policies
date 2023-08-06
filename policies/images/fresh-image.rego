@@ -16,7 +16,7 @@ verify = v {
         "errors": errors,
         "summary": [{
             "allow": allow,
-            "reason": sprintf("SBOM is too old, created at: %d (earliest create date is %d)", [created, time.now_ns() - maximum_age])
+            "reason": sprintf("Image is too old, created at: %d (earliest create date is %d)", [created, time.now_ns() - maximum_age])
         }]
     }
 }

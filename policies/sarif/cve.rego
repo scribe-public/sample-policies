@@ -3,7 +3,7 @@ default allow = false
 default violations = []
 
 config := {
-    "cve_count_bar": 2,
+    "cve_count_bar": 20,
     "cve_error_level":"warning"
 }
 

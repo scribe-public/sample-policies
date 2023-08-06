@@ -19,7 +19,7 @@ attest:
                   default violations = []
 
                   config := {
-                    "blacklist": ["pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"],
+                    "blacklist": ["pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04", "log4j"],
                     "blacklisted_limit":0
                   }
 
@@ -42,7 +42,7 @@ attest:
                         components := input.evidence.predicate.bom.components
                         p := components[i].purl
                         b := config.blacklist[k]
-                        startswith(p,b)
+                        contains(p,b)
                         r := {
                           "type":"banned package",
                           "package":b

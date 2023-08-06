@@ -1,0 +1,57 @@
+attest:
+  cocosign:
+    policies:
+    - name: sbom-policy
+      enable: true
+      modules:
+      - name: required-packages
+        type: verify-artifact
+        enable: true
+        input:
+          signed: false
+          format: statement-cyclonedx-json
+          match:
+            target_type: image
+          rego:
+                script: |
+                  package verify
+                  import future.keywords.in
+                  default allow = false
+                  default violations = []
+                  default b = ""
+
+                  config := {
+                    "required_pkgs": ["pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"],
+                    "violations_limit":0
+                  }
+
+                  verify = v {
+                    v := {
+                      "allow": allow,
+                      "reason": "Required packages.",
+                      "details": json.marshal(violations),
+                      "violations": count(violations)
+                    }
+                  }
+
+                  allow {
+                    count(violations)  <=  config.violations_limit
+                  }
+
+                  violations = j {
+                    j := { r |
+                        some k
+                        b := config.required_pkgs[k]
+                        not any_match(b)
+                        r := {
+                          "type":"missing required package",
+                          "package":b
+                        }
+                      }
+                  }
+
+                  any_match(b) {
+                    some component in input.evidence.predicate.bom.components
+                    p := component.purl
+                    contains(p,b)
+                  }
