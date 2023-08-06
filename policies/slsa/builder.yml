@@ -1,0 +1,40 @@
+attest:
+  cocosign:
+    policies:
+    - name: builder-policy
+      enable: true
+      modules:
+      - name: builder
+        type: verify-artifact
+        enable: true
+        input:
+          signed: false
+          format: statement-slsa
+          match:
+            target_type: image
+          rego:
+                script: |
+                  package verify
+
+                  default allow = false
+
+                  config := {
+                    "builderType": "local",
+                    "hostname": "builder1",
+                  }
+                  
+                  verify = v {
+                          v := {
+                          "allow": allow,
+                              "summary": [{
+                              "allow": allow,
+                              "reason":  "Builder mismatch",
+                          }]
+                      }
+                  }
+
+                  allow {
+                    input.evidence.predicate.buildDefinition.buildType == config.builderType
+                    input.evidence.predicate.buildDefinition.internalParameters.hostname == config.hostname
+                  }
+

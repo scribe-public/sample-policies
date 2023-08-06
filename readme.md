@@ -32,6 +32,8 @@ All the policies in this repo are splitted into categories based on the material
   * [Fresh SBOM](#fresh-sbom)
   * [Required packages](#required-packages)
   * [Signed by](#signed-by)
+* [SLSA](#slsa)
+  * [Builder name](#builder-name)
 
 ### Images
 
@@ -329,6 +331,33 @@ Verify the attestation against the policy:
 
 ```bash
 valint verify ubuntu:latest -i attest -c signed-by.yml
+```
+
+### SLSA
+
+#### Builder name
+
+This policy verifies that the builder name of the SLSA statement equals to a given value.
+
+If you have not created an SLSA statement yet, create an SLSA statement, for example:
+
+```bash
+valint slsa ubuntu:latest -o statement
+```
+
+Edit policy parametersin `rego` code in the `builder.yml` file:
+
+```rego
+config := {
+  "builderType": "local",
+  "hostname": "builder1"
+}
+```
+
+Verify the attestation against the policy:
+
+```bash
+valint verify ubuntu:latest -i statement-slsa -c builder.yml
 ```
 
 ## Writing policy files
