@@ -4,7 +4,7 @@ attest:
     - name: sbom-policy
       enable: true
       modules:
-      - name: sbom-max-image-age
+      - name: fresh-sbom
         type: verify-artifact
         enable: true
         input:
@@ -13,4 +13,4 @@ attest:
           match:
             target_type: image
           rego:
-            path: max-sbom-age.rego
+            path: fresh-sbom.rego

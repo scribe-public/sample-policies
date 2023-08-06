@@ -18,6 +18,7 @@ All the policies in this repo are splitted into categories based on the material
 
 * [Images](#images)
   * [Fresh Image](#fresh-image)
+  * [Large image](#large-image)
 * [SARIF reports](#sarif-reports)
   * [Image CVE Policy](#image-cve-policy)
   * [Generic SARIF policy](#generic-sarif-policy)
@@ -53,6 +54,30 @@ Verify the attestation against the policy:
 
 ```bash
 valint verify ubuntu:latest -i statement-cyclonedx-json -c fresh-image.yml
+```
+
+#### Large image
+
+This policy verifies that the image is not larger than a given size.
+
+If you have not created an SBOM yet, create an sbom attestation, for example:
+
+```bash
+valint bom ubuntu:latest -o statement-cyclonedx-json
+```
+
+Edit the policy in the config object, within the rego code in file ```large-image.rego```:
+
+```rego
+config := {
+    "max_size" : 100000000
+}
+```
+
+Verify the attestation against the policy:
+
+```bash
+valint verify ubuntu:latest -i statement-cyclonedx-json -c large-image.yml
 ```
 
 ### Sarif reports
