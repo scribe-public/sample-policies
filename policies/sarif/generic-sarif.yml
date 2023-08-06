@@ -14,4 +14,4 @@ attest:
             target_type: generic
             predicate_type: http://sarif
           rego:
-            path: sarif.rego
+            path: generic-sarif.rego

@@ -22,6 +22,9 @@ All the policies in this repo are splitted into categories based on the material
 * [SARIF reports](#sarif-reports)
   * [Image CVE Policy](#image-cve-policy)
   * [Generic SARIF policy](#generic-sarif-policy)
+    * [No critical CVEs](#no-critical-cves)
+    * [Limit High CVEs](#limit-high-cves)
+    * [Do not allow specific CVEs](#do-not-allow-specific-cves)
 * [SBOMs](#sboms)
   * [Banned licenses](#banned-licenses)
   * [Blacklist packages](#blacklist-packages)
@@ -140,6 +143,48 @@ Verify the attestation against the policy:
 
 ```bash
 valint verify ubuntu-cve.json -i statement-generic -c generic-sarif.yml
+```
+
+##### No critical CVEs
+
+To verify that the SARIF report does not contain any critical CVEs, set the following parameters in the `config` section in the `generic-sarif.rego` file:
+
+```rego
+config := {
+   "ruleLevel": ["critical"],
+   "precision": [],
+   "ruleIDs": [],
+   "ignore": [],
+   "maxAllowed": 0
+}
+```
+
+##### Limit High CVEs
+
+To verify that the SARIF report does not contain more than 10 high CVEs, set the following parameters in the `config` section in the `generic-sarif.rego` file:
+
+```rego
+config := {
+   "ruleLevel": ["high"],
+   "precision": [],
+   "ruleIDs": [],
+   "ignore": [],
+   "maxAllowed": 10
+}
+```
+
+##### Do not allow specific CVEs
+
+To verify that the SARIF report does not contain CVE-2021-1234 and CVE-2021-5678, set the following parameters in the `config` section in the `generic-sarif.rego` file:
+
+```rego
+config := {
+   "ruleLevel": [],
+   "precision": [],
+   "ruleIDs": ["CVE-2021-1234", "CVE-2021-5678"],
+   "ignore": [],
+   "maxAllowed": 0
+}
 ```
 
 ### SBOMs
