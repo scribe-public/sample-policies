@@ -19,8 +19,7 @@ attest:
                   default allow = false
 
                   config := {
-                    "builderType": "local",
-                    "hostname": "builder1",
+                    "id": "local",
                   }
                   
                   verify = v {
@@ -34,7 +33,6 @@ attest:
                   }
 
                   allow {
-                    input.evidence.predicate.buildDefinition.buildType == config.builderType
-                    input.evidence.predicate.buildDefinition.internalParameters.hostname == config.hostname
+                    input.evidence.predicate.runDetails.builder.id == config.id
                   }
 
