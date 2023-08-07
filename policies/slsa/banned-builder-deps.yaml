@@ -1,0 +1,67 @@
+attest:
+  cocosign:
+    policies:
+    - name: slsa-policy
+      enable: true
+      modules:
+      - name: blacklist-builder-dependencies
+        type: verify-artifact
+        enable: true
+        input:
+          signed: false
+          format: statement-slsa
+          match:
+            target_type: image
+          rego:
+                script: |
+                  package verify
+                  import future.keywords.in
+
+                  default allow := false
+                  default violations := []
+                  default dependency := {"uri":"", "name":"", "annotations":{"version":""}}
+
+                  config := {
+                      "blacklist": [{"uri": "valint", "tag": "v0.3.1"}],
+                  }
+
+                  verify = v {
+                          v := {
+                          "allow": allow,
+                          "violations": violations,
+                              "summary": [{
+                              "allow": allow,
+                              "reason":  "The builder has some blacklisted dependencies",
+                              "violations": count(violations),
+                          }]
+                      }
+                  }
+
+                  allow {
+                      count(violations) == 0
+                  }
+
+                  violations = j {
+                  j := { r |
+                        some blacklisted in config.blacklist
+                        some dependency in input.evidence.predicate.buildDefinition.resolvedDependencies
+                        contains(dependency.uri, blacklisted.uri)
+                        tags_match(dependency.annotations, blacklisted.tag)
+                        r = {
+                              "type": "dependency",
+                              "details": {
+                                  "uri": blacklisted.uri,
+                                  "tag": blacklisted.tag,
+                              }
+                          }
+                      }
+                  }
+
+                  tags_match(annotations, t2) {
+                    annotations.tag == t2
+                  }
+
+                  tags_match(annotations, t2) {
+                    annotations.git_tag == t2
+                  }
+

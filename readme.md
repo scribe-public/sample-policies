@@ -35,7 +35,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [No Commits To Main](#no-commits-to-main) | Verify that no commits are made to main | Git SBOM |
 | Verify Provenance Exists | Verify that provenance for an artifact exists | SLSA-Prov |
 | [Verify Use of Specific Builder](#builder-name) | Verify that a specific builder was used to build an artifact | SLSA-Prov |
-| Banned Builder Dependencies | Verify that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version) | SLSA-Prov |
+| [Banned Builder Dependencies](#banned-builder-dependencies) | Verify that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version) | SLSA-Prov |
 | [Verify Build Time](#build-time) | Verify that the build was done in a specific time window (working day)| SLSA-Prov |
 | Verify Byproducts Produced | Verify that specific byproducts are produced (e.g. testing, coverage, static analysis reports) | SLSA-Prov |
 | [No Critical CVEs](#no-critical-cves) | Verify that the artifact does not have any ctitical CVEs | SARIF |
@@ -289,7 +289,7 @@ If you have not created an SLSA statement yet, create an SLSA statement, for exa
 valint slsa ubuntu:latest -o statement
 ```
 
-Edit policy parametersin `rego` code in the `builder.yml` file:
+Edit policy parameters in `rego` code in the `builder.yml` file:
 
 ```rego
 config := {
@@ -304,6 +304,32 @@ Verify the attestation against the policy:
 valint verify ubuntu:latest -i statement-slsa -c builder.yml
 ```
 
+#### Banned Builder Dependencies
+
+This policy verifies that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version).
+
+If you have not created an SLSA statement yet, create an SLSA statement, for example:
+
+```bash
+valint slsa ubuntu:latest -o statement
+```
+
+Edit policy parameters in `rego` code in the `banned-builder-deps.yml` file:
+
+```rego
+config := {
+    "blacklist": [{"uri": "valint", "tag": "v0.3.1"}],
+}
+```
+
+`uri` can be any substring of the searchable URI, and `tag` should be the exact `tag` or `git_tag` of the dependency.
+
+Verify the attestation against the policy:
+
+```bash
+valint verify ubuntu:latest -i statement-slsa -c banned-builder-deps.yml
+```
+
 #### Build Time
 
 This policy verifies that the build time of the SLSA statement is within a given time window.
@@ -314,7 +340,7 @@ If you have not created an SLSA statement yet, create a SLSA statement, for exam
 valint slsa ubuntu:latest -o statement
 ```
 
-Edit policy parametersin `rego` code in the `build-time.yml` file:
+Edit policy parameters in `rego` code in the `build-time.yml` file:
 
 ```rego
 config := {
