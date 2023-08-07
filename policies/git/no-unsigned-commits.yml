@@ -1,0 +1,56 @@
+attest:
+  cocosign:
+    policies:
+    - name: git-policy
+      enable: true
+      modules:
+      - name: no-unsigned-commits
+        type: verify-artifact
+        enable: true
+        input:
+          signed: false
+          format: statement-cyclonedx-json
+          match:
+            target_type: git
+          rego:
+                script: |
+                  package verify
+                  import future.keywords.if
+
+                  default allow = false
+                  default violations = []
+                  default signature := ""
+                  
+                  verify = v {
+                          v := {
+                          "allow": allow,
+                          "violations": violations,
+                              "summary": [{
+                              "allow": allow,
+                              "reason":  "Some commits are unsigned",
+                              "violations": count(violations),
+                          }]
+                      }
+                  }
+
+                  allow {
+                    count(violations) == 0
+                  }
+
+                  violations = j {
+                    j := { r |
+                        some i, k
+                        components := input.evidence.predicate.bom.components
+                        comp := components[i]
+                        prop := comp.properties[k]
+                        prop.name == "PGPSignature"
+                        prop.value == ""
+                        r = {
+                            "type":"missing signature",
+                            "details": {
+                              "commit":comp.name,
+                            }
+                        }
+                    }
+                  }
+

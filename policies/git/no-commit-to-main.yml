@@ -1,7 +1,7 @@
 attest:
   cocosign:
     policies:
-    - name: no-main-policy
+    - name: git-policy
       enable: true
       modules:
       - name: no-main

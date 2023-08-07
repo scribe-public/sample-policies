@@ -31,7 +31,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Do Not Allow Huge Images](#large-image) | Verify that the image is not too large | Image SBOM |
 | Coding Permissions | Verify that allowed identities have modified specific files in a repo | Git SBOM |
 | Merging Permissions | Verify that allowed identities have merged to main  | Git SBOM |
-| Signed Commits | Verify all commits are signed | Git SBOM |
+| [No Unsigned Commits](#no-unsigned-commits) | Verify all commits are signed | Git SBOM |
 | [No Commits To Main](#no-commits-to-main) | Verify that no commits are made to main | Git SBOM |
 | Verify Provenance Exists | Verify that provenance for an artifact exists | SLSA-Prov |
 | [Verify Use of Specific Builder](#builder-name) | Verify that a specific builder was used to build an artifact | SLSA-Prov |
@@ -244,6 +244,22 @@ valint verify ubuntu:latest -i statement-cyclonedx-json -c large-image.yml
 ```
 
 ### Git
+
+#### No Unsigned Commits
+
+This policy verifies that evidence has no unsigned commits.
+
+If you have not created an evidence yet, create one, for example:
+
+```bash
+valint bom git:https://github.com/golang/go -o statement
+```
+
+To verify the evidence against the policy:
+
+```bash
+valint verify git:https://github.com/golang/go -i statement -c no-unsigned-commits.yml
+```
 
 #### No Commits To Main
 
