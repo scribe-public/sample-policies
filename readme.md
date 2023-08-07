@@ -16,8 +16,8 @@ This repo includes samples of policy configuraions for Scribe's ```valint``` too
 
 Policy list below is copied from the `opapi` repo. Each policy in the table that has an example in this repo has a link to the policy description.
 
-| Policy | Description | Attestations |
-| --- | --- | --- |
+| Policy | Description | Attestations | Additional Info |
+| --- | --- | --- | --- |
 | [Artifact Signed](#artifact-signed) | Verify that the artifact is signed (also verify identity and CA identity) | SBOM |
 | [Blacklist Packages](#blacklist-packages) | Verify that banned packages are not in SBOM | SBOM |
 | [Required Packages](#required-packages) (e.g. license artifact) | Verify that required packages or files are in SBOM | SBOM |
@@ -25,25 +25,25 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Complete Licenses](#complete-licenses) | Verify that all packages have a license | SBOM |
 | [Fresh SBOM](#fresh-sbom) | Verify that SBOM is fresh | SBOM |
 | [Fresh Image](#fresh-image) | Verify that image is fresh - (rebuilt from latest) | Image SBOM |
-| Image Does Not Allow Shell Access | Verify that the image has an entrypoint | Image SBOM |
-| Image Build Did Not Run blind scripts | Verify that the image build commands did not include curl | bash | Image SBOM |
-| Image Included Required Lables | Verify that the image has required labels. Used to enforce best practices such as labling the image with the git-commit used to build it (provenance) | Image SBOM |
+| Image Does Not Allow Shell Access | Verify that the image has an entrypoint | Image SBOM | Some changes to `gensbom` needed |
+| Image Build Did Not Run blind scripts | Verify that the image build commands did not include curl | Image SBOM | Some changes to `gensbom` needed |
+| Image Included Required Lables | Verify that the image has required labels. Used to enforce best practices such as labling the image with the git-commit used to build it (provenance) | Image SBOM | An explanation on labels needed |
 | [Do Not Allow Huge Images](#large-image) | Verify that the image is not too large | Image SBOM |
-| Coding Permissions | Verify that allowed identities have modified specific files in a repo | Git SBOM |
-| Merging Permissions | Verify that allowed identities have merged to main  | Git SBOM |
+| Coding Permissions | Verify that allowed identities have modified specific files in a repo | Git SBOM | An example of Git evidence with files reference needed |
+| Merging Permissions | Verify that allowed identities have merged to main  | Git SBOM | Is it the opposite from [No Commits To Main](#no-commits-to-main)? |
 | [No Unsigned Commits](#no-unsigned-commits) | Verify all commits are signed | Git SBOM |
 | [No Commits To Main](#no-commits-to-main) | Verify that no commits are made to main | Git SBOM |
-| Verify Provenance Exists | Verify that provenance for an artifact exists | SLSA-Prov |
+| Verify Provenance Exists | Verify that provenance for an artifact exists | SLSA-Prov | Should it be a policy or an error from the `valint` itself? |
 | [Verify Use of Specific Builder](#builder-name) | Verify that a specific builder was used to build an artifact | SLSA-Prov |
 | [Banned Builder Dependencies](#banned-builder-dependencies) | Verify that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version) | SLSA-Prov |
 | [Verify Build Time](#build-time) | Verify that the build was done in a specific time window (working day)| SLSA-Prov |
-| Verify Byproducts Produced | Verify that specific byproducts are produced (e.g. testing, coverage, static analysis reports) | SLSA-Prov |
+| Verify Byproducts Produced | Verify that specific byproducts are produced (e.g. testing, coverage, static analysis reports) | SLSA-Prov | An example needed |
 | [No Critical CVEs](#no-critical-cves) | Verify that the artifact does not have any ctitical CVEs | SARIF |
 | [Limit High CVEs](#limit-high-cves) | Verify that the artifact does not have more than a specific number of high CVEs | SARIF |
 | [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Verify that the artifact does not have specific CVEs | SARIF |
-| No Static Analysis Errors | Verify that the artifact does not have static analysis errors | SARIF |
-| Limit Static Analysis Warnings | Verify that the artifact does not have more than a specific number of static analysis warnings | SARIF |
-| Do Not Allow Specific Static Analysis Rules | Verify that the artifact does not have specific static analysis warnings | SARIF |
+| No Static Analysis Errors | Verify that the artifact does not have static analysis errors | SARIF | An example needed |
+| Limit Static Analysis Warnings | Verify that the artifact does not have more than a specific number of static analysis warnings | SARIF | An example needed |
+| Do Not Allow Specific Static Analysis Rules | Verify that the artifact does not have specific static analysis warnings | SARIF | An example needed |
 | No Package Downgrading | Verify that the artifact does not have any package downgrades | Two SBOMs |
 | No License Modification | Verify that the artifact does not have any license modifications | Two SBOMs |
 | Verify Source Integrity | Verify that the artifact source code has not been modified | Two SBOMs |
