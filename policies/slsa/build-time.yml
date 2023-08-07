@@ -1,0 +1,54 @@
+attest:
+  cocosign:
+    policies:
+    - name: slsa-policy
+      enable: true
+      modules:
+      - name: build-time
+        type: verify-artifact
+        enable: true
+        input:
+          signed: false
+          format: statement-slsa
+          match:
+            target_type: image
+          rego:
+                script: |
+                  package verify
+                  import future.keywords.in
+
+                  default allow := false
+                  default created_str := "unknown"
+                  default created := 0
+
+                  config := {
+                    "start_hour": 8,
+                    "end_hour"  : 17,
+                    "workdays"  : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+                  }
+
+                  created_str = input.evidence.predicate.buildDefinition.resolvedDependencies[i].annotations.created {
+                      some k
+                      input.evidence.predicate.buildDefinition.resolvedDependencies[i].name == input.evidence.subject[k].name
+                  }
+
+                  created = time.parse_rfc3339_ns(created_str)
+
+
+                  allow {
+                      time.weekday(created) in config.workdays
+                      clock := time.clock(created)
+                      clock[0] >= config.start_hour
+                      clock[0] <= config.end_hour
+                  }
+
+                  verify = v {
+                          v := {
+                          "allow": allow,
+                              "summary": [{
+                              "allow": allow,
+                              "reason":  sprintf("Image created outside of working hours: on day %s, on hour %d", [time.weekday(created), time.clock(created)[0]]),
+
+                          }]
+                      }
+                  }

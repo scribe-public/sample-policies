@@ -1,7 +1,7 @@
 attest:
   cocosign:
     policies:
-    - name: builder-policy
+    - name: slsa-policy
       enable: true
       modules:
       - name: builder

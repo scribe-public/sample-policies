@@ -36,7 +36,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | Verify Provenance Exists | Verify that provenance for an artifact exists | SLSA-Prov |
 | [Verify Use of Specific Builder](#builder-name) | Verify that a specific builder was used to build an artifact | SLSA-Prov |
 | Banned Builder Dependencies | Verify that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version) | SLSA-Prov |
-| Verify Build Time | Verify that the build was done in a specific time window (working day)| SLSA-Prov |
+| [Verify Build Time](#build-time) | Verify that the build was done in a specific time window (working day)| SLSA-Prov |
 | Verify Byproducts Produced | Verify that specific byproducts are produced (e.g. testing, coverage, static analysis reports) | SLSA-Prov |
 | [No Critical CVEs](#no-critical-cves) | Verify that the artifact does not have any ctitical CVEs | SARIF |
 | [Limit High CVEs](#limit-high-cves) | Verify that the artifact does not have more than a specific number of high CVEs | SARIF |
@@ -302,6 +302,32 @@ Verify the attestation against the policy:
 
 ```bash
 valint verify ubuntu:latest -i statement-slsa -c builder.yml
+```
+
+#### Build Time
+
+This policy verifies that the build time of the SLSA statement is within a given time window.
+
+If you have not created an SLSA statement yet, create a SLSA statement, for example:
+
+```bash
+valint slsa ubuntu:latest -o statement
+```
+
+Edit policy parametersin `rego` code in the `build-time.yml` file:
+
+```rego
+config := {
+  "start_hour": 8,
+  "end_hour"  : 17,
+  "workdays"  : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+}
+```
+
+Verify the attestation against the policy:
+
+```bash
+valint verify ubuntu:latest -i statement-slsa -c build-time.yml
 ```
 
 ### Sarif Reports
