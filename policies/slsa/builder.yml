@@ -35,4 +35,3 @@ attest:
                   allow {
                     input.evidence.predicate.runDetails.builder.id == config.id
                   }
-

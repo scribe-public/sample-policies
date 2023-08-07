@@ -5,11 +5,11 @@ default allow := false
 default violations := []
 
 config := {
-   "ruleLevel": ["note"],
+   "ruleLevel": ["critical"],
    "precision": [],
-   "ruleIDs": ["CVE-2022-0563"],
+   "ruleIDs": [],
    "ignore": [],
-   "maxAllowed": 1
+   "maxAllowed": 0
 }
 
 verify = v {
