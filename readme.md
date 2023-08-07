@@ -33,7 +33,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | Merging Permissions | Verify that allowed identities have merged to main  | [Git SBOM](#git) | Is it the opposite from [No Commits To Main](#no-commits-to-main)? |
 | [No Unsigned Commits](#no-unsigned-commits) | Verify all commits are signed | [Git SBOM](#git) |
 | [No Commits To Main](#no-commits-to-main) | Verify that no commits are made to main | [Git SBOM](#git) |
-| Verify Provenance Exists | Verify that provenance for an artifact exists | SLSA-Prov | Should it be a policy or an error from the `valint` itself? |
+| Verify Provenance Exists | Verify that provenance for an artifact exists | [SLSA-Prov](#slsa) | Should it be a policy or an error from the `valint` itself? |
 | [Verify Use of Specific Builder](#builder-name) | Verify that a specific builder was used to build an artifact | [SLSA-Prov](#slsa) |
 | [Banned Builder Dependencies](#banned-builder-dependencies) | Verify that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version) | [SLSA-Prov](#slsa) |
 | [Verify Build Time](#build-time) | Verify that the build was done in a specific time window (working day)| [SLSA-Prov](#slsa) |
