@@ -41,9 +41,9 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [No Critical CVEs](#no-critical-cves) | Verify that the artifact does not have any ctitical CVEs | [SARIF](#sarif-reports) |
 | [Limit High CVEs](#limit-high-cves) | Verify that the artifact does not have more than a specific number of high CVEs | [SARIF](#sarif-reports) |
 | [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Verify that the artifact does not have specific CVEs | [SARIF](#sarif-reports) |
-| No Static Analysis Errors | Verify that the artifact does not have static analysis errors | [SARIF](#sarif-reports) | An example needed |
-| Limit Static Analysis Warnings | Verify that the artifact does not have more than a specific number of static analysis warnings | [SARIF](#sarif-reports) | An example needed |
-| Do Not Allow Specific Static Analysis Rules | Verify that the artifact does not have specific static analysis warnings | [SARIF](#sarif-reports) | An example needed |
+| [No Static Analysis Errors](#no-static-analysis-errors) | Verify that the artifact does not have static analysis errors | [SARIF](#sarif-reports) | An example needed |
+| [Limit Static Analysis Warnings](#limit-static-analysis-warnings) | Verify that the artifact does not have more than a specific number of static analysis warnings | [SARIF](#sarif-reports) | An example needed |
+| [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Verify that the artifact does not have specific static analysis warnings | [SARIF](#sarif-reports) | An example needed |
 | No Package Downgrading | Verify that the artifact does not have any package downgrades | Two SBOMs |
 | No License Modification | Verify that the artifact does not have any license modifications | Two SBOMs |
 | Verify Source Integrity | Verify that the artifact source code has not been modified | Two SBOMs |
@@ -330,10 +330,52 @@ To verify that the SARIF report does not contain CVE-2021-1234 and CVE-2021-5678
 
 ```rego
 config := {
-   "ruleLevel": [],
+   "ruleLevel": ["error", "warning", "note", "none"],
    "precision": [],
    "ruleIDs": ["CVE-2021-1234", "CVE-2021-5678"],
    "ignore": [],
+   "maxAllowed": 0
+}
+```
+
+##### No Static Analysis Errors
+
+To verify that the SARIF report does not contain any static analysis errors, set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+
+```rego
+config := {
+   "ruleLevel": ["error"],
+   "precision": [],
+   "ruleIDs": [],
+   "ignore": [],
+   "maxAllowed": 0
+}
+```
+
+##### Limit Static Analysis Warnings
+
+To verify that the SARIF report does not contain more than 10 static analysis warnings, set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+
+```rego
+config := {
+   "ruleLevel": ["warning"],
+   "precision": [],
+   "ruleIDs": [],
+   "ignore": [],
+   "maxAllowed": 10
+}
+```
+
+##### Do Not Allow Specific Static Analysis Rules
+
+To verify that the SARIF report does not contain static analysis warnings from the following rules: "rule1", "rule2", "rule3", set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+
+```rego
+config := {
+   "ruleLevel": ["error", "warning", "note", "none"],
+   "precision": [],
+   "ruleIDs": [],
+   "ignore": ["rule1", "rule2", "rule3"],
    "maxAllowed": 0
 }
 ```
