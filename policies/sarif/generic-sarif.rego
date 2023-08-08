@@ -5,9 +5,9 @@ default allow := false
 default violations := []
 
 config := {
-   "ruleLevel": ["critical"],
+   "ruleLevel": ["error", "warning", "note", "none"],
    "precision": [],
-   "ruleIDs": [],
+   "ruleIDs": ["CVE-2016-2781"],
    "ignore": [],
    "maxAllowed": 0
 }

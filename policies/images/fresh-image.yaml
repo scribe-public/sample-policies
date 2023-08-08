@@ -13,4 +13,4 @@ attest:
           match:
             target_type: image
           rego:
-            path: fresh-image.rego
+            path: policies/images/fresh-image.rego

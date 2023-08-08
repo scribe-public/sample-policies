@@ -11,4 +11,4 @@ attest:
           signed: true
           format: attest-cyclonedx-json
           rego:
-            path: verify-hf-license.rego    
+            path: policies/sboms/verify-hf-license.rego    

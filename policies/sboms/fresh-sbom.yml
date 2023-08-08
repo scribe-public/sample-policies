@@ -13,4 +13,4 @@ attest:
           match:
             target_type: image
           rego:
-            path: fresh-sbom.rego
+            path: policies/sboms/fresh-sbom.rego

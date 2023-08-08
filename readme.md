@@ -27,7 +27,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Fresh Image](#fresh-image) | Verify that image is fresh - (rebuilt from latest) | [Image SBOM](#images) |
 | Image Does Not Allow Shell Access | Verify that the image has an entrypoint | [Image SBOM](#images) | Some changes to `gensbom` needed |
 | Image Build Did Not Run blind scripts | Verify that the image build commands did not include curl | [Image SBOM](#images) | Some changes to `gensbom` needed |
-| Image Included Required Lables | Verify that the image has required labels. Used to enforce best practices such as labling the image with the git-commit used to build it (provenance) | [Image SBOM](#images) | An explanation on labels needed |
+| Image Included Required Lables | Verify that the image has required labels. Used to enforce best practices such as labling the image with the git-commit used to build it (provenance) | [Image SBOM](#images) | Some changes to `gensbom` needed |
 | [Do Not Allow Huge Images](#large-image) | Verify that the image is not too large | [Image SBOM](#images) |
 | [Coding Permissions](#coding-permissions) | Verify that allowed identities have modified specific files in a repo | [Git SBOM](#git) |
 | Merging Permissions | Verify that allowed identities have merged to main  | [Git SBOM](#git) | Is it the opposite from [No Commits To Main](#no-commits-to-main)? |

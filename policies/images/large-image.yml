@@ -13,4 +13,4 @@ attest:
           match:
             target_type: image
           rego:
-            path: large-image.rego
+            path: policies/images/large-image.rego
