@@ -29,7 +29,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | Image Build Did Not Run blind scripts | Verify that the image build commands did not include curl | [Image SBOM](#images) | Some changes to `gensbom` needed |
 | Image Included Required Lables | Verify that the image has required labels. Used to enforce best practices such as labling the image with the git-commit used to build it (provenance) | [Image SBOM](#images) | An explanation on labels needed |
 | [Do Not Allow Huge Images](#large-image) | Verify that the image is not too large | [Image SBOM](#images) |
-| Coding Permissions | Verify that allowed identities have modified specific files in a repo | [Git SBOM](#git) | An example of Git evidence with files reference needed |
+| [Coding Permissions](#coding-permissions) | Verify that allowed identities have modified specific files in a repo | [Git SBOM](#git) |
 | Merging Permissions | Verify that allowed identities have merged to main  | [Git SBOM](#git) | Is it the opposite from [No Commits To Main](#no-commits-to-main)? |
 | [No Unsigned Commits](#no-unsigned-commits) | Verify all commits are signed | [Git SBOM](#git) |
 | [No Commits To Main](#no-commits-to-main) | Verify that no commits are made to main | [Git SBOM](#git) |
@@ -199,6 +199,22 @@ To verify the evidence against the policy:
 
 ```bash
 valint verify git:https://github.com/golang/go -i statement -c <policyname>.yml
+```
+
+#### Coding Permissions
+
+This policy ([coding-permissions.yml](policies/git/coding-permissions.yml)) verifies that no unauthorized identities have modified specific files in a repo.
+
+For this policy be able to run, the evidence must include a reference to the files that were modified in the commit. This can be done by adding parameter `--components commits,files` to the `valint bom` command.
+
+For specifying the list of files and identities, edit the policy in the config object, within the rego code in file [coding-permissions.rego](policies/git/coding-permissions.rego).
+This example for repository [Golang Build](https://github.com/golang/build) verifies that files `build.go` and `internal/https/README.md` were modified only by identities containing `@golang.com` and `@golang.org`:
+
+```rego
+config := {
+    "ids": ["@golang.com", "@golang.org"],
+    "files": ["build.go", "internal/https/README.md"],
+}
 ```
 
 #### No Unsigned Commits
