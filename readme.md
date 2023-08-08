@@ -390,8 +390,8 @@ To verify that the SARIF report does not contain static analysis warnings from t
 config := {
    "ruleLevel": ["error", "warning", "note", "none"],
    "precision": [],
-   "ruleIDs": [],
-   "ignore": ["rule1", "rule2", "rule3"],
+   "ruleIDs": ["rule1", "rule2", "rule3"],
+   "ignore": [],
    "maxAllowed": 0
 }
 ```
