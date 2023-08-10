@@ -25,9 +25,9 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Complete Licenses](#complete-licenses) | Verify that all packages have a license | [SBOM](#sboms) |
 | [Fresh SBOM](#fresh-sbom) | Verify that SBOM is fresh | [SBOM](#sboms) |
 | [Fresh Image](#fresh-image) | Verify that image is fresh - (rebuilt from latest) | [Image SBOM](#images) |
-| Image Does Not Allow Shell Access | Verify that the image has an entrypoint | [Image SBOM](#images) | Some changes to `gensbom` needed |
-| Image Build Did Not Run blind scripts | Verify that the image build commands did not include curl | [Image SBOM](#images) | Some changes to `gensbom` needed |
-| Image Included Required Lables | Verify that the image has required labels. Used to enforce best practices such as labling the image with the git-commit used to build it (provenance) | [Image SBOM](#images) | Some changes to `gensbom` needed |
+| [Image Does Not Allow Shell Access](#image-does-not-allow-shell-access) | Verify that the image has an entrypoint | [Image SBOM](#images) | `gensbom` [PR#166](https://github.com/scribe-security/gensbom/pull/166) needs to be merged |
+| [Image Build Did Not Run Blind Scripts](#image-build-did-not-run-blind-scripts) | Verify that the image build commands did not include curl | [Image SBOM](#images) |
+| [Image Included Required Lables](#image-included-required-lables) | Verify that the image has required labels. Used to enforce best practices such as labling the image with the git-commit used to build it (provenance) | [Image SBOM](#images) | `gensbom` [PR#166](https://github.com/scribe-security/gensbom/pull/166) needs to be merged |
 | [Do Not Allow Huge Images](#large-image) | Verify that the image is not too large | [Image SBOM](#images) |
 | [Coding Permissions](#coding-permissions) | Verify that allowed identities have modified specific files in a repo | [Git SBOM](#git) |
 | Merging Permissions | Verify that allowed identities have merged to main  | [Git SBOM](#git) | Is it the opposite from [No Commits To Main](#no-commits-to-main)? |
@@ -161,6 +161,36 @@ To verify the evidence against the policy:
 
 ```bash
 valint verify ubuntu:latest -i statement -c <policyname>.yml
+```
+
+#### Image Does Not Allow Shell Access
+
+This policy ([no-shell-access.yaml](policies/images/no-shell-access.yaml)) verifies that the image does not allow shell access. It does so by verifying that both `Entrypoint` and `Cmd` don't contain `sh` (there's an exclusion for `.sh` though).
+
+This policy is not configurable.
+
+#### Image Build Did Not Run Blind Scripts
+
+This policy ([no-blind-scripts.yaml](policies/images/no-blind-scripts.yaml)) verifies that the image did not run blacklisted scripts on build.
+
+Edit the list of the blacklisted scripts in the config object in file [no-blind-scripts.yaml](policies/images/no-blind-scripts.yaml):
+
+```rego
+config := {
+    "blacklist": ["curl"],
+}
+```
+
+#### Image Included Required Lables
+
+This policy ([labels.yaml](policies/images/labels.yaml)) verifies that the image includes required labels.
+
+Edit the list of the required labels in the config object in file [labels.yaml](policies/images/labels.yaml):
+
+```rego
+config := {
+    "labels": [{"label": "org.opencontainers.image.version", "value": "22.04"}],
+}
 ```
 
 #### Fresh Image

@@ -1,0 +1,16 @@
+attest:
+  cocosign:
+    policies:
+    - name: image-policy
+      enable: true
+      modules:
+      - name: labels
+        type: verify-artifact
+        enable: true
+        input:
+          signed: false
+          format: statement-cyclonedx-json
+          match:
+            target_type: image
+          rego:
+            path: policies/images/labels.rego
