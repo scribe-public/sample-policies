@@ -1,10 +1,10 @@
 attest:
   cocosign:
     policies:
-    - name: image-policy
+    - name: sbom-policy
       enable: true
       modules:
-      - name: no-blind-scripts
+      - name: required-packages
         type: verify-artifact
         enable: true
         input:
@@ -13,5 +13,5 @@ attest:
           match:
             target_type: image
           rego:
-            args: {blacklist: ["curl"]}
-            path: policies/images/no-blind-scripts.rego
+            args: {required_pkgs: ["pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"], violations_limit: 1}
+            path: policies/sboms/required-packages.rego

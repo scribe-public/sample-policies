@@ -60,7 +60,7 @@ valint bom ubuntu:latest -o statement-cyclonedx-json
 To verify the evidence against the policy call:
 
 ```bash
-valint verify ubuntu:latest -i statement-cyclonedx-json -c <policyname>.yml
+valint verify ubuntu:latest -i statement-cyclonedx-json -c <policyname>.yaml
 ```
 
 An example of creating signed SBOM attestation:
@@ -72,7 +72,7 @@ valint bom ubuntu:latest -o attest
 To verify the attestation against the policy call:
 
 ```bash
-valint verify ubuntu:latest -i attest -c <policyname>.yml
+valint verify ubuntu:latest -i attest -c <policyname>.yaml
 ```
 
 #### Artifact Signed
@@ -81,7 +81,7 @@ This policy ([artifact-signed.yaml](policies/sboms/artifact-signed.yaml)) verifi
 
 If you have not created an SBOM yet, create an sbom attestation, for example:
 
-Edit policy parameters under ```attest.cocosign.policies.modules.input identity``` in the [artifact-signed.yml](policies/sboms/artifact-signed.yaml) file:
+Edit policy parameters under ```attest.cocosign.policies.modules.input identity``` in the [artifact-signed.yaml](policies/sboms/artifact-signed.yaml) file:
 
 ```yaml
 identity:
@@ -91,62 +91,52 @@ identity:
 
 #### Blacklist Packages
 
-This policy ([blacklist-packages.yml](policies/sboms/blacklist-packages.yml)) verifies that an SBOM does not include packages in the list of risky packages.
+This policy ([blacklist-packages.yaml](policies/sboms/blacklist-packages.yaml)) verifies that an SBOM does not include packages in the list of risky packages.
 
-Edit the list of the risky licenses in the config object, within the rego code in file [blacklist-packages.yml](policies/sboms/blacklist-packages.yml):
+`rego` code for this policy can be found in the [blacklist-packages.rego](policies/sboms/blacklist-packages.rego) file.
 
-```rego
-config := {
-  "blacklist": ["pkg:npm/readable-stream@1.0.34", "pkg:npm/trim@1.0.1"],
-  "blacklisted_limit":0
-}
+Edit the list of the risky licenses in the `input.rego.args` parameter in file [blacklist-packages.yaml](policies/sboms/blacklist-packages.yaml):
 
+```yaml
+args = {blacklist: ["pkg:npm/readable-stream@1.0.34", "pkg:npm/trim@1.0.1"], blacklisted_limit :0}
 ```
 
 #### Required Packages
 
-This policy ([required-packages.yml](policies/sboms/required-packages.yml)) verifies that the SBOM includes packages from the list of required packages.
+This policy ([required-packages.yaml](policies/sboms/required-packages.yaml)) verifies that the SBOM includes packages from the list of required packages.
 
-Edit the list of the required packages in the config object, within the rego code in file [required-packages.yml](policies/sboms/required-packages.yml):
+Edit the list of the required packages in the `input.rego.args` parameter in file [required-packages.yaml](policies/sboms/required-packages.yaml):
 
-```rego
-config := {
-  "required_pkgs": ["pkg:npm/readable-stream@1.0.34", "pkg:npm/trim@1.0.1"],
-  "violations_limit":0
-}
+```yaml
+args: {required_pkgs: ["pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"], violations_limit: 1}
 ```
 
 The policy checks if there is a package listed in SBOM whose name contains the name of a required package as a substring. For example, if the package name is ```pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04```, it will match any substring, like just ```bash``` or ```bash@5.1-6ubuntu1```.
 
 #### Banned licenses
 
-This policy ([banned-licenses.yml](policies/sboms/banned-licenses.yml)) verifies that the SBOM does not include licenses in the list of risky licenses.
+This policy ([banned-licenses.yaml](policies/sboms/banned-licenses.yaml)) verifies that the SBOM does not include licenses in the list of risky licenses.
 
-Edit the list of the risky licenses in the config object, within the rego code in file [banned-licenses.yml](policies/sboms/banned-licenses.yml):
+Edit the list of the risky licenses in the `input.rego.args` parameter in file [banned-licenses.yaml](policies/sboms/banned-licenses.yaml):
 
-```rego
-config := {
-  "blacklist": {"GPL", "MPL"},
-  "blacklisted_limit" : 200
-}
+```yaml
+args: {blacklist: {"GPL", "MPL"}, blacklisted_limit : 10}
 ```
 
 #### Complete Licenses
 
-This policy ([complete-licenses.yml](policies/sboms/complete-licenses.yml)) verifies that every package in the SBOM has a license.
+This policy ([complete-licenses.yaml](policies/sboms/complete-licenses.yaml)) verifies that every package in the SBOM has a license.
 
 It doesn't have any additional parameters.
 
 #### Fresh SBOM
 
-This policy ([fresh-sbom.yml](policies/sboms/fresh-sbom.yml)) verifies that the SBOM is not older than a given number of days.
+This policy ([fresh-sbom.yaml](policies/sboms/fresh-sbom.yaml)) verifies that the SBOM is not older than a given number of days.
 
-Edit the policy in the config object, within the rego code in file [fresh-sbom.rego](policies/sboms/fresh-sbom.rego):
+Edit the policy in the `input.rego.args` parameter in file [fresh-sbom.yaml](policies/sboms/fresh-sbom.yaml):
 
-```rego
-config := {
-    "max_days" : 30
-}
+```yaml
+args: {max_days : 30}
 ```
 
 ### Images
@@ -160,7 +150,7 @@ valint bom ubuntu:latest -o statement
 To verify the evidence against the policy:
 
 ```bash
-valint verify ubuntu:latest -i statement -c <policyname>.yml
+valint verify ubuntu:latest -i statement -c <policyname>.yaml
 ```
 
 #### Image Does Not Allow Shell Access
@@ -173,12 +163,10 @@ This policy is not configurable.
 
 This policy ([no-blind-scripts.yaml](policies/images/no-blind-scripts.yaml)) verifies that the image did not run blacklisted scripts on build.
 
-Edit the list of the blacklisted scripts in the config object in file [no-blind-scripts.yaml](policies/images/no-blind-scripts.yaml):
+Edit the list of the blacklisted scripts in the `input.rego.args` parameter in file [no-blind-scripts.yaml](policies/images/no-blind-scripts.yaml):
 
-```rego
-config := {
-    "blacklist": ["curl"],
-}
+```yaml
+args: {blacklist: ["curl"]}
 ```
 
 #### Image Included Required Lables
@@ -187,34 +175,28 @@ This policy ([labels.yaml](policies/images/labels.yaml)) verifies that the image
 
 Edit the list of the required labels in the config object in file [labels.yaml](policies/images/labels.yaml):
 
-```rego
-config := {
-    "labels": [{"label": "org.opencontainers.image.version", "value": "22.04"}],
-}
+```yaml
+args: {labels: [{"label": "org.opencontainers.image.version", "value": "22.04"}]}
 ```
 
 #### Fresh Image
 
 This policy ([fresh-image.yaml](policies/images/fresh-image.yaml)) verifies that the image is not older than a given number of days.
 
-Edit the policy in the config object, within the rego code in file [fresh-image.rego](policies/images/fresh-image.rego)):
+Edit the policy in the `input.rego.args` parameter in file [fresh-image.yaml](policies/images/fresh-image.yaml):
 
-```rego
-config := {
-    "max_days" : 183
-}
+```yaml
+args: {max_days: 183}
 ```
 
 #### Large Image
 
-This policy ([](policies/images/large-image.yml)) verifies that the image is not larger than a given size.
+This policy ([](policies/images/large-image.yaml)) verifies that the image is not larger than a given size.
 
-Edit the policy in the config object, within the rego code in file [large-image.rego](policies/images/large-image.rego)):
+Set max size in bytes in the `input.rego.args` parameter in file [large-image.yaml](policies/images/large-image.yaml):
 
-```rego
-config := {
-    "max_size" : 100000000
-}
+```yaml
+args: {max_size: 77808811}
 ```
 
 ### Git
@@ -228,32 +210,29 @@ valint bom git:https://github.com/golang/go -o statement
 To verify the evidence against the policy:
 
 ```bash
-valint verify git:https://github.com/golang/go -i statement -c <policyname>.yml
+valint verify git:https://github.com/golang/go -i statement -c <policyname>.yaml
 ```
 
 #### Coding Permissions
 
-This policy ([coding-permissions.yml](policies/git/coding-permissions.yml)) verifies that no unauthorized identities have modified specific files in a repo.
+This policy ([coding-permissions.yaml](policies/git/coding-permissions.yaml)) verifies that no unauthorized identities have modified specific files in a repo.
 
 For this policy be able to run, the evidence must include a reference to the files that were modified in the commit. This can be done by adding parameter `--components commits,files` to the `valint bom` command.
 
-For specifying the list of files and identities, edit the policy in the config object, within the rego code in file [coding-permissions.rego](policies/git/coding-permissions.rego).
+For specifying the list of files and identities, edit the `input.rego.args` parameter in file [coding-permissions.yaml](policies/git/coding-permissions.yaml).
 This example for repository [Golang Build](https://github.com/golang/build) verifies that files `build.go` and `internal/https/README.md` were modified only by identities containing `@golang.com` and `@golang.org`:
 
-```rego
-config := {
-    "ids": ["@golang.com", "@golang.org"],
-    "files": ["build.go", "internal/https/README.md"],
-}
+```yaml
+args: {ids: ["@golang.com", "@golang.org"], files: ["build.go", "internal/https/README.md"]}
 ```
 
 #### No Unsigned Commits
 
-This policy ([no-unsigned-commits.yml](policies/git/no-unsigned-commits.yml)) verifies that evidence has no unsigned commits.
+This policy ([no-unsigned-commits.yaml](policies/git/no-unsigned-commits.yaml)) verifies that evidence has no unsigned commits.
 
 #### No Commits To Main
 
-This policy ([no-commit-to-main.yml](policies/git/no-commit-to-main.yml)) verifies that evidence has no commits made to main branch.
+This policy ([no-commit-to-main.yaml](policies/git/no-commit-to-main.yaml)) verifies that evidence has no commits made to main branch.
 
 ### SLSA
 
@@ -266,48 +245,39 @@ valint slsa ubuntu:latest -o statement
 Example of verifying a SLSA statement:
 
 ```bash
-valint verify ubuntu:latest -i statement-slsa -c <policyname>.yml
+valint verify ubuntu:latest -i statement-slsa -c <policyname>.yaml
 ```
 
 #### Builder name
 
-This policy ([builder.yaml](policies/slsa/builder.yml)) verifies that the builder name of the SLSA statement equals to a given value.
+This policy ([builder.yaml](policies/slsa/builder.yaml)) verifies that the builder name of the SLSA statement equals to a given value.
 
-Edit policy parameters in `rego` code in the [builder.yml](policies/slsa/builder.yml) file:
+Edit policy parameters in the `input.rego.args` parameter in file [builder.yaml](policies/slsa/builder.yaml):
 
-```rego
-config := {
-  "builderType": "local",
-  "hostname": "builder1"
-}
+```yaml
+args: {id: "local"}
 ```
 
 #### Banned Builder Dependencies
 
 This policy ([banned-builder-deps.yaml](policies/slsa/banned-builder-deps.yaml)) verifies that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version).
 
-Edit policy parameters in `rego` code in the [banned-builder-deps.yml](policies/slsa/banned-builder-deps.yaml) file:
+Edit policy parameters in the `input.rego.args` parameter in file [banned-builder-deps.yaml](policies/slsa/banned-builder-deps.yaml):
 
-```rego
-config := {
-    "blacklist": [{"uri": "valint", "tag": "v0.3.1"}],
-}
+```yaml
+args: {blacklist: [{"uri": "valint", "tag": "v0.3.1"}]}
 ```
 
 `uri` can be any substring of the searchable URI, and `tag` should be the exact `tag` or `git_tag` of the dependency.
 
 #### Build Time
 
-This policy ([build-time.yaml](policies/slsa/build-time.yml)) verifies that the build time of the SLSA statement is within a given time window.
+This policy ([build-time.yaml](policies/slsa/build-time.yaml)) verifies that the build time of the SLSA statement is within a given time window.
 
-Edit policy parameters in `rego` code in the [build-time.yaml](policies/slsa/build-time.yml) file:
+Edit policy parameters in the `input.rego.args` parameter in file [build-time.yaml](policies/slsa/build-time.yaml):
 
-```rego
-config := {
-  "start_hour": 8,
-  "end_hour"  : 17,
-  "workdays"  : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-}
+```yaml
+args: {start_hour: 8,end_hour  : 17,workdays  : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]}
 ```
 
 ### Sarif Reports
@@ -322,7 +292,7 @@ This policy allows to verify any SARIF report against a given policy. The policy
 * ignore: the list of the rule IDs to ignore
 * maxAllowed: the maximum number of violations allowed
 
-These values can be changed in the `config` section in the [generic-sarif.rego](policies/sarif/generic-sarif.rego) file.
+These values can be changed in the `input.rego.args` section in the [generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file.
 
 Create a trivy sarif report of the vulnerabilities of an image:
 
@@ -339,99 +309,103 @@ valint bom ubuntu-cve.json --predicate-type http://scribesecurity.com/evidence/g
 Verify the attestation against the policy:
 
 ```bash
-valint verify ubuntu-cve.json -i statement-generic -c generic-sarif.yml
+valint verify ubuntu-cve.json -i statement-generic -c generic-sarif.yaml
 ```
 
 ##### No Critical CVEs
 
-To verify that the SARIF report does not contain any critical CVEs, set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+To verify that the SARIF report does not contain any critical CVEs, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
-```rego
-config := {
-   "ruleLevel": ["critical"],
-   "precision": [],
-   "ruleIDs": [],
-   "ignore": [],
-   "maxAllowed": 0
+```yaml
+args: {
+   rule_level: ["critical"],
+   precision: [],
+   rule_ids: [],
+   ignore: [],
+   max_allowed: 0
 }
 ```
 
 ##### Limit High CVEs
 
-To verify that the SARIF report does not contain more than 10 high CVEs, set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+To verify that the SARIF report does not contain more than 10 high CVEs, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
-```rego
-config := {
-   "ruleLevel": ["high"],
-   "precision": [],
-   "ruleIDs": [],
-   "ignore": [],
-   "maxAllowed": 10
+```yaml
+args: {
+   rule_level: ["high"],
+   precision: [],
+   rule_ids: [],
+   ignore: [],
+   max_allowed: 10
 }
 ```
 
 ##### Do Not Allow Specific CVEs
 
-To verify that the SARIF report does not contain CVE-2021-1234 and CVE-2021-5678, set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+To verify that the SARIF report does not contain CVE-2021-1234 and CVE-2021-5678, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
-```rego
-config := {
-   "ruleLevel": ["error", "warning", "note", "none"],
-   "precision": [],
-   "ruleIDs": ["CVE-2021-1234", "CVE-2021-5678"],
-   "ignore": [],
-   "maxAllowed": 0
+```yaml
+args: {
+   rule_level: ["error", "warning", "note", "none"],
+   precision: [],
+   rule_ids: ["CVE-2021-1234", "CVE-2021-5678"],
+   ignore: [],
+   max_allowed: 0
 }
 ```
 
 ##### No Static Analysis Errors
 
-To verify that the SARIF report does not contain any static analysis errors, set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+To verify that the SARIF report does not contain any static analysis errors, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
-```rego
-config := {
-   "ruleLevel": ["error"],
-   "precision": [],
-   "ruleIDs": [],
-   "ignore": [],
-   "maxAllowed": 0
+```yaml
+args: {
+   rule_level: ["error"],
+   precision: [],
+   rule_ids: [],
+   ignore: [],
+   max_allowed: 0
 }
 ```
 
 ##### Limit Static Analysis Warnings
 
-To verify that the SARIF report does not contain more than 10 static analysis warnings, set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+To verify that the SARIF report does not contain more than 10 static analysis warnings, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
-```rego
-config := {
-   "ruleLevel": ["warning"],
-   "precision": [],
-   "ruleIDs": [],
-   "ignore": [],
-   "maxAllowed": 10
+```yaml
+args: {
+   rule_level: ["warning"],
+   precision: [],
+   rule_ids: [],
+   ignore: [],
+   max_allowed: 10
 }
 ```
 
 ##### Do Not Allow Specific Static Analysis Rules
 
-To verify that the SARIF report does not contain static analysis warnings from the following rules: "rule1", "rule2", "rule3", set the following parameters in the `config` section in the[generic-sarif.rego](policies/sarif/generic-sarif.rego) file:
+To verify that the SARIF report does not contain static analysis warnings from the following rules: "rule1", "rule2", "rule3", set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
-```rego
-config := {
-   "ruleLevel": ["error", "warning", "note", "none"],
-   "precision": [],
-   "ruleIDs": ["rule1", "rule2", "rule3"],
-   "ignore": [],
-   "maxAllowed": 0
+```yaml
+args: {
+   rule_level: ["error", "warning", "note", "none"],
+   precision: [],
+   rule_ids: ["rule1", "rule2", "rule3"],
+   ignore: [],
+   max_allowed: 0
 }
 ```
 
 ## Writing Policy Files
 
-The rego policies can be written either as snippets in the yml file, or as separate rego files. The advantage of using separate rego files is that one can enjoy the IDE support for rego, such as syntax highlighting and linting, and one can test the rego code more easily.
+The rego policies can be written either as snippets in the yaml file, or as separate rego files. The advantage of using separate rego files is that one can enjoy the IDE support for rego, such as syntax highlighting and linting, and one can test the rego code more easily.
 
-An example of such a rego file is give in the [generic-sarif.rego](policies/sarif/generic-sarif.rego) file, that is consumed by the [generic-sarif.yml](policies/sarif/generic-sarif.yml) configuraion file. To evaluate the policy:
+An example of such a rego file is give in the [generic-sarif.rego](policies/sarif/generic-sarif.rego) file, that is consumed by the [generic-sarif.yaml](policies/sarif/generic-sarif.yaml) configuraion file. To evaluate the policy:
 
 ```bash
-valint verify ubuntu-cve.json -i statement-generic -c generic-sarif.yml
+valint verify ubuntu-cve.json -i statement-generic -c generic-sarif.yaml
 ```
+
+## Running multiple policies at once
+
+It's possible to run multiple policies at once by specifying multiple modules under `cocosign.policies.modules` config. An example can be found in [policies/sboms/multiple-policies.yaml](policies/sboms/multiple-policies.yaml).

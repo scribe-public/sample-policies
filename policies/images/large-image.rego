@@ -4,18 +4,13 @@ import future.keywords.if
 default allow := false
 default size := 10000000000
 
-config := {
-    "max_size" : 77808811
-}
-
-
 verify = v {
     v := {
         "allow": allow,
         "errors": errors,
         "summary": [{
             "allow": allow,
-            "reason": sprintf("Image is too big, actual size is %d (max allowed size is %d)", [size, config.max_size])
+            "reason": sprintf("Image is too big, actual size is %d (max allowed size is %d)", [size, input.config.args.max_size])
         }]
     }
 }
@@ -26,7 +21,7 @@ size = to_number(input.evidence.predicate.bom.components[j].properties[i]["value
 }
 
 allow {
-    size <= config.max_size
+    size <= input.config.args.max_size
 }
 
 errors[msg] {

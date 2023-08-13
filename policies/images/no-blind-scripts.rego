@@ -8,10 +8,6 @@ default property = {
     "value": "",
 }
 
-config := {
-    "blacklist": ["curl"],
-}
-
 verify = v {
         v := {
         "allow": allow,
@@ -30,7 +26,7 @@ allow {
 
 violations = j {
 j := { r |
-    some blacklisted in config.blacklist
+    some blacklisted in input.config.args.blacklist
     some component in input.evidence.predicate.bom.components
     some property in component.properties
     property.name == "CreatedBy"

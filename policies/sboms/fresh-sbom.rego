@@ -4,10 +4,6 @@ default exceeding = 0
 
 import future.keywords.if
 
-config := {
-    "max_days" : 30
-}
-
 
 verify = v {
     v := {
@@ -22,7 +18,7 @@ verify = v {
 
 nanosecs_per_second = 1000 * 1000 * 1000
 nanosecs_per_day = 24 * 60 * 60 * nanosecs_per_second
-maximum_age = config.max_days * nanosecs_per_day
+maximum_age = input.config.args.max_days * nanosecs_per_day
 
 timestamp = time.parse_rfc3339_ns(input.evidence.predicate.bom.metadata.timestamp)
 exceeding = time.now_ns() - (timestamp + maximum_age)

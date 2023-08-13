@@ -8,10 +8,6 @@ default property = {
     "value": "",
 }
 
-config := {
-    "labels": [{"label": "org.opencontainers.image.version", "value": "22.04"}],
-}
-
 verify = v {
         v := {
         "allow": allow,
@@ -30,7 +26,7 @@ allow {
 
 violations = j {
 j := { r |
-    some label in config.labels
+    some label in input.config.args.labels
     some property in input.evidence.predicate.bom.metadata.component.properties
     startswith(property.name, "label_")
     endswith(property.name, label.label)

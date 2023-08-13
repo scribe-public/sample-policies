@@ -13,4 +13,5 @@ attest:
           match:
             target_type: image
           rego:
+            args: {max_days: 183}
             path: policies/images/fresh-image.rego

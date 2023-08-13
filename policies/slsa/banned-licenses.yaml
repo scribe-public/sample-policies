@@ -1,10 +1,10 @@
 attest:
   cocosign:
     policies:
-    - name: image-policy
+    - name: sbom-policy
       enable: true
       modules:
-      - name: no-blind-scripts
+      - name: blacklist-licenses
         type: verify-artifact
         enable: true
         input:
@@ -13,5 +13,6 @@ attest:
           match:
             target_type: image
           rego:
-            args: {blacklist: ["curl"]}
-            path: policies/images/no-blind-scripts.rego
+            args: {blacklist: {"GPL", "MPL"}, blacklisted_limit : 10}
+            path: policies/sboms/banned-licenses.rego
+

@@ -1,0 +1,18 @@
+attest:
+  cocosign:
+    policies:
+    - name: git-policy
+      enable: true
+      modules:
+      - name: coding-permissions
+        type: verify-artifact
+        enable: true
+        input:
+          signed: false
+          format: statement-cyclonedx-json
+          match:
+            target_type: git
+          rego:
+            args: {ids: ["@golang.com", "@golang.org"], files: ["build.go", "internal/https/README.md"]}
+            path: policies/git/coding-permissions.rego
+

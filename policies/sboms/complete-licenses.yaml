@@ -1,10 +1,10 @@
 attest:
   cocosign:
     policies:
-    - name: image-policy
+    - name: sbom-policy
       enable: true
       modules:
-      - name: large-image
+      - name: complete-licenses
         type: verify-artifact
         enable: true
         input:
@@ -13,4 +13,5 @@ attest:
           match:
             target_type: image
           rego:
-            path: policies/images/large-image.rego
+            path: policies/sboms/complete-licenses.rego
+

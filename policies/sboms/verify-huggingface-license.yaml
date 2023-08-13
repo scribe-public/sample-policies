@@ -11,4 +11,5 @@ attest:
           signed: true
           format: attest-cyclonedx-json
           rego:
+            args: {licenses: ["mit","apache"]}
             path: policies/sboms/verify-hf-license.rego    

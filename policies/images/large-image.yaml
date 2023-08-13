@@ -4,7 +4,7 @@ attest:
     - name: image-policy
       enable: true
       modules:
-      - name: no-blind-scripts
+      - name: large-image
         type: verify-artifact
         enable: true
         input:
@@ -13,5 +13,5 @@ attest:
           match:
             target_type: image
           rego:
-            args: {blacklist: ["curl"]}
-            path: policies/images/no-blind-scripts.rego
+            args: {max_size: 77808811}
+            path: policies/images/large-image.rego

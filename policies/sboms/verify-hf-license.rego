@@ -3,8 +3,6 @@ package verify
 default allow = false
 default violations = []
 
-config:=["mit","apache"]
-
 verify = v {
     v := {
         "allow": allow,
@@ -14,7 +12,7 @@ verify = v {
 
 allow {
     some l
-    l = config[_]
+    l = input.config.args.licenses[_]
     hf_info.cardData.license == l
 }
 

@@ -4,7 +4,7 @@ attest:
     - name: slsa-policy
       enable: true
       modules:
-      - name: blacklist-builder-dependencies
+      - name: build-time
         type: verify-artifact
         enable: true
         input:
@@ -13,6 +13,5 @@ attest:
           match:
             target_type: image
           rego:
-            args: {blacklist: [{"uri": "valint", "tag": "v0.3.1"}]}
-            path: policies/slsa/banned-builder-deps.rego
-
+            args: {start_hour: 8,end_hour  : 17,workdays  : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]}
+            path: policies/slsa/build-time.rego

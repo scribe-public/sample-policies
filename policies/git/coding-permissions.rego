@@ -6,11 +6,6 @@ default violations := []
 default props := []
 default author := ""
 
-config := {
-    "ids": ["@golang.com", "@golang.org"],
-    "files": ["build.go", "internal/https/README.md"],
-}
-
 verify = v {
         v := {
         "allow": allow,
@@ -29,7 +24,7 @@ allow {
 
 violations = j {
 j := { r |
-    some file in config.files
+    some file in input.config.args.files
     some object in input.evidence.predicate.bom.components
     object.name == file
     some prop in object.properties
@@ -47,7 +42,7 @@ j := { r |
 }
 
 any_match(author) {
-    some id in config.ids
+    some id in input.config.args.ids
     contains(author, id)
 }
 
