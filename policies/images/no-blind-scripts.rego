@@ -7,6 +7,7 @@ default property = {
     "name": "",
     "value": "",
 }
+default msg := "Image build commands used blacklisted scripts"
 
 verify = v {
         v := {
@@ -14,7 +15,7 @@ verify = v {
         "violations": violations,
             "summary": [{
             "allow": allow,
-            "reason":  sprintf("Image build commands used blacklisted scripts: %v", [violations]),
+            "reason":  sprintf("%s: %v", [msg, violations]),
             "violations": count(violations),
         }]
     }
@@ -39,3 +40,5 @@ j := { r |
         }
     }
 }
+
+msg = "Image build commands do not use blacklisted scripts"

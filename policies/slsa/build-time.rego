@@ -4,6 +4,7 @@ import future.keywords.in
 default allow := false
 default created_str := "unknown"
 default created := 0
+default msg := "Image created outside of working hours"
 
 created_str = input.evidence.predicate.buildDefinition.resolvedDependencies[i].annotations.created {
     some k
@@ -20,12 +21,14 @@ allow {
     clock[0] <= input.config.args.end_hour
 }
 
+msg = "Image created in working hours" { allow }
+
 verify = v {
         v := {
         "allow": allow,
             "summary": [{
             "allow": allow,
-            "reason":  sprintf("Image created outside of working hours: on day %s, on hour %d", [time.weekday(created), time.clock(created)[0]]),
+            "reason":  sprintf("%s: on day %s, on hour %d", [msg, time.weekday(created), time.clock(created)[0]]),
 
         }]
     }

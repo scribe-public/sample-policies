@@ -1,7 +1,7 @@
 package verify
 default allow = false
 default exceeding = 0
-
+default msg := "SBOM is too old"
 import future.keywords.if
 
 
@@ -10,7 +10,7 @@ verify = v {
         "allow": allow,
         "summary": [{
         "allow": allow,
-        "reason":  "SBOM is too old",
+        "reason":  msg,
         "exceeding": exceeding,
         }]
     }
@@ -26,6 +26,8 @@ exceeding = time.now_ns() - (timestamp + maximum_age)
 allow {
     exceeding <= 0
 }
+
+msg = "SBOM is fresh enough" { allow }
 
 errors[msg] {
     not input.evidence.predicate.bom.metadata.timestamp

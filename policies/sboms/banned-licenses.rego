@@ -2,6 +2,7 @@ package verify
 
 default allow = false
 default violations = []
+default msg := "Some packages use blacklisted licenses"
 
 verify = v {
         v := {
@@ -9,7 +10,7 @@ verify = v {
         "violations": violations,
             "summary": [{
             "allow": allow,
-            "reason":  "Some packages use blacklisted licenses",
+            "reason":  msg,
             "violations": count(violations),
         }]
     }
@@ -18,6 +19,8 @@ verify = v {
 allow {
     count(violations)  < input.config.args.blacklisted_limit
 }
+
+msg = "No packages use blacklisted licenses" { allow }
 
 violations = j {
 j := { r |

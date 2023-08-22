@@ -3,6 +3,7 @@ import future.keywords.if
 
 default allow := false
 default size := 10000000000
+default msg := "Image is too big"
 
 verify = v {
     v := {
@@ -10,7 +11,7 @@ verify = v {
         "errors": errors,
         "summary": [{
             "allow": allow,
-            "reason": sprintf("Image is too big, actual size is %d (max allowed size is %d)", [size, input.config.args.max_size])
+            "reason": sprintf("%s, actual size is %d (max allowed size is %d)", [msg, size, input.config.args.max_size])
         }]
     }
 }
@@ -28,3 +29,5 @@ errors[msg] {
     size == 10000000000
     msg := "image size not presented"
 }
+
+msg = "Image is within allowed size" { allow }

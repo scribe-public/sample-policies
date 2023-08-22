@@ -5,6 +5,7 @@ default allow := false
 default violations := []
 default props := []
 default author := ""
+default msg := "Some files are commited by unauthorized authors"
 
 verify = v {
         v := {
@@ -12,7 +13,7 @@ verify = v {
         "violations": violations,
             "summary": [{
             "allow": allow,
-            "reason":  "Some files are commited by unauthorized authors",
+            "reason":  msg,
             "violations": count(violations),
         }]
     }
@@ -21,6 +22,8 @@ verify = v {
 allow {
     count(violations) == 0
 }
+
+msg = "All required files are commited by authorized authors" { allow }
 
 violations = j {
 j := { r |

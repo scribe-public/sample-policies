@@ -4,6 +4,7 @@ import future.keywords.in
 default allow := false
 default violations := []
 default dependency := {"uri":"", "name":"", "annotations":{"version":""}}
+default msg := "The builder has some blacklisted dependencies"
 
 verify = v {
         v := {
@@ -11,7 +12,7 @@ verify = v {
         "violations": violations,
             "summary": [{
             "allow": allow,
-            "reason":  "The builder has some blacklisted dependencies",
+            "reason":  msg,
             "violations": count(violations),
         }]
     }
@@ -21,26 +22,28 @@ allow {
     count(violations) == 0
 }
 
+msg = "No blacklisted dependencies found" { allow }
+
 violations = j {
 j := { r |
     some blacklisted in input.config.args.blacklist
-    some dependency in input.evidence.predicate.buildDefinition.resolvedDependencies
-    contains(dependency.uri, blacklisted.uri)
-    tags_match(dependency.annotations, blacklisted.tag)
+    some dependency in input.evidence.predicate.runDetails.builder.builderDependencies
+    name_match(dependency, blacklisted.name)
+    dependency.annotations.version == blacklisted.version
     r = {
             "type": "dependency",
             "details": {
-                "uri": blacklisted.uri,
-                "tag": blacklisted.tag,
+                "name": blacklisted.name,
+                "version": blacklisted.version,
             }
         }
     }
 }
 
-tags_match(annotations, t2) {
-    annotations.tag == t2
+name_match(dependency, name) {
+    dependency.name == name
 }
 
-tags_match(annotations, t2) {
-    annotations.git_tag == t2
+name_match(dependency, name) {
+    contains(dependency.uri, name)
 }

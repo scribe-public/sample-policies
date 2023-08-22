@@ -3,19 +3,26 @@ import future.keywords.in
 default allow = false
 default violations = []
 default b = ""
+default msg := "Not all required packages are present in the SBOM"
 
 verify = v {
-v := {
-    "allow": allow,
-    "reason": "Required packages.",
-    "details": json.marshal(violations),
-    "violations": count(violations)
-}
+        v := {
+        "allow": allow,
+        "violations": violations,
+            "summary": [{
+            "allow": allow,
+            "reason":  msg,
+            "violations": count(violations),
+            "details": json.marshal(violations),
+        }]
+    }
 }
 
 allow {
     count(violations)  <=  input.config.args.violations_limit
 }
+
+msg = "Enough required packages are present in the SBOM" { allow }
 
 violations = j {
 j := { r |

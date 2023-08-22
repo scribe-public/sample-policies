@@ -2,6 +2,7 @@ package verify
 
 default allow = false
 default violations = []
+default msg := "Not all packages have licenses"
 
 verify = v {
         v := {
@@ -9,7 +10,7 @@ verify = v {
         "violations": violations,
             "summary": [{
             "allow": allow,
-            "reason":  "Not all packages have licenses",
+            "reason":  msg,
             "details": json.marshal(violations),
             "violations": count(violations),
         }]
@@ -19,6 +20,8 @@ verify = v {
 allow {
     count(violations) == 0
 }
+
+msg = "All packages have licenses" { allow }
 
 violations = j {
 j := { r |

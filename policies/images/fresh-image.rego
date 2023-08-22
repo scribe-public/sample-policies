@@ -4,6 +4,7 @@ import future.keywords.if
 default allow := false
 default created := 0
 default created_str := "unknown"
+default msg := "Image is too old"
 
 verify = v {
     v := {
@@ -11,7 +12,7 @@ verify = v {
         "errors": errors,
         "summary": [{
             "allow": allow,
-            "reason": sprintf("Image is too old, created at: %d (earliest create date is %d)", [created, time.now_ns() - maximum_age])
+            "reason": sprintf("%s, created at: %d (earliest create date is %d)", [msg, created, time.now_ns() - maximum_age])
         }]
     }
 }
@@ -28,6 +29,8 @@ created = time.parse_rfc3339_ns(created_str)
 allow {
     time.now_ns() < (created + maximum_age)
 }
+
+msg = "Image is new enough" { allow }
 
 errors[msg] {
     created_str == "unknown"
