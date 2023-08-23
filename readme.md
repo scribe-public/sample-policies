@@ -16,38 +16,38 @@ This repo includes samples of policy configuraions for Scribe's ```valint``` too
 
 Policy list below is copied from the `opapi` repo. Each policy in the table that has an example in this repo has a link to the policy description.
 
-| Policy | Description | Attestations | Additional Info |
+| Policy | Description | Attestation Type | Additional Info |
 | --- | --- | --- | --- |
-| [Artifact Signed](#artifact-signed) | Verify that the artifact is signed (also verify identity and CA identity) | [SBOM](#sboms) |
-| [Blacklist Packages](#blacklist-packages) | Verify that banned packages are not in SBOM | [SBOM](#sboms) |
-| [Required Packages](#required-packages) (e.g. license artifact) | Verify that required packages or files are in SBOM | [SBOM](#sboms) |
-| [Banned Licenses](#banned-licenses) | Verify that banned licenses are not in SBOM | [SBOM](#sboms) |
-| [Complete Licenses](#complete-licenses) | Verify that all packages have a license | [SBOM](#sboms) |
-| [Fresh SBOM](#fresh-sbom) | Verify that SBOM is fresh | [SBOM](#sboms) |
-| [Fresh Image](#fresh-image) | Verify that image is fresh - (rebuilt from latest) | [Image SBOM](#images) |
-| [Image Does Not Allow Shell Access](#image-does-not-allow-shell-access) | Verify that the image has an entrypoint | [Image SBOM](#images) | `gensbom` [PR#166](https://github.com/scribe-security/gensbom/pull/166) needs to be merged |
-| [Image Build Did Not Run Blind Scripts](#image-build-did-not-run-blind-scripts) | Verify that the image build commands did not include curl | [Image SBOM](#images) |
-| [Image Included Required Lables](#image-included-required-lables) | Verify that the image has required labels. Used to enforce best practices such as labling the image with the git-commit used to build it (provenance) | [Image SBOM](#images) | `gensbom` [PR#166](https://github.com/scribe-security/gensbom/pull/166) needs to be merged |
-| [Do Not Allow Huge Images](#large-image) | Verify that the image is not too large | [Image SBOM](#images) |
-| [Coding Permissions](#coding-permissions) | Verify that allowed identities have modified specific files in a repo | [Git SBOM](#git) |
-| Merging Permissions | Verify that allowed identities have merged to main  | [Git SBOM](#git) | Is it the opposite from [No Commits To Main](#no-commits-to-main)? |
-| [No Unsigned Commits](#no-unsigned-commits) | Verify all commits are signed | [Git SBOM](#git) |
-| [No Commits To Main](#no-commits-to-main) | Verify that no commits are made to main | [Git SBOM](#git) |
-| Verify Provenance Exists | Verify that provenance for an artifact exists | [SLSA-Prov](#slsa) | Should it be a policy or an error from the `valint` itself? |
-| [Verify Use of Specific Builder](#builder-name) | Verify that a specific builder was used to build an artifact | [SLSA-Prov](#slsa) |
-| [Banned Builder Dependencies](#banned-builder-dependencies) | Verify that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version) | [SLSA-Prov](#slsa) |
-| [Verify Build Time](#build-time) | Verify that the build was done in a specific time window (working day)| [SLSA-Prov](#slsa) |
-| Verify Byproducts Produced | Verify that specific byproducts are produced (e.g. testing, coverage, static analysis reports) | [SLSA-Prov](#slsa) | An example needed |
-| [No Critical CVEs](#no-critical-cves) | Verify that the artifact does not have any ctitical CVEs | [SARIF](#sarif-reports) |
-| [Limit High CVEs](#limit-high-cves) | Verify that the artifact does not have more than a specific number of high CVEs | [SARIF](#sarif-reports) |
-| [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Verify that the artifact does not have specific CVEs | [SARIF](#sarif-reports) |
-| [No Static Analysis Errors](#no-static-analysis-errors) | Verify that the artifact does not have static analysis errors | [SARIF](#sarif-reports) |
-| [Limit Static Analysis Warnings](#limit-static-analysis-warnings) | Verify that the artifact does not have more than a specific number of static analysis warnings | [SARIF](#sarif-reports) |
-| [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Verify that the artifact does not have specific static analysis warnings | [SARIF](#sarif-reports) |
-| No Package Downgrading | Verify that the artifact does not have any package downgrades | Two SBOMs |
-| No License Modification | Verify that the artifact does not have any license modifications | Two SBOMs |
-| Verify Source Integrity | Verify that the artifact source code has not been modified | Two SBOMs |
-| Verify Dependencies Integrity (aka Verify specific files and folders integrity) | Verify that specific files or folders have not been modified | Two SBOMs |
+| [Artifact Signed](#artifact-signed) | Verify the artifact's authenticity and signer identity. | Attestation | [SBOM](#sboms) |
+| [Blacklist Packages](#blacklist-packages) | Prevent risky packages in the artifact. | Attestation | [SBOM](#sboms) |
+| [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | Attestation | [SBOM](#sboms) |
+| [Banned Licenses](#banned-licenses) | Restrict inclusion of certain licenses in the artifact. | Attestation | [SBOM](#sboms) |
+| [Complete Licenses](#complete-licenses) | Guarantee all packages have valid licenses. | Attestation | [SBOM](#sboms) |
+| [Fresh Artifact](#fresh-artifact) | Verify an artifact's freshness. | Attestation | [SBOM](#sboms) |
+| [Fresh Image](#fresh-image) | Ensure an image freshness. | Attestation | [Image SBOM](#images) |
+| [restrict shell image entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | Attestation | [SBOM](#sboms) |
+| [Image Build Did Not Run build Scripts](#image-build-did-not-run-build-scripts) | Restrict build scripts in image build. | Attestation | [Image SBOM](#images) |
+| [Image Included Required Labels](#image-included-required-labels) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
+| [Do Not Allow Huge Images](#large-image) | Limit image size. | Attestation | [Image SBOM](#images) |
+| [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | Attestation | [Git SBOM](#git) |
+| Merging Permissions | Ensure authorized identities merge to main. | Attestation | Counterpart to [No Commits To Main](#no-commits-to-main)? |
+| [No Unsigned Commits](#no-unsigned-commits) | Prevent unsigned commits in evidence. | Attestation | [Git SBOM](#git) |
+| [No Commits To Main](#no-commits-to-main) | Verify no commits to the main branch. | Attestation | [Git SBOM](#git) |
+| Verify Provenance Exists | Confirm artifact provenance exists. | Attestation | [SLSA-Prov](#slsa) |
+| [Verify Use of Specific Builder](#builder-name) | Enforce a specific builder for artifact. | Attestation | [SLSA-Prov](#slsa) |
+| [Banned Builder Dependencies](#banned-builder-dependencies) | Restrict banned builder dependencies. | Attestation | [SLSA-Prov](#slsa) |
+| [Verify Build Time](#build-time) | Validate build time within window. | Attestation | [SLSA-Prov](#slsa) |
+| Verify Byproducts Produced | Ensure specific byproducts are produced. | Attestation | [SLSA-Prov](#slsa) |
+| [No Critical CVEs](#no-critical-cves) | Restrict ANY critical CVEs. | Attestation | [SARIF](#sarif-reports) |
+| [Limit High CVEs](#limit-high-cves) | Limit high CVEs. | Attestation | [SARIF](#sarif-reports) |
+| [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Prevent specific CVEs in the artifact. | Attestation | [SARIF](#sarif-reports) |
+| [No Static Analysis Errors](#no-static-analysis-errors) | Prevent static analysis errors in the artifact. | Attestation | [SARIF](#sarif-reports) |
+| [Limit Static Analysis Warnings](#limit-static-analysis-warnings) | Restrict static analysis warnings count. | Attestation | [SARIF](#sarif-reports) |
+| [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Restrict specific static analysis warnings. | Attestation | [SARIF](#sarif-reports) |
+| No Package Downgrading | Restrict package downgrades. | Attestation | src and dst [SBOM](#sboms) |
+| No License Modification | Prevent license modifications. | Attestation | src and dst [SBOM](#sboms) |
+| Verify Source code Integrity | Verify that the artifact source code has not been modified | Attestation | src and dst [Git SBOM](#git) |
+| Verify Dependencies Integrity | Verify that specific files or folders have not been modified | Attestation | src and dst [SBOM](#sboms) |
 
 ### SBOMs
 
@@ -81,17 +81,24 @@ This policy ([artifact-signed.yaml](policies/sboms/artifact-signed.yaml)) verifi
 
 If you have not created an SBOM yet, create an sbom attestation, for example:
 
-Edit policy parameters under ```attest.cocosign.policies.modules.input identity``` in the [artifact-signed.yaml](policies/sboms/artifact-signed.yaml) file:
+In [artifact-signed.yaml](policies/sboms/artifact-signed.yaml) file,
+edit policy parameters ```attest.cocosign.policies.modules.input identity``` to reflect the expected signers identity.
+
+You can also edit `target_type` to refelct the artifact type.
+
+> Optional target types are `git`,`directory`, `image`, `file`, `generic`.
 
 ```yaml
 identity:
   emails:
-    - mikey@resilience-sec.com
+    - example@company.com
+match:
+   target_type: image
 ```
 
 #### Blacklist Packages
 
-This policy ([blacklist-packages.yaml](policies/sboms/blacklist-packages.yaml)) verifies that an SBOM does not include packages in the list of risky packages.
+This policy ([blacklist-packages.yaml](policies/sboms/blacklist-packages.yaml)) verifies an SBOM does not include packages in the list of risky packages.
 
 `rego` code for this policy can be found in the [blacklist-packages.rego](policies/sboms/blacklist-packages.rego) file.
 
@@ -153,25 +160,25 @@ To verify the evidence against the policy:
 valint verify ubuntu:latest -i statement -c <policyname>.yaml
 ```
 
-#### Image Does Not Allow Shell Access
+#### restrict shell image entrypoint
 
-This policy ([no-shell-access.yaml](policies/images/no-shell-access.yaml)) verifies that the image does not allow shell access. It does so by verifying that both `Entrypoint` and `Cmd` don't contain `sh` (there's an exclusion for `.sh` though).
+This policy ([restrict-shell-entrypoint.yaml](policies/images/restrict-shell-entrypoint.yaml)) verifies that the image entrypoint does not provide shell access by default. It does so by verifying that both `Entrypoint` and `Cmd` don't contain `sh` (there's an exclusion for `.sh` though).
 
 This policy is not configurable.
 
-#### Image Build Did Not Run Blind Scripts
+#### Blacklist image build Scripts
 
-This policy ([no-blind-scripts.yaml](policies/images/no-blind-scripts.yaml)) verifies that the image did not run blacklisted scripts on build.
+This policy ([blacklist-build-scripts.yaml](policies/images/blacklist-build-scripts.yaml)) verifies that the image did not run blacklisted scripts on build.
 
-Edit the list of the blacklisted scripts in the `input.rego.args` parameter in file [no-blind-scripts.yaml](policies/images/no-blind-scripts.yaml):
+Edit the list of the blacklisted scripts in the `input.rego.args` parameter in file [blacklist-build-scripts.yaml](policies/images/no-build-scripts.yaml):
 
 ```yaml
 args: {blacklist: ["curl"]}
 ```
 
-#### Image Included Required Lables
+#### Enforce image Lables/Annotations
 
-This policy ([labels.yaml](policies/images/labels.yaml)) verifies that the image includes required labels.
+This policy ([labels.yaml](policies/images/labels.yaml)) verifies image required labels.
 
 Edit the list of the required labels in the config object in file [labels.yaml](policies/images/labels.yaml):
 

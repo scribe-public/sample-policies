@@ -4,7 +4,7 @@ attest:
     - name: image-policy
       enable: true
       modules:
-      - name: no-blind-scripts
+      - name: blacklist-build-scripts
         type: verify-artifact
         enable: true
         input:
@@ -13,5 +13,7 @@ attest:
           match:
             target_type: image
           rego:
-            args: {blacklist: ["curl"]}
+            args:
+              blacklist: 
+              - curl
             path: policies/images/no-blind-scripts.rego
