@@ -17,8 +17,11 @@ verify = v {
 }
 
 size = to_number(input.evidence.predicate.bom.components[j].properties[i]["value"]) {
-    contains(input.evidence.predicate.bom.components[j]["bom-ref"], input.evidence.subject[k]["digest"]["sha256"])
-    input.evidence.predicate.bom.components[j].properties[i]["name"] == "size"
+    comp := input.evidence.predicate.bom.components[j]
+    comp.group == "layer"
+    comp.properties[i]["name"] == "size"
+    comp.properties[z]["name"] == "index"
+    comp.properties[z]["value"] == "0"
 }
 
 allow {
