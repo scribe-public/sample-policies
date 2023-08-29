@@ -27,7 +27,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Fresh Image](#fresh-image) | Ensure an image freshness. | Attestation | [Image SBOM](#images) |
 | [Restrict Shell Image Entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | Attestation | [SBOM](#sboms) |
 | [Blacklist Image Build Scripts](#blacklist-image-build-scripts) | Restrict build scripts in image build. | Attestation | [Image SBOM](#images) |
-| [Enforce Image Lables/Annotations](#verify-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
+| [Verify Image Lables/Annotations](#verify-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
 | [Forbid Huge Images](#forbid-large-images) | Limit image size. | Attestation | [Image SBOM](#images) |
 | [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | Attestation | [Git SBOM](#git) |
 | Merging Permissions | Ensure authorized identities merge to main. | Attestation | Counterpart to [Forbid Commits To Main](#forbid-commits-to-main)? |
