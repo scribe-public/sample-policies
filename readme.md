@@ -30,7 +30,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Enforce Image Lables/Annotations](#enforce-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
 | [Do Not Allow Huge Images](#large-image) | Limit image size. | Attestation | [Image SBOM](#images) |
 | [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | Attestation | [Git SBOM](#git) |
-| Merging Permissions | Ensure authorized identities merge to main. | Attestation | Counterpart to [No Commits To Main](#no-commits-to-main)? |
+| Merging Permissions | Ensure authorized identities merge to main. | Attestation | Counterpart to [Forbid Commits To Main](#forbid-commits-to-main)? |
 | [Forbid Unsigned Commits](#forbid-unsigned-commits) | Prevent unsigned commits in evidence. | Attestation | [Git SBOM](#git) |
 | [Forbid Commits To Main](#forbid-commits-to-main) | Verify there were no commits to the main branch. | Attestation | [Git SBOM](#git) |
 | Verify Provenance Exists | Confirm artifact provenance exists. | Attestation | [SLSA-Prov](#slsa) |
