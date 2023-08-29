@@ -27,8 +27,8 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Fresh Image](#fresh-image) | Ensure an image freshness. | Attestation | [Image SBOM](#images) |
 | [Restrict Shell Image Entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | Attestation | [SBOM](#sboms) |
 | [Blacklist Image Build Scripts](#blacklist-image-build-scripts) | Restrict build scripts in image build. | Attestation | [Image SBOM](#images) |
-| [Enforce Image Lables/Annotations](#enforce-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
-| [Do Not Allow Huge Images](#large-image) | Limit image size. | Attestation | [Image SBOM](#images) |
+| [Enforce Image Lables/Annotations](#verify-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
+| [Forbid Huge Images](#forbid-large-images) | Limit image size. | Attestation | [Image SBOM](#images) |
 | [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | Attestation | [Git SBOM](#git) |
 | Merging Permissions | Ensure authorized identities merge to main. | Attestation | Counterpart to [Forbid Commits To Main](#forbid-commits-to-main)? |
 | [Forbid Unsigned Commits](#forbid-unsigned-commits) | Prevent unsigned commits in evidence. | Attestation | [Git SBOM](#git) |
@@ -190,11 +190,11 @@ args:
       - curl
 ```
 
-#### Enforce Image Lables/Annotations
+#### Verify Image Lables/Annotations
 
-This policy ([labels.yaml](policies/images/labels.yaml)) verifies that image has labels with required values.
+This policy ([verify-labels.yaml](policies/images/verify-labels.yaml)) verifies that image has labels with required values.
 
-Edit the list of the required labels in the config object in file [labels.yaml](policies/images/labels.yaml):
+Edit the list of the required labels in the config object in file [verify-labels.yaml](policies/images/verify-labels.yaml):
 
 ```yaml
 args:
@@ -214,11 +214,11 @@ args:
    max_days: 183
 ```
 
-#### Large Image
+#### Forbid Large Images
 
-This policy ([](policies/images/large-image.yaml)) verifies that the image is not larger than a given size.
+This policy ([](policies/images/forbid-large-images.yaml)) verifies that the image is not larger than a given size.
 
-Set max size in bytes in the `input.rego.args` parameter in file [large-image.yaml](policies/images/large-image.yaml):
+Set max size in bytes in the `input.rego.args` parameter in file [forbid-large-images.yaml](policies/images/forbid-large-images.yaml):
 
 ```yaml
 args:
@@ -282,9 +282,9 @@ valint verify ubuntu:latest -i statement-slsa -c <policyname>.yaml
 
 #### Builder Name
 
-This policy ([builder.yaml](policies/slsa/builder.yaml)) verifies that the builder name of the SLSA statement equals to a given value.
+This policy ([verify-builder.yaml](policies/slsa/verify-builder.yaml)) verifies that the builder name of the SLSA statement equals to a given value.
 
-Edit policy parameters in the `input.rego.args` parameter in file [builder.yaml](policies/slsa/builder.yaml):
+Edit policy parameters in the `input.rego.args` parameter in file [verify-builder.yaml](policies/slsa/verify-builder.yaml):
 
 ```yaml
 args:
@@ -334,7 +334,7 @@ This policy allows to verify any SARIF report against a given policy. The policy
 * ignore: the list of the rule IDs to ignore
 * maxAllowed: the maximum number of violations allowed
 
-These values can be changed in the `input.rego.args` section in the [generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file.
+These values can be changed in the `input.rego.args` section in the [verify-sarif.yaml](policies/sarif/verify-sarif.yaml) file.
 
 Create a trivy sarif report of the vulnerabilities of an image:
 
@@ -351,12 +351,12 @@ valint bom ubuntu-cve.json --predicate-type http://scribesecurity.com/evidence/g
 Verify the attestation against the policy:
 
 ```bash
-valint verify ubuntu-cve.json -i statement-generic -c generic-sarif.yaml
+valint verify ubuntu-cve.json -i statement-generic -c verify-sarif.yaml
 ```
 
 ##### No Critical CVEs
 
-To verify that the SARIF report does not contain any critical CVEs, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain any critical CVEs, set the following parameters in the `rego.args` section in the[verify-sarif.yaml](policies/sarif/verify-sarif.yaml) file:
 
 ```yaml
 args:
@@ -370,7 +370,7 @@ args:
 
 ##### Limit High CVEs
 
-To verify that the SARIF report does not contain more than specified number of CVEs with high level (let's say 10), set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain more than specified number of CVEs with high level (let's say 10), set the following parameters in the `rego.args` section in the[verify-sarif.yaml](policies/sarif/verify-sarif.yaml) file:
 
 ```yaml
 args:
@@ -383,7 +383,7 @@ args:
 
 ##### Do Not Allow Specific CVEs
 
-To verify that the SARIF report does not contain certain CVEs (let's say CVE-2021-1234 and CVE-2021-5678), set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain certain CVEs (let's say CVE-2021-1234 and CVE-2021-5678), set the following parameters in the `rego.args` section in the[verify-sarif.yaml](policies/sarif/verify-sarif.yaml) file:
 
 ```yaml
 args:
@@ -402,7 +402,7 @@ args:
 
 ##### No Static Analysis Errors
 
-To verify that the SARIF report does not contain any static analysis errors, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain any static analysis errors, set the following parameters in the `rego.args` section in the[verify-sarif.yaml](policies/sarif/verify-sarif.yaml) file:
 
 ```yaml
 args:
@@ -416,7 +416,7 @@ args:
 
 ##### Limit Static Analysis Warnings
 
-To verify that the SARIF report does not contain more than specified number of static analysis warnings (let's say 10), set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain more than specified number of static analysis warnings (let's say 10), set the following parameters in the `rego.args` section in the[verify-sarif.yaml](policies/sarif/verify-sarif.yaml) file:
 
 ```yaml
 args:
@@ -430,7 +430,7 @@ args:
 
 ##### Do Not Allow Specific Static Analysis Rules
 
-To verify that the SARIF report does not contain static analysis warnings from the following rules: "rule1", "rule2", "rule3", set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain static analysis warnings from the following rules: "rule1", "rule2", "rule3", set the following parameters in the `rego.args` section in the[verify-sarif.yaml](policies/sarif/verify-sarif.yaml) file:
 
 ```yaml
 args:
@@ -452,10 +452,10 @@ args:
 
 The rego policies can be written either as snippets in the yaml file, or as separate rego files. The advantage of using separate rego files is that one can enjoy the IDE support for rego, such as syntax highlighting and linting, and one can test the rego code more easily.
 
-An example of such a rego file is give in the [generic-sarif.rego](policies/sarif/generic-sarif.rego) file, that is consumed by the [generic-sarif.yaml](policies/sarif/generic-sarif.yaml) configuraion file. To evaluate the policy:
+An example of such a rego file is give in the [verify-sarif.rego](policies/sarif/verify-sarif.rego) file, that is consumed by the [verify-sarif.yaml](policies/sarif/verify-sarif.yaml) configuraion file. To evaluate the policy:
 
 ```bash
-valint verify ubuntu-cve.json -i statement-generic -c generic-sarif.yaml
+valint verify ubuntu-cve.json -i statement-generic -c verify-sarif.yaml
 ```
 
 ## Running multiple policies at once
