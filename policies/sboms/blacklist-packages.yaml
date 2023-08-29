@@ -13,8 +13,9 @@ attest:
           match:
             target_type: image
           rego:
-            args: {
-                    "blacklist": ["pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04", "log4j"],
-                    "blacklisted_limit":0
-                  }
+            args:
+              blacklist: 
+                - "pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"
+                - "log4j"
+              blacklisted_limit: 0
             path: policies/sboms/blacklist-packages.rego

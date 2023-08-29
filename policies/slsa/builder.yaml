@@ -13,5 +13,6 @@ attest:
           match:
             target_type: image
           rego:
-            args: {id: "local"}
+            args:
+              id: "local"
             path: policies/slsa/builder.rego

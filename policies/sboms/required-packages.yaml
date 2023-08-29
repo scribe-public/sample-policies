@@ -13,5 +13,8 @@ attest:
           match:
             target_type: image
           rego:
-            args: {required_pkgs: ["pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"], violations_limit: 0}
+            args:
+              required_pkgs:
+                - "pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"
+              violations_limit: 0
             path: policies/sboms/required-packages.rego

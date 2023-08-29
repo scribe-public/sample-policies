@@ -4,7 +4,7 @@ This repo includes samples of policy configuraions for Scribe's ```valint``` too
 
 ## Preparation
 
-1. Install valint:
+1. Install `valint`:
 
     ```bash
     curl -sSfL https://get.scribesecurity.com/install.sh  | sh -s -- -t valint
@@ -18,27 +18,27 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 
 | Policy | Description | Attestation Type | Additional Info |
 | --- | --- | --- | --- |
-| [Artifact Signed](#artifact-signed) | Verify the artifact's authenticity and signer identity. | Attestation | [SBOM](#sboms) |
+| [Forbid Unsigned Artifacts](#forbid-unsigned-artifacts) | Verify the artifact's authenticity and signer identity. | Attestation | [SBOM](#sboms) |
 | [Blacklist Packages](#blacklist-packages) | Prevent risky packages in the artifact. | Attestation | [SBOM](#sboms) |
 | [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | Attestation | [SBOM](#sboms) |
 | [Banned Licenses](#banned-licenses) | Restrict inclusion of certain licenses in the artifact. | Attestation | [SBOM](#sboms) |
 | [Complete Licenses](#complete-licenses) | Guarantee all packages have valid licenses. | Attestation | [SBOM](#sboms) |
 | [Fresh Artifact](#fresh-artifact) | Verify an artifact's freshness. | Attestation | [SBOM](#sboms) |
 | [Fresh Image](#fresh-image) | Ensure an image freshness. | Attestation | [Image SBOM](#images) |
-| [restrict shell image entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | Attestation | [SBOM](#sboms) |
-| [Image Build Did Not Run build Scripts](#image-build-did-not-run-build-scripts) | Restrict build scripts in image build. | Attestation | [Image SBOM](#images) |
-| [Image Included Required Labels](#image-included-required-labels) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
+| [Restrict Shell Image Entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | Attestation | [SBOM](#sboms) |
+| [Blacklist Image Build Scripts](#blacklist-image-build-scripts) | Restrict build scripts in image build. | Attestation | [Image SBOM](#images) |
+| [Enforce Image Lables/Annotations](#enforce-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
 | [Do Not Allow Huge Images](#large-image) | Limit image size. | Attestation | [Image SBOM](#images) |
 | [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | Attestation | [Git SBOM](#git) |
 | Merging Permissions | Ensure authorized identities merge to main. | Attestation | Counterpart to [No Commits To Main](#no-commits-to-main)? |
-| [No Unsigned Commits](#no-unsigned-commits) | Prevent unsigned commits in evidence. | Attestation | [Git SBOM](#git) |
-| [No Commits To Main](#no-commits-to-main) | Verify no commits to the main branch. | Attestation | [Git SBOM](#git) |
+| [Forbid Unsigned Commits](#forbid-unsigned-commits) | Prevent unsigned commits in evidence. | Attestation | [Git SBOM](#git) |
+| [Forbid Commits To Main](#forbid-commits-to-main) | Verify there were no commits to the main branch. | Attestation | [Git SBOM](#git) |
 | Verify Provenance Exists | Confirm artifact provenance exists. | Attestation | [SLSA-Prov](#slsa) |
-| [Verify Use of Specific Builder](#builder-name) | Enforce a specific builder for artifact. | Attestation | [SLSA-Prov](#slsa) |
+| [Verify Use of Specific Builder](#builder-name) | Enforce use of a specific builder for artifact. | Attestation | [SLSA-Prov](#slsa) |
 | [Banned Builder Dependencies](#banned-builder-dependencies) | Restrict banned builder dependencies. | Attestation | [SLSA-Prov](#slsa) |
 | [Verify Build Time](#build-time) | Validate build time within window. | Attestation | [SLSA-Prov](#slsa) |
 | Verify Byproducts Produced | Ensure specific byproducts are produced. | Attestation | [SLSA-Prov](#slsa) |
-| [No Critical CVEs](#no-critical-cves) | Restrict ANY critical CVEs. | Attestation | [SARIF](#sarif-reports) |
+| [No Critical CVEs](#no-critical-cves) | Prohibit ANY critical CVEs. | Attestation | [SARIF](#sarif-reports) |
 | [Limit High CVEs](#limit-high-cves) | Limit high CVEs. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Prevent specific CVEs in the artifact. | Attestation | [SARIF](#sarif-reports) |
 | [No Static Analysis Errors](#no-static-analysis-errors) | Prevent static analysis errors in the artifact. | Attestation | [SARIF](#sarif-reports) |
@@ -75,7 +75,7 @@ To verify the attestation against the policy call:
 valint verify ubuntu:latest -i attest -c <policyname>.yaml
 ```
 
-#### Artifact Signed
+#### Forbid Unsigned Artifacts
 
 This policy ([artifact-signed.yaml](policies/sboms/artifact-signed.yaml)) verifies that the SBOM is signed and the signer identity equals to a given value.
 
@@ -105,7 +105,11 @@ This policy ([blacklist-packages.yaml](policies/sboms/blacklist-packages.yaml)) 
 Edit the list of the risky licenses in the `input.rego.args` parameter in file [blacklist-packages.yaml](policies/sboms/blacklist-packages.yaml):
 
 ```yaml
-args = {blacklist: ["pkg:npm/readable-stream@1.0.34", "pkg:npm/trim@1.0.1"], blacklisted_limit :0}
+args:
+   blacklist: 
+      - "pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"
+      - "log4j"
+   blacklisted_limit: 0
 ```
 
 #### Required Packages
@@ -115,19 +119,26 @@ This policy ([required-packages.yaml](policies/sboms/required-packages.yaml)) ve
 Edit the list of the required packages in the `input.rego.args` parameter in file [required-packages.yaml](policies/sboms/required-packages.yaml):
 
 ```yaml
-args: {required_pkgs: ["pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"], violations_limit: 1}
+args:
+   required_pkgs:
+      - "pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"
+   violations_limit: 1
 ```
 
 The policy checks if there is a package listed in SBOM whose name contains the name of a required package as a substring. For example, if the package name is ```pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04```, it will match any substring, like just ```bash``` or ```bash@5.1-6ubuntu1```.
 
-#### Banned licenses
+#### Banned Licenses
 
-This policy ([banned-licenses.yaml](policies/sboms/banned-licenses.yaml)) verifies that the SBOM does not include licenses in the list of risky licenses.
+This policy ([banned-licenses.yaml](policies/sboms/banned-licenses.yaml)) verifies that the SBOM does not include licenses from the list of risky licenses.
 
 Edit the list of the risky licenses in the `input.rego.args` parameter in file [banned-licenses.yaml](policies/sboms/banned-licenses.yaml):
 
 ```yaml
-args: {blacklist: {"GPL", "MPL"}, blacklisted_limit : 10}
+rgs:
+   blacklist: 
+      - GPL
+      - MPL
+   blacklisted_limit : 10
 ```
 
 #### Complete Licenses
@@ -136,14 +147,15 @@ This policy ([complete-licenses.yaml](policies/sboms/complete-licenses.yaml)) ve
 
 It doesn't have any additional parameters.
 
-#### Fresh SBOM
+#### Fresh Artifact
 
 This policy ([fresh-sbom.yaml](policies/sboms/fresh-sbom.yaml)) verifies that the SBOM is not older than a given number of days.
 
 Edit the policy in the `input.rego.args` parameter in file [fresh-sbom.yaml](policies/sboms/fresh-sbom.yaml):
 
 ```yaml
-args: {max_days : 30}
+args:
+   max_days : 30
 ```
 
 ### Images
@@ -160,30 +172,35 @@ To verify the evidence against the policy:
 valint verify ubuntu:latest -i statement -c <policyname>.yaml
 ```
 
-#### restrict shell image entrypoint
+#### Restrict Shell Image Entrypoint
 
 This policy ([restrict-shell-entrypoint.yaml](policies/images/restrict-shell-entrypoint.yaml)) verifies that the image entrypoint does not provide shell access by default. It does so by verifying that both `Entrypoint` and `Cmd` don't contain `sh` (there's an exclusion for `.sh` though).
 
 This policy is not configurable.
 
-#### Blacklist image build Scripts
+#### Blacklist Image Build Scripts
 
 This policy ([blacklist-build-scripts.yaml](policies/images/blacklist-build-scripts.yaml)) verifies that the image did not run blacklisted scripts on build.
 
 Edit the list of the blacklisted scripts in the `input.rego.args` parameter in file [blacklist-build-scripts.yaml](policies/images/no-build-scripts.yaml):
 
 ```yaml
-args: {blacklist: ["curl"]}
+args:
+   blacklist: 
+      - curl
 ```
 
-#### Enforce image Lables/Annotations
+#### Enforce Image Lables/Annotations
 
-This policy ([labels.yaml](policies/images/labels.yaml)) verifies image required labels.
+This policy ([labels.yaml](policies/images/labels.yaml)) verifies that image has labels with required values.
 
 Edit the list of the required labels in the config object in file [labels.yaml](policies/images/labels.yaml):
 
 ```yaml
-args: {labels: [{"label": "org.opencontainers.image.version", "value": "22.04"}]}
+args:
+   labels:
+      - label: "org.opencontainers.image.version"
+        value: "22.04"
 ```
 
 #### Fresh Image
@@ -193,7 +210,8 @@ This policy ([fresh-image.yaml](policies/images/fresh-image.yaml)) verifies that
 Edit the policy in the `input.rego.args` parameter in file [fresh-image.yaml](policies/images/fresh-image.yaml):
 
 ```yaml
-args: {max_days: 183}
+args:
+   max_days: 183
 ```
 
 #### Large Image
@@ -203,7 +221,8 @@ This policy ([](policies/images/large-image.yaml)) verifies that the image is no
 Set max size in bytes in the `input.rego.args` parameter in file [large-image.yaml](policies/images/large-image.yaml):
 
 ```yaml
-args: {max_size: 77808811}
+args:
+   max_size: 77808811
 ```
 
 ### Git
@@ -222,7 +241,7 @@ valint verify git:https://github.com/golang/go -i statement -c <policyname>.yaml
 
 #### Coding Permissions
 
-This policy ([coding-permissions.yaml](policies/git/coding-permissions.yaml)) verifies that no unauthorized identities have modified specific files in a repo.
+This policy ([coding-permissions.yaml](policies/git/coding-permissions.yaml)) verifies that files from the specified list were modified by authorized users only.
 
 For this policy be able to run, the evidence must include a reference to the files that were modified in the commit. This can be done by adding parameter `--components commits,files` to the `valint bom` command.
 
@@ -230,14 +249,20 @@ For specifying the list of files and identities, edit the `input.rego.args` para
 This example for repository [Golang Build](https://github.com/golang/build) verifies that files `build.go` and `internal/https/README.md` were modified only by identities containing `@golang.com` and `@golang.org`:
 
 ```yaml
-args: {ids: ["@golang.com", "@golang.org"], files: ["build.go", "internal/https/README.md"]}
+args:
+   ids:
+      - "@golang.com"
+      - "@golang.org"
+   files:
+      - "a.txt"
+      - "somedir/b.txt"
 ```
 
-#### No Unsigned Commits
+#### Forbid Unsigned Commits
 
-This policy ([no-unsigned-commits.yaml](policies/git/no-unsigned-commits.yaml)) verifies that evidence has no unsigned commits.
+This policy ([no-unsigned-commits.yaml](policies/git/no-unsigned-commits.yaml)) verifies that evidence has no unsigned commits. It does not verify the signatures though.
 
-#### No Commits To Main
+#### Forbid Commits To Main
 
 This policy ([no-commit-to-main.yaml](policies/git/no-commit-to-main.yaml)) verifies that evidence has no commits made to main branch.
 
@@ -255,14 +280,15 @@ Example of verifying a SLSA statement:
 valint verify ubuntu:latest -i statement-slsa -c <policyname>.yaml
 ```
 
-#### Builder name
+#### Builder Name
 
 This policy ([builder.yaml](policies/slsa/builder.yaml)) verifies that the builder name of the SLSA statement equals to a given value.
 
 Edit policy parameters in the `input.rego.args` parameter in file [builder.yaml](policies/slsa/builder.yaml):
 
 ```yaml
-args: {id: "local"}
+args:
+   id: "local"
 ```
 
 #### Banned Builder Dependencies
@@ -272,19 +298,28 @@ This policy ([banned-builder-deps.yaml](policies/slsa/banned-builder-deps.yaml))
 Edit policy parameters in the `input.rego.args` parameter in file [banned-builder-deps.yaml](policies/slsa/banned-builder-deps.yaml):
 
 ```yaml
-args: {blacklist: [{"uri": "valint", "tag": "v0.3.1"}]}
+args:
+   blacklist:
+      - name: "valint"
+         version: "0.0.0"
 ```
-
-`uri` can be any substring of the searchable URI, and `tag` should be the exact `tag` or `git_tag` of the dependency.
 
 #### Build Time
 
-This policy ([build-time.yaml](policies/slsa/build-time.yaml)) verifies that the build time of the SLSA statement is within a given time window.
+This policy ([build-time.yaml](policies/slsa/build-time.yaml)) verifies that the build time of the SLSA statement is within a given time window The timezone is derived from the timestamp in the statement.
 
 Edit policy parameters in the `input.rego.args` parameter in file [build-time.yaml](policies/slsa/build-time.yaml):
 
 ```yaml
-args: {start_hour: 8,end_hour  : 17,workdays  : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]}
+args:
+   start_hour: 8
+   end_hour: 20
+   workdays:
+      - "Sunday"
+      - "Monday"
+      - "Tuesday"
+      - "Wednesday"
+      - "Thursday"
 ```
 
 ### Sarif Reports
@@ -324,41 +359,45 @@ valint verify ubuntu-cve.json -i statement-generic -c generic-sarif.yaml
 To verify that the SARIF report does not contain any critical CVEs, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
 ```yaml
-args: {
-   rule_level: ["critical"],
-   precision: [],
-   rule_ids: [],
-   ignore: [],
+args:
+   rule_level:
+      - critical
+   precision: []
+   rule_ids: []
+   ignore: []
    max_allowed: 0
-}
 ```
 
 ##### Limit High CVEs
 
-To verify that the SARIF report does not contain more than 10 high CVEs, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain more than specified number of CVEs with high level (let's say 10), set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
 ```yaml
-args: {
-   rule_level: ["high"],
-   precision: [],
-   rule_ids: [],
-   ignore: [],
+args:
+   rule_level: high,
+   precision: []
+   rule_ids: []
+   ignore: []
    max_allowed: 10
-}
 ```
 
 ##### Do Not Allow Specific CVEs
 
-To verify that the SARIF report does not contain CVE-2021-1234 and CVE-2021-5678, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain certain CVEs (let's say CVE-2021-1234 and CVE-2021-5678), set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
 ```yaml
-args: {
-   rule_level: ["error", "warning", "note", "none"],
-   precision: [],
-   rule_ids: ["CVE-2021-1234", "CVE-2021-5678"],
-   ignore: [],
+args:
+   rule_level:
+      - "error"
+      - "warning"
+      - "note"
+      - "none"
+   precision: []
+   rule_ids:
+      - "CVE-2021-1234"
+      - "CVE-2021-5678"
+   ignore: []
    max_allowed: 0
-}
 ```
 
 ##### No Static Analysis Errors
@@ -366,27 +405,27 @@ args: {
 To verify that the SARIF report does not contain any static analysis errors, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
 ```yaml
-args: {
-   rule_level: ["error"],
-   precision: [],
-   rule_ids: [],
-   ignore: [],
+args:
+   rule_level:
+      - "error"
+   precision: []
+   rule_ids: []
+   ignore: []
    max_allowed: 0
-}
 ```
 
 ##### Limit Static Analysis Warnings
 
-To verify that the SARIF report does not contain more than 10 static analysis warnings, set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
+To verify that the SARIF report does not contain more than specified number of static analysis warnings (let's say 10), set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
 ```yaml
-args: {
-   rule_level: ["warning"],
-   precision: [],
-   rule_ids: [],
-   ignore: [],
+args:
+   rule_level:
+      - "warning"
+   precision: []
+   rule_ids: []
+   ignore: []
    max_allowed: 10
-}
 ```
 
 ##### Do Not Allow Specific Static Analysis Rules
@@ -394,13 +433,19 @@ args: {
 To verify that the SARIF report does not contain static analysis warnings from the following rules: "rule1", "rule2", "rule3", set the following parameters in the `rego.args` section in the[generic-sarif.yaml](policies/sarif/generic-sarif.yaml) file:
 
 ```yaml
-args: {
-   rule_level: ["error", "warning", "note", "none"],
-   precision: [],
-   rule_ids: ["rule1", "rule2", "rule3"],
-   ignore: [],
+args:
+   rule_level:
+      - "error"
+      - "warning"
+      - "note"
+      - "none"
+   precision: []
+   rule_ids:
+      - "rule1"
+      - "rule2"
+      - "rule3"
+   ignore: []
    max_allowed: 0
-}
 ```
 
 ## Writing Policy Files

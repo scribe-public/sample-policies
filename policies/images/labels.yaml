@@ -13,5 +13,8 @@ attest:
           match:
             target_type: image
           rego:
-            args: {labels: [{"label": "org.opencontainers.image.version", "value": "22.04"}]}
+            args:
+              labels:
+                - label: "org.opencontainers.image.version"
+                  value: "22.04"
             path: policies/images/labels.rego

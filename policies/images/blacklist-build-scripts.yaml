@@ -15,5 +15,5 @@ attest:
           rego:
             args:
               blacklist: 
-              - curl
+                - curl
             path: policies/images/no-blind-scripts.rego

@@ -13,6 +13,9 @@ attest:
           match:
             target_type: image
           rego:
-            args: {blacklist: [{"name": "valint", "version": "0.0.0"}]}
+            args:
+              blacklist:
+                - name: "valint"
+                  version: "0.0.0"
             path: policies/slsa/banned-builder-deps.rego
 

@@ -13,5 +13,6 @@ attest:
           match:
             target_type: image
           rego:
-            args: {max_days : 30}
+            args:
+              max_days : 30
             path: policies/sboms/fresh-sbom.rego

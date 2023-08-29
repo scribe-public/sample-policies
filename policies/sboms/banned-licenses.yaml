@@ -15,8 +15,8 @@ attest:
           rego:
             args:
               blacklist: 
-              - GPL
-              - MPL
+                - GPL
+                - MPL
               blacklisted_limit : 10
             path: policies/sboms/banned-licenses.rego
 
