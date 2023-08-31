@@ -15,4 +15,4 @@ attest:
           rego:
             args:
               id: "local"
-            path: policies/slsa/builder.rego
+            path: policies/slsa/verify-builder.rego

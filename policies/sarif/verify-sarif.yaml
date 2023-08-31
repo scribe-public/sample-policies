@@ -25,4 +25,4 @@ attest:
                 - "CVE-2016-2781"
               ignore: []
               max_allowed: 1
-            path: policies/sarif/generic-sarif.rego
+            path: policies/sarif/verify-sarif.rego

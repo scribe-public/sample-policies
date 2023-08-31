@@ -13,4 +13,4 @@ attest:
           match:
             target_type: image
           rego:
-            path: policies/images/no-shell-access.rego
+            path: policies/images/restrict-shell-entrypoint.rego

@@ -16,4 +16,4 @@ attest:
             args:
               blacklist: 
                 - curl
-            path: policies/images/no-blind-scripts.rego
+            path: policies/images/blacklist-build-scripts.rego
