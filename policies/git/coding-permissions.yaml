@@ -13,6 +13,12 @@ attest:
           match:
             target_type: git
           rego:
-            args: {ids: ["@golang.com", "@golang.org"], files: ["build.go", "internal/https/README.md"]}
+            args:
+              ids:
+                - "@golang.com"
+                - "@golang.org"
+              files:
+                - "a.txt"
+                - "somedir/b.txt"
             path: policies/git/coding-permissions.rego
 

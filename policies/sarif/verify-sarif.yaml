@@ -14,5 +14,15 @@ attest:
             target_type: generic
             predicate_type: http://sarif
           rego:
-            args: {rule_level: ["error", "warning", "note", "none"], precision: [], rule_ids: ["CVE-2016-2781"], "ignore": [], max_allowed: 1}
-            path: policies/sarif/generic-sarif.rego
+            args:
+              rule_level:
+                - "error"
+                - "warning"
+                - "note"
+                - "none"
+              precision: []
+              rule_ids:
+                - "CVE-2016-2781"
+              ignore: []
+              max_allowed: 1
+            path: policies/sarif/verify-sarif.rego

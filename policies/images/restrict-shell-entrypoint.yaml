@@ -1,17 +1,16 @@
 attest:
   cocosign:
     policies:
-    - name: slsa-policy
+    - name: image-policy
       enable: true
       modules:
-      - name: builder
+      - name: no-shell-access
         type: verify-artifact
         enable: true
         input:
           signed: false
-          format: statement-slsa
+          format: statement-cyclonedx-json
           match:
             target_type: image
           rego:
-            args: {id: "local"}
-            path: policies/slsa/builder.rego
+            path: policies/images/restrict-shell-entrypoint.rego

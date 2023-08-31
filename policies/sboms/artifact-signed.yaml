@@ -4,7 +4,7 @@ attest:
       - name: my_policy
         enable: true
         modules:
-          - name: signed_image
+          - name: artifact-signed
             type: verify-artifact
             enable: true
             input:
@@ -12,6 +12,6 @@ attest:
               format: attest-cyclonedx-json
               identity:
                 emails:
-                  - mikey@resilience-sec.com
+                  - example@company.com
               match:
                 target_type: image
