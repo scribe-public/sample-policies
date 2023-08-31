@@ -44,6 +44,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [No Static Analysis Errors](#no-static-analysis-errors) | Prevent static analysis errors in the artifact. | Attestation | [SARIF](#sarif-reports) |
 | [Limit Static Analysis Warnings](#limit-static-analysis-warnings) | Restrict static analysis warnings count. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Restrict specific static analysis warnings. | Attestation | [SARIF](#sarif-reports) |
+| [Do Not Allow Vulnerabilities Based On Specific Attack Vector](#do-not-allow-vulnerabilities-based-on-specific-attack-vector) | Restrict vulnerabilities based on specific attack vector. | Attestation | [SARIF](#sarif-reports) |
 | No Package Downgrading | Restrict package downgrades. | Attestation | src and dst [SBOM](#sboms) |
 | No License Modification | Prevent license modifications. | Attestation | src and dst [SBOM](#sboms) |
 | Verify Source code Integrity | Verify that the artifact source code has not been modified | Attestation | src and dst [Git SBOM](#git) |
@@ -447,6 +448,19 @@ args:
    ignore: []
    max_allowed: 0
 ```
+
+##### Do Not Allow Vulnerabilities Based On Specific Attack Vector
+
+Trivy/grype reports usually contain descriptions for some CVEs, like impact and attack vector. This policy is meant to restrict number of vulnerabilities with specific attack vectors. For example, to restrict vulnerabilities with attack vector "stack buffer overflow", set the following parameters in the `rego.args` section in the[verify-attack-vector.yaml](policies/sarif/verify-attack-vector.yaml) file:
+
+```yaml
+args:
+   attack_vectors:
+      - "stack buffer overflow"
+   violations_threshold: 0
+```
+
+Then run the policy against the SARIF report as described above.
 
 ## Writing Policy Files
 
