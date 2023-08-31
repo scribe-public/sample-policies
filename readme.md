@@ -45,7 +45,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Limit Static Analysis Warnings](#limit-static-analysis-warnings) | Restrict static analysis warnings count. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Restrict specific static analysis warnings. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Vulnerabilities Based On Specific Attack Vector](#do-not-allow-vulnerabilities-based-on-specific-attack-vector) | Restrict vulnerabilities based on specific attack vector. | Attestation | [SARIF](#sarif-reports) |
-| [Forbid Accessing Host](#forbid-accessing-host) Do not allow images with detected vulnerabilities giving access to the host system. | Generic Evidence | [Generic](#generic) |
+| [Forbid Accessing Host](#forbid-accessing-host) | Do not allow images with detected vulnerabilities giving access to the host system. | Generic Evidence | [Generic](#generic) |
 | No Package Downgrading | Restrict package downgrades. | Attestation | src and dst [SBOM](#sboms) |
 | No License Modification | Prevent license modifications. | Attestation | src and dst [SBOM](#sboms) |
 | Verify Source code Integrity | Verify that the artifact source code has not been modified | Attestation | src and dst [Git SBOM](#git) |
@@ -463,7 +463,7 @@ args:
 
 Then run the policy against the SARIF report as described above.
 
-#### Forbid Accessing Host
+### Forbid Accessing Host
 
 Trivy k8s analysis can highlight some misconfigurations which allow container to access host filesystem or network. The goal of this policy is to detect such misconfigurations.
 
