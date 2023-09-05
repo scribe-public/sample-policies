@@ -100,7 +100,7 @@ match:
 
 #### Blocklist Packages
 
-This policy ([blocklist-packages.yaml](policies/sboms/blocklist-packages.yaml)) verifies an SBOM does not include packages in the list of risky packages.
+This policy ([blocklist-packages.yaml](policies/sboms/blocklist-packages.yaml), [blocklist-packages.rego](policies/sboms/blocklist-packages.rego)) verifies an SBOM does not include packages in the list of risky packages.
 
 `rego` code for this policy can be found in the [blocklist-packages.rego](policies/sboms/blocklist-packages.rego) file.
 
@@ -116,7 +116,7 @@ args:
 
 #### Required Packages
 
-This policy ([required-packages.yaml](policies/sboms/required-packages.yaml)) verifies that the SBOM includes packages from the list of required packages.
+This policy ([required-packages.yaml](policies/sboms/required-packages.yaml), [required-packages.rego](policies/sboms/required-packages.rego)) verifies that the SBOM includes packages from the list of required packages.
 
 Edit the list of the required packages in the `input.rego.args` parameter in file [required-packages.yaml](policies/sboms/required-packages.yaml):
 
@@ -131,7 +131,7 @@ The policy checks if there is a package listed in SBOM whose name contains the n
 
 #### Banned Licenses
 
-This policy ([banned-licenses.yaml](policies/sboms/banned-licenses.yaml)) verifies that the SBOM does not include licenses from the list of risky licenses.
+This policy ([banned-licenses.yaml](policies/sboms/banned-licenses.yaml), [banned-licenses.rego](policies/sboms/banned-licenses.rego)) verifies that the SBOM does not include licenses from the list of risky licenses.
 
 Edit the list of the risky licenses in the `input.rego.args` parameter in file [banned-licenses.yaml](policies/sboms/banned-licenses.yaml):
 
@@ -145,7 +145,7 @@ rgs:
 
 #### Complete Licenses
 
-This policy ([complete-licenses.yaml](policies/sboms/complete-licenses.yaml)) verifies that every package in the SBOM has a license.
+This policy ([complete-licenses.yaml](policies/sboms/complete-licenses.yaml), [complete-licenses.rego](policies/sboms/complete-licenses.rego)) verifies that every package in the SBOM has a license.
 
 It doesn't have any additional parameters.
 
@@ -176,13 +176,13 @@ valint verify ubuntu:latest -i statement -c <policyname>.yaml
 
 #### Restrict Shell Image Entrypoint
 
-This policy ([restrict-shell-entrypoint.yaml](policies/images/restrict-shell-entrypoint.yaml)) verifies that the image entrypoint does not provide shell access by default. It does so by verifying that both `Entrypoint` and `Cmd` don't contain `sh` (there's an exclusion for `.sh` though).
+This policy ([restrict-shell-entrypoint.yaml](policies/images/restrict-shell-entrypoint.yaml), [restrict-shell-entrypoint.rego](policies/images/restrict-shell-entrypoint.rego)) verifies that the image entrypoint does not provide shell access by default. It does so by verifying that both `Entrypoint` and `Cmd` don't contain `sh` (there's an exclusion for `.sh` though).
 
 This policy is not configurable.
 
 #### Blocklist Image Build Scripts
 
-This policy ([blocklist-build-scripts.yaml](policies/images/blocklist-build-scripts.yaml)) verifies that the image did not run blocklisted scripts on build.
+This policy ([blocklist-build-scripts.yaml](policies/images/blocklist-build-scripts.yaml), [blocklist-build-scripts.rego](policies/images/blocklist-build-scripts.rego)) verifies that the image did not run blocklisted scripts on build.
 
 Edit the list of the blocklisted scripts in the `input.rego.args` parameter in file [blocklist-build-scripts.yaml](policies/images/no-build-scripts.yaml):
 
@@ -194,7 +194,7 @@ args:
 
 #### Verify Image Lables/Annotations
 
-This policy ([verify-labels.yaml](policies/images/verify-labels.yaml)) verifies that image has labels with required values.
+This policy ([verify-labels.yaml](policies/images/verify-labels.yaml), [verify-labels.rego](policies/images/verify-labels.rego)) verifies that image has labels with required values.
 
 Edit the list of the required labels in the config object in file [verify-labels.yaml](policies/images/verify-labels.yaml):
 
@@ -207,7 +207,7 @@ args:
 
 #### Fresh Image
 
-This policy ([fresh-image.yaml](policies/images/fresh-image.yaml)) verifies that the image is not older than a given number of days.
+This policy ([fresh-image.yaml](policies/images/fresh-image.yaml), [fresh-image.rego](policies/images/fresh-image.rego)) verifies that the image is not older than a given number of days.
 
 Edit the policy in the `input.rego.args` parameter in file [fresh-image.yaml](policies/images/fresh-image.yaml):
 
@@ -218,7 +218,7 @@ args:
 
 #### Forbid Large Images
 
-This policy ([](policies/images/forbid-large-images.yaml)) verifies that the image is not larger than a given size.
+This policy ([forbid-large-images.yaml](policies/images/forbid-large-images.yaml), [forbid-large-images.rego](policies/images/forbid-large-images.rego)) verifies that the image is not larger than a given size.
 
 Set max size in bytes in the `input.rego.args` parameter in file [forbid-large-images.yaml](policies/images/forbid-large-images.yaml):
 
@@ -243,7 +243,7 @@ valint verify git:https://github.com/golang/go -i statement -c <policyname>.yaml
 
 #### Coding Permissions
 
-This policy ([coding-permissions.yaml](policies/git/coding-permissions.yaml)) verifies that files from the specified list were modified by authorized users only.
+This policy ([coding-permissions.yaml](policies/git/coding-permissions.yaml), [coding-permissions.rego](policies/git/coding-permissions.rego)) verifies that files from the specified list were modified by authorized users only.
 
 For this policy be able to run, the evidence must include a reference to the files that were modified in the commit. This can be done by adding parameter `--components commits,files` to the `valint bom` command.
 
@@ -262,11 +262,11 @@ args:
 
 #### Forbid Unsigned Commits
 
-This policy ([no-unsigned-commits.yaml](policies/git/no-unsigned-commits.yaml)) verifies that evidence has no unsigned commits. It does not verify the signatures though.
+This policy ([no-unsigned-commits.yaml](policies/git/no-unsigned-commits.yaml), [no-unsigned-commits.rego](policies/git/no-unsigned-commits.rego)) verifies that evidence has no unsigned commits. It does not verify the signatures though.
 
 #### Forbid Commits To Main
 
-This policy ([no-commit-to-main.yaml](policies/git/no-commit-to-main.yaml)) verifies that evidence has no commits made to main branch.
+This policy ([no-commit-to-main.yaml](policies/git/no-commit-to-main.yaml), [no-commit-to-main.rego](policies/git/no-commit-to-main.rego)) verifies that evidence has no commits made to main branch.
 
 ### SLSA
 
@@ -284,7 +284,7 @@ valint verify ubuntu:latest -i statement-slsa -c <policyname>.yaml
 
 #### Builder Name
 
-This policy ([verify-builder.yaml](policies/slsa/verify-builder.yaml)) verifies that the builder name of the SLSA statement equals to a given value.
+This policy ([verify-builder.yaml](policies/slsa/verify-builder.yaml), [verify-builder.rego](policies/slsa/verify-builder.rego)) verifies that the builder name of the SLSA statement equals to a given value.
 
 Edit policy parameters in the `input.rego.args` parameter in file [verify-builder.yaml](policies/slsa/verify-builder.yaml):
 
@@ -295,7 +295,7 @@ args:
 
 #### Banned Builder Dependencies
 
-This policy ([banned-builder-deps.yaml](policies/slsa/banned-builder-deps.yaml)) verifies that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version).
+This policy ([banned-builder-deps.yaml](policies/slsa/banned-builder-deps.yaml), [banned-builder-deps.rego](policies/slsa/banned-builder-deps.rego)) verifies that the builder used to build an artifact does not have banned dependencies (such as an old openSSL version).
 
 Edit policy parameters in the `input.rego.args` parameter in file [banned-builder-deps.yaml](policies/slsa/banned-builder-deps.yaml):
 
@@ -308,7 +308,7 @@ args:
 
 #### Build Time
 
-This policy ([build-time.yaml](policies/slsa/build-time.yaml)) verifies that the build time of the SLSA statement is within a given time window The timezone is derived from the timestamp in the statement.
+This policy ([build-time.yaml](policies/slsa/build-time.yaml), [build-time.rego](policies/slsa/build-time.rego)) verifies that the build time of the SLSA statement is within a given time window The timezone is derived from the timestamp in the statement.
 
 Edit policy parameters in the `input.rego.args` parameter in file [build-time.yaml](policies/slsa/build-time.yaml):
 
@@ -328,7 +328,7 @@ args:
 
 #### Generic SARIF Policy
 
-This policy allows to verify any SARIF report against a given policy. The policy has several parameters to check against:
+This policy ([verify-sarif.yaml](policies/sarif/verify-sarif.yaml), [verify-sarif.rego](policies/sarif/verify-sarif.rego)) allows to verify any SARIF report against a given policy. The policy has several parameters to check against:
 
 * ruleLevel: the level of the rule, can be "error", "warning", "note", "none"
 * ruleIds: the list of the rule IDs to check against
@@ -452,7 +452,9 @@ args:
 
 ##### Do Not Allow Vulnerabilities Based On Specific Attack Vector
 
-Trivy/grype reports usually contain descriptions for some CVEs, like impact and attack vector. This policy is meant to restrict number of vulnerabilities with specific attack vectors. For example, to restrict vulnerabilities with attack vector "stack buffer overflow", set the following parameters in the `rego.args` section in the[verify-attack-vector.yaml](policies/sarif/verify-attack-vector.yaml) file:
+Trivy/grype reports usually contain descriptions for some CVEs, like impact and attack vector.
+This policy ([verify-attack-vector.yaml](policies/sarif/verify-attack-vector.yaml), [verify-attack-vector.rego](policies/sarif/verify-attack-vector.rego)) is meant to restrict number of vulnerabilities with specific attack vectors.
+For example, to restrict vulnerabilities with attack vector "stack buffer overflow", set the following parameters in the `rego.args` section in the [verify-attack-vector.yaml](policies/sarif/verify-attack-vector.yaml) file:
 
 ```yaml
 args:
