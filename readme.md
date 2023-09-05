@@ -19,14 +19,14 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | Policy | Description | Attestation Type | Additional Info |
 | --- | --- | --- | --- |
 | [Forbid Unsigned Artifacts](#forbid-unsigned-artifacts) | Verify the artifact's authenticity and signer identity. | Attestation | [SBOM](#sboms) |
-| [Blacklist Packages](#blacklist-packages) | Prevent risky packages in the artifact. | Attestation | [SBOM](#sboms) |
+| [Blocklist Packages](#blocklist-packages) | Prevent risky packages in the artifact. | Attestation | [SBOM](#sboms) |
 | [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | Attestation | [SBOM](#sboms) |
 | [Banned Licenses](#banned-licenses) | Restrict inclusion of certain licenses in the artifact. | Attestation | [SBOM](#sboms) |
 | [Complete Licenses](#complete-licenses) | Guarantee all packages have valid licenses. | Attestation | [SBOM](#sboms) |
 | [Fresh Artifact](#fresh-artifact) | Verify an artifact's freshness. | Attestation | [SBOM](#sboms) |
 | [Fresh Image](#fresh-image) | Ensure an image freshness. | Attestation | [Image SBOM](#images) |
 | [Restrict Shell Image Entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | Attestation | [SBOM](#sboms) |
-| [Blacklist Image Build Scripts](#blacklist-image-build-scripts) | Restrict build scripts in image build. | Attestation | [Image SBOM](#images) |
+| [Blocklist Image Build Scripts](#blocklist-image-build-scripts) | Restrict build scripts in image build. | Attestation | [Image SBOM](#images) |
 | [Verify Image Lables/Annotations](#verify-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
 | [Forbid Huge Images](#forbid-large-images) | Limit image size. | Attestation | [Image SBOM](#images) |
 | [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | Attestation | [Git SBOM](#git) |
@@ -98,20 +98,20 @@ match:
    target_type: image
 ```
 
-#### Blacklist Packages
+#### Blocklist Packages
 
-This policy ([blacklist-packages.yaml](policies/sboms/blacklist-packages.yaml)) verifies an SBOM does not include packages in the list of risky packages.
+This policy ([blocklist-packages.yaml](policies/sboms/blocklist-packages.yaml)) verifies an SBOM does not include packages in the list of risky packages.
 
-`rego` code for this policy can be found in the [blacklist-packages.rego](policies/sboms/blacklist-packages.rego) file.
+`rego` code for this policy can be found in the [blocklist-packages.rego](policies/sboms/blocklist-packages.rego) file.
 
-Edit the list of the risky licenses in the `input.rego.args` parameter in file [blacklist-packages.yaml](policies/sboms/blacklist-packages.yaml):
+Edit the list of the risky licenses in the `input.rego.args` parameter in file [blocklist-packages.yaml](policies/sboms/blocklist-packages.yaml):
 
 ```yaml
 args:
-   blacklist: 
+   blocklist: 
       - "pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"
       - "log4j"
-   blacklisted_limit: 0
+   blocklisted_limit: 0
 ```
 
 #### Required Packages
@@ -137,10 +137,10 @@ Edit the list of the risky licenses in the `input.rego.args` parameter in file [
 
 ```yaml
 rgs:
-   blacklist: 
+   blocklist: 
       - GPL
       - MPL
-   blacklisted_limit : 10
+   blocklisted_limit : 10
 ```
 
 #### Complete Licenses
@@ -180,15 +180,15 @@ This policy ([restrict-shell-entrypoint.yaml](policies/images/restrict-shell-ent
 
 This policy is not configurable.
 
-#### Blacklist Image Build Scripts
+#### Blocklist Image Build Scripts
 
-This policy ([blacklist-build-scripts.yaml](policies/images/blacklist-build-scripts.yaml)) verifies that the image did not run blacklisted scripts on build.
+This policy ([blocklist-build-scripts.yaml](policies/images/blocklist-build-scripts.yaml)) verifies that the image did not run blocklisted scripts on build.
 
-Edit the list of the blacklisted scripts in the `input.rego.args` parameter in file [blacklist-build-scripts.yaml](policies/images/no-build-scripts.yaml):
+Edit the list of the blocklisted scripts in the `input.rego.args` parameter in file [blocklist-build-scripts.yaml](policies/images/no-build-scripts.yaml):
 
 ```yaml
 args:
-   blacklist: 
+   blocklist: 
       - curl
 ```
 
@@ -301,7 +301,7 @@ Edit policy parameters in the `input.rego.args` parameter in file [banned-builde
 
 ```yaml
 args:
-   blacklist:
+   blocklist:
       - name: "valint"
          version: "0.0.0"
 ```

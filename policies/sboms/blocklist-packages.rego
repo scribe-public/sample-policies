@@ -2,7 +2,7 @@ package verify
 
 default allow = false
 default violations = []
-default msg := "Some blacklisted packages were found in the project"
+default msg := "Some blocklisted packages were found in the project"
 
 verify = v {
     v := {
@@ -18,17 +18,17 @@ verify = v {
 }
 
 allow {
-    count(violations)  <=  input.config.args.blacklisted_limit
+    count(violations)  <=  input.config.args.blocklisted_limit
 }
 
-msg = "No blacklisted packages were found in the project" { allow }
+msg = "No blocklisted packages were found in the project" { allow }
 
 violations = j {
 j := { r |
         some i,k 
         components := input.evidence.predicate.bom.components
         p := components[i].purl
-        b := input.config.args.blacklist[k]
+        b := input.config.args.blocklist[k]
         contains(p,b)
         r := {
             "type":"banned package",

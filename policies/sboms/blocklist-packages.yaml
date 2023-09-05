@@ -4,7 +4,7 @@ attest:
     - name: sbom-policy
       enable: true
       modules:
-      - name: blacklist-packages
+      - name: blocklist-packages
         type: verify-artifact
         enable: true
         input:
@@ -14,8 +14,8 @@ attest:
             target_type: image
           rego:
             args:
-              blacklist: 
+              blocklist: 
                 - "pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"
                 - "log4j"
-              blacklisted_limit: 0
-            path: policies/sboms/blacklist-packages.rego
+              blocklisted_limit: 0
+            path: policies/sboms/blocklist-packages.rego

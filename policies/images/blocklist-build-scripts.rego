@@ -7,7 +7,7 @@ default property = {
     "name": "",
     "value": "",
 }
-default msg := "Image build commands used blacklisted scripts"
+default msg := "Image build commands used blocklisted scripts"
 
 verify = v {
         v := {
@@ -27,13 +27,13 @@ allow {
 
 violations = j {
 j := { r |
-    some blacklisted in input.config.args.blacklist
+    some blocklisted in input.config.args.blocklist
     some component in input.evidence.predicate.bom.components
     some property in component.properties
     property.name == "CreatedBy"
-    contains(property.value, blacklisted)
+    contains(property.value, blocklisted)
     r = {
-            "type": "blacklisted-script",
+            "type": "blocklisted-script",
             "details": {
                 "name": property.value,
             }
@@ -41,4 +41,4 @@ j := { r |
     }
 }
 
-msg = "Image build commands do not use blacklisted scripts"
+msg = "Image build commands do not use blocklisted scripts"

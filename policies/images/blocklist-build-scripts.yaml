@@ -4,7 +4,7 @@ attest:
     - name: image-policy
       enable: true
       modules:
-      - name: blacklist-build-scripts
+      - name: blocklist-build-scripts
         type: verify-artifact
         enable: true
         input:
@@ -14,6 +14,6 @@ attest:
             target_type: image
           rego:
             args:
-              blacklist: 
+              blocklist: 
                 - curl
-            path: policies/images/blacklist-build-scripts.rego
+            path: policies/images/blocklist-build-scripts.rego

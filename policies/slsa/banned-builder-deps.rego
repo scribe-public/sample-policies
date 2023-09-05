@@ -4,7 +4,7 @@ import future.keywords.in
 default allow := false
 default violations := []
 default dependency := {"uri":"", "name":"", "annotations":{"version":""}}
-default msg := "The builder has some blacklisted dependencies"
+default msg := "The builder has some blocklisted dependencies"
 
 verify = v {
         v := {
@@ -22,19 +22,19 @@ allow {
     count(violations) == 0
 }
 
-msg = "No blacklisted dependencies found" { allow }
+msg = "No blocklisted dependencies found" { allow }
 
 violations = j {
 j := { r |
-    some blacklisted in input.config.args.blacklist
+    some blocklisted in input.config.args.blocklist
     some dependency in input.evidence.predicate.runDetails.builder.builderDependencies
-    name_match(dependency, blacklisted.name)
-    dependency.annotations.version == blacklisted.version
+    name_match(dependency, blocklisted.name)
+    dependency.annotations.version == blocklisted.version
     r = {
             "type": "dependency",
             "details": {
-                "name": blacklisted.name,
-                "version": blacklisted.version,
+                "name": blocklisted.name,
+                "version": blocklisted.version,
             }
         }
     }

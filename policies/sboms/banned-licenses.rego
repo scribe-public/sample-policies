@@ -2,7 +2,7 @@ package verify
 
 default allow = false
 default violations = []
-default msg := "Some packages use blacklisted licenses"
+default msg := "Some packages use blocklisted licenses"
 
 verify = v {
         v := {
@@ -17,10 +17,10 @@ verify = v {
 }
 
 allow {
-    count(violations)  < input.config.args.blacklisted_limit
+    count(violations)  < input.config.args.blocklisted_limit
 }
 
-msg = "No packages use blacklisted licenses" { allow }
+msg = "No packages use blocklisted licenses" { allow }
 
 violations = j {
 j := { r |
@@ -31,7 +31,7 @@ j := { r |
         some j
         l := comp[licenses][j]
         some k
-        b := input.config.args.blacklist[k]
+        b := input.config.args.blocklist[k]
         lname := l.license.name
         startswith(lname, b)
         r = {

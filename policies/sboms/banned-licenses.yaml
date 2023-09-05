@@ -14,9 +14,9 @@ attest:
             target_type: image
           rego:
             args:
-              blacklist: 
+              blocklist: 
                 - GPL
                 - MPL
-              blacklisted_limit : 10
+              blocklisted_limit : 10
             path: policies/sboms/banned-licenses.rego
 

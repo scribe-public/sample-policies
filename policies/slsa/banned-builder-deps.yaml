@@ -4,7 +4,7 @@ attest:
     - name: slsa-policy
       enable: true
       modules:
-      - name: blacklist-builder-dependencies
+      - name: blocklist-builder-dependencies
         type: verify-artifact
         enable: true
         input:
@@ -14,7 +14,7 @@ attest:
             target_type: image
           rego:
             args:
-              blacklist:
+              blocklist:
                 - name: "valint"
                   version: "0.0.0"
             path: policies/slsa/banned-builder-deps.rego
