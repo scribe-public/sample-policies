@@ -45,6 +45,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Limit Static Analysis Warnings](#limit-static-analysis-warnings) | Restrict static analysis warnings count. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Restrict specific static analysis warnings. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Vulnerabilities Based On Specific Attack Vector](#do-not-allow-vulnerabilities-based-on-specific-attack-vector) | Restrict vulnerabilities based on specific attack vector. | Attestation | [SARIF](#sarif-reports) |
+| [Report IaC Configuration errors](#report-iac-configuration-errors) | Check if there are any IaC configuration errors. | Attestation | [SARIF](#sarif-reports) |
 | [Forbid Accessing Host](#forbid-accessing-host) | Do not allow images with detected vulnerabilities giving access to the host system. | Generic Evidence | [Generic](#generic) |
 | No Package Downgrading | Restrict package downgrades. | Attestation | src and dst [SBOM](#sboms) |
 | No License Modification | Prevent license modifications. | Attestation | src and dst [SBOM](#sboms) |
@@ -353,7 +354,7 @@ valint bom ubuntu-cve.json --predicate-type http://scribesecurity.com/evidence/g
 Verify the attestation against the policy:
 
 ```bash
-valint verify ubuntu-cve.json -i statement-generic -c verify-sarif.yaml
+valint verify ubuntu-cve.json -i statement-generic -c policies/sarif/verify-sarif.yaml
 ```
 
 ##### No Critical CVEs
@@ -464,6 +465,35 @@ args:
 ```
 
 Then run the policy against the SARIF report as described above.
+
+#### Report IaC Configuration errors
+
+This policy ([report-iac-errors.yaml](policies/sarif/report-iac-errors.yaml), [report-iac-errors.rego](policies/sarif/report-iac-errors.rego)) allows to verify a Trivy IaC report and check if there are any errors in the configuration.
+
+First, create a trivy report of the misconfigurations of a Dockerfile:
+
+```bash
+trivy config <dir_containing_dockerfile> -f sarif -o my-image-dockerfile.json
+```
+
+Create an evidence from this report:
+
+```bash
+valint bom my-image-dockerfile.json --predicate-type http://scribesecurity.com/evidence/generic/v0.1  -o statement-generic
+```
+
+Verify the attestation against the policy:
+
+```bash
+valint verify my-image-dockerfile.json -i statement-generic -c policies/sarif/report-iac-errors.yaml
+```
+
+The only configurable parameter in [report-iac-errors.yaml](policies/sarif/report-iac-errors.yaml) is `violations_threshold`, which is the maximum number of errors allowed in the report:
+
+```yaml
+args:
+   violations_threshold: 0
+```
 
 ### Forbid Accessing Host
 
