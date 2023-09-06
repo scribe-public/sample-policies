@@ -19,6 +19,6 @@ attest:
                 - "@golang.org"
               files:
                 - "a.txt"
-                - "somedir/b.txt"
+                - "jenkins_k8s/scripts/kaniko_config.sh"
             path: policies/git/coding-permissions.rego
 

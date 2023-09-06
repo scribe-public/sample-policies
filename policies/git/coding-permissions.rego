@@ -29,6 +29,7 @@ violations = j {
 j := { r |
     some file in input.config.args.files
     some object in input.evidence.predicate.bom.components
+    object.type == "file"
     object.name == file
     some prop in object.properties
     prop.name == "last_commit"
@@ -51,6 +52,7 @@ any_match(author) {
 
 get_commit_author(hash) := h {
     some object in input.evidence.predicate.bom.components
+    object.type == "commit"
     object.name == hash
     some prop in object.properties
     prop.name == "Author"

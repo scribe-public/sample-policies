@@ -29,12 +29,12 @@ j := { r |
     some blocklisted in input.config.args.blocklist
     some dependency in input.evidence.predicate.runDetails.builder.builderDependencies
     name_match(dependency, blocklisted.name)
-    dependency.annotations.version == blocklisted.version
+    version_match(dependency, blocklisted)
     r = {
             "type": "dependency",
             "details": {
                 "name": blocklisted.name,
-                "version": blocklisted.version,
+                "version": dependency.annotations.version,
             }
         }
     }
@@ -46,4 +46,12 @@ name_match(dependency, name) {
 
 name_match(dependency, name) {
     contains(dependency.uri, name)
+}
+
+version_match(dependency, blocklisted) {
+    not blocklisted.version
+}
+
+version_match(dependency, blocklisted) {
+    dependency.annotations.version == blocklisted.version
 }

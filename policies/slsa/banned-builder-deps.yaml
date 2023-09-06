@@ -16,6 +16,5 @@ attest:
             args:
               blocklist:
                 - name: "valint"
-                  version: "0.0.0"
             path: policies/slsa/banned-builder-deps.rego
 
