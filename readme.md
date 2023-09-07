@@ -37,7 +37,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Verify Use of Specific Builder](#builder-name) | Enforce use of a specific builder for artifact. | Attestation | [SLSA-Prov](#slsa) |
 | [Banned Builder Dependencies](#banned-builder-dependencies) | Restrict banned builder dependencies. | Attestation | [SLSA-Prov](#slsa) |
 | [Verify Build Time](#build-time) | Validate build time within window. | Attestation | [SLSA-Prov](#slsa) |
-| Verify Byproducts Produced | Ensure specific byproducts are produced. | Attestation | [SLSA-Prov](#slsa) |
+| [Verify Byproducts Produced](#produced-byproducts) | Ensure that specific byproducts are produced. | Attestation | [SLSA-Prov](#slsa) |
 | [No Critical CVEs](#no-critical-cves) | Prohibit ANY critical CVEs. | Attestation | [SARIF](#sarif-reports) |
 | [Limit High CVEs](#limit-high-cves) | Limit high CVEs. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Prevent specific CVEs in the artifact. | Attestation | [SARIF](#sarif-reports) |
@@ -323,6 +323,20 @@ args:
       - "Tuesday"
       - "Wednesday"
       - "Thursday"
+```
+
+#### Produced Byproducts
+
+This policy ([verify-byproducts.yaml](policies/slsa/verify-byproducts.yaml), [verify-byproducts.rego](policies/slsa/verify-byproducts.rego)) verifies that the SLSA statement contains all the required byproducts.
+According to the SLSA Provenance [documentation](https://slsa.dev/spec/v1.0/provenance), there are no mandatory fields in the description of a byproduct, but at least one of `uri, digest, content` should be specified.
+So, the policy checks if each byproduct specified in the policy configuration is present in one of those fields of any byproduct in the SLSA statement. It does so by calling the `contains` function, so the match is not exact.
+
+Before running the policy, specify desired byproducts in the `input.rego.args` parameter in file [verify-byproducts.yaml](policies/slsa/verify-byproducts.yaml):
+
+```yaml
+args:
+   byproducts:
+      - 4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230
 ```
 
 ### Sarif Reports
