@@ -33,11 +33,11 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | Merging Permissions | Ensure authorized identities merge to main. | Attestation | Counterpart to [Forbid Commits To Main](#forbid-commits-to-main)? |
 | [Forbid Unsigned Commits](#forbid-unsigned-commits) | Prevent unsigned commits in evidence. | Attestation | [Git SBOM](#git) |
 | [Forbid Commits To Main](#forbid-commits-to-main) | Verify there were no commits to the main branch. | Attestation | [Git SBOM](#git) |
-| Verify Provenance Exists | Confirm artifact provenance exists. | Attestation | [SLSA-Prov](#slsa) |
 | [Verify Use of Specific Builder](#builder-name) | Enforce use of a specific builder for artifact. | Attestation | [SLSA-Prov](#slsa) |
 | [Banned Builder Dependencies](#banned-builder-dependencies) | Restrict banned builder dependencies. | Attestation | [SLSA-Prov](#slsa) |
 | [Verify Build Time](#build-time) | Validate build time within window. | Attestation | [SLSA-Prov](#slsa) |
 | [Verify Byproducts Produced](#produced-byproducts) | Ensure that specific byproducts are produced. | Attestation | [SLSA-Prov](#slsa) |
+| [Verify That Field Exists](#verify-that-field-exists) | Ensure that specific field exists in the SLSA statement. | Attestation | [SLSA-Prov](#slsa) |
 | [No Critical CVEs](#no-critical-cves) | Prohibit ANY critical CVEs. | Attestation | [SARIF](#sarif-reports) |
 | [Limit High CVEs](#limit-high-cves) | Limit high CVEs. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Prevent specific CVEs in the artifact. | Attestation | [SARIF](#sarif-reports) |
@@ -338,6 +338,19 @@ Before running the policy, specify desired byproducts in the `input.rego.args` p
 args:
    byproducts:
       - 4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230
+```
+
+#### Verify That Field Exists
+
+This policy ([field-exists.yaml](policies/slsa/field-exists.yaml), [field-exists.rego](policies/slsa/field-exists.rego)) verifies that the SLSA statement contains a field with the given path.
+
+Before running the policy, specify desired paths in the `input.rego.args` parameter in file [field-exists.yaml](policies/slsa/field-exists.yaml):
+
+```yaml
+args:
+   paths:
+      - "predicate/runDetails/builder/builderDependencies"
+   violations_threshold: 0
 ```
 
 ### Sarif Reports
