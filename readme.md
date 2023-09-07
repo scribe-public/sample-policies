@@ -339,6 +339,8 @@ This policy ([verify-sarif.yaml](policies/sarif/verify-sarif.yaml), [verify-sari
 
 These values can be changed in the `input.rego.args` section in the [verify-sarif.yaml](policies/sarif/verify-sarif.yaml) file.
 
+##### Creating a BOM out of a SARIF report
+
 Create a trivy sarif report of the vulnerabilities of an image:
 
 ```bash
@@ -356,6 +358,29 @@ Verify the attestation against the policy:
 ```bash
 valint verify ubuntu-cve.json -i statement-generic -c policies/sarif/verify-sarif.yaml
 ```
+
+###### Running Trivy On Docker Container Rootfs
+
+As an alternative, one can run `trivy` against an existing Docker container rootfs:
+
+```bash
+docker run --rm -it alpine:3.11
+```
+
+Then, inside docker run:
+
+```bash
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
+trivy rootfs / -f sarif -o rootfs.json
+```
+
+Then, outside docker run this to copy the report from the container:
+
+```bash
+docker cp $(docker ps -lq):/rootfs.json .
+```
+
+After that create the evidence and verify it as described above.
 
 ##### No Critical CVEs
 
