@@ -46,6 +46,7 @@ Policy list below is copied from the `opapi` repo. Each policy in the table that
 | [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Restrict specific static analysis warnings. | Attestation | [SARIF](#sarif-reports) |
 | [Do Not Allow Vulnerabilities Based On Specific Attack Vector](#do-not-allow-vulnerabilities-based-on-specific-attack-vector) | Restrict vulnerabilities based on specific attack vector. | Attestation | [SARIF](#sarif-reports) |
 | [Report IaC Configuration errors](#report-iac-configuration-errors) | Check if there are any IaC configuration errors. | Attestation | [SARIF](#sarif-reports) |
+| [Verify Semgrep SARIF report](#verify-semgrep-sarif-report) | Check for specific violations in a semgrep report. | Attestation | [SARIF](#sarif-reports) |
 | [Forbid Accessing Host](#forbid-accessing-host) | Do not allow images with detected vulnerabilities giving access to the host system. | Generic Evidence | [Generic](#generic) |
 | No Package Downgrading | Restrict package downgrades. | Attestation | src and dst [SBOM](#sboms) |
 | No License Modification | Prevent license modifications. | Attestation | src and dst [SBOM](#sboms) |
@@ -533,6 +534,42 @@ The only configurable parameter in [report-iac-errors.yaml](policies/sarif/repor
 args:
    violations_threshold: 0
 ```
+
+#### Verify Semgrep SARIF report
+
+`semgrep`, a code analysis tool, can produce SARIF reports, which later can be verified by `valint` against a given policy.
+
+This policy ([verify-semgrep-report.yaml](policies/sarif/verify-semgrep-report.yaml), [verify-semgrep-report.rego](policies/sarif/verify-semgrep-report.rego)) allows to verify that given SARIF report does not contain specific rules violations.
+
+First, one needs to create a semgrep report (say, for the `openvpn` repo):
+
+```bash
+cd openvpn/
+semgrep scan --config auto -o semgrep-report.sarif --sarif
+```
+
+Then, create an evidence from this report:
+
+```bash
+valint bom semgrep-report.sarif --predicate-type http://scribesecurity.com/evidence/generic/v0.1  -o statement-generic
+```
+
+Configuration of this policy is done in the file [verify-semgrep-report.yaml](policies/sarif/verify-semgrep-report.yaml). In this example we forbid any violations of the `use-after-free` rule:
+
+```yaml
+args:
+   rule_ids:
+      - "use-after-free"
+   violations_threshold: 0
+```
+
+Then, run `valint verify` as usual:
+
+```bash
+valint verify semgrep-report.sarif -i statement-generic -c policies/sarif/verify-semgrep-report.yaml
+```
+
+If any violations found, the output will contain their description, including the violated rule and the file where the violation was found.
 
 ### Forbid Accessing Host
 
