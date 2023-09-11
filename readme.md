@@ -14,44 +14,51 @@ This repo includes samples of policy configuraions for Scribe's ```valint``` too
 
 ## Policy Catalogue
 
-Policy list below is copied from the `opapi` repo. Each policy in the table that has an example in this repo has a link to the policy description.
+Each implemented policy in the table that has an example in this repo has a link to the policy description.
 
-| Policy | Description | Attestation Type | Additional Info |
-| --- | --- | --- | --- |
-| [Forbid Unsigned Artifacts](#forbid-unsigned-artifacts) | Verify the artifact's authenticity and signer identity. | Attestation | [SBOM](#sboms) |
-| [Blocklist Packages](#blocklist-packages) | Prevent risky packages in the artifact. | Attestation | [SBOM](#sboms) |
-| [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | Attestation | [SBOM](#sboms) |
-| [Banned Licenses](#banned-licenses) | Restrict inclusion of certain licenses in the artifact. | Attestation | [SBOM](#sboms) |
-| [Complete Licenses](#complete-licenses) | Guarantee all packages have valid licenses. | Attestation | [SBOM](#sboms) |
-| [Fresh Artifact](#fresh-artifact) | Verify an artifact's freshness. | Attestation | [SBOM](#sboms) |
-| [Fresh Image](#fresh-image) | Ensure an image freshness. | Attestation | [Image SBOM](#images) |
-| [Restrict Shell Image Entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | Attestation | [SBOM](#sboms) |
-| [Blocklist Image Build Scripts](#blocklist-image-build-scripts) | Restrict build scripts in image build. | Attestation | [Image SBOM](#images) |
-| [Verify Image Lables/Annotations](#verify-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | Attestation | [SBOM](#sboms)  |
-| [Forbid Huge Images](#forbid-large-images) | Limit image size. | Attestation | [Image SBOM](#images) |
-| [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | Attestation | [Git SBOM](#git) |
-| Merging Permissions | Ensure authorized identities merge to main. | Attestation | Counterpart to [Forbid Commits To Main](#forbid-commits-to-main)? |
-| [Forbid Unsigned Commits](#forbid-unsigned-commits) | Prevent unsigned commits in evidence. | Attestation | [Git SBOM](#git) |
-| [Forbid Commits To Main](#forbid-commits-to-main) | Verify there were no commits to the main branch. | Attestation | [Git SBOM](#git) |
-| [Verify Use of Specific Builder](#builder-name) | Enforce use of a specific builder for artifact. | Attestation | [SLSA-Prov](#slsa) |
-| [Banned Builder Dependencies](#banned-builder-dependencies) | Restrict banned builder dependencies. | Attestation | [SLSA-Prov](#slsa) |
-| [Verify Build Time](#build-time) | Validate build time within window. | Attestation | [SLSA-Prov](#slsa) |
-| [Verify Byproducts Produced](#produced-byproducts) | Ensure that specific byproducts are produced. | Attestation | [SLSA-Prov](#slsa) |
-| [Verify That Field Exists](#verify-that-field-exists) | Ensure that specific field exists in the SLSA statement. | Attestation | [SLSA-Prov](#slsa) |
-| [No Critical CVEs](#no-critical-cves) | Prohibit ANY critical CVEs. | Attestation | [SARIF](#sarif-reports) |
-| [Limit High CVEs](#limit-high-cves) | Limit high CVEs. | Attestation | [SARIF](#sarif-reports) |
-| [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Prevent specific CVEs in the artifact. | Attestation | [SARIF](#sarif-reports) |
-| [No Static Analysis Errors](#no-static-analysis-errors) | Prevent static analysis errors in the artifact. | Attestation | [SARIF](#sarif-reports) |
-| [Limit Static Analysis Warnings](#limit-static-analysis-warnings) | Restrict static analysis warnings count. | Attestation | [SARIF](#sarif-reports) |
-| [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Restrict specific static analysis warnings. | Attestation | [SARIF](#sarif-reports) |
-| [Do Not Allow Vulnerabilities Based On Specific Attack Vector](#do-not-allow-vulnerabilities-based-on-specific-attack-vector) | Restrict vulnerabilities based on specific attack vector. | Attestation | [SARIF](#sarif-reports) |
-| [Report IaC Configuration errors](#report-iac-configuration-errors) | Check if there are any IaC configuration errors. | Attestation | [SARIF](#sarif-reports) |
-| [Verify Semgrep SARIF report](#verify-semgrep-sarif-report) | Check for specific violations in a semgrep report. | Attestation | [SARIF](#sarif-reports) |
+| Policy | Description | Additional Info |
+| --- | --- | --- | 
+| [Forbid Unsigned Artifacts](#forbid-unsigned-artifacts) | Verify the artifact's authenticity and signer identity. | [SBOM](#sboms) |
+| [Blocklist Packages](#blocklist-packages) | Prevent risky packages in the artifact. | [SBOM](#sboms) |
+| [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | [SBOM](#sboms) |
+| [Banned Licenses](#banned-licenses) | Restrict inclusion of certain licenses in the artifact. | [SBOM](#sboms) |
+| [Complete Licenses](#complete-licenses) | Guarantee all packages have valid licenses. | [SBOM](#sboms) |
+| [Fresh Artifact](#fresh-artifact) | Verify an artifact's freshness. | [SBOM](#sboms) |
+| [Fresh Image](#fresh-image) | Ensure an image freshness. | [Image SBOM](#images) |
+| [Restrict Shell Image Entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | [SBOM](#sboms) |
+| [Blocklist Image Build Scripts](#blocklist-image-build-scripts) | Restrict build scripts in image build. | [Image SBOM](#images) |
+| [Verify Image Lables/Annotations](#verify-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | [SBOM](#sboms)  |
+| [Forbid Huge Images](#forbid-large-images) | Limit image size. | [Image SBOM](#images) |
+| [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | [Git SBOM](#git) |
+| Merging Permissions | Ensure authorized identities merge to main. | Counterpart to [Forbid Commits To Main](#forbid-commits-to-main)? |
+| [Forbid Unsigned Commits](#forbid-unsigned-commits) | Prevent unsigned commits in evidence. | [Git SBOM](#git) |
+| [Forbid Commits To Main](#forbid-commits-to-main) | Verify there were no commits to the main branch. | [Git SBOM](#git) |
+| [Verify Use of Specific Builder](#builder-name) | Enforce use of a specific builder for artifact. | [SLSA-Prov](#slsa) |
+| [Banned Builder Dependencies](#banned-builder-dependencies) | Restrict banned builder dependencies. | [SLSA-Prov](#slsa) |
+| [Verify Build Time](#build-time) | Validate build time within window. | [SLSA-Prov](#slsa) |
+| [Verify Byproducts Produced](#produced-byproducts) | Ensure that specific byproducts are produced. | [SLSA-Prov](#slsa) |
+| [Verify That Field Exists](#verify-that-field-exists) | Ensure that specific field exists in the SLSA statement. | [SLSA-Prov](#slsa) |
+| [No Critical CVEs](#no-critical-cves) | Prohibit ANY critical CVEs. | [SARIF](#sarif-reports) |
+| [Limit High CVEs](#limit-high-cves) | Limit high CVEs. | [SARIF](#sarif-reports) |
+| [Do Not Allow Specific CVEs](#do-not-allow-specific-cves) | Prevent specific CVEs in the artifact. | [SARIF](#sarif-reports) |
+| [No Static Analysis Errors](#no-static-analysis-errors) | Prevent static analysis errors in the artifact. | [SARIF](#sarif-reports) |
+| [Limit Static Analysis Warnings](#limit-static-analysis-warnings) | Restrict static analysis warnings count. | [SARIF](#sarif-reports) |
+| [Do Not Allow Specific Static Analysis Rules](#do-not-allow-specific-static-analysis-rules) | Restrict specific static analysis warnings. | [SARIF](#sarif-reports) |
+| [Do Not Allow Vulnerabilities Based On Specific Attack Vector](#do-not-allow-vulnerabilities-based-on-specific-attack-vector) | Restrict vulnerabilities based on specific attack vector. | [SARIF](#sarif-reports) |
+| [Report IaC Configuration errors](#report-iac-configuration-errors) | Check if there are any IaC configuration errors. | [SARIF](#sarif-reports) |
+| [Verify Semgrep SARIF report](#verify-semgrep-sarif-report) | Check for specific violations in a semgrep report. | [SARIF](#sarif-reports) |
 | [Forbid Accessing Host](#forbid-accessing-host) | Do not allow images with detected vulnerabilities giving access to the host system. | Generic Evidence | [Generic](#generic) |
-| No Package Downgrading | Restrict package downgrades. | Attestation | src and dst [SBOM](#sboms) |
-| No License Modification | Prevent license modifications. | Attestation | src and dst [SBOM](#sboms) |
-| Verify Source code Integrity | Verify that the artifact source code has not been modified | Attestation | src and dst [Git SBOM](#git) |
-| Verify Dependencies Integrity | Verify that specific files or folders have not been modified | Attestation | src and dst [SBOM](#sboms) |
+| No Package Downgrading | Restrict package downgrades. | src and dst [SBOM](#sboms) |
+| No License Modification | Prevent license modifications. | src and dst [SBOM](#sboms) |
+| Verify Source code Integrity | Verify that the artifact source code has not been modified | src and dst [Git SBOM](#git) |
+| Verify Dependencies Integrity | Verify that specific files or folders have not been modified | src and dst [SBOM](#sboms) |
+
+### General Information
+
+Most of the policies in this repo consist of two files: a `.yaml` and a `.rego`.
+
+The first is a part of `valint` configuration file and needs to be merged to the actual `valint.yaml` or used separately if default `valint` config is sufficient.  
+The second is a rego file that contains the actual policy code. It can be used as is or merged to the `.yaml` file by quoting its content under `rego.script` parameter instead of using the `rego.file` one.
 
 ### SBOMs
 
@@ -153,7 +160,7 @@ It doesn't have any additional parameters.
 
 #### Fresh Artifact
 
-This policy ([fresh-sbom.yaml](policies/sboms/fresh-sbom.yaml)) verifies that the SBOM is not older than a given number of days.
+This policy ([fresh-sbom.yaml](policies/sboms/fresh-sbom.yaml), [fresh-sbom.rego](policies/sboms/fresh-sbom.rego)) verifies that the SBOM is not older than a given number of days.
 
 Edit the policy in the `input.rego.args` parameter in file [fresh-sbom.yaml](policies/sboms/fresh-sbom.yaml):
 
