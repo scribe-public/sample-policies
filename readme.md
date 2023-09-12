@@ -606,7 +606,3 @@ An example of such a rego file is give in the [verify-sarif.rego](policies/sarif
 ```bash
 valint verify ubuntu-cve.json -i statement-generic -c verify-sarif.yaml
 ```
-
-## Running multiple policies at once
-
-It's possible to run multiple policies at once by specifying multiple modules under `cocosign.policies.modules` config. An example can be found in [policies/sboms/multiple-policies.yaml](policies/sboms/multiple-policies.yaml).
