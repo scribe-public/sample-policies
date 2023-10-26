@@ -9,10 +9,11 @@ default msg := "Some packages use blocklisted licenses"
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
 			"reason": msg,
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}
@@ -39,11 +40,8 @@ violations = j {
 		lname := l.license.name
 		startswith(lname, b)
 		r = {
-			"type": "license",
-			"details": {
-				"package": comp.purl,
-				"license": b,
-			},
+			"package": comp.purl,
+			"license": b,
 		}
 	}
 }

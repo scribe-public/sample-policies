@@ -14,6 +14,7 @@ verify = v if {
 		"summary": [{
 			"allow": allow,
 			"reason": msg,
+            "details": sprintf("SBOM created at: %d (earliest create date is %d)", [timestamp, time.now_ns() - maximum_age]),
 			"exceeding": exceeding,
 		}],
 	}

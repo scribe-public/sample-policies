@@ -9,7 +9,7 @@ default msg := "Some blocklisted packages were found in the project"
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": count(violations),
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
 			"reason": msg,
@@ -29,14 +29,12 @@ msg = "No blocklisted packages were found in the project" {
 
 violations = j {
 	j := {r |
-		some i, k
 		components := input.evidence.predicate.bom.components
+		some i
 		p := components[i].purl
+		some k
 		b := input.config.args.blocklist[k]
 		contains(p, b)
-		r := {
-			"type": "banned package",
-			"package": b,
-		}
+		r = {"package": b}
 	}
 }

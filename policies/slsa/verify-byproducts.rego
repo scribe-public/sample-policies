@@ -11,10 +11,11 @@ default msg := "The build misses some of the expected byproducts"
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
 			"reason": msg,
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}
@@ -33,10 +34,7 @@ violations = j {
 		some bp in input.config.args.byproducts
 		some byproduct in input.evidence.predicate.runDetails.byproducts
 		not byproduct_match(byproduct, bp)
-		r = {
-			"type": "byproduct",
-			"details": {"missing": bp},
-		}
+		r = {"byproduct": bp}
 	}
 }
 

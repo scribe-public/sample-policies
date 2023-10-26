@@ -13,10 +13,11 @@ default msg := "Some commits are unsigned"
 verify = v if {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
 			"reason": msg,
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}
@@ -36,9 +37,6 @@ violations = j if {
 		prop := comp.properties[k]
 		prop.name == "PGPSignature"
 		prop.value == ""
-		r = {
-			"type": "missing signature",
-			"details": {"commit": comp.name},
-		}
+		r = {"component": comp.name}
 	}
 }

@@ -13,12 +13,12 @@ default msg := "Not all required packages are present in the SBOM"
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
+			"reason": json.marshal(violations),
 			"violations": count(violations),
-			"details": json.marshal(violations),
+			"details": msg,
 		}],
 	}
 }
@@ -36,10 +36,7 @@ violations = j {
 		some k
 		b := input.config.args.required_pkgs[k]
 		not any_match(b)
-		r := {
-			"type": "missing required package",
-			"package": b,
-		}
+		r := {"package": b}
 	}
 }
 

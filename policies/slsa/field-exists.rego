@@ -13,10 +13,11 @@ default filtered := {"result": "couldn't perform scan"}
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s: %v", [msg, violations]),
+			"reason": msg,
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}
@@ -32,11 +33,8 @@ violations = j {
 		filtered := json.filter(input.evidence, [field])
 		count(filtered) == 0
 		r = {
-			"type": "missing_path",
-			"details": {
-				"path": field,
-				"filtered": filtered,
-			},
+			"path": field,
+			"filtered": filtered,
 		}
 	}
 }

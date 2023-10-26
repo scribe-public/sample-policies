@@ -13,7 +13,8 @@ verify = v if {
 		"allow": allow,
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s: %s", [msg, cmd]),
+			"reason": msg,
+			"details": cmd,
 		}],
 	}
 }

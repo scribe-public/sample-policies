@@ -16,10 +16,11 @@ default property = {
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s: %v", [msg, violations]),
+			"reason": msg,
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}
@@ -34,11 +35,8 @@ violations = j {
 		some label in input.config.args.labels
 		not match_any(label)
 		r = {
-			"type": "label",
-			"details": {
-				"label": label.label,
-				"value": label.value,
-			},
+			"label": label.label,
+			"value": label.value,
 		}
 	}
 }

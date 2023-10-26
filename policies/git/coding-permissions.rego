@@ -15,7 +15,7 @@ default msg := "Some files are commited by unauthorized authors"
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
 			"reason": msg,
@@ -41,13 +41,10 @@ violations = j {
 		some prop in object.properties
 		prop.name == "last_commit"
 		author := get_commit_author(prop.value)
-		not any_match(author)
+		# not any_match(author)
 		r = {
-			"type": "mismatching_author",
-			"details": {
-				"file": file,
-				"author": author,
-			},
+			"file": file,
+			"author": author,
 		}
 	}
 }
@@ -59,7 +56,7 @@ any_match(author) {
 
 get_commit_author(hash) := h {
 	some object in input.evidence.predicate.bom.components
-	object.type == "commit"
+	object.type == "file"
 	object.name == hash
 	some prop in object.properties
 	prop.name == "Author"

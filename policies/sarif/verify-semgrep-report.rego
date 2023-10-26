@@ -9,10 +9,11 @@ default violations := []
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
 			"reason": sprintf("# of violations: %d (max allowed: %d)", [count(violations), input.config.args.violations_threshold]),
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}

@@ -13,10 +13,11 @@ default msg := "The builder has some blocklisted dependencies"
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
 			"reason": msg,
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}
@@ -37,11 +38,8 @@ violations = j {
 		name_match(dependency, blocklisted.name)
 		version_match(dependency, blocklisted)
 		r = {
-			"type": "dependency",
-			"details": {
-				"name": blocklisted.name,
-				"version": dependency.annotations.version,
-			},
+			"name": blocklisted.name,
+			"version": dependency.annotations.version,
 		}
 	}
 }

@@ -16,10 +16,11 @@ default msg := "Image build commands used blocklisted scripts"
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s: %v", [msg, violations]),
+			"reason": msg,
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}
@@ -36,10 +37,7 @@ violations = j {
 		some property in component.properties
 		property.name == "CreatedBy"
 		contains(property.value, blocklisted)
-		r = {
-			"type": "blocklisted-script",
-			"details": {"name": property.value},
-		}
+		r = {"script": property.value}
 	}
 }
 

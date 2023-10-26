@@ -14,7 +14,8 @@ verify = v if {
 		"errors": errors,
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s, actual size is %d (max allowed size is %d)", [msg, size, input.config.args.max_size]),
+			"reason": msg,
+			"details": sprintf("Actual size is %d (max allowed size is %d)", [size, input.config.args.max_size]),
 		}],
 	}
 }

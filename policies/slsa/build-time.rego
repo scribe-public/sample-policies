@@ -33,7 +33,8 @@ verify = v {
 		"allow": allow,
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s: on day %s, on hour %d", [msg, time.weekday(created), time.clock(created)[0]]),
+			"reason": msg,
+			"details": sprintf("Image created on day %s, on hour %d", [time.weekday(created), time.clock(created)[0]]),
 		}],
 	}
 }

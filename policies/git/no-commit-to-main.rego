@@ -13,7 +13,8 @@ verify = v {
 		"allow": allow,
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s, found branch: %s", [msg, branch]),
+			"reason": msg,
+            "details": sprintf("found branch: %s", [branch]),
 		}],
 	}
 }

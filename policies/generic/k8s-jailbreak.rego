@@ -11,10 +11,11 @@ prohibited_ids = ["KSV006", "KSV009", "KSV023"]
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violations": {"details": violations},
 		"summary": [{
 			"allow": allow,
 			"reason": sprintf("# of violations: %d (max allowed: %d)", [count(violations), 0]),
+			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}

@@ -16,7 +16,8 @@ verify = v if {
 		"errors": errors,
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s, created at: %d (earliest create date is %d)", [msg, created, time.now_ns() - maximum_age]),
+			"reason": msg,
+            "details": sprintf("Image created at: %d (earliest create date is %d)", [created, time.now_ns() - maximum_age]),
 		}],
 	}
 }

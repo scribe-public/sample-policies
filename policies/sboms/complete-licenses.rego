@@ -9,11 +9,11 @@ default msg := "Not all packages have licenses"
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {"details": violations},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-			"details": json.marshal(violations),
+			"reason": json.marshal(violations),
+			"details": msg,
 			"violations": count(violations),
 		}],
 	}
@@ -33,9 +33,6 @@ violations = j {
 		some i
 		comp := components[i]
 		comp.licenses != null
-		r = {
-			"type": "license",
-			"details": {"package": comp.purl},
-		}
+		r = {"component": comp.purl}
 	}
 }
