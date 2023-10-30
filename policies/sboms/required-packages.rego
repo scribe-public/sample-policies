@@ -10,10 +10,16 @@ default b = ""
 
 default msg := "Not all required packages are present in the SBOM"
 
+short_description = "Verify that all required packages are present in the SBOM"
+
+description = "This policy verifies that all required packages are present in the SBOM. It takes list of required packages and allowed number of violations as an input and fails if the number of missing packages exceeds this limit."
+
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {"details": violations},
+		"short_description": short_description,
+		"description": description,
 		"summary": [{
 			"allow": allow,
 			"reason": json.marshal(violations),
