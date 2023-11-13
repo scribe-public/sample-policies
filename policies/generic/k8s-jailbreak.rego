@@ -11,14 +11,26 @@ prohibited_ids = ["KSV006", "KSV009", "KSV023"]
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": {"details": violations},
+		"violations": {
+			"type": "k8s jailbreak",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("# of violations: %d (max allowed: %d)", [count(violations), 0]),
-			"details": json.marshal(violations),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
+}
+
+reason = v {
+	allow
+	v := sprintf("# of violations (%d) is under max violation limit %d", [count(violations), 0])
+}
+
+reason = v {
+	not allow
+	v := sprintf("# of violations (%d) exceeds max violation limit %d", [count(violations), 0])
 }
 
 allow {
@@ -37,6 +49,6 @@ violations = j {
 		misconfig = misconfigs[k]
 		some id in prohibited_ids
 		misconfig.ID == id
-		r := misconfig.ID
+		r := {"id": misconfig.ID}
 	}
 }

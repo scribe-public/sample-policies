@@ -2,8 +2,6 @@ package verify
 
 import future.keywords.in
 
-default msg := "Image doesn't contain required labels"
-
 default allow := false
 
 default violations := []
@@ -16,11 +14,13 @@ default property = {
 verify = v {
 	v := {
 		"allow": allow,
-		"violation": {"details": violations},
+		"violation": {
+			"type": "Missing Labels",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-			"details": json.marshal(violations),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -28,6 +28,16 @@ verify = v {
 
 allow {
 	count(violations) == 0
+}
+
+reason = v {
+	allow
+	v := "image contains all required labels"
+}
+
+reason = v {
+	not allow
+	v := "image doesn't contain required labels"
 }
 
 violations = j {
@@ -46,8 +56,4 @@ match_any(label) {
 	startswith(property.name, "label_")
 	endswith(property.name, label.label)
 	property.value == label.value
-}
-
-msg = "Image contains all required labels" {
-	allow
 }

@@ -8,16 +8,16 @@ default violations := []
 
 default dependency := {"uri": "", "name": "", "annotations": {"version": ""}}
 
-default msg := "The builder has some blocklisted dependencies"
-
 verify = v {
 	v := {
 		"allow": allow,
-		"violation": {"details": violations},
+		"violation": {
+			"type": "Blocklisted Dependencies",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-			"details": json.marshal(violations),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -27,8 +27,14 @@ allow {
 	count(violations) == 0
 }
 
-msg = "No blocklisted dependencies found" {
+reason = v {
 	allow
+	v := "no blocklisted dependencies found"
+}
+
+reason = v {
+	not allow
+	v := "the builder has some blocklisted dependencies"
 }
 
 violations = j {

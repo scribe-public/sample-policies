@@ -8,16 +8,17 @@ default created := 0
 
 default created_str := "unknown"
 
-default msg := "Image is too old"
-
 verify = v if {
 	v := {
 		"allow": allow,
 		"errors": errors,
+		"violation": {
+			"type": "Too Old Image",
+			"details": [{"max_age": created + maximum_age}],
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-            "details": sprintf("Image created at: %d (earliest create date is %d)", [created, time.now_ns() - maximum_age]),
+			"reason": reason,
 		}],
 	}
 }
@@ -38,7 +39,15 @@ allow if {
 	time.now_ns() < created + maximum_age
 }
 
-msg = "Image is new enough" if allow
+reason = v if {
+	allow
+	v := "image is new enough"
+}
+
+reason = v if {
+	not allow
+	v := "image is too old"
+}
 
 errors[msg] {
 	created_str == "unknown"

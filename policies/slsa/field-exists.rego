@@ -2,8 +2,6 @@ package verify
 
 import future.keywords.in
 
-default msg := "Provenance doesn't contain required fields"
-
 default allow := false
 
 default violations := []
@@ -13,11 +11,14 @@ default filtered := {"result": "couldn't perform scan"}
 verify = v {
 	v := {
 		"allow": allow,
-		"violation": {"details": violations},
+		"violation": {
+			"type": "Missing field",
+			"description": sprintf("provenance doesn't contain required fields: %s, max error threshold: %d", [violations, input.config.args.violations_threshold]),
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-			"details": json.marshal(violations),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -25,6 +26,16 @@ verify = v {
 
 allow {
 	count(violations) <= input.config.args.violations_threshold
+}
+
+reason = v {
+	allow
+	v := "provenance contains all required fields"
+}
+
+reason = v {
+	not allow
+	v := "provenance doesn't contain required fields"
 }
 
 violations = j {
@@ -37,8 +48,4 @@ violations = j {
 			"filtered": filtered,
 		}
 	}
-}
-
-msg = "Provenance contains all required fields" {
-	allow
 }

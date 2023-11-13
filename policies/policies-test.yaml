@@ -1,0 +1,345 @@
+attest:
+  cocosign:
+    policies:
+      - name: policies-test
+        enable: true
+        modules:
+### GIT
+          - name: git-coding-permissions
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              identity:
+                common-names:
+                  - EvidencePolicyResults4
+              context-group:
+                - none
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: git
+              rego:
+                args:
+                  ids:
+                    - "viktor@scribesecurity.com"
+                  files:
+                    - "Dockerfile"
+                path: /home/viktor/scribe/sample-policies/policies/git/coding-permissions.rego
+          - name: git-no-commits-to-main
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - none
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: git
+              rego:
+                path: /home/viktor/scribe/sample-policies/policies/git/no-commit-to-main.rego
+          - name: git-no-unsigned-commits
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - none
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: git
+              rego:
+                path: /home/viktor/scribe/sample-policies/policies/git/no-unsigned-commits.rego
+### SBOMs
+          - name: sbom-required-packages
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              identity:
+                common-names:
+                  - EvidencePolicyResults4
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                  required_pkgs:
+                    - "gpgv@2.2.27-3ubuntu2.1"
+                  violations_limit: 0
+                path: /home/viktor/scribe/sample-policies/policies/sboms/required-packages.rego
+          - name: sbom-banned-licenses
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              identity:
+                common-names:
+                  - EvidencePolicyResults4
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                  blocklist: 
+                    - GPL
+                  blocklisted_limit : 199
+                path: /home/viktor/scribe/sample-policies/policies/sboms/banned-licenses.rego
+          - name: sbom-blocklist-packages
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                  blocklist: 
+                    - "pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"
+                    - "log4j"
+                  blocklisted_limit : 1
+                path: /home/viktor/scribe/sample-policies/policies/sboms/blocklist-packages.rego
+          - name: sbom-complete-licenses
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                path: /home/viktor/scribe/sample-policies/policies/sboms/complete-licenses.rego
+          - name: sbom-fresh
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                  max_days: 30
+                path: /home/viktor/scribe/sample-policies/policies/sboms/fresh-sbom.rego
+### Images
+          - name: image-blocklist-build-scripts
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                  blocklist:
+                    - curl
+                path: /home/viktor/scribe/sample-policies/policies/images/blocklist-build-scripts.rego
+          - name: image-forbid-large-images
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                  max_size: 77819980
+                path: /home/viktor/scribe/sample-policies/policies/images/forbid-large-images.rego
+          - name: image-fresh
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                  max_days: 30
+                path: /home/viktor/scribe/sample-policies/policies/images/fresh-image.rego
+          - name: image-restrict-shell-entrypoint
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                path: /home/viktor/scribe/sample-policies/policies/images/restrict-shell-entrypoint.rego
+          - name: image-verify-labels
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-cyclonedx-json"
+              match:
+                target_type: image
+              rego:
+                args:
+                  labels:
+                    - label: "org.opencontainers.image.version"
+                      value: "22.04"
+                path: /home/viktor/scribe/sample-policies/policies/images/verify-labels.rego
+### SARIF
+          - name: trivy-check-vulnerabilities
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              identity:
+                common-names:
+                  - EvidencePolicyResults4
+              context-group:
+                - flags
+              format: "attest-generic"
+              match:
+                target_type: generic
+                predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+              rego:
+                args:
+                  rule_level:
+                    - critical
+                  precision: []
+                  rule_ids: []
+                  ignore: []
+                  max_allowed: 1000
+                path: /home/viktor/scribe/sample-policies/policies/sarif/verify-sarif.rego
+          - name: trivy-iac-errors
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-generic"
+              match:
+                target_type: generic
+                predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+              rego:
+                args:
+                  violations_threshold: 0
+                path: /home/viktor/scribe/sample-policies/policies/sarif/report-iac-errors.rego
+          - name: trivy-attack-vector
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-generic"
+              match:
+                target_type: generic
+                predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+              rego:
+                args:
+                  attack_vectors:
+                    - "stack buffer overflow"
+                  violations_threshold: 0
+                path: /home/viktor/scribe/sample-policies/policies/sarif/verify-attack-vector.rego
+### SLSA
+          - name: slsa-banned-builder-deps
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-slsa"
+              match:
+                target_type: image
+              rego:
+                args:
+                  blocklist:
+                  - name: "valint"
+                    version: "0.4.0"
+                path: /home/viktor/scribe/sample-policies/policies/slsa/banned-builder-deps.rego
+          - name: slsa-build-time
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-slsa"
+              match:
+                target_type: image
+              rego:
+                args:
+                  start_hour: 8
+                  end_hour: 20
+                  workdays:
+                    - "Sunday"
+                    - "Monday"
+                    - "Tuesday"
+                    - "Wednesday"
+                    - "Thursday"
+                path: /home/viktor/scribe/sample-policies/policies/slsa/build-time.rego
+          - name: slsa-field-exists
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-slsa"
+              match:
+                target_type: image
+              rego:
+                args:
+                  paths:
+                    - "predicate/runDetails/builder/builderDependencies"
+                  violations_threshold: 0
+                path: /home/viktor/scribe/sample-policies/policies/slsa/field-exists.rego
+          - name: slsa-verify-builder
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-slsa"
+              match:
+                target_type: image
+              rego:
+                args:
+                  id: "local"
+                path: /home/viktor/scribe/sample-policies/policies/slsa/verify-builder.rego
+          - name: slsa-verify-byproducts
+            type: verify-artifact
+            enable: true
+            input:
+              signed: true
+              context-group:
+                - flags
+              format: "attest-slsa"
+              match:
+                target_type: image
+              rego:
+                args:
+                  byproducts:
+                    - 256d88da41857db513b95b50ba9a9b28491b58c954e25477d5dad8abb465430b
+                path: /home/viktor/scribe/sample-policies/policies/slsa/verify-byproducts.rego

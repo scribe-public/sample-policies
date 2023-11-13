@@ -6,15 +6,16 @@ default allow := false
 
 default cmd := ""
 
-default msg := "Image entrypoint allows shell access"
-
 verify = v if {
 	v := {
 		"allow": allow,
+		"violation": {
+			"type": "Allowed shell access",
+			"details": [{"cmd": cmd}],
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-			"details": cmd,
+			"reason": reason,
 		}],
 	}
 }
@@ -31,4 +32,12 @@ allow if {
 	contains(cmd, ".sh")
 }
 
-msg = "Image entrypoint does not allow shell access" if allow
+reason = v if {
+	allow
+	v := "image entrypoint does not allow shell access"
+}
+
+reason = v if {
+	not allow
+	v := "image entrypoint allows shell access"
+}

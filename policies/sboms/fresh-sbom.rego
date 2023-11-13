@@ -4,8 +4,6 @@ default allow = false
 
 default exceeding = 0
 
-default msg := "SBOM is too old"
-
 import future.keywords.if
 
 verify = v if {
@@ -13,9 +11,12 @@ verify = v if {
 		"allow": allow,
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-            "details": sprintf("SBOM created at: %d (earliest create date is %d)", [timestamp, time.now_ns() - maximum_age]),
-			"exceeding": exceeding,
+			"violation": {
+				"type": "Too Old SBOM",
+				"details": [{"msg": sprintf("SBOM created at: %d (earliest create date is %d)", [timestamp, time.now_ns() - maximum_age])}],
+			},
+			"reason": reason,
+			"violations": exceeding,
 		}],
 	}
 }
@@ -34,7 +35,15 @@ allow if {
 	exceeding <= 0
 }
 
-msg = "SBOM is fresh enough" if allow
+reason = v if {
+	allow
+	v := "SBOM is fresh enough"
+}
+
+reason = v if {
+	not allow
+	v := "SBOM is too old"
+}
 
 errors[msg] {
 	not input.evidence.predicate.bom.metadata.timestamp

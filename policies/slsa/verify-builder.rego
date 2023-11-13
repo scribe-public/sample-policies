@@ -7,9 +7,13 @@ default msg := "Builder mismatch"
 verify = v {
 	v := {
 		"allow": allow,
+		"violation": {
+			"type": "Builder Mismatch",
+			"details": [{"msg": sprintf("Builder ID %s does not match config ID %s", [input.evidence.predicate.runDetails.builder.id, input.config.args.id])}],
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
+			"reason": reason,
 		}],
 	}
 }
@@ -18,6 +22,12 @@ allow {
 	input.evidence.predicate.runDetails.builder.id == input.config.args.id
 }
 
-msg = "Builder matches config" {
+reason = v {
 	allow
+	v := "builder matches config"
+}
+
+reason = v {
+	not allow
+	v := "builder mismatch"
 }

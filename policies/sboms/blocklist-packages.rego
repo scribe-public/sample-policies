@@ -4,16 +4,16 @@ default allow = false
 
 default violations = []
 
-default msg := "Some blocklisted packages were found in the project"
-
 verify = v {
 	v := {
 		"allow": allow,
-		"violation": {"details": violations},
+		"violation": {
+			"type": "Blocklisted Packages",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-			"details": json.marshal(violations),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -23,8 +23,14 @@ allow {
 	count(violations) <= input.config.args.blocklisted_limit
 }
 
-msg = "No blocklisted packages were found in the project" {
+reason = v {
 	allow
+	v := "no blocklisted packages were found in the project"
+}
+
+reason = v {
+	not allow
+	v := "some blocklisted packages were found in the project"
 }
 
 violations = j {

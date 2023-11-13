@@ -1,3 +1,10 @@
+scribe:
+  auth:
+    login-url: https://scribe-hub-staging.us.auth0.com
+    grant-type: client_credentials
+    enable: true
+    audience: api.staging.scribesecurity.com
+  url: https://airflow.staging.scribesecurity.com
 attest:
   cocosign:
     policies:
@@ -10,21 +17,23 @@ attest:
             input:
               signed: true
               identity:
-                emails:
-                  - victor.kartashov@gmail.com
+                common-names:
+                  - EvidencePolicyResults41
               context-group:
                 # - env
-                - flags
+                - none
+              format: "attest-cyclonedx-json"
               match:
                 target_type: git
-                content_type: "attest-cyclonedx-json"
+                # content_type: "attest-cyclonedx-json"
                 # sbomversion: "sha1:9418aa9e05292329e0ed76a84268c65b6d5d789d"
               #   predicate_type: '{{ .Context.predicate_type }}'
               #   input_name: "/tmp/testing_mock_repo/"
               rego:
                 args:
                   ids:
-                    - "@scribesecurity.com"
+                    - "viktor@scribesecurity.com"
+                    # - "WhoIsThat@scribesecurity.com"
                   files:
                     - "Dockerfile"
                 path: /home/viktor/scribe/sample-policies/policies/git/coding-permissions.rego
@@ -34,21 +43,21 @@ attest:
             input:
               signed: true
               identity:
-                emails:
-                  - victor.kartashov@gmail.com
+                common-names:
+                  - EvidencePolicyResults4
               context-group:
                 # - env
                 - flags
+              format: "attest-cyclonedx-json"
               match:
                 target_type: image
-                content_type: "attest-cyclonedx-json"
                 # input_name: "localhost:5000/sigstore-local"
                 # input_tag: "latest"
               rego:
                 args:
                   required_pkgs:
-                    - "pkg:deb/ubuntu/bash@5.1-6ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"
-                  violations_limit: 1
+                    - "pkg:deb/ubuntu/bash@5.1-62ubuntu1?arch=amd64\u0026distro=ubuntu-22.04"
+                  violations_limit: 0
                 path: /home/viktor/scribe/sample-policies/policies/sboms/required-packages.rego
           - name: image-banned-licenses
             type: verify-artifact
@@ -56,22 +65,21 @@ attest:
             input:
               signed: true
               identity:
-                emails:
-                  - victor.kartashov@gmail.com
+                common-names:
+                  - EvidencePolicyResults4
               context-group:
                 # - env
                 - flags
+              format: "attest-cyclonedx-json"
               match:
                 target_type: image
-                content_type: "attest-cyclonedx-json"
                 # input_name: "localhost:5000/sigstore-local"
                 # input_tag: "latest"
               rego:
                 args:
                   blocklist: 
                     - GPL
-                    - MPL
-                  blocklisted_limit : 1000
+                  blocklisted_limit : 10
                 path: /home/viktor/scribe/sample-policies/policies/sboms/banned-licenses.rego
           - name: trivy-check-vulnerabilities
             type: verify-artifact
@@ -79,15 +87,15 @@ attest:
             input:
               signed: true
               identity:
-                emails:
-                  - victor.kartashov@gmail.com
+                common-names:
+                  - EvidencePolicyResults41
               context-group:
                 # - env
                 - flags
+              format: "attest-generic"
               match:
                 target_type: generic
                 predicate_type: http://scribesecurity.com/evidence/generic/v0.1
-                content_type: "attest-generic"
               rego:
                 args:
                   rule_level:
@@ -95,5 +103,5 @@ attest:
                   precision: []
                   rule_ids: []
                   ignore: []
-                  max_allowed: 0
+                  max_allowed: 1000
                 path: /home/viktor/scribe/sample-policies/policies/sarif/verify-sarif.rego

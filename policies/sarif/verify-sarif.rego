@@ -13,13 +13,15 @@ description = "Verify type, level and number of vulnerabilities in SARIF report"
 verify = v {
 	v := {
 		"allow": allow,
-		"violation": {"details": violations},
+		"violation": {
+			"type": "Invalid Sarif",
+			"details": violations,
+		},
 		"short_description": short_description,
 		"description": description,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
-			"details": json.marshal(violations),
 			"violations": count(violations),
 		}],
 	}
@@ -27,14 +29,13 @@ verify = v {
 
 reason = v {
 	allow
-	v := sprintf("Valid Sarif found, %d failed rules under max violation limit %d", [count(violations), input.config.args.max_allowed])
+	v := sprintf("valid Sarif found, %d failed rules under max violation limit %d", [count(violations), input.config.args.max_allowed])
 }
 
 reason = v {
 	not allow
-	v := sprintf("Invalid Sarif found, %d failed rules exceeds max violation limit %d", [count(violations), input.config.args.max_allowed])
+	v := sprintf("invalid Sarif found, %d failed rules exceeds max violation limit %d", [count(violations), input.config.args.max_allowed])
 }
-
 
 allow {
 	sarif.allow(input.config.args) == {true}

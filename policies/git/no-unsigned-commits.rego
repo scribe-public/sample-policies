@@ -8,16 +8,16 @@ default violations = []
 
 default signature := ""
 
-default msg := "Some commits are unsigned"
-
 verify = v if {
 	v := {
 		"allow": allow,
-		"violation": {"details": violations},
+		"violation": {
+			"type": "Unsigned Commits",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-			"details": json.marshal(violations),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -27,7 +27,15 @@ allow if {
 	count(violations) == 0
 }
 
-msg = "All commits are signed" if allow
+reason = v {
+	allow
+	v := "all commits are signed"
+}
+
+reason = v {
+	not allow
+	v := "some commits are unsigned"
+}
 
 violations = j if {
 	j := {r |
@@ -37,6 +45,6 @@ violations = j if {
 		prop := comp.properties[k]
 		prop.name == "PGPSignature"
 		prop.value == ""
-		r = {"component": comp.name}
+		r = {"commit": comp.name}
 	}
 }

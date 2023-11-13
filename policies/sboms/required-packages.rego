@@ -8,8 +8,6 @@ default violations = []
 
 default b = ""
 
-default msg := "Not all required packages are present in the SBOM"
-
 short_description = "Verify that all required packages are present in the SBOM"
 
 description = "This policy verifies that all required packages are present in the SBOM. It takes list of required packages and allowed number of violations as an input and fails if the number of missing packages exceeds this limit."
@@ -18,14 +16,14 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "Required Package not included in SBOM",
+			"type": "Required Packages",
 			"details": violations,
 		},
 		"short_description": short_description,
 		"description": description,
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
+			"reason": reason,
 			"violations": count(violations),
 			"details": json.marshal(violations),
 		}],
@@ -36,14 +34,14 @@ allow {
 	count(violations) <= input.config.args.violations_limit
 }
 
-msg = v {
+reason = v {
 	allow
-	v := sprintf("Enough required packages are present in the SBOM.\n Found %d violations under max violation limit %d", [count(violations), input.config.args.violations_limit])
+	v := sprintf("enough required packages are present in the SBOM (found %d violations under max violation limit %d)", [count(violations), input.config.args.violations_limit])
 }
 
-msg = v {
+reason = v {
 	not allow
-	v := sprintf("Not all required packages are present in the SBOM.\n Found %v violations exceeds max violation limit %v.", [count(violations), input.config.args.violations_limit])
+	v := sprintf("not all required packages are present in the SBOM (found %v violations exceeds max violation limit %v)", [count(violations), input.config.args.violations_limit])
 }
 
 
