@@ -17,7 +17,7 @@ This repo includes samples of policy configuraions for Scribe's ```valint``` too
 Each implemented policy in the table that has an example in this repo has a link to the policy description.
 
 | Policy | Description | Additional Info |
-| --- | --- | --- | 
+| --- | --- | --- |
 | [Forbid Unsigned Artifacts](#forbid-unsigned-artifacts) | Verify the artifact's authenticity and signer identity. | [SBOM](#sboms) |
 | [Blocklist Packages](#blocklist-packages) | Prevent risky packages in the artifact. | [SBOM](#sboms) |
 | [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | [SBOM](#sboms) |

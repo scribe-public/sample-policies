@@ -1,10 +1,11 @@
 attest:
   cocosign:
     policies:
-      - name: policies-test
+### Policy #1
+### GIT
+      - name: git-policies
         enable: true
         modules:
-### GIT
           - name: git-coding-permissions
             type: verify-artifact
             enable: true
@@ -49,7 +50,11 @@ attest:
                 target_type: git
               rego:
                 path: /home/viktor/scribe/sample-policies/policies/git/no-unsigned-commits.rego
+### Policy #2
 ### SBOMs
+      - name: sbom-policies
+        enable: true
+        modules:
           - name: sbom-required-packages
             type: verify-artifact
             enable: true
@@ -131,7 +136,11 @@ attest:
                 args:
                   max_days: 30
                 path: /home/viktor/scribe/sample-policies/policies/sboms/fresh-sbom.rego
+### Policy #3
 ### Images
+      - name: image-policies
+        enable: true
+        modules:
           - name: image-blocklist-build-scripts
             type: verify-artifact
             enable: true
@@ -204,7 +213,11 @@ attest:
                     - label: "org.opencontainers.image.version"
                       value: "22.04"
                 path: /home/viktor/scribe/sample-policies/policies/images/verify-labels.rego
+### Policy #4
 ### SARIF
+      - name: sarif-policies
+        enable: true
+        modules:
           - name: trivy-check-vulnerabilities
             type: verify-artifact
             enable: true
@@ -260,7 +273,11 @@ attest:
                     - "stack buffer overflow"
                   violations_threshold: 0
                 path: /home/viktor/scribe/sample-policies/policies/sarif/verify-attack-vector.rego
+### Policy #5
 ### SLSA
+      - name: slsa-policies
+        enable: true
+        modules:
           - name: slsa-banned-builder-deps
             type: verify-artifact
             enable: true
