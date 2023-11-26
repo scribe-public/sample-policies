@@ -8,7 +8,22 @@ default created_str := "unknown"
 
 default created := 0
 
-default msg := "Image created outside of working hours"
+short_description = "Verify that an image was created during working hours"
+
+verify = v {
+	v := {
+		"allow": allow,
+		"violation": {
+			"type": "Image Creation Time",
+			"details": [{"msg": sprintf("Image created on day %s, on hour %d", [time.weekday(created), time.clock(created)[0]])}],
+		},
+		short_description: short_description,
+		"summary": [{
+			"allow": allow,
+			"reason": reason,
+		}],
+	}
+}
 
 created_str = input.evidence.predicate.buildDefinition.resolvedDependencies[i].annotations.created {
 	some k
@@ -24,16 +39,12 @@ allow {
 	clock[0] <= input.config.args.end_hour
 }
 
-msg = "Image created in working hours" {
+reason = v {
 	allow
+	v := "image created within the allowed interval"
 }
 
-verify = v {
-	v := {
-		"allow": allow,
-		"summary": [{
-			"allow": allow,
-			"reason": sprintf("%s: on day %s, on hour %d", [msg, time.weekday(created), time.clock(created)[0]]),
-		}],
-	}
+reason = v {
+	not allow
+	v := "image created outside of the allowed interval"
 }

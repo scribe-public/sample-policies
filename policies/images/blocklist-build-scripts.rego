@@ -11,15 +11,16 @@ default property = {
 	"value": "",
 }
 
-default msg := "Image build commands used blocklisted scripts"
-
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {
+			"type": "Banned Scripts",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s: %v", [msg, violations]),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -29,18 +30,23 @@ allow {
 	count(violations) == 0
 }
 
+reason = v {
+	allow
+	v := "image build commands do not use banned scripts"
+}
+
+reason = v {
+	not allow
+	v := "image build commands used banned scripts"
+}
+
 violations = j {
 	j := {r |
-		some blocklisted in input.config.args.blocklist
+		some banned in input.config.args.blocklist
 		some component in input.evidence.predicate.bom.components
 		some property in component.properties
 		property.name == "CreatedBy"
-		contains(property.value, blocklisted)
-		r = {
-			"type": "blocklisted-script",
-			"details": {"name": property.value},
-		}
+		contains(property.value, banned)
+		r = {"script": property.value}
 	}
 }
-
-msg = "Image build commands do not use blocklisted scripts"

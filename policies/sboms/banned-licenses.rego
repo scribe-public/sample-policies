@@ -4,26 +4,39 @@ default allow = false
 
 default violations = []
 
-default msg := "Some packages use blocklisted licenses"
+short_description = "Verify if there are no packages with banned licenses in the image"
+
+description = "This policy verifies that there are no packages with banned licenses in the image. It takes list of banned licenses and allowed number of violations as an input and fails if the number of packages that have banned licenses exceeds this limit."
 
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {
+			"type": "Banned Licenses",
+			"details": violations,
+		},
+		"short_description": short_description,
+		"description": description,
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
 }
 
-allow {
-	count(violations) < input.config.args.blocklisted_limit
+reason = v {
+	allow
+	v := sprintf("# of packages using banned licenses (%d) does not exceed max violation limit (%d)", [count(violations), input.config.args.blocklisted_limit])
 }
 
-msg = "No packages use blocklisted licenses" {
-	allow
+reason = v {
+	not allow
+	v := sprintf("# of packages using banned licenses (%d) exceeds max violation limit (%d)", [count(violations), input.config.args.blocklisted_limit])
+}
+
+allow {
+	count(violations) <= input.config.args.blocklisted_limit
 }
 
 violations = j {
@@ -39,11 +52,8 @@ violations = j {
 		lname := l.license.name
 		startswith(lname, b)
 		r = {
-			"type": "license",
-			"details": {
-				"package": comp.purl,
-				"license": b,
-			},
+			"package": comp.purl,
+			"license": b,
 		}
 	}
 }

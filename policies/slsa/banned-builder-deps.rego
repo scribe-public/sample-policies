@@ -8,15 +8,16 @@ default violations := []
 
 default dependency := {"uri": "", "name": "", "annotations": {"version": ""}}
 
-default msg := "The builder has some blocklisted dependencies"
-
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {
+			"type": "Blocklisted Dependencies",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -26,8 +27,14 @@ allow {
 	count(violations) == 0
 }
 
-msg = "No blocklisted dependencies found" {
+reason = v {
 	allow
+	v := "no blocklisted dependencies found"
+}
+
+reason = v {
+	not allow
+	v := "the builder has some blocklisted dependencies"
 }
 
 violations = j {
@@ -37,11 +44,8 @@ violations = j {
 		name_match(dependency, blocklisted.name)
 		version_match(dependency, blocklisted)
 		r = {
-			"type": "dependency",
-			"details": {
-				"name": blocklisted.name,
-				"version": dependency.annotations.version,
-			},
+			"name": blocklisted.name,
+			"version": dependency.annotations.version,
 		}
 	}
 }

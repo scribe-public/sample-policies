@@ -17,7 +17,7 @@ This repo includes samples of policy configuraions for Scribe's ```valint``` too
 Each implemented policy in the table that has an example in this repo has a link to the policy description.
 
 | Policy | Description | Additional Info |
-| --- | --- | --- | 
+| --- | --- | --- |
 | [Forbid Unsigned Artifacts](#forbid-unsigned-artifacts) | Verify the artifact's authenticity and signer identity. | [SBOM](#sboms) |
 | [Blocklist Packages](#blocklist-packages) | Prevent risky packages in the artifact. | [SBOM](#sboms) |
 | [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | [SBOM](#sboms) |
@@ -595,7 +595,7 @@ If any violations found, the output will contain their description, including th
 
 Trivy k8s analysis can highlight some misconfigurations which allow container to access host filesystem or network. The goal of this policy is to detect such misconfigurations.
 
-To run this policy one has to create a Trivy k8s report and create a generic statement with `valint` from it. Then, simply run the policy against this statement. No additional ocnfiguration required.
+To run this policy one has to create a Trivy k8s report and create a generic statement with `valint` from it. Then, simply run the policy against this statement. No additional configuration required.
 
 ## Writing Policy Files
 

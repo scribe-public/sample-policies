@@ -6,15 +6,16 @@ default allow := false
 
 default violations := []
 
-default msg := "The build misses some of the expected byproducts"
-
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {
+			"type": "Missing Byproducts",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -24,19 +25,23 @@ allow {
 	count(violations) == 0
 }
 
-msg = "The build contains all the expected byproducts" {
+reason = v {
 	allow
+	v := "the build contains all the expected byproducts"
+}
+
+reason = v {
+	not allow
+	v := "the build misses some of the expected byproducts"
 }
 
 violations = j {
 	j := {r |
 		some bp in input.config.args.byproducts
 		some byproduct in input.evidence.predicate.runDetails.byproducts
-		not byproduct_match(byproduct, bp)
-		r = {
-			"type": "byproduct",
-			"details": {"missing": bp},
-		}
+		match = byproduct_match(byproduct, bp)
+		not match
+		r = {"byproduct": bp}
 	}
 }
 

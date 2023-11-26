@@ -9,10 +9,13 @@ default violations := []
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {
+			"type": "Attack Vectors",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("# of violations: %d (max allowed: %d)", [count(violations), input.config.args.violations_threshold]),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -20,6 +23,16 @@ verify = v {
 
 allow {
 	count(violations) <= input.config.args.violations_threshold
+}
+
+reason = v {
+	allow
+	v := sprintf("found %d violations, which is less than allowed (%d)", [count(violations), input.config.args.violations_threshold])
+}
+
+reason = v {
+	not allow
+	v := sprintf("found more violations (%d) than allowed (%d)", [count(violations), input.config.args.violations_threshold])
 }
 
 violations = j {
@@ -30,7 +43,7 @@ violations = j {
 		rule = provenance.runs[_].tool.driver.rules[i]
 		contains(rule.fullDescription.text, "The attack vector is")
 		find_violation(rule)
-		r := {"rule": rule.id}
+		r := {"rule_id": rule.id}
 	}
 }
 

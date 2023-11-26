@@ -9,14 +9,18 @@ attest:
         enable: true
         input:
           signed: false
-          format: statement-cyclonedx-json
+          format: '{{ .Context.content_type }}'
           match:
             target_type: git
+            git_url: "https://github.com/scribe-security/testing_mock_repo.git"
+            git_branch: "master"
+            predicate_type: '{{ .Context.predicate_type }}'
           rego:
             args:
               ids:
                 - "@golang.com"
                 - "@golang.org"
+                # - '{{.Args.EMAIL}}'
               files:
                 - "a.txt"
                 - "jenkins_k8s/scripts/kaniko_config.sh"

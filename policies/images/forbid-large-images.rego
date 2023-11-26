@@ -6,15 +6,17 @@ default allow := false
 
 default size := 10000000000
 
-default msg := "Image is too big"
-
 verify = v if {
 	v := {
 		"allow": allow,
 		"errors": errors,
+		"violation": {
+			"type": "Too Large Image",
+			"details": [{"msg": sprintf("Actual image size %d exceeds max allowed %d", [size, input.config.args.max_size])}],
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": sprintf("%s, actual size is %d (max allowed size is %d)", [msg, size, input.config.args.max_size]),
+			"reason": reason,
 		}],
 	}
 }
@@ -31,9 +33,17 @@ allow if {
 	size <= input.config.args.max_size
 }
 
+reason = v if {
+	allow
+	v := "image is within allowed size"
+}
+
+reason = v if {
+	not allow
+	v := "image is too big"
+}
+
 errors[msg] {
 	size == 10000000000
 	msg := "image size not presented"
 }
-
-msg = "Image is within allowed size" if allow

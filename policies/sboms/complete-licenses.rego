@@ -4,16 +4,16 @@ default allow = false
 
 default violations = []
 
-default msg := "Not all packages have licenses"
-
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": violations,
+		"violation": {
+			"type": "Packages without licenses",
+			"details": violations,
+		},
 		"summary": [{
 			"allow": allow,
-			"reason": msg,
-			"details": json.marshal(violations),
+			"reason": reason,
 			"violations": count(violations),
 		}],
 	}
@@ -23,8 +23,14 @@ allow {
 	count(violations) == 0
 }
 
-msg = "All packages have licenses" {
+reason = v {
 	allow
+	v := "all packages have licenses"
+}
+
+reason = v {
+	not allow
+	v := "not all packages have licenses"
 }
 
 violations = j {
@@ -33,9 +39,6 @@ violations = j {
 		some i
 		comp := components[i]
 		comp.licenses != null
-		r = {
-			"type": "license",
-			"details": {"package": comp.purl},
-		}
+		r = {"component": comp.purl}
 	}
 }
