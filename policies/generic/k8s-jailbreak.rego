@@ -11,7 +11,7 @@ prohibited_ids = ["KSV006", "KSV009", "KSV023"]
 verify = v {
 	v := {
 		"allow": allow,
-		"violations": {
+		"violation": {
 			"type": "k8s jailbreak",
 			"details": violations,
 		},
