@@ -12,6 +12,8 @@ This repo includes samples of policy configuraions for Scribe's ```valint``` too
 
 2. Clone this repo.
 
+3. In order to run a policy, its rego file shold be referred by a valint config. Each `.yaml` represents such a config and is ready for use, but one should either replace rego path with and actual one or run `valint` from this repo's root directory.
+
 ## Policy Catalogue
 
 Each implemented policy in the table that has an example in this repo has a link to the policy description.
