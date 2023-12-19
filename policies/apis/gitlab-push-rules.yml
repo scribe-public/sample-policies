@@ -11,8 +11,8 @@ attest:
           signed: false
           rego:
             args:
-              api_token: glpat-iZGayztywxBYbafzkMh2
-              project: "43544122"
+              api_token: '{{ .Args.Token }}'
+              project: '{{ .Args.Project }}'
               push_rule:
                 commit_message_regex: ""
                 commit_message_negative_regex: null
