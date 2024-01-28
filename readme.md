@@ -3,16 +3,16 @@
 You can use Scribe to apply policies at different points along your SDLC.
 For example, at the end of a build or at the admission control point to the production cluster. Use cases for example:
 
-* Images must be signed and have a matching CycloneDX SBOM.
-* Images must be built by a CircleCI workflow and produce a signed SLSA provenance.
-* Tagged sources must be signed and verified by a set of individuals or processes.
-* Released binaries must be built by Azure DevOps on a specific git repository using unsigned SLSA provenance.
+- Images must be signed, and they must have a matching CycloneDX SBOM.
+- Images must be built by a CircleCI workflow and produce a signed SLSA provenance.
+- Tagged sources must be signed and verified by a set of individuals or processes.
+- Released binaries must be built by Azure DevOps from a specific git repository and have unsigned SLSA provenance.
 
 For the detailed policy description, see **[policies](../valint/policies)** section.
 
 ## Sample Rule Bundle
 
-The following is a description of a sample rule bundle (_the feature is in early availability_) that can be used to build a policy for your SDLC.
+The following is a description of a sample rule bundle (*please note that the feature is in early availability*) that can be used to build a policy for your SDLC.
 
 ## Quickstart
 
@@ -63,7 +63,7 @@ The following is a description of a sample rule bundle (_the feature is in early
 ## Modifying Rules in This Catalogue
 
 Each rule in this catalogue consists of a `rego` script and `yaml` configuration file.
-In order to run a rule rule, its script file shold be referred by a rule config. Each `.yaml` represents such a config and is ready for use. If you modify or add your own rules, don't forget to fulfill this requirement.
+In order to run a rule, its script file should be referred by a rule config. Each `.yaml` represents such a config and is ready for use. If you modify or add your own rules, don't forget to fulfill this requirement.
 
 If you fork this ruleset or create your own, in order to use it you need to specify its location in `valint` flag `--bundle` either in cmd args or a `valint.yaml` config file:
 
