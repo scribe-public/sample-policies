@@ -1,0 +1,89 @@
+attest:
+  cocosign:
+    policies:
+      - name: sbom-policies
+        rules:
+          - name: required-packages
+            path: sboms/required-packages.rego
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              required_pkgs:
+                - "gpgv@2.2.27-3ubuntu2.1"
+                - "valint"
+              violations_limit: 0
+          - name: banned-licenses
+            path: sboms/banned-licenses.rego
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              blocklist:
+                - GPL
+              blocklisted_limit : 0
+          - name: blocklist-packages
+            path: sboms/blocklist-packages.rego
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              blocklist:
+                - "pkg:deb/ubuntu/tar"
+                - "log4j"
+              blocklisted_limit : 0
+          - name: complete-licenses
+            path: sboms/complete-licenses.rego
+            level: "warning"
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+          - name: fresh-sbom
+            path: sboms/fresh-sbom.rego
+            level: "note"
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              max_days: 1
+      - name: image-policies
+        rules:
+          - name: forbid-large-images
+            path: images/forbid-large-images.rego
+            level: "note"
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              max_size: 1
+          - name: fresh-image
+            path: images/fresh-image.rego
+            level: "warning"
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              max_days: 1
+          - name: restrict-shell-entrypoint
+            path: images/restrict-shell-entrypoint.rego
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+          - name: verify-labels
+            path: images/verify-labels.rego
+            evidence:
+              signed: false
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              labels:
+                - label: "org.opencontainers.image.version"
+                  value: "22.05"

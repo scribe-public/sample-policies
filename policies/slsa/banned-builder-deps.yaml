@@ -1,0 +1,22 @@
+name: blocklist-builder-dependencies
+path: banned-builder-deps.rego
+
+description: "A rule for checking that the artifact has no banned builder dependencies"
+labels:
+  - slsa
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  filter-by:
+    - product
+  signed: false
+  format-type: slsa
+  target_type: image
+
+with:
+  blocklist:
+    - name: "valint"
+      version: "0.4.0"
+

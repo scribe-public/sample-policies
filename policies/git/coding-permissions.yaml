@@ -1,0 +1,27 @@
+name: coding-permissions
+path: coding-permissions.rego
+
+description: "A rule to verify that only allowed users commited to the repository"
+labels:
+  - git
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  filter-by:
+    - product
+  signed: false
+  format-type: "cyclonedx-json"
+  target_type: git
+
+with:
+  identity:
+    emails:
+      - "@golang.com"
+  ids:
+    - "@golang.com"
+    - "@golan1g.org"
+  files:
+    - "a.txt"
+    - "jenkins_k8s/scripts/kaniko_config.sh"

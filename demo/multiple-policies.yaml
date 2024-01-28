@@ -1,0 +1,269 @@
+scribe:
+  auth:
+    enable: true
+    client-id: {{ .Args.CLIENT_ID }}
+    client-secret: {{ .Args.CLIENT_SECRET }}
+  url: https://api.dev.scribesecurity.com/
+  enable: true
+attest:
+  cocosign:
+    policies:
+## Policy #1
+## GIT
+      - name: git-policies
+        rules:
+          - name: coding-permissions
+            path: ../policies/git/coding-permissions.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: git
+            with:
+              ids:
+                - "mystery@scribesecurity.com"
+              files:
+                - "Dockerfile"
+          - name: no-commits-to-main
+            path: ../policies/git/no-commit-to-main.rego
+            level: "note"
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: git
+          - name: no-unsigned-commits
+            path: ../policies/git/no-unsigned-commits.rego
+            level: "warning"
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: git
+## Policy #2
+## SBOMs
+      - name: sbom-policies
+        rules:
+          - name: required-packages
+            path: ../policies/sboms/required-packages.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              required_pkgs:
+                - "gpgv@2.2.27-3ubuntu2.1"
+              violations_limit: 0
+          - name: banned-licenses
+            path: ../policies/sboms/banned-licenses.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              blocklist:
+                - GPL
+              blocklisted_limit : 199
+          - name: blocklist-packages
+            path: ../policies/sboms/blocklist-packages.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              blocklist:
+                - "pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"
+                - "log4j"
+              blocklisted_limit : 1
+          - name: complete-licenses
+            path: ../policies/sboms/complete-licenses.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+          - name: fresh-sbom
+            path: ../policies/sboms/fresh-sbom.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              max_days: 30
+## Policy #3
+## Images
+      - name: image-policies
+        rules:
+          - name: blocklist-build-scripts
+            path: ../policies/images//blocklist-build-scripts.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              blocklist:
+                - curl
+          - name: forbid-large-images
+            path: ../policies/images//forbid-large-images.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              max_size: 77819980
+          - name: fresh-image
+            path: ../policies/images//fresh-image.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              max_days: 30
+          - name: restrict-shell-entrypoint
+            path: ../policies/images//restrict-shell-entrypoint.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+          - name: verify-labels
+            path: ../policies/images//verify-labels.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "cyclonedx-json"
+              target_type: image
+            with:
+              labels:
+                - label: "org.opencontainers.image.version"
+                  value: "22.04"
+## Policy #4
+## SARIF
+      - name: sarif-policies
+        rules:
+          - name: check-vulnerabilities
+            path: sarif/verify-sarif.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "generic"
+              target_type: "generic"
+              predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+            with:
+              rule_level:
+                - critical
+              precision: []
+              rule_ids: []
+              ignore: []
+              max_allowed: 1000
+          - name: iac-errors
+            path: sarif/report-iac-errors.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "generic"
+              target_type: generic
+              predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+            with:
+              violations_threshold: 0
+          - name: attack-vector
+            path: sarif/verify-attack-vector.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "generic"
+              target_type: generic
+              predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+            with:
+              attack_vectors:
+                - "stack buffer overflow"
+              violations_threshold: 0
+## Policy #5
+## SLSA
+      - name: slsa-policies
+        rules:
+          - name: banned-builder-deps
+            path: ../policies/slsa//banned-builder-deps.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "slsa"
+              target_type: image
+            with:
+              blocklist:
+                - name: "valint"
+                  version: "0.4.0"
+          - name: build-time
+            path: ../policies/slsa//build-time.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "slsa"
+              target_type: image
+            with:
+              start_hour: 8
+              end_hour: 20
+              workdays:
+                - "Sunday"
+                - "Monday"
+                - "Tuesday"
+                - "Wednesday"
+                - "Thursday"
+          - name: field-exists
+            path: ../policies/slsa//field-exists.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "slsa"
+              target_type: image
+            with:
+              paths:
+                - "predicate/runDetails/builder/builderDependencies"
+              violations_threshold: 0
+          - name: verify-builder
+            path: ../policies/slsa//verify-builder.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "slsa"
+              target_type: image
+            with:
+              id: "local"
+          - name: verify-byproducts
+            path: ../policies/slsa//verify-byproducts.rego
+            evidence:
+              signed: false
+              filter-by:
+                - product
+              format-type: "slsa"
+              target_type: image
+            with:
+              byproducts:
+                - 256d88da41857db513b95b50ba9a9b28491b58c954e25477d5dad8abb465430b

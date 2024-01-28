@@ -1,0 +1,20 @@
+name: byproducts
+path: verify-byproducts.rego
+
+description: "A rule for checking that the artifact has no banned builder dependencies"
+labels:
+  - slsa
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  filter-by:
+    - product
+  signed: false
+  format-type: slsa
+  target_type: image
+
+with:
+  byproducts:
+    - 4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230
