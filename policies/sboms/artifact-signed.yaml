@@ -8,8 +8,6 @@ initiatives:
   - client-policy
 
 evidence:
-  filter-by:
-    - product
   signed: false
   format-type: cyclonedx-json
   target_type: image

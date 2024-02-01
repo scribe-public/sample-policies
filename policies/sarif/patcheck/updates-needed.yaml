@@ -9,8 +9,6 @@ initiatives:
   - client-policy
 
 evidence:
-  filter-by:
-    - product
   signed: false
   format-type: generic
   target_type: generic

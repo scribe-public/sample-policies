@@ -9,9 +9,7 @@ labels:
 initiatives:
   - client-policy
 
-evidence:
-  filter-by:
-    - product
+evidence: 
   signed: false
   format-type: cyclonedx
 
