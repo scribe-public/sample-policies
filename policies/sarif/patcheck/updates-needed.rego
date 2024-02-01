@@ -39,26 +39,23 @@ reason = v {
 
 violations = j {
 	j := {r |
-		# d := base64.decode(input.evidence.predicate.content)
-		# report := json.unmarshal(d)
-        some i, j
-        level := input.evidence.predicate.content.runs[i].results[j].level
+		input.evidence.predicate.mimeType == "application/json"
+        level := input.evidence.predicate.content.runs[_].results[_].level
         level == "error"
-        res := result(i, j)
-        res != "pass"
 		r := {
 			"level": level,
-            "result": res,
 		}
 	}
 }
 
-result(i, j) := r {
-    result := input.evidence.predicate.content.runs[i].results[j].kind
-    r = result
-}
-
-result(i, j) := r {
-    not input.evidence.predicate.content.runs[i].results[j].kind
-    r = "fail"
+violations = j {
+	j := {r |
+		d := base64.decode(input.evidence.predicate.content)
+		report := json.unmarshal(d)
+        level := input.evidence.predicate.content.runs[_].results[_].level
+        level == "error"
+		r := {
+			"level": level,
+		}
+	}
 }
