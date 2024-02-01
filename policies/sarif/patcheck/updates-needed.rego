@@ -47,15 +47,3 @@ violations = j {
 		}
 	}
 }
-
-violations = j {
-	j := {r |
-		d := base64.decode(input.evidence.predicate.content)
-		report := json.unmarshal(d)
-        level := input.evidence.predicate.content.runs[_].results[_].level
-        level == "error"
-		r := {
-			"level": level,
-		}
-	}
-}
