@@ -1,5 +1,6 @@
 name: updates-needed
 path: updates-needed.rego
+level: "warning"
 
 description: "A rule to verify that no security packages need to be updated"
 labels:
