@@ -4,8 +4,6 @@ import future.keywords.if
 
 default allow = false
 
-default bad_hostnames := []
-
 default msg := "Builder mismatch"
 
 default violations := []
@@ -39,11 +37,11 @@ reason = v {
 }
 
 violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.run_id}] if {
-	input.evidence.predicate.buildDefinition.internalParameters.context_type == "github"
+	not input.evidence.predicate.buildDefinition.internalParameters.context_type == "local"
 	not input.evidence.predicate.buildDefinition.internalParameters.run_id == input.config.args.id
 }
 
 violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.hostname}] if {
-	not input.evidence.predicate.buildDefinition.internalParameters.context_type == "github"
+	input.evidence.predicate.buildDefinition.internalParameters.context_type == "local"
 	not input.evidence.predicate.buildDefinition.internalParameters.hostname == input.config.args.id
 }
