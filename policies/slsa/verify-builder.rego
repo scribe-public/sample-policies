@@ -38,12 +38,12 @@ reason = v {
 	v := "builder mismatch"
 }
 
-violations := [{"id": input.evidence.predicate.buildDefinition.internalParameters.run_id}] if {
+violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.run_id}] if {
 	input.evidence.predicate.buildDefinition.internalParameters.context_type == "github"
 	not input.evidence.predicate.buildDefinition.internalParameters.run_id == input.config.args.id
 }
 
-violations := [{"id": input.evidence.predicate.buildDefinition.internalParameters.hostname}] if {
+violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.hostname}] if {
 	not input.evidence.predicate.buildDefinition.internalParameters.context_type == "github"
 	not input.evidence.predicate.buildDefinition.internalParameters.hostname == input.config.args.id
 }
