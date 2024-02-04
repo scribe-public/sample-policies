@@ -40,10 +40,10 @@ reason = v {
 
 violations := [{"run_id": input.evidence.predicate.buildDefinition.internalParameters.run_id}] if {
 	input.evidence.predicate.buildDefinition.internalParameters.context_type == "github"
-	input.evidence.predicate.buildDefinition.internalParameters.run_id != input.config.args.id
+	not input.evidence.predicate.buildDefinition.internalParameters.run_id == input.config.args.id
 }
 
 violations := [{"builder_id": input.evidence.predicate.buildDefinition.internalParameters.hostname}] if {
 	not input.evidence.predicate.buildDefinition.internalParameters.context_type == "github"
-	input.evidence.predicate.buildDefinition.internalParameters.hostname != input.config.args.id
+	not input.evidence.predicate.buildDefinition.internalParameters.hostname == input.config.args.id
 }
