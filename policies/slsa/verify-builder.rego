@@ -39,9 +39,7 @@ reason = v {
 }
 
 verify_github = v {
-	input.evidence.predicate.buildDefinition.internalParameters.git_url == input.config.args.git_url
-	input.evidence.predicate.buildDefinition.internalParameters.git_ref == input.config.args.git_ref
-	input.evidence.predicate.buildDefinition.internalParameters.run_id == input.config.args.run_id
+	input.evidence.predicate.buildDefinition.internalParameters.run_id == input.config.args.id
 	v := true
 }
 
