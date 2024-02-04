@@ -9,6 +9,9 @@ initiatives:
   - client-policy
 
 evidence:
+  filter-by:
+    - pipeline
+    - product
   signed: false
   format-type: slsa
   target_type: image
