@@ -2,8 +2,6 @@ package verify
 
 default allow = false
 
-default verify_github := false
-
 default builder_id = ""
 
 default msg := "Builder mismatch"
@@ -38,11 +36,6 @@ reason = v {
 	v := "builder mismatch"
 }
 
-verify_github = v {
-	input.evidence.predicate.buildDefinition.internalParameters.run_id == input.config.args.id
-	v := true
-}
-
 violations = j {
 	j := {r |
 		input.evidence.predicate.buildDefinition.internalParameters.context_type != "github"
@@ -56,7 +49,7 @@ violations = j {
 violations = j {
 	j := {r |
 		input.evidence.predicate.buildDefinition.internalParameters.context_type == "github"
-		not verify_github
+		input.evidence.predicate.buildDefinition.internalParameters.run_id != input.config.args.id
 		r = {
 			"run_id": input.evidence.predicate.buildDefinition.internalParameters.run_id,
 		}
