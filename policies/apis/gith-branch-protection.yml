@@ -41,4 +41,4 @@ rules:
       block_creations: false
       required_conversation_resolution: false
       lock_branch: false
-          allow_fork_syncing: false
+      allow_fork_syncing: false
