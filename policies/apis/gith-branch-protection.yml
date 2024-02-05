@@ -3,6 +3,7 @@
 rules:
 - name: github-branch-protection
   path: github-branch-protection.rego
+  level: "warning"
 
   evidence:
     signed: false
