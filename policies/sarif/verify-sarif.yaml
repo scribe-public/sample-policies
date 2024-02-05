@@ -12,7 +12,6 @@ evidence:
   signed: false
   format-type: generic
   target_type: generic
-  tool: '{{ .Args.Tool }}'
   predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
 
 with:
