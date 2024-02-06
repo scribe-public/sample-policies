@@ -14,32 +14,32 @@ rules:
     owner: '{{ .Args.Owner }}'
     repo: '{{ .Args.Repo }}'
     branch: '{{ .Args.Branch }}'
+    branch_protection_rules:
+      required_pull_request_reviews.dismiss_stale_reviews: true
+      required_pull_request_reviews.require_code_owner_reviews: false
+      required_pull_request_reviews.require_last_push_approval: false
+      required_pull_request_reviews.required_approving_review_count: 1
+      required_pull_request_reviews.bypass_pull_request_allowances.users: []
+      required_pull_request_reviews.bypass_pull_request_allowances.teams: []
+      required_pull_request_reviews.bypass_pull_request_allowances.apps: []
+      required_pull_request_reviews.dismissal_restrictions.users: []
+      required_pull_request_reviews.dismissal_restrictions.teams: []
+      required_pull_request_reviews.dismissal_restrictions.apps: []
 
-    branch_protection_rules.required_pull_request_reviews.dismiss_stale_reviews: false
-    branch_protection_rules.required_pull_request_reviews.require_code_owner_reviews: false
-    branch_protection_rules.required_pull_request_reviews.require_last_push_approval: false
-    branch_protection_rules.required_pull_request_reviews.required_approving_review_count: 0
-    branch_protection_rules.required_pull_request_reviews.bypass_pull_request_allowances.users: []
-    branch_protection_rules.required_pull_request_reviews.bypass_pull_request_allowances.teams: []
-    branch_protection_rules.required_pull_request_reviews.bypass_pull_request_allowances.apps: []
-    branch_protection_rules.required_pull_request_reviews.dismissal_restrictions.users: []
-    branch_protection_rules.required_pull_request_reviews.dismissal_restrictions.teams: []
-    branch_protection_rules.required_pull_request_reviews.dismissal_restrictions.apps: []
+      required_status_checks.checks: []
+      required_status_checks.strict: false
+      required_status_checks.contexts: []
 
-    branch_protection_rules.required_status_checks.checks: []
-    branch_protection_rules.required_status_checks.strict: false
-    branch_protection_rules.required_status_checks.contexts: []
+      restrictions.users: []
+      restrictions.teams: []
+      restrictions.apps: []
 
-    branch_protection_rules.restrictions.users: []
-    branch_protection_rules.restrictions.teams: []
-    branch_protection_rules.restrictions.apps: []
-
-    branch_protection_rules.required_signatures: false
-    branch_protection_rules.enforce_admins: false
-    branch_protection_rules.required_linear_history: false
-    branch_protection_rules.allow_force_pushes: false
-    branch_protection_rules.allow_deletions: true
-    branch_protection_rules.block_creations: false
-    branch_protection_rules.required_conversation_resolution: false
-    branch_protection_rules.lock_branch: false
-    branch_protection_rules.allow_fork_syncing: false
+      required_signatures: false
+      enforce_admins: false
+      required_linear_history: false
+      allow_force_pushes: false
+      allow_deletions: true
+      block_creations: false
+      required_conversation_resolution: false
+      lock_branch: false
+      allow_fork_syncing: false
