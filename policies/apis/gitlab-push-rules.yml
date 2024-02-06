@@ -1,24 +1,22 @@
-# name: gitlab-push-rules
-rules:
-- name: gitlab-push-rules
-  path: gitlab-push-rules.rego
+name: gitlab-push-rules
+path: gitlab-push-rules.rego
 
-  evidence:
-    signed: false
-    format-type: "cyclonedx-json"
+evidence:
+  signed: false
+  format-type: "cyclonedx-json"
 
-  with:
-    api_token: '{{ .Args.Token }}'
-    project: '{{ .Args.Project }}'
-    push_rule:
-      commit_message_regex: ""
-      commit_message_negative_regex: null
-      branch_name_regex: null
-      deny_delete_tag: false
-      member_check: false
-      prevent_secrets: false
-      author_email_regex: ""
-      file_name_regex: "abc"
-      max_file_size: 100
-      commit_committer_name_check: null
-      reject_unsigned_commits: null
+with:
+  api_token: '{{ .Args.Token }}'
+  project: '{{ .Args.Project }}'
+  push_rule:
+    commit_message_regex: ""
+    commit_message_negative_regex: null
+    branch_name_regex: null
+    deny_delete_tag: false
+    member_check: false
+    prevent_secrets: false
+    author_email_regex: ""
+    file_name_regex: "abc"
+    max_file_size: 100
+    commit_committer_name_check: null
+    reject_unsigned_commits: null
