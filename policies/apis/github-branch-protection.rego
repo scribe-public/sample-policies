@@ -406,12 +406,7 @@ equal_arrays(a, b) := true {
 
 get_repo(repo) := x {
     s := split(repo, "/")
-    count(s) > 1
-    x := s[1]
-}
-
-get_repo(repo) := x {
-    x := repo
+    x := s[count(s)-1]
 }
 
 api_url := sprintf("https://api.github.com/repos/%v/%v/branches/%v/protection", [input.config.args.owner, get_repo(input.config.args.repo), input.config.args.branch])
