@@ -4,7 +4,7 @@ Valint policies can be used to verify settings via APIs. This document explains 
 
 To verify run the following command:
 ```bash
-valint verify -c policies/apis/gith-branch-protection.yml --policy-args Owner=scribe-public --policy-args Repo=scribe2 --policy-args Branch=main --policy-args Token=$GH_TOKEN
+valint verify -c policies/apis/gith-branch-protection.yaml --policy-args Owner=scribe-public --policy-args Repo=scribe2 --policy-args Branch=main --policy-args Token=$GH_TOKEN
 ```
 
 Notes:
