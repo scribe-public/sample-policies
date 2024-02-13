@@ -1,0 +1,12 @@
+rules:
+  - uses: sboms/artifact-signed@v1
+    evidence:
+      signed: true
+    with:
+      identity:
+        common-names: []
+  - uses: images/fresh-image@v1
+    evidence:
+      signed: true
+    with:
+      max_days: 3650

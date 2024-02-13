@@ -26,7 +26,7 @@ valint verify git:wtp-bert-tiny
 
 Valint can also be used to verify the license of a model or dataset. This can be done with the following command:
 ```bash
-valint verify git:wtp-bert-tiny -d att -c verify-huggingface-license.yml
+valint verify git:wtp-bert-tiny -d att -c verify-huggingface-license.yaml
 ```
 This policy extracts from the attestation the model id, pull from HuggingFace the model’s metadata, and verifies that the model’s license is "mit"
 

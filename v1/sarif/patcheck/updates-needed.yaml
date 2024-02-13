@@ -1,0 +1,16 @@
+name: updates-needed
+path: updates-needed.rego
+level: "warning"
+
+description: "A rule to verify that no security packages need to be updated"
+labels:
+  - sarif
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: generic
+  predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0

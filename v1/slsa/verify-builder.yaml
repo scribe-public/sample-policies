@@ -1,0 +1,20 @@
+name: builder
+path: verify-builder.rego
+
+description: "A rule for checking that the artifact artifact was created by the specified builder"
+labels:
+  - slsa
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  filter-by:
+    - pipeline
+    - product
+  signed: false
+  format-type: slsa
+  target_type: image
+
+with:
+  id: '{{ .Args.BUILDER_ID }}'

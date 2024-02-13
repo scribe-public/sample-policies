@@ -1,0 +1,20 @@
+name: files_integrity
+path: files_integrity.rego
+
+description: "A rule to verify that the image is not older than a threshold"
+labels:
+  - images
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  signed: true
+  format-type: cyclonedx-json
+  target_type: image
+  labels:
+    - new_evidence
+
+with:
+  ref_sbom: '{{ .Env.REF_SBOM_DATA }}'
+  path_prefix: "pkg:file/"

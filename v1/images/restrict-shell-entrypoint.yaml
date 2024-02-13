@@ -1,0 +1,14 @@
+name: no-shell-access
+path: restrict-shell-entrypoint.rego
+
+description: "A rule to verify that the image does not allow shell access"
+labels:
+  - images
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: image

@@ -1,0 +1,20 @@
+name: verify-field-exists
+path: field-exists.rego
+
+description: "A rule for checking that the specified field exists in the artifact"
+labels:
+  - slsa
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  signed: false
+  format-type: slsa
+  target_type: image
+
+with:
+  paths:
+    - "myunknownfield"
+    - "predicate/runDetails/builder/builderDependencies"
+  violations_threshold: 1

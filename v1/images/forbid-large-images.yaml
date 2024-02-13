@@ -1,0 +1,17 @@
+name: large-image
+path: forbid-large-images.rego
+
+description: "A rule to verify that the image size is below a threshold"
+labels:
+  - images
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: image
+
+with:
+  max_size: 77819980

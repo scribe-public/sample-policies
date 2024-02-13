@@ -1,0 +1,27 @@
+name: scribe-api
+path: scribe-api.rego
+
+description: "A rule to verify violations using ScribeHub API"
+
+labels:
+  - scribe
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence: 
+  signed: false
+  format-type: cyclonedx
+
+with:
+  superset:
+    username: '{{ .Env.SCRIBE_CLIENT_ID }}'
+    password: '{{ .Env.SCRIBE_CLIENT_SECRET }}'
+    cve:
+      max: 0
+    # licences:
+    #   max: 500
+    # unmaintained:
+    #   max: 2000
+    # images:
+    #   max: 20
