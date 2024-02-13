@@ -1,0 +1,9 @@
+rules:
+  - uses: sboms/artifact-signed@v1
+    evidence:
+      signed: true
+  - uses: images/fresh-image@v1
+    evidence:
+      signed: true
+    with:
+      max_days: 365
