@@ -54,7 +54,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
             with:
               required_pkgs:
                 - "gpgv@2.2.27-3ubuntu2.1"
@@ -66,7 +66,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
             with:
               blocklist:
                 - GPL
@@ -78,7 +78,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
             with:
               blocklist:
                 - "pkg:deb/ubuntu/tar@1.34+dfsg-1ubuntu0.1.22.04.1?arch=arm64&distro=ubuntu-22.04"
@@ -91,7 +91,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
           - name: fresh-sbom
             path: ../policies/sboms/fresh-sbom.rego
             evidence:
@@ -99,7 +99,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
             with:
               max_days: 30
 ## Policy #3
@@ -113,7 +113,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
             with:
               blocklist:
                 - curl
@@ -124,7 +124,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
             with:
               max_size: 77819980
           - name: fresh-image
@@ -134,7 +134,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
             with:
               max_days: 30
           - name: restrict-shell-entrypoint
@@ -144,7 +144,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
           - name: verify-labels
             path: ../policies/images//verify-labels.rego
             evidence:
@@ -152,7 +152,7 @@ attest:
               filter-by:
                 - product
               format-type: "cyclonedx-json"
-              target_type: image
+              target_type: container
             with:
               labels:
                 - label: "org.opencontainers.image.version"
@@ -184,7 +184,7 @@ attest:
               filter-by:
                 - product
               format-type: "generic"
-              target_type: generic
+              target_type: data
               predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
             with:
               violations_threshold: 0
@@ -195,7 +195,7 @@ attest:
               filter-by:
                 - product
               format-type: "generic"
-              target_type: generic
+              target_type: data
               predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
             with:
               attack_vectors:
@@ -212,7 +212,7 @@ attest:
               filter-by:
                 - product
               format-type: "slsa"
-              target_type: image
+              target_type: container
             with:
               blocklist:
                 - name: "valint"
@@ -224,7 +224,7 @@ attest:
               filter-by:
                 - product
               format-type: "slsa"
-              target_type: image
+              target_type: container
             with:
               start_hour: 8
               end_hour: 20
@@ -241,7 +241,7 @@ attest:
               filter-by:
                 - product
               format-type: "slsa"
-              target_type: image
+              target_type: container
             with:
               paths:
                 - "predicate/runDetails/builder/builderDependencies"
@@ -253,7 +253,7 @@ attest:
               filter-by:
                 - product
               format-type: "slsa"
-              target_type: image
+              target_type: container
             with:
               id: "local"
           - name: verify-byproducts
@@ -263,7 +263,7 @@ attest:
               filter-by:
                 - product
               format-type: "slsa"
-              target_type: image
+              target_type: container
             with:
               byproducts:
                 - 256d88da41857db513b95b50ba9a9b28491b58c954e25477d5dad8abb465430b
