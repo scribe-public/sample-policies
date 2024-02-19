@@ -11,7 +11,7 @@ initiatives:
 evidence:
   signed: false
   format-type: slsa
-  target_type: image
+  target_type: container
 
 with:
   start_hour: 8

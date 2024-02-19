@@ -11,7 +11,7 @@ initiatives:
 evidence:
   signed: false
   format-type: cyclonedx-json
-  target_type: image
+  target_type: container
 
 with:
   licenses:

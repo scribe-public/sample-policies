@@ -14,7 +14,7 @@ evidence:
     - product
   signed: false
   format-type: slsa
-  target_type: image
+  target_type: container
 
 with:
   id: '{{ .Args.BUILDER_ID }}'

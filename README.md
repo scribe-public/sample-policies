@@ -148,7 +148,7 @@ You can also edit `target_type` to refelct the artifact type.
 
 ```yaml
 evidence:
-   target_type: image
+   target_type: container
 with:
    identity:
       emails:
