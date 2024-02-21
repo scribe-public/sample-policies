@@ -14,5 +14,5 @@ evidence:
 
 with:
   identity:
-    common-names:
-      - EvidencePolicyResults4
+    common-names: []
+    emails: []
