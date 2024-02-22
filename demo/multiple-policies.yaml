@@ -1,8 +1,8 @@
 scribe:
   auth:
     enable: true
-    client-id: {{ .Args.CLIENT_ID }}
-    client-secret: {{ .Args.CLIENT_SECRET }}
+    client-id: {{ .Env.CLIENT_ID }}
+    client-secret: {{ .Env.CLIENT_SECRET }}
   url: https://api.dev.scribesecurity.com/
   enable: true
 attest:

@@ -17,4 +17,4 @@ evidence:
   target_type: container
 
 with:
-  id: '{{ .Args.BUILDER_ID }}'
+  id: '{{ .Env.HOSTNAME }}'
