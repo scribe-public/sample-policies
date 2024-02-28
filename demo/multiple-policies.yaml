@@ -13,7 +13,7 @@ attest:
       - name: git-policies
         rules:
           - name: coding-permissions
-            path: ../policies/git/coding-permissions.rego
+            path: ../v1/git/coding-permissions.rego
             evidence:
               signed: false
               filter-by:
@@ -26,7 +26,7 @@ attest:
               files:
                 - "Dockerfile"
           - name: no-commits-to-main
-            path: ../policies/git/no-commit-to-main.rego
+            path: ../v1/git/no-commit-to-main.rego
             level: "note"
             evidence:
               signed: false
@@ -35,7 +35,7 @@ attest:
               format-type: "cyclonedx-json"
               target_type: git
           - name: no-unsigned-commits
-            path: ../policies/git/no-unsigned-commits.rego
+            path: ../v1/git/no-unsigned-commits.rego
             level: "warning"
             evidence:
               signed: false
@@ -48,7 +48,7 @@ attest:
       - name: sbom-policies
         rules:
           - name: required-packages
-            path: ../policies/sboms/required-packages.rego
+            path: ../v1/sboms/required-packages.rego
             evidence:
               signed: false
               filter-by:
@@ -60,7 +60,7 @@ attest:
                 - "gpgv@2.2.27-3ubuntu2.1"
               violations_limit: 0
           - name: banned-licenses
-            path: ../policies/sboms/banned-licenses.rego
+            path: ../v1/sboms/banned-licenses.rego
             evidence:
               signed: false
               filter-by:
@@ -72,7 +72,7 @@ attest:
                 - GPL
               blocklisted_limit : 199
           - name: blocklist-packages
-            path: ../policies/sboms/blocklist-packages.rego
+            path: ../v1/sboms/blocklist-packages.rego
             evidence:
               signed: false
               filter-by:
@@ -85,7 +85,7 @@ attest:
                 - "log4j"
               blocklisted_limit : 1
           - name: complete-licenses
-            path: ../policies/sboms/complete-licenses.rego
+            path: ../v1/sboms/complete-licenses.rego
             evidence:
               signed: false
               filter-by:
@@ -93,7 +93,7 @@ attest:
               format-type: "cyclonedx-json"
               target_type: container
           - name: fresh-sbom
-            path: ../policies/sboms/fresh-sbom.rego
+            path: ../v1/sboms/fresh-sbom.rego
             evidence:
               signed: false
               filter-by:
@@ -107,7 +107,7 @@ attest:
       - name: image-policies
         rules:
           - name: blocklist-build-scripts
-            path: ../policies/images//blocklist-build-scripts.rego
+            path: ../v1/images//blocklist-build-scripts.rego
             evidence:
               signed: false
               filter-by:
@@ -118,7 +118,7 @@ attest:
               blocklist:
                 - curl
           - name: forbid-large-images
-            path: ../policies/images//forbid-large-images.rego
+            path: ../v1/images//forbid-large-images.rego
             evidence:
               signed: false
               filter-by:
@@ -128,7 +128,7 @@ attest:
             with:
               max_size: 77819980
           - name: fresh-image
-            path: ../policies/images//fresh-image.rego
+            path: ../v1/images//fresh-image.rego
             evidence:
               signed: false
               filter-by:
@@ -138,7 +138,7 @@ attest:
             with:
               max_days: 30
           - name: restrict-shell-entrypoint
-            path: ../policies/images//restrict-shell-entrypoint.rego
+            path: ../v1/images//restrict-shell-entrypoint.rego
             evidence:
               signed: false
               filter-by:
@@ -146,7 +146,7 @@ attest:
               format-type: "cyclonedx-json"
               target_type: container
           - name: verify-labels
-            path: ../policies/images//verify-labels.rego
+            path: ../v1/images//verify-labels.rego
             evidence:
               signed: false
               filter-by:
@@ -206,7 +206,7 @@ attest:
       - name: slsa-policies
         rules:
           - name: banned-builder-deps
-            path: ../policies/slsa//banned-builder-deps.rego
+            path: ../v1/slsa//banned-builder-deps.rego
             evidence:
               signed: false
               filter-by:
@@ -218,7 +218,7 @@ attest:
                 - name: "valint"
                   version: "0.4.0"
           - name: build-time
-            path: ../policies/slsa//build-time.rego
+            path: ../v1/slsa//build-time.rego
             evidence:
               signed: false
               filter-by:
@@ -235,7 +235,7 @@ attest:
                 - "Wednesday"
                 - "Thursday"
           - name: field-exists
-            path: ../policies/slsa//field-exists.rego
+            path: ../v1/slsa//field-exists.rego
             evidence:
               signed: false
               filter-by:
@@ -247,7 +247,7 @@ attest:
                 - "predicate/runDetails/builder/builderDependencies"
               violations_threshold: 0
           - name: verify-builder
-            path: ../policies/slsa//verify-builder.rego
+            path: ../v1/slsa//verify-builder.rego
             evidence:
               signed: false
               filter-by:
@@ -257,7 +257,7 @@ attest:
             with:
               id: "local"
           - name: verify-byproducts
-            path: ../policies/slsa//verify-byproducts.rego
+            path: ../v1/slsa//verify-byproducts.rego
             evidence:
               signed: false
               filter-by:

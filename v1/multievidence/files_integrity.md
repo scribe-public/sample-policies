@@ -59,5 +59,5 @@ export REF_SBOM_DATA=$(jq -r .Data downloaded.json | base64 -d)
 Then, run the following command to verify the policy:
 
 ```bash
-valint verify --rule policies/multievidence/files_integrity.yaml
+valint verify --rule multievidence/files_integrity@v1
 ```

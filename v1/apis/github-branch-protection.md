@@ -4,7 +4,7 @@ Valint policies can be used to verify settings via APIs. This document explains 
 
 To verify run the following command:
 ```bash
-valint verify -c policies/apis/gith-branch-protection.yaml --policy-args Owner=scribe-public --policy-args Repo=scribe2 --policy-args Branch=main --policy-args Token=$GH_TOKEN
+valint verify --rule apis/gith-branch-protection@v1 --policy-args Owner=scribe-public --policy-args Repo=scribe2 --policy-args Branch=main --policy-args Token=$GH_TOKEN
 ```
 
 Notes:
@@ -14,51 +14,41 @@ Notes:
 
 Here is an example of the policy configuration file, followed by a description of the parameters.
 ```yaml
-attest:
-  cocosign:
-    policies:
-    - name: github-branch-protection
-            rules:
-      - name: github-branch-protection
-        type: verify-artifact
-              evidence:
-          signed: false
-          rego:
-            args:
-              api_token: '{{ .Args.Token }}'
-              owner: '{{ .Args.Owner }}'
-              repo: '{{ .Args.Repo }}'
-              branch: '{{ .Args.Branch }}'
-              branch_protection_rules:
-                required_pull_request_reviews.dismiss_stale_reviews: true
-                required_pull_request_reviews.require_code_owner_reviews: false
-                required_pull_request_reviews.require_last_push_approval: false
-                required_pull_request_reviews.required_approving_review_count: 1
-                required_pull_request_reviews.bypass_pull_request_allowances.users: []
-                required_pull_request_reviews.bypass_pull_request_allowances.teams: []
-                required_pull_request_reviews.bypass_pull_request_allowances.apps: []
-                required_pull_request_reviews.dismissal_restrictions.users: []
-                required_pull_request_reviews.dismissal_restrictions.teams: []
-                required_pull_request_reviews.dismissal_restrictions.apps: []
+name: github-branch-protection
+with:
+  api_token: '{{ .Args.Token }}'
+  owner: '{{ .Args.Owner }}'
+  repo: '{{ .Args.Repo }}'
+  branch: '{{ .Args.Branch }}'
+  branch_protection_rules:
+    required_pull_request_reviews.dismiss_stale_reviews: true
+    required_pull_request_reviews.require_code_owner_reviews: false
+    required_pull_request_reviews.require_last_push_approval: false
+    required_pull_request_reviews.required_approving_review_count: 1
+    required_pull_request_reviews.bypass_pull_request_allowances.users: []
+    required_pull_request_reviews.bypass_pull_request_allowances.teams: []
+    required_pull_request_reviews.bypass_pull_request_allowances.apps: []
+    required_pull_request_reviews.dismissal_restrictions.users: []
+    required_pull_request_reviews.dismissal_restrictions.teams: []
+    required_pull_request_reviews.dismissal_restrictions.apps: []
 
-                required_status_checks.checks: []
-                required_status_checks.strict: false
-                required_status_checks.contexts: []
+    required_status_checks.checks: []
+    required_status_checks.strict: false
+    required_status_checks.contexts: []
 
-                restrictions.users: []
-                restrictions.teams: []
-                restrictions.apps: []
+    restrictions.users: []
+    restrictions.teams: []
+    restrictions.apps: []
 
-                required_signatures: false
-                enforce_admins: false
-                required_linear_history: false
-                allow_force_pushes: false
-                allow_deletions: true
-                block_creations: false
-                required_conversation_resolution: false
-                lock_branch: false
-                allow_fork_syncing: false
-        path: github-branch-protection.rego
+    required_signatures: false
+    enforce_admins: false
+    required_linear_history: false
+    allow_force_pushes: false
+    allow_deletions: true
+    block_creations: false
+    required_conversation_resolution: false
+    lock_branch: false
+    allow_fork_syncing: false
 ```
 
 
