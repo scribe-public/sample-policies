@@ -14,7 +14,6 @@ evidence:
   target_type: container
 
 with:
-  blocklist:
-    - GPL
-  blocklisted_limit : 199
+  blocklist: []
+  blocklisted_limit : 0
 

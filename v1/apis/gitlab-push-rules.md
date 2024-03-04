@@ -4,7 +4,7 @@ Valint policies can be used to verify settings via APIs. This document explains 
 
 To verify run the following command:
 ```bash
-valint verify -c policies/apis/gitlab-push-rules.yaml --policy-args Project=12345678 --policy-args Token=$GL_TOKEN
+valint verify --rule apis/gitlab-push-rules@v1 --policy-args Project=12345678 --policy-args Token=$GL_TOKEN
 ```
 
 Notes:

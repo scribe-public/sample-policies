@@ -14,7 +14,5 @@ evidence:
   target_type: container
 
 with:
-  blocklist:
-    - name: "valint"
-      version: "0.4.0"
+  blocklist: []
 
