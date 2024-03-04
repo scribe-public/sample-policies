@@ -14,7 +14,5 @@ evidence:
   target_type: container
 
 with:
-  paths:
-    - "myunknownfield"
-    - "predicate/runDetails/builder/builderDependencies"
-  violations_threshold: 1
+  paths: []
+  violations_threshold: 0

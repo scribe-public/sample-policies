@@ -14,6 +14,5 @@ evidence:
   target_type: container
 
 with:
-  required_pkgs:
-    - "gpgv@2.2.27-3ubuntu2.1"
+  required_pkgs: []
   violations_limit: 0

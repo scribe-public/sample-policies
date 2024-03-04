@@ -14,12 +14,5 @@ evidence:
   target_type: git
 
 with:
-  identity:
-    emails:
-      - "@golang.com"
-  ids:
-    - "@golang.com"
-    - "@golan1g.org"
-  files:
-    - "a.txt"
-    - "jenkins_k8s/scripts/kaniko_config.sh"
+  ids: []
+  files: []

@@ -14,5 +14,4 @@ evidence:
   target_type: container
 
 with:
-  blocklist:
-    - curl
+  blocklist: []

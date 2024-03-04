@@ -16,6 +16,5 @@ evidence:
   predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
 
 with:
-  rule_ids:
-    - "use-after-free"
-  violations_threshold: 2
+  rule_ids: []
+  violations_threshold: 0
