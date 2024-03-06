@@ -12,4 +12,3 @@ evidence:
   signed: false
   format-type: cyclonedx-json
   target_type: container
-

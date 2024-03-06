@@ -1,5 +1,5 @@
 name: verify-docker-scout
-path: ../verify-tool-name.rego
+path: verify-tool-name.rego
 
 description: "A rule to verify that required tool us used to create the SARIF report"
 labels:
