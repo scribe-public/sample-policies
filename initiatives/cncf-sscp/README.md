@@ -53,7 +53,7 @@ After deploying SBOM generation, utilize ScribeHub SaaS to verify the materials:
 
 ### Protecting build pipelines
         **TBD**
-
+<!--
 Do you use hardened, minimal containers as the foundation for your build workers?
 
 Do you maintain your build and test pipelines as Infrastructure-as-Code?
@@ -71,6 +71,7 @@ Do your pipeline orchestrator pass in the environments, tools, and commands allo
 Do you network isolate your build workers and pipeline as much as possible?
 
 Do you produce verifiable, reproducible builds?
+-->
 
 ### Protecting artefacts and deployments category
 * Enable verifying the integrity of the artefacts
