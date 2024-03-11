@@ -1,4 +1,4 @@
-name: evidence-exists
+name: git-evidence-exists
 description: "A rule for checking that required evidence exists"
 labels:
   - sboms
