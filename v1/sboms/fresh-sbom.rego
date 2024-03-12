@@ -37,12 +37,12 @@ allow {
 
 reason = v {
 	allow
-	v := "SBOM is fresh enough"
+	v := "SBOM age is below limit"
 }
 
 reason = v {
 	not allow
-	v := "SBOM is too old"
+	v := "SBOM age is above limit"
 }
 
 errors[msg] {

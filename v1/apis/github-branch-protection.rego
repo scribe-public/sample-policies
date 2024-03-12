@@ -49,12 +49,12 @@ verify = v {
 
 reason = v {
 	allow
-	v := "all required branch protection rules are in place."
+	v := "All required Branch Protection rules were set"
 }
 
 reason = v {
 	not allow
-	v := "found branch protection rules missing."
+	v := "Not all required Branch Protection rules were set"
 }
 
 allow {

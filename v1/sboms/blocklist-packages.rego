@@ -25,12 +25,12 @@ allow {
 
 reason = v {
 	allow
-	v := "no blocklisted packages were found in the project"
+	v := "All packages in the SBOM are *not* on the blocklist"
 }
 
 reason = v {
 	not allow
-	v := "some blocklisted packages were found in the project"
+	v := "Several packages in the SBOM are on the blocklist"
 }
 
 violations = j {

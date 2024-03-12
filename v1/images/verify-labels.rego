@@ -32,12 +32,12 @@ allow {
 
 reason = v {
 	allow
-	v := "image contains all required labels"
+	v := "Image contains all required labels"
 }
 
 reason = v {
 	not allow
-	v := "image doesn't contain required labels"
+	v := "Image does not contain all required labels"
 }
 
 violations = j {
