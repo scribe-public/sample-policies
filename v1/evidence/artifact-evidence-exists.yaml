@@ -1,0 +1,6 @@
+name: artifact-evidence-exists
+description: "A rule to verify that the artifact produced any evidence"
+labels:
+  - sample-policy-bundle
+initiatives:
+  - client-policy

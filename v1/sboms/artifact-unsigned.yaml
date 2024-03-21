@@ -1,0 +1,11 @@
+name: artifact-unsigned
+description: "A rule to verify that the artifact produced an unsigned SBOM"
+labels:
+  - sboms
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  format-type: cyclonedx-json
+  signed: false
