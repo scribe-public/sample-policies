@@ -1,0 +1,45 @@
+name: Sync Valint Version
+
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: write
+
+jobs:
+  sync_version:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Read version from file
+        id: read_version
+        run: echo "version=$(cat .version)" >> $GITHUB_OUTPUT
+
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          tag_name=$(echo "${{ steps.read_version.outputs.version }}")
+          git fetch --tags
+          if git rev-parse "$tag_name" >/dev/null 2>&1; then
+            echo "Tag $tag_name already exists"
+            echo "tag_exists==true" >> $GITHUB_OUTPUT
+          else
+            echo "Tag $tag_name does not exist"
+            echo "tag_exists==false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create and push tag
+        if: steps.check_tag.outputs.tag_exists == 'false'
+        run: |
+          tag_name=$(echo "${{ steps.read_version.outputs.version }}")
+          git tag "$tag_name"
+          git push origin "$tag_name"
