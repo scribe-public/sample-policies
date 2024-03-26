@@ -8,6 +8,8 @@ labels:
 initiatives:
   - client-policy
 
+aggregate-results: true
+
 evidence:
   signed: false
   format-type: cyclonedx-json
