@@ -41,7 +41,8 @@ reason = v {
 
 violations = j {
 	j := {r |
-		some label in input.config.args.labels
+		some i
+		label := input.config.args.labels[i]
 		not match_any(label)
 		r = {
 			"label": label,
