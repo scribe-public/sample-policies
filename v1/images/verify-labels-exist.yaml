@@ -1,5 +1,5 @@
 name: labels
-path: verify-labels-exists.rego
+path: verify-labels-exist.rego
 
 description: "A rule to verify that the image has all the required labels"
 labels:
