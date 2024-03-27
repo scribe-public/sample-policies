@@ -31,10 +31,10 @@ jobs:
           git fetch --tags
           if git rev-parse "$tag_name" >/dev/null 2>&1; then
             echo "Tag $tag_name already exists"
-            echo "tag_exists==true" >> $GITHUB_OUTPUT
+            echo "tag_exists=true" >> $GITHUB_OUTPUT
           else
             echo "Tag $tag_name does not exist"
-            echo "tag_exists==false" >> $GITHUB_OUTPUT
+            echo "tag_exists=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Create and push tag
