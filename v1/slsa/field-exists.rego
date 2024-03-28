@@ -30,12 +30,12 @@ allow {
 
 reason = v {
 	allow
-	v := "provenance contains all required fields"
+	v := "Provenance document contains all required fields"
 }
 
 reason = v {
 	not allow
-	v := "provenance doesn't contain required fields"
+	v := "Provenance document does *not* contain all required fields"
 }
 
 violations = j {

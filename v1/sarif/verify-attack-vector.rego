@@ -26,13 +26,7 @@ allow {
 }
 
 reason = v {
-	allow
-	v := sprintf("found %d violations, which is less than allowed (%d)", [count(violations), input.config.args.violations_threshold])
-}
-
-reason = v {
-	not allow
-	v := sprintf("found more violations (%d) than allowed (%d)", [count(violations), input.config.args.violations_threshold])
+	v := sprintf("%d violations | %d max allowed", [count(violations), input.config.args.violations_threshold])
 }
 
 violations = j {

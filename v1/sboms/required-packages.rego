@@ -35,13 +35,7 @@ allow {
 }
 
 reason = v {
-	allow
-	v := sprintf("enough required packages are present in the SBOM (found %d violations under max violation limit %d)", [count(violations), input.config.args.violations_limit])
-}
-
-reason = v {
-	not allow
-	v := sprintf("not all required packages are present in the SBOM (found %v violations exceeds max violation limit %v)", [count(violations), input.config.args.violations_limit])
+	v := sprintf("%d missing required dependencies in SBOM | %d max allowed", [count(violations), input.config.args.violations_limit])
 }
 
 

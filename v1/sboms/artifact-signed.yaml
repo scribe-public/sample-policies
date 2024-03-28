@@ -4,7 +4,7 @@ labels:
   - sboms
   - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   format-type: cyclonedx-json

@@ -33,12 +33,12 @@ verify = v {
 
 reason = v {
 	allow
-	v := "all required files are commited by authorized authors"
+	v := "All commits to monitored files were made by authorized authors"
 }
 
 reason = v {
 	not allow
-	v := "found commit(s) made by unauthorized author(s)"
+	v := "Commits to monitored files were made by unauthorized authors "
 }
 
 allow {

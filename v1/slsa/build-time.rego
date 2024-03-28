@@ -43,12 +43,12 @@ allow {
 
 reason = v {
 	allow
-	v := "image created within the allowed interval"
+	v := "Image was created within the allowed time interval"
 }
 
 reason = v {
 	not allow
-	v := "image created outside of the allowed interval"
+	v := "Image was *not* created within the allowed time interval"
 }
 
 violations = v {

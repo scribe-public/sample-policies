@@ -35,12 +35,12 @@ allow {
 
 reason = v {
 	allow
-	v := "no commits to main branch found"
+	v := "No disallowed commits to main branch"
 }
 
 reason = v {
 	not allow
-	v := "found commits to main branch"
+	v := "Disallowed commits to main branch were detected"
 }
 
 find_commit_to_main {

@@ -34,12 +34,12 @@ allow {
 
 reason = v {
 	allow
-	v := "image entrypoint does not allow shell access"
+	v := "Image entrypoint does not allow shell access"
 }
 
 reason = v {
 	not allow
-	v := "image entrypoint allows shell access"
+	v := "Image entrypoint allows shell access"
 }
 
 violations = v {

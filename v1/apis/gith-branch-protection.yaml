@@ -1,5 +1,4 @@
 
-# name: github-branch-protection
 name: github-branch-protection
 path: github-branch-protection.rego
 level: "warning"

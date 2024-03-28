@@ -26,13 +26,7 @@ verify = v {
 }
 
 reason = v {
-	allow
-	v := sprintf("# of packages using banned licenses (%d) does not exceed max violation limit (%d)", [count(violations), input.config.args.blocklisted_limit])
-}
-
-reason = v {
-	not allow
-	v := sprintf("# of packages using banned licenses (%d) exceeds max violation limit (%d)", [count(violations), input.config.args.blocklisted_limit])
+	v := sprintf("%d packages using blocklisted licenses | %d max allowed", [count(violations), input.config.args.blocklisted_limit])
 }
 
 allow {

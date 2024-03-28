@@ -30,12 +30,12 @@ allow {
 
 reason = v {
 	allow
-	v := "no file inetgrity mismatches were found in the given path" # TODO: add path
+	v := "File Integrity validation passed (no file path mismatches)" # TODO: add path
 }
 
 reason = v {
 	not allow
-	v := "file integrity mismatches were found in the given path" # TODO: add path
+	v := "File Integrity validation found mismatches in the file path" # TODO: add path
 }
 
 violations = j {

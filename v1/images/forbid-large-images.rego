@@ -35,12 +35,12 @@ allow {
 
 reason = v {
 	allow
-	v := "image is within allowed size"
+	v := "Image size below limit"
 }
 
 reason = v {
 	not allow
-	v := "image is too big"
+	v := "Image size above limit"
 }
 
 errors[msg] {

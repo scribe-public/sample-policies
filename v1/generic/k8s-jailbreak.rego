@@ -24,13 +24,7 @@ verify = v {
 }
 
 reason = v {
-	allow
-	v := sprintf("# of violations (%d) is under max violation limit %d", [count(violations), 0])
-}
-
-reason = v {
-	not allow
-	v := sprintf("# of violations (%d) exceeds max violation limit %d", [count(violations), 0])
+	v := sprintf("%d violations | %d max allowed", [count(violations), 0])
 }
 
 allow {

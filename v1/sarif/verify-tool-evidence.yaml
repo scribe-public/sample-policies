@@ -5,7 +5,7 @@ labels:
   - sarif
   - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false

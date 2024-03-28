@@ -50,12 +50,12 @@ verify = v {
 
 reason = v {
 	allow
-	v := "all required push rules are in place."
+	v := "All required Push rules were set"
 }
 
 reason = v {
 	not allow
-	v := "found push rules missing."
+	v := "Not all required Push rules were set"
 }
 
 allow {

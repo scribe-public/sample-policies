@@ -29,12 +29,12 @@ allow {
 
 reason = v {
 	allow
-	v := "no packages need updates"
+	v := "None of the dependencies(packages) requires an update"
 }
 
 reason = v {
 	not allow
-	v := "some packages need updates"
+	v := "Several dependencies(packages) require an update"
 }
 
 violations = j {
