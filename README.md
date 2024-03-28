@@ -104,6 +104,7 @@ valint verify busybox:latest --bundle https://github.com/scribe-public/sample-po
 | [Do Not Allow Vulnerabilities Based On Specific Attack Vector](#do-not-allow-vulnerabilities-based-on-specific-attack-vector) | Restrict vulnerabilities based on specific attack vector. | [SARIF](#sarif-reports) |
 | [Report IaC Configuration errors](#report-iac-configuration-errors) | Check if there are any IaC configuration errors. | [SARIF](#sarif-reports) |
 | [Verify Semgrep SARIF report](#verify-semgrep-sarif-report) | Check for specific violations in a semgrep report. | [SARIF](#sarif-reports) |
+| [Verify Scanner Tool Evidence](#verify-tool-evidence) | Check the existance of an evidence of SARIF report created by specified tool | [SARIF](#sarif-reports) |
 | [Forbid Accessing Host](#forbid-accessing-host) | Do not allow images with detected vulnerabilities giving access to the host system. | Generic Evidence | [Generic](#generic) |
 | No Package Downgrading | Restrict package downgrades. | src and dst [SBOM](#sboms) |
 | No License Modification | Prevent license modifications. | src and dst [SBOM](#sboms) |
@@ -638,6 +639,16 @@ valint verify semgrep-report.sarif -i statement-generic --rule sarif/verify-semg
 ```
 
 If any violations found, the output will contain their description, including the violated rule and the file where the violation was found.
+
+#### Verify Tool Evidence
+
+This rule ([verify-tool-evidence.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sarif/verify-tool-evidence.yaml)) allows to verify the existence of an evidence of SARIF report created by a specified tool. By default, the rule checks for an evidence created out of _any_ SARIF report. To specify a tool, use the `tool` parameter in the `evidence` section of the rule configuration. For example, to verify that there is an evidence of a SARIF report created by `trivy`, use the following configuration:
+
+```yaml
+uses: sarif/verify-tool-evidence@v1
+evidence:
+   tool: "Trivy Vulnerability Scanner"
+```
 
 ### Forbid Accessing Host
 

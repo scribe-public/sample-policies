@@ -1,4 +1,4 @@
-name: artifact-signed
+name: git-artifact-signed
 description: "A rule to verify that the artifact is signed"
 labels:
   - sboms
@@ -7,8 +7,9 @@ initiatives:
   - client-policy
 
 evidence:
-  format-type: cyclonedx-json
   signed: true
+  format-type: cyclonedx-json
+  target_type: git
 
 with:
   identity:
