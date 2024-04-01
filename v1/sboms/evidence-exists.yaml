@@ -1,0 +1,11 @@
+name: evidence-exists
+description: "A rule for checking that required evidence exists"
+labels:
+  - sboms
+  - sample-policy-bundle
+initiatives:
+  - client-policy
+
+evidence:
+  format-type: cyclonedx-json
+  signed: false

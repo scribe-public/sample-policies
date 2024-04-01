@@ -1,12 +1,14 @@
 name: labels
-path: verify-labels.rego
+path: verify-labels-exist.rego
 
-description: "A rule to verify that the image has all the required labels keys and values"
+description: "A rule to verify that the image has all the required labels"
 labels:
   - images
   - sample-policy-bundle
 initiatives:
   - client-policy
+
+aggregate-results: true
 
 evidence:
   signed: false

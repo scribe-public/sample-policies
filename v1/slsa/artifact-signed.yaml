@@ -1,14 +1,15 @@
-name: artifact-signed
+name: slsa-artifact-signed
 description: "A rule to verify that the artifact is signed"
 labels:
-  - sboms
+  - slsa
   - sample-policy-bundle
 initiatives:
   - client-policy
 
 evidence:
-  format-type: cyclonedx-json
   signed: true
+  format-type: slsa
+  target_type: container
 
 with:
   identity:
