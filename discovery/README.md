@@ -4,6 +4,8 @@ This README provides an overview of the set of policy rules that utilize discove
 
 ## Table of Contents
 
+Each paragraph below corresponds to a specific policy rule. The rules are categorized based on the type of evidence they utilize.
+
 1. [GitLab Organization Attestation](#gitlab-organization-attestation)
     1. [User](#user)
         1. [Check Users against an Allowlist](#check-users-against-an-allowlist)
