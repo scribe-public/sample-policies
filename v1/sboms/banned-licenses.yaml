@@ -6,7 +6,7 @@ labels:
   - sboms
   - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false
@@ -16,4 +16,3 @@ evidence:
 with:
   blocklist: []
   blocklisted_limit : 0
-

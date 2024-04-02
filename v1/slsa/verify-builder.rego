@@ -28,12 +28,12 @@ allow {
 
 reason = v {
 	allow
-	v := "builder matches config"
+	v := "Builder ID is in the allowed list"
 }
 
 reason = v {
 	not allow
-	v := "builder mismatch"
+	v := "Builder ID is *not* in the allowed list"
 }
 
 violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.run_id}] if {

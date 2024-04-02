@@ -28,13 +28,7 @@ verify = v {
 }
 
 reason = v {
-	allow
-	v := sprintf("valid Sarif found, %d failed rules under max violation limit %d", [count(violations), input.config.args.max_allowed])
-}
-
-reason = v {
-	not allow
-	v := sprintf("invalid Sarif found, %d failed rules exceeds max violation limit %d", [count(violations), input.config.args.max_allowed])
+	v := sprintf("%d violations | %d max allowed", [count(violations), input.config.args.max_allowed])
 }
 
 allow {

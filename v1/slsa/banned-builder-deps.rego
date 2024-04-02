@@ -29,12 +29,12 @@ allow {
 
 reason = v {
 	allow
-	v := "no blocklisted dependencies found"
+	v := "All of the dependencies(packages) are *not* on the blocklist"
 }
 
 reason = v {
 	not allow
-	v := "the builder has some blocklisted dependencies"
+	v := "Several dependencies(packages) are on the blocklist"
 }
 
 violations = j {

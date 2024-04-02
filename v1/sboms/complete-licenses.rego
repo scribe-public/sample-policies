@@ -25,12 +25,12 @@ allow {
 
 reason = v {
 	allow
-	v := "all packages have licenses"
+	v := "All packages have licenses"
 }
 
 reason = v {
 	not allow
-	v := "not all packages have licenses"
+	v := "Several packages don't have licenses"
 }
 
 violations = j {
