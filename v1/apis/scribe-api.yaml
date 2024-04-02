@@ -11,12 +11,10 @@ initiatives:
 
 evidence: 
   signed: false
-  format-type: cyclonedx
+  format-type: cyclonedx-json
 
 with:
   superset:
-    username: '{{ .Env.SCRIBE_CLIENT_ID }}'
-    password: '{{ .Env.SCRIBE_CLIENT_SECRET }}'
     cve:
       max: 0
     # licences:
