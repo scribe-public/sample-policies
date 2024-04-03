@@ -1,0 +1,15 @@
+name: unused-token
+path: unused-token.rego
+
+description: "A rule to verify that the organization doesn't have any unused tokens"
+labels:
+  - venafi
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/generic/gitlab_org/v0.1
+
+with:
+  unused_for_days: 90

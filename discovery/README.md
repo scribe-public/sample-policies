@@ -11,9 +11,9 @@ This README provides an overview of the set of policy rules that utilize discove
         3. [Check Admin Users against an Allowlist](#check-admin-users-against-an-allowlist)
         4. [Verify Number of Admins](#verify-number-of-admins)
     2. [Token (not implemented)](#token)
-        1. [Unused Tokens (not implemented)](#unused-tokens)
-        2. [Shortly Expiring Tokens (not implemented)](#shortly-expiring-tokens)
-        3. [Tokens with too long lifetime (not implemented)](#tokens-with-too-long-lifetime)
+        1. [Unused Tokens](#unused-tokens)
+        2. [Shortly Expiring Tokens](#shortly-expiring-tokens)
+        3. [Tokens with too long lifetime](#tokens-with-too-long-lifetime)
         4. [Forbid Specific Scopes (not implemented)](#forbid-specific-scopes)
         5. [Allowed Scopes (not implemented)](#allowed-scopes)
     3. [Projects (not implemented)](#projects)
@@ -124,7 +124,7 @@ Takes as input the maximum number of days a token can be valid. For each token t
 
 ```yaml
 with:
-    exiring_in_days: 30
+    exiring_in_days: 365
 ```
 
 #### Forbid Specific Scopes
