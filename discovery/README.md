@@ -4,8 +4,6 @@ This README provides an overview of the set of policy rules that utilize discove
 
 ## Table of Contents
 
-Each paragraph below corresponds to a specific policy rule. The rules are categorized based on the type of evidence they utilize.
-
 1. [GitLab Organization Attestation](#gitlab-organization-attestation)
     1. [User](#user)
         1. [Check Users against an Allowlist](#check-users-against-an-allowlist)
@@ -27,7 +25,7 @@ Each paragraph below corresponds to a specific policy rule. The rules are catego
         1. [No Push Rules set](#no-push-rules-set)
         2. [Member check](#member-check)
         3. [Prevent Secrets](#prevent-secrets)
-        4. [Author Email check](#author-email-check)
+        4. [Author Email Regex check](#author-email-regex-check)
         5. [Committer check](#committer-check)
         6. [Reject Unsigned Commits](#reject-unsigned-commits)
     4. [Number of Approvals Required for Merge](#number-of-approvals-required-for-merge)
@@ -35,6 +33,13 @@ Each paragraph below corresponds to a specific policy rule. The rules are catego
         1. [Access Level](#access-level)
         2. [Force Push Protection](#force-push-protection)
         3. [Code Owner Approval Required](#code-owner-approval-required)
+    6. [Commit check](#commit-check)
+        1. [Author Email check](#author-email-check)
+        2. [Author Name check](#author-name-check)
+        3. [Committer Email check](#committer-email-check)
+        4. [Committer Name check](#committer-name-check)
+        5. [Commit Message check](#commit-message-check)
+        6. [Commit Validation check](#commit-validation-check)
 3. [K8s POD Attestation](#k8s-pod-attestation)
 4. [K8s tekton pipeline Attestation](#k8s-tekton-pipeline-attestation)
     1. [Labels](#labels)
@@ -212,7 +217,7 @@ with:
 
 Verify if the `prevent_secrets` field is set to `true`.
 
-#### Author Email check
+#### Author Email Regex check
 
 Verify if the `author_email_regex` field is set to a specific regex (can be empty as well).
 
@@ -269,6 +274,79 @@ Verify if the `allow_force_push` field is set to `false`.
 #### Code Owner Approval Required
 
 Verify if the `code_owner_approval_required` field is set to `true`.
+
+### Commit check
+
+#### Author Email check
+
+Verify that all the authors of the commits in the project have emails from the llowed list
+
+```yaml
+with:
+    allowed_authors:
+        - email1
+        - email2
+```
+
+Alternatively, we can check for a specific regex.
+
+```yaml
+with:
+    author_email_regex: ".*@example.com"
+```
+
+#### Author Name check
+
+Verify that all the committers of the commits in the project have names from the allowed list.
+
+```yaml
+with:
+    allowed_authors:
+        - name1
+        - name2
+```
+
+#### Committer Email check
+
+Verify that all the committers of the commits in the project have emails from the allowed list.
+
+```yaml
+with:
+    allowed_committers:
+        - email1
+        - email2
+```
+
+Alternatively, we can check for a specific regex.
+
+```yaml
+with:
+    committer_email_regex: ".*@example.com"
+```
+
+#### Committer Name check
+
+Verify that all the committers of the commits in the project have names from the allowed list.
+
+```yaml
+with:
+    allowed_committers:
+        - name1
+        - name2
+```
+
+#### Commit Message check
+
+Verify that all the commit messages in the project meet the specified regex (for example, have JIRA task number).
+
+```yaml
+with:
+    commit_message_regex: ".*JIRA-\\d+.*"
+```
+
+#### Commit Validation check
+
+Verify that all the commits in the project have been validated.
 
 ## K8s POD Attestation
 
