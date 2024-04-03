@@ -1,5 +1,5 @@
-name: unused-token
-path: unused-token.rego
+name: unused-tokens
+path: unused-tokens.rego
 
 level: warning
 
