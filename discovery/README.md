@@ -42,7 +42,7 @@ This README provides an overview of the set of policy rules that utilize discove
         5. [Commit Message check (not implemented)](#commit-message-check)
         6. [Commit Validation check (not implemented)](#commit-validation-check)
 3. [K8s POD Attestation (not implemented)](#k8s-pod-attestation)
-4. [GitLab pipeline Attestation (not implemented)](#k8s-tekton-pipeline-attestation)
+4. [GitLab pipeline Attestation (not implemented)](#gitlab-pipeline-attestation)
     1. [Labels (not implemented)](#labels)
         1. [Check Label Existance (not implemented)](#check-label-existance)
         2. [Check Label Value (not implemented)](#check-label-value)
@@ -347,7 +347,7 @@ Verify that all the commits in the project have been validated.
 
 Any rules that can be run on an image SBOM can be mentioned here. We can use hash from the `imageID` field to filter by image.
 
-## K8s tekton pipeline Attestation
+## GitLab Pipeline Attestation
 
 ### Labels
 
