@@ -1,0 +1,17 @@
+name: allow-admins
+path: allow-admins.rego
+
+level: warning
+
+description: "A rule to verify that all admins in the organization match the allowed list"
+labels:
+  - venafi
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/generic/gitlab_org/v0.1
+
+with:
+    allowed_admins: []

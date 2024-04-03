@@ -1,0 +1,17 @@
+name: max-admins
+path: max-admins.rego
+
+level: warning
+
+description: "A rule to verify that the number of admins in the organization does not exceed the maximum allowed number of admins"
+labels:
+  - venafi
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/generic/gitlab_org/v0.1
+
+with:
+    max_admins: 0

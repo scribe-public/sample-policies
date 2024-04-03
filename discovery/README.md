@@ -4,50 +4,51 @@ This README provides an overview of the set of policy rules that utilize discove
 
 ## Table of Contents
 
-1. [GitLab Organization Attestation](#gitlab-organization-attestation)
+1. [GitLab Organization Attestation (not implemented)](#gitlab-organization-attestation)
     1. [User](#user)
         1. [Check Users against an Allowlist](#check-users-against-an-allowlist)
         2. [Check Users against a Blocklist](#check-users-against-a-blocklist)
         3. [Check Admin Users against an Allowlist](#check-admin-users-against-an-allowlist)
-    2. [Token](#token)
-        1. [Unused Tokens](#unused-tokens)
-        2. [Shortly Expiring Tokens](#shortly-expiring-tokens)
-        3. [Tokens with too long lifetime](#tokens-with-too-long-lifetime)
-        4. [Forbid Specific Scopes](#forbid-specific-scopes)
-        5. [Allowed Scopes](#allowed-scopes)
-    3. [Projects](#projects)
-        1. [Projects Visibility](#projects-visibility)
-        2. [Inactive Projects](#inactive-projects)
-2. [GitLab Project Attestation](#gitlab-project-attestation)
-    1. [Abandoned Projects](#abandoned-projects)
-    2. [Visibility Check](#visibility-check)
-    3. [Push Rules](#push-rules)
-        1. [No Push Rules set](#no-push-rules-set)
-        2. [Member check](#member-check)
-        3. [Prevent Secrets](#prevent-secrets)
-        4. [Author Email Regex check](#author-email-regex-check)
-        5. [Committer check](#committer-check)
-        6. [Reject Unsigned Commits](#reject-unsigned-commits)
-    4. [Number of Approvals Required for Merge](#number-of-approvals-required-for-merge)
-    5. [Branch Protection](#branch-protection)
-        1. [Access Level](#access-level)
-        2. [Force Push Protection](#force-push-protection)
-        3. [Code Owner Approval Required](#code-owner-approval-required)
-    6. [Commit check](#commit-check)
-        1. [Author Email check](#author-email-check)
-        2. [Author Name check](#author-name-check)
-        3. [Committer Email check](#committer-email-check)
-        4. [Committer Name check](#committer-name-check)
-        5. [Commit Message check](#commit-message-check)
-        6. [Commit Validation check](#commit-validation-check)
-3. [K8s POD Attestation](#k8s-pod-attestation)
-4. [K8s tekton pipeline Attestation](#k8s-tekton-pipeline-attestation)
-    1. [Labels](#labels)
-        1. [Check Label Existance](#check-label-existance)
-        2. [Check Label Value](#check-label-value)
-    2. [Pods](#pods)
-        1. [Check Image Existance by Name](#check-image-existance-by-name)
-    3. [Secrets check](#secrets-check)
+        4. [Verify Number of Admins](#verify-number-of-admins)
+    2. [Token (not implemented)](#token)
+        1. [Unused Tokens (not implemented)](#unused-tokens)
+        2. [Shortly Expiring Tokens (not implemented)](#shortly-expiring-tokens)
+        3. [Tokens with too long lifetime (not implemented)](#tokens-with-too-long-lifetime)
+        4. [Forbid Specific Scopes (not implemented)](#forbid-specific-scopes)
+        5. [Allowed Scopes (not implemented)](#allowed-scopes)
+    3. [Projects (not implemented)](#projects)
+        1. [Projects Visibility (not implemented)](#projects-visibility)
+        2. [Inactive Projects (not implemented)](#inactive-projects)
+2. [GitLab Project Attestation (not implemented)](#gitlab-project-attestation)
+    1. [Abandoned Projects (not implemented)](#abandoned-projects)
+    2. [Visibility Check (not implemented)](#visibility-check)
+    3. [Push Rules (not implemented)](#push-rules)
+        1. [No Push Rules set (not implemented)](#no-push-rules-set)
+        2. [Member check (not implemented)](#member-check)
+        3. [Prevent Secrets (not implemented)](#prevent-secrets)
+        4. [Author Email Regex check (not implemented)](#author-email-regex-check)
+        5. [Committer check (not implemented)](#committer-check)
+        6. [Reject Unsigned Commits (not implemented)](#reject-unsigned-commits)
+    4. [Number of Approvals Required for Merge (not implemented)](#number-of-approvals-required-for-merge)
+    5. [Branch Protection (not implemented)](#branch-protection)
+        1. [Access Level (not implemented)](#access-level)
+        2. [Force Push Protection (not implemented)](#force-push-protection)
+        3. [Code Owner Approval Required (not implemented)](#code-owner-approval-required)
+    6. [Commit check (not implemented)](#commit-check)
+        1. [Author Email check (not implemented)](#author-email-check)
+        2. [Author Name check (not implemented)](#author-name-check)
+        3. [Committer Email check (not implemented)](#committer-email-check)
+        4. [Committer Name check (not implemented)](#committer-name-check)
+        5. [Commit Message check (not implemented)](#commit-message-check)
+        6. [Commit Validation check (not implemented)](#commit-validation-check)
+3. [K8s POD Attestation (not implemented)](#k8s-pod-attestation)
+4. [K8s tekton pipeline Attestation (not implemented)](#k8s-tekton-pipeline-attestation)
+    1. [Labels (not implemented)](#labels)
+        1. [Check Label Existance (not implemented)](#check-label-existance)
+        2. [Check Label Value (not implemented)](#check-label-value)
+    2. [Pods (not implemented)](#pods)
+        1. [Check Image Existance by Name (not implemented)](#check-image-existance-by-name)
+    3. [Secrets check (not implemented)](#secrets-check)
 
 Please refer to the respective sections below for detailed information on each policy rule.
 
@@ -88,6 +89,15 @@ with:
         - user2
 ```
 
+#### Verify Number of Admins
+
+Takes the minimum number of admins required as an input and checks if the organization has not more than the specified number of admins.
+
+```yaml
+with:
+    max_admins: 2
+```
+
 ### Token
 
 #### Unused Tokens
@@ -96,7 +106,7 @@ Takes as input the number of days since the last usage of the token. For each to
 
 ```yaml
 with:
-    unused_for_days: 30
+    unused_for_days: 90
 ```
 
 #### Shortly Expiring Tokens
