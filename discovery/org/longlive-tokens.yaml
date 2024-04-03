@@ -1,6 +1,8 @@
 name: longlive-tokens
 path: longlive-tokens.rego
 
+level: warning
+
 description: "A rule to verify that the organization doesn't have any tokens with lifetime longer than expected"
 labels:
   - venafi

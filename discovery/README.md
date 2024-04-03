@@ -10,12 +10,12 @@ This README provides an overview of the set of policy rules that utilize discove
         2. [Check Users against a Blocklist](#check-users-against-a-blocklist)
         3. [Check Admin Users against an Allowlist](#check-admin-users-against-an-allowlist)
         4. [Verify Number of Admins](#verify-number-of-admins)
-    2. [Token (not implemented)](#token)
+    2. [Token](#token)
         1. [Unused Tokens](#unused-tokens)
         2. [Shortly Expiring Tokens](#shortly-expiring-tokens)
         3. [Tokens with too long lifetime](#tokens-with-too-long-lifetime)
-        4. [Forbid Specific Scopes (not implemented)](#forbid-specific-scopes)
-        5. [Allowed Scopes (not implemented)](#allowed-scopes)
+        4. [Forbid Specific Scopes](#forbid-specific-scopes)
+        5. [Allowed Scopes](#allowed-scopes)
     3. [Projects (not implemented)](#projects)
         1. [Projects Visibility (not implemented)](#projects-visibility)
         2. [Inactive Projects (not implemented)](#inactive-projects)
@@ -138,30 +138,15 @@ with:
         - write_repository
 ```
 
-Additionally, we can verify permissions per token.
-
-```yaml
-with:
-    forbid_token_permissions:
-        token1:
-            - read_api
-        token2:
-            - write_repository
-            - read_api
-```
-
 #### Allowed Scopes
 
 Takes a list of scopes as input and checks if any token has the specified scopes.
 
 ```yaml
 with:
-    allowed_token_permissions:
-        token1:
-            - read_api
-        token2:
-            - write_repository
-            - read_api
+    allowed_token_scopes:
+        - write_repository
+        - read_api
 ```
 
 ### Projects

@@ -1,0 +1,19 @@
+name: forbid-token-scopes
+path: forbid-token-scopes.rego
+
+level: warning
+
+description: "A rule to verify that the organization doesn't have any tokens with forbidden scopes"
+labels:
+  - venafi
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/generic/gitlab_org/v0.1
+
+with:
+    project_scopes:
+        - write_api
+        - write_repository

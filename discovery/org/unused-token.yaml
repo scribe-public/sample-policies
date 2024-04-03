@@ -1,6 +1,8 @@
 name: unused-token
 path: unused-token.rego
 
+level: warning
+
 description: "A rule to verify that the organization doesn't have any unused tokens"
 labels:
   - venafi
