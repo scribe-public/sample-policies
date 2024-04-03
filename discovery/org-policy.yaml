@@ -1,0 +1,13 @@
+name: "Organization Policy"
+rules:
+  - uses: org/inactive-projects@discovery
+  - uses: org/projects-visibility@discovery
+  - uses: org/allow-admins@discovery
+  - uses: org/allow-users@discovery
+  - uses: org/allow-token-scopes@discovery
+  - uses: org/blocked-users@discovery
+  - uses: org/expiring-tokens@discovery
+  - uses: org/forbid-token-scopes@discovery
+  - uses: org/longlive-tokens@discovery
+  - uses: org/max-admins@discovery
+  - uses: org/unused-tokens@discovery
