@@ -1,0 +1,19 @@
+name: projects-visibility
+path: projects-visibility.rego
+
+level: warning
+
+description: "A rule to verify that only the allowed projects have public visibility"
+labels:
+  - venafi
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+
+with:
+    allowed_public:
+        - "Learn GitLab"
+        - "Scribe Gitlab Test"

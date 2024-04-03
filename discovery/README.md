@@ -4,7 +4,7 @@ This README provides an overview of the set of policy rules that utilize discove
 
 ## Table of Contents
 
-1. [GitLab Organization Attestation (not implemented)](#gitlab-organization-attestation)
+1. [GitLab Organization Attestation](#gitlab-organization-attestation)
     1. [User](#user)
         1. [Check Users against an Allowlist](#check-users-against-an-allowlist)
         2. [Check Users against a Blocklist](#check-users-against-a-blocklist)
@@ -16,9 +16,9 @@ This README provides an overview of the set of policy rules that utilize discove
         3. [Tokens with too long lifetime](#tokens-with-too-long-lifetime)
         4. [Forbid Specific Scopes](#forbid-specific-scopes)
         5. [Allowed Scopes](#allowed-scopes)
-    3. [Projects (not implemented)](#projects)
-        1. [Projects Visibility (not implemented)](#projects-visibility)
-        2. [Inactive Projects (not implemented)](#inactive-projects)
+    3. [Projects](#projects)
+        1. [Projects Visibility](#projects-visibility)
+        2. [Inactive Projects](#inactive-projects)
 2. [GitLab Project Attestation (not implemented)](#gitlab-project-attestation)
     1. [Abandoned Projects (not implemented)](#abandoned-projects)
     2. [Visibility Check (not implemented)](#visibility-check)
@@ -170,7 +170,7 @@ Based on a project timestamp in the `last_activity` field, the rule checks if an
 
 ```yaml
 with:
-    inactive_for_days: 30
+    inactive_for_days: 90
 ```
 
 ## GitLab Project Attestation
