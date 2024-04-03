@@ -1,0 +1,22 @@
+name: verify-labels
+path: verify-labels.rego
+
+level: warning
+
+description: "A rule to verify that the pipeline has all the required labels keys and values"
+labels:
+  - venafi
+
+aggregate-results: true
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - pipeline
+
+with:
+  labels:
+    - "app.kubernetes.io/instance"
