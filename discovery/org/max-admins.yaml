@@ -11,7 +11,7 @@ evidence:
   signed: false
   format-type: generic
   target_type: data
-  predicate_type: http://scribesecurity.com/evidence/generic/gitlab_org/v0.1
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
 
 with:
     max_admins: 0
