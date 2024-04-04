@@ -1,4 +1,7 @@
 name: "Organization Policy"
+defaults:
+  evidence:
+    signed: true
 rules:
   - uses: org/inactive-projects@discovery
   - uses: org/projects-visibility@discovery
