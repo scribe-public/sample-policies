@@ -29,11 +29,12 @@ This README provides an overview of the set of policy rules that utilize discove
         4. [Author Email Regex check](#author-email-regex-check)
         5. [Committer check](#committer-check)
         6. [Reject Unsigned Commits](#reject-unsigned-commits)
-    4. [Number of Approvals Required for Merge (not implemented)](#number-of-approvals-required-for-merge)
+    4. [Number of Approvals Required for Merge](#number-of-approvals-required-for-merge)
     5. [Branch Protection (not implemented)](#branch-protection)
-        1. [Access Level (not implemented)](#access-level)
-        2. [Force Push Protection (not implemented)](#force-push-protection)
-        3. [Code Owner Approval Required (not implemented)](#code-owner-approval-required)
+        1. [Push Access Level](#push-access-level)
+        2. [Merge Access Level](#merge-access-level)
+        3. [Force Push Protection (not implemented)](#force-push-protection)
+        4. [Code Owner Approval Required (not implemented)](#code-owner-approval-required)
     6. [Commit check (not implemented)](#commit-check)
         1. [Author Email check (not implemented)](#author-email-check)
         2. [Author Name check (not implemented)](#author-name-check)
@@ -242,20 +243,22 @@ with:
 
 > For these rules to be applied, the `branch_protection.result_object` value should be extracted to a JSON object.
 
-#### Access Level
+#### Push Access Level
 
-Verify either the `access_level` or `access_level_description` fields. One is numeric and the other is a text.
+Verify the `access_level` field in push rules.
 
 ```yaml
 with:
     access_level: 40
 ```
 
+#### Merge Access Level
+
+Verify the `access_level` field in merge rules.
+
 ```yaml
 with:
-    access_level_description:
-        - "Developers + Maintainers"
-        - "user name"
+    access_level: 40
 ```
 
 #### Force Push Protection
