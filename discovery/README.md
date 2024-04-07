@@ -234,6 +234,7 @@ Verify that the number of approvals required for merge is greater than or equal 
 
 ```yaml
 with:
+    name: "All Members"
     approvals_required_min: 2
 ```
 
