@@ -1,0 +1,17 @@
+name: "Project Policy"
+defaults:
+  evidence:
+    signed: false
+    labels:
+      - "asset_type=project"
+      - '{{ .Args.ProjectAsset }}'
+rules:
+  - uses: project/abandoned-project@discovery
+  - uses: project/push-rules-set@discovery
+  - uses: project/approvals-policy-check@discovery
+  - uses: project/author-email-regex@discovery
+  - uses: project/commit-committer-check@discovery
+  - uses: project/member-check@discovery
+  - uses: project/prevent-secrets-check@discovery
+  - uses: project/reject-unsigned-commits@discovery
+  - uses: project/visibility-check@discovery
