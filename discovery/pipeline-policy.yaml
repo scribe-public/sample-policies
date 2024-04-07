@@ -1,0 +1,7 @@
+name: "Pipeline Policy"
+defaults:
+  evidence:
+    signed: true
+rules:
+  - uses: pipeline/verify-labels@discovery
+  - uses: pipeline/verify-labels-exist@discovery

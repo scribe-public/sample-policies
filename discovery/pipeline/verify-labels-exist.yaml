@@ -15,7 +15,7 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - pipeline
+    - "asset_type=pipeline"
 
 with:
   labels:
