@@ -1,7 +1,7 @@
-name: scribe-api
+name: vulnerabilities-report
 path: scribe-api.rego
 
-description: "A rule to verify violations using ScribeHub API"
+description: "A rule to verify unmanaged vulnerabilities using ScribeHub API"
 
 labels:
   - scribe
@@ -19,9 +19,3 @@ with:
     cve:
       max: 0
       severity: 6
-    # licences:
-    #   max: 500
-    # unmaintained:
-    #   max: 2000
-    # images:
-    #   max: 20
