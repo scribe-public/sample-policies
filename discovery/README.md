@@ -20,15 +20,15 @@ This README provides an overview of the set of policy rules that utilize discove
         1. [Projects Visibility](#projects-visibility)
         2. [Inactive Projects](#inactive-projects)
 2. [GitLab Project Attestation (not implemented)](#gitlab-project-attestation)
-    1. [Abandoned Projects (not implemented)](#abandoned-projects)
-    2. [Visibility Check (not implemented)](#visibility-check)
-    3. [Push Rules (not implemented)](#push-rules)
-        1. [No Push Rules set (not implemented)](#no-push-rules-set)
-        2. [Member check (not implemented)](#member-check)
-        3. [Prevent Secrets (not implemented)](#prevent-secrets)
-        4. [Author Email Regex check (not implemented)](#author-email-regex-check)
-        5. [Committer check (not implemented)](#committer-check)
-        6. [Reject Unsigned Commits (not implemented)](#reject-unsigned-commits)
+    1. [Abandoned Projects](#abandoned-projects)
+    2. [Visibility Check](#visibility-check)
+    3. [Push Rules](#push-rules)
+        1. [No Push Rules set](#no-push-rules-set)
+        2. [Member check](#member-check)
+        3. [Prevent Secrets](#prevent-secrets)
+        4. [Author Email Regex check](#author-email-regex-check)
+        5. [Committer check](#committer-check)
+        6. [Reject Unsigned Commits](#reject-unsigned-commits)
     4. [Number of Approvals Required for Merge (not implemented)](#number-of-approvals-required-for-merge)
     5. [Branch Protection (not implemented)](#branch-protection)
         1. [Access Level (not implemented)](#access-level)
@@ -202,11 +202,6 @@ Basically check if the `push_rules` field equals `null`.
 #### Member check
 
 Verify the state of the `member_check` field.
-
-```yaml
-with:
-    member_check: true
-```
 
 #### Prevent Secrets
 

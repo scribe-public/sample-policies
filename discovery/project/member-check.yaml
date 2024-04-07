@@ -1,0 +1,16 @@
+name: member-check
+path: member-check.rego
+
+level: warning
+
+description: "A rule to verify that member_check is enabled for the project"
+labels:
+  - venafi
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
