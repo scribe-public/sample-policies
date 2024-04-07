@@ -1,5 +1,5 @@
-name: verify-labels
-path: verify-labels.rego
+name: verify-labels-exist
+path: verify-labels-exist.rego
 
 level: warning
 
