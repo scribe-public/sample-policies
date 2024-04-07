@@ -15,3 +15,5 @@ rules:
   - uses: project/prevent-secrets-check@discovery
   - uses: project/reject-unsigned-commits@discovery
   - uses: project/visibility-check@discovery
+  - uses: project/push-access-level@discovery
+  - uses: project/merge-access-level@discovery

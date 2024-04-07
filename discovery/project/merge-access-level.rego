@@ -45,29 +45,43 @@ reason = v {
 
 violations = j {
 	j := {r |
-        some branch in input.evidence.predicate.content[_].branch
-		branch.name == name
-		r = merge_access_level_error(branch.result_object)
+		r = merge_access_level_error()
 	}
 }
 
-match_any(branch) {
-    some rule in branch.branch_protection.result_object.merge_access_levels
+match_any_name(n) {
+    some branch in input.evidence.predicate.content[_].branch
+	branch.name == n
+}
+
+match_any_level(branch) {
+    some rule in branch.result_object.branch_protection.result_object.merge_access_levels
 	rule.access_level == access_level
 }
 
-merge_access_level_error(branch) = v {
-	branch.branch_protection.result_object.merge_access_levels == null
+merge_access_level_error() = v {
+	not match_any_name(name)
+	v = {
+		"branch_not_found": name,
+	}
+}
+
+merge_access_level_error() = v {
+	some branch in input.evidence.predicate.content[_].branch
+	branch.name == name
+	branch.result_object.branch_protection.result_object.merge_access_levels == null
 	v = {
 		"branch": branch.name,
 	}
 }
 
-merge_access_level_error(branch) = v {
-	branch.branch_protection.result_object.merge_access_levels != null
-	not match_any(branch)
+merge_access_level_error() = v {
+	some branch in input.evidence.predicate.content[_].branch
+	branch.name == name
+	branch.result_object.branch_protection.result_object.merge_access_levels != null
+	not match_any_level(branch)
 	v = {
 		"project": branch.name,
-		"available_rules": branch.branch_protection.result_object.merge_access_levels,
+		"available_rules": branch.result_object.branch_protection.result_object.merge_access_levels,
 	}
 }
