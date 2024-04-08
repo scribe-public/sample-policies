@@ -10,7 +10,7 @@ default name = "main"
 
 default access_level_description := ""
 
-name = input.config.args.branch_name
+name = input.config.args.branch
 
 access_level_description = input.config.args.access_level_description {
 	input.config.args.access_level_description != ""

@@ -16,6 +16,6 @@ evidence:
     - "asset_type=project"
 
 with:
-    branch_name: "main"
+    branch: "main"
     # access_level: 30
     access_level_description: "Maintainers"
