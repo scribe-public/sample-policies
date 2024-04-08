@@ -1,0 +1,20 @@
+name: commit-author-name
+path: commit-author-name-check.rego
+
+level: warning
+
+description: "A rule to verify that commit authors are from the allowed list"
+labels:
+  - venafi
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+    allowed_authors:
+        - examplename

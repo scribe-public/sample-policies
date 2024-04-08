@@ -35,13 +35,13 @@ This README provides an overview of the set of policy rules that utilize discove
         2. [Merge Access Level](#merge-access-level)
         3. [Force Push Protection](#force-push-protection)
         4. [Code Owner Approval Required](#code-owner-approval-required)
-    6. [Commit check (not implemented)](#commit-check)
-        1. [Author Email check (not implemented)](#author-email-check)
-        2. [Author Name check (not implemented)](#author-name-check)
-        3. [Committer Email check (not implemented)](#committer-email-check)
-        4. [Committer Name check (not implemented)](#committer-name-check)
-        5. [Commit Message check (not implemented)](#commit-message-check)
-        6. [Commit Validation check (not implemented)](#commit-validation-check)
+    6. [Commit check](#commit-check)
+        1. [Author Email check](#author-email-check)
+        2. [Author Name check](#author-name-check)
+        3. [Committer Email check](#committer-email-check)
+        4. [Committer Name check](#committer-name-check)
+        5. [Commit Message check](#commit-message-check)
+        6. [Commit Validation check](#commit-validation-check)
 3. [K8s POD Attestation (not implemented)](#k8s-pod-attestation)
 4. [GitLab Pipeline Attestation (not implemented)](#gitlab-pipeline-attestation)
     1. [Labels](#labels)
@@ -241,8 +241,6 @@ with:
 
 ### Branch Protection
 
-> For these rules to be applied, the `branch_protection.result_object` value should be extracted to a JSON object.
-
 #### Push Access Level
 
 Verify the `access_level` field in push rules.
@@ -306,8 +304,7 @@ Verify that all the authors of the commits in the project have emails from the l
 ```yaml
 with:
     allowed_authors:
-        - email1
-        - email2
+        - mail@example.com
 ```
 
 Alternatively, we can check for a specific regex.
@@ -335,8 +332,7 @@ Verify that all the committers of the commits in the project have emails from th
 ```yaml
 with:
     allowed_committers:
-        - email1
-        - email2
+        - mail@example.com
 ```
 
 Alternatively, we can check for a specific regex.
