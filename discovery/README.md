@@ -249,6 +249,7 @@ Verify the `access_level` field in push rules.
 
 ```yaml
 with:
+    branch: "main"
     access_level: 40
 ```
 
@@ -256,6 +257,7 @@ ALternatively, this rule can be evaluated agains the `access_level_description` 
 
 ```yaml
 with:
+    branch: "main"
     access_level_description: "Maintainers"
 ```
 
@@ -265,6 +267,7 @@ Verify the `access_level` field in merge rules.
 
 ```yaml
 with:
+    branch: "main"
     access_level: 40
 ```
 
@@ -272,12 +275,18 @@ ALternatively, this rule can be evaluated agains the `access_level_description` 
 
 ```yaml
 with:
+    branch: "main"
     access_level_description: "Maintainers"
 ```
 
 #### Force Push Protection
 
 Verify if the `allow_force_push` field is set to `false`.
+
+```yaml
+with:
+    branch: "main"
+```
 
 #### Code Owner Approval Required
 

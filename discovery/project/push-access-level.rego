@@ -20,7 +20,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "admins",
+			"type": "branches",
 			"details": violations,
 		},
 		"summary": [{
