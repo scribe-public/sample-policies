@@ -42,7 +42,8 @@ This README provides an overview of the set of policy rules that utilize discove
         4. [Committer Name check](#committer-name-check)
         5. [Commit Message check](#commit-message-check)
         6. [Commit Validation check](#commit-validation-check)
-3. [K8s POD Attestation (not implemented)](#k8s-pod-attestation)
+3. [K8s Namespace Attestation](#k8s-namespace-attestation)
+    1. [Verify Allowed Registries](#verify-allowed-registries)
 4. [GitLab Pipeline Attestation (not implemented)](#gitlab-pipeline-attestation)
     1. [Labels](#labels)
         1. [Check Label Existance](#check-label-existance)
@@ -366,9 +367,19 @@ with:
 
 Verify that all the commits in the project have been validated.
 
-## K8s POD Attestation
+## K8s Namespace Attestation
 
 Any rules that can be run on an image SBOM can be mentioned here. We can use hash from the `imageID` field to filter by image.
+
+### Verify Allowed Registries
+
+Verify that the image is from one of the allowed registries.
+
+```yaml
+with:
+    allowed_registries:
+        - "gcr.io"
+```
 
 ## GitLab Pipeline Attestation
 
