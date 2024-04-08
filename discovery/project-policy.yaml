@@ -1,7 +1,7 @@
 name: "Project Policy"
 defaults:
   evidence:
-    signed: false
+    signed: true
     labels:
       - "asset_type=project"
       - '{{ .Args.ProjectAsset }}'
