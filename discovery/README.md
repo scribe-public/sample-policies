@@ -252,6 +252,13 @@ with:
     access_level: 40
 ```
 
+ALternatively, this rule can be evaluated agains the `access_level_description` field. 
+
+```yaml
+with:
+    access_level_description: "Maintainers"
+```
+
 #### Merge Access Level
 
 Verify the `access_level` field in merge rules.
@@ -259,6 +266,13 @@ Verify the `access_level` field in merge rules.
 ```yaml
 with:
     access_level: 40
+```
+
+ALternatively, this rule can be evaluated agains the `access_level_description` field.
+
+```yaml
+with:
+    access_level_description: "Maintainers"
 ```
 
 #### Force Push Protection

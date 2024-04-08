@@ -8,11 +8,13 @@ default violations := []
 
 default name = "main"
 
-default access_level =  30
+default access_level_description := ""
 
 name = input.config.args.branch_name
 
-access_level = input.config.args.access_level
+access_level_description = input.config.args.access_level_description {
+	input.config.args.access_level_description != ""
+}
 
 verify = v {
 	v := {
@@ -56,7 +58,12 @@ match_any_name(n) {
 
 match_any_level(branch) {
     some rule in branch.result_object.branch_protection.result_object.push_access_levels
-	rule.access_level == access_level
+	rule.access_level == input.config.args.access_level
+}
+
+match_any_level_description(branch) {
+    some rule in branch.result_object.branch_protection.result_object.push_access_levels
+	rule.access_level_description == access_level_description
 }
 
 push_access_level_error() = v {
@@ -75,10 +82,24 @@ push_access_level_error() = v {
 	}
 }
 
-push_access_level_error() = v {some branch in input.evidence.predicate.content[_].branch
+push_access_level_error() = v {
+	access_level_description == ""
+	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
 	branch.result_object.branch_protection.result_object.push_access_levels != null
 	not match_any_level(branch)
+	v = {
+		"project": branch.name,
+		"available_rules": branch.result_object.branch_protection.result_object.push_access_levels,
+	}
+}
+
+push_access_level_error() = v {
+	access_level_description != ""
+	some branch in input.evidence.predicate.content[_].branch
+	branch.name == name
+	branch.result_object.branch_protection.result_object.push_access_levels != null
+	not match_any_level_description(branch)
 	v = {
 		"project": branch.name,
 		"available_rules": branch.result_object.branch_protection.result_object.push_access_levels,

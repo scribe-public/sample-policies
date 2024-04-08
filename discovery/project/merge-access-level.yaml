@@ -17,4 +17,5 @@ evidence:
 
 with:
     branch_name: "main"
-    access_level: 30
+    # access_level: 30
+    access_level_description: "Maintainers"
