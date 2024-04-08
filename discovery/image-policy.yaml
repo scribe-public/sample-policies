@@ -1,0 +1,13 @@
+name: "Image Policy"
+defaults:
+  evidence:
+    signed: true
+rules:
+  - uses: sboms/artifact-signed@v1
+  - uses: sboms/blocklist-packages@v1
+    with:
+      blocklist:
+        - "liblzma5@5.6.0"
+        - "liblzma5@5.6.1"
+        - "xz-utils@5.6.0"
+        - "xz-utils@5.6.1"
