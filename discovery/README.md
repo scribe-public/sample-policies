@@ -30,11 +30,11 @@ This README provides an overview of the set of policy rules that utilize discove
         5. [Committer check](#committer-check)
         6. [Reject Unsigned Commits](#reject-unsigned-commits)
     4. [Number of Approvals Required for Merge](#number-of-approvals-required-for-merge)
-    5. [Branch Protection (not implemented)](#branch-protection)
+    5. [Branch Protection](#branch-protection)
         1. [Push Access Level](#push-access-level)
         2. [Merge Access Level](#merge-access-level)
-        3. [Force Push Protection (not implemented)](#force-push-protection)
-        4. [Code Owner Approval Required (not implemented)](#code-owner-approval-required)
+        3. [Force Push Protection](#force-push-protection)
+        4. [Code Owner Approval Required](#code-owner-approval-required)
     6. [Commit check (not implemented)](#commit-check)
         1. [Author Email check (not implemented)](#author-email-check)
         2. [Author Name check (not implemented)](#author-name-check)
@@ -291,6 +291,11 @@ with:
 #### Code Owner Approval Required
 
 Verify if the `code_owner_approval_required` field is set to `true`.
+
+```yaml
+with:
+    branch: "main"
+```
 
 ### Commit check
 

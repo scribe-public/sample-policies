@@ -18,3 +18,4 @@ rules:
   - uses: project/push-access-level@discovery
   - uses: project/merge-access-level@discovery
   - uses: project/force-push-protection@discovery
+  - uses: project/co-approval-required@discovery
