@@ -19,7 +19,7 @@ This README provides an overview of the set of policy rules that utilize discove
     3. [Projects](#projects)
         1. [Projects Visibility](#projects-visibility)
         2. [Inactive Projects](#inactive-projects)
-2. [GitLab Project Attestation (not implemented)](#gitlab-project-attestation)
+2. [GitLab Project Attestation)](#gitlab-project-attestation)
     1. [Abandoned Projects](#abandoned-projects)
     2. [Visibility Check](#visibility-check)
     3. [Push Rules](#push-rules)
