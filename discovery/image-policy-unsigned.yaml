@@ -1,7 +1,4 @@
 name: "Unsigned Image Policy"
-defaults:
-  evidence:
-    signed: false
 rules:
   - uses: sboms/artifact-signed@v1
   - uses: sboms/blocklist-packages@v1
