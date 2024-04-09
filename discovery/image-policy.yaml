@@ -5,6 +5,7 @@ defaults:
 rules:
   - uses: sboms/artifact-signed@v1
   - uses: sboms/blocklist-packages@v1
+    name: "no-vulnerable-xz-packages"
     with:
       blocklist:
         - "liblzma5@5.6.0"
