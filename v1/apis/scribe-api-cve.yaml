@@ -12,12 +12,12 @@ initiatives:
 evidence: 
   signed: false
   format-type: cyclonedx-json
-  predicate_type: https://cyclonedx.org/bom
+  # predicate_type: https://cyclonedx.org/bom
 
 with:
   superset:
     cve:
       max: 0
       severity: 6
-      component_name: "liblzma5"
+      # component_name: "liblzma5"
       # component_version: "5.6.0"
