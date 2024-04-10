@@ -1,0 +1,33 @@
+name: "Blueprint 1"
+defaults:
+  level: warning
+rules:
+
+  - name: "CT-3"
+    uses: org/longlive-tokens@discovery    
+    description: "Automation access keys expire automatically"
+    with:
+      exiring_in_days: 3650
+
+  - name: "CT-4"
+    uses: org/allow-token-scopes@discovery
+    description: "Reduce automation access to read-only"
+    with:
+      allowed_token_scopes:
+        - read_user
+        - read_api
+        - read_repository
+        - read_registry
+        - read_service_ping
+
+  - name: "CT-8"
+    uses: sboms/evidence-exists@v1
+    description: "Validate artifact digest"
+
+  - name: "CT-11"
+    uses: apis/scribe-api-cve@v1
+    description: "Available container images don’t have any high or critical vulnerabilities"
+
+  - name: "CT-12"
+    uses: sboms/artifact-signed@v1
+    description: "Validate artifact signatures and digests"
