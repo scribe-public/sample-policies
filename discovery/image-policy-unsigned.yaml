@@ -1,7 +1,9 @@
 name: "Unsigned Image Policy"
 rules:
   - uses: sboms/artifact-signed@v1
+    level: warning
   - uses: sboms/blocklist-packages@v1
+    level: warning
     name: "no-vulnerable-xz-packages"
     with:
       blocklist:
