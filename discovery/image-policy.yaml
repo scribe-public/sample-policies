@@ -18,5 +18,7 @@ rules:
     level: warning
     uses: apis/scribe-api-cve@v1
     with:
-      severity: 6
-      max: 0
+      superset:
+        cve:
+          severity: 6
+          max: 0
