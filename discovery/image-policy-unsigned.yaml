@@ -1,4 +1,4 @@
-name: "Unsigned Image Policy"
+name: S
 rules:
   - uses: sboms/artifact-signed@v1
     level: warning
@@ -11,3 +11,9 @@ rules:
         - "liblzma5@5.6.1"
         - "xz-utils@5.6.0"
         - "xz-utils@5.6.1"
+  - name: "no-high-critical-vulnerabilities"
+    level: warning
+    uses: apis/scribe-api-cve@v1
+    with:
+      severity: 6
+      max: 0
