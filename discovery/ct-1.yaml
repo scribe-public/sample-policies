@@ -1,0 +1,6 @@
+name: "CT-1"
+rules:
+  - name: "CT-1.1"
+    uses: org/max-admins@discovery
+    with:
+      max_admins: 1
