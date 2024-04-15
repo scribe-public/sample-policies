@@ -1,0 +1,16 @@
+name: "CT-13"
+rules:
+
+  - name: "CT-13.1"
+    uses: sboms/artifact-signed@v1
+    level: warning
+
+  - name: "CT-13.2"
+    uses: sboms/blocklist-packages@v1
+    level: warning
+    with:
+      blocklist:
+        - "liblzma5@5.6.0"
+        - "liblzma5@5.6.1"
+        - "xz-utils@5.6.0"
+        - "xz-utils@5.6.1"

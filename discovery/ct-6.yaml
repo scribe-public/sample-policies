@@ -1,0 +1,10 @@
+name: "CT-3"
+rules:
+  - name: "CT-3.1"
+    level: warning
+    uses: apis/scribe-api-cve@v1
+    with:
+      superset:
+        cve:
+          severity: 6
+          max: 0

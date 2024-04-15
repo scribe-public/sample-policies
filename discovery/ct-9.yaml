@@ -1,0 +1,5 @@
+name: "CT-9"
+rules:
+  - name: "CT-9.1"
+    level: warning
+    uses: project/approvals-policy-check@discovery

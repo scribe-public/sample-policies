@@ -1,0 +1,4 @@
+name: "CT-2"
+rules:
+  - name: "CT-2.1"
+    uses: project/reject-unsigned-commits@discovery
