@@ -1,4 +1,8 @@
 name: "CT-13"
+defaults:
+  evidence:
+    signed: true
+
 rules:
 
   - name: "CT-13.1"

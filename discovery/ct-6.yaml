@@ -1,4 +1,7 @@
 name: "CT-3"
+defaults:
+  evidence:
+    signed: true
 rules:
   - name: "CT-3.1"
     level: warning
