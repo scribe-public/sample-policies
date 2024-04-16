@@ -1,4 +1,9 @@
 name: "CT-2"
+defaults:
+  evidence:
+    labels:
+      - "asset_type=project"
+      - '{{ .Args.ProjectAsset }}'
 rules:
   - name: "CT-2.1"
     uses: project/reject-unsigned-commits@discovery

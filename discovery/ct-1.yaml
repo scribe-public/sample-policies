@@ -1,4 +1,9 @@
 name: "CT-1"
+defaults:
+  evidence:
+    labels:
+      - "asset_type=organization"
+      - '{{ .Args.OrganizationAsset }}'
 rules:
   - name: "CT-1.1"
     uses: org/max-admins@discovery

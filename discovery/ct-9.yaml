@@ -1,4 +1,9 @@
 name: "CT-9"
+defaults:
+  evidence:
+    labels:
+      - "asset_type=project"
+      - '{{ .Args.ProjectAsset }}'
 rules:
   - name: "CT-9.1"
     level: warning
