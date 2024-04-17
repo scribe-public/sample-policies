@@ -8,3 +8,6 @@ defaults:
 rules:
   - name: "CT-2.1"
     uses: project/reject-unsigned-commits@discovery
+
+  - name: "CT-2.2"
+    uses: project/check-signed-commits@discovery
