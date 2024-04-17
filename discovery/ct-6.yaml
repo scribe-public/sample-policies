@@ -1,9 +1,9 @@
-name: "CT-3"
+name: "CT-6"
 defaults:
   evidence:
     signed: true
 rules:
-  - name: "CT-3.1"
+  - name: "CT-6.1"
     level: warning
     uses: apis/scribe-api-cve@v1
     with:
