@@ -3,6 +3,8 @@ description: "A rule to verify that the artifact is signed"
 labels:
   - sbom
   - sample-policy-bundle
+  - ct-12
+  - ct-13
 initiatives:
   - bundle-rule
 

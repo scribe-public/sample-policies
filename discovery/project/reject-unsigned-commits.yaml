@@ -5,7 +5,7 @@ level: warning
 
 description: "A rule to verify that reject_unsigned_commits is enabled for the project"
 labels:
-  - venafi
+  - ct-2
 
 evidence:
   signed: false

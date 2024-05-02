@@ -5,6 +5,7 @@ description: "A rule for checking that the number of banned packages in an artif
 labels:
   - sbom
   - sample-policy-bundle
+  - ct-13
 initiatives:
   - bundle-rule
 

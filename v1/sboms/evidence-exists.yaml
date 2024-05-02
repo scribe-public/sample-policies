@@ -3,6 +3,7 @@ description: "A rule for checking that required evidence exists"
 labels:
   - sbom
   - sample-policy-bundle
+  - ct-8
 initiatives:
   - bundle-rule
 

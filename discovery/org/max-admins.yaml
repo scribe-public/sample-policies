@@ -5,7 +5,7 @@ level: warning
 
 description: "A rule to verify that the number of admins in the organization does not exceed the maximum allowed number of admins"
 labels:
-  - venafi
+  - ct-1
 
 evidence:
   signed: false

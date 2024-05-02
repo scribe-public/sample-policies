@@ -5,7 +5,7 @@ level: warning
 
 description: "A rule to verify that project merge approval policy meets the requirements"
 labels:
-  - venafi
+  - ct-9
 
 evidence:
   signed: false

@@ -5,7 +5,7 @@ level: warning
 
 description: "A rule to verify that the organization doesn't have any tokens with forbidden scopes"
 labels:
-  - venafi
+  - ct-4
 
 evidence:
   signed: false

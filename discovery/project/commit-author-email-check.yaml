@@ -5,7 +5,7 @@ level: warning
 
 description: "A rule to verify that commit authors are from the allowed email list"
 labels:
-  - venafi
+  - ct-2
 
 evidence:
   signed: false
