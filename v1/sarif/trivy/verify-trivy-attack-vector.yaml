@@ -1,11 +1,11 @@
-name: verify-semgrep-report
-path: ../verify-semgrep-report.rego
+name: verify-trivy-attack-vector
+path: ../verify-attack-vector.rego
 
-description: "A rule to verify a semgrep report agains a set of rules"
+description: "A rule to verify that no attack vector identified in a SARIF report exceeds the threshold"
 labels:
   - sarif
   - sample-policy-bundle
-  - semgrep
+  - trivy
 initiatives:
   - bundle-rule
 
@@ -16,5 +16,5 @@ evidence:
   predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
 
 with:
-  rule_ids: []
+  attack_vectors: []
   violations_threshold: 0

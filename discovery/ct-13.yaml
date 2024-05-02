@@ -1,7 +1,7 @@
 name: "CT-13"
 defaults:
   evidence:
-    signed: true
+    signed: false
 
 rules:
 

@@ -5,4 +5,4 @@ rules:
     uses: sboms/evidence-exists@v1
     evidence:
       format-type: cyclonedx-json
-      signed: true
+      signed: false
