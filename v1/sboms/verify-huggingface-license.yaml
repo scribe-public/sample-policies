@@ -3,7 +3,7 @@ path: verify-hf-license.rego
 
 description: "A rule for checking that the artifact has all the specified licenses"
 labels:
-  - sboms
+  - sbom
   - sample-policy-bundle
 initiatives:
   - bundle-rule

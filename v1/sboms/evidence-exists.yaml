@@ -1,7 +1,7 @@
 name: evidence-exists
 description: "A rule for checking that required evidence exists"
 labels:
-  - sboms
+  - sbom
   - sample-policy-bundle
 initiatives:
   - bundle-rule

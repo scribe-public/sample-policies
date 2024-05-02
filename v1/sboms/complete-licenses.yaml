@@ -3,7 +3,7 @@ path: complete-licenses.rego
 
 description: "A rule for checking that all the packages in the artifact have a license"
 labels:
-  - sboms
+  - sbom
   - sample-policy-bundle
 initiatives:
   - bundle-rule

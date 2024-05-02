@@ -1,7 +1,7 @@
 name: git-evidence-exists
 description: "A rule for checking that required evidence exists"
 labels:
-  - sboms
+  - git
   - sample-policy-bundle
 initiatives:
   - bundle-rule

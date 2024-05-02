@@ -1,7 +1,7 @@
 name: artifact-signed
 description: "A rule to verify that the artifact is signed"
 labels:
-  - sboms
+  - sbom
   - sample-policy-bundle
 initiatives:
   - bundle-rule
