@@ -2,7 +2,6 @@ name: slsa-evidence-exists
 description: "A rule for checking that required evidence exists"
 labels:
   - slsa
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

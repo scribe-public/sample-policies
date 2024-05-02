@@ -4,8 +4,6 @@ path: verify-labels.rego
 level: warning
 
 description: "A rule to verify that the pipeline has all the required labels keys and values"
-labels:
-  - venafi
 
 aggregate-results: true
 

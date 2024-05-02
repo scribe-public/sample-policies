@@ -4,8 +4,6 @@ path: allow-token-scopes.rego
 level: warning
 
 description: "A rule to verify that all of the organization's tokens have only the allowed scopes"
-labels:
-  - venafi
 
 evidence:
   signed: false

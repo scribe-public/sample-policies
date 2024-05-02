@@ -4,7 +4,6 @@ path: forbid-large-images.rego
 description: "A rule to verify that the image size is below a threshold"
 labels:
   - images
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

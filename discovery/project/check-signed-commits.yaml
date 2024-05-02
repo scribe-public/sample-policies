@@ -4,8 +4,6 @@ path: commit-author-email-check.rego
 level: warning
 
 description: "A rule to verify that all commits in a project are signed"
-labels:
-  - venafi
 
 evidence:
   signed: false

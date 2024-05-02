@@ -4,8 +4,6 @@ path: inactive-projects.rego
 level: warning
 
 description: "A rule to verify that the organization doesn't have any inactive"
-labels:
-  - venafi
 
 evidence:
   signed: false

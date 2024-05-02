@@ -5,7 +5,6 @@ level: "warning"
 description: "A rule to verify that no security packages need to be updated"
 labels:
   - sarif
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

@@ -4,8 +4,6 @@ path: allowed-registries.rego
 level: warning
 
 description: "A rule to verify that all discovered images come from allowed registries"
-labels:
-  - venafi
 
 evidence:
   signed: false

@@ -4,7 +4,6 @@ path: coding-permissions.rego
 description: "A rule to verify that only allowed users commited to the repository"
 labels:
   - git
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

@@ -4,8 +4,6 @@ path: co-approval-required.rego
 level: warning
 
 description: "A rule to verify that code owner approval is required for specific branch in the project"
-labels:
-  - venafi
 
 evidence:
   signed: false

@@ -4,8 +4,6 @@ path: expiring-tokens.rego
 level: warning
 
 description: "A rule to verify that the organization doesn't have any shortly expiring tokens"
-labels:
-  - venafi
 
 evidence:
   signed: false

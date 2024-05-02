@@ -4,8 +4,6 @@ path: committer-name-check.rego
 level: warning
 
 description: "A rule to verify that commit committers are from the allowed list"
-labels:
-  - venafi
 
 evidence:
   signed: false

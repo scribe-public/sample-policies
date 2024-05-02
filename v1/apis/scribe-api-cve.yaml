@@ -5,7 +5,6 @@ description: "A rule to verify unmanaged vulnerabilities using ScribeHub API"
 
 labels:
   - scribe
-  - sample-policy-bundle
   - ct-6
   - ct-13
 initiatives:

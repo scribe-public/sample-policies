@@ -4,8 +4,6 @@ path: push-rules-set.rego
 level: warning
 
 description: "A rule to verify that project has push rules set"
-labels:
-  - venafi
 
 evidence:
   signed: false

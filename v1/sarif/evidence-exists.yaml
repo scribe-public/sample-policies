@@ -2,7 +2,6 @@ name: sarif-evidence-exists
 description: "A rule for checking that required evidence exists"
 labels:
   - sarif
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

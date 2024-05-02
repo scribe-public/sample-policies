@@ -4,7 +4,6 @@ path: blocklist-build-scripts.rego
 description: "A rule to verify that no banned commands are used in the build scripts"
 labels:
   - images
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

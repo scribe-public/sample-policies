@@ -5,7 +5,6 @@ path: no-unsigned-commits.rego
 description: "A rule to verify that all the commits are signed"
 labels:
   - git
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

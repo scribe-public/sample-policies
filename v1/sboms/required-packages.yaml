@@ -4,7 +4,6 @@ path: required-packages.rego
 description: "A rule for checking that the target has all the required packages"
 labels:
   - sbom
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

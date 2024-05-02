@@ -4,7 +4,6 @@ path: banned-builder-deps.rego
 description: "A rule for checking that the artifact has no banned builder dependencies"
 labels:
   - slsa
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

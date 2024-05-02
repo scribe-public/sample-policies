@@ -4,8 +4,6 @@ path: commits-validated.rego
 level: warning
 
 description: "A rule to verify that all commits in the project are validated"
-labels:
-  - venafi
 
 evidence:
   signed: false

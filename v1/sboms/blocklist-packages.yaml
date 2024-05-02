@@ -4,7 +4,6 @@ path: blocklist-packages.rego
 description: "A rule for checking that the number of banned packages in an artifact does not exceed the threshold value"
 labels:
   - sbom
-  - sample-policy-bundle
   - ct-13
 initiatives:
   - bundle-rule

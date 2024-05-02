@@ -4,8 +4,6 @@ path: merge-access-level.rego
 level: warning
 
 description: "A rule to verify that project merge access level policy meets the requirements"
-labels:
-  - venafi
 
 evidence:
   signed: false

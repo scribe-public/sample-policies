@@ -4,7 +4,6 @@ path: build-time.rego
 description: "A rule for checking that the artifact was created within the specified time window"
 labels:
   - slsa
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

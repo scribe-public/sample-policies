@@ -4,8 +4,6 @@ path: projects-visibility.rego
 level: warning
 
 description: "A rule to verify that only the allowed projects have public visibility"
-labels:
-  - venafi
 
 evidence:
   signed: false

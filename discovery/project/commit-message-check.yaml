@@ -4,8 +4,6 @@ path: commit-message-check.rego
 level: warning
 
 description: "A rule to verify that all commit messages meet the regex"
-labels:
-  - venafi
 
 evidence:
   signed: false

@@ -4,8 +4,6 @@ path: abandoned-project.rego
 level: warning
 
 description: "A rule to verify that the project is been active for a certain period of time"
-labels:
-  - venafi
 
 evidence:
   signed: false

@@ -4,7 +4,6 @@ path: verify-semgrep-report.rego
 description: "A rule to verify a semgrep report agains a set of rules"
 labels:
   - sarif
-  - sample-policy-bundle
   - semgrep
 initiatives:
   - bundle-rule

@@ -4,8 +4,6 @@ path: allow-admins.rego
 level: warning
 
 description: "A rule to verify that all admins in the organization match the allowed list"
-labels:
-  - venafi
 
 evidence:
   signed: false

@@ -4,8 +4,6 @@ path: force-push-protection.rego
 level: warning
 
 description: "A rule to verify that force push is not allowed for the project"
-labels:
-  - venafi
 
 evidence:
   signed: false

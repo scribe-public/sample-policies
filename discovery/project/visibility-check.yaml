@@ -4,8 +4,6 @@ path: visibility-check.rego
 level: warning
 
 description: "A rule to verify that project visibility matches the required visibility level"
-labels:
-  - venafi
 
 evidence:
   signed: false

@@ -4,8 +4,6 @@ path: author-email-regex.rego
 level: warning
 
 description: "A rule to verify that member_check is enabled for the project"
-labels:
-  - venafi
 
 evidence:
   signed: false

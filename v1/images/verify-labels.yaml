@@ -4,7 +4,6 @@ path: verify-labels.rego
 description: "A rule to verify that the image has all the required labels keys and values"
 labels:
   - images
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

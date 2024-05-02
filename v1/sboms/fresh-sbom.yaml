@@ -4,7 +4,6 @@ path: fresh-sbom.rego
 description: "A rule for checking that the SBOM is not older than a threshold"
 labels:
   - sbom
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

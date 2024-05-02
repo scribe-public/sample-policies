@@ -5,7 +5,6 @@ path: k8s-jailbreak.rego
 description: "A rule to verify that the number of k8s misconfigurations is below a threshold"
 labels:
   - k8s
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

@@ -5,7 +5,6 @@ level: "note"
 description: "A rule to verify that no commits are made to the main branch"
 labels:
   - git
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

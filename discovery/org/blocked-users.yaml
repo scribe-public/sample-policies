@@ -4,8 +4,6 @@ path: blocked-users.rego
 level: warning
 
 description: "A rule to verify that none users in the organization match the blocklist"
-labels:
-  - venafi
 
 evidence:
   signed: false

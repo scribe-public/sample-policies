@@ -4,7 +4,6 @@ path: fresh-image.rego
 description: "A rule to verify that the image is not older than a threshold"
 labels:
   - images
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 
