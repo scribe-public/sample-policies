@@ -1,8 +1,7 @@
 name: "CT-8"
 rules:
-  - name: "CT-8.1"
+  - uses: sboms/evidence-exists@v1
     level: warning
-    uses: sboms/evidence-exists@v1
     evidence:
       format-type: cyclonedx-json
       signed: true

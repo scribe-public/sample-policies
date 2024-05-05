@@ -6,8 +6,8 @@ defaults:
       - "asset_type=organization"
       - '{{ .Args.OrganizationAsset }}'
 rules:
-  - name: "CT-4.1"
-    uses: org/forbid-token-scopes@discovery
+  - uses: org/forbid-token-scopes@discovery
+    level: warning
     with:
       project_scopes:
           - write_api

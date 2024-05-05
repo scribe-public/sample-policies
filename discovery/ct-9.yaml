@@ -6,6 +6,5 @@ defaults:
       - "asset_type=project"
       - '{{ .Args.ProjectAsset }}'
 rules:
-  - name: "CT-9.1"
+  - uses: project/approvals-policy-check@discovery
     level: warning
-    uses: project/approvals-policy-check@discovery

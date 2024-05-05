@@ -1,8 +1,7 @@
 name: "CT-12"
 rules:
-  - name: "CT-12.1"
+  - uses: sboms/artifact-signed@v1
     level: warning
-    uses: sboms/artifact-signed@v1
     evidence:
       format-type: cyclonedx-json
       signed: true
