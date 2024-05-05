@@ -3,4 +3,4 @@ defaults:
   evidence:
     signed: true
 rules:
-  - uses: k8s/allowed-registries@discovery
+  - uses: k8s/allowed-registries@v1

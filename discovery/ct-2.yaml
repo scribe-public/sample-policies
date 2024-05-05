@@ -6,8 +6,8 @@ defaults:
       - "asset_type=project"
       - '{{ .Args.ProjectAsset }}'
 rules:
-  - uses: project/reject-unsigned-commits@discovery
+  - uses: project/reject-unsigned-commits@v1
     level: warning
 
-  - uses: project/check-signed-commits@discovery
+  - uses: project/check-signed-commits@v1
     level: warning

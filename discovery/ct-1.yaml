@@ -6,7 +6,7 @@ defaults:
       - "asset_type=organization"
       - '{{ .Args.OrganizationAsset }}'
 rules:
-  - uses: org/max-admins@discovery
+  - uses: org/max-admins@v1
     level: warning
     with:
       max_admins: 1

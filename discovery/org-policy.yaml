@@ -3,14 +3,14 @@ defaults:
   evidence:
     signed: true
 rules:
-  - uses: org/inactive-projects@discovery
-  - uses: org/projects-visibility@discovery
-  - uses: org/allow-admins@discovery
-  - uses: org/allow-users@discovery
-  - uses: org/allow-token-scopes@discovery
-  - uses: org/blocked-users@discovery
-  - uses: org/expiring-tokens@discovery
-  - uses: org/forbid-token-scopes@discovery
-  - uses: org/longlive-tokens@discovery
-  - uses: org/max-admins@discovery
-  - uses: org/unused-tokens@discovery
+  - uses: org/inactive-projects@v1
+  - uses: org/projects-visibility@v1
+  - uses: org/allow-admins@v1
+  - uses: org/allow-users@v1
+  - uses: org/allow-token-scopes@v1
+  - uses: org/blocked-users@v1
+  - uses: org/expiring-tokens@v1
+  - uses: org/forbid-token-scopes@v1
+  - uses: org/longlive-tokens@v1
+  - uses: org/max-admins@v1
+  - uses: org/unused-tokens@v1

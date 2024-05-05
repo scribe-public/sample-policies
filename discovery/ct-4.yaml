@@ -6,7 +6,7 @@ defaults:
       - "asset_type=organization"
       - '{{ .Args.OrganizationAsset }}'
 rules:
-  - uses: org/forbid-token-scopes@discovery
+  - uses: org/forbid-token-scopes@v1
     level: warning
     with:
       project_scopes:

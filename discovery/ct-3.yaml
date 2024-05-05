@@ -6,5 +6,5 @@ defaults:
       - "asset_type=organization"
       - '{{ .Args.OrganizationAsset }}'
 rules:
-  - uses: org/longlive-tokens@discovery
+  - uses: org/longlive-tokens@v1
     level: warning

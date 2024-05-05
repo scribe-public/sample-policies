@@ -6,5 +6,5 @@ defaults:
       - "asset_type=project"
       - '{{ .Args.ProjectAsset }}'
 rules:
-  - uses: project/approvals-policy-check@discovery
+  - uses: project/approvals-policy-check@v1
     level: warning
