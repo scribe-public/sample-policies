@@ -1,10 +1,9 @@
-name: labels
+name: required-image-labels
 path: verify-labels-exist.rego
 
-description: "A rule to verify that the image has all the required labels"
+description: "Require specific image labels"
 labels:
   - images
-  - sample-policy-bundle
 initiatives:
   - client-policy
 

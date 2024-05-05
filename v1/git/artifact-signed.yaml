@@ -1,8 +1,7 @@
 name: git-artifact-signed
-description: "A rule to verify that the artifact is signed"
+description: "Verify artifact is signed"
 labels:
-  - sboms
-  - sample-policy-bundle
+  - git
 initiatives:
   - bundle-rule
 

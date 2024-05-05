@@ -1,10 +1,9 @@
-name: blocklist-builder-dependencies
+name: builder-unallowed-dependencies
 path: banned-builder-deps.rego
 
-description: "A rule for checking that the artifact has no banned builder dependencies"
+description: "Verify artifact disallowed builder dependencies"
 labels:
   - slsa
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

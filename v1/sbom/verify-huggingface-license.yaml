@@ -1,0 +1,16 @@
+name: license
+path: verify-hf-license.rego
+
+description: "Verify artifact has all specified licenses"
+labels:
+  - sbom
+initiatives:
+  - bundle-rule
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+
+with:
+  licenses: []

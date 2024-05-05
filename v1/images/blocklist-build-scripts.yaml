@@ -1,10 +1,9 @@
-name: blocklist-build-scripts
+name: disallowed-build-script
 path: blocklist-build-scripts.rego
 
-description: "A rule to verify that no banned commands are used in the build scripts"
+description: "Restrict commands in build scripts"
 labels:
   - images
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

@@ -1,11 +1,9 @@
-name: verify-attack-vector
+name: attack-vectors
 path: verify-attack-vector.rego
 
-description: "A rule to verify that no attack vector identified in a SARIF report exceeds the threshold"
+description: "Verify required evidence exists"
 labels:
   - sarif
-  - sample-policy-bundle
-  - trivy
 initiatives:
   - bundle-rule
 

@@ -1,10 +1,9 @@
 name: byproducts
 path: verify-byproducts.rego
 
-description: "A rule for checking that the artifact has no banned builder dependencies"
+description: "Verify artifact has no unallowed builder dependencies"
 labels:
   - slsa
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

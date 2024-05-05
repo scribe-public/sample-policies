@@ -1,0 +1,16 @@
+name: "Organization Policy"
+defaults:
+  evidence:
+    signed: true
+rules:
+  - uses: org/inactive-projects@v1
+  - uses: org/projects-visibility@v1
+  - uses: org/allow-admins@v1
+  - uses: org/allow-users@v1
+  - uses: org/allow-token-scopes@v1
+  - uses: org/blocked-users@v1
+  - uses: org/expiring-tokens@v1
+  - uses: org/forbid-token-scopes@v1
+  - uses: org/longlive-tokens@v1
+  - uses: org/max-admins@v1
+  - uses: org/unused-tokens@v1

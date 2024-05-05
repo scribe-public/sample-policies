@@ -1,8 +1,7 @@
-name: slsa-artifact-signed
-description: "A rule to verify that the artifact is signed"
+name: slsa-provenance-signed
+description: "Verify artifact is signed"
 labels:
   - slsa
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

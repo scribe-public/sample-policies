@@ -1,0 +1,12 @@
+name: "CT-6"
+defaults:
+  evidence:
+    signed: true
+rules:
+  - uses: api/scribe-api-cve@v1
+    level: warning
+    with:
+      superset:
+        cve:
+          severity: 6
+          max: 0

@@ -1,0 +1,17 @@
+name: disallowed-licenses
+path: banned-licenses.rego
+
+description: "Verify unallowed license count in artifact does not exceed specified threshold"
+labels:
+  - sbom
+initiatives:
+  - bundle-rule
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+
+with:
+  blocklist: []
+  blocklisted_limit : 0

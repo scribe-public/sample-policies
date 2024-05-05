@@ -1,0 +1,26 @@
+name: "Project Policy"
+defaults:
+  evidence:
+    labels:
+      - "asset_type=project"
+      - '{{ .Args.ProjectAsset }}'
+rules:
+  - uses: project/abandoned-project@v1
+  - uses: project/push-rules-set@v1
+  - uses: project/approvals-policy-check@v1
+  - uses: project/author-email-regex@v1
+  - uses: project/commit-committer-check@v1
+  - uses: project/member-check@v1
+  - uses: project/prevent-secrets-check@v1
+  - uses: project/reject-unsigned-commits@v1
+  - uses: project/visibility-check@v1
+  - uses: project/push-access-level@v1
+  - uses: project/merge-access-level@v1
+  - uses: project/force-push-protection@v1
+  - uses: project/co-approval-required@v1
+  - uses: project/commit-author-email-check@v1
+  - uses: project/commit-author-name-check@v1
+  - uses: project/commit-message-check@v1
+  - uses: project/commits-validated@v1
+  - uses: project/committer-email-check@v1
+  - uses: project/committer-name-check@v1

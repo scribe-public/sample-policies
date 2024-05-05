@@ -1,0 +1,17 @@
+name: required-dependencies
+path: required-packages.rego
+
+description: "Verify artifact has all the required packages"
+labels:
+  - sbom
+initiatives:
+  - bundle-rule
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+
+with:
+  required_pkgs: []
+  violations_limit: 0

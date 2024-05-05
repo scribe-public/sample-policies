@@ -4,7 +4,7 @@ attest:
       - name: sbom-policies
         rules:
           - name: required-packages
-            path: sboms/required-packages.rego
+            path: sbom/required-packages.rego
             evidence:
               signed: false
               format-type: "cyclonedx-json"
@@ -15,7 +15,7 @@ attest:
                 - "valint"
               violations_limit: 0
           - name: banned-licenses
-            path: sboms/banned-licenses.rego
+            path: sbom/banned-licenses.rego
             evidence:
               signed: false
               format-type: "cyclonedx-json"
@@ -25,7 +25,7 @@ attest:
                 - GPL
               blocklisted_limit : 0
           - name: blocklist-packages
-            path: sboms/blocklist-packages.rego
+            path: sbom/blocklist-packages.rego
             evidence:
               signed: false
               format-type: "cyclonedx-json"
@@ -36,14 +36,14 @@ attest:
                 - "log4j"
               blocklisted_limit : 0
           - name: complete-licenses
-            path: sboms/complete-licenses.rego
+            path: sbom/complete-licenses.rego
             level: "warning"
             evidence:
               signed: false
               format-type: "cyclonedx-json"
               target_type: container
           - name: fresh-sbom
-            path: sboms/fresh-sbom.rego
+            path: sbom/fresh-sbom.rego
             level: "note"
             evidence:
               signed: false

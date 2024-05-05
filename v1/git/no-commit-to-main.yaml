@@ -1,11 +1,10 @@
-name: no-commits-to-main
+name: disallow-commits-to-main
 path: no-commit-to-main.rego
 level: "note"
 
-description: "A rule to verify that no commits are made to the main branch"
+description: "Verify no commits to the main branch"
 labels:
   - git
-  - sample-policy-bundle
 initiatives:
   - bundle-rule
 

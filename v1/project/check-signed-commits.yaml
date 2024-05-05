@@ -1,0 +1,14 @@
+name: all-commits-are-signed
+path: check-signed-commits.rego
+
+level: warning
+
+description: "A rule to verify that all commits in a project are signed"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
