@@ -30,7 +30,7 @@ valint verify git:wtp-bert-tiny
 Valint can also be used to verify the license of a model or dataset. This can be done with the following command:
 
 ```bash
-valint verify git:wtp-bert-tiny -d att --rule v1/sboms/verify-huggingface-license@v1
+valint verify git:wtp-bert-tiny -d att --rule v1/sbom/verify-huggingface-license@v1
 ```
 
 where rule config is configured with parameters like:

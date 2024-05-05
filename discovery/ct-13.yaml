@@ -5,10 +5,10 @@ defaults:
 
 rules:
 
-  - uses: sboms/artifact-signed@v1
+  - uses: sbom/artifact-signed@v1
     level: warning
 
-  - uses: sboms/blocklist-packages@v1
+  - uses: sbom/blocklist-packages@v1
     level: warning
     with:
       blocklist:

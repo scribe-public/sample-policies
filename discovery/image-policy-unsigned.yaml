@@ -1,6 +1,6 @@
 name: "Image Policy Unsigned"
 rules:
-  - uses: sboms/blocklist-packages@v1
+  - uses: sbom/blocklist-packages@v1
     level: warning
     name: "no-vulnerable-xz-packages"
     with:
