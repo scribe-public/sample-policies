@@ -1,7 +1,7 @@
-name: no-shell-access
+name: disallow-shell-access
 path: restrict-shell-entrypoint.rego
 
-description: "A rule to verify that the image does not allow shell access"
+description: "Verify image disallows shell access"
 labels:
   - images
 initiatives:

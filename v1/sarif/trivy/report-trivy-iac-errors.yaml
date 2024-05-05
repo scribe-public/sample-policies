@@ -1,7 +1,7 @@
-name: report-trivy-iac-errors
+name: trivy-iac-findings
 path: ../report-iac-errors.rego
 
-description: "A rule to verify that the number of IaC errors is below a threshold"
+description: "Verify number of IaC errors is below specified threshold"
 labels:
   - sarif
   - trivy

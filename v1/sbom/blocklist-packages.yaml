@@ -1,7 +1,7 @@
 name: disallow-dependencies
 path: blocklist-packages.rego
 
-description: "A rule for checking that the number of banned packages in an artifact does not exceed the threshold value"
+description: "Verify unallowed artifact's dependency count does not exceed specified threshold"
 labels:
   - sbom
   - ct-13

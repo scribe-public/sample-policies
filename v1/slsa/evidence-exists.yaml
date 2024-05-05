@@ -1,5 +1,5 @@
-name: slsa-evidence-exists
-description: "A rule for checking that required evidence exists"
+name: required-slsa-provenance
+description: "Verify required evidence exists"
 labels:
   - slsa
 initiatives:

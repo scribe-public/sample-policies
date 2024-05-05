@@ -1,4 +1,4 @@
-name: sarif-evidence-exists
+name: required-sarif-evidence
 description: "A rule for checking that required evidence exists"
 labels:
   - sarif

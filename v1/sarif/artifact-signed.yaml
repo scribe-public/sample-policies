@@ -1,5 +1,5 @@
 name: sarif-artifact-signed
-description: "A rule to verify that the artifact is signed"
+description: "Verify artifact is signed"
 labels:
   - sarif
 initiatives:

@@ -1,7 +1,7 @@
-name: complete-licenses
+name: require-complete-license-set
 path: complete-licenses.rego
 
-description: "A rule for checking that all the packages in the artifact have a license"
+description: "Verify all dependencies in the artifact have a license"
 labels:
   - sbom
 initiatives:

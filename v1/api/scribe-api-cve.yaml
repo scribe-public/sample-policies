@@ -1,7 +1,7 @@
-name: vulnerabilities-report
+name: scribe-cve-policy
 path: scribe-api.rego
 
-description: "A rule to verify unmanaged vulnerabilities using ScribeHub API"
+description: "Verify Scribe CVE policy violations (by API)"
 
 labels:
   - scribe

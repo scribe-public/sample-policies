@@ -1,7 +1,7 @@
-name: scribe-api
+name: scribe-policy
 path: scribe-api.rego
 
-description: "A rule to verify violations using ScribeHub API"
+description: "Verify Scribe policy violations (by API)"
 
 labels:
   - scribe

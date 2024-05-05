@@ -1,7 +1,7 @@
 name: fresh-image
 path: fresh-image.rego
 
-description: "A rule to verify that the image is not older than a threshold"
+description: "Verify image is not older than specified threshold"
 labels:
   - images
 initiatives:

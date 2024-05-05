@@ -1,7 +1,7 @@
-name: required-packages
+name: required-dependencies
 path: required-packages.rego
 
-description: "A rule for checking that the target has all the required packages"
+description: "Verify artifact has all the required packages"
 labels:
   - sbom
 initiatives:

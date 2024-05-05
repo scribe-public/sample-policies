@@ -1,7 +1,7 @@
-name: banned-licenses
+name: disallowed-licenses
 path: banned-licenses.rego
 
-description: "A rule for checking that the number of banned licenses for an artifact does not exceed the threshold value"
+description: "Verify unallowed license count in artifact does not exceed specified threshold"
 labels:
   - sbom
 initiatives:

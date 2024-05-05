@@ -1,7 +1,7 @@
-name: verify-semgrep-report
+name: semgrep-report
 path: verify-semgrep-report.rego
 
-description: "A rule to verify a semgrep report agains a set of rules"
+description: "Verify a Semgrep report against a set of rules"
 labels:
   - sarif
   - semgrep

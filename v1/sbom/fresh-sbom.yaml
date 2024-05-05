@@ -1,7 +1,7 @@
 name: fresh-sbom
 path: fresh-sbom.rego
 
-description: "A rule for checking that the SBOM is not older than a threshold"
+description: "Verify SBOM is not older than specified threshold"
 labels:
   - sbom
 initiatives:

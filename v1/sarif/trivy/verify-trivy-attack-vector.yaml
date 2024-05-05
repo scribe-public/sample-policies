@@ -1,4 +1,4 @@
-name: verify-trivy-attack-vector
+name: trivy-attack-vectors
 path: ../verify-attack-vector.rego
 
 description: "A rule to verify that no attack vector identified in a SARIF report exceeds the threshold"

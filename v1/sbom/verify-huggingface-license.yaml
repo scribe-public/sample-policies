@@ -1,7 +1,7 @@
-name: verify-license
+name: license
 path: verify-hf-license.rego
 
-description: "A rule for checking that the artifact has all the specified licenses"
+description: "Verify artifact has all specified licenses"
 labels:
   - sbom
 initiatives:
