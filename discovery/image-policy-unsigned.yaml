@@ -11,7 +11,7 @@ rules:
         - "xz-utils@5.6.1"
   - name: "no-high-critical-vulnerabilities"
     level: warning
-    uses: apis/scribe-api-cve@v1
+    uses: api/scribe-api-cve@v1
     with:
       cve:
         severity: 6

@@ -110,8 +110,8 @@ valint verify busybox:latest --bundle https://github.com/scribe-public/sample-po
 | No License Modification | Prevent license modifications. | src and dst [SBOM](#sbom) |
 | Verify Source code Integrity | Verify that the artifact source code has not been modified | src and dst [Git SBOM](#git) |
 | Verify Dependencies Integrity | Verify that specific files or folders have not been modified | src and dst [SBOM](#sbom) |
-| [Verify Github Branch Protection](https://github.com/scribe-public/sample-policies/tree/main/v1/apis/github-branch-protection.md) | Verify that the branch protection rules are compliant to required | None |
-| [Verify GitLab Push Rules](https://github.com/scribe-public/sample-policies/tree/main/v1/apis/gitlab-push-rules.md) | Verify that the push rules are compliant to required. GitLabs push rules overlap some of GitHub's branch protection rules | None |
+| [Verify Github Branch Protection](https://github.com/scribe-public/sample-policies/tree/main/v1/api/github-branch-protection.md) | Verify that the branch protection rules are compliant to required | None |
+| [Verify GitLab Push Rules](https://github.com/scribe-public/sample-policies/tree/main/v1/api/gitlab-push-rules.md) | Verify that the push rules are compliant to required. GitLabs push rules overlap some of GitHub's branch protection rules | None |
 
 ### General Information
 
