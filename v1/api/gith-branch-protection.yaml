@@ -1,6 +1,7 @@
 
 name: github-branch-protection
 path: github-branch-protection.rego
+description: "Verify GitHub branch protection rules"
 level: "warning"
 
 evidence:
