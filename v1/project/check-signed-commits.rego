@@ -38,10 +38,18 @@ reason = v {
 violations = j {
 	j := {r |
         some commit in input.evidence.predicate.content[_].commit
-		commit.validated != true
+		bad_commit(commit)
         r = {
 			"commit": commit.id,
 			"author": commit.result_object.author_email,
         }
 	}
+}
+
+bad_commit(commit) {
+	commit.result_object.validated != true
+}
+
+bad_commit(commit) {
+	not commit.result_object.validated
 }
