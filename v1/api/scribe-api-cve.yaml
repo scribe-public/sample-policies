@@ -1,5 +1,5 @@
 name: vulnerabilities-report
-path: scribe-api-cve.rego
+path: scribe-api.rego
 
 description: "A rule to verify unmanaged vulnerabilities using ScribeHub API"
 
