@@ -1,5 +1,5 @@
-name: commit-author-email
-path: commit-author-email-check.rego
+name: all-commits-are-signed
+path: commit-signed-commits.rego
 
 level: warning
 

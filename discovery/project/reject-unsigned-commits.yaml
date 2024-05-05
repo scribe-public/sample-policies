@@ -1,4 +1,4 @@
-name: reject-unsigned-commits
+name: disallow-unsigned-commits
 path: reject-unsigned-commits.rego
 
 level: warning

@@ -1,4 +1,4 @@
-name: evidence-exists
+name: require-sbom
 description: "A rule for checking that required evidence exists"
 labels:
   - sbom

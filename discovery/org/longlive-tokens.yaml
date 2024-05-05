@@ -1,4 +1,4 @@
-name: longlive-tokens
+name: token-ttl
 path: longlive-tokens.rego
 
 level: warning

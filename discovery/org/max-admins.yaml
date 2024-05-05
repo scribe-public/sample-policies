@@ -1,4 +1,4 @@
-name: max-admins
+name: max-number-of-admins
 path: max-admins.rego
 
 level: warning

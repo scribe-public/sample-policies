@@ -1,4 +1,4 @@
-name: artifact-signed
+name: require-signed-sbom
 description: "A rule to verify that the artifact is signed"
 labels:
   - sbom

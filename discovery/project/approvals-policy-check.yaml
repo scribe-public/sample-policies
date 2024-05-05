@@ -1,4 +1,4 @@
-name: approvals-policy-check
+name: merge-approval-policy
 path: approvals-policy-check.rego
 
 level: warning
