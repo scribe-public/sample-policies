@@ -3,7 +3,7 @@ path: blocked-users.rego
 
 level: warning
 
-description: "A rule to verify that none users in the organization match the blocklist"
+description: "Verify that no organization users are in the block list"
 
 evidence:
   signed: false

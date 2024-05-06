@@ -1,9 +1,9 @@
-name: commits-validated
+name: all-commits-validated
 path: commits-validated.rego
 
 level: warning
 
-description: "A rule to verify that all commits in the project are validated"
+description: "Verify that all commits in the project are validated"
 
 evidence:
   signed: false

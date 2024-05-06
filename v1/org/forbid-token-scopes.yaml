@@ -1,9 +1,9 @@
-name: forbid-token-scopes
+name: disallowed-token-scope
 path: forbid-token-scopes.rego
 
 level: warning
 
-description: "A rule to verify that the organization doesn't have any tokens with forbidden scopes"
+description: "Verify that no organization tokens have a disallowed scope"
 labels:
   - ct-4
 

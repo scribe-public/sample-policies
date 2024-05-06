@@ -1,9 +1,9 @@
-name: committer-name-check
+name: allowed-committer-names
 path: committer-name-check.rego
 
 level: warning
 
-description: "A rule to verify that commit committers are from the allowed list"
+description: "Verify that commit committers are included in the allowed list"
 
 evidence:
   signed: false

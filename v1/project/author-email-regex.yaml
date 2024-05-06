@@ -3,7 +3,7 @@ path: author-email-regex.rego
 
 level: warning
 
-description: "A rule to verify that member_check is enabled for the project"
+description: "Verify that the author_email_regex is set to the desired value"
 
 evidence:
   signed: false

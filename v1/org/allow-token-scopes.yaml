@@ -1,9 +1,9 @@
-name: allow-token-scopes
+name: allowed-token-scope
 path: allow-token-scopes.rego
 
 level: warning
 
-description: "A rule to verify that all of the organization's tokens have only the allowed scopes"
+description: "Verify that organization tokens have the allowed scope"
 
 evidence:
   signed: false

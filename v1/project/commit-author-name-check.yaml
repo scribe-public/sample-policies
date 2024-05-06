@@ -1,9 +1,9 @@
-name: commit-author-name
+name: allowed-commit-autor-names
 path: commit-author-name-check.rego
 
 level: warning
 
-description: "A rule to verify that commit authors are from the allowed list"
+description: "Verify that commit authors are included in the allowed list"
 
 evidence:
   signed: false

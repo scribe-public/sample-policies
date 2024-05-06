@@ -3,7 +3,7 @@ path: unused-tokens.rego
 
 level: warning
 
-description: "A rule to verify that the organization doesn't have any unused tokens"
+description: "Verify that there are no unused organization tokens"
 
 evidence:
   signed: false

@@ -1,9 +1,9 @@
-name: commit-message-check
+name: verify-commit_message_check
 path: commit-message-check.rego
 
 level: warning
 
-description: "A rule to verify that all commit messages meet the regex"
+description: "Verify that all commit messages adhere to the specified format template"
 
 evidence:
   signed: false

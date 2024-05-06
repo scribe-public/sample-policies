@@ -1,9 +1,9 @@
-name: force-push-protection
+name: disallow-force-push
 path: force-push-protection.rego
 
 level: warning
 
-description: "A rule to verify that force push is not allowed for the project"
+description: "Verify that force push is not allowed for the project"
 
 evidence:
   signed: false

@@ -1,9 +1,9 @@
-name: all-commits-are-signed
+name: signed-commits
 path: check-signed-commits.rego
 
 level: warning
 
-description: "A rule to verify that all commits in a project are signed"
+description: "Verify that all commits in the project are signed"
 
 evidence:
   signed: false

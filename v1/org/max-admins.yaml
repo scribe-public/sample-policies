@@ -1,9 +1,9 @@
-name: max-number-of-admins
+name: max-admins
 path: max-admins.rego
 
 level: warning
 
-description: "A rule to verify that the number of admins in the organization does not exceed the maximum allowed number of admins"
+description: "Restrict the maximum number of organization admins"
 labels:
   - ct-1
 
