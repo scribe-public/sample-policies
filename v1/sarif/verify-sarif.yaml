@@ -1,12 +1,11 @@
 name: sarif-policy
 path: verify-sarif.rego
 
-description: "A rule to verify a SARIF report agains a set of rules"
+description: "Verify a SARIF report against a set of rules"
 labels:
   - sarif
-  - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false

@@ -1,11 +1,10 @@
-name: verify-tool-evidence
+name: tool-evidence
 
-description: "A rule to verify that required tool us used to create the SARIF report"
+description: "Verify required tool is used to create the SARIF report"
 labels:
   - sarif
-  - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false

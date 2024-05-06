@@ -1,0 +1,17 @@
+name: require-signed-sbom
+description: "Verify artifact is signed"
+labels:
+  - sbom
+  - ct-12
+  - ct-13
+initiatives:
+  - bundle-rule
+
+evidence:
+  format-type: cyclonedx-json
+  signed: true
+
+with:
+  identity:
+    common-names: []
+    emails: []

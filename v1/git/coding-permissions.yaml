@@ -1,12 +1,11 @@
 name: coding-permissions
 path: coding-permissions.rego
 
-description: "A rule to verify that only allowed users commited to the repository"
+description: "Verify only allowed users commited to the repository"
 labels:
   - git
-  - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false

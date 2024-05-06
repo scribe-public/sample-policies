@@ -1,0 +1,26 @@
+name: scribe-policy
+path: scribe-api.rego
+
+description: "Verify Scribe policy violations (by API)"
+
+labels:
+  - scribe
+initiatives:
+  - bundle-rule
+
+evidence: 
+  signed: false
+  format-type: cyclonedx-json
+  predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    cve:
+      max: 0
+      severity: 6
+    # licences:
+    #   max: 500
+    # unmaintained:
+    #   max: 2000
+    # images:
+    #   max: 20

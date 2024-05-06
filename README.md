@@ -35,13 +35,13 @@ The following is a description of a sample rule bundle (*please note that the fe
 3. Verify the SBOM against a policy. The current catalogue will be used as a default bundle for `valint`.
 
    ```bash
-   valint verify busybox:latest --rule sboms/complete-licenses@v1 # path within a repo
+   valint verify busybox:latest --rule sbom/complete-licenses@v1 # path within a repo
    ```
 
    If you want to use a specific (say, early-access version or outdated) of this catalogue, use `--git-tag` flag for `valint`:
 
    ```bash
-   valint verify busybox:latest --git-tag v1.0.0 --rule sboms/complete-licenses@v1
+   valint verify busybox:latest --git-tag v1.0.0 --rule sbom/complete-licenses@v1
    ```
 
 ### Targetless Run
@@ -55,7 +55,7 @@ The following is a description of a sample rule bundle (*please note that the fe
    Then, run
 
    ```bash
-   valint verify --rule sboms/complete-licenses@v1 --product-name busybox --product-version v1.36.1
+   valint verify --rule sbom/complete-licenses@v1 --product-name busybox --product-version v1.36.1
    ```
 
    Valint will use the latest evidence for the specified product name and version that meets the other rule requirements.
@@ -68,23 +68,23 @@ In order to run a rule, its script file should be referred by a rule config. Eac
 If you fork this ruleset or create your own, in order to use it you need to specify its location in `valint` flag `--bundle` either in cmd args or a `valint.yaml` config file:
 
 ```bash
-valint verify busybox:latest --bundle https://github.com/scribe-public/sample-policies --rule sboms/complete-licenses@v1
+valint verify busybox:latest --bundle https://github.com/scribe-public/sample-policies --rule sbom/complete-licenses@v1
 ```
 
 ## Policy Rule Catalogue
 
 | Rule | Description | Additional Info |
 | --- | --- | --- |
-| [Forbid Unsigned Artifacts](#forbid-unsigned-artifacts) | Verify the artifact's authenticity and signer identity. | [SBOM](#sboms) |
-| [Blocklist Packages](#blocklist-packages) | Prevent risky packages in the artifact. | [SBOM](#sboms) |
-| [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | [SBOM](#sboms) |
-| [Banned Licenses](#banned-licenses) | Restrict inclusion of certain licenses in the artifact. | [SBOM](#sboms) |
-| [Complete Licenses](#complete-licenses) | Guarantee all packages have valid licenses. | [SBOM](#sboms) |
-| [Fresh Artifact](#fresh-artifact) | Verify an artifact's freshness. | [SBOM](#sboms) |
+| [Forbid Unsigned Artifacts](#forbid-unsigned-artifacts) | Verify the artifact's authenticity and signer identity. | [SBOM](#sbom) |
+| [Blocklist Packages](#blocklist-packages) | Prevent risky packages in the artifact. | [SBOM](#sbom) |
+| [Required Packages](#required-packages) | Ensure mandatory packages/files in the artifact. | [SBOM](#sbom) |
+| [Banned Licenses](#banned-licenses) | Restrict inclusion of certain licenses in the artifact. | [SBOM](#sbom) |
+| [Complete Licenses](#complete-licenses) | Guarantee all packages have valid licenses. | [SBOM](#sbom) |
+| [Fresh Artifact](#fresh-artifact) | Verify an artifact's freshness. | [SBOM](#sbom) |
 | [Fresh Image](#fresh-image) | Ensure an image freshness. | [Image SBOM](#images) |
-| [Restrict Shell Image Entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | [SBOM](#sboms) |
+| [Restrict Shell Image Entrypoint](#restrict-shell-image-entrypoint) | Prevent shell as image entrypoint. | [SBOM](#sbom) |
 | [Blocklist Image Build Scripts](#blocklist-image-build-scripts) | Restrict build scripts in image build. | [Image SBOM](#images) |
-| [Verify Image Lables/Annotations](#verify-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | [SBOM](#sboms)  |
+| [Verify Image Lables/Annotations](#verify-image-lablesannotations) | Ensure image has required labels (e.g., git-commit). | [SBOM](#sbom)  |
 | [Forbid Huge Images](#forbid-large-images) | Limit image size. | [Image SBOM](#images) |
 | [Coding Permissions](#coding-permissions) | Control file modifications by authorized identities. | [Git SBOM](#git) |
 | Merging Permissions | Ensure authorized identities merge to main. | Counterpart to [Forbid Commits To Main](#forbid-commits-to-main)? |
@@ -106,12 +106,12 @@ valint verify busybox:latest --bundle https://github.com/scribe-public/sample-po
 | [Verify Semgrep SARIF report](#verify-semgrep-sarif-report) | Check for specific violations in a semgrep report. | [SARIF](#sarif-reports) |
 | [Verify Scanner Tool Evidence](#verify-tool-evidence) | Check the existance of an evidence of SARIF report created by specified tool | [SARIF](#sarif-reports) |
 | [Forbid Accessing Host](#forbid-accessing-host) | Do not allow images with detected vulnerabilities giving access to the host system. | Generic Evidence | [Generic](#generic) |
-| No Package Downgrading | Restrict package downgrades. | src and dst [SBOM](#sboms) |
-| No License Modification | Prevent license modifications. | src and dst [SBOM](#sboms) |
+| No Package Downgrading | Restrict package downgrades. | src and dst [SBOM](#sbom) |
+| No License Modification | Prevent license modifications. | src and dst [SBOM](#sbom) |
 | Verify Source code Integrity | Verify that the artifact source code has not been modified | src and dst [Git SBOM](#git) |
-| Verify Dependencies Integrity | Verify that specific files or folders have not been modified | src and dst [SBOM](#sboms) |
-| [Verify Github Branch Protection](https://github.com/scribe-public/sample-policies/tree/main/v1/apis/github-branch-protection.md) | Verify that the branch protection rules are compliant to required | None |
-| [Verify GitLab Push Rules](https://github.com/scribe-public/sample-policies/tree/main/v1/apis/gitlab-push-rules.md) | Verify that the push rules are compliant to required. GitLabs push rules overlap some of GitHub's branch protection rules | None |
+| Verify Dependencies Integrity | Verify that specific files or folders have not been modified | src and dst [SBOM](#sbom) |
+| [Verify Github Branch Protection](https://github.com/scribe-public/sample-policies/tree/main/v1/api/github-branch-protection.md) | Verify that the branch protection rules are compliant to required | None |
+| [Verify GitLab Push Rules](https://github.com/scribe-public/sample-policies/tree/main/v1/api/gitlab-push-rules.md) | Verify that the push rules are compliant to required. GitLabs push rules overlap some of GitHub's branch protection rules | None |
 
 ### General Information
 
@@ -120,7 +120,7 @@ Most of the policy rules in this bundle consist of two files: a `.yaml` and a `.
 The first is a rule configuration file that should be referenced by on runtime or merged to the actual `valint.yaml`.
 The second is a rego script that contains the actual verifyer code. It can be used as is or merged to the `.yaml` using `script` option.
 
-### SBOMs
+### SBOM
 
 An example of creating an SBOM evidence:
 
@@ -131,16 +131,16 @@ valint bom ubuntu:latest -o statement
 To verify the evidence against the rule, run:
 
 ```bash
-valint verify ubuntu:latest -i statement-cyclonedx-json --rule sboms/rule_config@v1
+valint verify ubuntu:latest -i statement-cyclonedx-json --rule sbom/rule_config@v1
 ```
 
 #### Forbid Unsigned Artifacts
 
-This rule ([artifact-signed.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/artifact-signed.yaml)) verifies that the SBOM is signed and the signer identity equals to a given value.
+This rule ([artifact-signed.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/artifact-signed.yaml)) verifies that the SBOM is signed and the signer identity equals to a given value.
 
 If you have not created an SBOM yet, create an sbom attestation, for example:
 
-In [artifact-signed.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/artifact-signed.yaml) file,
+In [artifact-signed.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/artifact-signed.yaml) file,
 edit policy parameters ```attest.cocosign.policies.rules.input identity``` to reflect the expected signers identity.
 
 You can also edit `target_type` to refelct the artifact type.
@@ -158,11 +158,11 @@ with:
 
 #### Blocklist Packages
 
-This rule ([blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/blocklist-packages.yaml), [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/blocklist-packages.rego)) verifies an SBOM does not include packages in the list of risky packages.
+This rule ([blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/blocklist-packages.yaml), [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/blocklist-packages.rego)) verifies an SBOM does not include packages in the list of risky packages.
 
-`rego` code for This rule can be found in the [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/blocklist-packages.rego) file.
+`rego` code for This rule can be found in the [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/blocklist-packages.rego) file.
 
-Edit the list of the risky licenses in the `input.rego.args` parameter in file [blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/blocklist-packages.yaml):
+Edit the list of the risky licenses in the `input.rego.args` parameter in file [blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/blocklist-packages.yaml):
 
 ```yaml
 with:
@@ -174,9 +174,9 @@ with:
 
 #### Required Packages
 
-This rule ([required-packages.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/required-packages.yaml), [required-packages.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/required-packages.rego)) verifies that the SBOM includes packages from the list of required packages.
+This rule ([required-packages.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/required-packages.yaml), [required-packages.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/required-packages.rego)) verifies that the SBOM includes packages from the list of required packages.
 
-Edit the list of the required packages in the `input.rego.args` parameter in file [required-packages.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/required-packages.yaml):
+Edit the list of the required packages in the `input.rego.args` parameter in file [required-packages.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/required-packages.yaml):
 
 ```yaml
 with:
@@ -189,9 +189,9 @@ The rule checks if there is a package listed in SBOM whose name contains the nam
 
 #### Banned Licenses
 
-This rule ([banned-licenses.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/banned-licenses.yaml), [banned-licenses.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/banned-licenses.rego)) verifies that the SBOM does not include licenses from the list of risky licenses.
+This rule ([banned-licenses.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/banned-licenses.yaml), [banned-licenses.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/banned-licenses.rego)) verifies that the SBOM does not include licenses from the list of risky licenses.
 
-Edit the list of the risky licenses in the `input.rego.args` parameter in file [banned-licenses.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/banned-licenses.yaml):
+Edit the list of the risky licenses in the `input.rego.args` parameter in file [banned-licenses.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/banned-licenses.yaml):
 
 ```yaml
 rgs:
@@ -203,15 +203,15 @@ rgs:
 
 #### Complete Licenses
 
-This rule ([complete-licenses.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/complete-licenses.yaml), [complete-licenses.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/complete-licenses.rego)) verifies that every package in the SBOM has a license.
+This rule ([complete-licenses.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/complete-licenses.yaml), [complete-licenses.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/complete-licenses.rego)) verifies that every package in the SBOM has a license.
 
 It doesn't have any additional parameters.
 
 #### Fresh Artifact
 
-This rule ([fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/fresh-sbom.yaml), [fresh-sbom.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/fresh-sbom.rego)) verifies that the SBOM is not older than a given number of days.
+This rule ([fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/fresh-sbom.yaml), [fresh-sbom.rego](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/fresh-sbom.rego)) verifies that the SBOM is not older than a given number of days.
 
-Edit the config `input.rego.args` parameter in file [fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sboms/fresh-sbom.yaml):
+Edit the config `input.rego.args` parameter in file [fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/tree/main/v1/sbom/fresh-sbom.yaml):
 
 ```yaml
 with:

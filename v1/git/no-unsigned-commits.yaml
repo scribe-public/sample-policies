@@ -1,13 +1,12 @@
-name: no-unsigned-commits
+name: disallow-unsigned-commits
 level: "warning"
 path: no-unsigned-commits.rego
 
-description: "A rule to verify that all the commits are signed"
+description: "Verify all commits are signed"
 labels:
   - git
-  - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false

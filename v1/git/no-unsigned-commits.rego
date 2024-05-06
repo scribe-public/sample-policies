@@ -29,12 +29,12 @@ allow if {
 
 reason = v {
 	allow
-	v := "all commits are signed"
+	v := "All commits were signed"
 }
 
 reason = v {
 	not allow
-	v := "some commits are unsigned"
+	v := "Several commits were *not* signed"
 }
 
 violations = j if {

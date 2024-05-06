@@ -1,5 +1,5 @@
 rules:
-  - uses: sboms/artifact-signed@v1
+  - uses: sbom/artifact-signed@v1
     evidence:
       signed: true
     with:

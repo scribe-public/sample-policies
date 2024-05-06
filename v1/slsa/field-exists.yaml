@@ -1,12 +1,11 @@
-name: verify-field-exists
+name: field-exists
 path: field-exists.rego
 
 description: "A rule for checking that the specified field exists in the artifact"
 labels:
   - slsa
-  - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false

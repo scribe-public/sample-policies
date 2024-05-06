@@ -1,0 +1,3 @@
+name: "K8s Namespace Policy"
+rules:
+  - uses: k8s/allowed-registries@v1

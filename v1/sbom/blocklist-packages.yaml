@@ -1,0 +1,18 @@
+name: disallow-dependencies
+path: blocklist-packages.rego
+
+description: "Verify unallowed artifact's dependency count does not exceed specified threshold"
+labels:
+  - sbom
+  - ct-13
+initiatives:
+  - bundle-rule
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+
+with:
+  blocklist: []
+  blocklisted_limit: 0

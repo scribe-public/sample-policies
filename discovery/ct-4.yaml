@@ -1,0 +1,19 @@
+name: "CT-4"
+defaults:
+  evidence:
+    signed: true
+    labels:
+      - "asset_type=organization"
+      - '{{ .Args.OrganizationAsset }}'
+rules:
+  - uses: org/forbid-token-scopes@v1
+    level: warning
+    with:
+      project_scopes:
+          - write_api
+          - write_repository
+          - write_registry
+          - write_registry_image
+          - write_package_registry
+          - write_package
+          - write_repository_hook

@@ -41,12 +41,12 @@ allow {
 
 reason = v {
 	allow
-	v := "image is new enough"
+	v := "Image age is below limit"
 }
 
 reason = v {
 	not allow
-	v := "image is too old"
+	v := "Image age is above limit"
 }
 
 errors[msg] {

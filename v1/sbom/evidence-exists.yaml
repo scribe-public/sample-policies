@@ -1,0 +1,11 @@
+name: require-sbom
+description: "Verify required evidence exists"
+labels:
+  - sbom
+  - ct-8
+initiatives:
+  - bundle-rule
+
+evidence:
+  format-type: cyclonedx-json
+  signed: false

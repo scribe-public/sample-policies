@@ -1,0 +1,17 @@
+name: allow-users
+path: allow-users.rego
+
+level: warning
+
+description: "A rule to verify that all users in the organization match the allowed list"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=organization"
+
+with:
+    allowed_users: []

@@ -1,12 +1,11 @@
-name: files_integrity
+name: file-integrity
 path: files_integrity.rego
 
-description: "A rule to verify that the image is not older than a threshold"
+description: "Verifies that files referenced by an image sbom have the same checksums as in previous versions of the image sbom"
 labels:
   - images
-  - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: true

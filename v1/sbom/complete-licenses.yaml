@@ -1,0 +1,13 @@
+name: require-complete-license-set
+path: complete-licenses.rego
+
+description: "Verify all dependencies in the artifact have a license"
+labels:
+  - sbom
+initiatives:
+  - bundle-rule
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container

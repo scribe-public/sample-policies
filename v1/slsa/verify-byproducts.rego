@@ -27,12 +27,12 @@ allow {
 
 reason = v {
 	allow
-	v := "the build contains all the expected byproducts"
+	v := "All required byproducts were created"
 }
 
 reason = v {
 	not allow
-	v := "the build misses some of the expected byproducts"
+	v := "Not all required byproducts were created"
 }
 
 violations = j {

@@ -48,7 +48,7 @@ attest:
       - name: sbom-policies
         rules:
           - name: required-packages
-            path: ../v1/sboms/required-packages.rego
+            path: ../v1/sbom/required-packages.rego
             evidence:
               signed: false
               filter-by:
@@ -60,7 +60,7 @@ attest:
                 - "gpgv@2.2.27-3ubuntu2.1"
               violations_limit: 0
           - name: banned-licenses
-            path: ../v1/sboms/banned-licenses.rego
+            path: ../v1/sbom/banned-licenses.rego
             evidence:
               signed: false
               filter-by:
@@ -72,7 +72,7 @@ attest:
                 - GPL
               blocklisted_limit : 199
           - name: blocklist-packages
-            path: ../v1/sboms/blocklist-packages.rego
+            path: ../v1/sbom/blocklist-packages.rego
             evidence:
               signed: false
               filter-by:
@@ -85,7 +85,7 @@ attest:
                 - "log4j"
               blocklisted_limit : 1
           - name: complete-licenses
-            path: ../v1/sboms/complete-licenses.rego
+            path: ../v1/sbom/complete-licenses.rego
             evidence:
               signed: false
               filter-by:
@@ -93,7 +93,7 @@ attest:
               format-type: "cyclonedx-json"
               target_type: container
           - name: fresh-sbom
-            path: ../v1/sboms/fresh-sbom.rego
+            path: ../v1/sbom/fresh-sbom.rego
             evidence:
               signed: false
               filter-by:

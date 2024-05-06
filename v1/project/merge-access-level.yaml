@@ -1,0 +1,19 @@
+name: merge-access-level
+path: merge-access-level.rego
+
+level: warning
+
+description: "A rule to verify that project merge access level policy meets the requirements"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+    branch: "main"
+    # access_level: 30
+    access_level_description: "Maintainers"

@@ -1,12 +1,11 @@
 name: large-image
 path: forbid-large-images.rego
 
-description: "A rule to verify that the image size is below a threshold"
+description: "Verify image size below specified threshold"
 labels:
   - images
-  - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false

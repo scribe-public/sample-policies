@@ -1,13 +1,12 @@
-name: updates-needed
+name: update-needed
 path: updates-needed.rego
 level: "warning"
 
-description: "A rule to verify that no security packages need to be updated"
+description: "Verify no security packages require update"
 labels:
   - sarif
-  - sample-policy-bundle
 initiatives:
-  - client-policy
+  - bundle-rule
 
 evidence:
   signed: false

@@ -1,0 +1,7 @@
+name: "CT-8"
+rules:
+  - uses: sbom/evidence-exists@v1
+    level: warning
+    evidence:
+      format-type: cyclonedx-json
+      signed: true

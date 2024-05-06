@@ -32,12 +32,12 @@ allow {
 
 reason = v {
 	allow
-	v := "image build commands do not use banned scripts"
+	v := "All image build commands are *not* on the blocklist"
 }
 
 reason = v {
 	not allow
-	v := "image build commands used banned scripts"
+	v := "Several image build commands are on the blocklist"
 }
 
 violations = j {
