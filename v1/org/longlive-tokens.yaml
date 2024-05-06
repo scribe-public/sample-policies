@@ -1,9 +1,9 @@
-name: token-ttl
+name: token-excessive-lifespan
 path: longlive-tokens.rego
 
 level: warning
 
-description: "A rule to verify that the organization doesn't have any tokens with lifetime longer than expected"
+description: "Verify that no organization tokens have an excessively long lifespan"
 labels:
   - ct-3
 

@@ -1,9 +1,9 @@
-name: merge-approval-policy
+name: merge-approval
 path: approvals-policy-check.rego
 
 level: warning
 
-description: "A rule to verify that project merge approval policy meets the requirements"
+description: "Verify that the project's merge approval policy complies with the requirements"
 labels:
   - ct-9
 

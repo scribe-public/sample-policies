@@ -1,9 +1,9 @@
-name: allow-admins
+name: allowed-admins
 path: allow-admins.rego
 
 level: warning
 
-description: "A rule to verify that all admins in the organization match the allowed list"
+description: "Verify that all organization admins are included in the allowed list"
 
 evidence:
   signed: false

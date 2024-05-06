@@ -1,9 +1,9 @@
-name: push-rules-set
+name: verify-push_rules
 path: push-rules-set.rego
 
 level: warning
 
-description: "A rule to verify that project has push rules set"
+description: "Verify that push rules are set for the project"
 
 evidence:
   signed: false

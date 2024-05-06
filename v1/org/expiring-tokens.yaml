@@ -1,9 +1,9 @@
-name: expiring-tokens
+name: token-about-to-expire
 path: expiring-tokens.rego
 
 level: warning
 
-description: "A rule to verify that the organization doesn't have any shortly expiring tokens"
+description: "Verify that no organization tokens are about to expire"
 
 evidence:
   signed: false

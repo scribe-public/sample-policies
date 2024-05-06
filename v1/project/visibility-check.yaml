@@ -1,9 +1,9 @@
-name: visibility-check
+name: project-visibility-level
 path: visibility-check.rego
 
 level: warning
 
-description: "A rule to verify that project visibility matches the required visibility level"
+description: "Verify that the project's visibility matches the required level"
 
 evidence:
   signed: false

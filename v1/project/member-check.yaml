@@ -1,9 +1,9 @@
-name: member-check
+name: verify-member_check
 path: member-check.rego
 
 level: warning
 
-description: "A rule to verify that member_check is enabled for the project"
+description: "Verify that member_check is enabled for the project"
 
 evidence:
   signed: false

@@ -1,9 +1,9 @@
-name: committer-email-check
+name: allowed-committer-emails
 path: committer-email-check.rego
 
 level: warning
 
-description: "A rule to verify that committers are from the allowed email list"
+description: "Verify that committers' email addresses are within the allowed list"
 
 evidence:
   signed: false

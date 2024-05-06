@@ -1,9 +1,9 @@
-name: co-approval-required
+name: code-owner-approval
 path: co-approval-required.rego
 
 level: warning
 
-description: "A rule to verify that code owner approval is required for specific branch in the project"
+description: Verify that code owner approval is required for specific branches in the project"
 
 evidence:
   signed: false

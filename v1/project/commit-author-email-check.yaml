@@ -1,9 +1,9 @@
-name: commit-author-email
+name: allowed-commit-authors
 path: commit-author-email-check.rego
 
 level: warning
 
-description: "A rule to verify that commit authors are from the allowed email list"
+description: "Verify that commit authors belong to the allowed email list"
 labels:
   - ct-2
 

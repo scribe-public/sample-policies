@@ -3,7 +3,7 @@ path: inactive-projects.rego
 
 level: warning
 
-description: "A rule to verify that the organization doesn't have any inactive"
+description: "Verify that no organization projects are inactive"
 
 evidence:
   signed: false

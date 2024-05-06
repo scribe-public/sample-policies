@@ -3,7 +3,7 @@ path: abandoned-project.rego
 
 level: warning
 
-description: "A rule to verify that the project is been active for a certain period of time"
+description: "Confirm that the project has been active for a specified duration"
 
 evidence:
   signed: false
