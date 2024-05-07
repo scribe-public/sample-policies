@@ -1,7 +1,7 @@
 name: field-exists
 path: field-exists.rego
 
-description: "A rule for checking that the specified field exists in the artifact"
+description: "Verify specified field exists in the artifact"
 labels:
   - slsa
 initiatives:

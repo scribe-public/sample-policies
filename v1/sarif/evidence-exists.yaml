@@ -1,5 +1,5 @@
 name: required-sarif-evidence
-description: "A rule for checking that required evidence exists"
+description: "Verify required evidence exists"
 labels:
   - sarif
 initiatives:
