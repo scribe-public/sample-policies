@@ -1,6 +1,6 @@
 name: sonatype-nexus-disallowed-policies
 path: nexus-disallowed-policies.rego
-description: "Verify a report against a set of rules"
+description: "Verify that there's no disallowed policies in the Sonatype Nexus report"
 
 evidence:
   signed: false

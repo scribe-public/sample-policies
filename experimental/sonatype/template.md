@@ -43,6 +43,7 @@ To understand the connection between the policyName and the threatLevel, we can 
 ```bash
 jq -r '.policyEvaluationResult.alerts[] | "\(.trigger.policyName) \(.trigger.threatLevel)"' report.json | sort | uniq
 ```
+
 ```json
 Architecture-Cleanup 1
 Component-Similar 7
@@ -57,6 +58,7 @@ Security-High 9
 Security-Low 3
 Security-Medium 7
 ```
+
 We can see that policies are mapped to threat levels.
 
 We notice that there are some string fields, let's see what we kind of data they include:
@@ -69,6 +71,7 @@ Contstraints fields:
     "print_command": true
 }
 -->
+
 We can see that in the sample we have, the constraint name is highly correlated with the policy name.
 
 <!--
@@ -87,6 +90,7 @@ We can see that in the sample we have, the constraint name is highly correlated 
     "limit": 20
 }
 -->
+
 
 <!--
 {
@@ -107,86 +111,109 @@ Lets see where we can find CVE information:
 }
 -->
 
-So we can see that the CVE information is in the reference and in the reason fields. 
+So we can see that the CVE information is in the reference and in the reason fields.
 
-Summing up, it seams that the `reason` field is the most interesting field to search for in the report. 
+Summing up, it seams that the `reason` field is the most interesting field to search for in the report.
 
 ## Designing a policy
+
 In order to allow our customers to run policies on the Nexus IQ reports, we need to design a policy-rule that will allow them to check for specific conditions in the report:
+
 * Specify the policies name to enforce
 * Specify a threat level to enforce
 * Sepcify a substring in the reason field
 
 A more detailed specification:
+
 1. Allow the user to specify a list of policies; if the report contains any of these policies in the 'alerts' section, the policy-rule will fail.
 2. Allow the usser to specify a minimum threat level; if the report contains any of these policies in the 'alerts' section with a threat level higher than the specified level, the policy-rule will fail.
 3. Allow the user to specify a list of substrings to search for in the 'reason' field; if the report contains any of these substrings in the 'alerts' section, the policy-rule will fail.
 4. If the user does not specify a configuration for any of the above rules, the rule is not evaluated and the policy-rule success will detemine on the other conditions.
 
 Such a policy-rule will enable the user to define a custom policy. A sample policy could include the following rule:
+
 1. Don't allow threat levels higher than 8
 2. Don't allow a specific policy such as 'License-Banned'
 3. Warn if there is any CVE with a CVSS score higher than 6.7
 
-
 ## Implementing the policy
 
 Implementing a policy in valint involves createing a new policy-rule, and this requires creating two files:
+
 1. `sonatypte.yml` - the policy configuration file. This is the file that the user will use to configure the policy.
 2. `sonatype.rego` - the policy rule implementation. In most cases, the user does not need to modify this file, but he still has the capability to do so.
 
 ### The policy configuration file
+
 The policy configuration file is a YAML file that contains metadata and configurtion of the policy:
 <!--
 {
-    "command": "cat sonatype.yml",
+    "command": "cat nexus-threat-level.yaml",
+    "output-format": "yaml"
+}
+-->
+<!--
+{
+    "command": "cat nexus-disallowed-policies.yaml",
+    "output-format": "yaml"
+}
+-->
+<!--
+{
+    "command": "cat nexus-disallowed-reasons.yaml",
     "output-format": "yaml"
 }
 -->
 
 Explanation:
+
 * The top section is the metadata of the policy. It contains the name, description, the implementation file name. Additional metadata fields are explained in `valint` documentation.
-* The middle section defines the criteria to get the evidence that will be used for the policy evaluation. In this case 
+* The middle section defines the criteria to get the evidence that will be used for the policy evaluation. In this case
+
 ```json
 "B I G   T B D"
 ```
+
 * The bottom section defines the configuration of the policy. In this case we support 3 parameters:
-    * `policies` - a list of policies to check for
-    * `min_threat_level` - the minimum threat level to allow
-    * `reason_substrings` - a list of substrings to search for in the reason field
+  * `policies` - a list of policies to check for
+  * `min_threat_level` - the minimum threat level to allow
+  * `reason_substrings` - a list of substrings to search for in the reason field
 
 ### The policy rule implementation
+
 The policy rule implementation is a rego file that contains the policy rule. It is required to use specific interfaces:
+
 * The configuration is passed to the rule as part of the `input` object, in `input.config.args`
 * The input evidence is passed to the rule as part of the `input` object, in `input.evidence`. The structure of the evidence the original structure of the report, wrapped in an `in-toto attestation` object. Thus when implementing we can directly access the fields of the report.
 * The output of the rule is a `verify` object, that containse the final results, as well as details about the rule evaluation.
 
 ## Running the policy
 
-### Create a target
-`valint` evaluates policies on a target. Usually a target the an artifact being built it a pipeline.
-For example, if we are building the `busybox` image, we can create a target for it:
+### Create an attestation
 
-```bash
-valint bom busibox:latest
-```
-
-### Create the attestation
 The attestation is the evidence that the policy is evaluated on. It is created by running the following command:
 
-```bash
-valint evidence report.json -L sonatype
-```
-Where `report.json` is the Nexus IQ report, and the `-L sonatype` flag is the label of the evidence. This label is used to match the evidence to the policy.
+<!--
+{
+    "command": "valint evidence report.json --tool sonatype",
+    "print_command": true,
+    "output-format": "bash",
+    "limit": 30
+}
+-->
+
+Where `report.json` is the Nexus IQ report, and the `--tool sonatype` flag is the tool label of the evidence.
 
 ### Evaluate the policy
 <!--
 {
-    "command": "valint verify busybox:latest -D error --rule sonatype.yml --output-file sonatype-sarif.json",
+    "command": "valint verify -D error --rule nexus-threat-level.yaml --rule nexus-disallowed-policies.yaml --rule nexus-disallowed-reasons.yaml --output-file sonatype-sarif.json",
     "print_command": true,
-    "output-format": "bash"
+    "output-format": "bash",
+    "limit": 30
 }
 -->
+
 `valint` will fail if the policy evaluation fails. This is usefull to gate a pipeline with a policy.
 
 In addition, the result of the evaluation is a new attestation, or can be output form `valint`. In this case we saved the output as the `sonatype-sarif.json` file. Now we can use any SARIF viewer to view the results.
@@ -208,4 +235,5 @@ Here are a few snippets from the results:
 -->
 
 ## Summary
+
 In this tutorial we have explored the Nexus IQ report, designed a policy, implemented it, and evaluated it. This is a simple example of how to create a custom `valint` policy for a specific report. The same process can be used to create policies for any other report.

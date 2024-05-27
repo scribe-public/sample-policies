@@ -7,9 +7,9 @@ default violations := []
 
 report := input.evidence.predicate.content["policyEvaluationResult"]
 
-short_description = "Verify type, level and content of alerts in the report"
+short_description = "Verify type of alerts in the report"
 
-description = "Verify type, level and content of alerts in the report"
+description = "Verify that there's no disallowed policies in the Sonatype Nexus report"
 
 
 

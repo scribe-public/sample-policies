@@ -1,6 +1,6 @@
 name: sonatype-nexus-disallowed-reasons
 path: nexus-disallowed-reasons.rego
-description: "Verify a report against a set of rules"
+description: "Verify that there's no disallowed reasons in the Sonatype Nexus report"
 
 evidence:
   signed: false
