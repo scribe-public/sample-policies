@@ -38,37 +38,7 @@ allow {
     count(violations) == 0
 }
 
-tmp := threat_level_violations | denied_policies_violations
-
-violations := tmp | denied_reason_violations
-
-# Function to collect threat level violations
-threat_level_violations = v { 
-    v := { o |
-        some i
-        r := report["alerts"][i]
-        r["trigger"]["threatLevel"] > input.config.args.min_threat_level
-        reason := sprintf("Threat level violation %d", [r["trigger"]["threatLevel"]])
-        o := {
-            "policy_name": r["trigger"]["policyName"],
-            "violation_id": r["trigger"]["policyViolationId"],
-            "reason": reason
-        }
-    }
-}
-
-denied_policies_violations = v {
-    v := { o |
-        some i
-        r := report["alerts"][i]
-        r["trigger"]["policyName"] in input.config.args.denied_policies
-        o := {
-            "policy_name": r["trigger"]["policyName"],
-            "violation_id": r["trigger"]["policyViolationId"],
-            "reason": "Denied policy violation"
-        }
-    }
-}
+violations := denied_reason_violations
 
 denied_reason_violations = v {
     v := { o |

@@ -38,9 +38,7 @@ allow {
     count(violations) == 0
 }
 
-tmp := threat_level_violations | denied_policies_violations
-
-violations := tmp | denied_reason_violations
+violations := threat_level_violations
 
 # Function to collect threat level violations
 threat_level_violations = v { 
@@ -52,34 +50,6 @@ threat_level_violations = v {
         o := {
             "policy_name": r["trigger"]["policyName"],
             "violation_id": r["trigger"]["policyViolationId"],
-            "reason": reason
-        }
-    }
-}
-
-denied_policies_violations = v {
-    v := { o |
-        some i
-        r := report["alerts"][i]
-        r["trigger"]["policyName"] in input.config.args.denied_policies
-        o := {
-            "policy_name": r["trigger"]["policyName"],
-            "violation_id": r["trigger"]["policyViolationId"],
-            "reason": "Denied policy violation"
-        }
-    }
-}
-
-denied_reason_violations = v {
-    v := { o |
-        some i,j,k,l
-        r := report["alerts"][i]["trigger"]["componentFacts"][j]["constraintFacts"][k]["conditionFacts"][l]
-        some m
-        contains(r["reason"], input.config.args.reason_substrings[m])
-        reason := sprintf("Denied reason violation, reason:%v", [r["reason"]])
-        o := {
-            "policy_name": report["alerts"][i]["trigger"]["policyName"],
-            "violation_id": report["alerts"][i]["trigger"]["policyViolationId"],
             "reason": reason
         }
     }

@@ -1,5 +1,5 @@
-name: sonatype
-path: sonatype.rego
+name: sonatype-nexus-threat-level
+path: nexus-threat-level.rego
 description: "Verify a report against a set of rules"
 
 evidence:
@@ -10,9 +10,4 @@ evidence:
 
 
 with:
-  denied_policies:
-    - "License-Banned"
   min_threat_level: 9
-  reason_substrings:
-    - "(severity = 7.5)"
-

@@ -1,0 +1,14 @@
+name: sonatype-nexus-disallowed-reasons
+path: nexus-disallowed-reasons.rego
+description: "Verify a report against a set of rules"
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  tool: sonatype
+
+
+with:
+  reason_substrings:
+    - "(severity = 7.5)"
