@@ -413,9 +413,9 @@ valint bom busibox:latest
 The attestation is the evidence that the policy is evaluated on. It is created by running the following command:
 
 ```bash
-valint evidence report.json -L sonatype
+valint evidence report.json --tool sonatype
 ```
-Where `report.json` is the Nexus IQ report, and the `-L sonatype` flag is the label of the evidence. This label is used to match the evidence to the policy.
+Where `report.json` is the Nexus IQ report, and the `--tool sonatype` flag is the tool label of the evidence.
 
 ### Evaluate the policy
 <!--

@@ -1,4 +1,4 @@
-name: sonatype-policy
+name: sonatype
 path: sonatype.rego
 description: "Verify a report against a set of rules"
 
@@ -6,9 +6,7 @@ evidence:
   signed: false
   content_body_type: generic
   target_type: data
-  labels:
-    - sonatype
-  sbomversion: sha256:7f4ee3c4065d67489d175a88e67d2496f428a03a82693eff19c563129e39be22
+  tool: sonatype
 
 
 with:
