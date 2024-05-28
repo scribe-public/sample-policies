@@ -1,0 +1,21 @@
+name: unified-policy
+path: unified.rego
+
+description: "Verify a unified report against a set of rules"
+labels:
+  - unified
+initiatives:
+  - bundle-rule
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/finding/v0.1
+
+with:
+  severities: []
+  titles: []
+  cwes: []
+  descriptions: []
+  component_names: []
