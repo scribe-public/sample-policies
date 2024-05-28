@@ -94,7 +94,7 @@ valint verify -E --product-key my_product --product-version latest --rule unifie
 [0;90m[2024-05-28 14:32:28][0m [0;32m INFO[0m[0;36m git:[0m cloning success: https://github.com/scribe-public/sample-policies @ refs/heads/dev, Depth: 1
 [0;90m[2024-05-28 14:32:28][0m [0;32m INFO[0m[0;36m git:[0m HEAD 1d46a0df3fb181a81ceb4fbca878fc7cf676cbfb,
 [0;90m[2024-05-28 14:32:28][0m [0;32m INFO[0m[0;36m cocosign:[0m config selection, default: sigstore, Scheme: empty
-[0;90m[2024-05-28 14:32:28][0m [0;32m INFO[0m environment-context [0;32mcontext_type[0m=local [0;32mgit_branch[0m=unified_report_rule [0;32mgit_commit[0m=f39edffe0acc9ea052d867a99532e56574a09186 [0;32mgit_ref[0m=refs/heads/unified_report_rule [0;32mgit_url[0m=https://github.com/scribe-public/sample-policies.git [0;32mhostname[0m=thinkpad [0;32minput_scheme[0m=empty [0;32mname[0m=my_product [0;32mpredicate_type[0m=http://scribesecurity.com/evidence/generic/v0.1 [0;32mproduct_version[0m=latest [0;32msigned[0m=false [0;32mtimestamp[0m=2024-05-28T14:32:27+03:00 [0;32muser[0m=viktor
+[0;90m[2024-05-28 14:32:28][0m [0;32m INFO[0m environment-context [0;32mcontext_type[0m=local [0;32mgit_branch[0m=unified_report_rule [0;32mgit_commit[0m=f39edffe0acc9ea052d867a99532e56574a09186 [0;32mgit_ref[0m=refs/heads/unified_report_rule [0;32mgit_url[0m=https://github.com/scribe-public/sample-policies.git [0;32mhostname[0m=thinkpad [0;32minput_scheme[0m=empty [0;32mname[0m=my_product [0;32mpredicate_type[0m=http://scribesecurity.com/evidence/generic/v0.1 [0;32mproduct_version[0m=latest [0;32msigned[0m=false [0;32mtimestamp[0m=2024-05-28T14:32:27+03:00 [0;32muser[0m=user
 [0;90m[2024-05-28 14:32:28][0m [0;32m INFO[0m[0;36m enabled:[0m [rekor-storer] using storer
 [0;90m[2024-05-28 14:32:28][0m [0;32m INFO[0m[0;36m enabled:[0m [fulcio-verifier] using verifier
 [0;90m[2024-05-28 14:32:29][0m [0;31mERROR[0m rule list [unified-policy] failed resource not found, no evidence found
@@ -110,8 +110,8 @@ valint verify -E --product-key my_product --product-version latest --rule unifie
 │ AGGREGATE POLICY RESULT │       │        │                        │ FAILED            │                                       │
 └─────────────────────────┴───────┴────────┴────────────────────────┴───────────────────┴───────────────────────────────────────┘
 
-[0;90m[2024-05-28 14:32:29][0m [0;32m INFO[0m[0;36m output:[0m File write to FS, Path: /home/viktor/.cache/valint/sha256-607609ed22d7c71b1d6c59641d40544c03706cd0ee26b6015232921df0d5d842.sarif.json
-[0;90m[2024-05-28 14:32:29][0m [0;32m INFO[0m[0;36m storer:[0m [cache] upload success [0;32mref[0m=/home/viktor/.cache/valint/sha256-607609ed22d7c71b1d6c59641d40544c03706cd0ee26b6015232921df0d5d842.sarif.json [0;32mtype[0m=cache
+[0;90m[2024-05-28 14:32:29][0m [0;32m INFO[0m[0;36m output:[0m File write to FS, Path: /home/user/.cache/valint/sha256-607609ed22d7c71b1d6c59641d40544c03706cd0ee26b6015232921df0d5d842.sarif.json
+[0;90m[2024-05-28 14:32:29][0m [0;32m INFO[0m[0;36m storer:[0m [cache] upload success [0;32mref[0m=/home/user/.cache/valint/sha256-607609ed22d7c71b1d6c59641d40544c03706cd0ee26b6015232921df0d5d842.sarif.json [0;32mtype[0m=cache
 [0;90m[2024-05-28 14:32:29][0m [0;32m INFO[0m[0;36m evidence:[0m known evidence type
 [0;90m[2024-05-28 14:32:31][0m [0;32m INFO[0m[0;36m scribe:[0m upload evidence successfully, FileID: 38680
 [0;90m[2024-05-28 14:32:31][0m [0;32m INFO[0m[0;36m storer:[0m [scribe] upload success [0;32mref[0m=38680 [0;32mtype[0m=scribe
