@@ -1,6 +1,6 @@
 name: sonatype-nexus-threat-level
 path: nexus-threat-level.rego
-description: "Verify that there's no alerts with threat level above specified threshold in the Sonatype Nexus report"
+description: "Verify no violations above specified Threat Level Nexus policies"
 
 evidence:
   signed: false
