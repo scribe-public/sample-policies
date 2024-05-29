@@ -82,8 +82,7 @@ title_check(result, titles) {
 }
 
 title_match_any(result, titles) {
-    some title in titles
-    title_regex := sprintf(".*%s.*", [title])
+    some title_regex in titles
     regex.match(title_regex, result.title)
 }
 
@@ -121,8 +120,7 @@ description_check(result, descriptions) {
 }
 
 description_match_any(result, descriptions) {
-    some description in descriptions
-    description_regex := sprintf(".*%s.*", [description])
+    some description_regex in descriptions
     regex.match(description_regex, result.description)
 }
 
@@ -141,8 +139,7 @@ component_name_check(result, component_names) {
 }
 
 component_name_match_any(result, component_names) {
-    some component_name in component_names
-    component_name_regex := sprintf(".*%s.*", [component_name])
+    some component_name_regex in component_names
     regex.match(component_name_regex, result.component_name)
 }
 
