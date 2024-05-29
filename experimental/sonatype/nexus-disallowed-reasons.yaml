@@ -1,0 +1,14 @@
+name: sonatype-nexus-disallowed-reasons
+path: nexus-disallowed-reasons.rego
+description: "Verify no violations with the specified reasons in Nexus policies "
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  tool: sonatype
+
+
+with:
+  reason_substrings:
+    - "(severity = 7.5)"
