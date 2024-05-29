@@ -48,7 +48,7 @@ After configuring the rule, we can verify the unified security report by running
 
 <!--
 {
-    "command": "valint verify -E --product-key my_product --product-version latest --rule unified.yaml",
+    "command": "valint verify -E --product-key my_product --product-version latest --rule unified.yaml --attest.default=x509-env",
     "output-format": "bash",
     "print_command": true,
     "limit": 34
