@@ -7,9 +7,9 @@ default allow := false
 default violations := []
 
 
-short_description = "Verify a unified report"
+short_description = "Verify 3rd party vulnerability scans"
 
-description = "Verify a unified report against a set of rules"
+description = "Verify no violations in 3rd party scanner reports by a custom rule"
 
 verify = v {
 	v := {

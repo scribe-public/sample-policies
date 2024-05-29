@@ -1,7 +1,7 @@
 name: unified-policy
 path: unified.rego
 
-description: "Verify a unified report against a set of rules"
+description: "Verify no violations in 3rd party scanner reports by a custom rule"
 labels:
   - unified
 initiatives:
