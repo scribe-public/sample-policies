@@ -1,6 +1,7 @@
 # Create you own results policy rule
 
 ## Description
+
 This ruls enables you to create the results directly from the policy rule `yml` file.
 
 Rule configuration:
@@ -43,40 +44,25 @@ Create a some target attestation:
 
 <!--
 {
-    "command": "touch target.txt",
+    "command": "valint bom busybox:latest 2>&1",
     "print_command": true
 }
 -->
 <!-- { "object-type": "command-output-start" } -->
 ```bash
-touch target.txt
+valint bom busybox:latest 2>&1
 ```
 ```bash
-```
-<!-- { "object-type": "command-output-end" } -->
-
-
-<!--
-{
-    "command": "valint bom target.txt 2>&1",
-    "print_command": true
-}
--->
-<!-- { "object-type": "command-output-start" } -->
-```bash
-valint bom target.txt 2>&1
-```
-```bash
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m enabled:[0m [cache-storer] using evidence storer
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m target:[0m collecting context, Type: local
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m target:[0m analyzing [0;32mtarget[0m=file:target.txt
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m target:[0m file:target.txt analyzing success
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m cocosign:[0m config selection, default: sigstore, Scheme: file
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m output:[0m File write to FS, Path: /Users/danielnebenzahl/Library/Caches/valint/sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bom.json
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m storer:[0m [cache] upload success [0;32mref[0m=/Users/danielnebenzahl/Library/Caches/valint/sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bom.json [0;32mtype[0m=cache
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m environment-context [0;32mcontent_body_type[0m=cyclonedx-json [0;32mcontent_type[0m=cyclonedx-json [0;32mcontext_type[0m=local [0;32mfile_id[0m=sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 [0;32mfile_path[0m=/Users/danielnebenzahl/code/sample-policies/experimental/demodata/target.txt [0;32mformat_encoding[0m=json [0;32mformat_type[0m=cyclonedx [0;32mformat_version[0m=1.5 [0;32mgit_branch[0m=demo-data-rules [0;32mgit_commit[0m=dbc000ad70d425e474b664a471e6a842184f6566 [0;32mgit_ref[0m=refs/heads/demo-data-rules [0;32mgit_url[0m=https://github.com/scribe-public/sample-policies.git [0;32mhostname[0m=Daniels-MacBook-Pro-2.local [0;32minput_name[0m=target.txt [0;32minput_scheme[0m=file [0;32msbomgroup[0m=file [0;32msbomhashs[0m=[sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855] [0;32msbomname[0m=/Users/danielnebenzahl/code/sample-policies/experimental/demodata/target.txt [0;32msbompurl[0m=pkg:file/./target.txt@SHA-256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 [0;32msbomtype[0m=file [0;32msbomversion[0m=sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 [0;32msigned[0m=false [0;32mtarget_type[0m=file [0;32mtimestamp[0m=2024-05-23T08:57:44+03:00 [0;32mtool[0m=valint [0;32mtool_vendor[0m=Scribe Security [0;32mtool_version[0m=1.4.1-4 [0;32muser[0m=danielnebenzahl
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m cyclonedx-json:[0m evidence generated successfully
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m event:[0m <14>1 2024-05-23T08:57:44.578242+03:00 Daniels-MacBook-Pro-2.local valint 48153 1001 - Artifact target.txt.
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m enabled:[0m [cache-storer] using evidence storer
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m target:[0m collecting context, Type: local
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m target:[0m analyzing [0;32mtarget[0m=docker:busybox:latest
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m target:[0m docker:busybox:latest analyzing success
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m cocosign:[0m config selection, default: sigstore, Scheme: docker
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m output:[0m File write to FS, Path: /home/user/.cache/valint/sha256-a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824.bom.json
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m storer:[0m [cache] upload success [0;32mref[0m=/home/user/.cache/valint/sha256-a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824.bom.json [0;32mtype[0m=cache
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m environment-context [0;32mcontent_body_type[0m=cyclonedx-json [0;32mcontent_type[0m=cyclonedx-json [0;32mcontext_type[0m=local [0;32mcreated[0m=2023-07-18T23:19:33.655005962Z [0;32mformat_encoding[0m=json [0;32mformat_type[0m=cyclonedx [0;32mformat_version[0m=1.5 [0;32mgit_branch[0m=demo-data-rules [0;32mgit_commit[0m=eaca809764aca1a7a9e77231692e036688f8834e [0;32mgit_ref[0m=refs/heads/demo-data-rules [0;32mgit_url[0m=https://github.com/scribe-public/sample-policies.git [0;32mhostname[0m=thinkpad [0;32mimageID[0m=sha256:a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824 [0;32minput_name[0m=busybox [0;32minput_scheme[0m=docker [0;32minput_tag[0m=latest [0;32mplatform[0m=linux/amd64 [0;32mrepoDigest[0m=[busybox@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79] [0;32msbomgroup[0m=container [0;32msbomhashs[0m=[sha256-3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79 sha256-a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824] [0;32msbomname[0m=index.docker.io/library/busybox:latest [0;32msbompurl[0m=pkg:docker/index.docker.io/library/busybox:latest@sha256:a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824?arch=amd64 [0;32msbomtype[0m=container [0;32msbomversion[0m=sha256:a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824 [0;32msigned[0m=false [0;32msize[0m=4.26155e+06 [0;32mtag[0m=[latest 1.36.1 latest] [0;32mtarget_type[0m=container [0;32mtimestamp[0m=2024-05-30T09:54:42+03:00 [0;32mtool[0m=valint [0;32mtool_vendor[0m=Scribe Security [0;32mtool_version[0m=1.4.1-4 [0;32muser[0m=user
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m cyclonedx-json:[0m evidence generated successfully
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m event:[0m <14>1 2024-05-30T09:54:42.698338+03:00 thinkpad valint 21390 1001 - Artifact busybox:latest.
 ```
 <!-- { "object-type": "command-output-end" } -->
 
@@ -84,19 +70,19 @@ valint bom target.txt 2>&1
 Evaluate the policy:
 <!--
 {
-    "command": "valint verify target.txt --rule data.yml --output-file results-sarif.json 2>&1",
+    "command": "valint verify busybox:latest --rule data.yml 2>&1",
     "print_command": true
 }
 -->
 <!-- { "object-type": "command-output-start" } -->
 ```bash
-valint verify target.txt --rule data.yml --output-file results-sarif.json 2>&1
+valint verify busybox:latest --rule data.yml 2>&1
 ```
 ```bash
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m enabled:[0m [cache-storer] using evidence storer
-[0;90m[2024-05-23 08:57:44][0m [0;32m INFO[0m[0;36m target:[0m analyzing [0;32mtarget[0m=file:target.txt
-[0;90m[2024-05-23 08:57:45][0m [0;33m WARN[0m[0;36m git:[0m stat failed%!(EXTRA <nil>)
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m git:[0m cloning remote repository: https://github.com/scribe-public/sample-policies @ refs/heads/dev, Depth: 1
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m enabled:[0m [cache-storer] using evidence storer
+[0;90m[2024-05-30 09:54:42][0m [0;32m INFO[0m[0;36m target:[0m analyzing [0;32mtarget[0m=docker:busybox:latest
+[0;90m[2024-05-30 09:54:43][0m [0;33m WARN[0m[0;36m git:[0m stat failed%!(EXTRA <nil>)
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m git:[0m cloning remote repository: https://github.com/scribe-public/sample-policies @ refs/heads/dev, Depth: 1
 Enumerating objects: 483, done.
 Counting objects:   0% (1/483)
 Counting objects:   1% (5/483)
@@ -200,131 +186,131 @@ Counting objects:  98% (474/483)
 Counting objects:  99% (479/483)
 Counting objects: 100% (483/483)
 Counting objects: 100% (483/483), done.
-Compressing objects:   0% (1/297)
-Compressing objects:   1% (3/297)
-Compressing objects:   2% (6/297)
-Compressing objects:   3% (9/297)
-Compressing objects:   4% (12/297)
-Compressing objects:   5% (15/297)
-Compressing objects:   6% (18/297)
-Compressing objects:   7% (21/297)
-Compressing objects:   8% (24/297)
-Compressing objects:   9% (27/297)
-Compressing objects:  10% (30/297)
-Compressing objects:  11% (33/297)
-Compressing objects:  12% (36/297)
-Compressing objects:  13% (39/297)
-Compressing objects:  14% (42/297)
-Compressing objects:  15% (45/297)
-Compressing objects:  16% (48/297)
-Compressing objects:  17% (51/297)
-Compressing objects:  18% (54/297)
-Compressing objects:  19% (57/297)
-Compressing objects:  20% (60/297)
-Compressing objects:  21% (63/297)
-Compressing objects:  22% (66/297)
-Compressing objects:  23% (69/297)
-Compressing objects:  24% (72/297)
-Compressing objects:  25% (75/297)
-Compressing objects:  26% (78/297)
-Compressing objects:  27% (81/297)
-Compressing objects:  28% (84/297)
-Compressing objects:  29% (87/297)
-Compressing objects:  30% (90/297)
-Compressing objects:  31% (93/297)
-Compressing objects:  32% (96/297)
-Compressing objects:  33% (99/297)
-Compressing objects:  34% (101/297)
-Compressing objects:  35% (104/297)
-Compressing objects:  36% (107/297)
-Compressing objects:  37% (110/297)
-Compressing objects:  38% (113/297)
-Compressing objects:  39% (116/297)
-Compressing objects:  40% (119/297)
-Compressing objects:  41% (122/297)
-Compressing objects:  42% (125/297)
-Compressing objects:  43% (128/297)
-Compressing objects:  44% (131/297)
-Compressing objects:  45% (134/297)
-Compressing objects:  46% (137/297)
-Compressing objects:  47% (140/297)
-Compressing objects:  48% (143/297)
-Compressing objects:  49% (146/297)
-Compressing objects:  50% (149/297)
-Compressing objects:  51% (152/297)
-Compressing objects:  52% (155/297)
-Compressing objects:  53% (158/297)
-Compressing objects:  54% (161/297)
-Compressing objects:  55% (164/297)
-Compressing objects:  56% (167/297)
-Compressing objects:  57% (170/297)
-Compressing objects:  58% (173/297)
-Compressing objects:  59% (176/297)
-Compressing objects:  60% (179/297)
-Compressing objects:  61% (182/297)
-Compressing objects:  62% (185/297)
-Compressing objects:  63% (188/297)
-Compressing objects:  64% (191/297)
-Compressing objects:  65% (194/297)
-Compressing objects:  66% (197/297)
-Compressing objects:  67% (199/297)
-Compressing objects:  68% (202/297)
-Compressing objects:  69% (205/297)
-Compressing objects:  70% (208/297)
-Compressing objects:  71% (211/297)
-Compressing objects:  72% (214/297)
-Compressing objects:  73% (217/297)
-Compressing objects:  74% (220/297)
-Compressing objects:  75% (223/297)
-Compressing objects:  76% (226/297)
-Compressing objects:  77% (229/297)
-Compressing objects:  78% (232/297)
-Compressing objects:  79% (235/297)
-Compressing objects:  80% (238/297)
-Compressing objects:  81% (241/297)
-Compressing objects:  82% (244/297)
-Compressing objects:  83% (247/297)
-Compressing objects:  84% (250/297)
-Compressing objects:  85% (253/297)
-Compressing objects:  86% (256/297)
-Compressing objects:  87% (259/297)
-Compressing objects:  88% (262/297)
-Compressing objects:  89% (265/297)
-Compressing objects:  90% (268/297)
-Compressing objects:  91% (271/297)
-Compressing objects:  92% (274/297)
-Compressing objects:  93% (277/297)
-Compressing objects:  94% (280/297)
-Compressing objects:  95% (283/297)
-Compressing objects:  96% (286/297)
-Compressing objects:  97% (289/297)
-Compressing objects:  98% (292/297)
-Compressing objects:  99% (295/297)
-Compressing objects: 100% (297/297)
-Compressing objects: 100% (297/297), done.
-Total 483 (delta 286), reused 265 (delta 177), pack-reused 0
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m git:[0m cloning success: https://github.com/scribe-public/sample-policies @ refs/heads/dev, Depth: 1
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m git:[0m HEAD 1d46a0df3fb181a81ceb4fbca878fc7cf676cbfb,
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m cocosign:[0m config selection, default: sigstore, Scheme: file
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m environment-context [0;32mcontext_type[0m=local [0;32mfile_id[0m=sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 [0;32mfile_path[0m=/Users/danielnebenzahl/code/sample-policies/experimental/demodata/target.txt [0;32mgit_branch[0m=demo-data-rules [0;32mgit_commit[0m=dbc000ad70d425e474b664a471e6a842184f6566 [0;32mgit_ref[0m=refs/heads/demo-data-rules [0;32mgit_url[0m=https://github.com/scribe-public/sample-policies.git [0;32mhostname[0m=Daniels-MacBook-Pro-2.local [0;32minput_name[0m=target.txt [0;32minput_scheme[0m=file [0;32mpredicate_type[0m=http://scribesecurity.com/evidence/generic/v0.1 [0;32msbomgroup[0m=file [0;32msbomhashs[0m=[sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855] [0;32msbomname[0m=/Users/danielnebenzahl/code/sample-policies/experimental/demodata/target.txt [0;32msbompurl[0m=pkg:file/./target.txt@SHA-256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 [0;32msbomtype[0m=file [0;32msbomversion[0m=sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 [0;32msigned[0m=false [0;32mtarget_type[0m=file [0;32mtimestamp[0m=2024-05-23T08:57:44+03:00 [0;32muser[0m=danielnebenzahl
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m enabled:[0m [rekor-storer] using storer
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m enabled:[0m [fulcio-verifier] using verifier
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m default:[0m [verify-artifact] [my-rule] no format provided
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m storer:[0m [cache] download success, Ref: /Users/danielnebenzahl/Library/Caches/valint/sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bom.json
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m default:[0m [verify-artifact] [my-rule] no format provided
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m default:[0m [verify-artifact] [my-rule] [] allow: true - The reason is thao within
-[0;90m[2024-05-23 08:57:45][0m [0;33m WARN[0m[0;36m default:[0m [verify-artifact] [my-rule] [Invalid Report] check-violation {
+Compressing objects:   0% (1/298)
+Compressing objects:   1% (3/298)
+Compressing objects:   2% (6/298)
+Compressing objects:   3% (9/298)
+Compressing objects:   4% (12/298)
+Compressing objects:   5% (15/298)
+Compressing objects:   6% (18/298)
+Compressing objects:   7% (21/298)
+Compressing objects:   8% (24/298)
+Compressing objects:   9% (27/298)
+Compressing objects:  10% (30/298)
+Compressing objects:  11% (33/298)
+Compressing objects:  12% (36/298)
+Compressing objects:  13% (39/298)
+Compressing objects:  14% (42/298)
+Compressing objects:  15% (45/298)
+Compressing objects:  16% (48/298)
+Compressing objects:  17% (51/298)
+Compressing objects:  18% (54/298)
+Compressing objects:  19% (57/298)
+Compressing objects:  20% (60/298)
+Compressing objects:  21% (63/298)
+Compressing objects:  22% (66/298)
+Compressing objects:  23% (69/298)
+Compressing objects:  24% (72/298)
+Compressing objects:  25% (75/298)
+Compressing objects:  26% (78/298)
+Compressing objects:  27% (81/298)
+Compressing objects:  28% (84/298)
+Compressing objects:  29% (87/298)
+Compressing objects:  30% (90/298)
+Compressing objects:  31% (93/298)
+Compressing objects:  32% (96/298)
+Compressing objects:  33% (99/298)
+Compressing objects:  34% (102/298)
+Compressing objects:  35% (105/298)
+Compressing objects:  36% (108/298)
+Compressing objects:  37% (111/298)
+Compressing objects:  38% (114/298)
+Compressing objects:  39% (117/298)
+Compressing objects:  40% (120/298)
+Compressing objects:  41% (123/298)
+Compressing objects:  42% (126/298)
+Compressing objects:  43% (129/298)
+Compressing objects:  44% (132/298)
+Compressing objects:  45% (135/298)
+Compressing objects:  46% (138/298)
+Compressing objects:  47% (141/298)
+Compressing objects:  48% (144/298)
+Compressing objects:  49% (147/298)
+Compressing objects:  50% (149/298)
+Compressing objects:  51% (152/298)
+Compressing objects:  52% (155/298)
+Compressing objects:  53% (158/298)
+Compressing objects:  54% (161/298)
+Compressing objects:  55% (164/298)
+Compressing objects:  56% (167/298)
+Compressing objects:  57% (170/298)
+Compressing objects:  58% (173/298)
+Compressing objects:  59% (176/298)
+Compressing objects:  60% (179/298)
+Compressing objects:  61% (182/298)
+Compressing objects:  62% (185/298)
+Compressing objects:  63% (188/298)
+Compressing objects:  64% (191/298)
+Compressing objects:  65% (194/298)
+Compressing objects:  66% (197/298)
+Compressing objects:  67% (200/298)
+Compressing objects:  68% (203/298)
+Compressing objects:  69% (206/298)
+Compressing objects:  70% (209/298)
+Compressing objects:  71% (212/298)
+Compressing objects:  72% (215/298)
+Compressing objects:  73% (218/298)
+Compressing objects:  74% (221/298)
+Compressing objects:  75% (224/298)
+Compressing objects:  76% (227/298)
+Compressing objects:  77% (230/298)
+Compressing objects:  78% (233/298)
+Compressing objects:  79% (236/298)
+Compressing objects:  80% (239/298)
+Compressing objects:  81% (242/298)
+Compressing objects:  82% (245/298)
+Compressing objects:  83% (248/298)
+Compressing objects:  84% (251/298)
+Compressing objects:  85% (254/298)
+Compressing objects:  86% (257/298)
+Compressing objects:  87% (260/298)
+Compressing objects:  88% (263/298)
+Compressing objects:  89% (266/298)
+Compressing objects:  90% (269/298)
+Compressing objects:  91% (272/298)
+Compressing objects:  92% (275/298)
+Compressing objects:  93% (278/298)
+Compressing objects:  94% (281/298)
+Compressing objects:  95% (284/298)
+Compressing objects:  96% (287/298)
+Compressing objects:  97% (290/298)
+Compressing objects:  98% (293/298)
+Compressing objects:  99% (296/298)
+Compressing objects: 100% (298/298)
+Compressing objects: 100% (298/298), done.
+Total 483 (delta 286), reused 265 (delta 176), pack-reused 0
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m git:[0m cloning success: https://github.com/scribe-public/sample-policies @ refs/heads/dev, Depth: 1
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m git:[0m HEAD 1d46a0df3fb181a81ceb4fbca878fc7cf676cbfb,
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m cocosign:[0m config selection, default: sigstore, Scheme: docker
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m environment-context [0;32mcontext_type[0m=local [0;32mcreated[0m=2023-07-18T23:19:33.655005962Z [0;32mgit_branch[0m=demo-data-rules [0;32mgit_commit[0m=eaca809764aca1a7a9e77231692e036688f8834e [0;32mgit_ref[0m=refs/heads/demo-data-rules [0;32mgit_url[0m=https://github.com/scribe-public/sample-policies.git [0;32mhostname[0m=thinkpad [0;32mimageID[0m=sha256:a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824 [0;32minput_name[0m=busybox [0;32minput_scheme[0m=docker [0;32minput_tag[0m=latest [0;32mplatform[0m=linux/amd64 [0;32mpredicate_type[0m=http://scribesecurity.com/evidence/generic/v0.1 [0;32mrepoDigest[0m=[busybox@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79] [0;32msbomgroup[0m=container [0;32msbomhashs[0m=[sha256-3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79 sha256-a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824] [0;32msbomname[0m=index.docker.io/library/busybox:latest [0;32msbompurl[0m=pkg:docker/index.docker.io/library/busybox:latest@sha256:a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824?arch=amd64 [0;32msbomtype[0m=container [0;32msbomversion[0m=sha256:a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824 [0;32msigned[0m=false [0;32msize[0m=4.26155e+06 [0;32mtag[0m=[latest 1.36.1 latest] [0;32mtarget_type[0m=container [0;32mtimestamp[0m=2024-05-30T09:54:42+03:00 [0;32muser[0m=user
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m enabled:[0m [rekor-storer] using storer
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m enabled:[0m [fulcio-verifier] using verifier
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m default:[0m [verify-artifact] [my-rule] no format provided
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m storer:[0m [cache] download success, Ref: /home/user/.cache/valint/sha256-a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824.bom.json
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m default:[0m [verify-artifact] [my-rule] no format provided
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m default:[0m [verify-artifact] [my-rule] [] allow: true - The reason is thao within
+[0;90m[2024-05-30 09:54:43][0m [0;33m WARN[0m[0;36m default:[0m [verify-artifact] [my-rule] [Invalid Report] check-violation {
  "something": "thing 1",
  "violation1": null
 }
-[0;90m[2024-05-23 08:57:45][0m [0;33m WARN[0m[0;36m default:[0m [verify-artifact] [my-rule] [Invalid Report] check-violation {
+[0;90m[2024-05-30 09:54:43][0m [0;33m WARN[0m[0;36m default:[0m [verify-artifact] [my-rule] [Invalid Report] check-violation {
  "something": "thing 2",
  "violation2": null
 }
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m default:[0m [verify-artifact] [my-rule] rule passed
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m rule:[0m [default] [verify-artifact] [my-rule] verified
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m policy:[0m [default] verified
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m Policy "default" Evaluation Summary: 
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m default:[0m [verify-artifact] [my-rule] rule passed
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m rule:[0m [default] [verify-artifact] [my-rule] verified
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m policy:[0m [default] verified
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m Policy "default" Evaluation Summary: 
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │ Policy "default" Evaluation Summary                                                                                                  │
 ├─────────────────────────┬───────┬────────┬────────────────────────┬───────────────────┬──────────────────────────────────────────────┤
@@ -336,10 +322,9 @@ Total 483 (delta 286), reused 265 (delta 177), pack-reused 0
 │ AGGREGATE POLICY RESULT │       │        │                        │ PASSED            │                                              │
 └─────────────────────────┴───────┴────────┴────────────────────────┴───────────────────┴──────────────────────────────────────────────┘
 
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m output:[0m File write to FS, Path: /Users/danielnebenzahl/Library/Caches/valint/sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.sarif.json
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m storer:[0m [cache] upload success [0;32mref[0m=/Users/danielnebenzahl/Library/Caches/valint/sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.sarif.json [0;32mtype[0m=cache
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m output:[0m File write to FS, Path: results-sarif.json
-[0;90m[2024-05-23 08:57:45][0m [0;32m INFO[0m[0;36m event:[0m <14>1 2024-05-23T08:57:45.893731+03:00 Daniels-MacBook-Pro-2.local valint 48155 1007 - Policy 'default' with 'my-rule' rules.
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m output:[0m File write to FS, Path: /home/user/.cache/valint/sha256-a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824.sarif.json
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m storer:[0m [cache] upload success [0;32mref[0m=/home/user/.cache/valint/sha256-a416a98b71e224a31ee99cff8e16063554498227d2b696152a9c3e0aa65e5824.sarif.json [0;32mtype[0m=cache
+[0;90m[2024-05-30 09:54:43][0m [0;32m INFO[0m[0;36m event:[0m <14>1 2024-05-30T09:54:43.859703+03:00 thinkpad valint 21409 1007 - Policy 'default' with 'my-rule' rules.
 ```
 <!-- { "object-type": "command-output-end" } -->
 
