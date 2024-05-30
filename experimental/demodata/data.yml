@@ -1,0 +1,20 @@
+name: my-rule
+path: data.rego
+description: "my description"
+
+evidence:
+  signed: false
+
+with:
+  allow: true
+  short_description: This is a short description
+  description: This is a lonnnnnnnnnnnnnng description
+  reason: The reason is thao within
+  violations:
+    - violation1: "thing 1"
+    - violation2: "thing 2"
+      something2:
+        - some
+        - thing
+
+
