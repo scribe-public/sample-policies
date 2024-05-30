@@ -11,9 +11,10 @@ with:
   description: This is a lonnnnnnnnnnnnnng description
   reason: The reason is thao within
   violations:
-    - violation1: 
-      something: "thing 1"
-    - violation2: 
-      something: "thing 2"
+    - violation1: "thing 1"
+    - violation2: "thing 2"
+      something2:
+        - some
+        - thing
 
 
