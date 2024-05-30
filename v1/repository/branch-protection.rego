@@ -27,32 +27,32 @@ allow {
 
 reason = v {
 	allow
-	v := "reject_unsigned_commits is enabled for the project"
+	v := "branch protection is enabled for the repository"
 }
 
 reason = v {
 	not allow
-	v := "reject_unsigned_commits is not enabled for the project"
+	v := "branch protection is not enabled for some branches in the repository"
 }
 
 violations = j {
 	j := {r |
         branch = input.evidence.predicate.content[_].branch[_].result_object
-		reject_unsigned_commits_error(branch)
+		branch_protection_error(branch)
         r = {
-            "project": project.name,
+            "branch": branch.name,
         }
 	}
 }
 
-reject_unsigned_commits_error(branch) {
+branch_protection_error(branch) {
 	not branch.protection
 }
 
-reject_unsigned_commits_error(branch) {
+branch_protection_error(branch) {
 	not branch.protection.enabled
 }
 
-reject_unsigned_commits_error(branch) {
+branch_protection_error(branch) {
 	branch.protection.enabled != true
 }

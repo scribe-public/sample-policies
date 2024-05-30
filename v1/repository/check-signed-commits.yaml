@@ -3,7 +3,7 @@ path: check-signed-commits.rego
 
 level: warning
 
-description: "Verify that all commits in the project are signed"
+description: "Verify that all commits in the repository are signed"
 
 evidence:
   signed: false
