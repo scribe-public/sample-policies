@@ -63,17 +63,6 @@ violations = j {
     }
 }
 
-# has_matching_job_name (pipeline) {
-#     some job in pipeline.result_object.jobs
-#     job.name == job_name
-# }       
-
-has_succesful_job_status(pipeline) {
-    some job in pipeline.result_object.jobs
-    job.name == job_name
-    job.result_object.status == "success"
-}
-
 
 
 
