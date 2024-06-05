@@ -7,18 +7,19 @@ default allow := false
 
 default violations := []
 
-default secret_detection_job_name := "secret_detection" # Configurable name for the secret detection job
+default job_name := "secret_detection" # Configurable name for the secret detection job
 
-secret_detection_identifier = input.config.args.secret_detection_job_name {
-    input.config.args.secret_detection_job_name
+job_name = input.config.args.job_name {
+    input.config.args.job_name
 }
+
 
 verify = v {
 
     v := {
         "allow" : allow,
         "violation" : {
-            "type" : "Not allowed to share secrets",
+            "type" : "Secret scanning was not ran",
             "details" : violations,
         },
         "summary" : [{
@@ -48,23 +49,20 @@ reason = v {
 
 violations = j {
     j := {r |
-        pipelines_without_secret_detection := {val|
-            some pipeline in content.pipeline.content[_].pipeline
-            not has_at_least_one_secret_detection(pipeline)    
-            val := pipeline
-        }
-        some pipeline in pipelines_without_secret_detection
+        some pipeline in input.evidence.predicate.content[_].pipeline
+        not has_matching_job_name(pipeline)
         r = {
             "scribe_type" : pipeline.scribe_type,
             "id": pipeline.id,
-            "name": pipeline.name
+            "name": pipeline.name,
+            "job_name": job_name
         }
     }
 }
 
-has_at_least_one_secret_detection (pipeline) {
+has_matching_job_name (pipeline) {
     some job in pipeline.result_object.jobs
-    job.name == secret_detection_job_name
+    job.name == job_name
 }       
 
 
