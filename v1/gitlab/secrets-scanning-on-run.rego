@@ -56,22 +56,35 @@ reason = v {
 
 
 
+# violations = j {
+#     j := {r | 
+#         some project in input # unsure if there can be multiple projects in the json
+#         some variable in project.variable
+#         variable.scribe_type == "variable"
+#         # gotta make this an or condition
+#         contains_secret(variable.name, secret_variations)
+#         contains_secret(variable.id, secret_variations)
+#         # or end
+#         not match_any(variable.name)
+#         r = {
+#             "name" : variable.name,
+#             "id" : variable.id,
+#         }
+#     }
+# }
+
+# violation if there were no secret scanning on run
 violations = j {
     j := {r | 
         some project in input
-        some variable in project.variable
-        variable.scribe_type == "variable"
-        # gotta make this an or condition
-        contains_secret(variable.name, secret_variations)
-        contains_secret(variable.id, secret_variations)
-        # or end
-        not match_any(variable.name)
-        r = {
-            "name" : variable.name,
-            "id" : variable.id,
-        }
+        some pipeline in project.pipeline
+        some job in pipeline.result_object.jobs
+        job.scribe_type == "job" # probz useless
+        not 
+
     }
 }
+
 
 contains_secret = (str string, secrets list[string]) {
   str =~ (rx"^" + concat(secrets, "|") + "$")
