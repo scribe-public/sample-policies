@@ -2,9 +2,16 @@ package verify
 
 import future.keywords.in
 
+
 default allow := false
 
 default violations := []
+
+default secret_detection_job_name := "secret_detection" # Configurable name for the secret detection job
+
+secret_detection_identifier = input.config.args.secret_detection_job_name {
+    input.config.args.secret_detection_job_name
+}
 
 verify = v {
 
@@ -22,23 +29,7 @@ verify = v {
     }
 }
 
-# Define exact secret names to search
-known_secrets_to_search := {
-    "secret",
-    "secrets",
-    "SECRET",
-    "SECRETS",
-}
 
-# Define a set of all secret variations
-secret_variations := {
-  "secret",
-  "secrets",
-  "SECRET",
-  "SECRETS",
-  "Secret",
-  "Secrets",
-}
 
 allow {
     count(violations) == 0
@@ -46,52 +37,37 @@ allow {
 
 reason = v {
     allow
-    v := "No secrets are exported"
+    v := "All secrets scanning jobs have been ran"
 }
 
 reason = v {
     not allow
-    v := "At least one secret has been exported"
+    v := "At least one secret scanning job has not been ran"
 }
 
 
-
-# violations = j {
-#     j := {r | 
-#         some project in input # unsure if there can be multiple projects in the json
-#         some variable in project.variable
-#         variable.scribe_type == "variable"
-#         # gotta make this an or condition
-#         contains_secret(variable.name, secret_variations)
-#         contains_secret(variable.id, secret_variations)
-#         # or end
-#         not match_any(variable.name)
-#         r = {
-#             "name" : variable.name,
-#             "id" : variable.id,
-#         }
-#     }
-# }
-
-# violation if there were no secret scanning on run
 violations = j {
-    j := {r | 
-        some project in input
-        some pipeline in project.pipeline
-        some job in pipeline.result_object.jobs
-        job.scribe_type == "job" # probz useless
-        not 
-
+    j := {r |
+        pipelines_without_secret_detection := {val|
+            some pipeline in content.pipeline.content[_].pipeline
+            not has_at_least_one_secret_detection(pipeline)    
+            val := pipeline
+        }
+        some pipeline in pipelines_without_secret_detection
+        r = {
+            "scribe_type" : pipeline.scribe_type,
+            "id": pipeline.id,
+            "name": pipeline.name
+        }
     }
 }
 
+has_at_least_one_secret_detection (pipeline) {
+    some job in pipeline.result_object.jobs
+    job.name == secret_detection_job_name
+}       
 
-contains_secret = (str string, secrets list[string]) {
-  str =~ (rx"^" + concat(secrets, "|") + "$")
-}
 
-match_any(required_secret) {
-    allowed_sectret_list := input.config.args.allowed_sectret_list
-	some allowed_secret in allowed_sectret_list
-	allowed_secret == required_secret
-}
+
+
+
