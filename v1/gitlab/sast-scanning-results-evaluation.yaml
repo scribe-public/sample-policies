@@ -1,0 +1,98 @@
+name: sast-scanning-pass-checker
+path: sast-scanning-pass-checker.rego
+
+level: warning
+
+description: "Verify that a specified condition passed"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+# Specify what to evaluate in the sast scan job 
+with:
+  expected_yaml:
+    job_name: "semgrep-sast"
+    scribe_type:
+    id:
+    query_id:
+    parent:
+    result_object:
+      name:
+      id:
+      query_id:
+      ref:
+      status:
+      stage:
+      web_url:
+      created_at:
+      started_at:
+      finished_at:
+      user_id:
+      user_name:
+      username:
+    project:
+      ci_job_token_scope_enabled:
+    artifacts:
+      - file_type:
+        size:
+        filename:
+        file_format:
+    runner:
+      id:
+      description:
+      ip_address:
+      active:
+      paused:
+      is_shared:
+      runner_type:
+      name:
+      online:
+      status:
+    tag_list:
+    commit_id:
+    commit_message:
+    commit_title:
+    commit_author_name:
+    commit_author_email:
+    commit_creation_date:
+    scribe_type:
+    parsed_logs:
+    reports:
+      gl-sast-report.json:
+        version:
+        vulnerabilities:
+        dependency_files:
+        scan:
+          analyzer:
+            id:
+            name:
+            url:
+            vendor:
+              name:
+            version:
+          scanner:
+            id:
+            name:
+            url:
+            vendor:
+              name:
+            version:
+          type:
+          start_time:
+          end_time:
+          status:
+
+
+
+
+  condition_to_test: # Write here the result you would like to test against 
+  # condition_to_pass: # Write the condition here
+  artifact:
+    - filename: "smth"
+      file_format: "gzip"
+    - gdsg

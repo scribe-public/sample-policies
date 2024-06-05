@@ -42,6 +42,7 @@ This README provides an overview of the set of policy rules that utilize discove
         4. [Committer Name check](#committer-name-check)
         5. [Commit Message check](#commit-message-check)
         6. [Commit Validation check](#commit-validation-check)
+    7. [Scanning results](#)
 3. [K8s Namespace Attestation](#k8s-namespace-attestation)
     1. [Verify Allowed Registries](#verify-allowed-registries)
 4. [GitLab Pipeline Attestation (not implemented)](#gitlab-pipeline-attestation)
@@ -366,6 +367,63 @@ with:
 #### Commit Validation check
 
 Verify that all the commits in the project have been validated.
+
+### Gitlab scanning results 
+
+#### Secrets Scanning
+
+Verify that secrets scanning has been ran at least once in each pipeline for every project
+
+You can specify the name of the secret scanning job in the `.yaml` file
+
+```yaml
+with:
+  job_name: "secret_detection"
+```
+
+
+#### Secrets Scanning Pass Checker
+
+Verify that each secret scanning job ran successfully
+
+You can specify the name of the secret scanning job in the `.yaml` file
+
+```yaml
+with:
+  job_name: "secret_detection"
+```
+#### SAST Scanning 
+
+Verify that at the semgrep-sast has been ran at least once in each pipeline for every project
+
+You can specify the name of the secret scanning job in the `.yaml` file
+
+```yaml
+with:
+  job_name: "semgrep-sast"
+```
+
+#### SAST Scanning Pass Checker
+
+Verify that each `semgrep-sast` ran successfully 
+
+You can specify the name of the sast scanning job in the `.yaml` file
+
+```yaml
+with:
+  job_name: "semgrep-sast"
+```
+#### Protect CI Secrets
+
+Verify that variables with `masked == false` and variable names containing 'token' or 'secret' aren't shared.
+
+You can specify your own pattern to search in the `.yaml` file
+```yaml 
+with:
+  pattern: "(?i)(token|secret)" # Regex pattern
+```
+
+#### SAST Scanning Results Evaluation
 
 ## K8s Namespace Attestation
 
