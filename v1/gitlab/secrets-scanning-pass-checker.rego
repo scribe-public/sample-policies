@@ -50,7 +50,7 @@ reason = v {
 violations = j {
     j := {r |
         some pipeline in input.evidence.predicate.content[_].pipeline
-        has_matching_job_name(pipeline)
+        # has_matching_job_name(pipeline)
         not has_succesful_job_satus(pipeline)
         r = {
             "scribe_type" : pipeline.scribe_type,
@@ -62,13 +62,15 @@ violations = j {
     }
 }
 
-has_matching_job_name (pipeline) {
-    some job in pipeline.result_object.jobs
-    job.name == job_name
-}       
+# has_matching_job_name (pipeline) {
+#     some job in pipeline.result_object.jobs
+#     job.name == job_name
+# }       
 
 has_succesful_job_satus(pipeline) {
-    pipeline.result_object.status == "success"
+    some job in pipeline.result_object.jobs
+    job.name == job_name
+    job.result_object.status == "success"
 }
 
 
