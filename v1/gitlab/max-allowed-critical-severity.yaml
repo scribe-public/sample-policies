@@ -14,5 +14,5 @@ evidence:
     - "asset_type=project" 
 
 with:
-  max_allowed_vulnerability_count: # Enter here the max number of a the severity level
+  max_allowed_vulnerability_count: 0 # Enter here the max number of a the severity level
   severity: "Critical" # Enter here the severity of the vulnerabilty

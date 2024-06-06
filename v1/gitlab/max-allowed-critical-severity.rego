@@ -5,7 +5,7 @@ import future.keywords.in
 default allow := false
 default violations := []
 
-default max_allowed_vulnerability_count := 2 # Edit this
+default max_allowed_vulnerability_count := 0 # Edit this
 
 # Looks in the .yaml file for max
 max_allowed_vulnerability_count := input.config.args.max_allowed_vulnerability_count {
