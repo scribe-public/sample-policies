@@ -436,6 +436,16 @@ with:
   severity: "Medium" # Enter here the severity of the vulnerabilty
 ```
 
+#### Max Allowed of Critical Severity
+Verify that the max number of critical severity vulnerabilities is not passed.
+
+```yaml
+with:
+  # Enter here the max number of a the severity level
+  max_allowed_specific_severity: 100
+  severity: "Critical" # Enter here the severity of the vulnerabilty
+```
+
 ## K8s Namespace Attestation
 
 Any rules that can be run on an image SBOM can be mentioned here. We can use hash from the `imageID` field to filter by image.
