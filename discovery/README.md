@@ -446,6 +446,15 @@ with:
   severity: "Critical" # Enter here the severity of the vulnerabilty
 ```
 
+#### Fail on Specific CWE
+Verify that no specified CWE detected
+
+```yaml
+with:
+  cwe_value: "89" # Enter the CWE here as a string, and enter the value only i.e (CWE-89 -> "89")
+```
+
+
 ## K8s Namespace Attestation
 
 Any rules that can be run on an image SBOM can be mentioned here. We can use hash from the `imageID` field to filter by image.

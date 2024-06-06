@@ -14,4 +14,4 @@ evidence:
     - "asset_type=project" 
 
 with:
-  cwe: # Enter the CWE here
+  cwe_value: "89" # Enter the CWE here as a string, and enter the value only i.e (CWE-89 -> "89")
