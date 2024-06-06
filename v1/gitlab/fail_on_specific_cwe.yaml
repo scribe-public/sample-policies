@@ -1,0 +1,17 @@
+name: fail_on_specific_cwe
+path: fail_on_specific_cwe.rego
+
+level: warning
+
+description: "Verify that no specific CWEs are detected"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+with:
+  cwe: # Enter the CWE here

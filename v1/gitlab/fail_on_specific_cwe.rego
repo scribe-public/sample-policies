@@ -5,21 +5,14 @@ import future.keywords.in
 default allow := false
 default violations := []
 
-default max_allowed_vulnerability_count := 2 # Edit this
+default cwe := 2 # Edit this
 
 # Looks in the .yaml file for max
-max_allowed_vulnerability_count := input.config.args.max_allowed_vulnerability_count {
-    input.config.args.max_allowed_vulnerability_count != null
-    input.config.args.max_allowed_vulnerability_count
+cwe := input.config.args.cwe {
+    input.config.args.cwe != null
+    input.config.args.cwe
 }
 
-default severity := "Critical"
-
-# Looks in the .yaml file for severity
-severity := input.config.args.severity {
-    input.config.args.severity != null
-    input.config.args.severity
-}
 
 verify = v {
     v := {
@@ -37,7 +30,7 @@ verify = v {
 }
 
 allow {
-    count(violations) == 0
+    count(critical_severity_list) <= max_allowed_vulnerability_count
 }
 
 reason = v {

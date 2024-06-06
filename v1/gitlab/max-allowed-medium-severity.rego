@@ -37,7 +37,7 @@ verify = v {
 }
 
 allow {
-    count(medium_severity_list) <= max_allowed_medium_severity
+    count(violations) == 0
 }
 
 reason = v {
