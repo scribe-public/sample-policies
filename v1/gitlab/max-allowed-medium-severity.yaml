@@ -14,4 +14,5 @@ evidence:
     - "asset_type=project" 
 
 with:
-  max_allowed_medium_severity: 
+  max_allowed_specific_severity: # Enter here the max number of a the severity level
+  severity: "Medium" # Enter here the severity of the vulnerabilty

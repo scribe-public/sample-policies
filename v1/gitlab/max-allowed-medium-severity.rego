@@ -5,12 +5,20 @@ import future.keywords.in
 default allow := false
 default violations := []
 
-default max_allowed_medium_severity := 100 # Edit this
+default max_allowed_medium_severity := 2 # Edit this
 
 # Looks in the .yaml file for max
-max_allowed_medium_severity := input.config.args.max_allowed_medium_severity {
-    input.config.args.max_allowed_medium_severity != null
-    input.config.args.max_allowed_medium_severity
+max_allowed_medium_severity := input.config.args.max_allowed_specific_severity {
+    input.config.args.max_allowed_specific_severity != null
+    input.config.args.max_allowed_specific_severity
+}
+
+default severity := "Medium"
+
+# Looks in the .yaml file for severity
+severity := input.config.args.severity {
+    input.config.args.severity != null
+    input.config.args.severity
 }
 
 verify = v {
@@ -44,7 +52,7 @@ reason = v {
 
 medium_severity_list := [v | 
     vulnerability := input.evidence.predicate.content.vulnerabilities[_]
-    vulnerability.severity == "Medium"
+    vulnerability.severity == severity
     v := vulnerability
 ]
 
@@ -53,7 +61,6 @@ violations := [r |
     count(medium_severity_list) > max_allowed_medium_severity
     vulnerability := medium_severity_list[_]
     r := {
-        "max": max_allowed_medium_severity,
         "id": vulnerability.id,
         "severity": vulnerability.severity,
         "description": vulnerability.description,

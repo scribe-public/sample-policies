@@ -424,6 +424,17 @@ with:
 ```
 
 #### SAST Scanning Results Evaluation
+To be implemented
+
+#### Max Allowed of Medium Severity
+Verify that the max number of medium severity vulnerabilities is not passed.
+
+```yaml
+with:
+  # Enter here the max number of a the severity level
+  max_allowed_specific_severity: 100
+  severity: "Medium" # Enter here the severity of the vulnerabilty
+```
 
 ## K8s Namespace Attestation
 
