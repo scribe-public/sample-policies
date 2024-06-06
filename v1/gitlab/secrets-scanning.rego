@@ -49,14 +49,16 @@ reason = v {
 
 violations = j {
     j := {r |
-        some pipeline in input.evidence.predicate.content[_].pipeline
-        not has_matching_job_name(pipeline)
-        r = {
-            "scribe_type" : pipeline.scribe_type,
-            "id": pipeline.id,
-            "name": pipeline.name,
-            "job_name": job_name
-        }
+        
+        r :=  projects := object.remove(input.evidence.predicate.content, {"metadata"})
+        # some pipeline in projects.pipeline
+        # not has_matching_job_name(pipeline)
+        # r = {
+        #     "scribe_type" : pipeline.scribe_type,
+        #     "id": pipeline.id,
+        #     "name": pipeline.name,
+        #     "job_name": job_name
+        # }
     }
 }
 

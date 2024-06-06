@@ -1,7 +1,6 @@
 package verify
 
 import future.keywords.in
-import time
 
 default allow := false
 default violations := []
@@ -38,15 +37,14 @@ reason = v {
 }
 
 violations := {r |
-    
-    some token in object.remove(input.content, "metadata")
+    some token in object.remove(input.evidence.predicate.content, {"metadata"})
     token_obj.token.result_object.last_used == null 
     r := {
-        "id": token_obj.token.id
-        "name": token_obj.token.name
+        "id": token_obj.token.id,
+        "name": token_obj.token.name,
         "result_object": {
-            "is_active": false
-            "last_used": null
+            "is_active": false,
+            "last_used": null,
         }
     }
 }

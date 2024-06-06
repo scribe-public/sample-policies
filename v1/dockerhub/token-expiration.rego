@@ -1,7 +1,7 @@
 package verify
 
 import future.keywords.in
-import time
+
 
 default allow := false
 default violations := []
@@ -38,15 +38,14 @@ reason = v {
 }
 
 violations := {r |
-    
-    some token in object.remove(input.content, "metadata")
-    token_obj.token.result_object.is_active == false 
+    some token in object.remove(input.evidence.predicate.content, {"metadata"})
+    not token.token.result_object.is_active # Token is expired if is_active == false or the token object does not have is_active under object result
     r := {
-        "id": token_obj.token.id
-        "name": token_obj.token.name
+        "id": token.token.id,
+        "name": token.token.name,
         "result_object": {
-            "is_active": false
-            "last_used": token_obj.token.result_object.last_used
+            "is_active": false,
+            "last_used": token.token.result_object.last_used,
         }
     }
 }
