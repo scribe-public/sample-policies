@@ -16,7 +16,7 @@ verify = v {
     v := {
         "allow": allow,
         "violation": {
-            "type": "Secret scanning was not ran",
+            "type": "secret has been shared", # Edit this
             "details": violations,
         },
         "summary": [{
