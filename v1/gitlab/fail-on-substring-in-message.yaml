@@ -1,0 +1,17 @@
+name: fail-on-substring-in-message
+path: fail-on-substring-in-message.rego
+
+level: warning
+
+description: "Verify that a substring is not found in the message attribute of the vulnerabilities"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+with:
+  pattern: "(?i)dghd" # Regex pattern to search 

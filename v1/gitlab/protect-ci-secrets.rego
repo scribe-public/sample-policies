@@ -16,7 +16,7 @@ verify = v {
     v := {
         "allow": allow,
         "violation": {
-            "type": "secret has been shared", # Edit this
+            "type": "secret has been shared", # Edit
             "details": violations,
         },
         "summary": [{
