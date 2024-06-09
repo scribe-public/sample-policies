@@ -36,7 +36,8 @@ reason = v {
 }
 
 secrets = s {
-	s := input.evidence.predicate.content.default.secret
+	containers := object.remove(input.evidence.predicate.content, {"metadata"})
+	s := {s}
 }
 
 
@@ -47,14 +48,18 @@ secrets = s {
 
 violations = j {
 	j := {r |
+		containers := object.remove(input.evidence.predicate.content, {"metadata"})
+		container := containers[_]
+		secrets := container.secret
+
         count(secrets) > 0 # Checks if there are any secrets
 
 		secret := secrets[_]
 
 		is_expired(secret)
 
+		# Must add the proper attributes to display
 		r := { 
-
 			"name": secret.name,
 			"id": secret.id,
 			"is_expired": true,
