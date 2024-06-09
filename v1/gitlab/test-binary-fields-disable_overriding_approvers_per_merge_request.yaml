@@ -1,0 +1,22 @@
+name: test-binary-fields-disable_overriding_approvers_per_merge_request
+path: test-binary-fields-disable_overriding_approvers_per_merge_request.rego
+
+level: warning
+
+description: "Verify that the binary field: 'disable_overriding_approvers_per_merge_request' is set correctly"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+with:
+  # You can configure the value of the binary field here
+  disable_overriding_approvers_per_merge_request: 
+
+
+  
+
