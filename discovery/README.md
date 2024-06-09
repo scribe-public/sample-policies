@@ -367,6 +367,88 @@ with:
 
 Verify that all the commits in the project have been validated.
 
+### Gitlab Approval Settings Policies
+
+#### Dissallowed Banned Approvers
+
+Verify that the no approvers are on the banned list. Banned List requires addidtion implementation for how user objects are passed. (Not completed)
+
+```yaml
+with:
+  # You can configure the list of banned users here. 
+  # Enter in a list format the ID of the banned users
+  banned_list:
+    - "1"
+    - "2"
+
+```
+
+#### Required Minimal Approvers
+
+Verify that the required number of approvers from config-file is met. Required Number is taken from evidence, in required_approvals under approval_settings
+
+### Test Binary Fields
+
+#### Disable Ovveriding Approvers per Merge Request
+
+Verify that the binary field: 'disable_overriding_approvers_per_merge_request' is set correctly
+
+``` yaml
+with:
+  # You can configure the value of the binary field here
+  disable_overriding_approvers_per_merge_request: 
+```
+
+#### Merge Requests Author Approval
+
+Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  merge_requests_disable_committers_approval: false
+```
+
+#### Merge Requests Disable Committers Approval
+
+Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  merge_requests_disable_committers_approval: false
+```
+#### Require Password to Approve 
+
+Verify that the binary field: 'require_password_to_approve' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  require_password_to_approve: true
+```
+
+#### Reset Approvals on Push
+
+Verify that the binary field: 'reset_approvals_on_push' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  reset_approvals_on_push: 
+```
+
+#### Selective Code Owner Removals
+
+Verify that the binary field: 'selective_code_owner_removals' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  selective_code_owner_removals: true
+```
+
+
 ## K8s Namespace Attestation
 
 Any rules that can be run on an image SBOM can be mentioned here. We can use hash from the `imageID` field to filter by image.
