@@ -1,0 +1,22 @@
+name: test-binary-fields-reset_approvals_on_push
+path: test-binary-fields-reset_approvals_on_push.rego
+
+level: warning
+
+description: "Verify that the binary field: 'reset_approvals_on_push' is set correctly"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+with:
+  # You can configure the value of the binary field here
+  reset_approvals_on_push: 
+
+
+  
+
