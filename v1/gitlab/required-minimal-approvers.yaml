@@ -1,0 +1,16 @@
+name: required-minimal-approvers
+path: required-minimal-approvers.rego
+
+level: warning
+
+description: "Verify that the required number of approvers from config-file is met"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+# with:
