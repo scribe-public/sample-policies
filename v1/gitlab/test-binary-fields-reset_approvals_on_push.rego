@@ -5,11 +5,8 @@ import future.keywords.in
 default allow := false
 default violations := []
 
-default reset_approvals_on_push := null 
 
-reset_approvals_on_push = input.config.args.reset_approvals_on_push {
-    input.config.args.reset_approvals_on_push
-}
+reset_approvals_on_push := input.config.args.reset_approvals_on_push 
 
 verify = v {
     v := {
