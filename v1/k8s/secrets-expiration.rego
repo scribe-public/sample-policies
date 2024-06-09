@@ -64,3 +64,7 @@ violations = j {
 	}
 }
 
+is_expired(secret) {
+
+	# Must implement a way to check if a secret is expired based off how the object is formed
+}
