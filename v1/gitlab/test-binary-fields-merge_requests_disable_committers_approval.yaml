@@ -1,0 +1,22 @@
+name: test-binary-fields-merge_requests_disable_committers_approval
+path: test-binary-fields-merge_requests_disable_committers_approval.rego
+
+level: warning
+
+description: "Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+with:
+  # You can configure the value of the binary field here
+  merge_requests_disable_committers_approval: false
+
+
+  
+
