@@ -541,3 +541,8 @@ A rule to verify that secrets are not older than k months
 with:
   k: 12 # Enter an numerical value
 ```
+
+#### Test Security and Analysis: Secret Scanning 
+
+A rule to verify that secret_scanning in security_and_analysis is properly set
+

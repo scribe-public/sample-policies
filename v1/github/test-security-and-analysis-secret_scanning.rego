@@ -1,0 +1,90 @@
+package verify
+
+import future.keywords.in
+
+default allow := false
+
+default violations := []
+
+default valid_regex_list := []
+
+
+valid_regex_list = input.config.args.valid_regex_list {
+    input.config.args.valid_regex_list
+} 
+
+
+verify = v {
+	v := {
+		"allow": allow,
+		"violation": {
+			"type": "A rule to verify that secret_scanning in security_and_analysis is properly set",
+			"details": violations,
+		},
+		"summary": [{
+			"allow": allow,
+			"reason": reason,
+			"violations": count(violations),
+		}],
+	}
+}
+
+allow {
+	count(violations) == 0
+}
+
+reason = v {
+	allow
+	v := "All fields in security and analysis are correct"
+}
+
+reason = v {
+	not allow
+	v := "There is at least one fields in security and analysis which is not correct"
+}
+
+# j is now a list in order to make sure duplications are not lost
+
+violations = j {
+	j := [r |
+
+		projects := object.remove(input.evidence.predicate.content, {"metadata"})
+        project := projects[_]
+
+		organization := project.organization
+		
+		# r := {"d": organization.result_object.organization_details.secret_scanning_enabled_for_new_repositories}
+		# # Must make sure that this is the field to be tested
+		secret_scanning := organization.result_object.organization_details.secret_scanning_enabled_for_new_repositories 
+
+        repositories := project.repository
+        repository := repositories[_]	
+
+		# r := repository.result_object.security_and_analysis
+
+		not check_secret_scanning(repository, secret_scanning)
+
+		r := {
+            "scribe_type": repository.scribe_type,
+            "name": repository.name,
+			"id": repository.name,
+			"query_id": repository.query_id,
+			"secret_scanning_enabled_for_new_repositories": secret_scanning,
+			"security_and_analysis": {
+				"status": repository.result_object.security_and_analysis.secret_scanning.status,
+			}			
+        }
+	]
+}
+
+# Define the function to check secret_scanning status
+check_secret_scanning(repository, secret_scanning) {
+    secret_scanning == true
+    repository.result_object.security_and_analysis.secret_scanning.status == "enabled"
+}
+
+check_secret_scanning(repository, secret_scanning) {
+    secret_scanning == false
+    repository.result_object.security_and_analysis.secret_scanning.status == "disabled"
+}
+
