@@ -1,0 +1,17 @@
+name: long-running-images
+path: long-running-images.rego
+
+level: warning
+
+description: "A rule to verify that all images terminated"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+# with:
+#   long-time: # Define what a long time is in minutes
