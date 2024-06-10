@@ -419,4 +419,125 @@ with:
 
 ## Github Policies
 
-### Github
+### Github Testing Orginiziton Details Binary Attributes
+
+The following policies will ensure that binary fields are correctly set
+
+#### Testing Binary Fields Advanced Security Enabled for New Repositories
+
+A rule to verify that the binary field: advanced_security_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependabot Alerts Enbaled for New Repositories
+
+A rule to verify that the binary field: dependabot_alerts_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependabot Secuirty Updates Enabled for New Repositories
+
+A rule to verify that the binary field: dependabot_security_updates_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependency Graph Enabled for New Repositories
+
+A rule to verify that the binary field: dependency_graph_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Members Can Create Private Repositories
+
+A rule to verify that the binary field: members_can_create_private_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Members Can Create Repositories
+
+A rule to verify that the binary field: members_can_create_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Enabled for New Repositories
+
+A rule to verify that the binary field: secret_scanning_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Push Protection Custom Link Enabled
+
+A rule to verify that the binary field: secret_scanning_push_protection_custom_link_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Push Protection Enabled for New Repositories
+
+A rule to verify that the binary field: secret_scanning_push_protection_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Validity Checks Enabled
+
+A rule to verify that the binary field: secret_scanning_validity_checks_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Two Factor Requirement Enabled
+
+A rule to verify that the binary field: two_factor_requirement_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Web Commit Signoff Required
+
+A rule to verify that the binary field: web_commit_signoff_required is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+### Orginaztion Secret Policies
+
+#### Fail on Secrets Older than K months
+
+A rule to verify that secrets are not older than k months
+
+```yaml
+with:
+  k: 12 # Enter an numerical value
+```
