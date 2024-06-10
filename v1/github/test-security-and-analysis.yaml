@@ -1,9 +1,9 @@
-name: fail-on-repo-visibility
-path: fail-on-repo-visibility.rego
+name: test-security-and-analysis
+path: test-security-and-analysis.rego
 
 level: warning
 
-description: "A rule to verify that only predefined public repos are permitted"
+description: "A rule to verify that all binary fields in security and analysis are correct"
 
 evidence:
   signed: false
@@ -13,6 +13,3 @@ evidence:
   labels:
     - "asset_type=organization"
 
-with:
-  valid_regex_list:
-    -

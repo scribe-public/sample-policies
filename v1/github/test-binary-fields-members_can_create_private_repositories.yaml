@@ -11,7 +11,7 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - "asset_type=project"
+    - "asset_type=organization"
 
 with:
   desired_value: false # Enter true or false
