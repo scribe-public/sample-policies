@@ -416,3 +416,7 @@ with:
 ### Secrets check
 
 > The only available example has an empty list here, so not clear what to check yet.
+
+## Github Policies
+
+### Github
