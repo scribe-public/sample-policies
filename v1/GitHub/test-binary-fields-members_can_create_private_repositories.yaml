@@ -1,0 +1,17 @@
+name: test-binary-fields-members_can_create_private_repositories
+path: test-binary-fields-members_can_create_private_repositories.rego
+
+level: warning
+
+description: "A rule to verify that the binary field: members_can_create_private_repositories is properly set"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+  desired_value: false # Enter true or false
