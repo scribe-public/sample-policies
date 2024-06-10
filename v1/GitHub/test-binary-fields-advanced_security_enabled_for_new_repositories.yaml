@@ -1,0 +1,17 @@
+name: test-binary-fields-advanced_security_enabled_for_new_repositories
+path: test-binary-fields-advanced_security_enabled_for_new_repositories.rego
+
+level: warning
+
+description: "A rule to verify that the binary field: advanced_security_enabled_for_new_repositories is properly set"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+  desired_value: false # Enter true or false
