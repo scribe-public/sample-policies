@@ -9,11 +9,6 @@ default violations := []
 default valid_regex_list := []
 
 
-valid_regex_list = input.config.args.valid_regex_list {
-    input.config.args.valid_regex_list
-} 
-
-
 verify = v {
 	v := {
 		"allow": allow,
