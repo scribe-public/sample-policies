@@ -48,14 +48,11 @@ violations = j {
 
 		organization := project.organization
 		
-		# r := {"d": organization.result_object.organization_details.secret_scanning_enabled_for_new_repositories}
-		# # Must make sure that this is the field to be tested
+		# Must make sure that this is the field to be tested
 		secret_scanning := organization.result_object.organization_details.secret_scanning_enabled_for_new_repositories 
 
         repositories := project.repository
         repository := repositories[_]	
-
-		# r := repository.result_object.security_and_analysis
 
 		not check_secret_scanning_enabled_for_new_repositories(repository, secret_scanning)
 
