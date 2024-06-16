@@ -1,0 +1,21 @@
+name: white-listed-namespace
+path: white-listed-namespace.rego
+
+level: warning
+
+description: "A rule to verify that all namespace are allowed"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+
+with:
+  white_listed_namespace: # Regex to match the namespace
+    - "scribesecuriy.jfrog.io"
+    - "docker.io"
+    - "gatekeeper"
+    - "heyman"
