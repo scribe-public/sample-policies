@@ -57,7 +57,7 @@ violations = j {
 
 		r := {
             "name": namespace.name,
-			"id": namespace.name,
+			"id": namespace.id,
 			"query_id": namespace.query_id,
 			"image": image,
             "is_invalid_image": true,
