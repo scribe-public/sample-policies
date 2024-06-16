@@ -544,5 +544,4 @@ with:
 
 #### Test Security and Analysis: Secret Scanning 
 
-A rule to verify that secret_scanning in security_and_analysis is properly set
-
+A rule to verify that secret_scanning in security_and_analysis is properly set. It checks the boolean field `secret_scanning_enabled_for_new_repositories` located in `project.organization.result_object.organization_details.secret_scanning_enabled_for_new_repositories` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.secret_scanning.status` for each `project.repository`.

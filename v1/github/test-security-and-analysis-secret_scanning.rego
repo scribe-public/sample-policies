@@ -62,7 +62,7 @@ violations = j {
 
 		# r := repository.result_object.security_and_analysis
 
-		not check_secret_scanning(repository, secret_scanning)
+		not check_secret_scanning_enabled_for_new_repositories(repository, secret_scanning)
 
 		r := {
             "scribe_type": repository.scribe_type,
@@ -78,12 +78,12 @@ violations = j {
 }
 
 # Define the function to check secret_scanning status
-check_secret_scanning(repository, secret_scanning) {
+check_secret_scanning_enabled_for_new_repositories(repository, secret_scanning) {
     secret_scanning == true
     repository.result_object.security_and_analysis.secret_scanning.status == "enabled"
 }
 
-check_secret_scanning(repository, secret_scanning) {
+check_secret_scanning_enabled_for_new_repositories(repository, secret_scanning) {
     secret_scanning == false
     repository.result_object.security_and_analysis.secret_scanning.status == "disabled"
 }
