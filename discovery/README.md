@@ -603,3 +603,12 @@ with:
     - "scribe-.*"
     - "scribe-security/.*"
 ```
+
+#### Fail on Branch Protected
+
+A rule to verify that branch protected is set to the value defined in the configuration file.
+
+```yaml
+with:
+  predefined_protected: true # Will fail for branches that do not share the same value as this one.
+```
