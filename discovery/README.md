@@ -531,7 +531,7 @@ with:
   desired_value: false # Enter true or false
 ```
 
-### Orginaztion Secret Policies
+### Secret Policies - Organization Attestation
 
 #### Fail on Secrets Older than K months
 
@@ -540,6 +540,19 @@ A rule to verify that secrets are not older than k months
 ```yaml
 with:
   k: 12 # Enter an numerical value
+```
+
+### Policies - Organization Attestation
+
+#### Fail on Repo Visibility
+
+A rule to verify that only predefined public repos are permitted
+
+```yaml
+with:
+  allowed_repo_names: # Regex patterns
+    - "scribe-.*"
+    - "scribe-security/.*"
 ```
 
 ### Test Security and Analysis - Organization Attestation
