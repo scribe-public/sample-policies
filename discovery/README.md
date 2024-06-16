@@ -612,3 +612,12 @@ A rule to verify that branch protected is set to the desired value in the config
 with:
   desired_protected: true # Will fail for branches that do not share the same value as this one.
 ```
+
+#### Fail on Branch Verified
+
+A rule to verify that branch verified is set to the value defined in the configuration file.
+
+```yaml
+with:
+  desired_verified: true # Will fail for branches that do not share the same value as this one.
+```
