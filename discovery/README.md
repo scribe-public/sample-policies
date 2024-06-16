@@ -621,3 +621,12 @@ A rule to verify that branch verified is set to the value defined in the configu
 with:
   desired_verified: true # Will fail for branches that do not share the same value as this one.
 ```
+
+#### Fail on Secrets Olders Than K Month
+
+A rule to verify that secrets are not older than k months
+
+```yaml
+with:
+  k: 12 # Enter an numerical value
+```
