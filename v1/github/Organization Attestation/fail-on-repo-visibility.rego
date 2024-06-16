@@ -18,7 +18,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that secrets are not older than k months",
+			"type": "A rule to verify that all public repos are in the predefined list",
 			"details": violations,
 		},
 		"summary": [{
