@@ -566,6 +566,11 @@ A rule to verify that `secret_scanning_validity_checks_enabled` in `security_and
 
 A rule to verify that `secret_scanning` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_enabled_for_new_repositories` located in `project.ancestors[0].result_object.organization_details.secret_scanning_enabled_for_new_repositories` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning.status`.
 
+#### Secret Scanning Push Protection
+
+A rule to verify that `secret_scanning_push_protection` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_push_protection` located in `project.ancestors[0].result_object.organization_details.secret_scanning_push_protection` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning_push_protection.status`.
+
+
 #### Secret Scanning Validity Checks
 
 A rule to verify that `secret_scanning_validity_checks_enabled` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_validity_checks_enabled` located in `project.ancestors[0].result_object.organization_details.secret_scanning_validity_checks_enabled` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning_validity_checks.status`.
