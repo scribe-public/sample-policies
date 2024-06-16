@@ -6,11 +6,11 @@ default allow := false
 
 default violations := []
 
-default valid_regex_list := []
+default allowed_repo_names := []
 
 
-valid_regex_list = input.config.args.valid_regex_list {
-    input.config.args.valid_regex_list
+allowed_repo_names = input.config.args.allowed_repo_names {
+    input.config.args.allowed_repo_names
 } 
 
 
@@ -62,6 +62,8 @@ violations = j {
             "name": repository.name,
 			"id": repository.id,
 			"query_id": repository.query_id,
+			"visibility": repository.result_object.visibility,
+			"allowed_repo_names": allowed_repo_names,
             # "result_object": repository.result_object,
 			
         }
@@ -70,7 +72,7 @@ violations = j {
 
 # Must get a better understanding of how to check if a repo is in a list of valid predefined regexes
 is_valid(repository) {
-	
-	some pattern in valid_regex_list
+	count(allowed_repo_names) > 0
+	some pattern in allowed_repo_names
 	regex.match(pattern, repository.name)
 }
