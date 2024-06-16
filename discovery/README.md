@@ -392,6 +392,17 @@ with:
     - "docker.io"
 ```
 
+#### White Listed Pod
+
+This policy checks that all pods' names are valid, by testing against a list of valid regex patterns that can be configured in the yaml file.
+
+```yaml
+with:
+  white_listed_namespace: # Regex to match the namespace
+    - "scribesecuriy.jfrog.io"
+    - "docker.io"
+```
+
 ## GitLab Pipeline Attestation
 
 ### Labels
