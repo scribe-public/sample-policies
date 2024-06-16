@@ -69,14 +69,14 @@ violations = j {
 	]
 }
 
-# Define the function to check secret_scanning status
-check_secret_scanning_validity_checks_enabled(repository, secret_scanning) {
-    secret_scanning == true
+# Define the function to check secret_scanning_validity_checks status
+check_secret_scanning_validity_checks_enabled(repository, secret_scanning_validity_checks) {
+    secret_scanning_validity_checks == true
     repository.result_object.security_and_analysis.secret_scanning_validity_checks.status == "enabled"
 }
 
-check_secret_scanning_validity_checks_enabled(repository, secret_scanning) {
-    secret_scanning == false
+check_secret_scanning_validity_checks_enabled(repository, secret_scanning_validity_checks) {
+    secret_scanning_validity_checks == false
     repository.result_object.security_and_analysis.secret_scanning_validity_checks.status == "disabled"
 }
 
