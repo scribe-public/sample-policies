@@ -59,7 +59,7 @@ violations = j {
 		r := {
             "scribe_type": repository.scribe_type,
             "name": repository.name,
-			"id": repository.name,
+			"id": repository.id,
 			"query_id": repository.query_id,
 			"secret_scanning_enabled_for_new_repositories": secret_scanning,
 			"security_and_analysis": {

@@ -59,7 +59,7 @@ violations = j {
 		r := {
             "scribe_type": repository.scribe_type,
             "name": repository.name,
-			"id": repository.name,
+			"id": repository.id,
 			"query_id": repository.query_id,
 			"dependabot_security_updates_enabled_for_new_repositories": dependabot_security_updates,
 			"security_and_analysis": {
