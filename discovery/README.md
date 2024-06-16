@@ -577,3 +577,16 @@ A rule to verify that `dependabot_security_updates_enabled_for_new_repositories`
 #### Secret Scanning Validity Checks
 
 A rule to verify that `secret_scanning_validity_checks_enabled` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_validity_checks_enabled` located in `project.ancestors[0].result_object.organization_details.secret_scanning_validity_checks_enabled` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning_validity_checks.status`.
+
+### Repository Attestation Policies
+
+#### Fail on Repo Visibility
+
+A rule to verify that only predefined public repos are permitted. You may add other allowed public repo names to the list in the configuration file.
+
+```yaml
+with:
+  allowed_repo_names: # Regex patterns
+    - "scribe-.*"
+    - "scribe-security/.*"
+```
