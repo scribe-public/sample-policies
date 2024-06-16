@@ -57,6 +57,8 @@ violations = j {
 		ts := secret.result_object.created_at
 		months := months_since(ts)
 
+		months > k
+
 		r := {
             "scribe_type": secret.scribe_type,
             "name": secret.name,
