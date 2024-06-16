@@ -60,7 +60,7 @@ violations = j {
 		r := {
             "scribe_type": repository.scribe_type,
             "name": repository.name,
-			"id": repository.name,
+			"id": repository.id,
 			"query_id": repository.query_id,
             # "result_object": repository.result_object,
 			
