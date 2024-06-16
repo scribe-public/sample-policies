@@ -6,17 +6,17 @@ default allow := false
 
 default violations := []
 
-default predefined_protected := true
+default desired_protected := true
 
 
-predefined_protected := input.config.args.predefined_protected 
+desired_protected := input.config.args.desired_protected 
 
 
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that branch protected is set to the value defined in the configuration file.",
+			"type": "A rule to verify that branch protected is set to the desired value in the configuration file.",
 			"details": violations,
 		},
 		"summary": [{
@@ -33,12 +33,12 @@ allow {
 
 reason = v {
 	allow
-	v := "All values of branch protected are set to the value defined in the configuration file."
+	v := "All values of branch protected are set to the desired value  in the configuration file."
 }
 
 reason = v {
 	not allow
-	v := "There is at least one value of branch protected is not set to the value defined in the configuration file."
+	v := "There is at least one value of branch protected is not set to the desired value in the configuration file."
 }
 
 
@@ -60,7 +60,7 @@ violations = j {
             "name": branch.name,
 			"id": branch.id,
 			"query_id": branch.query_id,
-			"predefined_protected": predefined_protected,
+			"desired_protected": desired_protected,
 			"protected": branch.result_object.protected,
             # "result_object": branch.result_object,
 			
@@ -70,5 +70,5 @@ violations = j {
 
 # Must get a better understanding of how to check if a repo is in a list of valid predefined regexes
 is_valid(branch) {
-	predefined_protected == branch.result_object.protected 
+	desired_protected == branch.result_object.protected 
 }
