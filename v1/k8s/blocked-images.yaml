@@ -14,7 +14,4 @@ evidence:
     - "asset_type=project"
 
 with:
-  images_to_include: # It checks it by comparing the start of the string with the prefixes from the list 
-    - "scribesecuriy.jfrog.io"
-    - "docker.io"
-  
+  images_to_include: []

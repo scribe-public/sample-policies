@@ -14,8 +14,4 @@ evidence:
     - "asset_type=namespace"
 
 with:
-  white_listed_namespace: # Regex to match the namespace
-    - "scribesecuriy.jfrog.io"
-    - "docker.io"
-    - "gatekeeper"
-    - "heyman"
+  white_listed_namespace: []
