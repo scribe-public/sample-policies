@@ -17,6 +17,3 @@ with:
   # You can configure the value of the binary field here
   disable_overriding_approvers_per_merge_request: 
 
-
-  
-
