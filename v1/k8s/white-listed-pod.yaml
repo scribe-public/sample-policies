@@ -1,9 +1,9 @@
-name: long-running-images
-path: long-running-images.rego
+name: white-listed-pod
+path: white-listed-pod.rego
 
 level: warning
 
-description: "A rule to verify that all images terminated"
+description: "A rule to verify that all pod are allowed"
 
 evidence:
   signed: false
@@ -11,4 +11,7 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - "asset_type=namespace"
+    - "asset_type=pod"
+
+with:
+  white_listed_pod: []

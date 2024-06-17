@@ -11,7 +11,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that all images have terminated",
+			"type": "Non terminated image",
 			"details": violations,
 		},
 		"summary": [{
@@ -59,11 +59,8 @@ violations = j {
 
 # Only checks if it terminated, doesnt check if it ran for a long time.
 is_valid(container_info) {
-	container_info.lastState != null
 	container_info.lastState
-	
-	lastState := container_info.lastState 
-
-	lastState.terminated != null
-	lastState.terminated
+	container_info.lastState.terminated 
 }
+
+
