@@ -44,7 +44,6 @@ reason = v {
 
 # Violation has been switched here as a list instead of a set
 violations := [r |
-
     project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
 
     required_approvals := project.project.result_object.approval_settings.required_approvals
