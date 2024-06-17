@@ -60,6 +60,3 @@ violations = j {
 	]
 }
 
-is_cache(package_var) {
-    startswith(package_var.externalRefs[0].referenceLocator, "pkg:githubactions/actions/cache")
-}
