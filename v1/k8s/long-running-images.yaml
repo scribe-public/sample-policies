@@ -11,7 +11,4 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - "asset_type=project"
-
-# with:
-#   long-time: # Define what a long time is in minutes
+    - "asset_type=namespace"
