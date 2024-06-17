@@ -38,12 +38,9 @@ reason = v {
     v := "At least one of the binary fields: 'disable_overriding_approvers_per_merge_request' are not properly set"
 }
 
-
-
-# Violation has been switched here as a list instead of a set
 violations := [r |
 
-    project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
+    project := input.evidence.predicate.content[_]
 
     disable_overriding_approvers_per_merge_request != project.project.result_object.approval_settings.disable_overriding_approvers_per_merge_request
 

@@ -9,14 +9,9 @@ evidence:
   signed: false
   format-type: generic
   target_type: data
-  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - "asset_type=project" 
+    - "asset_type=project"
 
 with:
-  # You can configure the value of the binary field here
-  reset_approvals_on_push: 
-
-
-  
-
+  reset_approvals_on_push: true

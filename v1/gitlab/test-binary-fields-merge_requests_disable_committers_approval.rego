@@ -38,14 +38,10 @@ reason = v {
     v := "At least one of the binary fields: 'merge_requests_disable_committers_approval' are not properly set"
 }
 
-
-
-# Violation has been switched here as a list instead of a set
 violations := [r |
 
-    project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
+    project := input.evidence.predicate.content[_]
 
-    # r := { "s": project.project.result_object.approval_settings.merge_requests_disable_committers_approval}
     merge_requests_disable_committers_approval != project.project.result_object.approval_settings.merge_requests_disable_committers_approval
 
     r := {

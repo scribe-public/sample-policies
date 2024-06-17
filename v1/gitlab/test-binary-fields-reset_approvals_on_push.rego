@@ -12,7 +12,7 @@ verify = v {
     v := {
         "allow": allow,
         "violation": {
-            "type": "Verify that the binary field: 'reset_approvals_on_push' is set correctly",
+            "type": "Misconfiguration",
             "details": violations,
         },
         "summary": [{
@@ -37,14 +37,10 @@ reason = v {
     v := "At least one of the binary fields: 'reset_approvals_on_push' are not properly set"
 }
 
-
-
-# Violation has been switched here as a list instead of a set
 violations := [r |
 
-    project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
+    project := input.evidence.predicate.content[_]
 
-    # r := { "s": project.project.result_object.approval_settings.reset_approvals_on_push}
     reset_approvals_on_push != project.project.result_object.approval_settings.reset_approvals_on_push
 
     r := {

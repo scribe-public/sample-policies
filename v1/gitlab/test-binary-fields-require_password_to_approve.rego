@@ -38,12 +38,9 @@ reason = v {
     v := "At least one of the binary fields: 'require_password_to_approve' are not properly set"
 }
 
-
-
-# Violation has been switched here as a list instead of a set
 violations := [r |
 
-    project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
+    project := input.evidence.predicate.content[_]
 
     require_password_to_approve != project.project.result_object.approval_settings.require_password_to_approve
 
