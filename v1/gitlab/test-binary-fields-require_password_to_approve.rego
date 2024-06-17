@@ -13,7 +13,7 @@ verify = v {
     v := {
         "allow": allow,
         "violation": {
-            "type": "Verify that the binary field: 'require_password_to_approve' is set correctly",
+            "type": "Misconfiguration",
             "details": violations,
         },
         "summary": [{
