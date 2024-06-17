@@ -15,7 +15,7 @@ verify = v {
     v := {
         "allow": allow,
         "violation": {
-            "type": "Verify that the no approvers are on the banned list",
+            "type": "Disallowed Approvers",
             "details": violations,
         },
         "summary": [{
