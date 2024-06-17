@@ -381,6 +381,14 @@ with:
         - "gcr.io"
 ```
 
+## K8s Repository Attesation
+
+### Cache Verification
+
+#### Fail on Use of Cache
+
+A rule to verify that there is no use of cache
+
 ## GitLab Pipeline Attestation
 
 ### Labels
