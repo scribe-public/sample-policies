@@ -6,7 +6,7 @@ default allow := false
 
 default violations := []
 
-default images_to_include := ["scribesecuriy.jfrog.io"]
+default images_to_include := []
 
 images_to_include = input.config.args.images_to_include {
 	input.config.args.images_to_include
@@ -47,20 +47,15 @@ reason = v {
 
 violations = j {
 	j := [r |
-
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
-		
-		project := projects[_]
-		namespace := project.namespace[_]
-		image := namespace.result_object.container_info[0].image
+		some pod in input.evidence.predicate.content[_].pod
+		image = pod.result_object.container_info[0].image
 		not is_valid(image)
 
 		r := {
-            "name": namespace.name,
-			"id": namespace.name,
-			"query_id": namespace.query_id,
+			"name": pod.name,
+			"id": pod.id,
+			"query_id": pod.result_object.query_id,
 			"image": image,
-            "is_invalid_image": true,
         }
 	]
 }

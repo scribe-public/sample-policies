@@ -11,10 +11,8 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - "asset_type=project"
+    - "asset_type=namespace"
 
 with:
-  images_to_include: # It checks it by comparing the start of the string with the prefixes from the list 
-    - "scribesecuriy.jfrog.io"
-    - "docker.io"
+  images_to_include: []
   
