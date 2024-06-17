@@ -45,7 +45,6 @@ violations := [r |
 
     project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
 
-    # r := { "s": project.project.result_object.approval_settings.merge_requests_author_approval}
     merge_requests_author_approval != project.project.result_object.approval_settings.merge_requests_author_approval
 
     r := {
