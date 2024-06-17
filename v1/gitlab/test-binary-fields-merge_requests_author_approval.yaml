@@ -17,6 +17,3 @@ with:
   # You can configure the value of the binary field here
   merge_requests_author_approval: true
 
-
-  
-
