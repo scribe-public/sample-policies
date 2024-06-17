@@ -13,7 +13,7 @@ verify = v {
     v := {
         "allow": allow,
         "violation": {
-            "type": "Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly",
+            "type": "Misconfiguration",
             "details": violations,
         },
         "summary": [{
