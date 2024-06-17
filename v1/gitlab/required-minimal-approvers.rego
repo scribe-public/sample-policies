@@ -35,12 +35,9 @@ reason = v {
     v := "At least one required number of approvers was not reached"
 }
 
-
-# Violation has been switched here as a list instead of a set
 violations := [r | 
 
-
-    project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
+    project := input.evidence.predicate.content[_]
         
     approvers := project.project.result_object.approval_settings.approvers
     required_approvals := project.project.result_object.approval_settings.required_approvals
