@@ -8,12 +8,11 @@ default violations := []
 
 default valid_regex_list := []
 
-
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that secret_scanning_validity_checks in security_and_analysis is properly set",
+			"type": "Missconfiguration",
 			"details": violations,
 		},
 		"summary": [{
@@ -38,13 +37,10 @@ reason = v {
 	v := "There is at least one fields in security and analysis which is not correct"
 }
 
-# j is now a list in order to make sure duplications are not lost
-
 violations = j {
 	j := [r |
 
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
-        project := projects[_]
+		project := input.evidence.predicate.content[_]
 
 		ancestors := project.ancestors
 		

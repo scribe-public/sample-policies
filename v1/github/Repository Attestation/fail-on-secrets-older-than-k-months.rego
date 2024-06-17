@@ -12,12 +12,11 @@ k = input.config.args.k {
     input.config.args.k
 } 
 
-
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that secrets are not older than k months",
+			"type": "Secret older than k months",
 			"details": violations,
 		},
 		"summary": [{
@@ -42,15 +41,10 @@ reason = v {
 	v := "There is at least one secrets are older than k months"
 }
 
-
-
-# j is now a list in order to make sure duplications are not lost
-
 violations = j {
 	j := [r |
 
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
-        project := projects[_]
+		project := input.evidence.predicate.content[_]
         secrets := project.org_secret
         secret := secrets[_]
 
@@ -64,14 +58,12 @@ violations = j {
             "name": secret.name,
 			"id": secret.name,
 			"query_id": secret.query_id,
-            # "result_object": secret.result_object,
 			"k": k,
 			"created_at": ts,
 			"months": months,
         }
 	]
 }
-
 
 # Function to calculate the number of months between two timestamps
 months_since(ts) = months {

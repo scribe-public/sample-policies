@@ -8,14 +8,11 @@ default violations := []
 
 default valid_regex_list := []
 
-
-
-
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that secret_scanning in security_and_analysis is properly set",
+			"type": "Missconfiguration",
 			"details": violations,
 		},
 		"summary": [{
@@ -40,22 +37,18 @@ reason = v {
 	v := "There is at least one fields in security and analysis which is not correct"
 }
 
-# j is now a list in order to make sure duplications are not lost
-
 violations = j {
 	j := [r |
 
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
-        project := projects[_]
+		project := input.evidence.predicate.content[_]
 
 		organization := project.organization
 		
-		# # Must make sure that this is the field to be tested
+		# Must make sure that this is the field to be tested
 		secret_scanning_push_protection := organization.result_object.organization_details.secret_scanning_push_protection_enabled_for_new_repositories 
 
         repositories := project.repository
         repository := repositories[_]	
-
 
 		not check_secret_scanning_push_protection_enabled_for_new_repositories(repository, secret_scanning_push_protection)
 

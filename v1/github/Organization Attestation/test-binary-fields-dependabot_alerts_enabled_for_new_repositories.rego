@@ -12,12 +12,11 @@ desired_value {
     input.config.args.desired_value
 } 
 
-
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that the binary field: dependabot_alerts_enabled_for_new_repositories is properly set",
+			"type": "Missconfiguration"
 			"details": violations,
 		},
 		"summary": [{
@@ -42,18 +41,12 @@ reason = v {
 	v := "There is at least one value of a binary field that is not properly set"
 }
 
-
-
-# j is now a list in order to make sure duplications are not lost
-
 violations = j {
 	j := [r |
 
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
-        project := projects[_]
+		project := input.evidence.predicate.content[_]
         organization := project.organization
         organization_details := organization.result_object.organization_details
-        # r := organization_details
 
         organization_details.dependabot_alerts_enabled_for_new_repositories != desired_value
 

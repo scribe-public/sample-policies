@@ -11,12 +11,11 @@ default desired_protected := true
 
 desired_protected := input.config.args.desired_protected 
 
-
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that branch protected is set to the desired value in the configuration file.",
+			"type": "Missconfiguration",
 			"details": violations,
 		},
 		"summary": [{
@@ -41,15 +40,10 @@ reason = v {
 	v := "There is at least one value of branch protected is not set to the desired value in the configuration file."
 }
 
-
-
-# j is now a list in order to make sure duplications are not lost
-
 violations = j {
 	j := [r |
 
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
-        project := projects[_]
+		project := input.evidence.predicate.content[_]
         branches := project.branch
 		branch := branches[_]
 
@@ -62,8 +56,6 @@ violations = j {
 			"query_id": branch.query_id,
 			"desired_protected": desired_protected,
 			"protected": branch.result_object.protected,
-            # "result_object": branch.result_object,
-			
         }
 	]
 }

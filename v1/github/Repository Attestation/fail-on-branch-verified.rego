@@ -8,15 +8,13 @@ default violations := []
 
 default desired_verified := true
 
-
 desired_verified := input.config.args.desired_verified 
-
 
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that branch verified is set to the value defined in the configuration file.",
+			"type": "Missconfiguration",
 			"details": violations,
 		},
 		"summary": [{
@@ -41,15 +39,10 @@ reason = v {
 	v := "There is at least one value of branch verified is not set to the value defined in the configuration file."
 }
 
-
-
-# j is now a list in order to make sure duplications are not lost
-
 violations = j {
 	j := [r |
 
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
-        project := projects[_]
+		project := input.evidence.predicate.content[_]
         branches := project.branch
 		branch := branches[_]
 		verified := branch.result_object.head_commit_verification.verified
@@ -67,8 +60,6 @@ violations = j {
 					"verified": verified
 				}
 			}
-            # "result_object": branch.result_object,
-			
         }
 	]
 }
