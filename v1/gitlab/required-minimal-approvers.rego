@@ -10,7 +10,7 @@ verify = v {
     v := {
         "allow": allow,
         "violation": {
-            "type": "Verify that the number of approvers is less than the config-number",
+            "type": "Approvers",
             "details": violations,
         },
         "summary": [{
