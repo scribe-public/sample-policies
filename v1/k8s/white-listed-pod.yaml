@@ -14,7 +14,7 @@ evidence:
     - "asset_type=pod"
 
 with:
-  white_listed_pod: # Regex to match the namespace
+  white_listed_pod: # Regex to match the pod
     - "scribesecuriy.jfrog.io"
     - "docker.io"
     - "gatekeeper"
