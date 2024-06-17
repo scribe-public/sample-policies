@@ -45,7 +45,6 @@ violations := [r |
 
     project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
 
-    # r := { "s": project.project.result_object.approval_settings.require_password_to_approve}
     require_password_to_approve != project.project.result_object.approval_settings.require_password_to_approve
 
     r := {
