@@ -14,5 +14,4 @@ evidence:
     - "asset_type=namespace"
 
 with:
-    allowed_registries:
-        - "gcr.io"
+    allowed_registries: []
