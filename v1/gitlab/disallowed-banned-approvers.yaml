@@ -16,8 +16,5 @@ evidence:
 with:
   # You can configure the list of banned users here. 
   # Enter in a list format the ID of the banned users
-  banned_list:
-    - "1"
-    - "2"
-  
+  banned_list: []
 
