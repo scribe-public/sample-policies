@@ -43,19 +43,16 @@ violations = j {
 
         org_secrets := project.org_secret
 
-		count(org_secrets) > 0
-
 		secret := org_secrets[_]
 
+		secret.scribe_type == "org_secret"
+
 		r := {
-			"scribe_type": secret.scribe_type,
 			"name": secret.name,
 			"id": secret.id,
 			"query_id": secret.query_id,
 			"created_at": secret.result_object.created_at,
 			"updated_at": secret.result_object.updated_at,
-			"platform": secret.platform,
-			"timestamp": secret.timestamp,
         }
 	]
 }
