@@ -1,9 +1,9 @@
-name: fail-on-use-of-org-secrets
-path: fail-on-use-of-org-secrets.rego
+name: no-cache-usage.rego
+path: no-cache-usage.rego.rego
 
 level: warning
 
-description: "A rule to verify that there are no organization secrets."
+description: "A rule to verify that there is no use of cache"
 
 evidence:
   signed: false
