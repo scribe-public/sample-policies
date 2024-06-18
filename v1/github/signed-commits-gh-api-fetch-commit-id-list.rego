@@ -84,7 +84,7 @@ violations = j {
 			}
     	})
 
-		commit_details := validate(response, commit_id, url, authorization)
+		commit_details := get_commit_details(response, commit_id, url, authorization)
 		
 		not is_valid(commit_details)
 
@@ -92,7 +92,7 @@ violations = j {
 	}
 }
 
-validate(response, commit_id, url, authorization) = r {
+get_commit_details(response, commit_id, url, authorization) = r {
 	response.status_code == 200
 	r := {	
 		"commit_id": commit_id,
@@ -107,7 +107,7 @@ validate(response, commit_id, url, authorization) = r {
 	}
 } 
 
-validate(response, commit_id, url, authorization) = r {
+get_commit_details(response, commit_id, url, authorization) = r {
 	response.status_code != 200
 	r := {
 	"commit_id": commit_id,
