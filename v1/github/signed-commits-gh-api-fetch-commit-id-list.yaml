@@ -1,0 +1,20 @@
+name: signed-commits-gh-api-fetch-commit-id-list
+path: signed-commits-gh-api-fetch-commit-id-list.rego
+
+level: warning
+
+description: "Verify that the selected commits have been signed:"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=organization"
+
+with:
+  commit_id_list: []
+  access_token:
+  owner:
+  repo:
