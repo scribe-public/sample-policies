@@ -1,5 +1,5 @@
-name: no-cache-usage.rego
-path: no-cache-usage.rego.rego
+name: no-cache-usage
+path: no-cache-usage.rego
 
 level: warning
 
