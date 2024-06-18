@@ -33,7 +33,7 @@ reason = v {
 
 reason = v {
 	not allow
-	v := "At least one organization secrets was detected"
+	v := "At least one organization secret was detected"
 }
 
 violations = j {
