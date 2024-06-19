@@ -121,6 +121,7 @@ get_commit_details(response, commit_id, url, authorization) = r {
 		"commit": {
 			"verification": {
 				"verified": response.body.commit.verification.verified
+				"signature": response.body.commit.verification.signature
 			}
 		}
 	}
