@@ -371,7 +371,7 @@ Verify that all the commits in the project have been validated.
 
 ### Signed Commits
 
-#### Signed Commits GH Fetch Commit ID List
+#### Signed Commits GH API Fetch Commit ID List
 
 Verify that the selected commits have been signed.
 
@@ -383,9 +383,15 @@ with:
   repo: ""
 ```
 
-All fields must be given values
+<B> All fields must be given values. </B>
 
-#### Signed Commits GH Fetch Range
+`access_token` is your Github's personal access token.
+
+`owner` is the owner of the repo.
+
+`repo` is the name of the repository that you are trying to access the commits.
+
+#### Signed Commits GH API Fetch Range
 
 Verify that the selected range of commits have been signed.
 
@@ -398,7 +404,16 @@ with:
   repo: ""
 ```
 
-`access_token`, `owner`, and `repo` must all be given string values. `since` and `until` are option query parameters. Both `since` and `until` are ISO 8601 date-time strings.
+<b> `access_token`, `owner`, and `repo` must all be given string values. </b>
+`since` and `until` are option query parameters.
+
+Both `since` and `until` are ISO 8601 date-time strings.
+
+`access_token` is your Github's personal access token.
+
+`owner` is the owner of the repo.
+
+`repo` is the name of the repository that you are trying to access the commits.
 
 ## K8s Namespace Attestation
 
