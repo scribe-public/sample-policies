@@ -498,7 +498,11 @@ with:
 
 #### Token Not Used
 
-Verify that tokens have been used
+Verify that tokens have been used.
+
+#### Token Expiration
+
+Verify that tokens are not expired.
 
 ## GitLab Pipeline Attestation
 
