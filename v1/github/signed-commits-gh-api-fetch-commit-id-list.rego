@@ -92,10 +92,6 @@ violations = j {
 		url := sprintf("https://api.github.com/repos/%s/%s/commits/%s",
                [owner, repo, commit_id])
 
-		# r := {
-		# 	"commit_id": commit_id,
-		# 	"url": url,
-		# }
 		authorization = sprintf("Bearer %s", [access_token])
 		
 		response := http.send({
@@ -107,8 +103,6 @@ violations = j {
 				"X-GitHub-Api-Version": "2022-11-28"
 			}
     	})
-
-		# r := {"s": response.status_code}
 
 		commit_details := get_commit_details(response, commit_id, url, authorization)
 		
