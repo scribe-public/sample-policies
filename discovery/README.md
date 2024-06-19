@@ -383,7 +383,7 @@ with:
   repo: ""
 ```
 
-<B> All fields must be given values. </B>
+<u> All fields must be given values. </u>
 
 `access_token` is your Github's personal access token.
 
@@ -404,7 +404,8 @@ with:
   repo: ""
 ```
 
-<b> `access_token`, `owner`, and `repo` must all be given string values. </b>
+<u> `access_token`, `owner`, and `repo` must all be given string values. </u>
+
 `since` and `until` are option query parameters.
 
 Both `since` and `until` are ISO 8601 date-time strings.
