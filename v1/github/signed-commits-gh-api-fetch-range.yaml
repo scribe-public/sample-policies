@@ -3,7 +3,7 @@ path: signed-commits-gh-api-fetch-range.rego
 
 level: warning
 
-description: "Verify that the selected commits have been signed:"
+description: "Verify that the selected range of commits have been signed:"
 
 evidence:
   signed: false
