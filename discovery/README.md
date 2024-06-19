@@ -5,52 +5,52 @@ This README provides an overview of the set of policy rules that utilize discove
 ## Table of Contents
 
 1. [GitLab Organization Attestation](#gitlab-organization-attestation)
-    1. [User](#user)
-        1. [Check Users against an Allowlist](#check-users-against-an-allowlist)
-        2. [Check Users against a Blocklist](#check-users-against-a-blocklist)
-        3. [Check Admin Users against an Allowlist](#check-admin-users-against-an-allowlist)
-        4. [Verify Number of Admins](#verify-number-of-admins)
-    2. [Token](#token)
-        1. [Unused Tokens](#unused-tokens)
-        2. [Shortly Expiring Tokens](#shortly-expiring-tokens)
-        3. [Tokens with too long lifetime](#tokens-with-too-long-lifetime)
-        4. [Forbid Specific Scopes](#forbid-specific-scopes)
-        5. [Allowed Scopes](#allowed-scopes)
-    3. [Projects](#projects)
-        1. [Projects Visibility](#projects-visibility)
-        2. [Inactive Projects](#inactive-projects)
+   1. [User](#user)
+      1. [Check Users against an Allowlist](#check-users-against-an-allowlist)
+      2. [Check Users against a Blocklist](#check-users-against-a-blocklist)
+      3. [Check Admin Users against an Allowlist](#check-admin-users-against-an-allowlist)
+      4. [Verify Number of Admins](#verify-number-of-admins)
+   2. [Token](#token)
+      1. [Unused Tokens](#unused-tokens)
+      2. [Shortly Expiring Tokens](#shortly-expiring-tokens)
+      3. [Tokens with too long lifetime](#tokens-with-too-long-lifetime)
+      4. [Forbid Specific Scopes](#forbid-specific-scopes)
+      5. [Allowed Scopes](#allowed-scopes)
+   3. [Projects](#projects)
+      1. [Projects Visibility](#projects-visibility)
+      2. [Inactive Projects](#inactive-projects)
 2. [GitLab Project Attestation](#gitlab-project-attestation)
-    1. [Abandoned Projects](#abandoned-projects)
-    2. [Visibility Check](#visibility-check)
-    3. [Push Rules](#push-rules)
-        1. [No Push Rules set](#no-push-rules-set)
-        2. [Member check](#member-check)
-        3. [Prevent Secrets](#prevent-secrets)
-        4. [Author Email Regex check](#author-email-regex-check)
-        5. [Committer check](#committer-check)
-        6. [Reject Unsigned Commits](#reject-unsigned-commits)
-    4. [Number of Approvals Required for Merge](#number-of-approvals-required-for-merge)
-    5. [Branch Protection](#branch-protection)
-        1. [Push Access Level](#push-access-level)
-        2. [Merge Access Level](#merge-access-level)
-        3. [Force Push Protection](#force-push-protection)
-        4. [Code Owner Approval Required](#code-owner-approval-required)
-    6. [Commit check](#commit-check)
-        1. [Author Email check](#author-email-check)
-        2. [Author Name check](#author-name-check)
-        3. [Committer Email check](#committer-email-check)
-        4. [Committer Name check](#committer-name-check)
-        5. [Commit Message check](#commit-message-check)
-        6. [Commit Validation check](#commit-validation-check)
+   1. [Abandoned Projects](#abandoned-projects)
+   2. [Visibility Check](#visibility-check)
+   3. [Push Rules](#push-rules)
+      1. [No Push Rules set](#no-push-rules-set)
+      2. [Member check](#member-check)
+      3. [Prevent Secrets](#prevent-secrets)
+      4. [Author Email Regex check](#author-email-regex-check)
+      5. [Committer check](#committer-check)
+      6. [Reject Unsigned Commits](#reject-unsigned-commits)
+   4. [Number of Approvals Required for Merge](#number-of-approvals-required-for-merge)
+   5. [Branch Protection](#branch-protection)
+      1. [Push Access Level](#push-access-level)
+      2. [Merge Access Level](#merge-access-level)
+      3. [Force Push Protection](#force-push-protection)
+      4. [Code Owner Approval Required](#code-owner-approval-required)
+   6. [Commit check](#commit-check)
+      1. [Author Email check](#author-email-check)
+      2. [Author Name check](#author-name-check)
+      3. [Committer Email check](#committer-email-check)
+      4. [Committer Name check](#committer-name-check)
+      5. [Commit Message check](#commit-message-check)
+      6. [Commit Validation check](#commit-validation-check)
 3. [K8s Namespace Attestation](#k8s-namespace-attestation)
-    1. [Verify Allowed Registries](#verify-allowed-registries)
+   1. [Verify Allowed Registries](#verify-allowed-registries)
 4. [GitLab Pipeline Attestation (not implemented)](#gitlab-pipeline-attestation)
-    1. [Labels](#labels)
-        1. [Check Label Existance](#check-label-existance)
-        2. [Check Label Value](#check-label-value)
-    2. [Pods (not implemented)](#pods)
-        1. [Check Image Existance by Name (not implemented)](#check-image-existance-by-name)
-    3. [Secrets check (not implemented)](#secrets-check)
+   1. [Labels](#labels)
+      1. [Check Label Existance](#check-label-existance)
+      2. [Check Label Value](#check-label-value)
+   2. [Pods (not implemented)](#pods)
+      1. [Check Image Existance by Name (not implemented)](#check-image-existance-by-name)
+   3. [Secrets check (not implemented)](#secrets-check)
 
 Please refer to the respective sections below for detailed information on each policy rule.
 
@@ -64,9 +64,9 @@ Takes a list of allowed users as an input and checks if the users in the organiz
 
 ```yaml
 with:
-    allowed_users:
-        - user1
-        - user2
+  allowed_users:
+    - user1
+    - user2
 ```
 
 #### Check Users against a Blocklist
@@ -75,9 +75,9 @@ Takes a list of blocked users as an input and checks if the users in the organiz
 
 ```yaml
 with:
-    blocked_users:
-        - user1
-        - user2
+  blocked_users:
+    - user1
+    - user2
 ```
 
 #### Check Admin Users against an Allowlist
@@ -86,9 +86,9 @@ Takes a list of allowed admin users as an input and checks if the admin users in
 
 ```yaml
 with:
-    allowed_admins:
-        - user1
-        - user2
+  allowed_admins:
+    - user1
+    - user2
 ```
 
 #### Verify Number of Admins
@@ -97,7 +97,7 @@ Takes the minimum number of admins required as an input and checks if the organi
 
 ```yaml
 with:
-    max_admins: 2
+  max_admins: 2
 ```
 
 ### Token
@@ -108,7 +108,7 @@ Takes as input the number of days since the last usage of the token. For each to
 
 ```yaml
 with:
-    unused_for_days: 90
+  unused_for_days: 90
 ```
 
 #### Shortly Expiring Tokens
@@ -117,7 +117,7 @@ Takes as input the number of days before the token expires. For each token the r
 
 ```yaml
 with:
-    exiring_in_days: 30
+  exiring_in_days: 30
 ```
 
 #### Tokens with too long lifetime
@@ -126,7 +126,7 @@ Takes as input the maximum number of days a token can be valid. For each token t
 
 ```yaml
 with:
-    exiring_in_days: 365
+  exiring_in_days: 365
 ```
 
 #### Forbid Specific Scopes
@@ -135,9 +135,9 @@ Takes a list of scopes as input and checks if any token has the specified scopes
 
 ```yaml
 with:
-    project_scopes:
-        - read_api
-        - write_repository
+  project_scopes:
+    - read_api
+    - write_repository
 ```
 
 #### Allowed Scopes
@@ -146,9 +146,9 @@ Takes a list of scopes as input and checks if any token has the specified scopes
 
 ```yaml
 with:
-    allowed_token_scopes:
-        - write_repository
-        - read_api
+  allowed_token_scopes:
+    - write_repository
+    - read_api
 ```
 
 ### Projects
@@ -161,9 +161,9 @@ Takes a list of projects that can be public and checks if any project is public.
 
 ```yaml
 with:
-    allowed_public:
-        - project1
-        - project2
+  allowed_public:
+    - project1
+    - project2
 ```
 
 #### Inactive Projects
@@ -172,7 +172,7 @@ Based on a project timestamp in the `last_activity` field, the rule checks if an
 
 ```yaml
 with:
-    inactive_for_days: 90
+  inactive_for_days: 90
 ```
 
 ## GitLab Project Attestation
@@ -183,7 +183,7 @@ Based on a project timestamp in the `last_activity` field, the rule checks if th
 
 ```yaml
 with:
-    inactive_for_days: 30
+  inactive_for_days: 30
 ```
 
 ### Visibility Check
@@ -192,7 +192,7 @@ Check if the project is public or private.
 
 ```yaml
 with:
-    visibility: public
+  visibility: public
 ```
 
 ### Push Rules
@@ -215,7 +215,7 @@ Verify if the `author_email_regex` field is set to a specific regex (can be empt
 
 ```yaml
 with:
-    author_email_regex: ".*@example.com"
+  author_email_regex: ".*@example.com"
 ```
 
 #### Committer check
@@ -236,8 +236,8 @@ Verify that the number of approvals required for merge is greater than or equal 
 
 ```yaml
 with:
-    name: "All Members"
-    approvals_required_min: 2
+  name: "All Members"
+  approvals_required_min: 2
 ```
 
 ### Branch Protection
@@ -248,16 +248,16 @@ Verify the `access_level` field in push rules.
 
 ```yaml
 with:
-    branch: "main"
-    access_level: 40
+  branch: "main"
+  access_level: 40
 ```
 
-ALternatively, this rule can be evaluated agains the `access_level_description` field. 
+ALternatively, this rule can be evaluated agains the `access_level_description` field.
 
 ```yaml
 with:
-    branch: "main"
-    access_level_description: "Maintainers"
+  branch: "main"
+  access_level_description: "Maintainers"
 ```
 
 #### Merge Access Level
@@ -266,16 +266,16 @@ Verify the `access_level` field in merge rules.
 
 ```yaml
 with:
-    branch: "main"
-    access_level: 40
+  branch: "main"
+  access_level: 40
 ```
 
 ALternatively, this rule can be evaluated agains the `access_level_description` field.
 
 ```yaml
 with:
-    branch: "main"
-    access_level_description: "Maintainers"
+  branch: "main"
+  access_level_description: "Maintainers"
 ```
 
 #### Force Push Protection
@@ -284,7 +284,7 @@ Verify if the `allow_force_push` field is set to `false`.
 
 ```yaml
 with:
-    branch: "main"
+  branch: "main"
 ```
 
 #### Code Owner Approval Required
@@ -293,7 +293,7 @@ Verify if the `code_owner_approval_required` field is set to `true`.
 
 ```yaml
 with:
-    branch: "main"
+  branch: "main"
 ```
 
 ### Commit check
@@ -304,15 +304,15 @@ Verify that all the authors of the commits in the project have emails from the l
 
 ```yaml
 with:
-    allowed_authors:
-        - mail@example.com
+  allowed_authors:
+    - mail@example.com
 ```
 
 Alternatively, we can check for a specific regex.
 
 ```yaml
 with:
-    author_email_regex: ".*@example.com"
+  author_email_regex: ".*@example.com"
 ```
 
 #### Author Name check
@@ -321,9 +321,9 @@ Verify that all the committers of the commits in the project have names from the
 
 ```yaml
 with:
-    allowed_authors:
-        - name1
-        - name2
+  allowed_authors:
+    - name1
+    - name2
 ```
 
 #### Committer Email check
@@ -332,15 +332,15 @@ Verify that all the committers of the commits in the project have emails from th
 
 ```yaml
 with:
-    allowed_committers:
-        - mail@example.com
+  allowed_committers:
+    - mail@example.com
 ```
 
 Alternatively, we can check for a specific regex.
 
 ```yaml
 with:
-    committer_email_regex: ".*@example.com"
+  committer_email_regex: ".*@example.com"
 ```
 
 #### Committer Name check
@@ -349,9 +349,9 @@ Verify that all the committers of the commits in the project have names from the
 
 ```yaml
 with:
-    allowed_committers:
-        - name1
-        - name2
+  allowed_committers:
+    - name1
+    - name2
 ```
 
 #### Commit Message check
@@ -360,7 +360,7 @@ Verify that all the commit messages in the project meet the specified regex (for
 
 ```yaml
 with:
-    commit_message_regex: ".*JIRA-\\d+.*"
+  commit_message_regex: ".*JIRA-\\d+.*"
 ```
 
 #### Commit Validation check
@@ -377,8 +377,8 @@ Verify that the image is from one of the allowed registries.
 
 ```yaml
 with:
-    allowed_registries:
-        - "gcr.io"
+  allowed_registries:
+    - "gcr.io"
 ```
 
 ## GitLab Pipeline Attestation
@@ -391,9 +391,9 @@ Verify that labels from the specified list exist.
 
 ```yaml
 with:
-    labels:
-        - label1
-        - label2
+  labels:
+    - label1
+    - label2
 ```
 
 #### Check Label Value
@@ -402,9 +402,9 @@ Verify that the specified label has the specified value.
 
 ```yaml
 with:
-    label:
-        - label1: value1
-        - label2: value2
+  label:
+    - label1: value1
+    - label2: value2
 ```
 
 ### Pods
@@ -416,3 +416,217 @@ with:
 ### Secrets check
 
 > The only available example has an empty list here, so not clear what to check yet.
+
+## Github Policies
+
+### Github Testing Organiziton Details Binary Attributes
+
+The following policies will ensure that binary fields are correctly set
+
+#### Testing Binary Fields Advanced Security Enabled for New Repositories
+
+A rule to verify that the binary field: advanced_security_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependabot Alerts Enbaled for New Repositories
+
+A rule to verify that the binary field: dependabot_alerts_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependabot Secuirty Updates Enabled for New Repositories
+
+A rule to verify that the binary field: dependabot_security_updates_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependency Graph Enabled for New Repositories
+
+A rule to verify that the binary field: dependency_graph_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Members Can Create Private Repositories
+
+A rule to verify that the binary field: members_can_create_private_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Members Can Create Repositories
+
+A rule to verify that the binary field: members_can_create_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Enabled for New Repositories
+
+A rule to verify that the binary field: secret_scanning_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Push Protection Custom Link Enabled
+
+A rule to verify that the binary field: secret_scanning_push_protection_custom_link_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Push Protection Enabled for New Repositories
+
+A rule to verify that the binary field: secret_scanning_push_protection_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Validity Checks Enabled
+
+A rule to verify that the binary field: secret_scanning_validity_checks_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Two Factor Requirement Enabled
+
+A rule to verify that the binary field: two_factor_requirement_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Web Commit Signoff Required
+
+A rule to verify that the binary field: web_commit_signoff_required is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+### Secret Policies - Organization Attestation
+
+#### Fail on Secrets Older than K months
+
+A rule to verify that secrets are not older than k months
+
+```yaml
+with:
+  k: 12 # Enter an numerical value
+```
+
+### Policies - Organization Attestation
+
+#### Fail on Repo Visibility
+
+A rule to verify that only predefined public repos are permitted
+
+```yaml
+with:
+  allowed_repo_names: # Regex patterns
+    - "scribe-.*"
+    - "scribe-security/.*"
+```
+
+### Test Security and Analysis - Organization Attestation
+
+#### Secret Scanning
+
+A rule to verify that `secret_scanning` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_enabled_for_new_repositories` located in `project.organization.result_object.organization_details.secret_scanning_enabled_for_new_repositories` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.secret_scanning.status` for each `project.repository`.
+
+#### Secret Scanning Push Protection
+
+A rule to verify that `secret_scanning_push_protection` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_push_protection` located in `project.organization.result_object.organization_details.secret_scanning_push_protection` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.secret_scanning_push_protection.status` for each `project.repository`.
+
+#### Dependabot Security Updates
+
+A rule to verify that `dependabot_security_updates_enabled_for_new_repositories` in `security_and_analysis` is properly set. It checks the boolean field `dependabot_security_updates_enabled_for_new_repositories` located in `project.organization.result_object.organization_details.dependabot_security_updates_enabled_for_new_repositories` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.dependabot_security_updates.status` for each `project.repository`.
+
+#### Secret Scanning Validity Checks
+
+A rule to verify that `secret_scanning_validity_checks_enabled` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_validity_checks_enabled` located in `project.organization.result_object.organization_details.secret_scanning_validity_checks_enabled` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.secret_scanning_validity_checks.status` for each `project.repository`.
+
+### Test Security and Analysis - Repository Attestation
+
+#### Secret Scanning
+
+A rule to verify that `secret_scanning` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_enabled_for_new_repositories` located in `project.ancestors[0].result_object.organization_details.secret_scanning_enabled_for_new_repositories` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning.status`.
+
+#### Secret Scanning Push Protection
+
+A rule to verify that `secret_scanning_push_protection` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_push_protection` located in `project.ancestors[0].result_object.organization_details.secret_scanning_push_protection` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning_push_protection.status`.
+
+#### Dependabot Security Updates
+
+A rule to verify that `dependabot_security_updates_enabled_for_new_repositories` in `security_and_analysis` is properly set. It checks the boolean field `dependabot_security_updates_enabled_for_new_repositories` located in `project.ancestors[0].result_object.organization_details.dependabot_security_updates_enabled_for_new_repositories` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.dependabot_security_updates.status`.
+
+#### Secret Scanning Validity Checks
+
+A rule to verify that `secret_scanning_validity_checks_enabled` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_validity_checks_enabled` located in `project.ancestors[0].result_object.organization_details.secret_scanning_validity_checks_enabled` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning_validity_checks.status`.
+
+### Repository Attestation Policies
+
+#### Fail on Repo Visibility
+
+A rule to verify that only predefined public repos are permitted. You may add other allowed public repo names to the list in the configuration file.
+
+```yaml
+with:
+  allowed_repo_names: # Regex patterns
+    - "scribe-.*"
+    - "scribe-security/.*"
+```
+
+#### Fail on Branch Protected
+
+A rule to verify that branch protected is set to the desired value in the configuration file.
+
+```yaml
+with:
+  desired_protected: true # Will fail for branches that do not share the same value as this one.
+```
+
+#### Fail on Branch Verified
+
+A rule to verify that branch verified is set to the value defined in the configuration file.
+
+```yaml
+with:
+  desired_verified: true # Will fail for branches that do not share the same value as this one.
+```
+
+#### Fail on Secrets Olders Than K Month
+
+A rule to verify that secrets are not older than k months
+
+```yaml
+with:
+  k: 12 # Enter an numerical value
+```
