@@ -1,9 +1,12 @@
 package verify
 
 import future.keywords.in
+import time
 
 default allow := false
 default violations := []
+
+
 
 verify = v {
     v := {
@@ -26,33 +29,24 @@ allow {
 
 reason = v {
     allow
-    v := "No tokens are expired" 
+    v := "All tokens are not expired" # Edit this
 }
 
 reason = v {
     not allow
-    v := "At least one token is expired" 
+    v := "At least one token is expired" # Edit this
 }
 
 violations := {r |
     
-    token := input.evidence.predicate.content[_].token
-
-    token_expired(token)
-    
+    some token in object.remove(input.content, "metadata")
+    token_obj.token.result_object.is_active == false 
     r := {
-        "scribe_type": token.scribe_type,
-        "id": token.id,
-        "name": token.name,
+        "id": token_obj.token.id
+        "name": token_obj.token.name
         "result_object": {
-            "last_used": token.result_object.last_used,
-            "is_active": token.result_object.is_active,
-            "scopes": token.result_object.scopes,
-        },
+            "is_active": false
+            "last_used": token_obj.token.result_object.last_used
+        }
     }
 }
-
-token_expired(token) {
-    token.result_object.is_active == false
-}
-
