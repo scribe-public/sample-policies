@@ -12,6 +12,24 @@ commit_id_list := input.config.args.commit_id_list {
 	input.config.args.commit_id_list
 }
 
+default owner := ""
+
+owner := input.config.args.owner {
+	input.config.args.owner != null
+}
+
+default repo := ""
+
+repo := input.config.args.repo {
+	input.config.args.repo != null
+}
+
+default access_token := ""
+
+access_token := input.config.args.access_token {
+	input.config.args.access_token != null
+}
+
 verify = v {
 	v := {
 		"allow": allow,
@@ -44,17 +62,17 @@ reason = v {
 
 
 errors[msg] {
-	not input.config.args.access_token
+	access_token == "" 
 	msg := "access_token is required"
 }
 
 errors[msg] {
-	not input.config.args.owner
+	owner == ""
 	msg := "owner is required"
 }
 
 errors[msg] {
-	not input.config.args.repo
+	repo == ""
 	msg := "repo is required"
 }
 
@@ -66,13 +84,14 @@ errors[msg] {
 
 violations = j {
 	count(errors) == 0
+
 	j := {r |
 		commit_id := commit_id_list[_]
 
 		url := sprintf("https://api.github.com/repos/%s/%s/commits/%s",
-               [input.config.args.owner, input.config.args.repo, commit_id])
+               [owner, repo, commit_id])
 
-		authorization = sprintf("Bearer %s", [input.config.args.access_token])
+		authorization = sprintf("Bearer %s", [access_token])
 		
 		response := http.send({
 			"method": "GET",
