@@ -1,12 +1,9 @@
 package verify
 
 import future.keywords.in
-import time
 
 default allow := false
 default violations := []
-
-
 
 verify = v {
     v := {
@@ -29,24 +26,35 @@ allow {
 
 reason = v {
     allow
-    v := "All tokens have been used" # Edit this
+    v := "All tokens have been used" 
 }
 
 reason = v {
     not allow
-    v := "At least one token has not been used" # Edit this
+    v := "At least one token has not been used" 
 }
 
-violations := {r |
+violations = j {
+
+    j := {r |
     
-    some token in object.remove(input.content, "metadata")
-    token_obj.token.result_object.last_used == null 
-    r := {
-        "id": token_obj.token.id
-        "name": token_obj.token.name
-        "result_object": {
-            "is_active": false
-            "last_used": null
+        token := input.evidence.predicate.content[_].token
+
+        is_not_used(token)
+
+        r := {
+            "scribe_type": token.scribe_type,
+            "id": token.id,
+            "name": token.name,
+            "result_object": {
+                "last_used": token.result_object.last_used,
+                "is_active": token.result_object.is_active,
+                "scopes": token.result_object.scopes,
+            },
         }
     }
+}
+
+is_not_used(token) {
+    token.result_object.last_used == null
 }
