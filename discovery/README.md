@@ -416,6 +416,12 @@ Both `since` and `until` are ISO 8601 date-time strings.
 
 `repo` is the name of the repository that you are trying to access the commits.
 
+## Github Repository Attestation
+
+### Signed Commits
+
+Verify that the commits have been signed in a repository attestation.
+
 ## K8s Namespace Attestation
 
 Any rules that can be run on an image SBOM can be mentioned here. We can use hash from the `imageID` field to filter by image.
