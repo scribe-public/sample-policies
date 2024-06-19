@@ -86,23 +86,7 @@ violations = j {
 		}
 	})
 	
-	j := {r |
-
-		commit := response.body[_].commit
-
-		not is_valid(commit)
-		
-		r := {
-			"since": input.config.args.since,
-			"until": input.config.args.until,
-			"status_code": response.status_code,
-			"author": commit.author,
-			"sha": commit.tree.sha,
-			"url": commit.url,
-			"message": commit.message,
-			"verification": commit.verification
-		}
-	}
+	j := get_j(response, url, authorization)
 }
 
 get_url(since, until) = url {
@@ -143,6 +127,41 @@ get_url(since, until) = url {
 
 is_valid(commit) {
 	commit.verification.verified
+}
+
+get_j(response,  url, authorization) = j {
+
+	response.status_code == 200
+
+	j := {r |
+
+		commit := response.body[_].commit
+
+		not is_valid(commit)
+		
+		r := {
+			"since": input.config.args.since,
+			"until": input.config.args.until,
+			"status_code": response.status_code,
+			"author": commit.author,
+			"sha": commit.tree.sha,
+			"url": commit.url,
+			"message": commit.message,
+			"verification": commit.verification
+		}
+	}
+}
+
+get_j(response, url, authorization) = j {
+
+	response.status_code != 200
+
+	j := {
+		"status_code": response.status_code,
+		"url": url,
+		"authorization": authorization,
+		"response":	response.body
+	}
 }
 
 

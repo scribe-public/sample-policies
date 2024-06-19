@@ -6,6 +6,7 @@ default allow := false
 
 default violations := []
 
+
 default commit_id_list := []
 
 commit_id_list := input.config.args.commit_id_list {
@@ -91,6 +92,10 @@ violations = j {
 		url := sprintf("https://api.github.com/repos/%s/%s/commits/%s",
                [owner, repo, commit_id])
 
+		# r := {
+		# 	"commit_id": commit_id,
+		# 	"url": url,
+		# }
 		authorization = sprintf("Bearer %s", [access_token])
 		
 		response := http.send({
@@ -103,6 +108,8 @@ violations = j {
 			}
     	})
 
+		# r := {"s": response.status_code}
+
 		commit_details := get_commit_details(response, commit_id, url, authorization)
 		
 		not is_valid(commit_details)
@@ -112,29 +119,32 @@ violations = j {
 }
 
 get_commit_details(response, commit_id, url, authorization) = r {
+	
 	response.status_code == 200
+	
 	r := {	
 		"commit_id": commit_id,
 		"status_code": response.status_code,
 		"url": url,
 		"authorization": authorization,
 		"commit": {
-			"verification": {
-				"verified": response.body.commit.verification.verified
-				"signature": response.body.commit.verification.signature
-			}
+			"verification": response.body.commit.verification,
+			"message": response.body.commit.message,
+			"author": response.body.commit.author,
 		}
 	}
 } 
 
 get_commit_details(response, commit_id, url, authorization) = r {
+	
 	response.status_code != 200
+	
 	r := {
-	"commit_id": commit_id,
-	"status_code": response.status_code,
-	"url": url,
-	"authorization": authorization,
-	"response":	response.body
+		"commit_id": commit_id,
+		"status_code": response.status_code,
+		"url": url,
+		"authorization": authorization,
+		"response":	response.body
 	}	
 }
 
