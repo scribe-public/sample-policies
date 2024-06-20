@@ -71,7 +71,7 @@ violations = j {
 	count(errors) == 0
 
 	j := {r |
-		commit_id := commit_id_list[0]
+		commit_id := commit_id_list[_]
 
 		# url := sprintf("https://gitlab.com/api/v4/projects/%s/repository/commits/%s/signature", [project_id, commit_id])
 		url := sprintf("https://gitlab.com/api/v4/projects/%s/repository/commits/%s/signature", [project_id, commit_id])
@@ -88,22 +88,10 @@ violations = j {
 	}
 }
 
-# get_r(response, commit_id, url) = r {
-	
-# 	response.status_code == 200
-	
-# 	r := {	
-# 		"commit_id": commit_id,
-# 		"status_code": response.status_code,
-# 		"url": url,
-# 		"body": response.body,
-# 	}
-# } 
-
-# status_code 404 means the commit is not signed or unfound
 get_r(response, commit_id, url) = r {
 	
 	response.status_code == 404
+	response.body.message == "404 Signature Not Found"
 	
 	r := {
 		"commit_id": commit_id,
@@ -114,18 +102,20 @@ get_r(response, commit_id, url) = r {
 	}	
 }
 
-
 get_r(response, commit_id, url) = r {
 	
-	response.status_code == 401
-	
+	response.status_code == 404
+	response.body.message != "404 Signature Not Found"
 	r := {
 		"commit_id": commit_id,
 		"status_code": response.status_code,
 		"url": url,
-		"response":	response.body
+		"response":	response.body,
 	}	
 }
+
+
+
 
 
 

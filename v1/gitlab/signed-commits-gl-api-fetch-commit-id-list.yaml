@@ -11,9 +11,6 @@ evidence:
   target_type: container
 
 with:
-  commit_id_list:
-    - "81bee60808fec8aff37c78876f67531f1eab72571"
-    - "e32f4b08f583e9d2450b88b9869e083243c33f6d"
-    - "ddf967268b3cefae2285ca2544d3bbaa0405c3a7"
-  private_token: "glpat-Jx-fXALjyYguPn5Qy_sc"
-  project_id: "56283316"
+  commit_id_list: []
+  private_token: ""
+  project_id: ""

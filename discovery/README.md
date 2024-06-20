@@ -367,6 +367,49 @@ with:
 
 Verify that all the commits in the project have been validated.
 
+## Gitlab API
+
+### Signed commits
+
+#### Signed Commits GL API Fetch Commit ID List
+
+Verify that the selected commits have been signed
+
+```yaml
+with:
+  commit_id_list: []
+  private_token: ""
+  project_id: ""
+```
+
+<u>All fields must contain values</u>
+
+`commit_id_list` is a list that contains the commit id or commit SHA (same term).
+
+`private_token` is your personal acccess token.
+
+`project_id` is the projects ID, can be found on Gitlab.
+
+#### Signed Commits GL API Fetcg range
+
+Verify that the selected range of commits have been signed.
+
+```yaml
+with:
+  since: "" # ISO 8601 date-time string (optional)
+  until: "" # ISO 8601 date-time string (optional)
+  project_id: ""
+  private_token: ""
+```
+
+<u>All fields besides since and until are mandatory</u>
+
+`since` and `until` are both query parameters.
+
+`project_id` is your project's ID. Can be found on Gitlab.
+
+`private_token` is your personal access token.
+
 ## Github API
 
 ### Signed Commits
