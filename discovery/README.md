@@ -390,9 +390,9 @@ with:
 
 `project_id` is the projects ID, can be found on Gitlab.
 
-#### Signed Commits GL API Fetcg range
+#### Signed Commits GL API Fetch range
 
-Verify that the selected range of commits have been signed.
+Verify that the selected range of commits have been signed. Be cautious multiple Api fetch requests will be made which may take longer than other policies. If there are a lot of commits, it might be beneficial to include query paramters `since` and `until`.
 
 ```yaml
 with:
