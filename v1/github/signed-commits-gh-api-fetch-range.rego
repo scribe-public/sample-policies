@@ -74,7 +74,7 @@ violations = j {
 	count(errors) == 0
 	url := get_url(input.config.args.since, input.config.args.until)
 
-	authorization = sprintf("Bearer %s", [input.config.args.access_token])
+	authorization = sprintf("Bearer %s", [access_token])
 	
 	response := http.send({
 		"method": "GET",
@@ -95,7 +95,7 @@ get_url(since, until) = url {
 	until != null
 
 	url := sprintf("https://api.github.com/repos/%s/%s/commits?since=%s&until=%s",
-		[input.config.args.owner, input.config.args.repo, since, until])
+		[owner, repo, since, until])
 }
 
 get_url(since, until) = url {
@@ -104,7 +104,7 @@ get_url(since, until) = url {
 	until == null
 
 	url := sprintf("https://api.github.com/repos/%s/%s/commits?since=%s",
-		[input.config.args.owner, input.config.args.repo, since])
+		[owner, repo, since])
 }
 
 get_url(since, until) = url {
@@ -113,7 +113,7 @@ get_url(since, until) = url {
 	until != null
 
 	url := sprintf("https://api.github.com/repos/%s/%s/commits?until=%s",
-		[input.config.args.owner, input.config.args.repo, until])
+		[owner, repo, until])
 }
 
 get_url(since, until) = url {
@@ -122,7 +122,7 @@ get_url(since, until) = url {
 	until == null
 
 	url := sprintf("https://api.github.com/repos/%s/%s/commits",
-		[input.config.args.owner, input.config.args.repo])
+		[owner, repo])
 }
 
 is_valid(commit) {
