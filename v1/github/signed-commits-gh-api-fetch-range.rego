@@ -56,6 +56,7 @@ verify = v {
 }
 
 allow {
+	count(errors) == 0
 	count(violations) == 0
 }
 
