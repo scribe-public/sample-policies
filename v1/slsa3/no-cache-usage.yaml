@@ -1,0 +1,14 @@
+name: no-cache-usage
+path: no-cache-usage.rego
+
+level: warning
+
+description: "A rule to verify that there is no use of cache"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=repository"
