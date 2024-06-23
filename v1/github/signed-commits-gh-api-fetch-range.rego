@@ -72,7 +72,7 @@ reason = v {
 
 violations = j {
 	count(errors) == 0
-	url := get_url(input.config.args.since, input.config.args.until)
+	url := get_url(input.config.args.since, input.config.args.until, input.config.args.sha)
 
 	authorization = sprintf("Bearer %s", [access_token])
 	
@@ -85,41 +85,84 @@ violations = j {
 			"X-GitHub-Api-Version": "2022-11-28"
 		}
 	})
-	
 	j := get_j(response, url, authorization)
 }
 
-get_url(since, until) = url {
+get_url(since, until, sha) = url {
 
 	since != null
 	until != null
+	sha != null
+
+	url := sprintf("https://api.github.com/repos/%s/%s/commits?since=%s&until=%s&sha=%s",
+		[owner, repo, since, until, sha])
+}
+
+get_url(since, until, sha) = url {
+
+	since != null
+	until == null
+	sha != null
+
+	url := sprintf("https://api.github.com/repos/%s/%s/commits?since=%s&sha=%s",
+		[owner, repo, since,sha])
+}
+
+get_url(since, until, sha) = url {
+
+	since == null
+	until != null
+	sha != null
+
+	url := sprintf("https://api.github.com/repos/%s/%s/commits?until=%s&sha=%s",
+		[owner, repo, until, sha])
+}
+
+get_url(since, until, sha) = url {
+
+	since == null
+	until == null
+	sha != null
+
+	url := sprintf("https://api.github.com/repos/%s/%s/commits?sha=%s",
+		[owner, repo, sha])
+}
+
+get_url(since, until, sha) = url {
+
+	since != null
+	until != null
+	sha == null
 
 	url := sprintf("https://api.github.com/repos/%s/%s/commits?since=%s&until=%s",
 		[owner, repo, since, until])
 }
 
-get_url(since, until) = url {
+get_url(since, until, sha) = url {
 
 	since != null
 	until == null
+	sha == null
 
 	url := sprintf("https://api.github.com/repos/%s/%s/commits?since=%s",
 		[owner, repo, since])
 }
 
-get_url(since, until) = url {
+get_url(since, until, sha) = url {
 
 	since == null
 	until != null
+	sha == null
 
 	url := sprintf("https://api.github.com/repos/%s/%s/commits?until=%s",
 		[owner, repo, until])
 }
 
-get_url(since, until) = url {
+get_url(since, until, sha) = url {
 
 	since == null
 	until == null
+	sha == null
 
 	url := sprintf("https://api.github.com/repos/%s/%s/commits",
 		[owner, repo])

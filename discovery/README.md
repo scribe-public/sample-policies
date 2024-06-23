@@ -440,18 +440,23 @@ Verify that the selected range of commits have been signed.
 
 ```yaml
 with:
-  since: "" # ISO 8601 date-time string
-  until: "" # ISO 8601 date-time string
+  # Required
   access_token: ""
   owner: ""
   repo: ""
+  # Optional
+  since: # ISO 8601 date-time string
+  until: # ISO 8601 date-time string
+  sha:
 ```
 
 <u> `access_token`, `owner`, and `repo` must all be given string values. </u>
 
-`since` and `until` are option query parameters.
+`since`, `until`, `sha` are optional query parameters.
 
 Both `since` and `until` are ISO 8601 date-time strings.
+
+When `sha` is specified, it allows you to set a range from the specific sha of the commit to the head.
 
 `access_token` is your Github's personal access token.
 

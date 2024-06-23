@@ -11,8 +11,11 @@ evidence:
   target_type: container
 
 with:
-  since: "" # ISO 8601 date-time string
-  until: "" # ISO 8601 date-time string
+  # Required
   access_token: ""
   owner: ""
   repo: ""
+  # Optional
+  since: # ISO 8601 date-time string
+  until: # ISO 8601 date-time string
+  sha:
