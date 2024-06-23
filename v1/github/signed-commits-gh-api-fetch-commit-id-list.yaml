@@ -8,7 +8,6 @@ description: "Verify that the selected commits have been signed"
 evidence:
   signed: false
   format-type: cyclonedx-json
-  target_type: container
 
 with:
   commit_id_list: []
