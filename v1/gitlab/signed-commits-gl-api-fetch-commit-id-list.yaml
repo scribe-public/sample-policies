@@ -1,0 +1,16 @@
+name: signed-commits-gl-api-fetch-commit-id-list
+path: signed-commits-gl-api-fetch-commit-id-list.rego
+
+level: warning
+
+description: "Verify that the selected commits have been signed"
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+
+with:
+  commit_id_list: []
+  private_token: ""
+  project_id: ""

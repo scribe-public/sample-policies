@@ -1,0 +1,16 @@
+name: signed-commits-gh-api-fetch-commit-id-list
+path: signed-commits-gh-api-fetch-commit-id-list.rego
+
+level: warning
+
+description: "Verify that the selected commits have been signed"
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+
+with:
+  commit_id_list: []
+  access_token: ""
+  owner: ""
+  repo: ""
