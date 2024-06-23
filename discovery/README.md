@@ -519,3 +519,217 @@ with:
 ### Secrets check
 
 > The only available example has an empty list here, so not clear what to check yet.
+
+## Github Policies
+
+### Github Testing Organiziton Details Binary Attributes
+
+The following policies will ensure that binary fields are correctly set
+
+#### Testing Binary Fields Advanced Security Enabled for New Repositories
+
+A rule to verify that the binary field: advanced_security_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependabot Alerts Enbaled for New Repositories
+
+A rule to verify that the binary field: dependabot_alerts_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependabot Secuirty Updates Enabled for New Repositories
+
+A rule to verify that the binary field: dependabot_security_updates_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Dependency Graph Enabled for New Repositories
+
+A rule to verify that the binary field: dependency_graph_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Members Can Create Private Repositories
+
+A rule to verify that the binary field: members_can_create_private_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Members Can Create Repositories
+
+A rule to verify that the binary field: members_can_create_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Enabled for New Repositories
+
+A rule to verify that the binary field: secret_scanning_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Push Protection Custom Link Enabled
+
+A rule to verify that the binary field: secret_scanning_push_protection_custom_link_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Push Protection Enabled for New Repositories
+
+A rule to verify that the binary field: secret_scanning_push_protection_enabled_for_new_repositories is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Secret Scanning Validity Checks Enabled
+
+A rule to verify that the binary field: secret_scanning_validity_checks_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Two Factor Requirement Enabled
+
+A rule to verify that the binary field: two_factor_requirement_enabled is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+#### Testing Binary Fields Web Commit Signoff Required
+
+A rule to verify that the binary field: web_commit_signoff_required is properly set
+
+```yaml
+with:
+  desired_value: false # Enter true or false
+```
+
+### Secret Policies - Organization Attestation
+
+#### Fail on Secrets Older than K months
+
+A rule to verify that secrets are not older than k months
+
+```yaml
+with:
+  k: 12 # Enter an numerical value
+```
+
+### Policies - Organization Attestation
+
+#### Fail on Repo Visibility
+
+A rule to verify that only predefined public repos are permitted
+
+```yaml
+with:
+  allowed_repo_names: # Regex patterns
+    - "scribe-.*"
+    - "scribe-security/.*"
+```
+
+### Test Security and Analysis - Organization Attestation
+
+#### Secret Scanning
+
+A rule to verify that `secret_scanning` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_enabled_for_new_repositories` located in `project.organization.result_object.organization_details.secret_scanning_enabled_for_new_repositories` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.secret_scanning.status` for each `project.repository`.
+
+#### Secret Scanning Push Protection
+
+A rule to verify that `secret_scanning_push_protection` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_push_protection` located in `project.organization.result_object.organization_details.secret_scanning_push_protection` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.secret_scanning_push_protection.status` for each `project.repository`.
+
+#### Dependabot Security Updates
+
+A rule to verify that `dependabot_security_updates_enabled_for_new_repositories` in `security_and_analysis` is properly set. It checks the boolean field `dependabot_security_updates_enabled_for_new_repositories` located in `project.organization.result_object.organization_details.dependabot_security_updates_enabled_for_new_repositories` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.dependabot_security_updates.status` for each `project.repository`.
+
+#### Secret Scanning Validity Checks
+
+A rule to verify that `secret_scanning_validity_checks_enabled` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_validity_checks_enabled` located in `project.organization.result_object.organization_details.secret_scanning_validity_checks_enabled` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.secret_scanning_validity_checks.status` for each `project.repository`.
+
+### Test Security and Analysis - Repository Attestation
+
+#### Secret Scanning
+
+A rule to verify that `secret_scanning` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_enabled_for_new_repositories` located in `project.ancestors[0].result_object.organization_details.secret_scanning_enabled_for_new_repositories` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning.status`.
+
+#### Secret Scanning Push Protection
+
+A rule to verify that `secret_scanning_push_protection` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_push_protection` located in `project.ancestors[0].result_object.organization_details.secret_scanning_push_protection` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning_push_protection.status`.
+
+#### Dependabot Security Updates
+
+A rule to verify that `dependabot_security_updates_enabled_for_new_repositories` in `security_and_analysis` is properly set. It checks the boolean field `dependabot_security_updates_enabled_for_new_repositories` located in `project.ancestors[0].result_object.organization_details.dependabot_security_updates_enabled_for_new_repositories` and ensures that this value matches the field `project.repository[_].result_object.security_and_analysis.dependabot_security_updates.status`.
+
+#### Secret Scanning Validity Checks
+
+A rule to verify that `secret_scanning_validity_checks_enabled` in `security_and_analysis` is properly set. It checks the boolean field `secret_scanning_validity_checks_enabled` located in `project.ancestors[0].result_object.organization_details.secret_scanning_validity_checks_enabled` and ensures that this value matches the field `project.repository.result_object.security_and_analysis.secret_scanning_validity_checks.status`.
+
+### Repository Attestation Policies
+
+#### Fail on Repo Visibility
+
+A rule to verify that only predefined public repos are permitted. You may add other allowed public repo names to the list in the configuration file.
+
+```yaml
+with:
+  allowed_repo_names: # Regex patterns
+    - "scribe-.*"
+    - "scribe-security/.*"
+```
+
+#### Fail on Branch Protected
+
+A rule to verify that branch protected is set to the desired value in the configuration file.
+
+```yaml
+with:
+  desired_protected: true # Will fail for branches that do not share the same value as this one.
+```
+
+#### Fail on Branch Verified
+
+A rule to verify that branch verified is set to the value defined in the configuration file.
+
+```yaml
+with:
+  desired_verified: true # Will fail for branches that do not share the same value as this one.
+```
+
+#### Fail on Secrets Olders Than K Month
+
+A rule to verify that secrets are not older than k months
+
+```yaml
+with:
+  k: 12 # Enter an numerical value
+```
