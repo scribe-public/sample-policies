@@ -44,7 +44,7 @@ reason = v {
 
 # Violation has been switched here as a list instead of a set
 violations := [r |
-    project := object.remove(input.evidence.predicate.content, {"metadata"})[_]
+    project := input.evidence.predicate.content[_]
 
     required_approvals := project.project.result_object.approval_settings.required_approvals
     approvers := project.project.result_object.approval_settings.approvers
@@ -52,7 +52,6 @@ violations := [r |
     banned_users_found := banned_users_in_approvers(approvers)
 
     count(banned_users_found) > 0 
-    # r := { "c": banned_users_found}
 
     r := {
         "scribe_type": project.project.scribe_type,
@@ -73,3 +72,4 @@ banned_users_in_approvers(approvers) = result {
         u := user
     }
 }
+
