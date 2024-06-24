@@ -114,11 +114,3 @@ get_r(response, commit_id, url) = r {
 	}	
 }
 
-
-
-
-
-
-
-
-

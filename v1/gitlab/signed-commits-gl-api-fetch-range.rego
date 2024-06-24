@@ -171,3 +171,4 @@ get_url(since, until) = url {
 
 	url := sprintf("https://gitlab.com/api/v4/projects/%s/repository/commits", [project_id])
 }
+

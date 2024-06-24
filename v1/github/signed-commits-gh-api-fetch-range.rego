@@ -208,5 +208,3 @@ get_j(response, url, authorization) = j {
 	}
 }
 
-
-

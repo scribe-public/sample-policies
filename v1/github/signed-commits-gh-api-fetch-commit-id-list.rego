@@ -145,8 +145,3 @@ get_commit_details(response, commit_id, url, authorization) = r {
 is_valid(commit_details) {
 	commit_details.commit.verification.verified
 }
-
-
-
-
-
