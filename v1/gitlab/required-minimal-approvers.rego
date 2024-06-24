@@ -43,6 +43,7 @@ violations := [r |
     required_approvals := project.project.result_object.approval_settings.required_approvals
     
     required_approvals > count(approvers)
+
     r := {
         "scribe_type": project.project.scribe_type,
         "name": project.project.name,
