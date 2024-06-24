@@ -40,24 +40,21 @@ reason = v {
     v := "At least one approver is on the banned list"
 }
 
-
-
 # Violation has been switched here as a list instead of a set
 violations := [r |
     project := input.evidence.predicate.content[_]
 
-    required_approvals := project.project.result_object.approval_settings.required_approvals
     approvers := project.project.result_object.approval_settings.approvers
 
     banned_users_found := banned_users_in_approvers(approvers)
 
     count(banned_users_found) > 0 
-
+    
     r := {
         "scribe_type": project.project.scribe_type,
         "name": project.project.name,
         "id": project.project.id,
-        "required_approvals": required_approvals,
+        "required_approvals": project.project.result_object.approval_settings.required_approvals,
         "approvers": approvers,
         "banned_users_found": banned_users_found,
         "banned_list": banned_list,
