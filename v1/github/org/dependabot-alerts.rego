@@ -53,7 +53,7 @@ violations = j {
 		r := {
             "scribe_type": organization.scribe_type,
             "name": organization.name,
-			"id": organization.name,
+			"id": organization.id,
 			"query_id": organization.query_id,
             "organization_details": organization_details,
         }
