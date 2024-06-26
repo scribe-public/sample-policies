@@ -7,7 +7,7 @@ defaults:
       - '{{ .Args.ProjectAsset }}'
 rules:
   - uses: project/reject-unsigned-commits@v1
-    level: warning
+    level: error
 
   - uses: project/check-signed-commits@v1
-    level: warning
+    level: error

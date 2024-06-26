@@ -7,7 +7,7 @@ defaults:
       - '{{ .Args.OrganizationAsset }}'
 rules:
   - uses: org/forbid-token-scopes@v1
-    level: warning
+    level: error
     with:
       project_scopes:
           - write_api
