@@ -48,7 +48,7 @@ reason = v {
 violations = j {
 	j := [r |
 
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
+		projects := input.evidence.predicate.content[_]
 		
 		project := projects[_]
 		namespace := project.namespace
