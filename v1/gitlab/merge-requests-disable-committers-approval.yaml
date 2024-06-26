@@ -1,5 +1,5 @@
-name: test-binary-fields-merge_requests_disable_committers_approval
-path: test-binary-fields-merge_requests_disable_committers_approval.rego
+name: merge-requests-disable-committers-approval
+path: merge-requests-disable-committers-approval.rego
 
 level: warning
 
@@ -9,13 +9,9 @@ evidence:
   signed: false
   format-type: generic
   target_type: data
-  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - "asset_type=project" 
+    - "asset_type=project"
 
 with:
   merge_requests_disable_committers_approval: false
-
-
-  
-

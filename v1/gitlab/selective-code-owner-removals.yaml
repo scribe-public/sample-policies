@@ -1,5 +1,5 @@
-name: test-binary-fields-selective_code_owner_removals
-path: test-binary-fields-selective_code_owner_removals.rego
+name: selective-code-owner-removals
+path: selective-code-owner-removals.rego
 
 level: warning
 

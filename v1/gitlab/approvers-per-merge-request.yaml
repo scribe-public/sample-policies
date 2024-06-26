@@ -1,5 +1,5 @@
-name: test-binary-fields-disable_overriding_approvers_per_merge_request
-path: test-binary-fields-disable_overriding_approvers_per_merge_request.rego
+name: approvers-per-merge-request
+path: approvers-per-merge-request.rego
 
 level: warning
 
@@ -14,4 +14,4 @@ evidence:
     - "asset_type=project"
 
 with:
-  disable_overriding_approvers_per_merge_request:
+  disable_overriding_approvers_per_merge_request: false

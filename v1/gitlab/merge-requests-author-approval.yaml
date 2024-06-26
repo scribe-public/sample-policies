@@ -1,5 +1,5 @@
-name: test-binary-fields-merge_requests_author_approval
-path: test-binary-fields-merge_requests_author_approval.rego
+name: merge-requests-author-approval
+path: merge-requests-author-approval.rego
 
 level: warning
 

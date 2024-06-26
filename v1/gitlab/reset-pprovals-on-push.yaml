@@ -1,5 +1,5 @@
-name: test-binary-fields-reset_approvals_on_push
-path: test-binary-fields-reset_approvals_on_push.rego
+name: reset-pprovals-on-push
+path: reset-pprovals-on-push.rego
 
 level: warning
 
