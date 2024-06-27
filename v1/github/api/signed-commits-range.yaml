@@ -1,5 +1,5 @@
-name: gh-signed-commits-range
-path: gh-signed-commits-range.rego
+name: signed-commits-range
+path: signed-commits-range.rego
 
 level: warning
 

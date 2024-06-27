@@ -1,5 +1,5 @@
-name: gh-signed-commits-list
-path: gh-signed-commits-list.rego
+name: signed-commits-list
+path: signed-commits-list.rego
 
 level: warning
 
