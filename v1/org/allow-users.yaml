@@ -5,6 +5,9 @@ level: warning
 
 description: "Verify that all organization users are included in the allowed list"
 
+labels:
+  - github
+
 evidence:
   signed: false
   format-type: generic

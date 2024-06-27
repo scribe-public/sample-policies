@@ -4,7 +4,7 @@ defaults:
     signed: true
 rules:
   - uses: api/scribe-api-cve@v1
-    level: warning
+    level: error
     with:
       superset:
         cve:

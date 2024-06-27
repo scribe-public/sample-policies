@@ -5,6 +5,7 @@ level: warning
 
 description: "Restrict the maximum number of organization admins"
 labels:
+  - github
   - ct-1
 
 evidence:

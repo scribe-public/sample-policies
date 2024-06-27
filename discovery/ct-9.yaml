@@ -7,4 +7,4 @@ defaults:
       - '{{ .Args.ProjectAsset }}'
 rules:
   - uses: project/approvals-policy-check@v1
-    level: warning
+    level: error
