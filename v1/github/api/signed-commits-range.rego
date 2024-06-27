@@ -186,11 +186,9 @@ get_j(response,  url, authorization) = j {
 		r := {
 			"since": input.config.args.since,
 			"until": input.config.args.until,
-			"status_code": response.status_code,
 			"author": commit.author,
 			"sha": commit.tree.sha,
 			"url": commit.url,
-			"message": commit.message,
 			"verification": commit.verification
 		}
 	}

@@ -118,7 +118,6 @@ get_commit_details(response, commit_id, url, authorization) = r {
 	
 	r := {	
 		"commit_id": commit_id,
-		"status_code": response.status_code,
 		"url": url,
 		"authorization": authorization,
 		"commit": {
