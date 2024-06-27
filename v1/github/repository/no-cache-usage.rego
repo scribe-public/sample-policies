@@ -6,6 +6,7 @@ default allow := false
 
 default violations := []
 
+default sbom_missing := false
 
 verify = v {
 	v := {
@@ -22,7 +23,20 @@ verify = v {
 	}
 }
 
+sbom_missing {
+       some repository in input.evidence.predicate.content
+       repository.repository
+       not repository.sbom
+}
+
+sbom_missing {
+       some repository in input.evidence.predicate.content
+       repository.repository
+       count(repository.sbom) == 0
+}
+
 allow {
+	not sbom_missing
 	count(violations) == 0
 }
 
@@ -33,15 +47,21 @@ reason = v {
 
 reason = v {
 	not allow
+	not sbom_missing
 	v := "Some use of cache was detected"
+}
+
+reason = v {
+       not allow
+       sbom_missing
+       v := "No SBOM was found in the repository discovery evidence"
 }
 
 violations = j {
 	j := [r |
     
-		project := input.evidence.predicate.content[_]
-
-        packages := project.sbom[0].result_object.sbom.packages
+		repository := input.evidence.predicate.content[_]
+        packages := repository.sbom[0].result_object.sbom.packages
         package_var := packages[_]
 
         is_cache(package_var)
