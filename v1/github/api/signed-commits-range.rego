@@ -205,4 +205,3 @@ get_j(response, url, authorization) = j {
 		"response":	response.body
 	}
 }
-
