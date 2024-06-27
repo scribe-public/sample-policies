@@ -371,7 +371,7 @@ Verify that all the commits in the project have been validated.
 
 ### Signed commits
 
-#### Signed Commits GL API Fetch Commit ID List
+#### GL Signed Commits List
 
 Verify that the selected commits have been signed
 
@@ -390,7 +390,7 @@ with:
 
 `project_id` is the projects ID, can be found on Gitlab.
 
-#### Signed Commits GL API Fetch range
+#### GL Signed Commits Range
 
 Verify that the selected range of commits have been signed. Be cautious multiple Api fetch requests will be made which may take longer than other policies. If there are a lot of commits, it might be beneficial to include query paramters `since` and `until`.
 
@@ -414,7 +414,7 @@ with:
 
 ### Signed Commits
 
-#### Signed Commits GH API Fetch Commit ID List
+#### GH Signed Commits List
 
 Verify that the selected commits have been signed.
 
@@ -434,7 +434,7 @@ with:
 
 `repo` is the name of the repository that you are trying to access the commits.
 
-#### Signed Commits GH API Fetch Range
+#### GH Signed Commits Range
 
 Verify that the selected range of commits have been signed.
 
