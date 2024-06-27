@@ -64,7 +64,3 @@ is_valid(commit) {
 
 	commit.result_object.verification.verified
 }
-
-
-
-
