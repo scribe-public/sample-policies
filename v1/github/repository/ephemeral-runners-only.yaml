@@ -4,6 +4,8 @@ path: ephemeral-runners-only.rego
 level: warning
 
 description: "A rule to verify that there are no self-hosted runenrs."
+labels:
+  - slsa3
 
 evidence:
   signed: false

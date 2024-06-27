@@ -4,6 +4,8 @@ path: no-cache-usage.rego
 level: warning
 
 description: "A rule to verify that there is no use of cache"
+labels:
+  - slsa3
 
 evidence:
   signed: false
