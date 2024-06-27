@@ -1,5 +1,5 @@
-name: signed-commits-gl-api-fetch-commit-id-list
-path: signed-commits-gl-api-fetch-commit-id-list.rego
+name: gl-signed-commits-list
+path: gl-signed-commits-list.rego
 
 level: warning
 

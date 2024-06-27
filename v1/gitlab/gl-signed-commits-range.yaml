@@ -1,5 +1,5 @@
-name: signed-commits-gl-api-fetch-range
-path: signed-commits-gl-api-fetch-range.rego
+name: gl-signed-commits-range
+path: gl-signed-commits-range.rego
 
 level: warning
 
