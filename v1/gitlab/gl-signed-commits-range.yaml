@@ -1,0 +1,17 @@
+name: gl-signed-commits-range
+path: gl-signed-commits-range.rego
+
+level: warning
+
+description: "Verify that the selected range of commits have been signed."
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+
+with:
+  since: "" # ISO 8601 date-time string (optional)
+  until: "" # ISO 8601 date-time string (optional)
+  project_id: ""
+  private_token: ""
