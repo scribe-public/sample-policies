@@ -1,5 +1,5 @@
-name: signed-commits-gh-api-fetch-commit-id-list
-path: signed-commits-gh-api-fetch-commit-id-list.rego
+name: gh-signed-commits-list
+path: gh-signed-commits-list.rego
 
 level: warning
 
