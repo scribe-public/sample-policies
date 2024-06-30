@@ -6,6 +6,7 @@ level: warning
 description: "Verify that no organization tokens have a disallowed scope"
 labels:
   - Blueprint
+  - Org
 initiatives:
   - Default
 

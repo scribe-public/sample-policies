@@ -2,6 +2,10 @@ name: token-about-to-expire
 path: expiring-tokens.rego
 
 level: warning
+labels:
+  - Org
+initiatives:
+  - Default
 
 description: "Verify that no organization tokens are about to expire"
 

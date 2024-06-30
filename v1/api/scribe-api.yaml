@@ -1,12 +1,12 @@
 name: scribe-template
 # path: scribe-api.rego
 
-description: "Verify XX (template rules using Scribe API)"
+description: "Verify XX (template rule using Scribe API)"
 
 labels:
   - Template
 initiatives:
-  - bundle-rule
+  - Default
 
 require-scribe-api: true
 

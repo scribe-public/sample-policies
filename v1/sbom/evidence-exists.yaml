@@ -3,7 +3,6 @@ description: "Verify required evidence exists"
 labels:
   - SBOM
   - Blueprint
-
 initiatives:
   - Default
 

@@ -6,6 +6,7 @@ level: warning
 description: "Verify that commit authors belong to the allowed email list"
 labels:
   - Blueprint
+  - Project
 initiatives:
   - Default
 

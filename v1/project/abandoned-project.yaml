@@ -2,6 +2,10 @@ name: abandoned-project
 path: abandoned-project.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Confirm that the project has been active for a specified duration"
 

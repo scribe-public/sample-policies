@@ -1,7 +1,7 @@
 name: byproducts
 path: verify-byproducts.rego
 
-description: "Verify artifact has no unallowed builder dependencies"
+description: "Verify artifact has no disallowed builder dependencies"
 labels:
   - SLSA
 initiatives:

@@ -2,6 +2,10 @@ name: blocked-users
 path: blocked-users.rego
 
 level: warning
+labels:
+  - Org
+initiatives:
+  - Default
 
 description: "Verify that no organization users are in the block list"
 

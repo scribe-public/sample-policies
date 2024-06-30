@@ -2,6 +2,10 @@ name: unused-tokens
 path: unused-tokens.rego
 
 level: warning
+labels:
+  - Org
+initiatives:
+  - Default
 
 description: "Verify that there are no unused organization tokens"
 

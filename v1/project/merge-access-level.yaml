@@ -2,6 +2,10 @@ name: merge-access-level
 path: merge-access-level.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that the project's merge access level policy meets the requirements"
 

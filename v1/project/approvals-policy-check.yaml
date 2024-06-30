@@ -6,6 +6,7 @@ level: warning
 description: "Verify that the project's merge approval policy complies with the requirements"
 labels:
   - Blueprint
+  - Project
 initiatives:
   - Default
 

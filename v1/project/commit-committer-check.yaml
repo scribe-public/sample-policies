@@ -2,6 +2,10 @@ name: verify-commit_committer_check
 path: commit-committer-check.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that commit_committer_check is enabled for the project"
 
