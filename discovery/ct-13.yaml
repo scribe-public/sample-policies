@@ -10,7 +10,7 @@ rules:
     level: error
 
   - uses: sbom/blocklist-packages@v1
-    escription: "[CT-13] Verify unallowed artifact's dependency count does not exceed specified threshold"
+    description: "[CT-13] Verify unallowed artifact's dependency count does not exceed specified threshold"
     level: error
     with:
       blocklist:
