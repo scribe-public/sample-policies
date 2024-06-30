@@ -3,10 +3,10 @@ path: ../report-iac-errors.rego
 
 description: "Verify number of IaC errors is below specified threshold"
 labels:
-  - sarif
-  - trivy
+  - SARIF
+  - Trivy
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

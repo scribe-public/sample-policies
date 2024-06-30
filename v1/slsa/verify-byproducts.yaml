@@ -3,9 +3,9 @@ path: verify-byproducts.rego
 
 description: "Verify artifact has no unallowed builder dependencies"
 labels:
-  - slsa
+  - SLSA
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

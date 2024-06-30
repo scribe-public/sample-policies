@@ -1,25 +1,25 @@
-name: scribe-policy
-path: scribe-api.rego
+name: scribe-template
+# path: scribe-api.rego
 
-description: "Verify Scribe policy violations (by API)"
+description: "Verify XX (template rules using Scribe API)"
 
 labels:
-  - scribe
+  - Template
 initiatives:
   - bundle-rule
 
 require-scribe-api: true
 
-evidence: 
+evidence:
   signed: false
   format-type: cyclonedx-json
   predicate_type: https://cyclonedx.org/bom
 
 with:
   superset:
-    cve:
-      max: 0
-      severity: 6
+    # cve:
+    #  max: 0
+    #  severity: 6
     # licences:
     #   max: 500
     # unmaintained:

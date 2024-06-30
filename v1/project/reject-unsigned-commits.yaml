@@ -3,9 +3,11 @@ path: reject-unsigned-commits.rego
 
 level: warning
 
-description: "Verify that reject_unsigned_commits is enabled for the project"
+description: "[CT-2] Verify that reject_unsigned_commits is enabled for the project"
 labels:
-  - ct-2
+  - Blueprint
+initiatives:
+  - Default
 
 evidence:
   signed: false

@@ -2,9 +2,9 @@ name: tool-evidence
 
 description: "Verify required tool is used to create the SARIF report"
 labels:
-  - sarif
+  - SARIF
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

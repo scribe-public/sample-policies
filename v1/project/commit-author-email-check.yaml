@@ -3,9 +3,11 @@ path: commit-author-email-check.rego
 
 level: warning
 
-description: "Verify that commit authors belong to the allowed email list"
+description: "[CT-2] Verify that commit authors belong to the allowed email list"
 labels:
-  - ct-2
+  - Blueprint
+initiatives:
+  - Default
 
 evidence:
   signed: false

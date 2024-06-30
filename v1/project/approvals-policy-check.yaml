@@ -3,9 +3,11 @@ path: approvals-policy-check.rego
 
 level: warning
 
-description: "Verify that the project's merge approval policy complies with the requirements"
+description: "[CT-9] Verify that the project's merge approval policy complies with the requirements"
 labels:
-  - ct-9
+  - Blueprint
+initiatives:
+  - Default
 
 evidence:
   signed: false

@@ -36,20 +36,20 @@ Rule configuration is pretty simple:
 
 <!--
 {
-    "command": "cat unified.yaml",
+    "command": "cat 3rd-pty.yaml",
     "output-format": "yaml"
 }
 -->
 <!-- { "object-type": "command-output-start" } -->
 ```yaml
-name: unified-policy
-path: unified.rego
+name: 3rd-pty-policy
+path: 3rd-pty.rego
 
 description: "Verify no violations in 3rd party scanner reports by a custom rule"
 labels:
-  - unified
+  - SCA
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: true
@@ -108,7 +108,7 @@ valint verify -E --product-key my_product --product-version latest --rule unifie
 }
 [0;90m[2024-05-29 11:45:46][0m [0;33m WARN[0m[0;36m default:[0m [verify-artifact] [unified-policy] rule failed
 [0;90m[2024-05-29 11:45:46][0m [0;33m WARN[0m[0;36m policy:[0m [default] failed
-[0;90m[2024-05-29 11:45:46][0m [0;32m INFO[0m Policy "default" Evaluation Summary: 
+[0;90m[2024-05-29 11:45:46][0m [0;32m INFO[0m Policy "default" Evaluation Summary:
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │ Policy "default" Evaluation Summary                                                                                                  │
 ├─────────────────────────┬───────┬────────┬────────────────────────┬───────────────────┬──────────────────────────────────────────────┤

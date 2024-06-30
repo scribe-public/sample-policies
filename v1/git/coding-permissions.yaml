@@ -5,7 +5,7 @@ description: "Verify only allowed users commited to the repository"
 labels:
   - git
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

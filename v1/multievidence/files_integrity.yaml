@@ -5,7 +5,7 @@ description: "Verifies that files referenced by an image sbom have the same chec
 labels:
   - images
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: true

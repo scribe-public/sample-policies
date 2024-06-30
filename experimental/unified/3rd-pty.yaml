@@ -1,11 +1,12 @@
-name: unified-policy
-path: unified.rego
+name: 3rd-pty
+path: 3rd-pty.rego
 
-description: "Verify no violations in 3rd party scanner reports by a custom rule"
+description: "Limit allowed violations in 3rd party scanner reports"
 labels:
-  - unified
+  - 3rd-pty
+  - SCA
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: true

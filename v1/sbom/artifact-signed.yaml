@@ -1,11 +1,10 @@
 name: require-signed-sbom
-description: "Verify artifact is signed"
+description: "[CT-12, CT-13] Verify artifact is signed"
 labels:
-  - sbom
-  - ct-12
-  - ct-13
+  - SBOM
+  - Blueprint
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   format-type: cyclonedx-json

@@ -3,9 +3,9 @@ path: banned-licenses.rego
 
 description: "Verify unallowed license count in artifact does not exceed specified threshold"
 labels:
-  - sbom
+  - SBOM
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

@@ -5,7 +5,7 @@ description: "Verify image is not older than specified threshold"
 labels:
   - images
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false
