@@ -7,6 +7,7 @@ defaults:
       - '{{ .Args.OrganizationAsset }}'
 rules:
   - uses: org/forbid-token-scopes@v1
+    description: "[CT-4] Verify that no organization tokens have a disallowed scope"
     level: error
     with:
       project_scopes:

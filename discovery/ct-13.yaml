@@ -6,9 +6,11 @@ defaults:
 rules:
 
   - uses: sbom/artifact-signed@v1
+    description: "[CT-13] Verify artifact is signed"
     level: error
 
   - uses: sbom/blocklist-packages@v1
+    escription: "[CT-13] Verify unallowed artifact's dependency count does not exceed specified threshold"
     level: error
     with:
       blocklist:
@@ -18,6 +20,7 @@ rules:
         - "xz-utils@5.6.1"
 
   - uses: api/scribe-api-cve@v1
+    description: "[CT-13] Verify Scribe CVE policy violations (by API)"
     level: error
     with:
       superset:

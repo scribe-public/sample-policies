@@ -1,6 +1,7 @@
 name: "CT-8"
 rules:
   - uses: sbom/evidence-exists@v1
+    description: "[CT-8] Verify required evidence exists"
     level: error
     evidence:
       format-type: cyclonedx-json
