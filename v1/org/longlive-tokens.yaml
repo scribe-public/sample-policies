@@ -3,7 +3,7 @@ path: longlive-tokens.rego
 
 level: warning
 
-description: "[CT-3] Verify that no organization tokens have an excessively long lifespan"
+description: "Verify that no organization tokens have an excessively long lifespan"
 labels:
   - CT-3
   - Blueprint

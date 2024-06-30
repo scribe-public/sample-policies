@@ -1,7 +1,7 @@
 name: disallow-dependencies
 path: blocklist-packages.rego
 
-description: "[CT-13] Verify unallowed artifact's dependency count does not exceed specified threshold"
+description: "Verify unallowed artifact's dependency count does not exceed specified threshold"
 labels:
   - SBOM
   - Blueprint

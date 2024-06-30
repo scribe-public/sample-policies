@@ -3,7 +3,7 @@ path: branch-protection.rego
 
 level: warning
 
-description: "[CT-2] Verify that reject_unsigned_commits is enabled for the repository"
+description: "Verify that reject_unsigned_commits is enabled for the repository"
 labels:
   - Blueprint
 initiatives:

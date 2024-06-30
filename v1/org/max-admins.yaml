@@ -3,7 +3,7 @@ path: max-admins.rego
 
 level: warning
 
-description: "[CT-1] Restrict the maximum number of organization admins"
+description: "Restrict the maximum number of organization admins"
 labels:
   - Blueprint
 initiatives:

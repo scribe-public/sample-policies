@@ -1,5 +1,5 @@
 name: require-signed-sbom
-description: "[CT-12, CT-13] Verify artifact is signed"
+description: "Verify artifact is signed"
 labels:
   - SBOM
   - Blueprint

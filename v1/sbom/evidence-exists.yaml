@@ -1,5 +1,5 @@
 name: require-sbom
-description: "[CT-8] Verify required evidence exists"
+description: "Verify required evidence exists"
 labels:
   - SBOM
   - Blueprint

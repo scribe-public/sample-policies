@@ -1,7 +1,7 @@
 name: scribe-cve-policy
 path: scribe-api.rego
 
-description: "[CT-6, CT-13] Verify no critical or high CVEs"
+description: "Verify no critical or high CVEs"
 
 labels:
   - SCA

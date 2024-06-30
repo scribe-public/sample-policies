@@ -3,7 +3,7 @@ path: forbid-token-scopes.rego
 
 level: warning
 
-description: "[CT-4] Verify that no organization tokens have a disallowed scope"
+description: "Verify that no organization tokens have a disallowed scope"
 labels:
   - Blueprint
 initiatives:
