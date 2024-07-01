@@ -1,9 +1,9 @@
 name: slsa-provenance-signed
 description: "Verify artifact is signed"
 labels:
-  - slsa
+  - SLSA
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: true

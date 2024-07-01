@@ -5,7 +5,7 @@ description: "Require specific image labels"
 labels:
   - images
 initiatives:
-  - client-policy
+  - Default
 
 aggregate-results: true
 
