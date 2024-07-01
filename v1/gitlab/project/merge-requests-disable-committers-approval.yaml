@@ -15,3 +15,4 @@ evidence:
 
 with:
   merge_requests_disable_committers_approval: false
+
