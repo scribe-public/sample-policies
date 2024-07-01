@@ -1,9 +1,9 @@
 name: sarif-artifact-signed
 description: "Verify artifact is signed"
 labels:
-  - sarif
+  - SARIF
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: true

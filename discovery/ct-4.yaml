@@ -6,7 +6,8 @@ defaults:
       - "asset_type=organization"
       - '{{ .Args.OrganizationAsset }}'
 rules:
-  - uses: org/forbid-token-scopes@v1
+  - uses: gitlab/org/forbid-token-scopes@v1
+    description: "[CT-4] Verify that no organization tokens have a disallowed scope"
     level: warning
     with:
       project_scopes:
