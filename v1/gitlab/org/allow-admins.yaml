@@ -9,9 +9,6 @@ initiatives:
 
 description: "Verify that all organization admins are included in the allowed list"
 
-labels:
-  - github
-
 evidence:
   signed: false
   format-type: generic

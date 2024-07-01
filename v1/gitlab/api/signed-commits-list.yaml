@@ -1,5 +1,5 @@
 name: gl-signed-commits-list
-path: gl-signed-commits-list.rego
+path: signed-commits-list.rego
 
 level: warning
 

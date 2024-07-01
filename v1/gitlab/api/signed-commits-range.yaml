@@ -1,5 +1,5 @@
 name: gl-signed-commits-range
-path: gl-signed-commits-range.rego
+path: signed-commits-range.rego
 
 level: warning
 
