@@ -252,7 +252,7 @@ with:
     access_level: 40
 ```
 
-ALternatively, this rule can be evaluated agains the `access_level_description` field. 
+Alternatively, this rule can be evaluated agains the `access_level_description` field. 
 
 ```yaml
 with:
@@ -564,6 +564,29 @@ with:
     allowed_registries:
         - "gcr.io"
 ```
+
+## Dockerhub
+
+### Token Attestation
+
+#### Token Not Used
+
+Verify that tokens have been used.
+
+#### Token Expiration
+
+Verify that tokens are not expired.
+
+#### Token Verify Usage
+
+Verify that active tokens' last usage was under the specified number of days.
+
+```yaml
+with:
+  min_number_of_days_since_last_usage: 30
+```
+
+Provide the threshold of days since last usage in the configuration file.
 
 ## GitLab Pipeline Attestation
 
