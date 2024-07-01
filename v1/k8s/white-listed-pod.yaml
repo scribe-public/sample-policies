@@ -1,0 +1,17 @@
+name: white-listed-pod
+path: white-listed-pod.rego
+
+level: warning
+
+description: "A rule to verify that all pod are allowed"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=pod"
+
+with:
+  white_listed_pod: []

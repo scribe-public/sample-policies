@@ -1,9 +1,9 @@
-name: allowed-registries
-path: allowed-registries.rego
+name: long-running-images
+path: long-running-images.rego
 
 level: warning
 
-description: "A rule to verify that all discovered images come from allowed registries"
+description: "A rule to verify that all images terminated"
 
 evidence:
   signed: false
@@ -12,6 +12,3 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
     - "asset_type=namespace"
-
-with:
-    allowed_registries: []
