@@ -1,0 +1,16 @@
+name: ephemeral-runners-only
+path: ephemeral-runners-only.rego
+
+level: warning
+
+description: "A rule to verify that there are no self-hosted runenrs."
+labels:
+  - slsa3
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=repository"

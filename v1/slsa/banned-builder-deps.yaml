@@ -3,9 +3,9 @@ path: banned-builder-deps.rego
 
 description: "Verify artifact disallowed builder dependencies"
 labels:
-  - slsa
+  - SLSA
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

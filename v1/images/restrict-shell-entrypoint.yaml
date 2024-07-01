@@ -5,7 +5,7 @@ description: "Verify image disallows shell access"
 labels:
   - images
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

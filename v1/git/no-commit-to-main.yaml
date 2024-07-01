@@ -6,7 +6,7 @@ description: "Verify no commits to the main branch"
 labels:
   - git
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false
