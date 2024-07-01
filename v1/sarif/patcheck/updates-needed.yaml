@@ -4,9 +4,9 @@ level: "warning"
 
 description: "Verify no security packages require update"
 labels:
-  - sarif
+  - SARIF
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

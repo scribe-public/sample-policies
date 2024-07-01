@@ -2,6 +2,10 @@ name: author-email-regex
 path: author-email-regex.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that the author_email_regex is set to the desired value"
 

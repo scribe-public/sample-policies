@@ -5,7 +5,10 @@ level: warning
 
 description: "Verify that no organization tokens have a disallowed scope"
 labels:
-  - ct-4
+  - Blueprint
+  - Org
+initiatives:
+  - Default
 
 evidence:
   signed: false

@@ -2,6 +2,10 @@ name: allowed-token-scope
 path: allow-token-scopes.rego
 
 level: warning
+labels:
+  - Org
+initiatives:
+  - Default
 
 description: "Verify that organization tokens have the allowed scope"
 

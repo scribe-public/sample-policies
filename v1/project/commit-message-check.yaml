@@ -2,6 +2,10 @@ name: verify-commit_message_check
 path: commit-message-check.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that all commit messages adhere to the specified format template"
 

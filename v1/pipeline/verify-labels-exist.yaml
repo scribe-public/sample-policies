@@ -2,6 +2,10 @@ name: verify-labels-exist
 path: verify-labels-exist.rego
 
 level: warning
+labels:
+  - Pipeline
+initiatives:
+  - Default
 
 description: "A rule to verify that the pipeline has all the required labels keys and values"
 

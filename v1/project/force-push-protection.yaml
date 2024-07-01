@@ -2,6 +2,10 @@ name: disallow-force-push
 path: force-push-protection.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that force push is not allowed for the project"
 

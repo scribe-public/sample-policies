@@ -2,6 +2,10 @@ name: verify-member_check
 path: member-check.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that member_check is enabled for the project"
 

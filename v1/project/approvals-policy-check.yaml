@@ -5,7 +5,10 @@ level: warning
 
 description: "Verify that the project's merge approval policy complies with the requirements"
 labels:
-  - ct-9
+  - Blueprint
+  - Project
+initiatives:
+  - Default
 
 evidence:
   signed: false

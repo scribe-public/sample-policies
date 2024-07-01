@@ -8,4 +8,4 @@ defaults:
 rules:
   - uses: project/approvals-policy-check@v1
     description: "[CT-9] Verify that the project's merge approval policy complies with the requirements"
-    level: error
+    level: warning

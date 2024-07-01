@@ -3,10 +3,10 @@ path: ../verify-sarif.rego
 
 description: "A rule to verify a SARIF report agains a set of rules"
 labels:
-  - sarif
-  - trivy
+  - SARIF
+  - Trivy
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false
