@@ -3,9 +3,9 @@ path: required-packages.rego
 
 description: "Verify artifact has all the required packages"
 labels:
-  - sbom
+  - SBOM
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

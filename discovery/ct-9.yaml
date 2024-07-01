@@ -6,5 +6,6 @@ defaults:
       - "asset_type=project"
       - '{{ .Args.ProjectAsset }}'
 rules:
-  - uses: project/approvals-policy-check@v1
+  - uses: gitlab/project/approvals-policy-check@v1
+    description: "[CT-9] Verify that the project's merge approval policy complies with the requirements"
     level: warning

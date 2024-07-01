@@ -1,0 +1,18 @@
+name: reset-pprovals-on-push
+path: reset-pprovals-on-push.rego
+
+level: warning
+
+description: "Verify that the binary field: 'reset_approvals_on_push' is set correctly"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+  reset_approvals_on_push: true
+

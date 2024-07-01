@@ -470,6 +470,189 @@ with:
   pattern: "(?i)Hello" # Regex pattern to search 
 ```
 
+## Gitlab API
+
+### Signed commits
+
+#### GL Signed Commits List
+
+Verify that the selected commits have been signed
+
+```yaml
+with:
+  commit_id_list: []
+  private_token: ""
+  project_id: ""
+```
+
+<u>All fields must contain values</u>
+
+`commit_id_list` is a list that contains the commit id or commit SHA (same term).
+
+`private_token` is your personal acccess token.
+
+`project_id` is the projects ID, can be found on Gitlab.
+
+#### GL Signed Commits Range
+
+Verify that the selected range of commits have been signed. Be cautious multiple Api fetch requests will be made which may take longer than other policies. If there are a lot of commits, it might be beneficial to include query paramters `since` and `until`.
+
+```yaml
+with:
+  since: "" # ISO 8601 date-time string (optional)
+  until: "" # ISO 8601 date-time string (optional)
+  project_id: ""
+  private_token: ""
+```
+
+<u>All fields besides since and until are mandatory</u>
+
+`since` and `until` are both query parameters.
+
+`project_id` is your project's ID. Can be found on Gitlab.
+
+`private_token` is your personal access token.
+
+## Github API
+
+### Signed Commits
+
+#### GH Signed Commits List
+
+Verify that the selected commits have been signed.
+
+```yaml
+with:
+  commit_id_list: []
+  access_token: ""
+  owner: ""
+  repo: ""
+```
+
+<u> All fields must be given values. </u>
+
+`access_token` is your Github's personal access token.
+
+`owner` is the owner of the repo.
+
+`repo` is the name of the repository that you are trying to access the commits.
+
+#### GH Signed Commits Range
+
+Verify that the selected range of commits have been signed.
+
+```yaml
+with:
+  # Required
+  access_token: ""
+  owner: ""
+  repo: ""
+  # Optional
+  since: # ISO 8601 date-time string
+  until: # ISO 8601 date-time string
+  sha:
+```
+
+<u> `access_token`, `owner`, and `repo` must all be given string values. </u>
+
+`since`, `until`, `sha` are optional query parameters.
+
+Both `since` and `until` are ISO 8601 date-time strings.
+
+When `sha` is specified, it allows you to set a range from the specific sha of the commit to the head.
+
+`access_token` is your Github's personal access token.
+
+`owner` is the owner of the repo.
+
+`repo` is the name of the repository that you are trying to access the commits.
+
+## Github Repository Attestation
+
+### Signed Commits
+
+Verify that the commits have been signed in a repository attestation.
+
+### Gitlab Approval Settings Policies
+
+#### Dissallowed Banned Approvers
+
+Verify that the no approvers are on the banned list. Banned List requires addidtion implementation for how user objects are passed. (Not completed)
+
+```yaml
+with:
+  # You can configure the list of banned users here. 
+  # Enter in a list format the ID of the banned users
+  banned_list:
+    - "1"
+    - "2"
+
+```
+
+#### Required Minimal Approvers
+
+Verify that the required number of approvers from config-file is met. Required Number is taken from evidence, in required_approvals under approval_settings
+
+### Test Binary Fields
+
+#### Disable Ovveriding Approvers per Merge Request
+
+Verify that the binary field: 'disable_overriding_approvers_per_merge_request' is set correctly
+
+``` yaml
+with:
+  # You can configure the value of the binary field here
+  disable_overriding_approvers_per_merge_request: 
+```
+
+#### Merge Requests Author Approval
+
+Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  merge_requests_disable_committers_approval: false
+```
+
+#### Merge Requests Disable Committers Approval
+
+Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  merge_requests_disable_committers_approval: false
+```
+#### Require Password to Approve 
+
+Verify that the binary field: 'require_password_to_approve' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  require_password_to_approve: true
+```
+
+#### Reset Approvals on Push
+
+Verify that the binary field: 'reset_approvals_on_push' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  reset_approvals_on_push: 
+```
+
+#### Selective Code Owner Removals
+
+Verify that the binary field: 'selective_code_owner_removals' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  selective_code_owner_removals: true
+```
 
 ## K8s Namespace Attestation
 

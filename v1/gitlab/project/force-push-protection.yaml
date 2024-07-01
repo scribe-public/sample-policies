@@ -1,0 +1,21 @@
+name: disallow-force-push
+path: force-push-protection.rego
+
+level: warning
+labels:
+  - Project
+initiatives:
+  - Default
+
+description: "Verify that force push is not allowed for the project"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+    branch: "main"

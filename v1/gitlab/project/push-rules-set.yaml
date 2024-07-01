@@ -1,0 +1,18 @@
+name: verify-push_rules
+path: push-rules-set.rego
+
+level: warning
+labels:
+  - Project
+initiatives:
+  - Default
+
+description: "Verify that push rules are set for the project"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"

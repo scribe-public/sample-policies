@@ -1,9 +1,9 @@
 name: required-sarif-evidence
 description: "Verify required evidence exists"
 labels:
-  - sarif
+  - SARIF
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false
