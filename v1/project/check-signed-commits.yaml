@@ -2,6 +2,10 @@ name: signed-commits
 path: check-signed-commits.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that all commits in the project are signed"
 

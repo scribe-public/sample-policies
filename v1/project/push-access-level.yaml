@@ -2,6 +2,10 @@ name: push-access-level
 path: push-access-level.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that the project's push access level policy meets the requirements"
 

@@ -2,6 +2,10 @@ name: allowed-committer-emails
 path: committer-email-check.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that committers' email addresses are within the allowed list"
 

@@ -5,7 +5,9 @@ level: warning
 
 description: "Verify that no organization tokens have an excessively long lifespan"
 labels:
-  - ct-3
+  - Blueprint
+initiatives:
+  - Default
 
 evidence:
   signed: false

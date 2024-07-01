@@ -3,7 +3,7 @@ description: "Verify required evidence exists"
 labels:
   - git
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

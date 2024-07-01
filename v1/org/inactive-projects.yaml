@@ -2,6 +2,10 @@ name: inactive-projects
 path: inactive-projects.rego
 
 level: warning
+labels:
+  - Org
+initiatives:
+  - Default
 
 description: "Verify that no organization projects are inactive"
 

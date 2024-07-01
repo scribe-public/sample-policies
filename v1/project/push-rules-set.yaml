@@ -2,6 +2,10 @@ name: verify-push_rules
 path: push-rules-set.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that push rules are set for the project"
 

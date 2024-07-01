@@ -2,6 +2,10 @@ name: allowed-visible-projects
 path: projects-visibility.rego
 
 level: warning
+labels:
+  - Org
+initiatives:
+  - Default
 
 description: "Verify that only allowed projects have public visibility"
 

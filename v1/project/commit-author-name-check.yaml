@@ -2,6 +2,10 @@ name: allowed-commit-autor-names
 path: commit-author-name-check.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that commit authors are included in the allowed list"
 

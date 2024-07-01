@@ -2,6 +2,10 @@ name: all-commits-validated
 path: commits-validated.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: "Verify that all commits in the project are validated"
 

@@ -5,7 +5,10 @@ level: warning
 
 description: "Verify that reject_unsigned_commits is enabled for the project"
 labels:
-  - ct-2
+  - Blueprint
+  - Project
+initiatives:
+  - Default
 
 evidence:
   signed: false

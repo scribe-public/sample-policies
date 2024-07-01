@@ -5,7 +5,9 @@ level: warning
 
 description: "Restrict the maximum number of organization admins"
 labels:
-  - ct-1
+  - Blueprint
+initiatives:
+  - Default
 
 evidence:
   signed: false

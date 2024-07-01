@@ -2,6 +2,10 @@ name: code-owner-approval
 path: co-approval-required.rego
 
 level: warning
+labels:
+  - Project
+initiatives:
+  - Default
 
 description: Verify that code owner approval is required for specific branches in the project"
 
