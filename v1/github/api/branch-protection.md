@@ -127,4 +127,3 @@ with:
 ### `allow_fork_syncing`
 - **Description:** Allows fork syncing with the protected branch.
 - **Recommended Setting:** `false` - Limits potential unauthorized changes.
-

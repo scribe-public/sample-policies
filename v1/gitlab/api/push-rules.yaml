@@ -1,5 +1,5 @@
 name: gitlab-push-rules
-path: gitlab-push-rules.rego
+path: push-rules.rego
 description: "Verify GitLab push rules"
 
 evidence:
