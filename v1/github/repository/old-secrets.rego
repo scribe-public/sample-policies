@@ -58,9 +58,7 @@ violations = j {
             "name": secret.name,
 			"id": secret.name,
 			"query_id": secret.query_id,
-			"k": k,
 			"created_at": ts,
-			"months": months,
         }
 	]
 }
