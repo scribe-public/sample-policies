@@ -59,5 +59,3 @@ violations = j {
         }
 	]
 }
-
-

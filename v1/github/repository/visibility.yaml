@@ -17,4 +17,3 @@ with:
   allowed_repo_names: # Regex patterns
     - "scribe-.*"
     - "scribe-security/.*"
-    

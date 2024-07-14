@@ -15,4 +15,3 @@ evidence:
 
 with:
   desired_verified: false # Will fail for branches that do not share the same value as this one.
-

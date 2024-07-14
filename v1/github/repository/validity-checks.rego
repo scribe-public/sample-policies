@@ -72,4 +72,3 @@ check_secret_scanning_validity_checks_enabled(repository, secret_scanning_validi
     secret_scanning_validity_checks == false
     repository.result_object.security_and_analysis.secret_scanning_validity_checks.status == "disabled"
 }
-

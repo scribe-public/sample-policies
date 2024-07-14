@@ -12,4 +12,3 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
     - "asset_type=organization"
-
