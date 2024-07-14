@@ -59,9 +59,7 @@ violations = j {
 			"id": repository.id,
 			"query_id": repository.query_id,
 			"db_su_enabled": dependabot_security_updates,
-			"security_and_analysis": {
-				"status": repository.result_object.security_and_analysis.dependabot_security_updates.status,
-			}			
+			"security_and_analysis_status": repository.result_object.security_and_analysis.dependabot_security_updates.status,
         }
 	]
 }

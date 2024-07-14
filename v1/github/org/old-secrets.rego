@@ -56,11 +56,9 @@ violations = j {
 		r := {
             "scribe_type": secret.scribe_type,
             "name": secret.name,
-			"id": secret.name,
+			"id": secret.id,
 			"query_id": secret.query_id,
-			"k": k,
 			"created_at": ts,
-			"months": months,
         }
 	]
 }

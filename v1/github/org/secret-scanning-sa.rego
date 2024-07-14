@@ -57,10 +57,8 @@ violations = j {
             "name": repository.name,
 			"id": repository.id,
 			"query_id": repository.query_id,
-			"secret_scanning_enabled_for_new_repositories": secret_scanning,
-			"security_and_analysis": {
-				"status": repository.result_object.security_and_analysis.secret_scanning.status,
-			}			
+			"secret_scanning_enabled": secret_scanning,
+			"security_and_analysis_status": repository.result_object.security_and_analysis.secret_scanning.status,
         }
 	]
 }
