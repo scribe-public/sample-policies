@@ -15,4 +15,4 @@ evidence:
 
 with:
   allowed_repo_names: # Regex patterns
-    - 
+    -
