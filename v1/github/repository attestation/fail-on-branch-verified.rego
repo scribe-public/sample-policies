@@ -54,12 +54,7 @@ violations = j {
             "name": branch.name,
 			"id": branch.id,
 			"query_id": branch.query_id,
-			"desired_verified": desired_verified,
-			"result_object": {
-				"head_commit_verification": {
-					"verified": verified
-				}
-			}
+			"verified": verified,
         }
 	]
 }
@@ -69,3 +64,4 @@ is_valid(branch) {
 
 	desired_verified == branch.result_object.head_commit_verification.verified
 }
+

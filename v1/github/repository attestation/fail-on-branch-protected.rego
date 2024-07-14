@@ -54,7 +54,6 @@ violations = j {
             "name": branch.name,
 			"id": branch.id,
 			"query_id": branch.query_id,
-			"desired_protected": desired_protected,
 			"protected": branch.result_object.protected,
         }
 	]

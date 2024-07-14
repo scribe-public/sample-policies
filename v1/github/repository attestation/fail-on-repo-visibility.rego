@@ -56,7 +56,6 @@ violations = j {
 			"id": repository.id,
 			"query_id": repository.query_id,
 			"visibility": repository.result_object.visibility,
-			"allowed_repo_names": allowed_repo_names,
         }
 	]
 }
@@ -67,3 +66,4 @@ is_valid(repository) {
 	some pattern in allowed_repo_names
 	regex.match(pattern, repository.name)
 }
+
