@@ -3,9 +3,9 @@ path: complete-licenses.rego
 
 description: "Verify all dependencies in the artifact have a license"
 labels:
-  - sbom
+  - SBOM
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

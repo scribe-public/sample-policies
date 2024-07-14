@@ -1,9 +1,9 @@
 name: required-slsa-provenance
 description: "Verify required evidence exists"
 labels:
-  - slsa
+  - SLSA
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

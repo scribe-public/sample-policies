@@ -1,0 +1,18 @@
+name: merge-requests-author-approval
+path: merge-requests-author-approval.rego
+
+level: warning
+
+description: "Verify that the binary field: 'merge_requests_author_approval' is set correctly"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+  merge_requests_author_approval: true
+

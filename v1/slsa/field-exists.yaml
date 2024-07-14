@@ -3,9 +3,9 @@ path: field-exists.rego
 
 description: "Verify specified field exists in the artifact"
 labels:
-  - slsa
+  - SLSA
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

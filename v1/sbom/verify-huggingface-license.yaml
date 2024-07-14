@@ -3,9 +3,9 @@ path: verify-hf-license.rego
 
 description: "Verify artifact has all specified licenses"
 labels:
-  - sbom
+  - SBOM
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

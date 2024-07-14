@@ -1,10 +1,10 @@
 name: require-sbom
 description: "Verify required evidence exists"
 labels:
-  - sbom
-  - ct-8
+  - SBOM
+  - Blueprint
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   format-type: cyclonedx-json
