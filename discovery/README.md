@@ -434,7 +434,7 @@ with:
       pipelineRun_list: []              # list of strings for pipelineRun that will be checked
       accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
       accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
-      accepted_path_list: []            # list of strings for accepted path that will not be checked
+      accepted_path_regex_list: []            # list of strings for accepted path regexes that will not be checked
 ```
 
 `mainAttestation_list`: Only checks attestations inside the list. 
@@ -445,4 +445,4 @@ with:
 
 `accepted_output_cmd_line_list`: Specifies command lines whose outputs are accepted and will not be checked for modifications.
 
-`accepted_path_list`: Specifies paths that are accepted and will not be checked for modifications.
+`accepted_path_regex_list`: Specifies path regexes' that are accepted and will not be checked for modifications.

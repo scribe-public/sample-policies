@@ -83,7 +83,11 @@ violations = j {
   
     modification := queryResponse[0].data[_]
 
+    not allowed_path(modification.path)
+
     r := {
+      "exec_event_id": modification.exec_event_id,
+      "output_event_id": modification.output_event_id,
       "executable": modification.exec_executable,
       "pipelineRun": modification.pipelineRun,
       "context": modification.context,
@@ -152,13 +156,13 @@ query(id) := {
 
 
 filters = f {
-    mA := mainAttestationFilter # mainAttestation
-    pR := array.concat(mA, pipelineRunFilter) # pipelineRun
-    eCL := array.concat(pR, execCmdLineFilter) # exec_cmd_line
+    mA := mainAttestationFilter                   # mainAttestation
+    pR := array.concat(mA, pipelineRunFilter)     # pipelineRun
+    eCL := array.concat(pR, execCmdLineFilter)    # exec_cmd_line
     oCL := array.concat(eCL, outputCmdLineFilter) # output_cmd_line
-    pP  := array.concat(oCL, pathFilter) # path_prefix
+    # pP  := array.concat(oCL, pathFilter)          # path_prefix // modified to use regex match --> allowed_path(path)
     
-    f := pP
+    f := ocl
 }
 
 mainAttestationFilter = mA {
@@ -217,18 +221,29 @@ outputCmdLineFilter := cL {
   ]
 }
 
-pathFilter := pP {
 
-  args.accepted_path_list != null
-  args.accepted_path_list != []
+# Implemented the path filter as a regex match using opa
+# This `pathFilter` uses supersets query filter to filter out the paths that are not in the accepted path list which is not regex compatible
+# pathFilter := pP {
 
-  pP := [
-    {
-      "col": "path",
-      "op": "not in",
-      "val": args.accepted_path_list
-    }
-  ]
+#   args.accepted_path_list != null
+#   args.accepted_path_list != []
+
+#   pP := [
+#     {
+#       "col": "path",
+#       "op": "not in",
+#       "val": args.accepted_path_list
+#     }
+#   ]
+# }
+
+# This is a path filter that is regex compatible
+allowed_path(path) {
+  args.accepted_path_regex_list != null
+  args.accepted_path_regex_list != []
+
+  some pattern in args.accepted_path_regex_list
+
+  regex.match(pattern, path)
 }
-
-
