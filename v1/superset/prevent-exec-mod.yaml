@@ -1,0 +1,29 @@
+name: Prevent Modification of Executable Files
+path: prevent-exec-mod.rego
+
+description: "Verify that no entity modifies an executable."
+
+# Not sure
+labels:
+  - scribe
+  - ct-6
+  - ct-13
+initiatives:
+  - bundle-rule
+
+require-scribe-api: true
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  # predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    filters:
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
+      accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
+      accepted_path_list: []            # list of strings for accepted path that will not be checked
