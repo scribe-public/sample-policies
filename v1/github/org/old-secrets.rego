@@ -6,17 +6,17 @@ default allow := false
 
 default violations := []
 
-default k := 12 
+default max_secret_age := 12 
 
-k = input.config.args.k {
-    input.config.args.k
+max_secret_age = input.config.args.max_secret_age {
+    input.config.args.max_secret_age
 } 
 
 verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "Secret older than k months",
+			"type": "Old secret",
 			"details": violations,
 		},
 		"summary": [{
@@ -33,12 +33,12 @@ allow {
 
 reason = v {
 	allow
-	v := "No secrets are older than k months"
+	v := "No secrets are older than max_secret_age months"
 }
 
 reason = v {
 	not allow
-	v := "There is at least one secrets are older than k months"
+	v := "There is at least one secrets are older than max_secret_age months"
 }
 
 violations = j {
@@ -51,7 +51,7 @@ violations = j {
 		ts := secret.result_object.created_at
 		months := months_since(ts)
 
-		months > k
+		months > max_secret_age
 
 		r := {
             "scribe_type": secret.scribe_type,

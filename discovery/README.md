@@ -717,13 +717,13 @@ with:
 
 ### Secret Policies - Organization Attestation
 
-#### Fail on Secrets Older than K months
+#### Fail on Old Secrets
 
-A rule to verify that secrets are not older than k months
+A rule to verify that secrets are not older than max_secret_age (age in months)
 
 ```yaml
 with:
-  k: 12 # Enter an numerical value
+  max_secret_age: 12 # number of months
 ```
 
 ### Policies - Organization Attestation
@@ -806,11 +806,11 @@ with:
   desired_verified: true # Will fail for branches that do not share the same value as this one.
 ```
 
-#### Fail on Secrets Olders Than K Month
+#### Fail on Old Secrets
 
-A rule to verify that secrets are not older than k months
+A rule to verify that secrets are not older than max_secret_age (age in months)
 
 ```yaml
 with:
-  k: 12 # Enter an numerical value
+  max_secret_age: 12 # number of months
 ```
