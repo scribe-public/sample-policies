@@ -14,4 +14,5 @@ evidence:
     - "asset_type=repository"
 
 with:
-  desired_verified: false # Will fail for branches that do not share the same value as this one.
+  desired_verified: false
+  

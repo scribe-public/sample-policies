@@ -74,3 +74,4 @@ check_dependabot_security_updates_enabled_for_new_repositories(repository, depen
     dependabot_security_updates == false
     repository.result_object.security_and_analysis.dependabot_security_updates_enabled_for_new_repositories.status == "disabled"
 }
+

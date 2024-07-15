@@ -63,3 +63,4 @@ violations = j {
 is_valid(branch) {
 	desired_protected == branch.result_object.protected 
 }
+

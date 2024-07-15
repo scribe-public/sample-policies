@@ -66,3 +66,4 @@ is_valid(repository) {
 	some pattern in allowed_repo_names
 	regex.match(pattern, repository.name)
 }
+

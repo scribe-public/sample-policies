@@ -14,6 +14,5 @@ evidence:
     - "asset_type=repository"
 
 with:
-  allowed_repo_names: # Regex patterns
-    - "scribe-.*"
-    - "scribe-security/.*"
+  allowed_repo_names: []
+

@@ -64,3 +64,4 @@ is_valid(branch) {
 
 	desired_verified == branch.result_object.head_commit_verification.verified
 }
+

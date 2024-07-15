@@ -14,5 +14,6 @@ evidence:
     - "asset_type=organization"
 
 with:
-  allowed_repo_names: # Regex patterns
-    - 
+  allowed_repo_names: []
+  
+  

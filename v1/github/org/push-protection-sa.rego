@@ -73,3 +73,4 @@ check_secret_scanning_push_protection_enabled_for_new_repositories(repository, s
     secret_scanning_push_protection == false
     repository.result_object.security_and_analysis.secret_scanning_push_protection.status == "disabled"
 }
+

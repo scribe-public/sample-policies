@@ -73,3 +73,4 @@ check_secret_scanning_enabled_for_new_repositories(repository, secret_scanning) 
     secret_scanning == false
     repository.result_object.security_and_analysis.secret_scanning.status == "disabled"
 }
+

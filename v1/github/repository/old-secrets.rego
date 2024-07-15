@@ -71,3 +71,4 @@ months_since(ts) = months {
     diff_days := diff_ns / 1000000000 / 86400
     months := diff_days / 30
 }
+

@@ -39,3 +39,4 @@ violations = v{
 	not allow
 	v := [{"msg": "Self-hosted runners were detected"}]
 }
+
