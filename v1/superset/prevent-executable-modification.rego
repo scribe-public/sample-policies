@@ -12,13 +12,14 @@ default violations = []
 
 config = superset.config
 
-args = superset.args.cve
+args = superset.args.filters
 
 default filters = []
-default append_mainAttestation = []
-default append_pipelineRun = []
-
-
+default mainAttestationFilter = []
+default pipelineRunFilter = []
+default execCmdLineFilter = []
+default outputCmdLineFilter = []
+default pathFilter = []
 
 verify := v {
 	v := {
@@ -30,7 +31,7 @@ verify := v {
 		"summary": [summary],
 		"errors": superset.errors | errors,
 	}
-}
+} 
 
 # change
 id := superset.datasetID("dataset_Modified_Executable")
@@ -77,13 +78,22 @@ Allow {
 }
 
 violations = j {
-	j := { r |
-		r := {
-			"qr": queryResponse,
-			"config":config,
-			"policyQuery":policyQuery,
-		}
-	}
+
+  j := { r |
+  
+    modification := queryResponse[0].data[_]
+
+    r := {
+      "executable": modification.exec_executable,
+      "pipelineRun": modification.pipelineRun,
+      "context": modification.context,
+      "exec_cmd_line": modification.exec_cmd_line,
+      "output_cmd_line": modification.output_cmd_line,
+      "mainAttestation": modification.mainAttestation,
+      "action": modification.output_action,
+      "path": modification.path, 
+    }
+  }
 }
 
 summary = {
@@ -142,37 +152,83 @@ query(id) := {
 
 
 filters = f {
-    v := append_mainAttestation
-    f := array.concat(v, [append_pipelineRun])
+    mA := mainAttestationFilter # mainAttestation
+    pR := array.concat(mA, pipelineRunFilter) # pipelineRun
+    eCL := array.concat(pR, execCmdLineFilter) # exec_cmd_line
+    oCL := array.concat(eCL, outputCmdLineFilter) # output_cmd_line
+    pP  := array.concat(oCL, pathFilter) # path_prefix
+    
+    f := pP
 }
 
-append_mainAttestation = f {
+mainAttestationFilter = mA {
 
-    args.mainAttestation != null
-    args.mainAttestation != []
+  args.mainAttestation_list != null
+  args.mainAttestation_list != []
 
-    f := [
-        {
-            "col": "mainAttestation",
-            "op": "in",
-            "val": args.mainAttestation
-        }
-    ]
+  mA := [
+      {
+          "col": "mainAttestation",
+          "op": "in",
+          "val": args.mainAttestation_list
+      }
+  ]
 }
 
-append_pipelineRun = f {
+pipelineRunFilter = pR {
 
-    args.pipelineRun != null
-    args.pipelineRun != []
+  args.pipelineRun_list != null
+  args.pipelineRun_list != []
 
-    f := [
-        {
-            "col": "pipelineRun",
-            "op": "in",
-            "val": args.pipelineRun
-        }
-    ]
+  pR := [
+      {
+          "col": "pipelineRun",
+          "op": "in",
+          "val": args.pipelineRun_list
+      }
+  ]  
 }
 
+execCmdLineFilter := cL {
+
+  args.accepted_exec_cmd_line_list != null
+  args.accepted_exec_cmd_line_list != []
+
+  cL := [
+    {
+      "col": "exec_cmd_line",
+      "op": "not in",
+      "val": args.accepted_exec_cmd_line_list
+    }
+  ]
+}
+
+outputCmdLineFilter := cL {
+
+  args.accepted_output_cmd_line_list != null
+  args.accepted_output_cmd_line_list != []
+
+  cL := [
+    {
+      "col": "output_cmd_line",
+      "op": "not in",
+      "val": args.accepted_output_cmd_line_list
+    }
+  ]
+}
+
+pathFilter := pP {
+
+  args.accepted_path_list != null
+  args.accepted_path_list != []
+
+  pP := [
+    {
+      "col": "path",
+      "op": "not in",
+      "val": args.accepted_path_list
+    }
+  ]
+}
 
 

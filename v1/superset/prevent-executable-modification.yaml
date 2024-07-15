@@ -20,7 +20,9 @@ evidence:
 
 with:
   superset:
-    cve:
-      filters:
-        mainAttestation: []
-        pipelineRun: []
+    filters:
+      mainAttestation_list: [] # mainAttestation is a list of strings for attestation that will be checked
+      pipelineRun_list: [] # pipelineRun is a list of strings for pipelineRun that will be checked
+      accepted_exec_cmd_line_list: [] # accepted_exec_cmd_line is a list of strings for accepted command lines that will not be checked
+      accepted_output_cmd_line_list: [] # accepted_output_cmd_line is a list of strings for accepted command lines that will not be checked
+      accepted_path_list: [] # list of strings for accepted path that will be compared
