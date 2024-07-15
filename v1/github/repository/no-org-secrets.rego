@@ -6,7 +6,6 @@ default allow := false
 
 default violations := []
 
-
 verify = v {
 	v := {
 		"allow": allow,
@@ -56,4 +55,5 @@ violations = j {
         }
 	]
 }
+
 

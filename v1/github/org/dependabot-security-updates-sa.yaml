@@ -1,0 +1,15 @@
+name: dependabot-security-updates-sa
+path: dependabot-security-updates-sa.rego
+
+level: warning
+
+description: "A rule to verify that dependabot_security_updates in security_and_analysis is properly set"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=organization"
+    
