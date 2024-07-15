@@ -1,0 +1,22 @@
+name: 3rd-pty
+path: 3rd-pty.rego
+
+description: "Limit allowed violations in 3rd party scanner reports"
+labels:
+  - 3rd-pty
+  - SCA
+initiatives:
+  - Default
+
+evidence:
+  signed: true
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/finding/v0.1
+
+with:
+  severities: []
+  titles: []
+  cwes: []
+  descriptions: []
+  component_names: []

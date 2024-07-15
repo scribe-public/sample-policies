@@ -3,9 +3,9 @@ path: build-time.rego
 
 description: "Verify artifact was created within the specified time window"
 labels:
-  - slsa
+  - SLSA
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

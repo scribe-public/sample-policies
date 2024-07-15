@@ -6,7 +6,7 @@ description: "Verify all commits are signed"
 labels:
   - git
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

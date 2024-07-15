@@ -1,12 +1,12 @@
 name: disallow-dependencies
 path: blocklist-packages.rego
 
-description: "Verify unallowed artifact's dependency count does not exceed specified threshold"
+description: "Verify disallowed dependencies' count does not exceed specified threshold"
 labels:
-  - sbom
-  - ct-13
+  - SBOM
+  - Blueprint
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

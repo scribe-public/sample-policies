@@ -5,7 +5,7 @@ description: "Require label key value pairs"
 labels:
   - images
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false
