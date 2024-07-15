@@ -162,7 +162,7 @@ filters = f {
     oCL := array.concat(eCL, outputCmdLineFilter) # output_cmd_line
     # pP  := array.concat(oCL, pathFilter)          # path_prefix // modified to use regex match --> allowed_path(path)
     
-    f := ocl
+    f := oCL
 }
 
 mainAttestationFilter = mA {
