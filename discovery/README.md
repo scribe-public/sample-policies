@@ -381,23 +381,10 @@ Verify that each secret scanning job ran successfully
 
 Verify that at the semgrep-sast has been ran at least once in each pipeline for every project
 
-You can specify the name of the secret scanning job in the `.yaml` file
-
-```yaml
-with:
-  job_name: "semgrep-sast"
-```
-
 #### SAST Scanning Pass Checker
 
 Verify that each `semgrep-sast` ran successfully 
 
-You can specify the name of the sast scanning job in the `.yaml` file
-
-```yaml
-with:
-  job_name: "semgrep-sast"
-```
 #### Protect CI Secrets
 
 Verify that variables with `masked == false` and variable names containing 'token' or 'secret' aren't shared.

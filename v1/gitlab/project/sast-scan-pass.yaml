@@ -1,5 +1,5 @@
-name: sast-scanning-pass-checker
-path: sast-scanning-pass-checker.rego
+name: SAST Scanning Pass Checker
+path: sast-scan-pass.rego
 
 level: warning
 
@@ -13,5 +13,3 @@ evidence:
   labels:
     - "asset_type=project" 
 
-with:
-  job_name: "semgrep-sast"
