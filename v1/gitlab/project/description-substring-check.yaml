@@ -1,4 +1,4 @@
-name: description Substring Check
+name: Description Substring Check
 path: description-substring-check.rego
 
 level: warning
