@@ -1,5 +1,5 @@
-name: max-allowed-medium-severity
-path: max-allowed-medium-severity.rego
+name: Medium Severity Limit
+path: medium-severity-limit.rego
 
 level: warning
 
@@ -15,4 +15,3 @@ evidence:
 
 with:
   max_allowed_specific_severity: 0 # Enter here the max number of a the severity level
-  severity: "Medium" # Enter here the severity of the vulnerabilty
