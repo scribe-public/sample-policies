@@ -3,20 +3,21 @@ path: prevent-exec-mod.rego
 
 description: "Verify that no entity modifies an executable."
 
-# Not sure
-labels:
-  - scribe
-  - ct-6
-  - ct-13
-initiatives:
-  - bundle-rule
+# ------------- Not sure if this is need ---------------------
+# labels:
+#   - scribe
+#   - ct-6
+#   - ct-13
+# initiatives:
+#   - bundle-rule
 
 require-scribe-api: true
 
-evidence:
-  signed: false
-  format-type: cyclonedx-json
-  # predicate_type: https://cyclonedx.org/bom
+# ------------- Not sure if this is need ---------------------
+# evidence:
+#   signed: false
+#   format-type: cyclonedx-json
+#   # predicate_type: https://cyclonedx.org/bom
 
 with:
   superset:

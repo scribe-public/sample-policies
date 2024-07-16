@@ -34,7 +34,7 @@ verify := v {
 } 
 
 # change
-id := superset.datasetID("dataset_Modified_Executable")
+id := superset.datasetID("dataset_Global_Join_On_Same_Path")
 
 policyQuery := v {
 	v := query(id)	
@@ -79,25 +79,29 @@ Allow {
 
 violations = j {
 
-  j := { r |
+  j := [ r |
   
     modification := queryResponse[0].data[_]
 
-    not allowed_path(modification.path)
+    # not allowed_path(modification.path)
 
     r := {
-      "exec_event_id": modification.exec_event_id,
-      "output_event_id": modification.output_event_id,
-      "executable": modification.exec_executable,
-      "pipelineRun": modification.pipelineRun,
-      "context": modification.context,
-      "exec_cmd_line": modification.exec_cmd_line,
-      "output_cmd_line": modification.output_cmd_line,
-      "mainAttestation": modification.mainAttestation,
-      "action": modification.output_action,
       "path": modification.path, 
+      "e1_event_id": modification.e1_event_id,
+      "e2_event_id": modification.e2_event_id,
+      "e1_action": modification.e1_action,
+      "e2_action": modification.e2_action,
+      "e1_process": modification.e1_process,
+      "e2_process": modification.e2_process,
+      "e1_executable": modification.e1_executable,
+      "e2_executable": modification.e2_executable,
+      "e1_cmd_line": modification.e1_cmd_line,
+      "e2_cmd_line": modification.e2_cmd_line,
+      "context": modification.context,
+      "mainAttestation": modification.mainAttestation,
+      "pipelineRun": modification.pipelineRun,
     }
-  }
+  ]
 }
 
 summary = {
@@ -132,39 +136,55 @@ query(id) := {
   "queries": [
     {
       "columns": [
-        "path",
-        "exec_executable",
-        "exec_event_id",
-        "output_event_id",
-        "exec_action",
-        "output_action",
-        "exec_cmd_line",
-        "output_cmd_line",
-        "userId",
-        "context",
+        "path", 
+        "e1_event_id", 
+        "e2_event_id", 
+        "e1_action", 
+        "e2_action", 
+        "e1_process", 
+        "e2_process", 
+        "e1_executable", 
+        "e2_executable", 
+        "e1_cmd_line", 
+        "e2_cmd_line", 
         "pipelineRun",
-        "mainAttestation",
-        "exec_time",
-        "output_time",
-        "timestamp",
-        "teamId"
+        "mainAttestation", 
+        # "userId", 
+        # "teamId", 
+        "context", 
+        # "mainAttestation_timestamp", 
+        # "e1_time", 
+        # "e2_time"
       ],
       "filters": filters,
     }
   ]
 }
 
-
-filters = f {
-    mA := mainAttestationFilter                   # mainAttestation
-    pR := array.concat(mA, pipelineRunFilter)     # pipelineRun
-    eCL := array.concat(pR, execCmdLineFilter)    # exec_cmd_line
-    oCL := array.concat(eCL, outputCmdLineFilter) # output_cmd_line
-    # pP  := array.concat(oCL, pathFilter)          # path_prefix // modified to use regex match --> allowed_path(path)
+filters = f {   
+    mA := array.concat(startingFilter, mainAttestationFilter) # mainAttestation
+    pR := array.concat(mA, pipelineRunFilter)                 # pipelineRun
+    eCL := array.concat(pR, execCmdLineFilter)                # exec_cmd_line
+    oCL := array.concat(eCL, outputCmdLineFilter)             # output_cmd_line
+    # pP  := array.concat(oCL, pathFilter)                    # path_prefix // modified to use regex match --> allowed_path(path)
     
     f := oCL
 }
 
+startingFilter = f{
+  f := [
+    {
+      "col": "e1_action",
+      "op": "==",
+      "val": "exec"
+    },
+    {
+      "col": "e2_action",
+      "op": "in",
+      "val": ["output", "write", "create"]
+    }
+  ]
+}
 mainAttestationFilter = mA {
 
   args.mainAttestation_list != null
