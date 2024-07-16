@@ -1,0 +1,34 @@
+name: Prevent Modification of Source Files
+path: prevent-src-mod.rego
+
+description: "Verify that no entity modifies an source file."
+
+# ------------- Not sure if this is need ---------------------
+# labels:
+#   - scribe
+#   - ct-6
+#   - ct-13
+# initiatives:
+#   - bundle-rule
+
+require-scribe-api: true
+
+# ------------- Not sure if this is need ---------------------
+# evidence:
+#   signed: false
+#   format-type: cyclonedx-json
+#   # predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    # Required Filters
+    executable_1: node
+    executable_2: node
+      
+    # Optional Filters
+    mainAttestation_list: []          # list of strings for attestation that will be checked
+    pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+    accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
+    accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
+    # accepted_path_list: []            # list of strings for accepted path that will not be checked
+    accepted_path_regex_list: []      # list of strings for accepted path regexes that will not be checked
