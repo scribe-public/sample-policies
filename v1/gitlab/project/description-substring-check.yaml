@@ -1,5 +1,5 @@
-name: fail-on-substring-in-description
-path: fail-on-substring-in-description.rego
+name: description Substring Check
+path: description-substring-check.rego
 
 level: warning
 
