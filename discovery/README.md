@@ -42,7 +42,6 @@ This README provides an overview of the set of policy rules that utilize discove
         4. [Committer Name check](#committer-name-check)
         5. [Commit Message check](#commit-message-check)
         6. [Commit Validation check](#commit-validation-check)
-    7. [Scanning results](#)
 3. [K8s Namespace Attestation](#k8s-namespace-attestation)
     1. [Verify Allowed Registries](#verify-allowed-registries)
 4. [GitLab Pipeline Attestation (not implemented)](#gitlab-pipeline-attestation)
