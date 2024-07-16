@@ -1,5 +1,5 @@
-name: fail-on-substring-in-message
-path: fail-on-substring-in-message.rego
+name: Message Substring Check
+path: message-substring-check.rego
 
 level: warning
 

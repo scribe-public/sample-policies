@@ -453,7 +453,7 @@ with:
   cwe_value: "89" # Enter the CWE here as a string, and enter the value only i.e (CWE-89 -> "89")
 ```
 
-#### Fail on Substring in Message
+#### Message Substring Check
 Verify that a substring is not found in the message attribute of the vulnerabilities
 
 ```yaml
@@ -461,7 +461,7 @@ with:
   pattern: "(?i)Hello" # Regex pattern to search 
 ```
 
-#### Fail on Substring in Description
+#### Description Substring Check
 Verify that a substring is not found in the message attribute of the vulnerabilities
 
 ```yaml
