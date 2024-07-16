@@ -2,17 +2,11 @@ package verify
 
 import future.keywords.in
 
-
 default allow := false
 
 default violations := []
 
-default job_name := "semgrep-sast" # Configurable name for the job detection
-
-job_name = input.config.args.job_name {
-    input.config.args.job_name
-}
-
+default job_name := "semgrep-sast"
 
 verify = v {
 
@@ -29,8 +23,6 @@ verify = v {
         }],
     }
 }
-
-
 
 allow {
     count(violations) == 0
