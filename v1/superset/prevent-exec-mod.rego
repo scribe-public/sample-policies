@@ -83,7 +83,7 @@ violations = j {
   
     modification := queryResponse[0].data[_]
 
-    # not allowed_path(modification.path)
+    not allowed_path(modification.path)
 
     r := {
       "path": modification.path, 
