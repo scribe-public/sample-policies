@@ -1,5 +1,5 @@
-name: fail_on_specific_cwe
-path: fail_on_specific_cwe.rego
+name: Check CWE
+path: check_cwe.rego
 
 level: warning
 

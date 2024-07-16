@@ -445,7 +445,7 @@ with:
   severity: "Critical" # Enter here the severity of the vulnerabilty
 ```
 
-#### Fail on Specific CWE
+#### Check Cwe
 Verify that no specified CWE detected
 
 ```yaml
