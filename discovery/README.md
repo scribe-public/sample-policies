@@ -435,7 +435,7 @@ with:
   severity: "Medium" # Enter here the severity of the vulnerabilty
 ```
 
-#### Max Allowed of Critical Severity
+#### Critical Severity Limit
 Verify that the max number of critical severity vulnerabilities is not passed.
 
 ```yaml

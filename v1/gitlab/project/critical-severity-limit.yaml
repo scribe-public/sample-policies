@@ -1,5 +1,5 @@
-name: max-allowed-critical-severity
-path: max-allowed-critical-severity.rego
+name: Critical Severity Limit
+path: critical-severity-limit.rego
 
 level: warning
 
@@ -15,4 +15,3 @@ evidence:
 
 with:
   max_allowed_vulnerability_count: 0 # Enter here the max number of a the severity level
-  severity: "Critical" # Enter here the severity of the vulnerabilty
