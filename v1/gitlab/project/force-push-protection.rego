@@ -83,3 +83,4 @@ push_protection_error() = v {
 		"description": "force push is allowed",
 	}
 }
+

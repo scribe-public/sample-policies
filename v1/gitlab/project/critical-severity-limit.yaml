@@ -15,3 +15,4 @@ evidence:
 
 with:
   max_allowed_vulnerability_count: 0 # Enter here the max number of a the severity level
+  

@@ -105,3 +105,4 @@ push_access_level_error() = v {
 		"available_rules": branch.result_object.branch_protection.result_object.push_access_levels,
 	}
 }
+

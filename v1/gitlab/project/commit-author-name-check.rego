@@ -50,3 +50,4 @@ match_any_name(commit) {
     some author in input.config.args.allowed_authors
 	commit.result_object.author_name == author
 }
+

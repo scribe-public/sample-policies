@@ -19,3 +19,4 @@ evidence:
 
 with:
     commit_message_regex: ".*JIRA-\\d+.*"
+    

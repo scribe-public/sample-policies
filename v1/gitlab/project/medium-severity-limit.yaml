@@ -15,3 +15,5 @@ evidence:
 
 with:
   max_allowed_specific_severity: 0 # Enter here the max number of a the severity level
+  
+
