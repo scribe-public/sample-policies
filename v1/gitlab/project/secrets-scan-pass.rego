@@ -7,12 +7,7 @@ default allow := false
 
 default violations := []
 
-default job_name := "secret_detection" # Configurable name for the secret detection job
-
-job_name = input.config.args.job_name {
-    input.config.args.job_name
-}
-
+job_name := "secret_detection"
 
 verify = v {
 

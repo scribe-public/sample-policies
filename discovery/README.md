@@ -373,17 +373,10 @@ Verify that all the commits in the project have been validated.
 
 Verify that secrets scanning has been ran at least once in each pipeline for every project
 
-
 #### Secrets Scanning Pass Checker
 
 Verify that each secret scanning job ran successfully
 
-You can specify the name of the secret scanning job in the `.yaml` file
-
-```yaml
-with:
-  job_name: "secret_detection"
-```
 #### SAST Scanning 
 
 Verify that at the semgrep-sast has been ran at least once in each pipeline for every project
