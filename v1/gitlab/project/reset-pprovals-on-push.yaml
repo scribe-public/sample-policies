@@ -15,4 +15,3 @@ evidence:
 
 with:
   reset_approvals_on_push: true
-

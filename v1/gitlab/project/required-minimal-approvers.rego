@@ -52,4 +52,3 @@ violations := [r |
         "approvers": approvers,
     }
 ]
-

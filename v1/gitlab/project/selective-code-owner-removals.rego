@@ -52,4 +52,3 @@ violations := [r |
         "desired_selective_code_owner_removals": selective_code_owner_removals,
     }
 ] 
-

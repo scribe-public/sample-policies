@@ -367,6 +367,79 @@ with:
 
 Verify that all the commits in the project have been validated.
 
+### Gitlab scanning results 
+
+#### Secrets Scanning
+
+Verify that secrets scanning has been ran at least once in each pipeline for every project
+
+#### Secrets Scanning Pass Checker
+
+Verify that each secret scanning job ran successfully
+
+#### SAST Scanning 
+
+Verify that at the semgrep-sast has been ran at least once in each pipeline for every project
+
+#### SAST Scanning Pass Checker
+
+Verify that each `semgrep-sast` ran successfully 
+
+#### Protect CI Secrets
+
+Verify that variables with `masked == false` and variable names containing 'token' or 'secret' aren't shared.
+
+You can specify your own pattern to search in the `.yaml` file
+```yaml 
+with:
+  pattern: "(?i)(token|secret)" # Regex pattern
+```
+
+#### SAST Scanning Results Evaluation
+To be implemented
+
+#### Medium Severity Limit
+Verify that the max number of medium severity vulnerabilities is not passed.
+
+```yaml
+with:
+  # Enter here the max number of a the severity level
+  max_allowed_specific_severity: 100
+```
+
+#### Critical Severity Limit
+Verify that the max number of critical severity vulnerabilities is not passed.
+
+```yaml
+with:
+  # Enter here the max number of a the severity level
+  max_allowed_specific_severity: 100
+```
+
+#### Check Cwe
+Verify that no specified CWE detected
+
+```yaml
+with:
+  cwe_value: "89" # Enter the CWE here as a string, and enter the value only i.e (CWE-89 -> "89")
+```
+
+#### Message Substring Check
+Verify that a substring is not found in the message attribute of the vulnerabilities
+
+```yaml
+with:
+  pattern: "(?i)Hello" # Regex pattern to search 
+```
+
+#### Description Substring Check
+Verify that a substring is not found in the message attribute of the vulnerabilities
+
+```yaml
+with:
+  pattern: "(?i)Hello" # Regex pattern to search 
+```
+
 ## Gitlab API
 
 ### Signed commits

@@ -52,4 +52,3 @@ violations := [r |
         "desired_merge_requests_author_approval": merge_requests_author_approval,
     }
 ] 
-

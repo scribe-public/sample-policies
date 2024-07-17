@@ -69,4 +69,3 @@ banned_users_in_approvers(approvers) = result {
         u := user
     }
 }
-
