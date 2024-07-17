@@ -14,4 +14,4 @@ evidence:
     - "asset_type=project" 
 
 with:
-  pattern: "(?i)insdput" # Regex pattern to search 
+  pattern: "(?i)insdput"
