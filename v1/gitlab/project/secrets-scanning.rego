@@ -7,7 +7,7 @@ default allow := false
 
 default violations := []
 
-default job_name := "secret_detection" # Configurable name for the secret detection job
+default job_name := "secret_detection" 
 
 verify = v {
 
