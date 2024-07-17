@@ -29,12 +29,12 @@ allow {
 
 reason = v {
     allow
-    v := "All tokens have been used" # Edit this
+    v := "All tokens have been used" 
 }
 
 reason = v {
     not allow
-    v := "At least one token has not been used" # Edit this
+    v := "At least one token has not been used" 
 }
 
 violations := {r |

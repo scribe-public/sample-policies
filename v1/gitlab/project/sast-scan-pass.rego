@@ -14,7 +14,7 @@ verify = v {
     v := {
         "allow" : allow,
         "violation" : {
-            "type" : "semgrep-sast scanning was ran but not succesful", # Edit this
+            "type" : "unsuccessful semgrep-sast scanning", 
             "details" : violations,
         },
         "summary" : [{

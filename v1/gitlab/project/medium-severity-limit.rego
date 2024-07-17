@@ -5,7 +5,7 @@ import future.keywords.in
 default allow := false
 default violations := []
 
-default max_allowed_medium_severity := 0 # Edit this
+default max_allowed_medium_severity := 0 
 
 # Looks in the .yaml file for max
 max_allowed_medium_severity := input.config.args.max_allowed_specific_severity {

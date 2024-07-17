@@ -5,7 +5,7 @@ import future.keywords.in
 default allow := false
 default violations := []
 
-default cwe_value := "89" # Edit this
+default cwe_value := "" 
 
 # Looks in the .yaml file for max
 cwe_value := input.config.args.cwe_value {

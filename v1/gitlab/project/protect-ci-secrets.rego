@@ -16,7 +16,7 @@ verify = v {
     v := {
         "allow": allow,
         "violation": {
-            "type": "secret has been shared", # Edit
+            "type": "secret has been shared", 
             "details": violations,
         },
         "summary": [{
@@ -33,12 +33,12 @@ allow {
 
 reason = v {
     allow
-    v := "All variables are protected" # Edit this
+    v := "All variables are protected" 
 }
 
 reason = v {
     not allow
-    v := "At least one variable is not protected" # Edit this
+    v := "At least one variable is not protected" 
 }
 
 violations := {r |

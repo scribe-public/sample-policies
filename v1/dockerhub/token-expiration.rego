@@ -29,12 +29,12 @@ allow {
 
 reason = v {
     allow
-    v := "All tokens are not expired" # Edit this
+    v := "All tokens are not expired"
 }
 
 reason = v {
     not allow
-    v := "At least one token is expired" # Edit this
+    v := "At least one token is expired"
 }
 
 violations := {r |
