@@ -1,0 +1,14 @@
+name: SAST Scanning Pass Checker
+path: sast-scan-pass.rego
+
+level: warning
+
+description: "Verify that sast scanning was succesful"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 

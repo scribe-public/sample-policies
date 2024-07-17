@@ -51,4 +51,3 @@ violations := [r |
         "desired_reset_approvals_on_push": reset_approvals_on_push,
     }
 ] 
-
