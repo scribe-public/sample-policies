@@ -18,7 +18,5 @@ evidence:
     - "asset_type=project"
 
 with:
-    allowed_committers:
-        - mail@example.com
-
-        
+  allowed_committers:
+    - mail@example.com

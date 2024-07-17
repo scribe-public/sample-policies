@@ -56,4 +56,3 @@ violations := {r |
 contains_keywords(input_string) {
     regex.match(pattern, input_string)
 }
-

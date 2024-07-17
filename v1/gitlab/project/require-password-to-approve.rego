@@ -52,5 +52,3 @@ violations := [r |
         "desired_require_password_to_approve": require_password_to_approve,
     }
 ] 
-
-

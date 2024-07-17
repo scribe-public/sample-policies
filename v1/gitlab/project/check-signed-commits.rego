@@ -53,4 +53,3 @@ bad_commit(commit) {
 bad_commit(commit) {
 	not commit.result_object.validated
 }
-

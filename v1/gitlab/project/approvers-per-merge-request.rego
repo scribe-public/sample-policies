@@ -52,4 +52,3 @@ violations := [r |
         "desired_disable_overriding_approvers_per_merge_request": disable_overriding_approvers_per_merge_request,
     }
 ] 
-

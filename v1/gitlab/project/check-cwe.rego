@@ -64,4 +64,3 @@ violations := [r |
         },
     }
 ] 
-

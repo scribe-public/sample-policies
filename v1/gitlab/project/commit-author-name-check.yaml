@@ -18,6 +18,5 @@ evidence:
     - "asset_type=project"
 
 with:
-    allowed_authors:
-        - examplename
-        
+  allowed_authors:
+    - examplename

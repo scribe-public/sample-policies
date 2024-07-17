@@ -19,6 +19,5 @@ evidence:
     - "asset_type=project"
 
 with:
-    name: "All Members"
-    approvals_required_min: 2
-    
+  name: "All Members"
+  approvals_required_min: 2

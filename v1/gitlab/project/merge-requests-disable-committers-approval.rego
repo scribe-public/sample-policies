@@ -52,5 +52,3 @@ violations := [r |
         "desired_merge_requests_disable_committers_approval": merge_requests_disable_committers_approval,
     }
 ] 
-
-

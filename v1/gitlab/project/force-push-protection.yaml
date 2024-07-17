@@ -18,5 +18,4 @@ evidence:
     - "asset_type=project"
 
 with:
-    branch: "main"
-    
+  branch: "main"

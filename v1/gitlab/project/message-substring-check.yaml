@@ -15,4 +15,3 @@ evidence:
 
 with:
   pattern: "(?i)dghd" # Regex pattern to search 
-  

@@ -50,4 +50,3 @@ match_any_name(commit) {
     some committer in input.config.args.allowed_committers
 	commit.result_object.committer_email == committer
 }
-

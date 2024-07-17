@@ -46,4 +46,3 @@ violations = j {
         }
 	}
 }
-

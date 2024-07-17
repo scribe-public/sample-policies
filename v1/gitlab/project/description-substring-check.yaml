@@ -15,4 +15,3 @@ evidence:
 
 with:
   pattern: "(?i)insdput" # Regex pattern to search 
-  

@@ -60,4 +60,3 @@ commit_message_match(commit) {
 commit_message_match(commit) {
     regex.match(commit_message_regex, commit.result_object.message)
 }
-
