@@ -421,7 +421,7 @@ with:
 
 ### Using Superset Database 
 
-#### Block Exec Modification
+#### Prevent Modification of Executable Files
 
 This policy aims to ensure the integrity of executables by verifying that no unauthorized modifications occur during the pipeline execution. Use the optional filters to customize the scope of the checks according to your specific requirements.
 
@@ -436,6 +436,39 @@ with:
       accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
       accepted_path_regex_list: []            # list of strings for accepted path regexes that will not be checked
 ```
+
+`mainAttestation_list`: Only checks attestations inside the list. 
+
+`pipelineRun_list`: Only checks pipeline runs inside the list. 
+
+`accepted_exec_cmd_line_list`: Specifies command lines that are accepted and will not be checked for modifications.
+
+`accepted_output_cmd_line_list`: Specifies command lines whose outputs are accepted and will not be checked for modifications.
+
+`accepted_path_regex_list`: Specifies path regexes' that are accepted and will not be checked for modifications.
+
+#### Prevent Modification of Source Files
+
+```yaml
+with:
+  superset:
+    # Required Filters
+    executable_1_list: []
+    executable_2_list: []
+      
+    # Optional Filters
+    mainAttestation_list: []          # list of strings for attestation that will be checked
+    pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+    accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
+    accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
+    # accepted_path_list: []            # list of strings for accepted path that will not be checked
+    accepted_path_regex_list: []      # list of strings for accepted path regexes that will not be checked
+
+```
+
+`executable_1_list`: Only checks executable_1 inside the list.
+
+`executable_2_list`: Only checks executable_2 not inside the list.
 
 `mainAttestation_list`: Only checks attestations inside the list. 
 

@@ -33,7 +33,7 @@ verify := v {
 	}
 } 
 
-id := superset.datasetID("dataset_Global_Join_On_Same_Path")
+id := superset.datasetID("dataset_Global_Joined_On_Same_Path")
 
 policyQuery := v {
 	v := query(id)	
@@ -75,13 +75,13 @@ errors[msg] {
 }
 
 errors[msg] {
-  not valid_executable(args.executable_1)
-  msg := "executable_1 cannot be null nor empty"
+  not valid_executable(args.executable_1_list)
+  msg := "executable_1_list cannot be null nor empty"
 }
 
 errors[msg] {
-  not valid_executable(args.executable_2)
-  msg := "executable_2 cannot be null nor empty"
+  not valid_executable(args.executable_2_list)
+  msg := "executable_2_list cannot be null nor empty"
 }
 
 Allow {
@@ -187,8 +187,8 @@ startingFilter = f {
   f := [
     {
       "col": "e1_executable",
-      "op": "==",
-      "val": args.executable_1
+      "op": "IN",
+      "val": args.executable_1_list
     },
     {
       "col": "e1_action",
@@ -197,8 +197,8 @@ startingFilter = f {
     },
     {
       "col": "e2_executable",
-      "op": "!=",
-      "val": args.executable_2
+      "op": "NOT IN",
+      "val": args.executable_2_list
     },
     {
       "col": "e2_action",
@@ -293,11 +293,11 @@ allowed_path(path) {
 
 valid_executable(exec) {
   exec != null
-  exec != ""
+  exec != []
 }
 
 # Makes sure the user inputs are valid
 valid_inputs {
-  valid_executable(args.executable_1)
-  valid_executable(args.executable_2)
+  valid_executable(args.executable_1_list)
+  valid_executable(args.executable_2_list)
 }

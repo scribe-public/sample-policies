@@ -22,8 +22,8 @@ require-scribe-api: true
 with:
   superset:
     # Required Filters
-    executable_1: node
-    executable_2: node
+    executable_1_list: ["node"]
+    executable_2_list: ["node"]
       
     # Optional Filters
     mainAttestation_list: []          # list of strings for attestation that will be checked
