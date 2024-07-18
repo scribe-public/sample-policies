@@ -55,8 +55,6 @@ violations = j {
 		namespace.scribe_type == "namespace"
 		container_info := namespace.result_object.container_info[0]
 
-		# r := {"t": time.parse_rfc3339_ns(threshold_date), "s": container_info}
-
 		not container_info.state.terminated  
 		not is_valid(container_info)
 
