@@ -684,6 +684,10 @@ with:
   threshold_date: "2023-08-29T15:35:57Z" # ISO 8601 string date format
 ```
 
+### Verify Pod Termination
+
+This policy verifies that all pods have terminated.
+
 ## GitLab Pipeline Attestation
 
 ### Labels
