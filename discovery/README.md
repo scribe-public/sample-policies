@@ -638,7 +638,7 @@ with:
     - "gcr.io"
 ```
 
-#### White Listed Namespace
+### White Listed Namespace
 
 This policy checks that all namespaces' names are valid, by testing against a list of valid regex patterns that can be configured in the yaml file.
 
@@ -649,7 +649,7 @@ with:
     - "docker.io"
 ```
 
-#### White Listed Pod
+### White Listed Pod
 
 This policy checks that all pods' names are valid, by testing against a list of valid regex patterns that can be configured in the yaml file.
 
@@ -660,13 +660,24 @@ with:
     - "docker.io"
 ```
 
-#### Verify Namespace Termination
+### Verify Namespace Termination
 
 This policy verifies that all namespaces have terminated.
 
-#### Verify Namespace Duration
+### Verify Namespace Duration
 
 This policy verifies that all <u>running</u> namespaces were started after the threshold date. All violations are namespaces that were started before the threshold date. The threshold date is configurable:
+
+```yaml
+with:
+  threshold_date: "2023-08-29T15:35:57Z" # ISO 8601 string date format
+```
+
+## K8s Pod Attestation
+
+### Verify Pod Duration
+
+This policy verifies that all <u>running</u> pods were started after the threshold date. All violations are pods that were started before the threshold date. The threshold date is configurable:
 
 ```yaml
 with:
