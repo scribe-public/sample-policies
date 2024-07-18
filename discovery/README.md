@@ -662,7 +662,16 @@ with:
 
 #### Verify Namespace Termination
 
-This policy verifies that all namespaces have terminated
+This policy verifies that all namespaces have terminated.
+
+#### Verify Namespace Duration
+
+This policy verifies that all <u>running</u> namespaces were started after the threshold date. All violations are namespaces that were started before the threshold date. The threshold date is configurable:
+
+```yaml
+with:
+  threshold_date: "2023-08-29T15:35:57Z" # ISO 8601 string date format
+```
 
 ## GitLab Pipeline Attestation
 
