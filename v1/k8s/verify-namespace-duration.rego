@@ -21,7 +21,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "Non terminated namespace",
+			"type": "Long running namespace",
 			"details": violations,
 		},
 		"summary": [{
