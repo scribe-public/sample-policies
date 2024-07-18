@@ -454,7 +454,7 @@ with:
   superset:
     # Required Filters
     executable_1_list: []
-    executable_2_list: []
+    not_executable_2_list: []
       
     # Optional Filters
     mainAttestation_list: []          # list of strings for attestation that will be checked

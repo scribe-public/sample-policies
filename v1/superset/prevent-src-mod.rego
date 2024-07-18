@@ -80,8 +80,8 @@ errors[msg] {
 }
 
 errors[msg] {
-  not valid_executable(args.executable_2_list)
-  msg := "executable_2_list cannot be null nor empty"
+  not valid_executable(args.not_executable_2_list)
+  msg := "not_executable_2_list cannot be null nor empty"
 }
 
 Allow {
@@ -198,7 +198,7 @@ startingFilter = f {
     {
       "col": "e2_executable",
       "op": "NOT IN",
-      "val": args.executable_2_list
+      "val": args.not_executable_2_list
     },
     {
       "col": "e2_action",
@@ -299,5 +299,5 @@ valid_executable(exec) {
 # Makes sure the user inputs are valid
 valid_inputs {
   valid_executable(args.executable_1_list)
-  valid_executable(args.executable_2_list)
+  valid_executable(args.not_executable_2_list)
 }
