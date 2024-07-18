@@ -1,9 +1,9 @@
-name: long-running-images
-path: long-running-images.rego
+name: Verify Namespace Termination
+path: verify-namespace-termination.rego
 
 level: warning
 
-description: "A rule to verify that all images terminated"
+description: "A rule to verify that all namespaces have terminated"
 
 evidence:
   signed: false
@@ -12,3 +12,5 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
     - "asset_type=namespace"
+
+

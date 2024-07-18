@@ -660,6 +660,10 @@ with:
     - "docker.io"
 ```
 
+#### Verify Namespace Termination
+
+This policy verifies that all namespaces have terminated
+
 ## GitLab Pipeline Attestation
 
 ### Labels
