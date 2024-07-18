@@ -60,7 +60,6 @@ violations = j {
             "name": pod.name,
 			"id": pod.id,
 			"query_id": pod.query_id,
-			"white_listed_pod": white_listed_pod,
         }
 	]
 }

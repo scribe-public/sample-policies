@@ -60,7 +60,6 @@ violations = j {
             "name": namespace.name,
 			"id": namespace.id,
 			"query_id": namespace.query_id,
-			"white_listed_namespace": white_listed_namespace,
         }
 	]
 }
