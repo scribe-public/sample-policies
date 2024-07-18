@@ -8,6 +8,8 @@ labels:
 initiatives:
   - bundle-rule
 
+require-scribe-api: true
+
 evidence: 
   signed: false
   format-type: cyclonedx-json
