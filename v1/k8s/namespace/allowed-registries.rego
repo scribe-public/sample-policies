@@ -46,7 +46,6 @@ violations = j {
             "image": info.image,
             "imageID": info.imageID,
             "containderID": info.containerID,
-            "allowed_registries": input.config.args.allowed_registries,
         }
 	}
 }
