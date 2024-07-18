@@ -468,7 +468,7 @@ with:
 
 `executable_1_list`: Only checks executable_1 inside the list.
 
-`executable_2_list`: Only checks executable_2 not inside the list.
+`not_executable_2_list`: Only checks executable_2 not inside the list.
 
 `mainAttestation_list`: Only checks attestations inside the list. 
 
