@@ -479,3 +479,22 @@ with:
 `accepted_output_cmd_line_list`: Specifies command lines whose outputs are accepted and will not be checked for modifications.
 
 `accepted_path_regex_list`: Specifies path regexes' that are accepted and will not be checked for modifications.
+
+
+#### Command Line Input Check
+
+Verify that no specific command lines have been used. Outputs all paths that uses the same command line provided in the list of command line to check `command_line_list` in the config file. 
+
+```yaml
+with:
+  superset:
+    filters:
+      # Required Filters
+      command_line_list: ["{docker,stop,fs-tracker-9730580849}"]             # list of strings for command lines that will be checked
+
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      accepted_path_regex_list: []      # list of strings for accepted path regexes that will not be checked
+```
+
