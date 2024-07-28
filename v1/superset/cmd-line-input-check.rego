@@ -72,7 +72,7 @@ errors[msg] {
 	msg := sprintf("malformed result in API response: %s", [queryResponse[0]])
 }
 
-error[msg] {
+errors[msg] {
   not valid_command_line_list(args.command_line_list)
 
   msg := "invalid command line list"
@@ -84,6 +84,8 @@ Allow {
 }
 
 violations = j {
+  
+  valid_command_line_list(args.command_line_list)
 
   j := [ r |
   
