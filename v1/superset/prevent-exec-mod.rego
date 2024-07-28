@@ -34,7 +34,7 @@ verify := v {
 } 
 
 # change
-id := superset.datasetID("dataset_Global_Join_On_Same_Path")
+id := superset.datasetID("dataset_Global_Joined_On_Same_Path")
 
 policyQuery := v {
 	v := query(id)	
