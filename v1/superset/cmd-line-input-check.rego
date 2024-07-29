@@ -159,7 +159,7 @@ query(id) := {
         "where": "(e1_action = 'input' AND e1_event_id = e2_event_id)",
         "time_grain_sqla": "P1D"
       },
-      "row_limit": 10
+      # "row_limit": 10
     }
   ]
 }
