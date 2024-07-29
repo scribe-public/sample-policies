@@ -482,7 +482,7 @@ with:
 
 #### Command Line Input Check
 
-Verify that no specific command lines have been used. Outputs all paths that uses the same command line provided in the list of command line to check `command_line_list` in the config file. 
+Verify that no specific command lines have been used. Outputs all events that uses the same command line provided in the list of command line to check `command_line_list` in the config file. 
 
 ```yaml
 with:
@@ -495,5 +495,23 @@ with:
       mainAttestation_list: []          # list of strings for attestation that will be checked
       pipelineRun_list: []              # list of strings for pipelineRun that will be checked
       paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
+```
+
+
+#### Restricted Command Line Regex
+
+Verify that no restricted regex expression(s) is/are present in the command line. Outputs all events that have a regex match with a pattern from `restricted_cmdLine_regex_list`.
+
+```yaml
+with:
+  superset:
+    filters:
+      # Required Filters
+      restricted_cmdLine_regex_list: ["tar"] # list of strings for restricted command line regex that will be checked
+      
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      executable_to_check_list: []      # list of strings for executables that will be checked
 ```
 

@@ -1,0 +1,33 @@
+name: Restricted Command Line Regex
+path: restricted-cmd-line-regex.rego
+
+description: "Verify that no restricted regex expression(s) is/are present in the command line."
+
+# ------------- Not sure if this is need ---------------------
+# labels:
+#   - scribe
+#   - ct-6
+#   - ct-13
+# initiatives:
+#   - bundle-rule
+
+require-scribe-api: true
+
+# ------------- Not sure if this is need ---------------------
+# evidence:
+#   signed: false
+#   format-type: cyclonedx-json
+#   # predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    filters:
+      # Required Filters
+      restricted_cmdLine_regex_list: [] # list of strings for restricted command line regex that will be checked
+      
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      executable_to_check_list: []      # list of strings for executables that will be checked
+
+
