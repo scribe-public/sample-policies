@@ -21,6 +21,7 @@ default pipelineRunFilter = []
 default executableFilter = []
 
 default queryResponse = null
+default id = null
 
 verify := v {
 	v := {
@@ -35,13 +36,16 @@ verify := v {
 } 
 
 # change
-id := superset.datasetID("dataset_Global_Joined_On_Same_Path")
+id = superset.datasetID("dataset_Global_Joined_On_Same_Path") {
+  valid_config(args.required_cmdLine_regex_list)
+}
 
 policyQuery := v {
 	v := query(id)	
 }
 
 queryResponse := v {
+  valid_config(args.required_cmdLine_regex_list)
 	v := superset.Query(config, policyQuery)
 }
 

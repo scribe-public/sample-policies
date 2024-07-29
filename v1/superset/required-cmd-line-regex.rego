@@ -105,7 +105,7 @@ violations = j {
       "e1_process": modification.e1_process,
       "e1_executable": modification.e1_executable,
       "e1_cmd_line": modification.e1_cmd_line,
-      # "context": modification.context,
+      "context": modification.context,
       "mainAttestation": modification.mainAttestation,
       "pipelineRun": modification.pipelineRun,
     }
