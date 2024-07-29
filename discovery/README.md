@@ -500,7 +500,7 @@ with:
 
 #### Restricted Command Line Regex
 
-Verify that no restricted regex expression(s) is/are present in the command line. Outputs all events that have a regex match with a pattern from `restricted_cmdLine_regex_list`.
+Verify that no restricted regex expression(s) is/are present in the command line. Outputs all executables that matches at least one regex pattern from `restricted_cmdLine_regex_list`.
 
 ```yaml
 with:
@@ -515,3 +515,20 @@ with:
       executable_to_check_list: []      # list of strings for executables that will be checked
 ```
 
+#### Required Command Line Regex
+
+Verify that all required regex expression(s) is/are present in the command line. Output all executables that does not match every regex patterns in `required_cmdLine_regex_list`.
+
+```yaml
+with:
+  superset:
+    filters:
+      # Required Filters
+      required_cmdLine_regex_list: []   # list of strings for required command line regex that will be checked
+
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
+      executable_to_check_list: []      # list of strings for executables that will be checked
+```
