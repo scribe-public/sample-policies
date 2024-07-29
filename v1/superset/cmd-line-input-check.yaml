@@ -28,5 +28,6 @@ with:
       # Optional Filters
       mainAttestation_list: []          # list of strings for attestation that will be checked
       pipelineRun_list: []              # list of strings for pipelineRun that will be checked
-      accepted_path_regex_list: []      # list of strings for accepted path regexes that will not be checked
+      paths_to_exclude_regex_list: []   # list of strings for regexes of paths to exclude
 
+      

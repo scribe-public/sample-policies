@@ -283,10 +283,10 @@ outputCmdLineFilter := cL {
 # This is a path filter that is regex compatible
 # Instead of using filters in the query, we will use this function to filter out the paths that are not in the accepted path list
 allowed_path(path) {
-  args.accepted_path_regex_list != null
-  args.accepted_path_regex_list != []
+  args.paths_to_exclude_regex_list != null
+  args.paths_to_exclude_regex_list != []
 
-  some pattern in args.accepted_path_regex_list
+  some pattern in args.paths_to_exclude_regex_list
 
   regex.match(pattern, path)
 }
@@ -301,3 +301,4 @@ valid_inputs {
   valid_executable(args.executable_1_list)
   valid_executable(args.not_executable_2_list)
 }
+

@@ -220,10 +220,10 @@ commandLineFilter = cL {
 
 # This is a path filter that is regex compatible
 allowed_path(path) {
-  args.accepted_path_regex_list != null
-  args.accepted_path_regex_list != []
+  args.paths_to_exclude_regex_list != null
+  args.paths_to_exclude_regex_list != []
 
-  some pattern in args.accepted_path_regex_list
+  some pattern in args.paths_to_exclude_regex_list
 
   regex.match(pattern, path)
 }
@@ -232,3 +232,4 @@ valid_command_line_list(list) {
   list != null
   list != []
 }
+

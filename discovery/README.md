@@ -434,7 +434,7 @@ with:
       pipelineRun_list: []              # list of strings for pipelineRun that will be checked
       accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
       accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
-      accepted_path_regex_list: []            # list of strings for accepted path regexes that will not be checked
+      paths_to_exclude_regex_list: []   # list of strings for regexes of paths to exclude
 ```
 
 `mainAttestation_list`: Only checks attestations inside the list. 
@@ -445,7 +445,7 @@ with:
 
 `accepted_output_cmd_line_list`: Specifies command lines whose outputs are accepted and will not be checked for modifications.
 
-`accepted_path_regex_list`: Specifies path regexes' that are accepted and will not be checked for modifications.
+`paths_to_exclude_regex_list`: Specifies the regexes for path to exclude when checking for modifications
 
 #### Prevent Modification of Source Files
 
@@ -461,8 +461,7 @@ with:
     pipelineRun_list: []              # list of strings for pipelineRun that will be checked
     accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
     accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
-    # accepted_path_list: []            # list of strings for accepted path that will not be checked
-    accepted_path_regex_list: []      # list of strings for accepted path regexes that will not be checked
+    paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
 
 ```
 
@@ -478,7 +477,7 @@ with:
 
 `accepted_output_cmd_line_list`: Specifies command lines whose outputs are accepted and will not be checked for modifications.
 
-`accepted_path_regex_list`: Specifies path regexes' that are accepted and will not be checked for modifications.
+`paths_to_exclude_regex_list`: Specifies the regex for path to exclude when checking for modifications
 
 
 #### Command Line Input Check
@@ -495,6 +494,6 @@ with:
       # Optional Filters
       mainAttestation_list: []          # list of strings for attestation that will be checked
       pipelineRun_list: []              # list of strings for pipelineRun that will be checked
-      accepted_path_regex_list: []      # list of strings for accepted path regexes that will not be checked
+      paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
 ```
 
