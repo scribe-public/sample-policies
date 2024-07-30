@@ -1,0 +1,17 @@
+name: Description Substring Check
+path: description-substring-check.rego
+
+level: warning
+
+description: "Verify that a substring is not found in the description attribute of the vulnerabilities"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+with:
+  pattern: "(?i)insdput"

@@ -1,0 +1,20 @@
+name: scribe-published-policy
+path: scribe-api-published.rego
+
+description: "Verify Scribe Published policy violations (by API)"
+
+labels:
+  - scribe
+initiatives:
+  - bundle-rule
+
+require-scribe-api: true
+
+evidence: 
+  signed: false
+  format-type: cyclonedx-json
+  # predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    published:
