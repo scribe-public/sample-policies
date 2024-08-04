@@ -33,12 +33,12 @@ allow {
 
 reason = v {
 	allow
-	v := "No secrets are older than max_secret_age months"
+	v := "No secrets are older than the threshold"
 }
 
 reason = v {
 	not allow
-	v := "There is at least one secrets are older than max_secret_age months"
+	v := "There is at least one secret that's older than the threshold"
 }
 
 violations = j {

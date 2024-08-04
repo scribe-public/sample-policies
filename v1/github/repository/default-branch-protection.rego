@@ -27,12 +27,12 @@ allow {
 
 reason = v {
 	allow
-	v := "All values of branch protected are set to the desired value  in the configuration file."
+	v := "Default branch protection is enabled"
 }
 
 reason = v {
 	not allow
-	v := "There is at least one value of branch protected is not set to the desired value in the configuration file."
+	v := "Default branch protection is not enabled"
 }
 
 violations = j {
