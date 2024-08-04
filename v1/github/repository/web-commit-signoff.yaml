@@ -1,9 +1,9 @@
-name: branch-protection
-path: branch-protection.rego
+name: web-commit-signoff
+path: web-commit-signoff.rego
 
 level: warning
 
-description: "A rule to verify that branch protected is set to the desired value in the configuration file."
+description: "A rule to verify that the binary field: web_commit_signoff_required is properly set"
 
 evidence:
   signed: false
@@ -14,4 +14,4 @@ evidence:
     - "asset_type=repository"
 
 with:
-  desired_protected: true
+  desired_value: true
