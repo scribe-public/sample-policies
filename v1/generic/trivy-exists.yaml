@@ -5,7 +5,6 @@ labels:
 initiatives:
   - Default
 evidence:
-  signed: true
   format-type: generic
   target_type: data
   predicate_type: https://aquasecurity.github.io/trivy/v0.42/docs/configuration/reporting/#json
