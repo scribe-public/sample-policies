@@ -1,0 +1,11 @@
+name: required-evidence
+description: "Verify required evidence exists"
+labels:
+  - 3rd-party
+initiatives:
+  - Default
+evidence:
+  signed: true
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/generic/v0.1
