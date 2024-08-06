@@ -1,7 +1,7 @@
 name: "CT-9"
 defaults:
   evidence:
-    signed: false
+    signed: true
     labels:
       - "asset_type=repository"
       - '{{ .Args.RepositoryAsset }}'
