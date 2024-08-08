@@ -1,0 +1,13 @@
+name: "CT-1"
+defaults:
+  evidence:
+    signed: true
+    labels:
+      - "asset_type=organization"
+      - '{{ .Args.OrganizationAsset }}'
+rules:
+  - uses: gitlab/org/max-admins@v1
+    description: "[CT-1] Restrict the maximum number of organization admins"
+    level: warning
+    with:
+      max_admins: 1

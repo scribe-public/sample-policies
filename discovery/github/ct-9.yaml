@@ -1,0 +1,11 @@
+name: "CT-9"
+defaults:
+  evidence:
+    signed: true
+    labels:
+      - "asset_type=repository"
+      - '{{ .Args.RepositoryAsset }}'
+rules:
+  - uses: github/repository/default-branch-protection@v1
+    description: "[CT-9] Verify that the repo's branch protection is enabled"
+    level: warning

@@ -11,8 +11,7 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - "asset_type=organization"
+    - "asset_type=repository"
 
 with:
-  desired_value: false
-  
+  desired_value: true
