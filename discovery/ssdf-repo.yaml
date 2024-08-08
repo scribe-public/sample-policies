@@ -1,0 +1,17 @@
+name: "SSDF-REPO"
+defaults:
+  evidence:
+    signed: false
+
+rules:
+  - uses: github/repository/branch-protection@v1
+    description: "[SSDF-PS-1] Require branch protection for the repository"
+    level: warning
+    with:
+      desired_value: true
+
+  - uses: /Users/danielnebenzahl/code/sample-policies/v1/github/repository/repo-private.yaml
+    description: "[SSDF-PS-1] Assure the repository is private"
+    level: warning
+    with:
+      desired_value: true
