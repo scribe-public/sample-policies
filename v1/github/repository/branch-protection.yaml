@@ -3,7 +3,7 @@ path: branch-protection.rego
 
 level: warning
 
-description: "A rule to verify that branch protected is set to the desired value in the configuration file."
+description: "A rule to verify that branch protected is set."
 
 evidence:
   signed: false
