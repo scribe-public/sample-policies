@@ -10,7 +10,9 @@ default desired_value := false
 
 desired_value {
     input.config.args.desired_value
-} 
+}
+
+description = "This rule checks whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface"
 
 verify = v {
 	v := {
@@ -19,6 +21,8 @@ verify = v {
 			"type": "Missconfiguration",
 			"details": violations,
 		},
+		"short_description": "Web Commit Signoff Required",
+		"description": description,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
