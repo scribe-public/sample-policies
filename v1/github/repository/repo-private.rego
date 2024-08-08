@@ -52,20 +52,20 @@ violations = j {
 		
         repository := project.repository
 
-		not visibility
+		not visibility(repository)
 
 		r := {
             "scribe_type": repository.scribe_type,
             "name": repository.name,
 			"id": repository.id,
 			"query_id": repository.query_id,
-			"visibility": visibility
+			"visibility": repository.result_object.visibility
         }
 	]
 }
 
 
 # Define the function to check if the repository is private
-visibility {
+visibility(repository) {
     repository.result_object.visibility == "private"
 }

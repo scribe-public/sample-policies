@@ -10,7 +10,7 @@ rules:
     with:
       desired_value: true
 
-  - uses: /Users/danielnebenzahl/code/sample-policies/v1/github/repository/repo-private.yaml
+  - uses: github/repository/repo-private@v1
     description: "[SSDF-PS-1] Assure the repository is private"
     level: warning
     with:
