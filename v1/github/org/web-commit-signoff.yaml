@@ -3,7 +3,7 @@ path: web-commit-signoff.rego
 
 level: warning
 
-description: "A rule to verify that the binary field: web_commit_signoff_required is properly set"
+description: "A rule to verify that to organization repositories are required to sign off on commits they make through GitHub's web interface"
 
 evidence:
   signed: false
