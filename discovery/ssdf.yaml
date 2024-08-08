@@ -1,0 +1,12 @@
+name: "SSDF"
+defaults:
+  evidence:
+    signed: true
+rules:
+  - uses: github/org/2fa@v1
+    description: "[SSDF-PS-1] Require 2FA for accessing code"
+    level: warning
+
+  - uses: github/org/create-private-repos@v1
+    description: "[SSDF-PS-2] Members cannot create repositories"
+    level: warning
