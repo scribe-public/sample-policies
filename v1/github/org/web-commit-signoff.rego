@@ -33,12 +33,12 @@ allow {
 
 reason = v {
 	allow
-	v := "All values of the binary field are properly set"
+	v := "web_commit_signoff is properly set"
 }
 
 reason = v {
 	not allow
-	v := "There is at least one value of a binary field that is not properly set"
+	v := "web_commit_signoff is not properly set"
 }
 
 violations = j {
