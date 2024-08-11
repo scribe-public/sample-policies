@@ -8,6 +8,8 @@ rules:
     description: "[SSDF-PS-2] Provide a mechanism to verify the integrity of the image"
     name: "image-verifiable"
     level: warning
+    initiatives: 
+     - ssdf
 
   - uses: demodata/data@experimental
     description: |
@@ -21,8 +23,12 @@ rules:
       reason: | 
         The code is archived in a repository
         This is a demo rule, planned to run from a workflow in a repository.
+      initiatives: 
+        - ssdf
 
   - uses: sbom/artifact-signed@v1
     description: "[SSDF-PS-3.2] Archive SBOM. This rule will fail also if the SBOM is not signed"
     name: "sbom-archived"
     level: warning
+    initiatives: 
+     - ssdf

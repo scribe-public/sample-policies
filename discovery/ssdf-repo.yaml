@@ -7,11 +7,16 @@ rules:
   - uses: github/repository/branch-protection@v1
     description: "[SSDF-PS-1] Require branch protection for the repository"
     level: warning
+    initiatives: 
+     - ssdf
     with:
       desired_value: true
 
   - uses: github/repository/repo-private@v1
     description: "[SSDF-PS-1] Assure the repository is private"
     level: warning
+    initiatives: 
+     - ssdf
     with:
       desired_value: true
+    

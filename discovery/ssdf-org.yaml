@@ -6,20 +6,28 @@ rules:
   - uses: github/org/2fa@v1
     description: "[SSDF-PS-1] Require 2FA for accessing code"
     level: warning
+    initiatives: 
+     - ssdf
 
 # TODO: Remove rule: the user cannot get it to work if it is not an enterprise account
   - uses: github/org/create-private-repos@v1
     description: "[SSDF-PS-1] Members cannot create public repositories"
     level: warning
+    initiatives: 
+     - ssdf
 
   - uses: gitlab/org/max-admins@v1
     description: "[SSDF-PS-1] Restrict the maximum number of organization admins"
     level: warning
+    initiatives: 
+     - ssdf
     with:
       max_admins: 3
 
   - uses: github/org/web-commit-signoff@v1
     description: "[SSDF-PS-1] Require contributors to sign when committing to Github through the web interface"
     level: warning
+    initiatives: 
+     - ssdf
     with:
       desired_value: true
