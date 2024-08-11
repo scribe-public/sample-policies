@@ -14,4 +14,3 @@ evidence:
     - "asset_type=repository"
 
 with:
-  desired_value: true

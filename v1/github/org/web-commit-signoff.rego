@@ -6,12 +6,6 @@ default allow := false
 
 default violations := []
 
-default desired_value := false
-
-desired_value {
-    input.config.args.desired_value
-}
-
 verify = v {
 	v := {
 		"allow": allow,
@@ -33,12 +27,12 @@ allow {
 
 reason = v {
 	allow
-	v := "web_commit_signoff is properly set"
+	v := "Contributors to org repos are required to sign off on commits they make through GitHub's web interface"
 }
 
 reason = v {
 	not allow
-	v := "web_commit_signoff is not properly set"
+	v := "Contributors to org repos are NOT required to sign off on commits they make through GitHub's web interface"
 }
 
 violations = j {
@@ -48,7 +42,7 @@ violations = j {
         organization := project.organization
         organization_details := organization.result_object.organization_details
         
-        organization_details.web_commit_signoff_required != desired_value
+        organization_details.web_commit_signoff_required != true
 
 		r := {
             "scribe_type": organization.scribe_type,

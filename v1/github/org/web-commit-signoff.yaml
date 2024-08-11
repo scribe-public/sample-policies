@@ -14,5 +14,3 @@ evidence:
     - "asset_type=organization"
 
 with:
-  desired_value: false
-  
