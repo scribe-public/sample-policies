@@ -7,7 +7,7 @@ defaults:
       - '{{ .Args.RepositoryAsset }}'
 rules:
   - uses: github/repository/web-commit-signoff@v1
-    description: "[CT-2] Verify that the web_commit_signoff_required field is properly set"
+    description: "[CT-2] Verify that contributors to organization repositories are required to sign off on commits they make through GitHub's web interface"
     level: warning
 
   - uses: github/repository/signed-commits@v1
