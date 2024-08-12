@@ -6,12 +6,6 @@ default allow := false
 
 default violations := []
 
-default valid_regex_list := []
-
-desired_value {
-    input.config.args.desired_value
-} 
-
 verify = v {
 	v := {
 		"allow": allow,
