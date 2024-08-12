@@ -1,9 +1,9 @@
-name: branch-protection
-path: branch-protection.rego
+name: repo-private
+path: repo-private.rego
 
 level: warning
 
-description: "A rule to verify that branch protected is set."
+description: "A rule to verify that a repository is private"
 
 evidence:
   signed: false
@@ -14,5 +14,3 @@ evidence:
     - "asset_type=repository"
 
 with:
-  desired_protected: true
-  
