@@ -1,0 +1,19 @@
+name: allowed-components
+path: allowed-components.rego
+
+description: "Verify the artifact has only allowed components"
+labels:
+  - sbom
+initiatives:
+  - bundle-rule
+
+evidence:
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+
+with:
+  types:
+    - library
+    - operating-system
+  allowlist: []
