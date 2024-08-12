@@ -1,9 +1,9 @@
-name: branch-protection
-path: branch-protection.rego
+name: default-branch-protection
+path: default-branch-protection.rego
 
 level: warning
 
-description: "A rule to verify that branch protected is set."
+description: "A rule to verify that the default branch protection is enabled"
 
 evidence:
   signed: false
@@ -12,6 +12,3 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
     - "asset_type=repository"
-
-with:
-  desired_protected: true

@@ -39,16 +39,15 @@ violations = j {
 	j := [r |
 
 		project := input.evidence.predicate.content[_]
-        organization := project.organization
-        organization_details := organization.result_object.organization_details
-        
+		some ancestor in project.ancestors
+		ancestor.scribe_type == "organization"
+        organization_details := ancestor.result_object.organization_details
         organization_details.web_commit_signoff_required != true
 
 		r := {
-            "scribe_type": organization.scribe_type,
-            "name": organization.name,
-			"id": organization.id,
-			"query_id": organization.query_id,
+            "name": ancestor.result_object.name,
+			"id": ancestor.result_object.id,
+			"query_id": ancestor.result_object.query_id,
             "organization_details": organization_details,
         }
 	]
