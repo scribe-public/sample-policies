@@ -14,4 +14,4 @@ evidence:
     - "asset_type=namespace"
 
 with:
-  threshold_date: "" # ISO 8601 string date format
+  threshold_date: "1970-01-01T00:00:00Z" # ISO 8601 string date format
