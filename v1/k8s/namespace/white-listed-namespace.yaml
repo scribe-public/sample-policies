@@ -1,9 +1,9 @@
-name: allowed-registries
-path: allowed-registries.rego
+name: white-listed-namespace
+path: white-listed-namespace.rego
 
 level: warning
 
-description: "A rule to verify that all discovered images come from allowed registries"
+description: "A rule to verify that all namespace are allowed"
 
 evidence:
   signed: false
@@ -14,5 +14,4 @@ evidence:
     - "asset_type=namespace"
 
 with:
-    allowed_registries:
-        - "gcr.io"
+  white_listed_namespace: []

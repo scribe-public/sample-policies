@@ -1,0 +1,17 @@
+name: Verify Pod Duration
+path: verify-pod-duration.rego
+
+level: warning
+
+description: "A rule to verify that all pods are not running over threshold. All violations are running pods that were started before the threshold date."
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=pod"
+
+with:
+  threshold_date: "1970-01-01T00:00:00Z" # ISO 8601 string date format

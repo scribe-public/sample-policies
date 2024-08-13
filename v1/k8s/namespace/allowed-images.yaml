@@ -1,0 +1,17 @@
+name: blocked-images
+path: blocked-images.rego
+
+level: warning
+
+description: "A rule to verify that all images are allowed"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+
+with:
+  images_to_include: []
