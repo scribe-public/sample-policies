@@ -60,5 +60,3 @@ violations = j {
 is_valid(container_info) {
 	container_info.state.terminated != null 
 }
-
-
