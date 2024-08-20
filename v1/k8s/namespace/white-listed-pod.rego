@@ -54,12 +54,12 @@ reason = v {
 violations = j {
 	j := [r |
 
-		projects := object.remove(input.evidence.predicate.content, {"metadata"})
+		namespaces := object.remove(input.evidence.predicate.content, {"metadata"})
 		
-		project := projects[_]
-		pod := project.pod
+		namespace := namespaces[_]
+		namespace.namespace.name in verify_namespaces
 
-		pod.result_object.namespace in verify_namespaces
+		pod := namespace.pod[_]
 		
 		not is_valid(pod)
 
