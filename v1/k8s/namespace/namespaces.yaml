@@ -1,5 +1,5 @@
-name: white-listed-namespace
-path: white-listed-namespace.rego
+name: namespaces
+path: namespaces.rego
 
 level: warning
 

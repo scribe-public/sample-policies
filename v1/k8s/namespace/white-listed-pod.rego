@@ -57,7 +57,7 @@ violations = j {
 		namespaces := object.remove(input.evidence.predicate.content, {"metadata"})
 		
 		namespace := namespaces[_]
-		namespace.namespace.name in verify_namespaces
+		namespace_match(namespace.namespace, verify_namespaces)
 
 		pod := namespace.pod[_]
 		
@@ -69,6 +69,11 @@ violations = j {
 			"query_id": pod.query_id,
         }
 	]
+}
+
+namespace_match(namespace, verify_namespaces) {
+    some namespace_regex in verify_namespaces
+    regex.match(namespace_regex, namespace.name)
 }
 
 is_valid(pod) {

@@ -15,4 +15,5 @@ evidence:
 
 with:
   white_listed_pod: []
-  verify_namespaces: []
+  verify_namespaces:
+    - ".*"

@@ -6,6 +6,12 @@ default allow := false
 
 default violations := []
 
+default check_namespaces := [".*"]
+
+check_namespaces = input.config.args.namespaces {
+	input.config.args.namespaces
+} 
+
 verify = v {
 	v := {
 		"allow": allow,
@@ -43,6 +49,8 @@ violations = j {
 		namespace.scribe_type == "namespace"
 		container_info := namespace.result_object.container_info[0]
 
+		namespace_match(namespace, check_namespaces)
+
 		not is_valid(container_info)
 
 		r := {
@@ -54,6 +62,11 @@ violations = j {
 			"container_info.state": container_info.state,
         }
 	]
+}
+
+namespace_match(namespace, regexes) {
+    some name_regex in regexes
+    regex.match(name_regex, namespace.name)
 }
 
 
