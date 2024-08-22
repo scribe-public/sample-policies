@@ -59,7 +59,7 @@ violations = j {
 		project := projects[_]
 		pod := project.pod
 
-		pod.result_object.namespace in verify_namespaces
+		namespace_match(pod.result_object.namespace, verify_namespaces)
 		
 		not is_valid(pod)
 
@@ -69,6 +69,11 @@ violations = j {
 			"query_id": pod.query_id,
         }
 	]
+}
+
+namespace_match(namespace, verify_namespaces) {
+    some namespace_regex in verify_namespaces
+    regex.match(namespace_regex, namespace.name)
 }
 
 is_valid(pod) {
