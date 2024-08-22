@@ -6,10 +6,10 @@ default allow := false
 
 default violations := []
 
-default white_listed_namespace := []
+default namespaces := []
 
-white_listed_namespace = input.config.args.white_listed_namespace {
-	input.config.args.white_listed_namespace
+namespaces = input.config.args.namespaces {
+	input.config.args.namespaces
 } 
 
 verify = v {
@@ -65,8 +65,8 @@ violations = j {
 }
 
 is_valid(namespace) {
-	count(white_listed_namespace) > 0
+	count(namespaces) > 0
 	name := namespace.name
-	some pattern in white_listed_namespace
+	some pattern in namespaces
 	regex.match(pattern, name)
 }

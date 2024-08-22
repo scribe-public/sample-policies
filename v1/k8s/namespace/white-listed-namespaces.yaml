@@ -1,5 +1,5 @@
-name: namespaces
-path: namespaces.rego
+name: white-listed-namespaces
+path: white-listed-namespaces.rego
 
 level: warning
 
@@ -14,4 +14,4 @@ evidence:
     - "asset_type=namespace"
 
 with:
-  white_listed_namespace: []
+  namespaces: []
