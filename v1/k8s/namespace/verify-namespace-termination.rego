@@ -47,10 +47,10 @@ violations = j {
 		project := input.evidence.predicate.content[_]
 		namespace := project.namespace[_]
 		namespace.scribe_type == "namespace"
-		container_info := namespace.result_object.container_info[0]
 
 		namespace_match(namespace, check_namespaces)
 
+		container_info := namespace.result_object.container_info[0]
 		not is_valid(container_info)
 
 		r := {
