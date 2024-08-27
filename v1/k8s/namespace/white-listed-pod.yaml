@@ -1,9 +1,9 @@
-name: allowed-registries
-path: allowed-registries.rego
+name: white-listed-pod
+path: white-listed-pod.rego
 
 level: warning
 
-description: "A rule to verify that all discovered images come from allowed registries"
+description: "A rule to verify that all pod are allowed"
 
 evidence:
   signed: false
@@ -14,5 +14,6 @@ evidence:
     - "asset_type=namespace"
 
 with:
-    allowed_registries:
-        - "gcr.io"
+  white_listed_pod: []
+  verify_namespaces:
+    - ".*"
