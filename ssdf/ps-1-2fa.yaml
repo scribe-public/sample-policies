@@ -1,5 +1,4 @@
 uses: github/org/2fa@v1
-# path: ../v1/github/org/2fa.rego
 name: "[SSDF-PS-1] Enforce 2FA"
 description: "[SSDF-PS-1] Require 2FA for accessing code"
 
