@@ -1,5 +1,6 @@
-uses: github/org/2fa@v1
 name: "[SSDF-PS-1] Enforce 2FA"
+uses: github/org/2fa@v1
+
 description: "[SSDF-PS-1] Require 2FA for accessing code"
 
 initiatives: 

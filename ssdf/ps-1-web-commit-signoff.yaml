@@ -1,10 +1,10 @@
 name: "[SSDF-PS-1] Require signoff on web commits"
 uses: github/org/web-commit-signoff@v1
 
+description: "[SSDF-PS-1] Require contributors to sign when committing to Github through the web interface"
+
 initiatives: 
   - ssdf-initiative
-
-description: "[SSDF-PS-1] Require contributors to sign when committing to Github through the web interface"
 
 with:
   desired_value: true
