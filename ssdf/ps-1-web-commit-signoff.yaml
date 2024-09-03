@@ -1,0 +1,19 @@
+name: "[SSDF-PS-1] Require signoff on web commits"
+path: ../v1/github/org/web-commit-signoff.rego
+
+initiatives: 
+  - ssdf-initiative
+
+description: "[SSDF-PS-1] Require contributors to sign when committing to Github through the web interface"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=organization"
+
+with:
+  desired_value: true
+  
