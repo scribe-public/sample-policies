@@ -9,7 +9,7 @@ rules:
   - uses: ssdf/ps-1-2fa@frameworks
     level: warning
 
-  - uses: ssdf/ps-1-max-admins@frameworks
+  - uses: ssdf/ps-1-limit-admins@frameworks
     level: warning
 
   - uses: ssdf/ps-1-web-commit-signoff@frameworks

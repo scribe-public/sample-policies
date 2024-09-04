@@ -7,5 +7,5 @@ rules:
   - uses: ssdf/ps-2-image-verifiable@frameworks
     level: warning
 
-  - uses: ssdf/ps-3.2-archive-sbom@frameworks
+  - uses: ssdf/ps-3.2-archived-sbom@frameworks
     level: warning
