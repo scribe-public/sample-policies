@@ -6,7 +6,7 @@ description: |
   "We assume running in Github thus the code is allways stored in a repository"
 
 initiatives: 
-  - ssdf-initiative
+  - SSDF
 
 with: 
   allow: true

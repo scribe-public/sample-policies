@@ -5,7 +5,7 @@ description: "[SSDF-PS-1] Restrict the maximum number of organization admins"
 level: error
 
 initiatives: 
-  - ssdf-initiative
+  - SSDF
 
 with:
   max_admins: 3

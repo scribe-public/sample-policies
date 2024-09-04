@@ -5,7 +5,7 @@ description: "[SSDF-PS-1] Require 2FA for accessing code"
 level: error
 
 initiatives: 
-  - ssdf-initiative
+  - SSDF
 
 with:
   desired_value: false

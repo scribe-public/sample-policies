@@ -5,7 +5,7 @@ description: "[SSDF-PS-1] Assure the repository is private"
 level: error
 
 initiatives: 
-  - ssdf-initiative
+  - SSDF
 
 with:
   desired_value: true
