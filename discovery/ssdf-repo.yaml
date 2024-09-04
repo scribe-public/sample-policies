@@ -13,4 +13,4 @@ rules:
 
   - uses: ssdf/ps-1-repo-private@frameworks
     level: warning
-    
+

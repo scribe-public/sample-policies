@@ -1,0 +1,18 @@
+name: Verify Namespace Termination
+path: verify-namespace-termination.rego
+
+level: warning
+
+description: "A rule to verify that all namespaces have terminated"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+
+with:
+  namespaces:
+    - ".*"

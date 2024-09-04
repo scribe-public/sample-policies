@@ -1,0 +1,15 @@
+name: "CT-2"
+defaults:
+  evidence:
+    signed: true
+    labels:
+      - "asset_type=repository"
+      - '{{ .Args.RepositoryAsset }}'
+rules:
+  - uses: github/repository/web-commit-signoff@v1
+    description: "[CT-2] Verify that contributors to organization repositories are required to sign off on commits they make through GitHub's web interface"
+    level: warning
+
+  - uses: github/repository/signed-commits@v1
+    description: "[CT-2] Verify that all commits in the project are signed"
+    level: warning

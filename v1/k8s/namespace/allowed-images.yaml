@@ -1,9 +1,9 @@
-name: branch-protection
-path: branch-protection.rego
+name: blocked-images
+path: blocked-images.rego
 
 level: warning
 
-description: "A rule to verify that branch protected is set."
+description: "A rule to verify that all images are allowed"
 
 evidence:
   signed: false
@@ -11,7 +11,7 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
-    - "asset_type=repository"
+    - "asset_type=namespace"
 
 with:
-  desired_protected: true
+  images_to_include: []

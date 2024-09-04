@@ -3,7 +3,10 @@ path: create-private-repos.rego
 
 level: warning
 
-description: "A rule to verify that the binary field: members_can_create_private_repositories is properly set"
+description: |
+  "A rule to verify that the binary field: members_can_create_private_repositories is properly set"
+  "Used to limit the creation of public repositories."
+  "Supported only in GitHub Enterprise."
 
 evidence:
   signed: false
@@ -14,5 +17,5 @@ evidence:
     - "asset_type=organization"
 
 with:
-  desired_value: false
+  desired_value: true
 
