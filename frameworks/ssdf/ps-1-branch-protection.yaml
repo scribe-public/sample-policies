@@ -1,0 +1,12 @@
+name: "Branch protected"
+uses: github/repository/branch-protection@v1
+
+description: "[SSDF-PS-1] Require branch protection for the repository"
+level: error
+
+initiatives: 
+  - SSDF
+
+with:
+  desired_protected: true
+  

@@ -27,12 +27,12 @@ allow {
 
 reason = v {
 	allow
-	v := "Contributors to org repos are required to sign off on commits they make through GitHub's web interface"
+	v := "web_commit_signoff_required is properly set"
 }
 
 reason = v {
 	not allow
-	v := "Contributors to org repos are NOT required to sign off on commits they make through GitHub's web interface"
+	v := "web_commit_signoff_required is NOT set"
 }
 
 violations = j {

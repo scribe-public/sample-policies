@@ -2,23 +2,15 @@ name: "SSDF-REPO"
 defaults:
   evidence:
     signed: false
+    labels:
+      - '{{ .Args.RepositoryAsset }}'
 
 rules:
-  - uses: github/repository/branch-protection@v1
-    description: "[SSDF-PS-1] Require branch protection for the repository"
-    level: warning
-    name: "[SSDF-PS-1] Branch protected"
-    initiatives: 
-     - ssdf-initiative
-    with:
-      desired_value: true
+  - uses: ssdf/ps-3.1-code-archived@frameworks
 
-  - uses: github/repository/repo-private@v1
-    description: "[SSDF-PS-1] Assure the repository is private"
+  - uses: ssdf/ps-1-branch-protection@frameworks
     level: warning
-    name: "[SSDF-PS-1] Repo private"
-    initiatives: 
-     - ssdf-initiative
-    with:
-      desired_value: true
-    
+
+  - uses: ssdf/ps-1-repo-private@frameworks
+    level: warning
+
