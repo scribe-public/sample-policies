@@ -8,6 +8,9 @@ description: |
 initiatives: 
   - SSDF
 
+labels:
+  - SSDF
+
 with: 
   allow: true
   short_description: Code is archived.

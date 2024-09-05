@@ -5,3 +5,6 @@ description: "PS.3.2 Archive SBOM"
 
 initiatives: 
   - SSDF
+
+labels:
+  - SSDF

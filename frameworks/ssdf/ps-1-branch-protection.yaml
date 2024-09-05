@@ -7,6 +7,9 @@ level: error
 initiatives: 
   - SSDF
 
+labels:
+  - SSDF
+
 with:
   desired_protected: true
   
