@@ -7,9 +7,11 @@ rules:
 
   - uses: sbom/artifact-signed@v1
     description: "[CT-13] Verify artifact is signed"
+    level: error
 
   - uses: sbom/blocklist-packages@v1
     description: "[CT-13] Verify disallowed artifact's dependency count does not exceed specified threshold"
+    level: error
     with:
       blocklist:
         - "liblzma5@5.6.0"
@@ -19,6 +21,7 @@ rules:
 
   - uses: api/scribe-api-cve@v1
     description: "[CT-13] Verify no critical or high CVEs"
+    level: error
     with:
       superset:
         cve:

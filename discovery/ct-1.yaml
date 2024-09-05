@@ -8,5 +8,6 @@ defaults:
 rules:
   - uses: gitlab/org/max-admins@v1
     description: "[CT-1] Restrict the maximum number of organization admins"
+    level: error
     with:
       max_admins: 1

@@ -5,6 +5,7 @@ defaults:
 rules:
   - uses: api/scribe-api-cve@v1
     description: "[CT-6] Verify no critical or high CVEs"
+    level: error
     with:
       superset:
         cve:
