@@ -1,7 +1,7 @@
 name: "SBOM archived"
 uses: sbom/artifact-signed@v1
 
-description: "[SSDF-PS-3.2] Archive SBOM. This rule will fail also if the SBOM is not signed"
+description: "[SSDF-PS-3.2] Archive SBOM"
 
 initiatives: 
   - SSDF

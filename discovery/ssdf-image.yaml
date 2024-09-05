@@ -1,7 +1,7 @@
 name: "SSDF-IMAGE"
 defaults:
   evidence:
-    signed: true
+    signed: false
 
 rules:
   - uses: ssdf/ps-2-image-verifiable@frameworks
