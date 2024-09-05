@@ -1,7 +1,7 @@
-name: "Limit admins"
+name: "PS.1 Limit admins"
 uses: gitlab/org/max-admins@v1
 
-description: "[SSDF-PS-1] Restrict the maximum number of organization admins"
+description: "PS.1 Restrict the maximum number of organization admins"
 level: error
 
 initiatives: 

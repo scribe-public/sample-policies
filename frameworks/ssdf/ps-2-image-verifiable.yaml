@@ -1,7 +1,7 @@
-name: "Image-verifiable"
+name: "PS.2 Image-verifiable"
 uses: sbom/artifact-signed@v1
 
-description: "[SSDF-PS-2] Provide a mechanism to verify the integrity of the image"
+description: "PS.2 Provide a mechanism to verify the integrity of the image"
 
 initiatives: 
   - SSDF
