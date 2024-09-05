@@ -1,0 +1,7 @@
+name: "SBOM archived"
+uses: sbom/artifact-signed@v1
+
+description: "[SSDF-PS-3.2] Archive SBOM"
+
+initiatives: 
+  - SSDF

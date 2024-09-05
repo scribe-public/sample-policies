@@ -1,0 +1,11 @@
+name: "Repo private"
+uses: github/repository/repo-private@v1
+
+description: "[SSDF-PS-1] Assure the repository is private"
+level: error
+
+initiatives: 
+  - SSDF
+
+with:
+  desired_value: true
