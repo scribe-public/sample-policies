@@ -1,11 +1,14 @@
-name: "Code archived"
+name: "PS.3.1 Code archived"
 uses: demodata/data@experimental
 
 description: |
-  "[SSDF-PS-3.1] Verify that the software release data is archived"
+  "PS.3.1 Verify that the software release data is archived"
   "We assume running in Github thus the code is allways stored in a repository"
 
 initiatives: 
+  - SSDF
+
+labels:
   - SSDF
 
 with: 
