@@ -33,12 +33,12 @@ allow {
 
 reason = v {
 	allow
-	v := "All values of the binary field are properly set"
+	v := "2FA authentication is enabled"
 }
 
 reason = v {
 	not allow
-	v := "There is at least one value of a binary field that is not properly set"
+	v := "2FA authentication is NOT enabled"
 }
 
 violations = j {
