@@ -1,0 +1,22 @@
+name: column_set_to_value
+description: "Verify that a column is set to a specific value"
+path: column_set_to_value.rego
+
+labels:
+  - 3rd-party
+
+evidence:
+  content-type: attest-generic
+  target_type: data
+  sbomversion: sha256:c0f75d00b3eb544ce1ae58bb6c02dc7924dacc455078b5d3bd8ab16ddb6c91f9
+  predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+
+with:
+  condition:
+    column: "requirement"
+    values: 
+     - "R-3"
+  column: "Status"
+  values: 
+   - "Compliant"
+  template: "The Status column value is {{.Status}}. Recorde updated at {{.Date}}"

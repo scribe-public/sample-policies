@@ -1,0 +1,20 @@
+[
+  {
+    "requirement": "R-1",
+    "Description": "have organization security responsibilities policy",
+    "Status": "Comply",
+    "Evidence": "https://fileserver/myevidence",
+    "Remarks": "No remarks",
+    "Date": "9/6/2024",
+    "Weight": 1
+  },
+  {
+    "requirement": "R-2",
+    "Description": "have incidnet response policy",
+    "Status": "Comply",
+    "Evidence": "",
+    "Remarks": "",
+    "Date": "",
+    "Weight": 2
+  }
+]
