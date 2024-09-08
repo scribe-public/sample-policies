@@ -11,6 +11,7 @@ evidence:
   sbomversion: sha256:c0f75d00b3eb544ce1ae58bb6c02dc7924dacc455078b5d3bd8ab16ddb6c91f9
   predicate_type: http://scribesecurity.com/evidence/generic/v0.1
 
+# All values strings are globs
 with:
   condition:
     column: "requirement"
