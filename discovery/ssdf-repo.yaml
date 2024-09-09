@@ -6,11 +6,11 @@ defaults:
       - '{{ .Args.RepositoryAsset }}'
 
 rules:
-  - uses: ssdf/ps-3.1-code-archived@frameworks
+  - uses: ssdf/ps-3.1-code-archived@v1
 
-  - uses: ssdf/ps-1-branch-protection@frameworks
+  - uses: ssdf/ps-1-branch-protection@v1
     level: warning
 
-  - uses: ssdf/ps-1-repo-private@frameworks
+  - uses: ssdf/ps-1-repo-private@v1
     level: warning
 
