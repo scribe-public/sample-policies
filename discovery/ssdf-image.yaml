@@ -4,8 +4,8 @@ defaults:
     signed: false
 
 rules:
-  - uses: ssdf/ps-2-image-verifiable@frameworks
+  - uses: ssdf/ps-2-image-verifiable@v1
     level: warning
 
-  - uses: ssdf/ps-3.2-archived-sbom@frameworks
+  - uses: ssdf/ps-3.2-archived-sbom@v1
     level: warning
