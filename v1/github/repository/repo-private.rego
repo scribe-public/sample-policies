@@ -6,6 +6,13 @@ default allow := false
 
 default violations := []
 
+default exception := false
+
+exception := {
+	input.config.args.exception
+}
+
+
 verify = v {
 	v := {
 		"allow": allow,
@@ -26,13 +33,20 @@ allow {
 }
 
 reason = v {
+	not exception
 	allow
 	v := "The repository is private"
 }
 
 reason = v {
+	not exception
 	not allow
 	v := "The repository is not private"
+}
+
+reason = v {
+	exception
+	v := "The rule is set to exception"
 }
 
 # j is now a list in order to make sure duplications are not lost
