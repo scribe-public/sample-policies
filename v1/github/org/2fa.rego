@@ -6,11 +6,9 @@ default allow := false
 
 default violations := []
 
-default exception := false
+# default exception := false
 
-exception := {
-	input.config.args.exception
-}
+exception := input.config.args.exception
 
 default desired_value := true
 
@@ -51,7 +49,7 @@ reason = v {
 }
 
 reason = v {
-	exception == true
+	exception
 	v := "The rule is set to exception"
 }
 
