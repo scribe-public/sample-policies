@@ -31,4 +31,6 @@ with:
       paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
       executable_to_check_list: []      # list of strings for executables that will be checked
 
+  # Required for workflow    
+  pipelineRunId: '{{ .Args.pipelineRunId }}'
 
