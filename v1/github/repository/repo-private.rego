@@ -29,7 +29,12 @@ verify = v {
 }
 
 allow {
+	not exception
 	count(violations) == 0
+}
+
+allow {
+	exception
 }
 
 reason = v {
