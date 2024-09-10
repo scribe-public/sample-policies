@@ -51,7 +51,7 @@ reason = v {
 }
 
 reason = v {
-	exception
+	exception == true
 	v := "The rule is set to exception"
 }
 
