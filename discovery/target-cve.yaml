@@ -1,0 +1,15 @@
+name: "target-cve"
+defaults:
+  evidence:
+    signed: true
+rules:
+  - uses: api/scribe-api-cve@v1
+    description: "[target-cve] Verify Scribe CVE policy violations (by API) on a target"
+    level: error
+    with:
+      superset:
+        cve:
+          severity: 6
+          max: 0
+          input_name: "{{ .Context.input_name }}"
+          input_tag: "{{ .Context.input_tag }}"
