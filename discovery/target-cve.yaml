@@ -1,7 +1,4 @@
 name: "target-cve"
-defaults:
-  evidence:
-    signed: true
 rules:
   - uses: api/scribe-api-cve@v1
     description: "[target-cve] Verify Scribe CVE policy violations (by API) on a target"
