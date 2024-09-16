@@ -17,6 +17,16 @@ errors[msg] {
 	msg := "threshold_date cannot be null nor empty"
 }
 
+errors[msg] {
+	input.evidence.predicate == null
+	msg := "Predicate is missing"
+}
+
+errors[msg] {
+	input.evidence.predicate.content == null
+	msg := "Content is missing"
+}
+
 verify = v {
 	v := {
 		"allow": allow,
