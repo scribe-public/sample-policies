@@ -1,6 +1,6 @@
-package superset.cve
+package internal.superset.cve
 
-import data.superset
+import data.internal.superset
 import future.keywords.every
 import future.keywords.in
 

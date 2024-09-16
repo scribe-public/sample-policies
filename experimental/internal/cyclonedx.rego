@@ -1,6 +1,6 @@
-package policies.sbom_parser
+package internal.sbom_parser
 
-import data.policies.intoto_evidence as evidence
+import data.internal.intoto_evidence as evidence
 import future.keywords.in
 import future.keywords.every
 

@@ -1,6 +1,6 @@
-package superset.licences
+package internal.superset.licences
 
-import data.superset
+import data.internal.superset
 import future.keywords.every
 import future.keywords.in
 

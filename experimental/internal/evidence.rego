@@ -1,4 +1,4 @@
-package evidence
+package internal.evidence
 import future.keywords.in
 import future.keywords.every
 
@@ -47,7 +47,7 @@ post(url, upload_data, token) = response {
 }
 
 login(config) = v {
-  v := data.auth.evidence.getToken(serviceURL(config), config.auth)
+  v := data.internal.auth.evidence.getToken(serviceURL(config), config.auth)
 }
 
 errors[msg] {

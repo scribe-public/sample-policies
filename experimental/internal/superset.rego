@@ -1,10 +1,10 @@
-package superset
+package internal.superset
 
-import data.auth.evidence as auth_evidence
-import data.auth.superset as auth_superset
+import data.internal.auth.evidence as auth_evidence
+import data.internal.auth.superset as auth_superset
 import data.cve
 import data.licences
-import data.superset.datasets as datasets
+import data.internal.superset.datasets as datasets
 import data.unmaintained
 
 import future.keywords.every

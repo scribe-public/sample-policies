@@ -1,4 +1,4 @@
-package policies.intoto_evidence
+package internal.intoto_evidence
 
 # import data
 import future.keywords.in

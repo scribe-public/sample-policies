@@ -1,6 +1,6 @@
-package superset.images
+package internal.superset.images
 
-import data.superset
+import data.internal.superset
 import future.keywords.every
 import future.keywords.in
 

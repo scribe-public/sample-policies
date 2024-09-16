@@ -1,4 +1,4 @@
-package auth.superset
+package internal.auth.superset
 import future.keywords.in
 
 package_loaded := true

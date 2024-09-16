@@ -1,6 +1,6 @@
-package superset.unmaintained
+package internal.superset.unmaintained
 
-import data.superset
+import data.internal.superset
 import future.keywords.every
 import future.keywords.in
 

@@ -1,4 +1,4 @@
-package auth.evidence
+package internal.auth.evidence
 import future.keywords.in
 
 package_loaded := true

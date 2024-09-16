@@ -1,9 +1,9 @@
-package superset.policy
-import data.superset.licences as licences_policy
-import data.superset.cve as cve_policy
-import data.superset.unmaintained as unmaintained_policy
-import data.superset.images as images_policy
-import data.superset.published as published_policy
+package internal.superset.policy
+import data.internal.superset.licences as licences_policy
+import data.internal.superset.cve as cve_policy
+import data.internal.superset.unmaintained as unmaintained_policy
+import data.internal.superset.images as images_policy
+import data.internal.superset.published as published_policy
 
 images = v {
   v := {

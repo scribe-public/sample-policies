@@ -1,10 +1,10 @@
-package policies.git_owner
+package internal.git_owner
 
 import data
 import future.keywords.in
 import future.keywords.every
-import data.policies.sbom_parser as parser
-import data.policies.intoto_evidence as evidence
+import data.internal.sbom_parser as parser
+import data.internal.intoto_evidence as evidence
 
 default allow = false
 default allow_signed_commits = false

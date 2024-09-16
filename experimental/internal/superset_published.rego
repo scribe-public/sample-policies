@@ -1,8 +1,8 @@
-package superset.published
+package internal.superset.published
 
-import data.superset.datasets as datasets
+import data.internal.superset.datasets as datasets
 
-import data.superset
+import data.internal.superset
 import future.keywords.every
 import future.keywords.in
 

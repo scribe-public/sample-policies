@@ -1,4 +1,4 @@
-package sarif
+package internal.sarif
 
 import future.keywords.if
 import future.keywords.in

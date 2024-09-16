@@ -1,7 +1,7 @@
-package superset.datasets
+package internal.superset.datasets
 
-import data.auth.superset as auth_superset
-import data.superset
+import data.internal.auth.superset as auth_superset
+import data.internal.superset
 import future.keywords.in
 
 query(url, token) := v {

@@ -9,7 +9,7 @@ For each policy, create a config with the appropriate rego, in the following str
 
 ```rego
 package verify
-import data.sarif
+import data.internal.sarif
 
 default allow := false
 default violations := []
