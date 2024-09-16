@@ -16,7 +16,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "A rule to verify that images are allowed",
+			"type": "disallowed-images",
 			"details": violations,
 		},
 		"summary": [{
