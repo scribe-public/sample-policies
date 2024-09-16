@@ -641,10 +641,11 @@ with:
 
 ### Verify Allowed Registries
 
-Verify that the image is from one of the allowed registries.
+The Verify Allowed Registries rule ensures that any image used originates from one of the trusted registries by checking their prefixes against a predefined list of allowed registries.
 
 ```yaml
 with:
+  // Required
   allowed_registries:
     - "gcr.io"
 ```

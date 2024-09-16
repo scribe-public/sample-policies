@@ -10,7 +10,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "admins",
+			"type": "disallowed-registries",
 			"details": violations,
 		},
 		"summary": [{
@@ -18,6 +18,7 @@ verify = v {
 			"reason": reason,
 			"violations": count(violations),
 		}],
+		"errors": errors,
 	}
 }
 
@@ -35,18 +36,35 @@ reason = v {
 	v := "some images originate from unallowed registries"
 }
 
+errors[msg] {
+	input.evidence.predicate == null
+	msg := "Predicate is missing"
+}
+
+errors[msg] {
+	input.evidence.predicate.content == null
+	msg := "Content is missing"
+}
+
+errors[msg] {
+	input.config.args.allowed_registries == null
+	msg := "Allowed registries are missing"
+}
+
 violations = j {
+	count(errors) == 0
+	
 	j := {r |
-        some pod in input.evidence.predicate.content[_].pod
-        some info in pod.result_object.container_info
-        not match_any(info.imageID)
-        r = {
+		some pod in input.evidence.predicate.content[_].pod
+		some info in pod.result_object.container_info
+		not match_any(info.imageID)
+		r = {
 			"name": pod.name,
-            "id": pod.id,
-            "image": info.image,
-            "imageID": info.imageID,
-            "containderID": info.containerID,
-        }
+			"id": pod.id,
+			"image": info.image,
+			"imageID": info.imageID,
+			"containderID": info.containerID,
+		}
 	}
 }
 
