@@ -24,7 +24,23 @@ verify = v {
 			"reason": reason,
 			"violations": count(violations),
 		}],
+		"errors": errors,
 	}
+}
+
+errors[msg] {
+	input.config.args.namespaces == null
+	msg := "namespaces is required"
+}
+
+errors[msg] {
+	input.evidence.predicate == null
+	msg := "Predicate is missing"
+}
+
+errors[msg] {
+	input.evidence.predicate.content == null
+	msg := "Content is missing"
 }
 
 allow {

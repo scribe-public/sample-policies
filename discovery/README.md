@@ -656,6 +656,7 @@ This policy checks that all namespaces' names are valid, by testing against a li
 
 ```yaml
 with:
+  // Required
   white_listed_namespace: # Regex to match the namespace
     - "scribesecuriy.jfrog.io"
     - "docker.io"
