@@ -3,7 +3,7 @@ path: blocked-images.rego
 
 level: warning
 
-description: "A rule to verify that all images are allowed"
+description: "A rule to verify that all images are allowed by checking"
 
 evidence:
   signed: false
@@ -14,4 +14,5 @@ evidence:
     - "asset_type=namespace"
 
 with:
+  // Required
   images_to_include: []

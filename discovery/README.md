@@ -628,6 +628,17 @@ with:
 
 Any rules that can be run on an image SBOM can be mentioned here. We can use hash from the `imageID` field to filter by image.
 
+### Verify Allowed Images
+
+The Allowed Images rule ensures that images used in your environment come from trusted sources by checking their prefixes against a predefined list of allowed image prefixes.
+
+```yaml
+with:
+  // Required
+  images_to_include: 
+    - "docker.io"
+```
+
 ### Verify Allowed Registries
 
 Verify that the image is from one of the allowed registries.

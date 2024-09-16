@@ -42,9 +42,19 @@ reason = v {
 	v := "There is at least one image that is not allowed"
 }
 
-errors = [msg] {
+errors[msg] {
 	input.evidence.predicate == null
 	msg := "Predicate is missing"
+}
+
+errors[msg] {
+	input.evidence.predicate.content == null
+	msg := "Content is missing"
+}
+
+errors[msg] {
+	input.config.args.images_to_include == null
+	msg := "Images to include are missing"
 }
 
 # j is now a list in order to make sure duplications are not lost
