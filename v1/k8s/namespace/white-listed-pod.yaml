@@ -3,7 +3,7 @@ path: white-listed-pod.rego
 
 level: warning
 
-description: "A rule to verify that all pod are allowed"
+description: "A rule to verify that all pods are allowed"
 
 evidence:
   signed: false
@@ -14,6 +14,8 @@ evidence:
     - "asset_type=namespace"
 
 with:
+  // Required 
   white_listed_pod: []
-  verify_namespaces:
-    - ".*"
+
+  // Optional
+  verify_namespaces: []

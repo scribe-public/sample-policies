@@ -668,9 +668,14 @@ This policy checks that all pods' names are valid, by testing against a list of 
 
 ```yaml
 with:
-  white_listed_namespace: # Regex to match the namespace
+  // Required
+  white_listed_pod:
+    - "my-wordpress.*"
+
+  // Optional
+  verify_namespaces: # Regex to match the namespace
     - "scribesecuriy.jfrog.io"
-    - "docker.io"
+    - "docker.io.*"
 ```
 
 ### Verify Namespace Termination

@@ -8,14 +8,16 @@ default violations := []
 
 default white_listed_pod := []
 
-default verify_namespaces := []
+default verify_namespaces := [".*"]
 
 white_listed_pod = input.config.args.white_listed_pod {
-	input.config.args.white_listed_pod
+	input.config.args.white_listed_pod != null
+	input.config.args.white_listed_pod != []
 }
 
 verify_namespaces = input.config.args.verify_namespaces {
-	input.config.args.verify_namespaces
+	input.config.args.verify_namespaces != null
+	input.config.args.verify_namespaces != []
 }
 
 verify = v {
@@ -30,7 +32,23 @@ verify = v {
 			"reason": reason,
 			"violations": count(violations),
 		}],
+		"errors": errors,
 	}
+}
+
+errors[msg] {
+	input.evidence.predicate == null
+	msg := "Predicate is missing"
+}
+
+errors[msg] {
+	input.evidence.predicate.content == null
+	msg := "Content is missing"
+}
+
+errors[msg] {
+	not is_valid_input(white_listed_pod)
+	msg := "white_listed_pod is required"
 }
 
 allow {
@@ -54,20 +72,19 @@ reason = v {
 violations = j {
 	j := [r |
 
-		namespaces := object.remove(input.evidence.predicate.content, {"metadata"})
+		project := input.evidence.predicate.content[_]
 		
-		namespace := namespaces[_]
-		namespace_match(namespace.namespace, verify_namespaces)
+		namespace_match(project.namespace, verify_namespaces)
 
-		pod := namespace.pod[_]
+		pod := project.pod[_]
 		
 		not is_valid(pod)
 
 		r := {
-            "name": pod.name,
+			"name": pod.name,
 			"id": pod.id,
 			"query_id": pod.query_id,
-        }
+    }
 	]
 }
 
@@ -81,4 +98,9 @@ is_valid(pod) {
 	name := pod.name
 	some pattern in white_listed_pod
 	regex.match(pattern, name)
+}
+
+is_valid_input(i){
+	i != null
+	i != []
 }
