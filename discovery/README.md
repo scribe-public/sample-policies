@@ -674,7 +674,15 @@ with:
 
 ### Verify Namespace Termination
 
-This policy verifies that all namespaces have terminated.
+The Verify Namespace Termination rule checks if specific namespaces have been terminated by using a list of regular expressions (regex) to match the namespaces and verify their termination status.
+
+```yaml
+with:
+  // List of regex to check for namespaces name
+  namespaces:
+    - "*.*"
+```
+
 
 ### Verify Namespace Duration
 

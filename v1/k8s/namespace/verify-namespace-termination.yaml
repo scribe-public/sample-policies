@@ -3,7 +3,7 @@ path: verify-namespace-termination.rego
 
 level: warning
 
-description: "A rule to verify that all namespaces have terminated"
+description: "The Verify Namespace Termination rule checks if specific namespaces have been terminated by using a list of regular expressions (regex) to match the namespaces and verify their termination status."
 
 evidence:
   signed: false
@@ -14,5 +14,5 @@ evidence:
     - "asset_type=namespace"
 
 with:
-  namespaces:
-    - ".*"
+  // List of regex to check for namespace names
+  namespaces: []

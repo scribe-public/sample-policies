@@ -6,7 +6,7 @@ default allow := false
 
 default violations := []
 
-default check_namespaces := [".*"]
+default check_namespaces := []
 
 check_namespaces = input.config.args.namespaces {
 	input.config.args.namespaces
@@ -24,7 +24,18 @@ verify = v {
 			"reason": reason,
 			"violations": count(violations),
 		}],
+		"errors": errors,
 	}
+}
+
+errors[msg] {
+	input.evidence.predicate == null
+	msg := "Predicate is missing"
+}
+
+errors[msg] {
+	input.evidence.predicate.content == null
+	msg := "Content is missing"
 }
 
 allow {
@@ -42,6 +53,8 @@ reason = v {
 }
 
 violations = j {
+	count(errors) == 0	
+	
 	j := [r |
 
 		project := input.evidence.predicate.content[_]
@@ -64,10 +77,10 @@ violations = j {
 	]
 }
 
-namespace_match(namespace, regexes) {
-    some name_regex in regexes
-    regex.match(name_regex, namespace.name)
-}
+	namespace_match(namespace, regexes) {
+			some name_regex in regexes
+			regex.match(name_regex, namespace.name)
+	}
 
 
 # Checks that the namespace has been terminated
