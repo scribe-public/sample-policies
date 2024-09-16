@@ -678,7 +678,7 @@ The Verify Namespace Termination rule checks if specific namespaces have been te
 
 ```yaml
 with:
-  // List of regex to check for namespaces name
+  // List of regex to check for namespace names
   namespaces:
     - "*.*"
 ```

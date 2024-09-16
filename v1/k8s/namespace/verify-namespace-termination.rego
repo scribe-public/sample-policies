@@ -6,7 +6,7 @@ default allow := false
 
 default violations := []
 
-default check_namespaces := []
+default check_namespaces := [".*"]
 
 check_namespaces = input.config.args.namespaces {
 	input.config.args.namespaces
@@ -54,7 +54,7 @@ reason = v {
 
 violations = j {
 	count(errors) == 0	
-	
+
 	j := [r |
 
 		project := input.evidence.predicate.content[_]
