@@ -24,6 +24,7 @@ verify = v {
 			"reason": reason,
 			"violations": count(violations),
 		}],
+		"errors": errors,
 	}
 }
 
@@ -41,11 +42,16 @@ reason = v {
 	v := "There is at least one image that is not allowed"
 }
 
-
+errors = [msg] {
+	input.evidence.predicate == null
+	msg := "Predicate is missing"
+}
 
 # j is now a list in order to make sure duplications are not lost
 
 violations = j {
+	count(errors) == 0
+
 	j := [r |
 		some pod in input.evidence.predicate.content[_].pod
 		image = pod.result_object.container_info[0].image
@@ -56,7 +62,7 @@ violations = j {
 			"id": pod.id,
 			"query_id": pod.result_object.query_id,
 			"image": image,
-        }
+      }
 	]
 }
 
