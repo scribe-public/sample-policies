@@ -44,6 +44,8 @@ max = args.max
 
 verifier = superset.verifier
 
+evidence = superset.evidence
+
 component_name = args.component_name {
 	args.component_name != null
 }
@@ -368,9 +370,9 @@ raw_input.input_name = args.input_name {
 	args.input_name != ""
 }
 
-raw_input.input_name = verifier.input_name {
+raw_input.input_name = evidence.predicate.environment.input_name {
 	apply_target_filter_verifier
-	verifier.input_name != ""
+	evidence.predicate.environment.input_name != ""
 }
 
 raw_input.input_tag = args.input_tag {
@@ -378,9 +380,9 @@ raw_input.input_tag = args.input_tag {
 	args.input_tag != ""
 }
 
-raw_input.input_tag = verifier.input_tag {
+raw_input.input_tag = evidence.predicate.environment.input_tag {
 	apply_target_filter_verifier
-	verifier.input_tag != ""
+	evidence.predicate.environment.input_tag != ""
 }
 
 raw_input.tag = args.tag {
@@ -388,9 +390,9 @@ raw_input.tag = args.tag {
 	count(args.tag) > 0
 }
 
-raw_input.tag = verifier.tag {
+raw_input.tag = evidence.predicate.environment.tag {
 	apply_target_filter_verifier
-	count(verifier.tag) > 0
+	count(evidence.predicate.environment.tag) > 0
 }
 
 ## Get target name
