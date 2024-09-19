@@ -1,4 +1,4 @@
-name: Trigger Scribe Workflow
+name: Trigger Scribe Workflow Dev
 
 on:
   workflow_dispatch:
