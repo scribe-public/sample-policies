@@ -8,7 +8,8 @@ labels:
 evidence:
   format-type: generic
   target_type: data
-  labels: '{{ .Args.att_name }}'
+  labels:
+    - '{{ .Args.att_name }}'
 
 # All values strings are globs
 with:
