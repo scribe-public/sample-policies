@@ -73,9 +73,8 @@ allow {
 
 condition(condition_col, condition_vals, l) {
     condition_col != ""
-    every value in condition_vals {
-        glob.match(value, null, l[condition_col])
-    }
+    value = condition_vals[_]
+    glob.match(value, null, l[condition_col])
 }
 
 condition("", _, _) {
