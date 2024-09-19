@@ -15,7 +15,7 @@ jobs:
     with:
         product: "sample-policies-dev"
         version: "dev-release"
-        event_type: "sample-policies-prerelease"
+        event_type: "sample-policies-release"
         workflow_github_org: scribe-security
         workflow_github_repo: dogfooding
     secrets: 
