@@ -6,10 +6,9 @@ labels:
   - 3rd-party
 
 evidence:
-  content-type: attest-generic
+  format-type: generic
   target_type: data
-  sbomversion: sha256:c0f75d00b3eb544ce1ae58bb6c02dc7924dacc455078b5d3bd8ab16ddb6c91f9
-  predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+  labels: '{{ .Args.att-name}}'
 
 # All values strings are globs
 with:
