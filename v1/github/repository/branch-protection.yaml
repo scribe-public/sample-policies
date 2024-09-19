@@ -15,3 +15,6 @@ evidence:
 
 with:
   desired_protected: true
+  branches:
+    - 'main'
+    - 'master'

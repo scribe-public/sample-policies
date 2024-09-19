@@ -8,8 +8,13 @@ default violations := []
 
 default desired_protected := true
 
+default branches := ["*"]
 
 desired_protected := input.config.args.desired_protected 
+
+branches = input.config.args.branches {
+	count(input.config.args.branches) > 0
+}
 
 verify = v {
 	v := {
@@ -31,21 +36,17 @@ allow {
 }
 
 reason = v {
-	allow
-	v := "All branches are protected"
+	v := sprintf("%d unprotected branches | 0 max allowed", [count(unprotected_branches)])
 }
 
-reason = v {
-	not allow
-	v := "Some branches are not protected"
-}
-
-violations = j {
+unprotected_branches = j {
 	j := [r |
 
 		project := input.evidence.predicate.content[_]
         branches := project.branch
 		branch := branches[_]
+
+		branch_name_verify(branch)
 
 		not is_valid(branch)
 
@@ -59,8 +60,25 @@ violations = j {
 	]
 }
 
+violations = j {
+	j := {r |
+			count(unprotected_branches) > 0
+			r = {"unprotected_branches": unprotected_branches}
+	}
+}
+
 # Must get a better understanding of how to check if a repo is in a list of valid predefined regexes
 is_valid(branch) {
 	desired_protected == branch.result_object.protected 
 }
 
+branch_name_verify(branch) {
+	count(branches) == 0
+}
+
+branch_name_verify(branch) {
+	count(branches) > 0
+	some pattern in branches
+	rich_pattern = sprintf("^%s$", [pattern])
+	regex.match(rich_pattern, branch.name)
+}
