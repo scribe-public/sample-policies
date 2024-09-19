@@ -9,35 +9,23 @@ on:
     tags:
       - '*'
 
+env:
+  PRODUCT_KEY: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' && 'sample-policies-dev' || 'sample-policies-release' }}
+  PRODUCT_VERSION: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' && 'dev-release' || github.ref_name }}
+  EVENT_TYPE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' && 'sample-policies-prerelease' || 'sample-policies-release' }}
+
+
 jobs:
 
 # Typically here will come the jobs that build a docker image and push it to DockerHub
   trigger:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Determine Environment Variables
-      id: set-vars
-      run: |
-        if [[ "${{ github.event_name }}" == "push" && "${{ github.ref }}" == "refs/heads/dev" ]]; then
-          echo "PRODUCT_KEY=sample-policies-dev" >> $GITHUB_ENV
-          echo "PRODUCT_VERSION=dev-release" >> $GITHUB_ENV
-          echo "EVENT_TYPE=sample-policies-prerelease" >> $GITHUB_ENV
-        else
-          echo "PRODUCT_KEY=sample-policies-release" >> $GITHUB_ENV
-          echo "PRODUCT_VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "EVENT_TYPE=sample-policies-release" >> $GITHUB_ENV
-        fi
-      env:
-        GITHUB_REF_NAME: ${{ github.ref_name }}
-
-    - name: Trigger Scribe Workflow
-      uses: scribe-public/reusable-workflows/.github/workflows/trigger.yaml@main
-      with:
-          product: ${{ env.PRODUCT_KEY }}
-          version: ${{ env.PRODUCT_VERSION }}
-          event_type: ${{ env.EVENT_TYPE }}
-          workflow_github_org: scribe-security
-          workflow_github_repo: dogfooding
-      secrets: 
-          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
+    name: Trigger Scribe Workflow
+    uses: scribe-public/reusable-workflows/.github/workflows/trigger.yaml@main
+    with:
+        product: "${{ PRODUCT_KEY }}" 
+        version: "${{ PRODUCT_VERSION }}"
+        event_type: "${{ EVENT_TYPE }}"
+        workflow_github_org: scribe-security
+        workflow_github_repo: dogfooding
+    secrets: 
+        WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
