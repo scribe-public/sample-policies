@@ -1,0 +1,22 @@
+name: Trigger Scribe Workflow
+
+on:
+  workflow_dispatch:
+  create:
+    tags:
+      - '*'
+
+jobs:
+
+# Typically here will come the jobs that build a docker image and push it to DockerHub
+  trigger:
+    name: Trigger Scribe Workflow
+    uses: scribe-public/reusable-workflows/.github/workflows/trigger.yaml@main
+    with:
+        product: "sample-policies-release"
+        version: ${{  github.ref_name }}
+        event_type: "sample-policies-release"
+        workflow_github_org: scribe-security
+        workflow_github_repo: dogfooding
+    secrets: 
+        WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
