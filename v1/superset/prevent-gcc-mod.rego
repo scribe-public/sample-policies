@@ -217,19 +217,19 @@ pipelineRunFilter = pR {
 	pR := [{
 		"col": "pipelineRun",
 		"op": "in",
-		"val": array.concat(args.pipelineRun_list, [input.config.args.pipelineRunId]),
+		"val": array.concat(args.pipelineRun_list, [input.config.args.pipelineRun]),
 	}]
 }
 
 pipelineRunFilter = pr {
 
   not not_empty_nor_null_list(args.pipelineRun_list)
-  input.config.args.pipelineRunId != null
+  input.config.args.pipelineRun != null
 
   pr := [{
     "col": "pipelineRun",
     "op": "==",
-    "val": input.config.args.pipelineRunId,
+    "val": input.config.args.pipelineRun,
   }]
 }
 

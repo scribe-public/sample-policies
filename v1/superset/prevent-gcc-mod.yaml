@@ -29,4 +29,4 @@ with:
       accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
       paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
   # Required for workflow    
-  pipelineRunId: '{{ .Args.pipelineRunId }}'
+  pipelineRun: '{{ .Args.pipelineRun }}'
