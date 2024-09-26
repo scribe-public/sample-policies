@@ -1,5 +1,5 @@
 name: "Repo private"
-is: "PS.1.4"
+id: "PS.1.4"
 uses: github/repository/repo-private@v1
 
 description: "PS.1 Assure the repository is private"
