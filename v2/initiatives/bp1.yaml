@@ -146,7 +146,7 @@ controls:
           format-type: cyclonedx-json
 
 
-  - name: " Scan deployed images in production"
+  - name: "Scan deployed images in production"
     id: "CT-13"
     when:
       gate: Staging
