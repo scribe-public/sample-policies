@@ -1,0 +1,173 @@
+name: "Venafi Blueprint"
+id: "blueprint-securesoftwarepipeline"
+url: https://github.com/Venafi/blueprint-securesoftwarepipeline
+
+defaults:
+  evidence:
+    signed: true
+
+controls:
+  - name: "Restrict administrative access to CI/CD tools"
+    id: "CT-1"
+    when:
+      gate: Code
+    defaults:
+      evidence:
+        labels:
+          - '{{ .Args.OrganizationAsset }}'
+    rules:
+      - uses: gitlab/org/max-admins@v1
+        description: "[CT-1] Restrict the maximum number of organization admins"
+        level: error
+        with:
+          max_admins: 1
+
+
+  - name: "Only accept commits signed with a developer GPG key"
+    id: "CT-2"
+    when:
+      gate: Code
+    defaults:
+      evidence:
+        labels:
+          - '{{ .Args.ProjectAsset }}'
+    rules:
+      - uses: gitlab/project/reject-unsigned-commits@v1
+        description: "[CT-2] Verify that reject_unsigned_commits is enabled for the project"
+        level: error
+
+      - uses: gitlab/project/check-signed-commits@v1
+        description: "[CT-2] Verify that all commits in the project are signed"
+        level: error
+
+
+  - name: "Automation access keys expire automatically"
+    id: "CT-3"
+    when:
+      gate: Code
+    defaults:
+      evidence:
+        labels:
+          - '{{ .Args.OrganizationAsset }}'
+    rules:
+      - uses: gitlab/org/longlive-tokens@v1
+        description: "[CT-3] Verify that no organization tokens have an excessively long lifespan"
+        level: error
+
+
+  - name: "Reduce automation access to read-only"
+    id: "CT-4"
+    when:
+      gate: Code
+    defaults:
+      evidence:
+        labels:
+          - '{{ .Args.OrganizationAsset }}'
+    rules:
+      - uses: gitlab/org/forbid-token-scopes@v1
+        description: "[CT-4] Verify that no organization tokens have a disallowed scope"
+        level: error
+        with:
+          project_scopes:
+              - write_api
+              - write_repository
+              - write_registry
+              - write_registry_image
+              - write_package_registry
+              - write_package
+              - write_repository_hook
+
+
+  - name: "Any critical or high severity vulnerability breaks the build"
+    id: "CT-6"
+    when:
+      gate: Collaboration
+    rules:
+      - uses: api/scribe-api-cve@v1
+        description: "[CT-6] Verify no critical or high CVEs"
+        level: error
+        with:
+          superset:
+            cve:
+              severity: 6
+              max: 0
+
+
+  - name: "Validate artifact digest"
+    id: "CT-8"
+    when:
+      gate: Collaboration
+    rules:
+      - uses: sbom/evidence-exists@v1
+        description: "[CT-8] Verify required evidence exists"
+        level: error
+        evidence:
+          format-type: cyclonedx-json
+
+
+  - name: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
+    id: "CT-9"
+    when:
+      gate: Collaboration
+    defaults:
+      evidence:
+        labels:
+          - '{{ .Args.ProjectAsset }}'
+    rules:
+      - uses: gitlab/project/approvals-policy-check@v1
+        description: "[CT-9] Verify that the project's merge approval policy complies with the requirements"
+        level: error
+
+
+  - name: "Available container images don’t have any high or critical vulnerabilities"
+    id: "CT-11"
+    when:
+      gate: Staging
+    rules:
+      - uses: api/scribe-api-cve@v1
+        description: "[CT-11] Verify Scribe CVE policy violations (by API)"
+        level: error
+        with:
+          superset:
+            cve:
+              severity: 6
+              max: 0
+
+
+  - name: "Validate artifact signatures and digests"
+    id: "CT-12"
+    when:
+      gate: Staging
+    rules:
+      - uses: sbom/artifact-signed@v1
+        description: "[CT-12] Verify artifact is signed"
+        level: error
+        evidence:
+          format-type: cyclonedx-json
+
+
+  - name: " Scan deployed images in production"
+    id: "CT-13"
+    when:
+      gate: Staging
+    rules:
+      - uses: sbom/artifact-signed@v1
+        description: "[CT-13] Verify artifact is signed"
+        level: error
+      - uses: sbom/blocklist-packages@v1
+        description: "[CT-13] Verify disallowed artifact's dependency count does not exceed specified threshold"
+        level: error
+        with:
+          blocklist:
+            - "liblzma5@5.6.0"
+            - "liblzma5@5.6.1"
+            - "xz-utils@5.6.0"
+            - "xz-utils@5.6.1"
+      - uses: api/scribe-api-cve@v1
+        description: "[CT-13] Verify no critical or high CVEs"
+        level: error
+        with:
+          superset:
+            cve:
+              severity: 6
+              max: 0
