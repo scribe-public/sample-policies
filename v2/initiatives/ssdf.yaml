@@ -1,0 +1,46 @@
+name: "SSDF Client Initiative"
+description: "Evaluate PS rules from the SSDF initiative"
+url: https://csrc.nist.gov/pubs/sp/800/218/final
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  - name: "SSDF-IMAGE"
+    rules:
+    - uses: rules/ssdf/ps-2-image-verifiable@v2
+      name: "Image verifiable"
+
+    - uses: rules/ssdf/ps-3.2-archived-sbom@v2
+      name: "SBOM archived"
+
+  - name: "SSDF-ORG"
+    defaults:
+      evidence:
+        labels:
+          - '{{ .Args.OrganizationAsset }}'
+    rules:
+    - uses: rules/ssdf/ps-1-2fa@v2
+      name: "Enforce 2FA"
+
+    - uses: rules/ssdf/ps-1-limit-admins@v2
+      name: "Limit admins"
+
+    - uses: rules/ssdf/ps-1-web-commit-signoff@v2
+      name: "Require signoff on web commits"
+
+  - name: "SSDF-REPO"
+    defaults:
+      evidence:
+        labels:
+          - '{{ .Args.RepositoryAsset }}'
+    rules:
+    - uses: rules/ssdf/ps-3.1-code-archived@v2
+      name: "Code archived"
+
+    - uses: rules/ssdf/ps-1-branch-protection@v2
+      name: "Branch protected"
+
+    - uses: rules/ssdf/ps-1-repo-private@v2
+      name: "Repo private"
