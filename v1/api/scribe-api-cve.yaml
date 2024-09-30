@@ -14,6 +14,7 @@ require-scribe-api: true
 evidence:
   signed: false
   format-type: cyclonedx-json
+  sbomversion: '{{ default .Context.sbomversion "" }}'
   # predicate_type: https://cyclonedx.org/bom
 
 with:
