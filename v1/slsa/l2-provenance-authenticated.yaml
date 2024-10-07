@@ -1,9 +1,9 @@
-name: slsa-provenance-signed
+name: "SLSA.L2 Provenance Authenticated"
 description: "Verify artifact is signed"
 labels:
   - SLSA
 initiatives:
-  - Default
+  - SLSA
 
 evidence:
   signed: true
