@@ -24,7 +24,6 @@ controls:
           - '{{ .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/max-admins@v1
-        description: "[CT-1] Restrict the maximum number of organization admins"
         level: error
         with:
           max_admins: 1
@@ -45,11 +44,9 @@ controls:
           - '{{ .Args.ProjectAsset }}'
     rules:
       - uses: gitlab/project/reject-unsigned-commits@v1
-        description: "[CT-2] Verify that reject_unsigned_commits is enabled for the project"
         level: error
 
       - uses: gitlab/project/check-signed-commits@v1
-        description: "[CT-2] Verify that all commits in the project are signed"
         level: error
 
 
@@ -68,7 +65,6 @@ controls:
           - '{{ .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/longlive-tokens@v1
-        description: "[CT-3] Verify that no organization tokens have an excessively long lifespan"
         level: error
 
 
@@ -87,7 +83,6 @@ controls:
           - '{{ .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/forbid-token-scopes@v1
-        description: "[CT-4] Verify that no organization tokens have a disallowed scope"
         level: error
         with:
           project_scopes:
@@ -122,7 +117,6 @@ controls:
       gate: Collaboration
     rules:
       - uses: api/scribe-api-cve@v1
-        description: "[CT-6] Verify no critical or high CVEs"
         level: error
         with:
           superset:
@@ -142,7 +136,6 @@ controls:
       gate: Collaboration
     rules:
       - uses: sbom/evidence-exists@v1
-        description: "[CT-8] Verify required evidence exists"
         level: error
         evidence:
           format-type: cyclonedx-json
@@ -163,7 +156,6 @@ controls:
           - '{{ .Args.ProjectAsset }}'
     rules:
       - uses: gitlab/project/approvals-policy-check@v1
-        description: "[CT-9] Verify that the project's merge approval policy complies with the requirements"
         level: error
 
 
@@ -176,7 +168,6 @@ controls:
       gate: Staging
     rules:
       - uses: api/scribe-api-cve@v1
-        description: "[CT-11] Verify Scribe CVE policy violations (by API)"
         level: error
         with:
           superset:
@@ -197,7 +188,6 @@ controls:
       gate: Staging
     rules:
       - uses: sbom/artifact-signed@v1
-        description: "[CT-12] Verify artifact is signed"
         level: error
         evidence:
           format-type: cyclonedx-json
@@ -215,10 +205,8 @@ controls:
       gate: Staging
     rules:
       - uses: sbom/artifact-signed@v1
-        description: "[CT-13] Verify artifact is signed"
         level: error
       - uses: sbom/blocklist-packages@v1
-        description: "[CT-13] Verify disallowed artifact's dependency count does not exceed specified threshold"
         level: error
         with:
           blocklist:
@@ -227,7 +215,6 @@ controls:
             - "xz-utils@5.6.0"
             - "xz-utils@5.6.1"
       - uses: api/scribe-api-cve@v1
-        description: "[CT-13] Verify no critical or high CVEs"
         level: error
         with:
           superset:
