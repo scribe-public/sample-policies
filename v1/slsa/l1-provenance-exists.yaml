@@ -1,9 +1,9 @@
-name: required-slsa-provenance
+name: "SLSA.L1 Provenance Exists"
 description: "Verify required evidence exists"
 labels:
   - SLSA
 initiatives:
-  - Default
+  - SLSA
 
 evidence:
   signed: false
