@@ -15,4 +15,5 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
+    - "platform=gitlab"
     - "asset_type=project"
