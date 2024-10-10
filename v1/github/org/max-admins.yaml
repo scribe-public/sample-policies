@@ -1,13 +1,13 @@
-name: allowed-admins
-path: allow-admins.rego
+name: max-admins
+path: max-admins.rego
 
 level: warning
+
+description: "Restrict the maximum number of organization admins"
 labels:
-  - Org
+  - Blueprint
 initiatives:
   - Default
-
-description: "Verify that all organization admins are included in the allowed list"
 
 evidence:
   signed: false
@@ -19,4 +19,4 @@ evidence:
     - "asset_type=organization"
 
 with:
-    allowed_admins: []
+    max_admins: 0
