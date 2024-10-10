@@ -21,7 +21,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ .Args.OrganizationAsset }}'
+          - '{{ assetd_on_target .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/max-admins@v1
         level: error
@@ -41,7 +41,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ .Args.ProjectAsset }}'
+          - '{{  assetd_on_target .Args.RepositoryAsset }}'
     rules:
       - uses: gitlab/project/reject-unsigned-commits@v1
         level: error
@@ -62,7 +62,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ .Args.OrganizationAsset }}'
+          - '{{ assetd_on_target .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/longlive-tokens@v1
         level: error
@@ -80,7 +80,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ .Args.OrganizationAsset }}'
+          - '{{  assetd_on_target .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/forbid-token-scopes@v1
         level: error
@@ -153,7 +153,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ .Args.ProjectAsset }}'
+          - '{{ assetd_on_target .Args.RepositoryAsset }}'
     rules:
       - uses: gitlab/project/approvals-policy-check@v1
         level: error
