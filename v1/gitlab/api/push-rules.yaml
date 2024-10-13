@@ -4,7 +4,7 @@ description: "Verify GitLab push rules"
 
 evidence:
   signed: false
-  content_body_type: "cyclonedx-json"
+  format-type: "cyclonedx-json"
 
 with:
   api_token: '{{ .Args.Token }}'

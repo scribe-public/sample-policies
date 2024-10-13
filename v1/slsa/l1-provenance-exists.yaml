@@ -7,5 +7,5 @@ initiatives:
 
 evidence:
   signed: false
-  content_body_type: slsa
+  format-type: slsa
   target_type: container

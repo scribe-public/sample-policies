@@ -12,7 +12,7 @@ evidence:
     - product
     - target
   signed: false
-  content_body_type: cyclonedx-json
+  format-type: cyclonedx-json
   target_type: container
 
 with:

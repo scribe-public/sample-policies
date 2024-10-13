@@ -10,7 +10,7 @@ description: |
 
 evidence:
   signed: false
-  content_body_type: generic
+  format-type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:

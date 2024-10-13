@@ -138,7 +138,7 @@ controls:
       - uses: sbom/evidence-exists@v1
         level: error
         evidence:
-          content_body_type: cyclonedx-json
+          format-type: cyclonedx-json
 
 
   - name: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
@@ -190,7 +190,7 @@ controls:
       - uses: sbom/artifact-signed@v1
         level: error
         evidence:
-          content_body_type: cyclonedx-json
+          format-type: cyclonedx-json
 
 
   - name: "Scan deployed images in production"

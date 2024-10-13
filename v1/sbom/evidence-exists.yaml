@@ -10,5 +10,5 @@ evidence:
   filter-by:
     - product
     - target
-  content_body_type: cyclonedx-json
+  format-type: cyclonedx-json
   signed: false
