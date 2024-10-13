@@ -12,8 +12,13 @@ initiatives:
 require-scribe-api: true
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
   format-type: cyclonedx-json
+  target_type: container
+  # sbomversion: '{{ default .Context.sbomversion "" }}'
   # predicate_type: https://cyclonedx.org/bom
 
 with:

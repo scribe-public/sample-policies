@@ -7,5 +7,8 @@ initiatives:
   - Default
 
 evidence:
+  filter-by:
+    - product
+    - target
   format-type: cyclonedx-json
   signed: false
