@@ -1,0 +1,22 @@
+name: inactive-users
+path: inactive-users.rego
+
+level: warning
+labels:
+  - Instance
+initiatives:
+  - Default
+
+description: "Verify inactive users."
+
+evidence:
+  signed: false
+  format-type: generic
+#  target_type: jenkins
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=instance"
+    - "platform=jenkins"
+
+with:
+    inactive_for_days: 90

@@ -1,0 +1,19 @@
+name: unused-users
+path: unused-users.rego
+
+level: warning
+labels:
+  - Instance
+initiatives:
+  - Default
+
+description: "Verify unused users."
+
+evidence:
+  signed: false
+  format-type: generic
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=instance"
+    - "platform=jenkins"
+
