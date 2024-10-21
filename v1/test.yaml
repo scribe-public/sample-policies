@@ -7,7 +7,7 @@ attest:
             path: sbom/required-packages.rego
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
             with:
               required_pkgs:
@@ -18,7 +18,7 @@ attest:
             path: sbom/banned-licenses.rego
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
             with:
               blocklist:
@@ -28,7 +28,7 @@ attest:
             path: sbom/blocklist-packages.rego
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
             with:
               blocklist:
@@ -40,14 +40,14 @@ attest:
             level: "warning"
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
           - name: fresh-sbom
             path: sbom/fresh-sbom.rego
             level: "note"
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
             with:
               max_days: 1
@@ -58,7 +58,7 @@ attest:
             level: "note"
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
             with:
               max_size: 1
@@ -67,7 +67,7 @@ attest:
             level: "warning"
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
             with:
               max_days: 1
@@ -75,13 +75,13 @@ attest:
             path: images/restrict-shell-entrypoint.rego
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
           - name: verify-labels
             path: images/verify-labels.rego
             evidence:
               signed: false
-              format-type: "cyclonedx-json"
+              content_body_type: "cyclonedx-json"
               target_type: container
             with:
               labels:

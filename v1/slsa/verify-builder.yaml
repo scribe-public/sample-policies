@@ -12,7 +12,7 @@ evidence:
     - pipeline
     - product
   signed: false
-  format-type: slsa
+  content_body_type: slsa
   target_type: container
 
 with:
