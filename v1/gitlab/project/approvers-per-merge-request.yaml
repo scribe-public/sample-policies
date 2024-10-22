@@ -1,0 +1,19 @@
+name: approvers-per-merge-request
+path: approvers-per-merge-request.rego
+
+level: warning
+
+description: "Verify that the binary field: 'disable_overriding_approvers_per_merge_request' is set correctly"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+  disable_overriding_approvers_per_merge_request: false
+
+

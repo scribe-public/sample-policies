@@ -367,6 +367,263 @@ with:
 
 Verify that all the commits in the project have been validated.
 
+### Gitlab scanning results 
+
+#### Secrets Scanning
+
+Verify that secrets scanning has been ran at least once in each pipeline for every project
+
+#### Secrets Scanning Pass Checker
+
+Verify that each secret scanning job ran successfully
+
+#### SAST Scanning 
+
+Verify that at the semgrep-sast has been ran at least once in each pipeline for every project
+
+#### SAST Scanning Pass Checker
+
+Verify that each `semgrep-sast` ran successfully 
+
+#### Protect CI Secrets
+
+Verify that variables with `masked == false` and variable names containing 'token' or 'secret' aren't shared.
+
+You can specify your own pattern to search in the `.yaml` file
+```yaml 
+with:
+  pattern: "(?i)(token|secret)" # Regex pattern
+```
+
+#### SAST Scanning Results Evaluation
+To be implemented
+
+#### Medium Severity Limit
+Verify that the max number of medium severity vulnerabilities is not passed.
+
+```yaml
+with:
+  # Enter here the max number of a the severity level
+  max_allowed_specific_severity: 100
+```
+
+#### Critical Severity Limit
+Verify that the max number of critical severity vulnerabilities is not passed.
+
+```yaml
+with:
+  # Enter here the max number of a the severity level
+  max_allowed_specific_severity: 100
+```
+
+#### Check Cwe
+Verify that no specified CWE detected
+
+```yaml
+with:
+  cwe_value: "89" # Enter the CWE here as a string, and enter the value only i.e (CWE-89 -> "89")
+```
+
+#### Message Substring Check
+Verify that a substring is not found in the message attribute of the vulnerabilities
+
+```yaml
+with:
+  pattern: "(?i)Hello" # Regex pattern to search 
+```
+
+#### Description Substring Check
+Verify that a substring is not found in the message attribute of the vulnerabilities
+
+```yaml
+with:
+  pattern: "(?i)Hello" # Regex pattern to search 
+```
+
+## Gitlab API
+
+### Signed commits
+
+#### GL Signed Commits List
+
+Verify that the selected commits have been signed
+
+```yaml
+with:
+  commit_id_list: []
+  private_token: ""
+  project_id: ""
+```
+
+<u>All fields must contain values</u>
+
+`commit_id_list` is a list that contains the commit id or commit SHA (same term).
+
+`private_token` is your personal acccess token.
+
+`project_id` is the projects ID, can be found on Gitlab.
+
+#### GL Signed Commits Range
+
+Verify that the selected range of commits have been signed. Be cautious multiple Api fetch requests will be made which may take longer than other policies. If there are a lot of commits, it might be beneficial to include query paramters `since` and `until`.
+
+```yaml
+with:
+  since: "" # ISO 8601 date-time string (optional)
+  until: "" # ISO 8601 date-time string (optional)
+  project_id: ""
+  private_token: ""
+```
+
+<u>All fields besides since and until are mandatory</u>
+
+`since` and `until` are both query parameters.
+
+`project_id` is your project's ID. Can be found on Gitlab.
+
+`private_token` is your personal access token.
+
+## Github API
+
+### Signed Commits
+
+#### GH Signed Commits List
+
+Verify that the selected commits have been signed.
+
+```yaml
+with:
+  commit_id_list: []
+  access_token: ""
+  owner: ""
+  repo: ""
+```
+
+<u> All fields must be given values. </u>
+
+`access_token` is your Github's personal access token.
+
+`owner` is the owner of the repo.
+
+`repo` is the name of the repository that you are trying to access the commits.
+
+#### GH Signed Commits Range
+
+Verify that the selected range of commits have been signed.
+
+```yaml
+with:
+  # Required
+  access_token: ""
+  owner: ""
+  repo: ""
+  # Optional
+  since: # ISO 8601 date-time string
+  until: # ISO 8601 date-time string
+  sha:
+```
+
+<u> `access_token`, `owner`, and `repo` must all be given string values. </u>
+
+`since`, `until`, `sha` are optional query parameters.
+
+Both `since` and `until` are ISO 8601 date-time strings.
+
+When `sha` is specified, it allows you to set a range from the specific sha of the commit to the head.
+
+`access_token` is your Github's personal access token.
+
+`owner` is the owner of the repo.
+
+`repo` is the name of the repository that you are trying to access the commits.
+
+## Github Repository Attestation
+
+### Signed Commits
+
+Verify that the commits have been signed in a repository attestation.
+
+### Gitlab Approval Settings Policies
+
+#### Dissallowed Banned Approvers
+
+Verify that the no approvers are on the banned list. Banned List requires addidtion implementation for how user objects are passed. (Not completed)
+
+```yaml
+with:
+  # You can configure the list of banned users here. 
+  # Enter in a list format the ID of the banned users
+  banned_list:
+    - "1"
+    - "2"
+
+```
+
+#### Required Minimal Approvers
+
+Verify that the required number of approvers from config-file is met. Required Number is taken from evidence, in required_approvals under approval_settings
+
+### Test Binary Fields
+
+#### Disable Ovveriding Approvers per Merge Request
+
+Verify that the binary field: 'disable_overriding_approvers_per_merge_request' is set correctly
+
+``` yaml
+with:
+  # You can configure the value of the binary field here
+  disable_overriding_approvers_per_merge_request: 
+```
+
+#### Merge Requests Author Approval
+
+Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  merge_requests_disable_committers_approval: false
+```
+
+#### Merge Requests Disable Committers Approval
+
+Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  merge_requests_disable_committers_approval: false
+```
+#### Require Password to Approve 
+
+Verify that the binary field: 'require_password_to_approve' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  require_password_to_approve: true
+```
+
+#### Reset Approvals on Push
+
+Verify that the binary field: 'reset_approvals_on_push' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  reset_approvals_on_push: 
+```
+
+#### Selective Code Owner Removals
+
+Verify that the binary field: 'selective_code_owner_removals' is set correctly
+
+```yaml
+with:
+  # You can configure the value of the binary field here
+  selective_code_owner_removals: true
+```
+
 ## K8s Namespace Attestation
 
 Any rules that can be run on an image SBOM can be mentioned here. We can use hash from the `imageID` field to filter by image.
@@ -380,6 +637,56 @@ with:
   allowed_registries:
     - "gcr.io"
 ```
+
+### White Listed Namespace
+
+This policy checks that all namespaces' names are valid, by testing against a list of valid regex patterns that can be configured in the yaml file.
+
+```yaml
+with:
+  white_listed_namespace: # Regex to match the namespace
+    - "scribesecuriy.jfrog.io"
+    - "docker.io"
+```
+
+### White Listed Pod
+
+This policy checks that all pods' names are valid, by testing against a list of valid regex patterns that can be configured in the yaml file.
+
+```yaml
+with:
+  white_listed_namespace: # Regex to match the namespace
+    - "scribesecuriy.jfrog.io"
+    - "docker.io"
+```
+
+### Verify Namespace Termination
+
+This policy verifies that all namespaces have terminated.
+
+### Verify Namespace Duration
+
+This policy verifies that all <u>running</u> namespaces were started after the threshold date. All violations are namespaces that were started before the threshold date. The threshold date is configurable:
+
+```yaml
+with:
+  threshold_date: "2023-08-29T15:35:57Z" # ISO 8601 string date format
+```
+
+## K8s Pod Attestation
+
+### Verify Pod Duration
+
+This policy verifies that all <u>running</u> pods were started after the threshold date. All violations are pods that were started before the threshold date. The threshold date is configurable:
+
+```yaml
+with:
+  threshold_date: "2023-08-29T15:35:57Z" # ISO 8601 string date format
+```
+
+### Verify Pod Termination
+
+This policy verifies that all pods have terminated.
 
 ## GitLab Pipeline Attestation
 

@@ -6,7 +6,8 @@ defaults:
       - "asset_type=organization"
       - '{{ .Args.OrganizationAsset }}'
 rules:
-  - uses: org/max-admins@v1
-    level: warning
+  - uses: gitlab/org/max-admins@v1
+    description: "[CT-1] Restrict the maximum number of organization admins"
+    level: error
     with:
       max_admins: 1

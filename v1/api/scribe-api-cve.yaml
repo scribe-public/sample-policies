@@ -1,18 +1,17 @@
 name: scribe-cve-policy
 path: scribe-api.rego
 
-description: "Verify Scribe CVE policy violations (by API)"
+description: "Verify no critical or high CVEs"
 
 labels:
-  - scribe
-  - ct-6
-  - ct-13
+  - SCA
+  - Blueprint
 initiatives:
-  - bundle-rule
+  - Default
 
 require-scribe-api: true
 
-evidence: 
+evidence:
   signed: false
   format-type: cyclonedx-json
   # predicate_type: https://cyclonedx.org/bom

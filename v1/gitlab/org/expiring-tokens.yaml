@@ -1,0 +1,21 @@
+name: token-about-to-expire
+path: expiring-tokens.rego
+
+level: warning
+labels:
+  - Org
+initiatives:
+  - Default
+
+description: "Verify that no organization tokens are about to expire"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=organization"
+
+with:
+  exiring_in_days: 30

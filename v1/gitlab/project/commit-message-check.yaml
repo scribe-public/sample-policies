@@ -1,0 +1,21 @@
+name: verify-commit_message_check
+path: commit-message-check.rego
+
+level: warning
+labels:
+  - Project
+initiatives:
+  - Default
+
+description: "Verify that all commit messages adhere to the specified format template"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+  commit_message_regex: ".*JIRA-\\d+.*"

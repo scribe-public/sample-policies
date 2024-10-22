@@ -1,7 +1,8 @@
 name: "CT-12"
 rules:
   - uses: sbom/artifact-signed@v1
-    level: warning
+    description: "[CT-12] Verify artifact is signed"
+    level: error
     evidence:
       format-type: cyclonedx-json
       signed: true

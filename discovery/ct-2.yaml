@@ -6,8 +6,10 @@ defaults:
       - "asset_type=project"
       - '{{ .Args.ProjectAsset }}'
 rules:
-  - uses: project/reject-unsigned-commits@v1
-    level: warning
+  - uses: gitlab/project/reject-unsigned-commits@v1
+    description: "[CT-2] Verify that reject_unsigned_commits is enabled for the project"
+    level: error
 
-  - uses: project/check-signed-commits@v1
-    level: warning
+  - uses: gitlab/project/check-signed-commits@v1
+    description: "[CT-2] Verify that all commits in the project are signed"
+    level: error

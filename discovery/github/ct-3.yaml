@@ -1,0 +1,11 @@
+name: "CT-3"
+defaults:
+  evidence:
+    signed: true
+    labels:
+      - "asset_type=organization"
+      - '{{ .Args.OrganizationAsset }}'
+rules:
+  - uses: github/org/old-secrets@v1
+    description: "[CT-3] Verify that no organization secrets have an excessively long lifespan"
+    level: warning

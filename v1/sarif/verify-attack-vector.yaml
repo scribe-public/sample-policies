@@ -3,9 +3,9 @@ path: verify-attack-vector.rego
 
 description: "Verify required evidence exists"
 labels:
-  - sarif
+  - SARIF
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

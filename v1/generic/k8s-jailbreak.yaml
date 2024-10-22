@@ -4,9 +4,9 @@ path: k8s-jailbreak.rego
 
 description: "Verify number of k8s misconfigurations is below specified threshold"
 labels:
-  - k8s
+  - K8s
 initiatives:
-  - bundle-rule
+  - Default
 
 evidence:
   signed: false

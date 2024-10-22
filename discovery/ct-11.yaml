@@ -4,7 +4,8 @@ defaults:
     signed: true
 rules:
   - uses: api/scribe-api-cve@v1
-    level: warning
+    description: "[CT-11] Verify Scribe CVE policy violations (by API)"
+    level: error
     with:
       superset:
         cve:

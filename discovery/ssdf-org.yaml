@@ -1,0 +1,16 @@
+name: "SSDF-ORG"
+defaults:
+  evidence:
+    signed: false
+    labels:
+      - '{{ .Args.OrganizationAsset }}'
+
+rules:
+  - uses: ssdf/ps-1-2fa@v1
+    level: warning
+
+  - uses: ssdf/ps-1-limit-admins@v1
+    level: warning
+
+  - uses: ssdf/ps-1-web-commit-signoff@v1
+    level: warning

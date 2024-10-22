@@ -1,0 +1,17 @@
+name: Medium Severity Limit
+path: medium-severity-limit.rego
+
+level: warning
+
+description: "Verify that the max allowed of medium severity is not passed"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "asset_type=project" 
+
+with:
+  max_allowed_specific_severity: 0

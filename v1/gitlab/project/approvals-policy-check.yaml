@@ -1,0 +1,23 @@
+name: merge-approval
+path: approvals-policy-check.rego
+
+level: warning
+
+description: "Verify that the project's merge approval policy complies with the requirements"
+labels:
+  - Blueprint
+  - Project
+initiatives:
+  - Default
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+  name: "All Members"
+  approvals_required_min: 2

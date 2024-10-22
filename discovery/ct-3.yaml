@@ -6,5 +6,6 @@ defaults:
       - "asset_type=organization"
       - '{{ .Args.OrganizationAsset }}'
 rules:
-  - uses: org/longlive-tokens@v1
-    level: warning
+  - uses: gitlab/org/longlive-tokens@v1
+    description: "[CT-3] Verify that no organization tokens have an excessively long lifespan"
+    level: error

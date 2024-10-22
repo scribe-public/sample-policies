@@ -1,0 +1,11 @@
+name: "SLSA.L1 Provenance Exists"
+description: "Verify required evidence exists"
+labels:
+  - SLSA
+initiatives:
+  - SLSA
+
+evidence:
+  signed: false
+  format-type: slsa
+  target_type: container

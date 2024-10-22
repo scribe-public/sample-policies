@@ -1,0 +1,23 @@
+name: allowed-commit-authors
+path: commit-author-email-check.rego
+
+level: warning
+
+description: "Verify that commit authors belong to the allowed email list"
+labels:
+  - Blueprint
+  - Project
+initiatives:
+  - Default
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+
+with:
+  allowed_authors:
+    - mail@example.com
