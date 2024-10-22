@@ -4,5 +4,5 @@ rules:
     description: "[CT-12] Verify artifact is signed"
     level: error
     evidence:
-      format-type: cyclonedx-json
+      content_body_type: cyclonedx-json
       signed: true

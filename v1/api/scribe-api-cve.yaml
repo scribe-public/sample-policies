@@ -13,7 +13,7 @@ require-scribe-api: true
 
 evidence:
   signed: false
-  format-type: cyclonedx-json
+  content_body_type: cyclonedx-json
   # predicate_type: https://cyclonedx.org/bom
 
 with:

@@ -10,5 +10,5 @@ initiatives:
 
 evidence:
   signed: false
-  format-type: cyclonedx-json
+  content_body_type: cyclonedx-json
   target_type: git

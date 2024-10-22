@@ -11,7 +11,7 @@ description: "Verify that the author_email_regex is set to the desired value"
 
 evidence:
   signed: false
-  format-type: generic
+  content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
