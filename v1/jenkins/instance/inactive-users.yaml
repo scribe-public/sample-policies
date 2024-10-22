@@ -12,7 +12,6 @@ description: "Verify inactive users."
 evidence:
   signed: false
   format-type: generic
-#  target_type: jenkins
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
     - "asset_type=instance"
