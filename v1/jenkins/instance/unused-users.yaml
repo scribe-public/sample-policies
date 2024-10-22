@@ -7,7 +7,7 @@ labels:
 initiatives:
   - Default
 
-description: "Verify unused users."
+description: "Verify that there are no users with zero activity"
 
 evidence:
   signed: false
