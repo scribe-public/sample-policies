@@ -8,4 +8,3 @@ initiatives:
 evidence:
   signed: false
   content_body_type: slsa
-  target_type: container

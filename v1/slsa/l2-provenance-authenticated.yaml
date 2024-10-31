@@ -8,7 +8,6 @@ initiatives:
 evidence:
   signed: true
   content_body_type: slsa
-  target_type: container
 
 with:
   identity:
