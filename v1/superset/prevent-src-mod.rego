@@ -29,7 +29,7 @@ verify := v {
 			"details": violations,
 		},
 		"summary": [summary],
-		"errors": superset.errors | errors,
+		"errors": errors,
 	}
 } 
 
@@ -40,7 +40,7 @@ policyQuery := v {
 }
 
 queryResponse := v {
-  valid_inputs
+  # valid_inputs
 	v := superset.Query(config, policyQuery)
 }
 
@@ -75,8 +75,8 @@ errors[msg] {
 }
 
 errors[msg] {
-  not valid_executable(args.executable_1_list)
-  msg := "executable_1_list cannot be null nor empty"
+  not valid_executable(args.executables)
+  msg := "executables cannot be null nor empty"
 }
 
 errors[msg] {
@@ -84,16 +84,23 @@ errors[msg] {
   msg := "not_executable_2_list cannot be null nor empty"
 }
 
+errors[msg] {
+  filters == []
+  msg := "filters cannot be null nor empty"
+}
+
 Allow {
 	queryResponse
 	count(violations) <= 0
 }
 
+violations1 = [query(id)]
+
 violations = j {
 
   j := [ r |
   
-    modification := queryResponse[0].data[_]
+    some modification in queryResponse[0].data
 
     not allowed_path(modification.path)
 
@@ -109,9 +116,8 @@ violations = j {
       "e2_executable": modification.e2_executable,
       "e1_cmd_line": modification.e1_cmd_line,
       "e2_cmd_line": modification.e2_cmd_line,
-      "context": modification.context,
       "mainAttestation": modification.mainAttestation,
-      "pipelineRun": modification.pipelineRun,
+      # "pipelineRun": modification.pipelineRun,
     }
   ]
 }
@@ -144,33 +150,31 @@ query(id) := {
     "id": id,
     "type": "table"
   },
-  "force": false,
+  "force": true,
   "queries": [
     {
       "columns": [
-        "path", 
-        "e1_event_id", 
-        "e2_event_id", 
-        "e1_action", 
-        "e2_action", 
-        "e1_process", 
-        "e2_process", 
-        "e1_executable", 
-        "e2_executable", 
-        "e1_cmd_line", 
-        "e2_cmd_line", 
+        "path",
+        "e1_event_id",
+        "e2_event_id",
+        "e1_action",
+        "e2_action",
+        "e1_process",
+        "e2_process",
+        "e1_executable",
+        "e2_executable",
+        "e1_cmd_line",
+        "e2_cmd_line",
         "pipelineRun",
-        "mainAttestation", 
-        # "userId", 
-        # "teamId", 
-        "context", 
-        # "mainAttestation_timestamp", 
-        # "e1_time", 
-        # "e2_time"
+        "mainAttestation"
       ],
       "filters": filters,
+      "metrics": [],
+      "row_limit": 0
     }
-  ]
+  ],
+	"result_format": "json",
+	"result_type": "results"
 }
 
 filters = f {   
@@ -188,7 +192,7 @@ startingFilter = f {
     {
       "col": "e1_executable",
       "op": "IN",
-      "val": args.executable_1_list
+      "val": args.allowed_executables
     },
     {
       "col": "e1_action",
@@ -198,7 +202,7 @@ startingFilter = f {
     {
       "col": "e2_executable",
       "op": "NOT IN",
-      "val": args.not_executable_2_list
+      "val": args.allowed_executables
     },
     {
       "col": "e2_action",
@@ -207,16 +211,17 @@ startingFilter = f {
     }
   ]
 }
+
 mainAttestationFilter = mA {
 
-  args.mainAttestation_list != null
-  args.mainAttestation_list != []
+  input.verifier.store == "scribe"
+  input.verifier.ref != null
 
   mA := [
       {
           "col": "mainAttestation",
           "op": "in",
-          "val": args.mainAttestation_list
+          "val": input.verifier.ref
       }
   ]
 }
@@ -298,7 +303,7 @@ valid_executable(exec) {
 
 # Makes sure the user inputs are valid
 valid_inputs {
-  valid_executable(args.executable_1_list)
+  valid_executable(args.executables)
   valid_executable(args.not_executable_2_list)
 }
 
