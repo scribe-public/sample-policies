@@ -1,0 +1,21 @@
+name: long-live-tokens
+path: long-live-tokens.rego
+
+level: warning
+labels:
+  - Project
+initiatives:
+  - Default
+
+description: "Verify long live tokens"
+
+evidence:
+  signed: false
+  format-type: generic
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=project"
+    - "platform=bitbucket"
+
+with:
+    max_days: 30
