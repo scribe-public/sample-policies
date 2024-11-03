@@ -1,0 +1,21 @@
+name: allowed-admins
+path: allow-admins.rego
+
+level: warning
+labels:
+  - Workspace
+initiatives:
+  - Default
+
+description: "Verify that all organization admins are included in the allowed list"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=workspace"
+
+with:
+  allowed_admins: []

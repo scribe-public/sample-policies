@@ -1,0 +1,21 @@
+name: allowed-users
+path: allow-users.rego
+
+level: warning
+labels:
+  - Repository
+initiatives:
+  - Default
+
+description: "Verify that all repository users are included in the allowed list"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=repository"
+
+with:
+  allowed_users: ["Arsenii Gabov"]
