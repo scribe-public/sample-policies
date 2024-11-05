@@ -35,7 +35,7 @@ verify := v {
 
 # change
 id = superset.datasetID("dataset_ProcessesData") {
-  valid_config(args.restricted_cmdLine_regex_list)
+  valid_config(args.executables)
 }
 
 policyQuery := v {
@@ -43,7 +43,7 @@ policyQuery := v {
 }
 
 queryResponse := v {
-  valid_config(args.restricted_cmdLine_regex_list)
+  valid_config(args.executables)
 	v := superset.Query(config, policyQuery)
 }
 
@@ -76,8 +76,8 @@ errors[msg] {
 }
 
 errors[msg] {
-  not valid_config(args.restricted_cmdLine_regex_list)
-  msg := "restricted_cmdLine_regex_list is not valid"
+  not valid_config(args.executables)
+  msg := "executables is not valid"
 }
 
 Allow {
@@ -87,15 +87,12 @@ Allow {
 
 violations = j {
   
-  valid_config(args.restricted_cmdLine_regex_list)
+  valid_config(args.executables)
 
   j := [ r |
-
     modification := queryResponse[0].data[_]
-
     parsedCmdLine := split(trim(modification.cmd_line, "{}"), ",")
     command := concat(" ", parsedCmdLine)
-    restricted_cmdLine(command)
 
     r := {
       "timestamp": format_time(modification.created),
@@ -150,14 +147,17 @@ query(id) := {
 }
 
 filters = f {   
-    mA := array.concat(startingFilter, mainAttestationFilter) # mainAttestation
-    e := array.concat(mA, executableFilter)                   # e1_executable
-
-    f := e
+    f := array.concat(startingFilter, mainAttestationFilter)
 }
 
 startingFilter = sF {
-  sF := []
+  sF := [
+    {
+      "col": "executable",
+      "op": "in",
+      "val": args.executables
+    }
+  ]
 }
 
 mainAttestationFilter = mA {
@@ -172,29 +172,6 @@ mainAttestationFilter = mA {
           "val": input.verifier.ref
       }
   ]
-}
-
-executableFilter = e {
-
-  args.executable_to_check_list != null
-  args.executable_to_check_list != []
-
-  e := [
-      {
-          "col": "executable",
-          "op": "in",
-          "val": args.executable_to_check_list
-      }
-  ]
-}
-
-# Regex matching for restricted_cmdLine_regex_list
-restricted_cmdLine(cmdLine) {
-  args.restricted_cmdLine_regex_list != null
-  args.restricted_cmdLine_regex_list != []
-
-  some pattern in args.restricted_cmdLine_regex_list
-  regex.match(pattern, cmdLine)
 }
 
 valid_config(list) {

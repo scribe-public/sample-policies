@@ -23,11 +23,12 @@ with:
   superset:
     filters:
       # Required Filters
-      restricted_cmdLine_regex_list: [] # list of strings for restricted command line regex that will be checked
+      restricted_cmdLine_regex_list:
+        - "sed"
+        - "git apply"
+        - "git cherry-pick"
       
       # Optional Filters
-      mainAttestation_list: []          # list of strings for attestation that will be checked
-      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
       executable_to_check_list: []      # list of strings for executables that will be checked
 
 
