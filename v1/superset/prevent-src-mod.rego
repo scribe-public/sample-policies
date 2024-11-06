@@ -94,8 +94,6 @@ Allow {
 	count(violations) <= 0
 }
 
-violations1 = [query(id)]
-
 violations = j {
 
   j := [ r |
@@ -169,12 +167,22 @@ query(id) := {
         "mainAttestation"
       ],
       "filters": filters,
+      "extras": {
+        "where": where_filter(args.allowed_executables)
+      },
       "metrics": [],
       "row_limit": 0
     }
   ],
 	"result_format": "json",
 	"result_type": "results"
+}
+
+where_filter(arr) = filter_string {
+    formatted_elements := [sprintf("'%s'", [x]) | x := arr[_]]
+    joined := concat(", ", formatted_elements)
+
+    filter_string := sprintf("(e1_executable IN (%s) AND e2_executable NOT IN (%s)) OR (e1_executable NOT IN (%s) AND e2_executable IN (%s))", [joined, joined, joined, joined])
 }
 
 filters = f {   
@@ -190,19 +198,9 @@ filters = f {
 startingFilter = f {
   f := [
     {
-      "col": "e1_executable",
-      "op": "IN",
-      "val": args.allowed_executables
-    },
-    {
       "col": "e1_action",
       "op": "==",
       "val": "output"
-    },
-    {
-      "col": "e2_executable",
-      "op": "NOT IN",
-      "val": args.allowed_executables
     },
     {
       "col": "e2_action",
