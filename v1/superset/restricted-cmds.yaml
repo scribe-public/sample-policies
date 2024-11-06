@@ -22,7 +22,6 @@ require-scribe-api: true
 with:
   superset:
     filters:
-      executables:
-        - git
+      executables: []
 
 
