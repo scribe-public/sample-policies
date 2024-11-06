@@ -23,10 +23,7 @@ with:
   superset:
     filters:
       # Required Filters
-      restricted_cmdLine_regex_list:
-        - "sed"
-        - "git apply"
-        - "git cherry-pick"
+      restricted_cmdLine_regex_list: []
       
       # Optional Filters
       executable_to_check_list: []      # list of strings for executables that will be checked
