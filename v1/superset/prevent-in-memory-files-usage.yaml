@@ -24,7 +24,6 @@ with:
     filters:
       forbidden_paths:
         - "/dev/shm"
-        - "/tmp"
         - "/var/tmp"
         - "anon_inode"
       forbidden_actions:
