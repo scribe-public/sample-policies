@@ -1,7 +1,7 @@
 name: Prevent Build From Using In-Memory Files
 path: prevent-in-memory-files-usage.rego
 
-description: "Verify that all required regex expression(s) is/are present in the command line."
+description: "Verify that no entity uses in-memory files."
 
 # ------------- Not sure if this is need ---------------------
 # labels:

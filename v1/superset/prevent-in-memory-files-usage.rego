@@ -107,13 +107,13 @@ summary = {
 
 reason = v {
 	Allow
-	v := "No executable found without specified required command line input"
+	v := "No entity found using in-memory files"
 }
 
 reason = v {
 	not Allow
 	count(violations) != 0
-	v := sprintf("Executable(s) found without specified required command line input: %d", [count(violations)])
+	v := sprintf("Some entities found using in-memory files %d", [count(violations)])
 }
 
 reason = v {
