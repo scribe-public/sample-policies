@@ -189,5 +189,5 @@ forbidden_event(event) {
 forbidden_event(event) {
     not arr_contains(args.forbidden_actions, event.action)
     some pattern in args.forbidden_paths
-    startswith(pattern, event.path)
+    startswith(event.path, pattern)
 }
