@@ -1,0 +1,47 @@
+name: Prevent Build From Using In-Memory Files
+path: prevent-in-memory-files-usage.rego
+
+description: "Verify that all required regex expression(s) is/are present in the command line."
+
+# ------------- Not sure if this is need ---------------------
+# labels:
+#   - scribe
+#   - ct-6
+#   - ct-13
+# initiatives:
+#   - bundle-rule
+
+require-scribe-api: true
+
+# ------------- Not sure if this is need ---------------------
+# evidence:
+#   signed: false
+#   format-type: cyclonedx-json
+#   # predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    filters:
+      forbidden_paths:
+        - "/dev/shm"
+        - "/tmp"
+        - "/var/tmp"
+        - "anon_inode"
+      forbidden_actions:
+        - "mmap"
+        - "mmap2"
+        - "mmap64"
+        - "mmap2_64"
+        - "mremap"
+        - "shm_open"
+        - "shm_unlink"
+        - "shmget"
+        - "shmat"
+        - "shmdt"
+        - "shmctl"
+        - "mmap_pgoff"
+        - "mmap64_pgoff"
+        - "mmap2_pgoff"
+        - "mmap2_64_pgoff"
+
+
