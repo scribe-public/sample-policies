@@ -156,20 +156,9 @@ query(id) := {
         "created",
         "work_dir"
       ],
-      "filters": filters,
+      "filters": mainAttestationFilter,
     }
   ]
-}
-
-filters = f {   
-    mA := array.concat(startingFilter, mainAttestationFilter) # mainAttestation
-    e := array.concat(mA, executableFilter)                   # e1_executable
-
-    f := e
-}
-
-startingFilter = sF {
-  sF := []
 }
 
 mainAttestationFilter = mA {
@@ -184,33 +173,6 @@ mainAttestationFilter = mA {
           "val": input.verifier.ref
       }
   ]
-}
-
-executableFilter = e {
-
-  args.executable_to_check_list != null
-  args.executable_to_check_list != []
-
-  e := [
-      {
-          "col": "executable",
-          "op": "in",
-          "val": args.executable_to_check_list
-      }
-  ]
-}
-
-# Regex matching for required_args
-required_cmdLine(cmdLine, app) {
-  args.required_args != null
-  args.required_args != {}
-
-    parsedCmdLine := split(trim(cmdLine, "{}"), ",")
-    command := concat(" ", parsedCmdLine)
-
-    every pattern in args.required_args {
-      regex.match(pattern, command)
-    }
 }
 
 
