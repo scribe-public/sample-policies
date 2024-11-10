@@ -126,7 +126,7 @@ summary = {
 
 reason = v {
 	Allow
-	v := "No executable found without specified required command line input"
+	v := "All the required cmd line flags are present where necessary"
 }
 
 reason = v {
