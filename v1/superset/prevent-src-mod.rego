@@ -40,7 +40,7 @@ policyQuery := v {
 }
 
 queryResponse := v {
-  # valid_inputs
+  valid_inputs
 	v := superset.Query(config, policyQuery)
 }
 
@@ -218,7 +218,7 @@ mainAttestationFilter = mA {
   mA := [
       {
           "col": "mainAttestation",
-          "op": "in",
+          "op": "==",
           "val": input.verifier.ref
       }
   ]
@@ -301,7 +301,6 @@ valid_executable(exec) {
 
 # Makes sure the user inputs are valid
 valid_inputs {
-  valid_executable(args.executables)
-  valid_executable(args.not_executable_2_list)
+  valid_executable(args.allowed_executables)
 }
 
