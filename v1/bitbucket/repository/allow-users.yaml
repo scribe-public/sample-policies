@@ -18,4 +18,4 @@ evidence:
     - "asset_type=repository"
 
 with:
-  allowed_users: ["Arsenii Gabov"]
+  allowed_users: []
