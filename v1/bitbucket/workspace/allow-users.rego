@@ -38,12 +38,9 @@ reason = v {
 violations = j {
 	j := {r |
 	    workspace_key := input.evidence.predicate.content.metadata.workspace_list[_]
-        user_list := [
-                    val |
-                    val := input.evidence.predicate.content[workspace_key].global_user[_]
-                ]
-		some user in user_list
-		not match_any(user.result_object.username)
+        user_list := get_valid_user_list(workspace_key)
+        some user in user_list
+        not match_any(user.result_object.username)
 		r = {
 			"user": user.result_object.username,
 			"permission": user.result_object.permission
@@ -51,6 +48,24 @@ violations = j {
 	}
 }
 
+get_valid_user_list(workspace_key) = { user |
+    is_cloud(input.evidence.predicate.environment.labels)
+    some user in input.evidence.predicate.content[workspace_key].workspace_user
+}{
+    is_cloud(input.evidence.predicate.environment.labels)
+}
+
+get_valid_user_list(workspace_key) = {user |
+    not is_cloud(input.evidence.predicate.environment.labels)
+    some user in input.evidence.predicate.content[workspace_key].global_user
+}{
+      not is_cloud(input.evidence.predicate.environment.labels)
+}
+
+is_cloud(labels) {
+    some label in labels
+    label == "platform_instance=bitbucket_cloud"
+}
 match_any(required_name) {
     allowed_user_list := input.config.args.allowed_users
 	some allowed_user in allowed_user_list

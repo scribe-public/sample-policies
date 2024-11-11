@@ -38,19 +38,35 @@ reason = v {
 violations = j {
 	j := {r |
 		repo_key := input.evidence.predicate.content.metadata.repository_list[_]
-        user_list := [
-            val |
-            some user in input.evidence.predicate.content[repo_key].repository_user
-            user.result_object.permission == "REPO_ADMIN"
-            val := user
-        ]
-		some user in user_list
-		not match_any(user.result_object.username)
+        user_list := get_valid_user_list(repo_key)
+        some user in user_list
+        not match_any(user.result_object.username)
 		r = {
 			"user": user.result_object.username,
 			"permission": user.result_object.permission
 		}
 	}
+}
+
+get_valid_user_list(repo_key) = { user |
+    is_cloud(input.evidence.predicate.environment.labels)
+    some user in input.evidence.predicate.content[repo_key].repository_user
+    user.result_object.permission == "admin"
+}{
+     is_cloud(input.evidence.predicate.environment.labels)
+}
+
+get_valid_user_list(repo_key) = {user |
+    not is_cloud(input.evidence.predicate.environment.labels)
+    some user in input.evidence.predicate.content[repo_key].repository_user
+    user.result_object.permission == "REPO_ADMIN"
+}{
+     not is_cloud(input.evidence.predicate.environment.labels)
+}
+
+is_cloud(labels) {
+    some label in labels
+    label == "platform_instance=bitbucket_cloud"
 }
 
 match_any(required_name) {
