@@ -6,6 +6,8 @@ default allow := false
 
 default violations := []
 
+default is_cloud := false
+
 verify = v {
 	v := {
 		"allow": allow,
@@ -48,26 +50,26 @@ violations = j {
 	}
 }
 
-get_valid_user_list(project_key) = { user |
-    is_cloud(input.evidence.predicate.environment.labels)
-    some user in input.evidence.predicate.content[project_key].project_user
-    user.result_object.permission == "admin"
-    not match_any(user.result_object.username)
-}{
-     is_cloud(input.evidence.predicate.environment.labels)
+get_valid_user_list(project_key) := v {
+    is_cloud
+    v := [
+        user |
+        some user in input.evidence.predicate.content[project_key].project_user
+        user.result_object.permission == "admin"
+    ]
 }
 
-get_valid_user_list(project_key) = {user |
-    not is_cloud(input.evidence.predicate.environment.labels)
-    some user in input.evidence.predicate.content[project_key].project_user
-    user.result_object.permission == "PROJECT_ADMIN"
-    not match_any(user.result_object.username)
-}{
-    not is_cloud(input.evidence.predicate.environment.labels)
+get_valid_user_list(project_key) := v {
+    not is_cloud
+    v := [
+        user |
+        some user in input.evidence.predicate.content[project_key].project_admin
+        user.result_object.permission == "PROJECT_ADMIN"
+    ]
 }
 
-is_cloud(labels) {
-    some label in labels
+is_cloud {
+    some label in input.evidence.predicate.environment.labels
     label == "platform_instance=bitbucket_cloud"
 }
 

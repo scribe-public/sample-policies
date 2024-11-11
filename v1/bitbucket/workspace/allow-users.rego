@@ -6,6 +6,8 @@ default allow := false
 
 default violations := []
 
+default is_cloud := false
+
 verify = v {
 	v := {
 		"allow": allow,
@@ -48,24 +50,27 @@ violations = j {
 	}
 }
 
-get_valid_user_list(workspace_key) = { user |
-    is_cloud(input.evidence.predicate.environment.labels)
-    some user in input.evidence.predicate.content[workspace_key].workspace_user
-}{
-    is_cloud(input.evidence.predicate.environment.labels)
+get_valid_user_list(workspace_key) := v {
+        is_cloud
+    v := [
+        user |
+        some user in input.evidence.predicate.content[workspace_key].workspace_user
+    ]
 }
 
-get_valid_user_list(workspace_key) = {user |
-    not is_cloud(input.evidence.predicate.environment.labels)
-    some user in input.evidence.predicate.content[workspace_key].global_user
-}{
-      not is_cloud(input.evidence.predicate.environment.labels)
+get_valid_user_list(workspace_key) := v {
+    not is_cloud
+    v := [
+            user |
+            some user in input.evidence.predicate.content[workspace_key].global_user
+    ]
 }
 
-is_cloud(labels) {
-    some label in labels
+is_cloud {
+    some label in input.evidence.predicate.environment.labels
     label == "platform_instance=bitbucket_cloud"
 }
+
 match_any(required_name) {
     allowed_user_list := input.config.args.allowed_users
 	some allowed_user in allowed_user_list
