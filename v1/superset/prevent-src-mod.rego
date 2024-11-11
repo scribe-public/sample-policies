@@ -25,7 +25,7 @@ verify := v {
 	v := {
 		"allow": Allow,
 		"violation": {
-			"type": "CVE",
+			"type": "modified-source-files",
 			"details": violations,
 		},
 		"summary": [summary],
