@@ -2,10 +2,6 @@ name: long-live-tokens
 path: long-live-tokens.rego
 
 level: warning
-labels:
-  - Project
-initiatives:
-  - Default
 
 description: "Verify long live tokens"
 

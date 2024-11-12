@@ -1,11 +1,7 @@
-name: allowed-admins
+name: allowed-workspace-admins
 path: allow-admins.rego
 
 level: warning
-labels:
-  - Workspace
-initiatives:
-  - Default
 
 description: "Verify that all organization admins are included in the allowed list"
 
@@ -15,6 +11,7 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
+    - "platform=bitbucket"
     - "asset_type=workspace"
 
 with:

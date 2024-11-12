@@ -63,7 +63,7 @@ get_valid_user_list(project_key) := v {
     not is_cloud
     v := [
         user |
-        some user in input.evidence.predicate.content[project_key].project_admin
+        some user in input.evidence.predicate.content[project_key].project_user
         user.result_object.permission == "PROJECT_ADMIN"
     ]
 }
