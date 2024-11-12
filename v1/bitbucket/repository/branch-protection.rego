@@ -28,7 +28,7 @@ allow {
 }
 
 reason = v {
-    v := sprintf("%d unprotected branches: %v | 0 max allowed", [count(unprotected_branches), unprotected_branches])
+    v := sprintf("%d unprotected branches | 0 max allowed", [count(unprotected_branches)])
 }
 unprotected_branches = j {
     j := [r |
