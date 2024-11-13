@@ -1,0 +1,18 @@
+name: allowed-project-users
+path: allow-users.rego
+
+level: warning
+
+description: "Verify that all project users are included in the allowed list"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=bitbucket"
+    - "asset_type=project"
+
+with:
+  allowed_users: []

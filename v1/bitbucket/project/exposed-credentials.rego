@@ -34,9 +34,9 @@ violations = j {
 	j := {r |
         some credentials in input.evidence.predicate.content.metadata.args.valint
         client_secret := credentials.client_secret
-        not contains(client_secret, "/******")
+        not contains(client_secret, "********")
         r = {
-            "folder": "folder",
+            "project": "project",
             "secret": client_secret,
         }
 	}
