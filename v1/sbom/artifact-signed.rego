@@ -5,7 +5,7 @@ import data.scribe as scribe
 
 default asset := {}
 
-asset = scribe.get_asset_data(input.evidence.predicate.environment)
+asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {

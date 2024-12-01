@@ -58,4 +58,4 @@ bad_commit(commit) {
 	not commit.result_object.validated
 }
 
-asset := scribe.get_asset_data(input.evidence.predicate.environment)
+asset := scribe.get_asset_data(input.evidence)

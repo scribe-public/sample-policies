@@ -87,4 +87,4 @@ branch_name_verify(branch) {
 	regex.match(rich_pattern, branch.name)
 }
 
-asset := scribe.get_asset_data(input.evidence.predicate.environment)
+asset := scribe.get_asset_data(input.evidence)

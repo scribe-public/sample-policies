@@ -85,4 +85,4 @@ merge_request_approval_error(project) = v {
 	}
 }
 
-asset := scribe.get_asset_data(input.evidence.predicate.environment)
+asset := scribe.get_asset_data(input.evidence)

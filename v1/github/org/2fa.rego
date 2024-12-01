@@ -64,4 +64,4 @@ violations = j {
 	]
 }
 
-asset := scribe.get_asset_data(input.evidence.predicate.environment)
+asset := scribe.get_asset_data(input.evidence)

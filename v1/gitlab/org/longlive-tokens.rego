@@ -77,4 +77,4 @@ bad_token(token) {
 	not token.result_object.expires_at
 }
 
-asset := scribe.get_asset_data(input.evidence.predicate.environment)
+asset := scribe.get_asset_data(input.evidence)

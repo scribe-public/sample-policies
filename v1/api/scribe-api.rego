@@ -25,7 +25,7 @@ summary = policy.cve.summary
 # summary = policy.licences.summary
 # summary = policy.unmaintained.summary
 
-asset = scribe.get_asset_data(input.evidence.predicate.environment)
+asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
