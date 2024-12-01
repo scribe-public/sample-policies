@@ -23,7 +23,7 @@ controls:
         labels:
           - '{{ assetd_on_target .Args.OrganizationAsset }}'
     rules:
-      - uses: gitlab/org/max-admins@v1
+      - uses: gitlab/org/max-admins@v2/rules
         level: error
         with:
           max_admins: 1
@@ -43,10 +43,10 @@ controls:
         labels:
           - '{{  assetd_on_target .Args.RepositoryAsset }}'
     rules:
-      - uses: gitlab/project/reject-unsigned-commits@v1
+      - uses: gitlab/project/reject-unsigned-commits@v2/rules
         level: error
 
-      - uses: gitlab/project/check-signed-commits@v1
+      - uses: gitlab/project/check-signed-commits@v2/rules
         level: error
 
 
@@ -64,7 +64,7 @@ controls:
         labels:
           - '{{ assetd_on_target .Args.OrganizationAsset }}'
     rules:
-      - uses: gitlab/org/longlive-tokens@v1
+      - uses: gitlab/org/longlive-tokens@v2/rules
         level: error
 
 
@@ -82,7 +82,7 @@ controls:
         labels:
           - '{{  assetd_on_target .Args.OrganizationAsset }}'
     rules:
-      - uses: gitlab/org/forbid-token-scopes@v1
+      - uses: gitlab/org/forbid-token-scopes@v2/rules
         level: error
         with:
           project_scopes:
@@ -116,7 +116,7 @@ controls:
     when:
       gate: Collaboration
     rules:
-      - uses: api/scribe-api-cve@v1
+      - uses: api/scribe-api-cve@v2/rules
         level: error
         with:
           superset:
@@ -135,7 +135,7 @@ controls:
     when:
       gate: Collaboration
     rules:
-      - uses: sbom/evidence-exists@v1
+      - uses: sbom/evidence-exists@v2/rules
         level: error
         evidence:
           format-type: cyclonedx-json
@@ -155,7 +155,7 @@ controls:
         labels:
           - '{{ assetd_on_target .Args.RepositoryAsset }}'
     rules:
-      - uses: gitlab/project/approvals-policy-check@v1
+      - uses: gitlab/project/approvals-policy-check@v2/rules
         level: error
 
 
@@ -167,7 +167,7 @@ controls:
     when:
       gate: Staging
     rules:
-      - uses: api/scribe-api-cve@v1
+      - uses: api/scribe-api-cve@v2/rules
         level: error
         with:
           superset:
@@ -187,7 +187,7 @@ controls:
     when:
       gate: Staging
     rules:
-      - uses: sbom/artifact-signed@v1
+      - uses: sbom/artifact-signed@v2/rules
         level: error
         evidence:
           format-type: cyclonedx-json
@@ -204,9 +204,9 @@ controls:
     when:
       gate: Staging
     rules:
-      - uses: sbom/artifact-signed@v1
+      - uses: sbom/artifact-signed@v2/rules
         level: error
-      - uses: sbom/blocklist-packages@v1
+      - uses: sbom/blocklist-packages@v2/rules
         level: error
         with:
           blocklist:
@@ -214,7 +214,7 @@ controls:
             - "liblzma5@5.6.1"
             - "xz-utils@5.6.0"
             - "xz-utils@5.6.1"
-      - uses: api/scribe-api-cve@v1
+      - uses: api/scribe-api-cve@v2/rules
         level: error
         with:
           superset:

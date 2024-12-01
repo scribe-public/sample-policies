@@ -19,11 +19,11 @@ controls:
         labels:
           - '{{ assetd_on_target .Args.OrganizationAsset }}'
     rules:
-    - uses: rules/ssdf/ps-1-2fa@v2
+    - uses: ssdf/ps-1-2fa@v2/rules
 
-    - uses: rules/ssdf/ps-1-limit-admins@v2
+    - uses: ssdf/ps-1-limit-admins@v2/rules
 
-    - uses: rules/ssdf/ps-1-web-commit-signoff@v2
+    - uses: ssdf/ps-1-web-commit-signoff@v2/rules
 
   - name: "SSDF-REPO"
     defaults:
@@ -31,8 +31,8 @@ controls:
         labels:
           - '{{ assetd_on_target .Args.RepositoryAsset }}'
     rules:
-    - uses: rules/ssdf/ps-3.1-code-archived@v2
+    - uses: ssdf/ps-3.1-code-archived@v2/rules
 
-    - uses: rules/ssdf/ps-1-branch-protection@v2
+    - uses: ssdf/ps-1-branch-protection@v2/rules
 
-    - uses: rules/ssdf/ps-1-repo-private@v2
+    - uses: ssdf/ps-1-repo-private@v2/rules
