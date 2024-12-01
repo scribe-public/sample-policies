@@ -1,10 +1,13 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
 
 default violations := []
+
+default asset := {}
 
 verify = v {
 	v := {
@@ -13,6 +16,7 @@ verify = v {
 			"type": "admins",
 			"details": violations,
 		},
+		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
@@ -54,3 +58,5 @@ match_any(scope) {
 	some forbidden_scope in forbidden_scopes_list
 	forbidden_scope == scope
 }
+
+asset := scribe.get_asset_data(input.evidence)

@@ -1,8 +1,12 @@
 package verify
 
+import data.scribe as scribe
+
 default allow = false
 
 default violations = []
+
+default asset := {}
 
 verify = v {
 	v := {
@@ -11,6 +15,7 @@ verify = v {
 			"type": "Blocklisted Packages",
 			"details": violations,
 		},
+		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
@@ -44,3 +49,5 @@ violations = j {
 		r = {"package": b}
 	}
 }
+
+asset := scribe.get_asset_data(input.evidence)

@@ -1,0 +1,25 @@
+name: disallowed-token-scope
+path: forbid-token-scopes.rego
+
+level: warning
+
+description: "Verify that no organization tokens have a disallowed scope"
+labels:
+  - Blueprint
+  - Org
+initiatives:
+  - Default
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=organization"
+
+with:
+    project_scopes:
+        - write_api
+        - write_repository

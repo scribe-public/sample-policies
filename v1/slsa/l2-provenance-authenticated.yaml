@@ -1,5 +1,4 @@
 name: "SLSA.L2 Provenance Authenticated"
-path: l2-provenance-authenticated.rego
 description: "Verify artifact is signed"
 labels:
   - SLSA
@@ -8,7 +7,7 @@ initiatives:
 
 evidence:
   signed: true
-  format-type: slsa
+  content_body_type: slsa
   target_type: container
 
 with:

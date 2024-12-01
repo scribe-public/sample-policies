@@ -1,0 +1,19 @@
+name: signed-commits
+path: check-signed-commits.rego
+
+level: warning
+labels:
+  - Project
+initiatives:
+  - Default
+
+description: "Verify that all commits in the project are signed"
+
+evidence:
+  signed: false
+  format-type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"

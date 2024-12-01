@@ -1,6 +1,7 @@
 package verify
 
 import data.superset.policy as policy
+import data.scribe as scribe
 
 default allow = false
 
@@ -24,9 +25,12 @@ summary = policy.cve.summary
 # summary = policy.licences.summary
 # summary = policy.unmaintained.summary
 
+asset = scribe.get_asset_data(input.evidence)
+
 verify = v {
 	v := {
 		"allow": allow,
+		"asset": asset,
 		"violation": violation,
 		"summary": summary,
 		"errors": errors,

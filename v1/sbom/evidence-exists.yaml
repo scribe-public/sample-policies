@@ -1,5 +1,4 @@
 name: require-sbom
-path: evidence-exists.rego
 description: "Verify required evidence exists"
 labels:
   - SBOM

@@ -1,5 +1,6 @@
-name: require-signed-sbom
-description: "Verify artifact is signed"
+name: require-sbom
+path: evidence-exists.rego
+description: "Verify required evidence exists"
 labels:
   - SBOM
   - Blueprint
@@ -11,9 +12,4 @@ evidence:
     - product
     - target
   format-type: cyclonedx-json
-  signed: true
-
-with:
-  identity:
-    common-names: []
-    emails: []
+  signed: false

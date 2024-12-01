@@ -1,0 +1,21 @@
+name: disallow-dependencies
+path: blocklist-packages.rego
+
+description: "Verify disallowed dependencies' count does not exceed specified threshold"
+labels:
+  - SBOM
+  - Blueprint
+initiatives:
+  - Default
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+
+with:
+  blocklist: []
+  blocklisted_limit: 0
