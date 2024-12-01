@@ -1,4 +1,5 @@
 name: "SLSA.L1 Provenance Exists"
+path: l1-provenance-exists.rego
 description: "Verify required evidence exists"
 labels:
   - SLSA

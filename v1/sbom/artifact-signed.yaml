@@ -1,4 +1,5 @@
 name: require-signed-sbom
+path: artifact-signed.rego
 description: "Verify artifact is signed"
 labels:
   - SBOM

@@ -1,6 +1,7 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
 
@@ -10,6 +11,8 @@ default admins := []
 
 default max_admins := 0
 
+default asset := {}
+
 verify = v {
 	v := {
 		"allow": allow,
@@ -17,6 +20,7 @@ verify = v {
 			"type": "admins",
 			"details": violations,
 		},
+		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
@@ -53,3 +57,5 @@ violations = j {
 			r = {"admins": admins}
 	}
 }
+
+asset := scribe.get_asset_data(input.evidence.predicate.environment)

@@ -1,10 +1,13 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
 
 default violations := []
+
+default asset := {}
 
 verify = v {
 	v := {
@@ -13,6 +16,7 @@ verify = v {
 			"type": "admins",
 			"details": violations,
 		},
+		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
@@ -56,3 +60,5 @@ reject_unsigned_commits_error(project) {
 reject_unsigned_commits_error(project) {
 	project.push_rules.reject_unsigned_commits != true
 }
+
+asset := scribe.get_asset_data(input.evidence.predicate.environment)

@@ -1,6 +1,7 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
 
@@ -9,6 +10,8 @@ default violations := []
 default desired_protected := true
 
 default branches := ["*"]
+
+default asset := {}
 
 desired_protected := input.config.args.desired_protected 
 
@@ -23,6 +26,7 @@ verify = v {
 			"type": "Missconfiguration",
 			"details": violations,
 		},
+		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
@@ -82,3 +86,5 @@ branch_name_verify(branch) {
 	rich_pattern = sprintf("^%s$", [pattern])
 	regex.match(rich_pattern, branch.name)
 }
+
+asset := scribe.get_asset_data(input.evidence.predicate.environment)
