@@ -1,0 +1,30 @@
+name: scribe-cve-policy
+path: scribe-api.rego
+
+description: "Verify no critical or high CVEs"
+
+labels:
+  - SCA
+  - Blueprint
+initiatives:
+  - Default
+
+require-scribe-api: true
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  format-type: cyclonedx-json
+  target_type: container
+  # sbomversion: '{{ default .Context.sbomversion "" }}'
+  # predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    cve:
+      max: 0
+      severity: 6
+      # component_name: "liblzma5"
+      # component_version: "5.6.0"
