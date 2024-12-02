@@ -5,7 +5,7 @@ description: "Verify required evidence exists"
 labels:
   - 3rd-party
 
-# evidence:
-#   format-type: generic
-#   target_type: data
-  # predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+evidence:
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/generic/v0.1
