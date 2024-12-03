@@ -1,4 +1,4 @@
-name: blocklist-cve
+name: trivy-blocklist-cve
 path: ../blocklist-report.rego
 
 description: "Verify a CVE Blocklist against a SARIF report"
