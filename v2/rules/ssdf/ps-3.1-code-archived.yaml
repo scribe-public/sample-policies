@@ -1,3 +1,4 @@
+config-type: rule
 name: "Code archived"
 id: "PS.3.1"
 uses: demodata/data@experimental

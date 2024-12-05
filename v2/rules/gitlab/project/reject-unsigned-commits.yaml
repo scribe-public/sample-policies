@@ -1,3 +1,4 @@
+config-type: rule
 name: disallow-unsigned-commits
 path: reject-unsigned-commits.rego
 

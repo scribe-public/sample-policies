@@ -1,3 +1,4 @@
+config-type: rule
 name: "Require signoff on web commits"
 id: "PS.1.5"
 uses: github/org/web-commit-signoff@v1

@@ -1,3 +1,4 @@
+config-type: rule
 name: required-evidence
 path: evidence-exists.rego
 description: "Verify required evidence exists"

@@ -1,3 +1,4 @@
+config-type: rule
 name: disallowed-token-scope
 path: forbid-token-scopes.rego
 

@@ -1,3 +1,4 @@
+config-type: initiative
 name: "Venafi Blueprint"
 id: "blueprint-securesoftwarepipeline"
 url: https://github.com/Venafi/blueprint-securesoftwarepipeline

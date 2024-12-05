@@ -1,3 +1,4 @@
+config-type: rule
 name: "Enforce 2FA"
 id: "PS.1.1"
 uses: github/org/2fa@v1

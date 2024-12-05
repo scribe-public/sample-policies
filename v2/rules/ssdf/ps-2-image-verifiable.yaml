@@ -1,3 +1,4 @@
+config-type: rule
 name: "Image-verifiable"
 id: "PS.2"
 uses: sbom/artifact-signed@v1

@@ -1,3 +1,4 @@
+config-type: rule
 name: token-excessive-lifespan
 path: longlive-tokens.rego
 

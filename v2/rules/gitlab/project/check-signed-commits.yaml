@@ -1,3 +1,4 @@
+config-type: rule
 name: signed-commits
 path: check-signed-commits.rego
 

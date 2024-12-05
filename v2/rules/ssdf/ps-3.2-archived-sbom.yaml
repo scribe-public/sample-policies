@@ -1,3 +1,4 @@
+config-type: rule
 name: "SBOM archived"
 id: "PS.3.2"
 uses: sbom/artifact-signed@v1
