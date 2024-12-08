@@ -1,0 +1,16 @@
+name: fresh-base-image
+path: fresh-base-image.rego
+
+description: "Verify Base Image is not older than specified threshold"
+labels:
+  - images
+initiatives:
+  - Default
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  max_days: 183
