@@ -59,7 +59,7 @@ found_base_image = j {
 
 violations = j {
 	not found_base_image
-	j := [{"error": "No base image found"}]
+	j := [{"error": "No base image data"}]
 }
 
 violations = j {
