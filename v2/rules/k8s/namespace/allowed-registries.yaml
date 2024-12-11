@@ -1,0 +1,21 @@
+config-type: rule
+id: k8s-namespace-allowed-registries
+name: "K8s Namespace Allowed Registries"
+path: allowed-registries.rego
+
+description: "A rule to verify that all discovered images come from allowed registries"
+
+labels:
+  - K8s
+  - Namespace
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+
+with:
+    allowed_registries: []

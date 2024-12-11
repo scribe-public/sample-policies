@@ -1,0 +1,21 @@
+config-type: rule
+id: k8s-pods-verify-pod-duration
+name: "Verify Pod Duration"
+path: verify-pod-duration.rego
+
+description: "A rule to verify that all pods are not running over threshold. All violations are running pods that were started before the threshold date"
+
+labels:
+  - K8s
+  - Pod
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=pod"
+
+with:
+  max_days: "30"

@@ -1,0 +1,20 @@
+config-type: rule
+id: sarif-semgrep-report
+name: "SARIF Semgrep Report"
+path: verify-semgrep-report.rego
+
+description: "Verify a Semgrep report against a set of rules"
+
+labels:
+  - SARIF
+  - Semgrep
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
+
+with:
+  rule_ids: []
+  violations_threshold: 0

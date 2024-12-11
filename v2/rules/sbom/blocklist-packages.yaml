@@ -7,6 +7,7 @@ description: "Verify disallowed dependencies' count does not exceed specified th
 
 labels:
   - SBOM
+  - Image
   - Blueprint
 
 evidence:

@@ -1,0 +1,22 @@
+config-type: rule
+id: github-org-allowed-users
+name: "GitHub organization allowed users"
+path: allow-users.rego
+
+description: "Verify that all organization users are included in the allowed list"
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+
+with:
+    allowed_users: []

@@ -1,0 +1,15 @@
+config-type: rule
+id: sarif-update-needed
+name: "SARIF Update Needed"
+path: updates-needed.rego
+
+description: "Verify no security packages require update"
+
+labels:
+  - SARIF
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0

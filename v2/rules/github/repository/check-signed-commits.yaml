@@ -1,0 +1,19 @@
+config-type: rule
+id: github-repo-signed-commits
+name: "Signed commits in GitHub repository"
+path: check-signed-commits.rego
+
+description: "Verify that all commits in the repository are signed"
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"

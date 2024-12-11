@@ -8,10 +8,11 @@ description: "Verify artifact is signed"
 labels:
   - SLSA
 
+fail-on-missing-evidence: true
+
 evidence:
   signed: true
   content_body_type: slsa
-  target_type: container
 
 with:
   identity:

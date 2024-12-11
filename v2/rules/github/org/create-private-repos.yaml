@@ -1,0 +1,26 @@
+config-type: rule
+id: github-org-create-private-repos
+name: "GitHub organization create private repositories"
+path: create-private-repos.rego
+
+description: |
+  "A rule to verify that the binary field: members_can_create_private_repositories is properly set"
+  "Used to limit the creation of public repositories."
+  "Supported only in GitHub Enterprise."
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+
+with:
+  desired_value: true
+

@@ -1,0 +1,21 @@
+config-type: rule
+id: github-repo-web-commit-signoff
+name: "Verify that a GitHub repository requires commit signoff"
+path: web-commit-signoff.rego
+
+description: "A rule to verify that contributors to organization repositories are required to sign off on commits they make through GitHub's web interface"
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+
+with:

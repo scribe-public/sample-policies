@@ -1,0 +1,24 @@
+config-type: rule
+id: gitlab-project-approvers-per-merge-request
+name: "Approvers per merge request"
+path: approvers-per-merge-request.rego
+
+description: "Verify that the binary field: 'disable_overriding_approvers_per_merge_request' is set correctly"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+
+with:
+  disable_overriding_approvers_per_merge_request: false
+
+

@@ -1,0 +1,20 @@
+config-type: rule
+id: github-api-signed-commits-list
+name: "GitHub API signed commits list"
+path: signed-commits-list.rego
+
+description: "Verify that the selected commits have been signed"
+
+labels:
+  - GitHub
+  - API
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+
+with:
+  commit_id_list: []
+  access_token: ""
+  owner: ""
+  repo: ""

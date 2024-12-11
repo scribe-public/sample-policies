@@ -1,0 +1,19 @@
+config-type: rule
+id: github-repo-default-branch-protection
+name: "Default branch protection enabled in GitHub repository"
+path: default-branch-protection.rego
+
+description: "A rule to verify that the default branch protection is enabled"
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"

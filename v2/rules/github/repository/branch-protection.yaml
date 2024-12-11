@@ -1,5 +1,5 @@
 config-type: rule
-id: github-branch-protection
+id: github-repo-branch-protection
 name: "Branch protection enabled in GitHub repository"
 path: branch-protection.rego
 

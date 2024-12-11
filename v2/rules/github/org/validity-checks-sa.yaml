@@ -1,0 +1,20 @@
+config-type: rule
+id: github-org-validity-checks-sa
+name: "GitHub organization secret scanning validity checks security and analysis is properly set"
+path: validity-checks-sa.rego
+
+description: "A rule to verify that secret_scanning_validity_checks in security_and_analysis is properly set"
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    

@@ -9,6 +9,8 @@ labels:
   - SBOM
   - Blueprint
 
+fail-on-missing-evidence: true
+
 evidence:
   filter-by:
     - product

@@ -1,0 +1,22 @@
+config-type: rule
+id: sbom-disallowed-licenses
+name: "SBOM disallowed licenses"
+path: banned-licenses.rego
+
+description: "Verify disallowed licenses' count in dependencies does not exceed specified threshold"
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  blocklist: []
+  blocklisted_limit : 0

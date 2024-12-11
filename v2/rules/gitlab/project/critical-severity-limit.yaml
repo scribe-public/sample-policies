@@ -1,0 +1,22 @@
+config-type: rule
+id: gitlab-project-critical-severity-limit
+name: "Critical Severity Limit"
+path: critical-severity-limit.rego
+
+description: "Verify that the max allowed of critical severity is not passed"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project" 
+
+with:
+  max_allowed_vulnerability_count: 0

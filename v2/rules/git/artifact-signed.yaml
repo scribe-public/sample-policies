@@ -1,0 +1,24 @@
+config-type: rule
+id: git-artifact-signed
+name: "Git artifact signed"
+path: artifact-signed.rego
+
+description: "Verify artifact is signed"
+
+labels:
+  - Git
+
+fail-on-missing-evidence: true
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: true
+  content_body_type: cyclonedx-json
+  target_type: git
+
+with:
+  identity:
+    common-names: []
+    emails: []

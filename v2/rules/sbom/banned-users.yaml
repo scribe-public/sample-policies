@@ -1,0 +1,19 @@
+config-type: rule
+id: sbom-disallowed-users
+name: "SBOM disallowed users"
+path: banned-users.rego
+
+description: "Don't allow specific users in an SBOM"
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  users:
+    - root

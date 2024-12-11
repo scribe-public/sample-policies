@@ -1,5 +1,5 @@
 config-type: rule
-id: gitlab-signed-commits
+id: gitlab-project-signed-commits
 name: "Signed commits check in GitLab project"
 path: check-signed-commits.rego
 

@@ -1,5 +1,5 @@
 config-type: rule
-id: gitlab-merge-approval
+id: gitlab-project-merge-approval
 name: "Merge approval policy check for GitLab project"
 path: approvals-policy-check.rego
 

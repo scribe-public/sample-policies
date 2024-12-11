@@ -1,0 +1,26 @@
+config-type: rule
+id: gitlab-org-allowed-token-scope
+name: "Allow token scopes in GitLab organization"
+path: allow-token-scopes.rego
+
+description: "Verify that organization tokens have the allowed scope"
+
+labels:
+  - Gitlab
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=organization"
+
+with:
+    allowed_token_scopes:
+        - api
+        - read_api
+        - read_repository
+        - read_registry

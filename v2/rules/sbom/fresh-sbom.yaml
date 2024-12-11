@@ -1,0 +1,18 @@
+config-type: rule
+id: fresh-sbom
+name: "SBOM freshness"
+path: fresh-sbom.rego
+
+description: "Verify SBOM is not older than specified threshold"
+
+labels:
+  - SBOM
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+with:
+  max_days : 30

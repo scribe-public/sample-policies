@@ -1,0 +1,22 @@
+config-type: rule
+id: gitlab-org-inactive-projects
+name: "GitLab organization inactive projects"
+path: inactive-projects.rego
+
+description: "Verify that no organization projects are inactive"
+
+labels:
+  - Gitlab
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=organization"
+
+with:
+  inactive_for_days: 90

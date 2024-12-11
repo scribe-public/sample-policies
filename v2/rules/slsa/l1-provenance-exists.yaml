@@ -8,7 +8,8 @@ description: "Verify required evidence exists"
 labels:
   - SLSA
 
+fail-on-missing-evidence: true
+
 evidence:
   signed: false
   content_body_type: slsa
-  target_type: container

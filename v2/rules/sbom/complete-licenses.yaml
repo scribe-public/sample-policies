@@ -1,0 +1,18 @@
+config-type: rule
+id: sbom-require-complete-license-set
+name: "SBOM complete license set"
+path: complete-licenses.rego
+
+description: "Verify all dependencies in the artifact have a license"
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container

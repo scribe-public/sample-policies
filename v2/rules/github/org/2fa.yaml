@@ -1,5 +1,5 @@
 config-type: rule
-id: github-2fa
+id: github-org-2fa
 name: "2FA enabled for GitHub organization"
 path: 2fa.rego
 

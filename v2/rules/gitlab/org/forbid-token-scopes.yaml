@@ -1,5 +1,5 @@
 config-type: rule
-id: gitlab-disallowed-token-scope
+id: gitlab-org-disallowed-token-scope
 name: "Forbid token scopes in GitLab organization"
 path: forbid-token-scopes.rego
 

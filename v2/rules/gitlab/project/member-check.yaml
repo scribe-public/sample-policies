@@ -1,0 +1,19 @@
+config-type: rule
+id: gitlab-project-verify-member_check
+name: "Member check enabled for GitLab project"
+path: member-check.rego
+
+description: "Verify that member_check is enabled for the project"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"

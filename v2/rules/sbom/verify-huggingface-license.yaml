@@ -1,0 +1,21 @@
+config-type: rule
+id: sbom-hf-license
+name: "Verify that SBOM has all specified licenses"
+path: verify-hf-license.rego
+
+description: "Verify artifact has all specified licenses"
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  licenses: []

@@ -1,0 +1,22 @@
+config-type: rule
+id: gitlab-project-abandoned-project
+name: "Abandoned project"
+path: abandoned-project.rego
+
+description: "Confirm that the project has been active for a specified duration"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+
+with:
+  inactive_for_days: 30

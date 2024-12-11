@@ -1,0 +1,21 @@
+config-type: rule
+id: git-coding-permissions
+name: "Coding permissions"
+path: coding-permissions.rego
+
+description: "Verify only allowed users commited to the repository"
+
+labels:
+  - Git
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: git
+
+with:
+  ids: []
+  files: []

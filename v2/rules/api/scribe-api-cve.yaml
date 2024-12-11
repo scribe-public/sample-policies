@@ -8,6 +8,7 @@ description: "Verify no critical or high CVEs"
 labels:
   - SCA
   - Blueprint
+  - Scribe
 
 require-scribe-api: true
 

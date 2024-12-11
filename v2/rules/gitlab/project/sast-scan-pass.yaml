@@ -1,0 +1,19 @@
+config-type: rule
+id: gitlab-project-sast-scan-pass
+name: "SAST Scanning Pass Checker"
+path: sast-scan-pass.rego
+
+description: "Verify that sast scanning was succesful"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project" 

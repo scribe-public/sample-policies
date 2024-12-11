@@ -1,0 +1,61 @@
+package verify
+
+default allow = false
+
+default exceeding = 0
+
+default violations = []
+
+default asset := {}
+
+asset = scribe.get_asset_data(input.evidence)
+
+verify = v {
+	v := {
+		"allow": allow,
+		"asset": asset,
+		"summary": [{
+			"allow": allow,
+			"violation": {
+				"type": "Too Old SBOM",
+				"details": violations,
+			},
+			"reason": reason,
+			"violations": exceeding,
+		}],
+	}
+}
+
+nanosecs_per_second = (1000 * 1000) * 1000
+
+nanosecs_per_day = ((24 * 60) * 60) * nanosecs_per_second
+
+maximum_age = input.config.args.max_days * nanosecs_per_day
+
+timestamp = time.parse_rfc3339_ns(input.evidence.predicate.bom.metadata.timestamp)
+
+exceeding = time.now_ns() - (timestamp + maximum_age)
+
+allow {
+	exceeding <= 0
+}
+
+reason = v {
+	allow
+	v := "SBOM age is below limit"
+}
+
+reason = v {
+	not allow
+	v := "SBOM age is above limit"
+}
+
+errors[msg] {
+	not input.evidence.predicate.bom.metadata.timestamp
+	msg := "bom timestamp not presented"
+}
+
+violations = v{
+	not allow
+	v := [{"msg": sprintf("SBOM created at: %d (earliest create date is %d)", [timestamp, time.now_ns() - maximum_age])}]
+}

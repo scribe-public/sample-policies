@@ -1,5 +1,5 @@
 config-type: rule
-id: github-max-admins
+id: github-org-max-admins
 name: "Limit admins for GitHub organization"
 path: max-admins.rego
 

@@ -1,0 +1,23 @@
+config-type: rule
+id: signed-commits-range
+path: signed-commits-range.rego
+
+description: "Verify that the selected range of commits have been signed"
+
+labels:
+  - GitHub
+  - API
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+
+with:
+  # Required
+  access_token: ""
+  owner: ""
+  repo: ""
+  # Optional
+  since: # ISO 8601 date-time string
+  until: # ISO 8601 date-time string
+  sha:

@@ -1,0 +1,22 @@
+config-type: rule
+id: gitlab-org-allowed-admins
+name: "Verify allowed admins for GitLab organization"
+path: allow-admins.rego
+
+description: "Verify that all organization admins are included in the allowed list"
+
+labels:
+  - Gitlab
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=organization"
+
+with:
+    allowed_admins: []

@@ -1,0 +1,23 @@
+config-type: rule
+id: github-org-advanced-security
+name: "Advanced Security is disabled for new repositories"
+path: advanced-security.rego
+
+description: "A rule to verify that the binary field: advanced_security_enabled_for_new_repositories is properly set"
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+
+with:
+  desired_value: false
+  

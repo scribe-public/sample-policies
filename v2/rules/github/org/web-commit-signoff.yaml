@@ -1,5 +1,5 @@
 config-type: rule
-id: github-web-commit-signoff
+id: github-org-web-commit-signoff
 name: "Verify that a GitHub organization requires signoff on web commits"
 path: web-commit-signoff.rego
 
@@ -11,7 +11,7 @@ labels:
 
 evidence:
   signed: false
-  format-type: generic
+  content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:

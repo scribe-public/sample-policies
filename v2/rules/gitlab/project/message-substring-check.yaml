@@ -1,0 +1,22 @@
+config-type: rule
+id: gitlab-project-message-substring-check
+name: "Message Substring Check"
+path: message-substring-check.rego
+
+description: "Verify that a substring is not found in the message attribute of the vulnerabilities"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project" 
+
+with:
+  pattern: "(?i)dghd"

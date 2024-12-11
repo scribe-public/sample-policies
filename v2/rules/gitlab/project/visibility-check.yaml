@@ -1,0 +1,22 @@
+config-type: rule
+id: gitlab-project-project-visibility-level
+name: "GitLab project visibility level"
+path: visibility-check.rego
+
+description: "Verify that the project's visibility matches the required level"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+
+with:
+  visibility: private

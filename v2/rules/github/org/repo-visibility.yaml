@@ -1,0 +1,24 @@
+config-type: rule
+id: github-org-repo-visibility
+name: "GitHub organization repo visibility is properly set"
+path: repo-visibility.rego
+
+description: "A rule to verify that only predefined public repos are permitted"
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+
+with:
+  allowed_repo_names: []
+  
+  

@@ -1,0 +1,18 @@
+config-type: rule
+id: image-labels
+name: "Image labels"
+path: verify-labels.rego
+
+description: "Require label key value pairs"
+
+labels:
+  - SBOM
+  - Images
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  labels: []

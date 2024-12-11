@@ -1,5 +1,5 @@
 config-type: rule
-id: gitlab-token-excessive-lifespan
+id: gitlab-org-token-excessive-lifespan
 name: "Forbid excessively long-lived tokens in GitLab organization"
 path: longlive-tokens.rego
 

@@ -1,0 +1,23 @@
+config-type: rule
+id: github-repo-visibility
+name: "Verify that a GitHub repository is public"
+path: visibility.rego
+
+description: "A rule to verify that only predefined public repos are permitted"
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+
+with:
+  allowed_repo_names: []
+

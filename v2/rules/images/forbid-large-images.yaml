@@ -1,0 +1,18 @@
+config-type: rule
+id: images-project-large-image
+name: "Forbid large images"
+path: forbid-large-images.rego
+
+description: "Verify image size below specified threshold"
+
+labels:
+  - SBOM
+  - Images
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  max_size: 77819980

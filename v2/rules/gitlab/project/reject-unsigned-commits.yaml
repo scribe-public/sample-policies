@@ -1,5 +1,5 @@
 config-type: rule
-id: gitlab-disallow-unsigned-commits
+id: gitlab-project-disallow-unsigned-commits
 name: "Reject unsigned commits in GitLab project"
 path: reject-unsigned-commits.rego
 
