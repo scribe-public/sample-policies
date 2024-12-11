@@ -1,13 +1,9 @@
 config-type: rule
-name: "Repo private"
 id: "PS.1.4"
+name: "Repo private"
 uses: github/repository/repo-private@v1
 
 description: "PS.1 Assure the repository is private"
-level: error
-
-initiatives: 
-  - SSDF
 
 labels:
   - SSDF

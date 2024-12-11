@@ -4,6 +4,8 @@ import future.keywords.in
 
 default allow := false
 
+default asset := {}
+
 default violations := []
 
 default admins := []
@@ -17,6 +19,7 @@ verify = v {
 			"type": "admins",
 			"details": violations,
 		},
+		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
@@ -53,3 +56,5 @@ violations = j {
 			r = {"admins": admins}
 	}
 }
+
+asset := scribe.get_asset_data(input.evidence)

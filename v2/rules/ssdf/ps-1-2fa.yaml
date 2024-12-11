@@ -1,13 +1,9 @@
 config-type: rule
-name: "Enforce 2FA"
 id: "PS.1.1"
+name: "Enforce 2FA"
 uses: github/org/2fa@v1
 
 description: "PS.1 Require 2FA for accessing code"
-level: error
-
-initiatives: 
-  - SSDF
 
 labels:
   - SSDF

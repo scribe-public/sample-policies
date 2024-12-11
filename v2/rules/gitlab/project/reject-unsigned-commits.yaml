@@ -1,15 +1,14 @@
 config-type: rule
-name: disallow-unsigned-commits
+id: gitlab-disallow-unsigned-commits
+name: "Reject unsigned commits in GitLab project"
 path: reject-unsigned-commits.rego
 
-level: warning
-
 description: "Verify that reject_unsigned_commits is enabled for the project"
+
 labels:
   - Blueprint
+  - Gitlab
   - Project
-initiatives:
-  - Default
 
 evidence:
   signed: false

@@ -1,12 +1,15 @@
 config-type: rule
-name: require-signed-sbom
+id: sbom-signed
+name: "Verify that SBOM is signed"
 path: artifact-signed.rego
+
 description: "Verify artifact is signed"
+
 labels:
   - SBOM
   - Blueprint
-initiatives:
-  - Default
+
+fail-on-missing-evidence: true
 
 evidence:
   filter-by:

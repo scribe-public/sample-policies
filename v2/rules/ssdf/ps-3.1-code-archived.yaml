@@ -1,14 +1,11 @@
 config-type: rule
-name: "Code archived"
 id: "PS.3.1"
+name: "Code archived"
 uses: demodata/data@experimental
 
 description: |
   "PS.3.1 Verify that the software release data is archived"
   "We assume running in Github thus the code is allways stored in a repository"
-
-initiatives: 
-  - SSDF
 
 labels:
   - SSDF

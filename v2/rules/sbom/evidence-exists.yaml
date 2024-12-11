@@ -1,12 +1,13 @@
 config-type: rule
-name: require-sbom
+id: require-sbom
+name: "Verify that SBOM exists"
 path: evidence-exists.rego
+
 description: "Verify required evidence exists"
+
 labels:
   - SBOM
   - Blueprint
-initiatives:
-  - Default
 
 evidence:
   filter-by:

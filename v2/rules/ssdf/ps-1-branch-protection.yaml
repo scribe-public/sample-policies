@@ -1,13 +1,9 @@
 config-type: rule
-name: "Branch protected"
 id: "PS.1.2"
+name: "Branch protected"
 uses: github/repository/branch-protection@v1
 
 description: "PS.1 Require branch protection for the repository"
-level: error
-
-initiatives: 
-  - SSDF
 
 labels:
   - SSDF

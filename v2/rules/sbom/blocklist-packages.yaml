@@ -1,13 +1,13 @@
 config-type: rule
-name: disallow-dependencies
+id: sbom-disallow-dependencies
+name: "Disallow specific dependencies"
 path: blocklist-packages.rego
 
 description: "Verify disallowed dependencies' count does not exceed specified threshold"
+
 labels:
   - SBOM
   - Blueprint
-initiatives:
-  - Default
 
 evidence:
   filter-by:

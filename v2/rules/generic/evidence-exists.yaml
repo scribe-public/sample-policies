@@ -1,6 +1,8 @@
 config-type: rule
-name: required-evidence
+id: generic-required-evidence
+name: "Generic evidence exists"
 path: evidence-exists.rego
+
 description: "Verify required evidence exists"
 
 labels:

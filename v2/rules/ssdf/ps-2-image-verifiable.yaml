@@ -1,12 +1,9 @@
 config-type: rule
-name: "Image-verifiable"
 id: "PS.2"
+name: "Image-verifiable"
 uses: sbom/artifact-signed@v1
 
 description: "PS.2 Provide a mechanism to verify the integrity of the image"
-
-initiatives: 
-  - SSDF
 
 labels:
   - SSDF

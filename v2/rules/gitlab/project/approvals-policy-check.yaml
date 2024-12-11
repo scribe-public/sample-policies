@@ -1,15 +1,14 @@
 config-type: rule
-name: merge-approval
+id: gitlab-merge-approval
+name: "Merge approval policy check for GitLab project"
 path: approvals-policy-check.rego
 
-level: warning
-
 description: "Verify that the project's merge approval policy complies with the requirements"
+
 labels:
   - Blueprint
+  - Gitlab
   - Project
-initiatives:
-  - Default
 
 evidence:
   signed: false

@@ -1,5 +1,6 @@
 config-type: rule
-name: scribe-cve-policy
+id: scribe-cve
+name: "Scribe CVE"
 path: scribe-api.rego
 
 description: "Verify no critical or high CVEs"
@@ -7,8 +8,6 @@ description: "Verify no critical or high CVEs"
 labels:
   - SCA
   - Blueprint
-initiatives:
-  - Default
 
 require-scribe-api: true
 
@@ -19,8 +18,6 @@ evidence:
   signed: false
   content_body_type: cyclonedx-json
   target_type: container
-  # sbomversion: '{{ default .Context.sbomversion "" }}'
-  # predicate_type: https://cyclonedx.org/bom
 
 with:
   superset:

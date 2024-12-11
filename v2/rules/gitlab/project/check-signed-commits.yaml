@@ -1,14 +1,13 @@
 config-type: rule
-name: signed-commits
+id: gitlab-signed-commits
+name: "Signed commits check in GitLab project"
 path: check-signed-commits.rego
 
-level: warning
-labels:
-  - Project
-initiatives:
-  - Default
-
 description: "Verify that all commits in the project are signed"
+
+labels:
+  - Gitlab
+  - Project
 
 evidence:
   signed: false

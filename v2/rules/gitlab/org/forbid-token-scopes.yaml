@@ -1,15 +1,14 @@
 config-type: rule
-name: disallowed-token-scope
+id: gitlab-disallowed-token-scope
+name: "Forbid token scopes in GitLab organization"
 path: forbid-token-scopes.rego
 
-level: warning
-
 description: "Verify that no organization tokens have a disallowed scope"
+
 labels:
   - Blueprint
-  - Org
-initiatives:
-  - Default
+  - Gitlab
+  - Organization
 
 evidence:
   signed: false

@@ -1,14 +1,14 @@
 config-type: rule
-name: max-admins
+id: gitlab-max-admins
+name: "Limit no. of admins for GitLab organization"
 path: max-admins.rego
 
-level: warning
-
 description: "Restrict the maximum number of organization admins"
+
 labels:
   - Blueprint
-initiatives:
-  - Default
+  - GitLab
+  - Organization
 
 evidence:
   signed: false
