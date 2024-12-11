@@ -1,7 +1,7 @@
 config-type: rule
 id: "PS.1.2"
 name: "Branch protected"
-uses: github/repository/branch-protection@v1
+uses: github/repository/branch-protection@v2/rules
 
 description: "PS.1 Require branch protection for the repository"
 

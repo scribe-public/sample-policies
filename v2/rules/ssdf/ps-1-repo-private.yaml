@@ -1,7 +1,7 @@
 config-type: rule
 id: "PS.1.4"
 name: "Repo private"
-uses: github/repository/repo-private@v1
+uses: github/repository/repo-private@v2/rules
 
 description: "PS.1 Assure the repository is private"
 
