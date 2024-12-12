@@ -665,3 +665,4 @@ An example of such a rego script is given in the [verify-sarif.rego](https://git
 ```bash
 valint verify ubuntu-cve.json -i statement-generic --rule sarif/verify-sarif@v1
 ```
+
