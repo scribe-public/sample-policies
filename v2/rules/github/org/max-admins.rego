@@ -1,16 +1,15 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default asset := {}
-
 default violations := []
-
 default admins := []
-
 default max_admins := 0
+
+asset := scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -56,5 +55,3 @@ violations = j {
 			r = {"admins": admins}
 	}
 }
-
-asset := scribe.get_asset_data(input.evidence)

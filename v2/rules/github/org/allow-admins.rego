@@ -1,11 +1,10 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)
@@ -60,4 +59,3 @@ match_any(required_name) {
 	some allowed_user in allowed_user_list
 	allowed_user == required_name
 }
-

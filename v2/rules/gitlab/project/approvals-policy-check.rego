@@ -4,14 +4,12 @@ import future.keywords.in
 import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default name = "All Members"
-
 default approvals_required_min := 1
-
 default asset := {}
+
+asset := scribe.get_asset_data(input.evidence)
 
 name = input.config.args.name
 
@@ -84,5 +82,3 @@ merge_request_approval_error(project) = v {
 		"approvals_required_min": approvals_required_min,
 	}
 }
-
-asset := scribe.get_asset_data(input.evidence)

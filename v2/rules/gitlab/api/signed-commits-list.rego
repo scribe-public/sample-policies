@@ -3,9 +3,7 @@ package verify
 import future.keywords.in
 
 default allow := false
-
 default violations := []
-
 default commit_id_list := []
 
 commit_id_list := input.config.args.commit_id_list {
@@ -113,4 +111,3 @@ get_r(response, commit_id, url) = r {
 		"response":	response.body,
 	}	
 }
-

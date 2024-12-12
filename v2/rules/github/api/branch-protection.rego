@@ -4,7 +4,6 @@ import future.keywords.in
 import future.keywords.every
 
 default allow := false
-
 default violations := []
 
 short_description = "Verify that built branch has branch protection rules set."

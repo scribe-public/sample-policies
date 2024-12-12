@@ -1,20 +1,18 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default max_secret_age := 12 
-
 default asset := {}
-
-asset = scribe.get_asset_data(input.evidence)
 
 max_secret_age = input.config.args.max_secret_age {
     input.config.args.max_secret_age
-} 
+}
+
+asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -76,4 +74,3 @@ months_since(ts) = months {
     diff_days := diff_ns / 1000000000 / 86400
     months := diff_days / 30
 }
-

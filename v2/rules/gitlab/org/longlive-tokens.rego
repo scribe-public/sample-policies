@@ -4,12 +4,11 @@ import future.keywords.in
 import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default exiring_in_days := 30
-
 default asset := {}
+
+asset := scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -76,5 +75,3 @@ bad_token(token) {
 bad_token(token) {
 	not token.result_object.expires_at
 }
-
-asset := scribe.get_asset_data(input.evidence)

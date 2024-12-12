@@ -1,11 +1,10 @@
 package verify
 
+import data.scribe as scribe
+
 default allow := false
-
 default size := 10000000000
-
 default violations := []
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)

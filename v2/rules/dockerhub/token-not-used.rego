@@ -2,12 +2,13 @@ package verify
 
 import future.keywords.in
 import time
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default asset := {}
+
+asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
     v := {
@@ -52,5 +53,3 @@ violations := {r |
         }
     }
 }
-
-asset = scribe.get_asset_data(input.evidence)

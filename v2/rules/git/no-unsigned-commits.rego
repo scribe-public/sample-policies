@@ -1,14 +1,14 @@
 package verify
 
 import future.keywords.if
+import data.scribe as scribe
 
 default allow = false
-
 default violations = []
-
 default signature := ""
-
 default asset := {}
+
+asset = scribe.get_asset_data(input.evidence)
 
 verify = v if {
 	v := {
@@ -51,5 +51,3 @@ violations = j if {
 		r = {"commit": comp.name}
 	}
 }
-
-asset = scribe.get_asset_data(input.evidence)

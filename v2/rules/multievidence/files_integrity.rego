@@ -1,10 +1,9 @@
 package verify
+
 import future.keywords
 
 default allow = false
-
 default violations = []
-
 default matchingPaths = []
 
 package_loaded := true

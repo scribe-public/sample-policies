@@ -4,7 +4,6 @@ import future.keywords.in
 import future.keywords.every
 
 default allow := false
-
 default violations := []
 
 short_description = "Verify that the project has push rules set."

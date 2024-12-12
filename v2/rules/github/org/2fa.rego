@@ -4,16 +4,15 @@ import future.keywords.in
 import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default desired_value := false
-
 default asset := {}
 
 desired_value {
     input.config.args.desired_value
-} 
+}
+
+asset := scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -63,5 +62,3 @@ violations = j {
         }
 	]
 }
-
-asset := scribe.get_asset_data(input.evidence)

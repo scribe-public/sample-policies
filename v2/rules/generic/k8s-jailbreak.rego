@@ -1,14 +1,15 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default asset := {}
 
 prohibited_ids = ["KSV006", "KSV009", "KSV023"]
+
+asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -49,5 +50,3 @@ violations = j {
 		r := {"id": misconfig.ID}
 	}
 }
-
-asset = scribe.get_asset_data(input.evidence)

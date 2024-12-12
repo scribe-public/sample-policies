@@ -1,12 +1,11 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
 default violations := []
-
 default pattern := "(?i)()"
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)
@@ -16,7 +15,6 @@ pattern := input.config.args.pattern {
     input.config.args.pattern != null
     input.config.args.pattern
 }
-
 
 verify = v {
     v := {

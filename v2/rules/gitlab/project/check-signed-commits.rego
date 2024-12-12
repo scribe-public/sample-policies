@@ -4,10 +4,10 @@ import future.keywords.in
 import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default asset := {}
+
+asset := scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -57,5 +57,3 @@ bad_commit(commit) {
 bad_commit(commit) {
 	not commit.result_object.validated
 }
-
-asset := scribe.get_asset_data(input.evidence)

@@ -1,13 +1,11 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default inactive_for_days := 1
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)

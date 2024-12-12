@@ -4,13 +4,9 @@ import future.keywords.in
 import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default desired_protected := true
-
 default branches := ["*"]
-
 default asset := {}
 
 desired_protected := input.config.args.desired_protected 
@@ -18,6 +14,8 @@ desired_protected := input.config.args.desired_protected
 branches = input.config.args.branches {
 	count(input.config.args.branches) > 0
 }
+
+asset := scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -86,5 +84,3 @@ branch_name_verify(branch) {
 	rich_pattern = sprintf("^%s$", [pattern])
 	regex.match(rich_pattern, branch.name)
 }
-
-asset := scribe.get_asset_data(input.evidence)

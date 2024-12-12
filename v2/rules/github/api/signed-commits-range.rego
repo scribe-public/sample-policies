@@ -3,9 +3,7 @@ package verify
 import future.keywords.in
 
 default allow := false
-
 default violations := []
-
 default owner := ""
 
 owner := input.config.args.owner {

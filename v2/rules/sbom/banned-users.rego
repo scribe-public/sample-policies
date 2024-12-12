@@ -1,18 +1,15 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default user := "root"
-
 default property = {
 	"name": "",
 	"value": "",
 }
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)

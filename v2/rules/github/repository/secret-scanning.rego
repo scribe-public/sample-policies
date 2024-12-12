@@ -1,13 +1,11 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default valid_regex_list := []
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)
@@ -79,4 +77,3 @@ check_secret_scanning_enabled_for_new_repositories(repository, secret_scanning) 
     secret_scanning == false
     repository.result_object.security_and_analysis.secret_scanning.status == "disabled"
 }
-

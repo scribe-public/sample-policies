@@ -1,11 +1,10 @@
 package verify
 
 import data.sarif
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)

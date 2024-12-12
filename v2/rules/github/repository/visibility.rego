@@ -1,20 +1,18 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default allowed_repo_names := []
-
 default asset := {}
-
-asset = scribe.get_asset_data(input.evidence)
 
 allowed_repo_names = input.config.args.allowed_repo_names {
     input.config.args.allowed_repo_names
-} 
+}
+
+asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -70,4 +68,3 @@ is_valid(repository) {
 	some pattern in allowed_repo_names
 	regex.match(pattern, repository.name)
 }
-

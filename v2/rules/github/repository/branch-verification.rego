@@ -1,18 +1,16 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default desired_verified := true
-
 default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
+desired_verified := input.config.args.desired_verified
 
-desired_verified := input.config.args.desired_verified 
+asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -69,4 +67,3 @@ is_valid(branch) {
 
 	desired_verified == branch.result_object.head_commit_verification.verified
 }
-

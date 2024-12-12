@@ -3,9 +3,7 @@ package verify
 import future.keywords.in
 
 default allow := false
-
 default violations := []
-
 default private_token := ""
 
 private_token := input.config.args.private_token {
@@ -171,4 +169,3 @@ get_url(since, until) = url {
 
 	url := sprintf("https://gitlab.com/api/v4/projects/%s/repository/commits", [project_id])
 }
-

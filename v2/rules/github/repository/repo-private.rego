@@ -1,12 +1,13 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default asset := {}
+
+asset := scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -66,5 +67,3 @@ violations = j {
 visibility(repository) {
     repository.result_object.visibility == "private"
 }
-
-asset := scribe.get_asset_data(input.evidence)

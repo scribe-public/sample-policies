@@ -1,13 +1,11 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
 default violations := []
-
-# Define the regular expression pattern to match "token" or "secret" in any case
 default pattern := "(?i)(token|secret)"
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)

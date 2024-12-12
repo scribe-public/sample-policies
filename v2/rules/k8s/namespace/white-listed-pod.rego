@@ -1,15 +1,12 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default white_listed_pod := []
-
 default verify_namespaces := []
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)

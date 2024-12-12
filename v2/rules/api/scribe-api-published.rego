@@ -3,7 +3,6 @@ package verify
 import data.superset.policy as policy
 
 default allow = false
-
 default asset := {}
 
 allow = policy.published.allow

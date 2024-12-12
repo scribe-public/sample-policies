@@ -1,13 +1,11 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
-
 default violations := []
-
 default job_name := "semgrep-sast"
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)

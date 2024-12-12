@@ -1,13 +1,11 @@
 package verify
 
 import future.keywords.if
+import data.scribe as scribe
 
 default allow = false
-
 default msg := "Builder mismatch"
-
 default violations := []
-
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)
