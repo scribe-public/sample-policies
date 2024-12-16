@@ -19,7 +19,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ assetd_on_target .Args.OrganizationAsset }}'
+          - '{{ asset_on_target .Args.OrganizationAsset }}'
     rules:
     - uses: ssdf/ps-1-2fa@v2/rules
 
@@ -31,7 +31,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ assetd_on_target .Args.RepositoryAsset }}'
+          - '{{ asset_on_target .Args.RepositoryAsset }}'
     rules:
     - uses: ssdf/ps-3.1-code-archived@v2/rules
 

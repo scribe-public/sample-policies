@@ -1,4 +1,5 @@
 config-type: initiative
+required-valint-version: "1.6.0"
 id: "blueprint-securesoftwarepipeline"
 name: "Venafi Blueprint"
 url: https://github.com/Venafi/blueprint-securesoftwarepipeline
@@ -22,7 +23,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ assetd_on_target .Args.OrganizationAsset }}'
+          - '{{ asset_on_target .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/max-admins@v2/rules
         level: error
@@ -42,7 +43,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{  assetd_on_target .Args.RepositoryAsset }}'
+          - '{{  asset_on_target .Args.RepositoryAsset }}'
     rules:
       - uses: gitlab/project/reject-unsigned-commits@v2/rules
         level: error
@@ -63,7 +64,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ assetd_on_target .Args.OrganizationAsset }}'
+          - '{{ asset_on_target .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/longlive-tokens@v2/rules
         level: error
@@ -81,7 +82,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{  assetd_on_target .Args.OrganizationAsset }}'
+          - '{{  asset_on_target .Args.OrganizationAsset }}'
     rules:
       - uses: gitlab/org/forbid-token-scopes@v2/rules
         level: error
@@ -154,7 +155,7 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ assetd_on_target .Args.RepositoryAsset }}'
+          - '{{ asset_on_target .Args.RepositoryAsset }}'
     rules:
       - uses: gitlab/project/approvals-policy-check@v2/rules
         level: error
