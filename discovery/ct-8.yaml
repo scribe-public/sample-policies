@@ -4,5 +4,5 @@ rules:
     description: "[CT-8] Verify required evidence exists"
     level: error
     evidence:
-      format-type: cyclonedx-json
+      content_body_type: cyclonedx-json
       signed: true

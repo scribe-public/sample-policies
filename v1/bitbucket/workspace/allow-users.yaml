@@ -1,0 +1,18 @@
+name: allowed-workspace-users
+path: allow-users.rego
+
+level: warning
+
+description: "Verify that all workspace users are included in the allowed list"
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=bitbucket"
+    - "asset_type=workspace"
+
+with:
+  allowed_users: []

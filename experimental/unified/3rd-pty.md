@@ -53,7 +53,7 @@ initiatives:
 
 evidence:
   signed: true
-  format-type: generic
+  content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/finding/v0.1
 
