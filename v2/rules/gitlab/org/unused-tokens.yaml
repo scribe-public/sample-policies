@@ -1,0 +1,22 @@
+config-type: rule
+id: gitlab-org-unused-tokens
+name: "Forbid unused tokens in GitLab organization"
+path: unused-tokens.rego
+
+description: "Verify that there are no unused organization tokens"
+
+labels:
+  - Gitlab
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=organization"
+
+with:
+  unused_for_days: 90

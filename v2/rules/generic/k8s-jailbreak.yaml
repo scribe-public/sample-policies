@@ -1,0 +1,16 @@
+
+config-type: rule
+id: k8s-jailbreak
+name: "K8s Jailbreak"
+path: k8s-jailbreak.rego
+
+description: "Verify number of k8s misconfigurations is below specified threshold"
+
+labels:
+  - K8s
+
+evidence:
+  signed: false
+  content_body_type: generic
+  predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
+  target_type: data

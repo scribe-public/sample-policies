@@ -1,0 +1,21 @@
+config-type: rule
+id: k8s-namespace-white-listed-namespaces
+name: "K8s Namespace White Listed Namespaces"
+path: white-listed-namespaces.rego
+
+description: "A rule to verify that all namespace are allowed"
+
+labels:
+  - K8s
+  - Namespace
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+
+with:
+  namespaces: []

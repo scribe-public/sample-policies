@@ -1,0 +1,15 @@
+config-type: rule
+id: images-disallow-shell-access
+name: "Disallow shell access"
+path: restrict-shell-entrypoint.rego
+
+description: "Verify image disallows shell access"
+
+labels:
+  - SBOM
+  - Images
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container

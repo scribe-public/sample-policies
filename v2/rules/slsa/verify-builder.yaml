@@ -1,0 +1,21 @@
+config-type: rule
+id: slsa-verify-builder
+name: "Verify that artifact was created by the specified builder"
+path: verify-builder.rego
+
+description: "Verify artifact was created by the specified builder"
+
+labels:
+  - SLSA
+  - Image
+
+evidence:
+  filter-by:
+    - pipeline
+    - product
+  signed: false
+  content_body_type: slsa
+  target_type: container
+
+with:
+  id: '{{ .Env.HOSTNAME }}'

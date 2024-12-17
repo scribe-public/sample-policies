@@ -1,0 +1,20 @@
+config-type: rule
+id: file-integrity
+name: "Multievidence File Integrity"
+path: files_integrity.rego
+
+description: "Verifies that files referenced by an image sbom have the same checksums as in previous versions of the image sbom"
+
+labels:
+  - SBOM
+
+evidence:
+  signed: true
+  content_body_type: cyclonedx-json
+  target_type: container
+  labels:
+    - new_evidence
+
+with:
+  ref_sbom: '{{ .Env.REF_SBOM_DATA }}'
+  path_prefix: "pkg:file/"

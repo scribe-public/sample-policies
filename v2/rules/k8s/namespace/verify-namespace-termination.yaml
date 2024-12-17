@@ -1,0 +1,22 @@
+config-type: rule
+id: k8s-namespace-verify-namespace-termination
+name: "Verify Namespace Termination"
+path: verify-namespace-termination.rego
+
+description: "A rule to verify that all namespaces have terminated"
+
+labels:
+  - K8s
+  - Namespace
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+
+with:
+  namespaces:
+    - ".*"

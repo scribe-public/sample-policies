@@ -1,0 +1,22 @@
+config-type: rule
+id: sbom-required-dependencies
+name: "SBOM required dependencies"
+path: required-packages.rego
+
+description: "Verify artifact has all the required packages"
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  required_pkgs: []
+  violations_limit: 0

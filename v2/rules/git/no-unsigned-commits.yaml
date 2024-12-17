@@ -1,0 +1,17 @@
+config-type: rule
+id: git-disallow-unsigned-commits
+name: "Disallow unsigned commits"
+path: no-unsigned-commits.rego
+
+description: "Verify all commits are signed"
+
+labels:
+  - Git
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: git

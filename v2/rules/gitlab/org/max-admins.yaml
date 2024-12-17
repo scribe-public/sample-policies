@@ -1,0 +1,23 @@
+config-type: rule
+id: gitlab-org-max-admins
+name: "Limit no. of admins for GitLab organization"
+path: max-admins.rego
+
+description: "Restrict the maximum number of organization admins"
+
+labels:
+  - Blueprint
+  - GitLab
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=organization"
+
+with:
+    max_admins: 0

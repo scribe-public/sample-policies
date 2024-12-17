@@ -1,0 +1,19 @@
+config-type: rule
+id: github-repo-ephemeral-runners-only
+name: "Ephemeral runners only in GitHub repository"
+path: ephemeral-runners-only.rego
+
+description: "A rule to verify that there are no self-hosted runenrs."
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"

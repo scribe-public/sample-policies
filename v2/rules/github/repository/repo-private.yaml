@@ -1,0 +1,21 @@
+config-type: rule
+id: github-repo-private
+name: "Verify that a GitHub repository is private"
+path: repo-private.rego
+
+description: "A rule to verify that a repository is private"
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+
+with:

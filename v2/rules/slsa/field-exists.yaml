@@ -1,0 +1,19 @@
+config-type: rule
+id: slsa-field-exists
+name: "SLSA field exists"
+path: field-exists.rego
+
+description: "Verify specified field exists in the artifact"
+
+labels:
+  - SLSA
+  - Image
+
+evidence:
+  signed: false
+  content_body_type: slsa
+  target_type: container
+
+with:
+  paths: []
+  violations_threshold: 0

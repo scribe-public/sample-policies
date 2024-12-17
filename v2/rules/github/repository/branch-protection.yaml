@@ -1,0 +1,25 @@
+config-type: rule
+id: github-repo-branch-protection
+name: "Branch protection enabled in GitHub repository"
+path: branch-protection.rego
+
+description: "A rule to verify that branch protected is set"
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+
+with:
+  desired_protected: true
+  branches:
+    - 'main'
+    - 'master'

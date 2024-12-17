@@ -1,0 +1,21 @@
+config-type: rule
+id: gitlab-api-signed-commits-range
+name: "GitLab signed commits range"
+path: signed-commits-range.rego
+
+description: "Verify that the selected range of commits have been signed"
+
+labels:
+  - Gitlab
+  - API
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  since: "" # ISO 8601 date-time string (optional)
+  until: "" # ISO 8601 date-time string (optional)
+  project_id: ""
+  private_token: ""

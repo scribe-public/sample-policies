@@ -1,0 +1,23 @@
+config-type: rule
+id: gitlab-project-allowed-committer-emails
+name: "GitLab project allowed committer emails"
+path: committer-email-check.rego
+
+description: "Verify that committers' email addresses are within the allowed list"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+
+with:
+  allowed_committers:
+    - mail@example.com

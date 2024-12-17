@@ -1,0 +1,15 @@
+config-type: rule
+id: "SLSA.L1"
+name: "Verify that provenance exists"
+path: l1-provenance-exists.rego
+
+description: "Verify required evidence exists"
+
+labels:
+  - SLSA
+
+fail-on-missing-evidence: true
+
+evidence:
+  signed: false
+  content_body_type: slsa

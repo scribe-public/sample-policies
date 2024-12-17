@@ -1,0 +1,20 @@
+config-type: rule
+id: github-repo-dependabot
+name: "Dependabot security updates enabled in GitHub repository"
+path: dependabot.rego
+
+description: "A rule to verify that dependabot_security_updates in security_and_analysis is properly set"
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+

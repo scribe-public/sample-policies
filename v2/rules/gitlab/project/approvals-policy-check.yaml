@@ -1,0 +1,24 @@
+config-type: rule
+id: gitlab-project-merge-approval
+name: "Merge approval policy check for GitLab project"
+path: approvals-policy-check.rego
+
+description: "Verify that the project's merge approval policy complies with the requirements"
+
+labels:
+  - Blueprint
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+
+with:
+  name: "All Members"
+  approvals_required_min: 2

@@ -1,0 +1,20 @@
+config-type: rule
+id: required-image-labels
+name: "Required image labels"
+path: verify-labels-exist.rego
+
+description: "Require specific image labels"
+
+labels:
+  - SBOM
+  - Images
+
+aggregate-results: true
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  labels: []

@@ -1,0 +1,20 @@
+config-type: rule
+id: "SLSA.L2"
+name: "Verify that provenance is authenticated"
+path: l2-provenance-authenticated.rego
+
+description: "Verify artifact is signed"
+
+labels:
+  - SLSA
+
+fail-on-missing-evidence: true
+
+evidence:
+  signed: true
+  content_body_type: slsa
+
+with:
+  identity:
+    common-names: []
+    emails: []

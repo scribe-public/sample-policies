@@ -1,0 +1,18 @@
+config-type: rule
+id: git-disallow-commits-to-main
+name: "Disallow commits to main"
+path: no-commit-to-main.rego
+
+description: "Verify no commits to the main branch"
+
+labels:
+  - Git
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: git
+

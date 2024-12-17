@@ -1,0 +1,23 @@
+config-type: rule
+id: k8s-pods-white-listed-pod
+name: "K8s Pods White Listed Pod"
+path: white-listed-pod.rego
+
+description: "A rule to verify that all pod are allowed"
+
+labels:
+  - K8s
+  - Pod
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=pod"
+
+with:
+  white_listed_pod: []
+  verify_namespaces:
+    - ".*"

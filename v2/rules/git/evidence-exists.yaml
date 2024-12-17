@@ -1,0 +1,19 @@
+config-type: rule
+id: required-git-evidence
+name: "Required Git evidence exists"
+path: evidence-exists.rego
+
+description: "Verify required evidence exists"
+
+labels:
+  - Git
+
+fail-on-missing-evidence: true
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: git

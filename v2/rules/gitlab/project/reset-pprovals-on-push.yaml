@@ -1,0 +1,22 @@
+config-type: rule
+id: gitlab-project-reset-pprovals-on-push
+name: "Reset approvals on push in GitLab project"
+path: reset-pprovals-on-push.rego
+
+description: "Verify that the binary field: 'reset_approvals_on_push' is set correctly"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+
+with:
+  reset_approvals_on_push: true

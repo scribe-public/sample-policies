@@ -1,0 +1,20 @@
+config-type: rule
+id: gitlab-api-signed-commits-list
+name: "GitLab signed commits list"
+path: signed-commits-list.rego
+
+description: "Verify that the selected commits have been signed"
+
+labels:
+  - Gitlab
+  - API
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  commit_id_list: []
+  private_token: ""
+  project_id: ""
