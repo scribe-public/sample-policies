@@ -1,0 +1,19 @@
+config-type: rule
+id: jenkins-unused-users
+name: "Unused Users"
+path: unused-users.rego
+
+description: "Verify that there are no users with zero activity"
+
+labels:
+  - Jenkins
+  - Instance
+
+evidence:
+  signed: false
+  content_body_type: generic
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=instance"
+    - "platform=jenkins"
+

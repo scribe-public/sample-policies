@@ -1,0 +1,21 @@
+config-type: rule
+id: jenkins-inactive-users
+name: "Inactive Users"
+path: inactive-users.rego
+
+description: "Verify inactive users"
+
+labels:
+  - Jenkins
+  - Instance
+
+evidence:
+  signed: false
+  content_body_type: generic
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=instance"
+    - "platform=jenkins"
+
+with:
+    inactive_for_days: 90

@@ -1,0 +1,23 @@
+config-type: rule
+id: bb-repo-branch-protection
+name: "Branch Protection"
+path: branch-protection.rego
+
+description: "A rule to verify that branch protected is set"
+
+labels:
+  - Bitbucket
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=bitbucket"
+    - "asset_type=repository"
+
+with:
+  branches:
+    - 'main'

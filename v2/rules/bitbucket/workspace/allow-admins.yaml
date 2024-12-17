@@ -1,0 +1,22 @@
+config-type: rule
+id: bb-workspace-allowed-workspace-admins
+name: "Allowed Workspace Admins"
+path: allow-admins.rego
+
+description: "Verify that all organization admins are included in the allowed list"
+
+labels:
+  - Bitbucket
+  - Workspace
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=bitbucket"
+    - "asset_type=workspace"
+
+with:
+  allowed_admins: []
