@@ -19,7 +19,12 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ asset_on_target .Args.OrganizationAsset }}'
+          - >-
+            {{- if eq (index .Context "asset-type") "organization" -}}
+            {{- asset_on_target (index .Context "asset-name") -}}
+            {{- else -}}
+            {{- asset_on_target nil -}}
+            {{- end -}}
     rules:
     - uses: ssdf/ps-1-2fa@v2/rules
 
@@ -31,7 +36,12 @@ controls:
     defaults:
       evidence:
         labels:
-          - '{{ asset_on_target .Args.RepositoryAsset }}'
+          - >-
+            {{- if eq (index .Context "asset-type") "repository" -}}
+            {{- asset_on_target (index .Context "asset-name") -}}
+            {{- else -}}
+            {{- asset_on_target nil -}}
+            {{- end -}}
     rules:
     - uses: ssdf/ps-3.1-code-archived@v2/rules
 
