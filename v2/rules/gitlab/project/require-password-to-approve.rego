@@ -55,4 +55,4 @@ violations := [r |
         "require_password_to_approve": project.project.result_object.approval_settings.require_password_to_approve,
         "desired_require_password_to_approve": require_password_to_approve,
     }
-] 
+]

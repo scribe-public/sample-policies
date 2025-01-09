@@ -56,4 +56,4 @@ violations := [r |
         "disable_overriding_approvers_per_merge_request": project.project.result_object.approval_settings.disable_overriding_approvers_per_merge_request,
         "desired_disable_overriding_approvers_per_merge_request": disable_overriding_approvers_per_merge_request,
     }
-] 
+]

@@ -55,4 +55,4 @@ violations := [r |
         "selective_code_owner_removals": project.project.result_object.approval_settings.selective_code_owner_removals,
         "desired_selective_code_owner_removals": selective_code_owner_removals,
     }
-] 
+]

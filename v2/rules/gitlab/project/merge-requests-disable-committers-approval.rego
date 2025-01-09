@@ -55,4 +55,4 @@ violations := [r |
         "merge_requests_disable_committers_approval": project.project.result_object.approval_settings.merge_requests_disable_committers_approval,
         "desired_merge_requests_disable_committers_approval": merge_requests_disable_committers_approval,
     }
-] 
+]

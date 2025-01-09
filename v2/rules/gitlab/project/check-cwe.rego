@@ -67,4 +67,4 @@ violations := [r |
               "url": identifier.url,
         },
     }
-] 
+]

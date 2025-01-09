@@ -64,4 +64,4 @@ violations := [r |
         "description": vulnerability.description,
         "message": vulnerability.message,
     }
-] 
+]

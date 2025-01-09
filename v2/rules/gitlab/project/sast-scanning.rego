@@ -58,4 +58,4 @@ violations = j {
 has_matching_job_name (pipeline) {
     some job in pipeline.result_object.jobs
     job.name == job_name
-}       
+}

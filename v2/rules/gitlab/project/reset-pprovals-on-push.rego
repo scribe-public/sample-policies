@@ -54,4 +54,4 @@ violations := [r |
         "reset_approvals_on_push": project.project.result_object.approval_settings.reset_approvals_on_push,
         "desired_reset_approvals_on_push": reset_approvals_on_push,
     }
-] 
+]

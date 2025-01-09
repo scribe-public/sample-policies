@@ -55,4 +55,4 @@ violations := [r |
         "merge_requests_author_approval": project.project.result_object.approval_settings.merge_requests_author_approval,
         "desired_merge_requests_author_approval": merge_requests_author_approval,
     }
-] 
+]
