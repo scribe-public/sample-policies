@@ -17,6 +17,12 @@ evidence:
   labels:
     - "platform=gitlab"
     - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset-type") "project" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
 
 with:
   reset_approvals_on_push: true

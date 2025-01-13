@@ -17,6 +17,12 @@ evidence:
   labels:
     - "platform=github"
     - "asset_type=repository"
+    - >-
+      {{- if eq (index .Context "asset-type") "repository" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
 
 with:
   desired_verified: false

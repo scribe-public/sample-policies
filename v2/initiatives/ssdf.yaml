@@ -16,15 +16,6 @@ controls:
     - uses: rules/ssdf/ps-3.2-archived-sbom@v2
 
   - name: "SSDF-ORG"
-    defaults:
-      evidence:
-        labels:
-          - >-
-            {{- if eq (index .Context "asset-type") "organization" -}}
-            {{- asset_on_target (index .Context "asset-name") -}}
-            {{- else -}}
-            {{- asset_on_target nil -}}
-            {{- end -}}
     rules:
     - uses: ssdf/ps-1-2fa@v2/rules
 
@@ -33,15 +24,6 @@ controls:
     - uses: ssdf/ps-1-web-commit-signoff@v2/rules
 
   - name: "SSDF-REPO"
-    defaults:
-      evidence:
-        labels:
-          - >-
-            {{- if eq (index .Context "asset-type") "repository" -}}
-            {{- asset_on_target (index .Context "asset-name") -}}
-            {{- else -}}
-            {{- asset_on_target nil -}}
-            {{- end -}}
     rules:
     - uses: ssdf/ps-3.1-code-archived@v2/rules
 
