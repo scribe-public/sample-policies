@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-namespace-verify-namespace-termination
-name: "Verify Namespace Termination"
+name: Verify Namespace Termination
 path: verify-namespace-termination.rego
 
-description: "A rule to verify that all namespaces have terminated"
+description: Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
 labels:
   - K8s

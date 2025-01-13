@@ -1,9 +1,9 @@
 config-type: rule
 id: generic-artifact-signed
-name: "Generic artifact signed"
+name: Generic Artifact Signed
 path: artifact-signed.rego
 
-description: "Verify required evidence exists"
+description: Verify required evidence is signed.
 
 labels:
   - 3rd-party

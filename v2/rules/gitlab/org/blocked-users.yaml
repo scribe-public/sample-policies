@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-org-blocked-users
-name: "GitLab organization blocked users"
+name: Block Users in GitLab Organization
 path: blocked-users.rego
 
-description: "Verify that no organization users are in the block list"
+description: Verify no users in the GitLab organization are on the block list.
 
 labels:
   - Gitlab

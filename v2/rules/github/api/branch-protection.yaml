@@ -1,4 +1,3 @@
-
 config-type: rule
 id: github-api-branch-protection
 name: "Branch protection enabled in GitHub repository"
@@ -8,7 +7,6 @@ description: "Verify GitHub branch protection rules"
 
 labels:
   - GitHub
-  - API
 
 evidence:
   signed: false

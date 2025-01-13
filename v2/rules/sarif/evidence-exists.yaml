@@ -1,9 +1,9 @@
 config-type: rule
 id: required-sarif-evidence
-name: "Required SARIF evidence exists"
+name: Verify Required Evidence in SARIF
 path: evidence-exists.rego
 
-description: "Verify required evidence exists"
+description: Verify all required evidence exists as defined by the SARIF policy.
 
 labels:
   - SARIF

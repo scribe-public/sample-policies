@@ -1,9 +1,9 @@
 config-type: rule
 id: dockerhub-token-not-used
-name: "Verify that Dockerhub tokens have been used"
+name: Verify no unused Dockerhub
 path: token-not-used.rego
 
-description: "Verify that tokens have been used"
+description: Verify that there are no unused Dockerhub.
 
 labels:
   - Dockerhub
@@ -14,4 +14,4 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
   labels:
-    - "asset_type=project" 
+    - "asset_type=project"

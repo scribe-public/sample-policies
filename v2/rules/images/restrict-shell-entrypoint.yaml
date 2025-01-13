@@ -1,9 +1,9 @@
 config-type: rule
 id: images-disallow-shell-access
-name: "Disallow shell access"
+name: Disallow Container Shell Entrypoint
 path: restrict-shell-entrypoint.rego
 
-description: "Verify image disallows shell access"
+description: Verify the container image disallows shell entrypoint.
 
 labels:
   - SBOM

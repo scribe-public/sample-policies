@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-org-allowed-token-scope
-name: "Allow token scopes in GitLab organization"
+name: Restrict Token Scopes in GitLab
 path: allow-token-scopes.rego
 
-description: "Verify that organization tokens have the allowed scope"
+description: Verify all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.
 
 labels:
   - Gitlab

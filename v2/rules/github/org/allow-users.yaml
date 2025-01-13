@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-allowed-users
-name: "GitHub organization allowed users"
+name: Allowed GitHub Organization Users
 path: allow-users.rego
 
-description: "Verify that all organization users are included in the allowed list"
+description: Verify only users in the Allowed List have user access to the GitHub organization.
 
 labels:
   - GitHub

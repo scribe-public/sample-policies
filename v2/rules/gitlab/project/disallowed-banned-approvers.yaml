@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-disallowed-banned-approvers
-name: "Disallowed banned approvers"
+name: Disallow Banned Approvers
 path: disallowed-banned-approvers.rego
 
-description: "Verify that the no approvers are on the banned list"
+description: Verify approvers in the GitLab project are not on the banned list.
 
 labels:
   - Gitlab

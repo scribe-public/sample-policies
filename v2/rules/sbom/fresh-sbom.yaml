@@ -1,9 +1,9 @@
 config-type: rule
 id: fresh-sbom
-name: "SBOM freshness"
+name: Enforce SBOM Freshness
 path: fresh-sbom.rego
 
-description: "Verify SBOM is not older than specified threshold"
+description: Verify the SBOM is not older than the specified duration.
 
 labels:
   - SBOM

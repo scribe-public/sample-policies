@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-org-token-about-to-expire
-name: "Verify that no organization tokens are about to expire"
+name: Prevent Token Expiration in GitLab Organization
 path: expiring-tokens.rego
 
-description: "Verify that no organization tokens are about to expire"
+description: Verify no GitLab organization tokens are about to expire.
 
 labels:
   - Gitlab

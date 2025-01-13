@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-pods-verify-pod-termination
-name: "Verify Pod Termination"
+name: Verify Pod Termination
 path: verify-pod-termination.rego
 
-description: "A rule to verify that all pods have terminated"
+description: Verify Kubernetes pods are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
 labels:
   - K8s

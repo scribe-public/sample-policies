@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-namespace-white-listed-namespaces
-name: "K8s Namespace White Listed Namespaces"
+name: Allowed Namespaces
 path: white-listed-namespaces.rego
 
-description: "A rule to verify that all namespace are allowed"
+description: Verify only namespaces specified in the Allowed List are allowed within the cluster.
 
 labels:
   - K8s

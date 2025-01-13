@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-ephemeral-runners-only
-name: "Ephemeral runners only in GitHub repository"
+name: Verify Only Ephemeral Runners Exist in Repository
 path: ephemeral-runners-only.rego
 
-description: "A rule to verify that there are no self-hosted runenrs."
+description: Verify self-hosted runners are disallowed in the GitHub repository.
 
 labels:
   - GitHub

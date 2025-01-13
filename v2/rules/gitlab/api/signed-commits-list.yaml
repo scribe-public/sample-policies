@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-api-signed-commits-list
-name: "GitLab signed commits list"
+name: Sign Selected Commits in GitLab
 path: signed-commits-list.rego
 
-description: "Verify that the selected commits have been signed"
+description: Verify the selected commits are signed in the GitLab organization.
 
 labels:
   - Gitlab

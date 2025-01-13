@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-namespace-blocked-images
-name: "K8s Namespace Blocked Images"
+name: Allowed Container Images
 path: blocked-images.rego
 
-description: "A rule to verify that all images are allowed"
+description: Verify only container images specified in the Allowed List run within the Kubernetes namespace.
 
 labels:
   - K8s

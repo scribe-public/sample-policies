@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-max-admins
-name: "Limit admins for GitHub organization"
+name: Limit Admin Number in GitHub Organization
 path: max-admins.rego
 
-description: "Restrict the maximum number of organization admins"
+description: Verify the maximum number of GitHub organization admins is restricted.
 
 labels:
   - Blueprint

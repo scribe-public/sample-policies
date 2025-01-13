@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-web-commit-signoff
-name: "Verify that a GitHub repository requires commit signoff"
+name: Verify Repository Requires Commit Signoff
 path: web-commit-signoff.rego
 
-description: "A rule to verify that contributors to organization repositories are required to sign off on commits they make through GitHub's web interface"
+description: Verify contributors sign off on commits to the GitHub repository through the GitHub web interface.
 
 labels:
   - GitHub

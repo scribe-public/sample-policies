@@ -1,9 +1,9 @@
 config-type: rule
 id: git-artifact-signed
-name: "Git artifact signed"
+name: Git Artifact Signed
 path: artifact-signed.rego
 
-description: "Verify artifact is signed"
+description: Verify the Git artifact is signed.
 
 labels:
   - Git

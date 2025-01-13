@@ -1,9 +1,9 @@
 config-type: rule
 id: sarif-update-needed
-name: "SARIF Update Needed"
+name: SARIF Update Needed
 path: updates-needed.rego
 
-description: "Verify no security packages require update"
+description: Verify no security packages require updates.
 
 labels:
   - SARIF

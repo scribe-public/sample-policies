@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-org-token-excessive-lifespan
-name: "Forbid excessively long-lived tokens in GitLab organization"
+name: Forbid Long-Lived Tokens in GitLab Organization
 path: longlive-tokens.rego
 
-description: "Verify that no organization tokens have an excessively long lifespan"
+description: Verify no GitLab organization tokens have an excessively long lifespan.
 
 labels:
   - Blueprint

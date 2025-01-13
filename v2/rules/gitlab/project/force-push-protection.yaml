@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-disallow-force-push
-name: "GitLab project disallow force push"
+name: Disallow Force Push in GitLab Project
 path: force-push-protection.rego
 
-description: "Verify that force push is not allowed for the project"
+description: Verify force pushes in the GitLab project are disallowed to maintain repository integrity.
 
 labels:
   - Gitlab

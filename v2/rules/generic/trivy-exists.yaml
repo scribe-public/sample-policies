@@ -1,6 +1,6 @@
 config-type: rule
 id: required-trivy-evidence
-name: "Required Trivy evidence exists"
+name: Required Trivy Evidence Exists
 description: "Verify required Trivy evidence exists"
 
 labels:

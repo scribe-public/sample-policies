@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-dependency-graph
-name: "Dependency graph enabled for new repositories"
+name: Verify dependency_graph_enabled_for_new_repositories setting
 path: dependency-graph.rego
 
-description: "A rule to verify that the binary field: dependency_graph_enabled_for_new_repositories is properly set"
+description: Verify `dependency_graph` is enabled for new repositories in the GitHub organization.
 
 labels:
   - GitHub
@@ -20,4 +20,3 @@ evidence:
 
 with:
   desired_value: false
-  

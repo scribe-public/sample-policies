@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-namespace-white-listed-pod
-name: "K8s Namespace White Listed Pod"
+name: Allowed Pods in Namespace
 path: white-listed-pod.rego
 
-description: "A rule to verify that all pod are allowed"
+description: Verify only pods explicitly listed in the Allowed List run within a Kubernetes namespace.
 
 labels:
   - K8s

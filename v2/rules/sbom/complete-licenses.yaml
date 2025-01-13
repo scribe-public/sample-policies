@@ -1,9 +1,9 @@
 config-type: rule
 id: sbom-require-complete-license-set
-name: "SBOM complete license set"
+name: Enforce SBOM License Completeness
 path: complete-licenses.rego
 
-description: "Verify all dependencies in the artifact have a license"
+description: Verify all dependencies in the artifact have a license.
 
 labels:
   - SBOM

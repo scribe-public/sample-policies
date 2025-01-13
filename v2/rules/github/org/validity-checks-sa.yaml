@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-validity-checks-sa
-name: "GitHub organization secret scanning validity checks security and analysis is properly set"
+name: Verify Secret_Scanning_Validity_Checks Setting in Security_And_Analysis
 path: validity-checks-sa.rego
 
-description: "A rule to verify that secret_scanning_validity_checks in security_and_analysis is properly set"
+description: Verify `secret_scanning_validity_checks` is configured in the GitHub organization.
 
 labels:
   - GitHub
@@ -17,4 +17,3 @@ evidence:
   labels:
     - "platform=github"
     - "asset_type=organization"
-    

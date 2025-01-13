@@ -1,9 +1,9 @@
 config-type: rule
 id: slsa-field-exists
-name: "SLSA field exists"
+name: SLSA Field Exists in Provenance Document
 path: field-exists.rego
 
-description: "Verify specified field exists in the artifact"
+description: Verify the specified field exists in the provenance document.
 
 labels:
   - SLSA

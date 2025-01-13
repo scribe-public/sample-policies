@@ -1,8 +1,9 @@
 config-type: rule
 id: bb-project-long-live-tokens
+name: Prevent Long-Lived Tokens
 path: long-live-tokens.rego
 
-description: "Verify long live tokens"
+description: Verify Bitbucket API tokens expire before the maximum time to live.
 
 labels:
   - Bitbucket

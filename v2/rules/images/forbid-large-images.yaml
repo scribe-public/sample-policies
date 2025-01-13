@@ -1,9 +1,9 @@
 config-type: rule
 id: images-project-large-image
-name: "Forbid large images"
+name: Forbid Large Images
 path: forbid-large-images.rego
 
-description: "Verify image size below specified threshold"
+description: Verify the image size is below the specified threshold.
 
 labels:
   - SBOM

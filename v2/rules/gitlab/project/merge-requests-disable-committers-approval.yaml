@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-merge-requests-disable-committers-approval
-name: "Merge requests disable committers approval for GitLab project"
+name: Disable Committers' Approval for Merge Requests in GitLab
 path: merge-requests-disable-committers-approval.rego
 
-description: "Verify that the binary field: 'merge_requests_disable_committers_approval' is set correctly"
+description: Verify `merge_requests_disable_committers_approval` is set for the GitLab project.
 
 labels:
   - Gitlab

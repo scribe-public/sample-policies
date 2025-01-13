@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-code-owner-approval
-name: "Code owner approval required for GitLab project"
+name: Require Code Owner Approval in GitLab Project
 path: co-approval-required.rego
 
-description: Verify that code owner approval is required for specific branches in the project"
+description: Verify code owner approval is required for specific branches in the GitLab project.
 
 labels:
   - Gitlab

@@ -1,9 +1,9 @@
 config-type: rule
 id: scribe-template
-name: "Scribe template policy"
+name: Apply Scribe Template Policy
 # path: scribe-api.rego
 
-description: "Verify XX (template rule using Scribe API)"
+description: Verify XX using the Scribe API template rule.
 
 labels:
   - Scribe

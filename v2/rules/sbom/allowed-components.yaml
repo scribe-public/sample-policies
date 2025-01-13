@@ -1,9 +1,9 @@
 config-type: rule
 id: sbom-allowed-components
-name: "SBOM allowed components"
+name: Enforce Allowed SBOM Components
 path: allowed-components.rego
 
-description: "Verify the artifact has only allowed components"
+description: Verify the artifact contains only allowed components.
 
 labels:
   - SBOM

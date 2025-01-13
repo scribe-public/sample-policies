@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-sast-scanning
-name: "SAST scanning in GitLab project"
+name: Run SAST Scanning in GitLab Project
 path: sast-scanning.rego
 
-description: "Verify that sast scanning was ran"
+description: Verify SAST scanning is performed for the GitLab project.
 
 labels:
   - Gitlab
@@ -16,4 +16,4 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
   labels:
     - "platform=gitlab"
-    - "asset_type=project" 
+    - "asset_type=project"

@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-allowed-commit-authors
-name: "GitLab project allowed commit authors"
+name: Restrict Commit Authors in GitLab Project
 path: commit-author-email-check.rego
 
-description: "Verify that commit authors belong to the allowed email list"
+description: Verify only GitLab project users in the Allowed List have commit author permissions.
 
 labels:
   - Gitlab

@@ -1,9 +1,9 @@
 config-type: rule
 id: "PS.3.2"
-name: "SBOM archived"
+name: SBOM archived
 uses: sbom/artifact-signed@v2/rules
 
-description: "PS.3.2 Archive SBOM"
+description: PS.3.2 Archive SBOM
 
 labels:
   - SSDF

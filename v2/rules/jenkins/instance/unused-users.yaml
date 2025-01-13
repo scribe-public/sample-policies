@@ -1,9 +1,9 @@
 config-type: rule
 id: jenkins-unused-users
-name: "Unused Users"
+name: Disallow Unused Users
 path: unused-users.rego
 
-description: "Verify that there are no users with zero activity"
+description: Verify there are no users with zero activity.
 
 labels:
   - Jenkins
@@ -16,4 +16,3 @@ evidence:
   labels:
     - "asset_type=instance"
     - "platform=jenkins"
-

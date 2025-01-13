@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-required-minimal-approvers
-name: "GitLab project required minimal approvers"
+name: Require Minimal Approvers in GitLab Project
 path: required-minimal-approvers.rego
 
-description: "Verify that the required number of approvers from config-file is met"
+description: Verify the required number of approvers for the GitLab project is met.
 
 labels:
   - Gitlab
@@ -16,4 +16,4 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
   labels:
     - "platform=gitlab"
-    - "asset_type=project" 
+    - "asset_type=project"

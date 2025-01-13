@@ -1,9 +1,9 @@
 config-type: rule
 id: slsa-build-time
-name: "Verify build time"
+name: Verify build time
 path: build-time.rego
 
-description: "Verify artifact was created within the specified time window"
+description: Verify the artifact was created within the specified time window.
 
 labels:
   - SLSA

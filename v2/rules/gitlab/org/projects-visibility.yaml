@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-org-allowed-visible-projects
-name: "GitLab organization allowed visible projects"
+name: Restrict Public Visibility in GitLab Organization
 path: projects-visibility.rego
 
-description: "Verify that only allowed projects have public visibility"
+description: Verify only allowed projects in the GitLab organization have public visibility.
 
 labels:
   - Gitlab

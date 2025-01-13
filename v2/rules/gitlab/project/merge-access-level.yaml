@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-merge-access-level
-name: "Merge access level policy check for GitLab project"
+name: Enforce Merge Access Level Policy for GitLab Project
 path: merge-access-level.rego
 
-description: "Verify that the project's merge access level policy meets the requirements"
+description: Verify the GitLab project's merge access level complies with requirements.
 
 labels:
   - Gitlab

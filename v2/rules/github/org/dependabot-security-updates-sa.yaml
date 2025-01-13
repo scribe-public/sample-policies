@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-dependabot-security-updates-sa
-name: "Dependabot security updates enabled for security and analysis"
+name: Verify dependabot_security_updates setting in security_and_analysis
 path: dependabot-security-updates-sa.rego
 
-description: "A rule to verify that dependabot_security_updates in security_and_analysis is properly set"
+description: Verify Dependabot security updates are configured in the GitHub organization.
 
 labels:
   - GitHub
@@ -17,4 +17,3 @@ evidence:
   labels:
     - "platform=github"
     - "asset_type=organization"
-    

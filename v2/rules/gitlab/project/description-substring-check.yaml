@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-description-substring-check
-name: "Description Substring Check"
+name: Check Description Substring
 path: description-substring-check.rego
 
-description: "Verify that a substring is not found in the description attribute of the vulnerabilities"
+description: Verify a specific substring is not found in the description attribute of vulnerabilities for the GitLab project.
 
 labels:
   - Gitlab

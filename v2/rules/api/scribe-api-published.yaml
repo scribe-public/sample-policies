@@ -1,9 +1,9 @@
 config-type: rule
 id: scribe-published-policy
-name: "Scribe Published Policy"
+name: Scribe Published Policy
 path: scribe-api-published.rego
 
-description: "Verify Scribe Published policy violations (by API)"
+description: Verify image Scribe Publish flag is set for container image.
 
 labels:
   - Scribe

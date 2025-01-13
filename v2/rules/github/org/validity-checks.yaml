@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-validity-checks
-name: "GitHub organization secret scanning validity checks is properly set"
+name: Verify Secret_Scanning_Validity_Checks_Enabled Setting
 path: validity-checks.rego
 
-description: "A rule to verify that the binary field: secret_scanning_validity_checks_enabled is properly set"
+description: Verify `secret_scanning_validity_checks` is configured in the GitHub repository.
 
 labels:
   - GitHub
@@ -20,4 +20,3 @@ evidence:
 
 with:
   desired_value: false
-  

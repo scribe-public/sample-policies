@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-repo-visibility
-name: "GitHub organization repo visibility is properly set"
+name: Verify Repo Visibility Setting
 path: repo-visibility.rego
 
-description: "A rule to verify that only predefined public repos are permitted"
+description: Verify only repositories in the Allowed List are public in the GitHub organization.
 
 labels:
   - GitHub
@@ -20,5 +20,3 @@ evidence:
 
 with:
   allowed_repo_names: []
-  
-  

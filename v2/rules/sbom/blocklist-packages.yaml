@@ -1,9 +1,9 @@
 config-type: rule
 id: sbom-disallow-dependencies
-name: "Disallow specific dependencies"
+name: Restrict Disallowed Dependencies
 path: blocklist-packages.rego
 
-description: "Verify disallowed dependencies' count does not exceed specified threshold"
+description: Verify the number of disallowed dependencies remains below the specified threshold.
 
 labels:
   - SBOM

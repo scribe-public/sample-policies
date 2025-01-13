@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-merge-requests-author-approval
-name: "Merge requests author approval for GitLab project"
+name: Disable Author Approval for Merge Requests in GitLab
 path: merge-requests-author-approval.rego
 
-description: "Verify that the binary field: 'merge_requests_author_approval' is set correctly"
+description: Verify the binary field `merge_requests_author_approval` is set for the GitLab project.
 
 labels:
   - Gitlab

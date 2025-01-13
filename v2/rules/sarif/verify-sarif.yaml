@@ -1,9 +1,9 @@
 config-type: rule
 id: sarif-policy
-name: "SARIF generic rule"
+name: Verify Rule Compliance in SARIF
 path: verify-sarif.rego
 
-description: "Verify a SARIF report against a set of rules"
+description: Verify the SARIF report complies with defined generic rules for compliance and security.
 
 labels:
   - SARIF

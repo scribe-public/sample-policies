@@ -1,9 +1,9 @@
 config-type: rule
 id: git-coding-permissions
-name: "Coding permissions"
+name: Restrict Coding Permissions
 path: coding-permissions.rego
 
-description: "Verify only allowed users commited to the repository"
+description: Verify only allowed users committed to the repository.
 
 labels:
   - Git

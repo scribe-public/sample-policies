@@ -1,10 +1,9 @@
-
 config-type: rule
 id: k8s-jailbreak
 name: "K8s Jailbreak"
 path: k8s-jailbreak.rego
 
-description: "Verify number of k8s misconfigurations is below specified threshold"
+description: "Verify no misconfigurations from the prohibited ids list in the Kuberentes scan is below specified threshold"
 
 labels:
   - K8s

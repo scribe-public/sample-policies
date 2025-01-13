@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-default-branch-protection
-name: "Default branch protection enabled in GitHub repository"
+name: Verify Default Branch Protection
 path: default-branch-protection.rego
 
-description: "A rule to verify that the default branch protection is enabled"
+description: Verify the default branch protection is configured in the GitHub repository.
 
 labels:
   - GitHub

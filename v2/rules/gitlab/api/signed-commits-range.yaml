@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-api-signed-commits-range
-name: "GitLab signed commits range"
+name: Sign Selected Commit Range in GitLab
 path: signed-commits-range.rego
 
-description: "Verify that the selected range of commits have been signed"
+description: Verify the selected range of commits is signed via the GitLab API.
 
 labels:
   - Gitlab

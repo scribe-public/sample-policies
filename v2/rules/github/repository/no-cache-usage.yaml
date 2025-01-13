@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-no-cache-usage
-name: "No cache usage in GitHub repository"
+name: Verify No Cache Usage Exists in Repository
 path: no-cache-usage.rego
 
-description: "A rule to verify that there is no use of cache"
+description: Verify the GitHub repository has no cache usage.
 
 labels:
   - GitHub

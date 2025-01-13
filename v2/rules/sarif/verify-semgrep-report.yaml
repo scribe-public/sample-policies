@@ -1,9 +1,9 @@
 config-type: rule
 id: sarif-semgrep-report
-name: "SARIF Semgrep Report"
+name: Verify Semgrep Rule in SARIF
 path: verify-semgrep-report.rego
 
-description: "Verify a Semgrep report against a set of rules"
+description: Verify the Semgrep SARIF report complies with predefined rules to ensure compliance and detect issues.
 
 labels:
   - SARIF

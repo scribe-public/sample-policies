@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-visibility
-name: "Verify that a GitHub repository is public"
+name: Allowed Public Repositories
 path: visibility.rego
 
-description: "A rule to verify that only predefined public repos are permitted"
+description: Verify only GitHub repositories in the Allowed List are public.
 
 labels:
   - GitHub
@@ -20,4 +20,3 @@ evidence:
 
 with:
   allowed_repo_names: []
-

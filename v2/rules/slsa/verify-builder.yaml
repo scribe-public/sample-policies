@@ -1,9 +1,9 @@
 config-type: rule
 id: slsa-verify-builder
-name: "Verify that artifact was created by the specified builder"
+name: Verify that artifact was created by the specified builder
 path: verify-builder.rego
 
-description: "Verify artifact was created by the specified builder"
+description: Verify the artifact was created by the specified builder.
 
 labels:
   - SLSA

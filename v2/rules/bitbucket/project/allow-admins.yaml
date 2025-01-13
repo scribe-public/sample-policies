@@ -1,9 +1,9 @@
 config-type: rule
 id: bb-project-allowed-project-admins
-name: "Allowed Project Admins"
+name: Allowed Project Admins
 path: allow-admins.rego
 
-description: "Verify that all project admins are included in the allowed list"
+description: Verify only users specified in the Allowed List have admin privileges in the Bitbucket project.
 
 evidence:
   signed: false

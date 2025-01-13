@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-dependabot-alerts
-name: "Dependabot alerts enabled for new repositories"
+name: Verify dependabot_alerts_enabled_for_new_repositories setting
 path: dependabot-alerts.rego
 
-description: "A rule to verify that the binary field: dependabot_alerts_enabled_for_new_repositories is properly set"
+description: Verify Dependabot alerts for new repositories are enabled in the GitHub organization.
 
 labels:
   - GitHub
@@ -20,4 +20,3 @@ evidence:
 
 with:
   desired_value: false
-  

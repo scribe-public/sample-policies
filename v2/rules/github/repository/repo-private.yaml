@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-private
-name: "Verify that a GitHub repository is private"
+name: Verify Repository Is Private
 path: repo-private.rego
 
-description: "A rule to verify that a repository is private"
+description: Verify the GitHub repository is private.
 
 labels:
   - GitHub

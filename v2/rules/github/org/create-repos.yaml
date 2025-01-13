@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-create-repos
-name: "GitHub organization create repositories"
+name: Verify members_can_create_repositories setting
 path: create-repos.rego
 
-description: "A rule to verify that the binary field: members_can_create_repositories is properly set"
+description: Verify `members_can_create_repositories` is appropriately configured in the GitHub repository.
 
 labels:
   - GitHub
@@ -20,4 +20,3 @@ evidence:
 
 with:
   desired_value: false
-  

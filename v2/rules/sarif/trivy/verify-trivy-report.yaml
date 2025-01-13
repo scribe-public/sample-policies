@@ -1,9 +1,9 @@
 config-type: rule
 id: trivy-report
-name: "Trivy Report"
+name: Verify Trivy SARIF Report Compliance
 path: ../verify-sarif.rego
 
-description: "A rule to verify a SARIF report agains a set of rules"
+description: Verify the Trivy SARIF report complies with predefined rules to ensure compliance and detect issues.
 
 labels:
   - SARIF

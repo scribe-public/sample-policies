@@ -1,9 +1,9 @@
 config-type: rule
 id: git-disallow-unsigned-commits
-name: "Disallow unsigned commits"
+name: Disallow Unsigned Commits
 path: no-unsigned-commits.rego
 
-description: "Verify all commits are signed"
+description: Verify all commits are signed.
 
 labels:
   - Git

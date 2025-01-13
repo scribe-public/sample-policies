@@ -1,9 +1,9 @@
 config-type: rule
 id: sarif-attack-vectors
-name: "SARIF Attack Vectors"
+name: Verify Attack Vector Exists in SARIF
 path: verify-attack-vector.rego
 
-description: "Verify required evidence exists"
+description: Verify required evidence validates attack vectors in the SARIF report.
 
 labels:
   - SARIF

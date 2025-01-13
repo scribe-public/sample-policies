@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-org-inactive-projects
-name: "GitLab organization inactive projects"
+name: Ensure Active Projects in GitLab Organization
 path: inactive-projects.rego
 
-description: "Verify that no organization projects are inactive"
+description: Verify no GitLab organization projects are inactive.
 
 labels:
   - Gitlab

@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-push-protection-sa
-name: "GitHub organization secret scanning push protection is properly set"
+name: Verify Secret_Scanning_Push_Protection Setting
 path: push-protection-sa.rego
 
-description: "A rule to verify that secret_scanning_push_protection in security_and_analysis is properly set"
+description: Verify `secret_scanning_push_protection` is configured in the GitHub repository.
 
 labels:
   - GitHub
@@ -17,4 +17,3 @@ evidence:
   labels:
     - "platform=github"
     - "asset_type=organization"
-    

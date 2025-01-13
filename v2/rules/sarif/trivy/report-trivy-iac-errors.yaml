@@ -1,9 +1,9 @@
 config-type: rule
 id: trivy-iac-findings
-name: "Trivy IaC Findings"
+name: Verify IaC Misconfiguration Threshold in Trivy SARIF
 path: ../report-iac-errors.rego
 
-description: "Verify number of IaC errors is below specified threshold"
+description: Verify the number of infrastructure-as-code (IaC) errors in the Trivy SARIF report remains below the specified threshold.
 
 labels:
   - SARIF

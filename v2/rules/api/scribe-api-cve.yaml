@@ -1,9 +1,9 @@
 config-type: rule
 id: scribe-cve
-name: "Scribe CVE"
+name: Verify No Critical or High Vulnerabilities
 path: scribe-api.rego
 
-description: "Verify no critical or high CVEs"
+description: Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.).
 
 labels:
   - SCA

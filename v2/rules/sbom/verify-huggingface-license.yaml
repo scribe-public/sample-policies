@@ -1,9 +1,9 @@
 config-type: rule
 id: sbom-hf-license
-name: "Verify that SBOM has all specified licenses"
+name: Require Specified SBOM Licenses
 path: verify-hf-license.rego
 
-description: "Verify artifact has all specified licenses"
+description: Verify the artifact includes all specified licenses.
 
 labels:
   - SBOM

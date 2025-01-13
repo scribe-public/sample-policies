@@ -1,9 +1,9 @@
 config-type: rule
 id: trivy-attack-vectors
-name: "Trivy attack vectors"
+name: Verify Attack Vector Threshold in Trivy SARIF
 path: ../verify-attack-vector.rego
 
-description: "A rule to verify that no attack vector identified in a SARIF report exceeds the threshold"
+description: Verify no attack vector in the Trivy SARIF report exceeds the specified threshold.
 
 labels:
   - SARIF

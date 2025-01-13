@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-branch-protection
-name: "Branch protection enabled in GitHub repository"
+name: Verify Branch Protection Setting
 path: branch-protection.rego
 
-description: "A rule to verify that branch protected is set"
+description: Verify branch protection is configured in the GitHub repository.
 
 labels:
   - GitHub

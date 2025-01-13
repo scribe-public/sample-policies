@@ -1,9 +1,9 @@
 config-type: rule
 id: "SLSA.L2"
-name: "Verify that provenance is authenticated"
+name: Verify that provenance is authenticated
 path: l2-provenance-authenticated.rego
 
-description: "Verify artifact is signed"
+description: Verify the artifact is signed.
 
 labels:
   - SLSA

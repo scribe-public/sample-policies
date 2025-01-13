@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-verify-commit_message_check
-name: "Verify commit message format"
+name: Verify Commit Message Format
 path: commit-message-check.rego
 
-description: "Verify that all commit messages adhere to the specified format template"
+description: Verify that commit messages in the GitLab project adhere to the specified format template.
 
 labels:
   - Gitlab

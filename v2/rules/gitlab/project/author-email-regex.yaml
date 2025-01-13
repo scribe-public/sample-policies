@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-author-email-regex
-name: "Author email regex"
+name: Set Author Email Regex in GitLab Project
 path: author-email-regex.rego
 
-description: "Verify that the author_email_regex is set to the desired value"
+description: Verify the `author_email_regex` for the GitLab project is set to the specified value.
 
 labels:
   - Gitlab

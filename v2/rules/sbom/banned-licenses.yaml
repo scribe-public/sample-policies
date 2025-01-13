@@ -1,9 +1,9 @@
 config-type: rule
 id: sbom-disallowed-licenses
-name: "SBOM disallowed licenses"
+name: Restrict Disallowed SBOM Licenses
 path: banned-licenses.rego
 
-description: "Verify disallowed licenses' count in dependencies does not exceed specified threshold"
+description: Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.
 
 labels:
   - SBOM

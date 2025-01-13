@@ -1,9 +1,9 @@
 config-type: rule
 id: bb-workspace-allowed-workspace-users
-name: "Allowed Workspace Users"
+name: Allowed Workspace Users
 path: allow-users.rego
 
-description: "Verify that all workspace users are included in the allowed list"
+description: Verify only users specified in the Allowed List have user access to the Bitbucket workspace.
 
 labels:
   - Bitbucket

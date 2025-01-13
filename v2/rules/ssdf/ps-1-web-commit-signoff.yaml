@@ -1,9 +1,9 @@
 config-type: rule
 id: "PS.1.5"
-name: "Require signoff on web commits"
+name: Require signoff on web commits
 uses: github/org/web-commit-signoff@v2/rules
 
-description: "PS.1 Require contributors to sign when committing to Github through the web interface"
+description: PS.1 Require contributors to sign when committing to Github through the web interface
 
 labels:
   - SSDF

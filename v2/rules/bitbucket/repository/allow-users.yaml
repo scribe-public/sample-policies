@@ -1,9 +1,9 @@
 config-type: rule
 id: bb-repo-allowed-repository-users
-name: "Allowed Repository Users"
+name: Allowed Repository Users
 path: allow-users.rego
 
-description: "Verify that all repository users are included in the allowed list"
+description: Verify only users specified in the Allowed List have user access to the Bitbucket repository.
 
 labels:
   - Bitbucket

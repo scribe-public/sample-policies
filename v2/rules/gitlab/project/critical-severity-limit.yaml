@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-critical-severity-limit
-name: "Critical Severity Limit"
+name: Enforce Critical Severity Limit
 path: critical-severity-limit.rego
 
-description: "Verify that the max allowed of critical severity is not passed"
+description: Verify the maximum allowed critical severity alerts for the GitLab project.
 
 labels:
   - Gitlab

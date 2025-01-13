@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-api-push-rules
-name: "GitLab push rules"
+name: Set Push Rules in GitLab
 path: push-rules.rego
 
-description: "Verify GitLab push rules"
+description: Verify GitLab push rules are configured via the API.
 
 labels:
   - Gitlab

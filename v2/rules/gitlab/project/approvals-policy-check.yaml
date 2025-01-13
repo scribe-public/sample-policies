@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-merge-approval
-name: "Merge approval policy check for GitLab project"
+name: Merge approval policy check for GitLab project
 path: approvals-policy-check.rego
 
-description: "Verify that the project's merge approval policy complies with the requirements"
+description: Verify the project's merge approval policy complies with requirements.
 
 labels:
   - Blueprint

@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-check-cwe
-name: "Check CWE"
+name: Check CWE Compliance
 path: check-cwe.rego
 
-description: "Verify that no specific CWEs are detected"
+description: Verify that specified CWEs were not detected in the GitLab project.
 
 labels:
   - Gitlab

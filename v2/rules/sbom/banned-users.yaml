@@ -1,9 +1,9 @@
 config-type: rule
 id: sbom-disallowed-users
-name: "SBOM disallowed users"
+name: Disallow Specific Users in SBOM
 path: banned-users.rego
 
-description: "Don't allow specific users in an SBOM"
+description: Verify specific users are not allowed in an SBOM.
 
 labels:
   - SBOM

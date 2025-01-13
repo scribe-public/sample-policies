@@ -1,9 +1,9 @@
 config-type: rule
 id: sarif-tool-evidence
-name: "SARIF tool evidence existance"
+name: Verify Tool Evidence in SARIF
 path: verify-tool-evidence.rego
 
-description: "Verify required tool is used to create the SARIF report"
+description: Verify required tools were used to generate the SARIF report.
 
 labels:
   - SARIF

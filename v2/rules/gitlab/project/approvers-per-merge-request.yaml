@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-approvers-per-merge-request
-name: "Approvers per merge request"
+name: Restrict Approvers Per Merge Request
 path: approvers-per-merge-request.rego
 
-description: "Verify that the binary field: 'disable_overriding_approvers_per_merge_request' is set correctly"
+description: Verify the binary field `disable_overriding_approvers_per_merge_request` is set for the GitLab project.
 
 labels:
   - Gitlab
@@ -20,5 +20,3 @@ evidence:
 
 with:
   disable_overriding_approvers_per_merge_request: false
-
-

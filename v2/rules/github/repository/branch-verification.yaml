@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-branch-verification
-name: "Branch verification enabled in GitHub repository"
+name: Verify Branch Verification Setting
 path: branch-verification.rego
 
-description: "A rule to verify that branch verified is set to the value defined in the configuration file"
+description: Verify branch verification in the GitHub repository matches the value defined in the configuration file.
 
 labels:
   - GitHub
@@ -20,4 +20,3 @@ evidence:
 
 with:
   desired_verified: false
-  

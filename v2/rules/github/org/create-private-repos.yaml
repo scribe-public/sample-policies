@@ -1,12 +1,9 @@
 config-type: rule
 id: github-org-create-private-repos
-name: "GitHub organization create private repositories"
+name: Verify members_can_create_private_repositories setting
 path: create-private-repos.rego
 
-description: |
-  "A rule to verify that the binary field: members_can_create_private_repositories is properly set"
-  "Used to limit the creation of public repositories."
-  "Supported only in GitHub Enterprise."
+description: Verify `members_can_create_private_repositories` is configured in the GitHub organization (supported only in GitHub Enterprise).
 
 labels:
   - GitHub
@@ -23,4 +20,3 @@ evidence:
 
 with:
   desired_value: true
-

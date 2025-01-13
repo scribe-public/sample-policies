@@ -1,9 +1,9 @@
 config-type: rule
 id: bb-repo-branch-protection
-name: "Branch Protection"
+name: Verify Default Branch Protection Setting Is Configured
 path: branch-protection.rego
 
-description: "A rule to verify that branch protected is set"
+description: Verify the default branch protection is enabled in the Bitbucket repository.
 
 labels:
   - Bitbucket

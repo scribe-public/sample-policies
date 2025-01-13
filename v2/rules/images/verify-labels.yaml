@@ -1,9 +1,9 @@
 config-type: rule
 id: image-labels
-name: "Image labels"
+name: Verify Image Labels
 path: verify-labels.rego
 
-description: "Require label key value pairs"
+description: Verify specified labels key-value pairs exist in the image.
 
 labels:
   - SBOM

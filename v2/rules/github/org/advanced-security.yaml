@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-advanced-security
-name: "Advanced Security is disabled for new repositories"
+name: Verify advanced_security_enabled_for_new_repositories setting
 path: advanced-security.rego
 
-description: "A rule to verify that the binary field: advanced_security_enabled_for_new_repositories is properly set"
+description: Verify `advanced_security` is enabled for new repositories in the GitHub organization.
 
 labels:
   - GitHub
@@ -20,4 +20,3 @@ evidence:
 
 with:
   desired_value: false
-  

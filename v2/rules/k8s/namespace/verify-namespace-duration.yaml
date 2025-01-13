@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-namespace-verify-namespace-duration
-name: "Verify Namespace Duration"
+name: Verify Namespace Runtime Duration
 path: verify-namespace-duration.rego
 
-description: "A rule to verify that all namespaces are not running over threshold. All violations are running namespaces that were started before the threshold date"
+description: Verify Kubernetes namespaces adhere to a specified runtime duration to enforce lifecycle limits.
 
 labels:
   - K8s

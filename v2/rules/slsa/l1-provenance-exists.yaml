@@ -1,9 +1,9 @@
 config-type: rule
 id: "SLSA.L1"
-name: "Verify that provenance exists"
+name: Verify Provenance Document Exists
 path: l1-provenance-exists.rego
 
-description: "Verify required evidence exists"
+description: Verify that the Provenance document evidence exists.
 
 labels:
   - SLSA

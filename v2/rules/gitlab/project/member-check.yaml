@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-verify-member_check
-name: "Member check enabled for GitLab project"
+name: Enable Member Check for GitLab Project
 path: member-check.rego
 
-description: "Verify that member_check is enabled for the project"
+description: Verify `member_check` is enabled for the GitLab project.
 
 labels:
   - Gitlab

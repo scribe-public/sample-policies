@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-org-allowed-users
-name: "GitLab organization allowed users"
+name: Allowed Users in GitLab Organization
 path: allow-users.rego
 
-description: "Verify that all organization users are included in the allowed list"
+description: Verify only users in the Allowed List have access to the GitLab organization.
 
 labels:
   - Gitlab

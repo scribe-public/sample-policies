@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-org-unused-tokens
-name: "Forbid unused tokens in GitLab organization"
+name: Forbid Unused Tokens in GitLab Organization
 path: unused-tokens.rego
 
-description: "Verify that there are no unused organization tokens"
+description: Verify there are no unused GitLab organization tokens.
 
 labels:
   - Gitlab

@@ -1,9 +1,9 @@
 config-type: rule
 id: required-image-labels
-name: "Required image labels"
+name: Require Image Labels
 path: verify-labels-exist.rego
 
-description: "Require specific image labels"
+description: Verify the image has the specified labels.
 
 labels:
   - SBOM

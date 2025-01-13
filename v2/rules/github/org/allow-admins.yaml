@@ -1,9 +1,9 @@
 config-type: rule
 id: github-orgallowed-admins
-name: "GitHub organization allowed admins"
+name: Allowed GitHub Organization Admins
 path: allow-admins.rego
 
-description: "Verify that all organization admins are included in the allowed list"
+description: Verify only users in the Allowed List have admin privileges in the GitHub organization.
 
 labels:
   - GitHub

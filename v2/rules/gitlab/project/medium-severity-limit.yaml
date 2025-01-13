@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-medium-severity-limit
-name: "Medium Severity Limit"
+name: Enforce Medium Severity Limit
 path: medium-severity-limit.rego
 
-description: "Verify that the max allowed of medium severity is not passed"
+description: Verify the maximum allowed medium severity alerts for the GitLab project.
 
 labels:
   - Gitlab

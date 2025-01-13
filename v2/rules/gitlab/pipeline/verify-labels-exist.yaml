@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-pipeline-verify-labels-exist
-name: "GitLab pipeline verify labels exist"
+name: GitLab pipeline verify labels exist
 path: verify-labels-exist.rego
 
-description: "A rule to verify that the pipeline has all the required labels keys and values"
+description: Verify the pipeline has all required label keys and values.
 
 labels:
   - Gitlab

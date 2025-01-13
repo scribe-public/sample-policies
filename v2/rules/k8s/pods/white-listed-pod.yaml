@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-pods-white-listed-pod
-name: "K8s Pods White Listed Pod"
+name: Allowed Pods
 path: white-listed-pod.rego
 
-description: "A rule to verify that all pod are allowed"
+description: Verify only pods explicitly listed in the Allowed List are allowed to run.
 
 labels:
   - K8s

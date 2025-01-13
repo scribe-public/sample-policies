@@ -1,9 +1,9 @@
 config-type: rule
 id: dockerhub-token-expiration
-name: "Dockerhub Token Expiration"
+name: Verify DockerHub Tokens are Active
 path: token-expiration.rego
 
-description: "Verify that tokens are not expired"
+description: Verify that all discovered Dockerhub tokens are set to Active in Dockerhub.
 
 labels:
   - Dockerhub
@@ -14,4 +14,4 @@ evidence:
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
   labels:
-    - "asset_type=project" 
+    - "asset_type=project"

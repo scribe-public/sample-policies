@@ -1,9 +1,9 @@
 config-type: rule
 id: slsa-verify-byproducts
-name: "Verify that artifact has no disallowed builder dependencies"
+name: Verify that artifact has no disallowed builder dependencies
 path: verify-byproducts.rego
 
-description: "Verify artifact has no disallowed builder dependencies"
+description: Verify the artifact has no disallowed builder dependencies.
 
 labels:
   - SLSA

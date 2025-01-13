@@ -1,9 +1,9 @@
 config-type: rule
 id: sarif-iac-findings
-name: "SARIF IaC Findings"
+name: Verify IaC Misconfiguration Threshold in SARIF
 path: report-iac-errors.rego
 
-description: "Verify number of IaC errors is below specified threshold"
+description: Verify the number of infrastructure-as-code (IaC) errors in the SARIF report remains below the specified threshold.
 
 labels:
   - SARIF

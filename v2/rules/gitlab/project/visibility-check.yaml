@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-project-visibility-level
-name: "GitLab project visibility level"
+name: Set Visibility Level in GitLab Project
 path: visibility-check.rego
 
-description: "Verify that the project's visibility matches the required level"
+description: Verify the GitLab project's visibility matches the required level.
 
 labels:
   - Gitlab

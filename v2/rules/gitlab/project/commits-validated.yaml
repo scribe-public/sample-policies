@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-all-commits-validated
-name: "GitLab project all commits validated"
+name: Validate All Commits in GitLab Project
 path: commits-validated.rego
 
-description: "Verify that all commits in the project are validated"
+description: Verify all commits in the GitLab project are validated.
 
 labels:
   - Gitlab

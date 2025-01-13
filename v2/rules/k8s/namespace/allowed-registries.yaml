@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-namespace-allowed-registries
-name: "K8s Namespace Allowed Registries"
+name: Allowed Namespace Registries
 path: allowed-registries.rego
 
-description: "A rule to verify that all discovered images come from allowed registries"
+description: Verify container images in Kubernetes namespaces originate from registries in the Allowed List.
 
 labels:
   - K8s

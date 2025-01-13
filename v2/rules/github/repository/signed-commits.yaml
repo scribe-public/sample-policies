@@ -1,9 +1,9 @@
 config-type: rule
 id: github-repo-signed-commits
-name: "All commits are signed in a GitHub repository"
+name: Verify All Commits Are Signed in Repository
 path: signed-commits.rego
 
-description: "Verify that the commits have been signed in a repository attestation"
+description: Verify all commits are signed in a repository attestation.
 
 labels:
   - GitHub

@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-verify-push_rules
-name: "Push rules set for GitLab project"
+name: Set Push Rules for GitLab Project
 path: push-rules-set.rego
 
-description: "Verify that push rules are set for the project"
+description: Verify push rules are set for the GitLab project.
 
 labels:
   - Gitlab

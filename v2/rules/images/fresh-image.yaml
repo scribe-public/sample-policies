@@ -1,9 +1,9 @@
 config-type: rule
 id: fresh-image
-name: "Fresh Image"
+name: Fresh Image
 path: fresh-image.rego
 
-description: "Verify image is not older than specified threshold"
+description: Verify the image is not older than the specified threshold.
 
 labels:
   - SBOM

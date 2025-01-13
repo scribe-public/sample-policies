@@ -1,9 +1,9 @@
 config-type: rule
 id: gitlab-project-push-access-level
-name: "GitLab project push access level"
+name: Set Push Access Level in GitLab Project
 path: push-access-level.rego
 
-description: "Verify that the project's push access level policy meets the requirements"
+description: Verify the GitLab project's push access level policy complies with requirements.
 
 labels:
   - Gitlab

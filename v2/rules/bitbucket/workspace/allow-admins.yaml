@@ -1,9 +1,9 @@
 config-type: rule
 id: bb-workspace-allowed-workspace-admins
-name: "Allowed Workspace Admins"
+name: Allowed Workspace Admins
 path: allow-admins.rego
 
-description: "Verify that all organization admins are included in the allowed list"
+description: Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace.
 
 labels:
   - Bitbucket

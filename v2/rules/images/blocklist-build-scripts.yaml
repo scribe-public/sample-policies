@@ -1,9 +1,9 @@
 config-type: rule
 id: images-disallowed-build-script
-name: "Disallowed build script"
+name: Restrict Build Scripts
 path: blocklist-build-scripts.rego
 
-description: "Restrict commands in build scripts"
+description: Verify no build scripts commands appear in block list.
 
 labels:
   - SBOM

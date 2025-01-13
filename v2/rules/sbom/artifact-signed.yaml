@@ -1,9 +1,9 @@
 config-type: rule
 id: sbom-signed
-name: "Verify that SBOM is signed"
+name: Require SBOM Signature
 path: artifact-signed.rego
 
-description: "Verify artifact is signed"
+description: Verify the SBOM is signed.
 
 labels:
   - SBOM

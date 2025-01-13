@@ -1,9 +1,9 @@
 config-type: rule
 id: required-git-evidence
-name: "Required Git evidence exists"
+name: Required Git Evidence Exists
 path: evidence-exists.rego
 
-description: "Verify required evidence exists"
+description: Verify required Git evidence exists.
 
 labels:
   - Git

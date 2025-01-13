@@ -1,9 +1,9 @@
 config-type: rule
 id: sbom-required-dependencies
-name: "SBOM required dependencies"
+name: Enforce SBOM Dependencies
 path: required-packages.rego
 
-description: "Verify artifact has all the required packages"
+description: Verify the artifact includes all required dependencies.
 
 labels:
   - SBOM

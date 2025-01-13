@@ -1,9 +1,9 @@
 config-type: rule
 id: file-integrity
-name: "Multievidence File Integrity"
+name: Verify File Integrity
 path: files_integrity.rego
 
-description: "Verifies that files referenced by an image sbom have the same checksums as in previous versions of the image sbom"
+description: Verify the checksum of each file in one SBOM matches the checksum in a second SBOM.
 
 labels:
   - SBOM

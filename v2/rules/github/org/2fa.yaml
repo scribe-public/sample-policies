@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-2fa
-name: "2FA enabled for GitHub organization"
+name: Verify two_factor_requirement_enabled setting
 path: 2fa.rego
 
-description: "A rule to verify that the binary field: two_factor_requirement_enabled is properly set"
+description: Verify `two_factor_requirement` is enabled in the GitHub organization.
 
 labels:
   - GitHub
@@ -20,4 +20,3 @@ evidence:
 
 with:
   desired_value: false
-  

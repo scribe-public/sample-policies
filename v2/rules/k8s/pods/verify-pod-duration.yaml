@@ -1,9 +1,9 @@
 config-type: rule
 id: k8s-pods-verify-pod-duration
-name: "Verify Pod Duration"
+name: Verify Pod Runtime Duration
 path: verify-pod-duration.rego
 
-description: "A rule to verify that all pods are not running over threshold. All violations are running pods that were started before the threshold date"
+description: Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecycle limits.
 
 labels:
   - K8s
