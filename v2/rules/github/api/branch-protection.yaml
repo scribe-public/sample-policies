@@ -8,9 +8,7 @@ description: "Verify GitHub branch protection rules"
 labels:
   - GitHub
 
-evidence:
-  signed: false
-  content_body_type: "cyclonedx-json"
+skip-evidence: true
 
 with:
   api_token: '{{ .Args.Token }}'

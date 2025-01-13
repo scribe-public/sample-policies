@@ -9,9 +9,7 @@ labels:
   - GitHub
   - API
 
-evidence:
-  signed: false
-  content_body_type: cyclonedx-json
+skip-evidence: true
 
 with:
   commit_id_list: []
