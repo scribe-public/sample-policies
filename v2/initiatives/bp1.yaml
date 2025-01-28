@@ -2,7 +2,7 @@ config-type: initiative
 # required-valint-version: "1.6.0"
 id: "blueprint-securesoftwarepipeline"
 name: "Venafi Blueprint"
-url: https://github.com/Venafi/blueprint-securesoftwarepipeline
+help: https://github.com/Venafi/blueprint-securesoftwarepipeline
 
 defaults:
   evidence:

@@ -2,7 +2,7 @@ config-type: initiative
 id: "SSDF"
 name: "SSDF Client Initiative"
 description: "Evaluate PS rules from the SSDF initiative"
-url: https://csrc.nist.gov/pubs/sp/800/218/final
+help: https://csrc.nist.gov/pubs/sp/800/218/final
 
 defaults:
   evidence:
