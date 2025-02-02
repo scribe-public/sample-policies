@@ -1,0 +1,28 @@
+config-type: rule
+id: github-org-2fa
+name: Verify two_factor_requirement_enabled setting
+path: 2fa.rego
+
+description: Verify `two_factor_requirement` is enabled in the GitHub organization.
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset-type") "organization" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_value: false

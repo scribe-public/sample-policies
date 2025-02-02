@@ -1,0 +1,29 @@
+config-type: rule
+id: gitlab-org-max-admins
+name: Limit Admins in GitLab Organization
+path: max-admins.rego
+
+description: Verify the maximum number of admins for the GitLab project is restricted.
+
+labels:
+  - Blueprint
+  - GitLab
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset-type") "organization" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+    max_admins: 0

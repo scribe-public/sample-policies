@@ -1,0 +1,30 @@
+config-type: rule
+id: gitlab-project-push-access-level
+name: Set Push Access Level in GitLab Project
+path: push-access-level.rego
+
+description: Verify the GitLab project's push access level policy complies with requirements.
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset-type") "project" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  branch: "main"
+  # access_level: 30
+  access_level_description: "Maintainers"

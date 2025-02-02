@@ -1,0 +1,24 @@
+config-type: rule
+id: sbom-allowed-components
+name: Enforce Allowed SBOM Components
+path: allowed-components.rego
+
+description: Verify the artifact contains only allowed components.
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  types:
+    - library
+    - operating-system
+  allowlist: []

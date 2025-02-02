@@ -1,0 +1,23 @@
+config-type: rule
+id: k8s-namespace-white-listed-pod
+name: Allowed Pods in Namespace
+path: white-listed-pod.rego
+
+description: Verify only pods explicitly listed in the Allowed List run within a Kubernetes namespace.
+
+labels:
+  - K8s
+  - Namespace
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+
+with:
+  white_listed_pod: []
+  verify_namespaces:
+    - ".*"

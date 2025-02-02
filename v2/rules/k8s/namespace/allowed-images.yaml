@@ -1,0 +1,21 @@
+config-type: rule
+id: k8s-namespace-blocked-images
+name: Allowed Container Images
+path: blocked-images.rego
+
+description: Verify only container images specified in the Allowed List run within the Kubernetes namespace.
+
+labels:
+  - K8s
+  - Namespace
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+
+with:
+  images_to_include: []
