@@ -16,6 +16,7 @@ verify = v {
 			"type": "Not allowed users",
 			"details": violations,
 		},
+		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

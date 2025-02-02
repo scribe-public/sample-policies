@@ -17,6 +17,7 @@ verify = v {
             "type": "long live tokens",
             "details": violations,
         },
+		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

@@ -17,6 +17,7 @@ verify = v {
 			"type": "Not allowed admins",
 			"details": violations,
 		},
+		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

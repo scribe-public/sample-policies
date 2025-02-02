@@ -16,6 +16,7 @@ verify = v {
             "type": "Misconfiguration",
             "details": violations,
         },
+		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,
