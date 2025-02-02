@@ -13,6 +13,7 @@ evidence:
   signed: false
   content_body_type: generic
   target_type: data
+  tool: "Trivy Vulnerability Scanner"
   predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
 
 with:
