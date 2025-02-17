@@ -1,5 +1,6 @@
 config-type: initiative
 id: "SSDF"
+version: "1.0.0"
 name: "SSDF Client Initiative"
 description: "Evaluate PS rules from the SSDF initiative"
 help: https://csrc.nist.gov/pubs/sp/800/218/final
@@ -11,9 +12,9 @@ defaults:
 controls:
   - name: "SSDF-IMAGE"
     rules:
-    - uses: rules/ssdf/ps-2-image-verifiable@v2
+    - uses: ssdf/ps-2-image-verifiable@v2/rules
 
-    - uses: rules/ssdf/ps-3.2-archived-sbom@v2
+    - uses: ssdf/ps-3.2-archived-sbom@v2/rules
 
   - name: "SSDF-ORG"
     rules:
