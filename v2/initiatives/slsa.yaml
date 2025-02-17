@@ -1,0 +1,19 @@
+config-type: initiative
+id: "SLSA"
+version: "1.0.0"
+name: "SLSA Initiative"
+description: "Evaluate SLSA L1 and L2"
+help: https://slsa.dev/
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  - name: "L1"
+    rules:
+    - uses: slsa/l1-provenance-exists@v2/rules
+
+  - name: "L2"
+    rules:
+    - uses: slsa/l2-provenance-authenticated@v2/rules
