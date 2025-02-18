@@ -1,0 +1,18 @@
+config-type: initiative
+id: "SLSA.L2"
+version: "1.0.0"
+name: "SLSA L2 Framework”"
+description: "Evaluate SLSA L2"
+help: https://slsa.dev/
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  - id: "prov_authn"
+    name: "Provenance authenticated"
+    rules:
+    - uses: slsa/l2-provenance-authenticated@v2/rules
+      id: "prov_authn"
+      name: "Provenance authenticated"

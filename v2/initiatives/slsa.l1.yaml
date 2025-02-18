@@ -1,0 +1,18 @@
+config-type: initiative
+id: "SLSA.L1"
+version: "1.0.0"
+name: "SLSA L1 Framework”"
+description: "Evaluate SLSA L1"
+help: https://slsa.dev/
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  - id: "prov_exists"
+    name: "Provenance exists"
+    rules:
+    - uses: slsa/l1-provenance-exists@v2/rules
+      id: "prov_exists"
+      name: "Provenance exists"
