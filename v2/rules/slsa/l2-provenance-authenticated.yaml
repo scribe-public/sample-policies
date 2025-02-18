@@ -11,6 +11,9 @@ labels:
 fail-on-missing-evidence: true
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: true
   content_body_type: slsa
 
