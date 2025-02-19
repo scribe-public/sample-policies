@@ -1,0 +1,202 @@
+config-type: initiative
+id: "SP-800-190"
+version: "1.0.0"
+name: "NIST Application Container Security Initiative"
+description: >
+  Enforces container security rules derived from NIST SP 800-190. 
+  Includes additional license compliance checks aligned with SPDX
+  to ensure both technical (CVE, configuration) and legal (license) risks 
+  are mitigated within the container supply chain.
+help: "https://csrc.nist.gov/publications/detail/sp/800-190/final"
+
+defaults:
+  evidence:
+    # You currently have 'signed: false' here. If you want 
+    # to require signed attestations, flip to true:
+    signed: false
+
+controls:
+
+  ########################################################################
+  # CONTROL 1: REGISTRY COUNTERMEASURES (4.2)
+  ########################################################################
+  - name: "UP-TO-DATE-REGISTRY-IMAGES"
+    description: "4.2 Registry Countermeasures"
+    mitigation: "Ensure that base or derived images are fresh and not stale."
+    rules:
+      - uses: images/fresh-base-image@v2/rules
+        name: "Up-to-Date Base Images"
+        description: "4.2.2 Up-to-Date Base Images (Check base image age)"
+        with:
+          max_days: 100
+
+      - uses: images/fresh-image@v2/rules
+        name: "Up-to-Date Derived Images"
+        description: "4.2.2 Up-to-Date Images (Check derived image age)"
+        with:
+          max_days: 30
+
+
+  ########################################################################
+  # CONTROL 2: IMAGE COUNTERMEASURES (4.1)
+  ########################################################################
+  - name: "IMAGE-COUNTERMEASURES"
+    description: "4.1 Image Countermeasures"
+    mitigation: >
+      Enforce fresh, trusted base images; scan for vulnerabilities; 
+      and apply secure configuration to reduce attack surface 
+      per SP 800-190 Section 4.1.
+    rules:
+
+      # ------------------------------------------------------------------
+      # 4.1.5 Use of trusted base images
+      # ------------------------------------------------------------------
+      # TBD (imp by scout demo)
+      - uses: images/allowed-base-image@v2/rules
+        name: "Approved Source Base Images"
+        description: "4.1.5 Use of trusted base images"
+        with:
+          approved_sources:
+            - "index.docker.io/library/node.*slim"
+            - "index.docker.io/library/python.*"
+            - "index.docker.io/library/debian.*"
+            - "index.docker.io/library/my_company/ubuntu.*:*-prod"
+
+      # ------------------------------------------------------------------
+      # 4.1.5 Use of trusted images
+      # ------------------------------------------------------------------
+      # TBD
+      - uses: images/allowed-image-source@v2/rules
+        name: "Approved Source Images"
+        description: "4.1.5 Use of trusted images"
+        with:
+          approved_sources:
+            - "index.docker.io/library/node.*slim"
+            - "index.docker.io/library/nginx.*"
+            - "index.docker.io/library/my_company/.*:*-prod"
+
+      # ------------------------------------------------------------------
+      # 4.1.1 Image Vulnerabilities
+      # ------------------------------------------------------------------
+      - uses: api/scribe-api-cve@v2/rules
+        name: "Vulnerability Scan (CVE Severity)"
+        description: >
+          4.1.1 Image Vulnerabilities (Scribe):
+          Scan for CVEs; block if severity >= 6 (high).
+        with:
+          superset:
+            cve:
+              severity: 6
+              max: 0
+
+      # TBD
+      - name: "High-Profile Vulnerabilities (Scribe)"
+        uses: api/blocklist-scribe-api-cve@v2/rules
+        description: "4.1.1 Blocklist of Specific CVEs"
+        with:
+          cves:
+            - "CVE-2014-0160"
+            - "CVE-2021-44228"
+            - "CVE-2023-38545"
+            - "CVE-2023-44487"
+            - "CVE-2024-3094"
+            - "CVE-2024-47176"
+            - "CVE-2024-47076"
+            - "CVE-2024-47175"
+            - "CVE-2024-47177"
+
+      # ------------------------------------------------------------------
+      # 4.1.2 Image Configuration Defects
+      # ------------------------------------------------------------------
+      # 2DO (imp by scout demo)
+      - name: "Default Non-Root User"
+        uses: images/banned-users@v1
+        description: >
+          4.1.2 Image Configuration Defects:
+          Ensure container doesn’t run as 'root'.
+        mitigation: "Block usage of root user in final image."
+
+      # 2DO
+      - name: "Banned Open Port 22"
+        uses: images/banned-ports@v1
+        description: >
+          4.1.2 Image Configuration Defects:
+          Confirm that port 22 is not exposed in Dockerfile.
+        mitigation: "Block usage of SSH in container base image."
+
+      # ------------------------------------------------------------------
+      # 4.1.3 Labeled Here for Healthcheck (User-labeled mismatch)
+      # ------------------------------------------------------------------
+      # 2DO
+      - name: "Set HEALTHCHECK Instruction"
+        uses: images/healthcheck@v1
+        description: >
+          4.1.3 Image Configuration Defects (mismatch with official doc):
+          Ensure a HEALTHCHECK is defined for Dockerfile.
+        mitigation: "Add HEALTHCHECK to detect container health issues."
+
+      # ------------------------------------------------------------------
+      # 4.2.3 Insufficient auth/authz restrictions – supply chain
+      # ------------------------------------------------------------------
+      - name: "Signed Supply Chain Attestations (SBOM)"
+        uses: sbom/evidence-exists@v1
+        description: >
+          4.2.3 Insufficient authentication and authorization restrictions:
+          Validate presence of a signed SBOM for improved visibility.
+        mitigation: >
+          Provide cryptographically signed SBOM to enable 
+          context-aware authorization checks.
+        evidence:
+          signed: true
+
+      - name: "Supply Chain Attestations (Signed Provenance)"
+        uses: slsa/l2-provenance-authenticated@v1
+        description: >
+          4.2.3 Insufficient authentication and authorization restrictions:
+          Validate presence of a signed SLSA provenance.
+        mitigation: >
+          Ensure build integrity by verifying signed provenance artifacts.
+        evidence:
+          signed: true
+        level: warning
+
+
+  ########################################################################
+  # CONTROL 3: LICENSE CONTROLS (EXTENSION OF 4.1.5 TRUSTED IMAGES)
+  ########################################################################
+  - name: "LICENSE-CONTROLS"
+    description: >
+      While NIST SP 800-190 does not explicitly address software licenses,
+      we consider license compliance part of the “trusted images” principle 
+      (Section 4.1.5). We reference SPDX for license identifiers.
+    mitigation: >
+      Enforce that all containers include accurate license data 
+      (via SPDX or CycloneDX SBOM) and do not incorporate banned licenses.
+    rules:
+      - uses: sbom/complete-licenses@v1
+        name: "Complete Licenses"
+        description: >
+          Verify that each component in the container has a recognized 
+          SPDX license identifier. Missing or incomplete licenses trigger 
+          a warning for further review.
+        level: warning
+
+      - uses: sbom/banned-licenses@v1
+        name: "No GPL Licenses"
+        description: >
+          Enforce a ban on GPL family licenses. This references the official 
+          SPDX short identifiers for GPL and AGPL. This is a policy choice 
+          rather than a NIST SP 800-190 requirement.
+        level: error
+        with:
+          banned-licenses:
+            - "AGPL-1.0-only"
+            - "AGPL-1.0-or-later"
+            - "AGPL-3.0-only"
+            - "AGPL-3.0-or-later"
+            - "GPL-1.0-only"
+            - "GPL-1.0-or-later"
+            - "GPL-2.0-only"
+            - "GPL-2.0-or-later"
+            - "GPL-3.0-only"
+            - "GPL-3.0-or-later"

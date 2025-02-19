@@ -1,0 +1,26 @@
+config-type: rule
+id: "banned-ports"
+name: "Banned Ports"
+path: "banned-ports.rego"
+
+description: |
+  Ensures that the container does not expose ports disallowed by policy. 
+  We look for properties named "imageExposedPorts_.*" in the CycloneDX SBOM,
+  parse them as "port/protocol", and compare against a banned list. 
+  The banned list can specify "port" only or "port + protocol".
+
+labels:
+  - "SBOM"
+  - "Images"
+
+level: "error"
+
+evidence:
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: "container"
+
+with:
+  banned_ports: []
+  # - port: "22"
+  #   protocol: "tcp"

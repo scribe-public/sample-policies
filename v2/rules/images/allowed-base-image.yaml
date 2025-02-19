@@ -1,0 +1,28 @@
+config-type: rule
+required-valint-version: "2.0.0"
+id: "allowed-base-image"
+name: "Allowed Base Image"
+path: "allowed-base-image.rego"
+
+description: |
+  Checks that the base image is from an approved source, matching
+  a list of regex patterns. This rule references the SBOM's 
+  components to find any labeled as "IsBaseImage" and 
+  fails if not approved.
+
+help: "https://docs.example.com/container-policy#allowed-base-image"
+
+disable: false
+labels:
+  - "SBOM"
+  - "Images"
+
+level: "error"
+
+evidence:
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: "container"
+
+with:
+  approved_sources: []
