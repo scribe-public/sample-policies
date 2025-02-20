@@ -5,7 +5,6 @@ path: "allowed-image-source.rego"
 description: |
   Ensures the main container image referenced in the SBOM
   (metadata.component.name) is from an approved source.
-help: "https://docs.example.com/container-policy#allowed-image-source"
 
 labels:
   - "SBOM"
