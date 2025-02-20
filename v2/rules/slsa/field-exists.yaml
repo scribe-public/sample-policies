@@ -1,0 +1,19 @@
+config-type: rule
+id: slsa-field-exists
+name: SLSA Field Exists in Provenance Document
+path: field-exists.rego
+
+description: Verify the specified field exists in the provenance document.
+
+labels:
+  - SLSA
+  - Image
+
+evidence:
+  signed: false
+  content_body_type: slsa
+  target_type: container
+
+with:
+  paths: []
+  violations_threshold: 0

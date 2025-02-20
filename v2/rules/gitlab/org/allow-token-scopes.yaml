@@ -1,0 +1,32 @@
+config-type: rule
+id: gitlab-org-allowed-token-scope
+name: Restrict Token Scopes in GitLab
+path: allow-token-scopes.rego
+
+description: Verify all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.
+
+labels:
+  - Gitlab
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset-type") "organization" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+    allowed_token_scopes:
+        - api
+        - read_api
+        - read_repository
+        - read_registry

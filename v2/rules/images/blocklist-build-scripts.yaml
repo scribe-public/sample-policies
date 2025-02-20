@@ -1,0 +1,18 @@
+config-type: rule
+id: images-disallowed-build-script
+name: Restrict Build Scripts
+path: blocklist-build-scripts.rego
+
+description: Verify no build scripts commands appear in block list.
+
+labels:
+  - SBOM
+  - Images
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  blocklist: []

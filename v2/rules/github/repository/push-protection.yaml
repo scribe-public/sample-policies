@@ -1,0 +1,25 @@
+config-type: rule
+id: github-repo-push-protection
+name: Verify Push Protection Setting
+path: push-protection.rego
+
+description: Verify `secret_scanning_push_protection` is configured in the GitHub repository.
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+    - >-
+      {{- if eq (index .Context "asset-type") "repository" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}

@@ -1,0 +1,33 @@
+config-type: initiative
+id: "SSDF"
+version: "1.0.0"
+name: "SSDF Client Initiative"
+description: "Evaluate PS rules from the SSDF initiative"
+help: https://csrc.nist.gov/pubs/sp/800/218/final
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  - name: "SSDF-IMAGE"
+    rules:
+    - uses: ssdf/ps-2-image-verifiable@v2/rules
+
+    - uses: ssdf/ps-3.2-archived-sbom@v2/rules
+
+  - name: "SSDF-ORG"
+    rules:
+    - uses: ssdf/ps-1-2fa@v2/rules
+
+    - uses: ssdf/ps-1-limit-admins@v2/rules
+
+    - uses: ssdf/ps-1-web-commit-signoff@v2/rules
+
+  - name: "SSDF-REPO"
+    rules:
+    - uses: ssdf/ps-3.1-code-archived@v2/rules
+
+    - uses: ssdf/ps-1-branch-protection@v2/rules
+
+    - uses: ssdf/ps-1-repo-private@v2/rules

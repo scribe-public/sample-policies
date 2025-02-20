@@ -1,0 +1,29 @@
+config-type: rule
+id: github-org-max-admins
+name: Limit Admin Number in GitHub Organization
+path: max-admins.rego
+
+description: Verify the maximum number of GitHub organization admins is restricted.
+
+labels:
+  - Blueprint
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset-type") "organization" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+    max_admins: 0

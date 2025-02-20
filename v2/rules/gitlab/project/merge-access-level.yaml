@@ -1,0 +1,30 @@
+config-type: rule
+id: gitlab-project-merge-access-level
+name: Enforce Merge Access Level Policy for GitLab Project
+path: merge-access-level.rego
+
+description: Verify the GitLab project's merge access level complies with requirements.
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset-type") "project" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  branch: "main"
+  # access_level: 30
+  access_level_description: "Maintainers"

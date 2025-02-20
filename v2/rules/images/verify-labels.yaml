@@ -1,0 +1,18 @@
+config-type: rule
+id: image-labels
+name: Verify Image Labels
+path: verify-labels.rego
+
+description: Verify specified labels key-value pairs exist in the image.
+
+labels:
+  - SBOM
+  - Images
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  labels: []

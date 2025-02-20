@@ -1,0 +1,31 @@
+config-type: rule
+id: github-repo-branch-protection
+name: Verify Branch Protection Setting
+path: branch-protection.rego
+
+description: Verify branch protection is configured in the GitHub repository.
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+    - >-
+      {{- if eq (index .Context "asset-type") "repository" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_protected: true
+  branches:
+    - 'main'
+    - 'master'

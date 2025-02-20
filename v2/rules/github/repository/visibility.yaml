@@ -1,0 +1,28 @@
+config-type: rule
+id: github-repo-visibility
+name: Allowed Public Repositories
+path: visibility.rego
+
+description: Verify only GitHub repositories in the Allowed List are public.
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+    - >-
+      {{- if eq (index .Context "asset-type") "repository" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  allowed_repo_names: []

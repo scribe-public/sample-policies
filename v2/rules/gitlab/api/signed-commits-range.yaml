@@ -1,0 +1,18 @@
+config-type: rule
+id: gitlab-api-signed-commits-range
+name: Sign Selected Commit Range in GitLab
+path: signed-commits-range.rego
+
+description: Verify the selected range of commits is signed via the GitLab API.
+
+labels:
+  - Gitlab
+  - API
+
+skip-evidence: true
+
+with:
+  since: "" # ISO 8601 date-time string (optional)
+  until: "" # ISO 8601 date-time string (optional)
+  project_id: ""
+  private_token: ""

@@ -1,0 +1,30 @@
+config-type: rule
+id: scribe-cve
+name: Verify No Critical or High Vulnerabilities
+path: scribe-api.rego
+
+description: Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.).
+
+labels:
+  - SCA
+  - Blueprint
+  - Scribe
+
+require-scribe-api: true
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  superset:
+    cve:
+      max: 0
+      severity: 6
+      # vulnerabilities: []
+      # component_name: "liblzma5"
+      # component_version: "5.6.0"

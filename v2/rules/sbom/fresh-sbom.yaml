@@ -1,0 +1,18 @@
+config-type: rule
+id: fresh-sbom
+name: Enforce SBOM Freshness
+path: fresh-sbom.rego
+
+description: Verify the SBOM is not older than the specified duration.
+
+labels:
+  - SBOM
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+with:
+  max_days : 30

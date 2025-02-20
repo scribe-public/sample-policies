@@ -1,0 +1,18 @@
+config-type: rule
+id: github-api-signed-commits-list
+name: Verify Selected Commits Are Signed API
+path: signed-commits-list.rego
+
+description: Verify selected commits are signed in the GitHub organization.
+
+labels:
+  - GitHub
+  - API
+
+skip-evidence: true
+
+with:
+  commit_id_list: []
+  access_token: ""
+  owner: ""
+  repo: ""
