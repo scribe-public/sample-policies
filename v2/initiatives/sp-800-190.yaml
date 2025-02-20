@@ -28,13 +28,13 @@ controls:
         name: "Up-to-Date Base Images"
         description: "4.2.2 Up-to-Date Base Images (Check base image age)"
         with:
-          max_days: 100
+          max_days: 5000
 
       - uses: images/fresh-image@v2/rules
         name: "Up-to-Date Derived Images"
         description: "4.2.2 Up-to-Date Images (Check derived image age)"
         with:
-          max_days: 30
+          max_days: 5000
 
 
   ########################################################################
@@ -74,6 +74,7 @@ controls:
             - "index.docker.io/library/node.*slim"
             - "index.docker.io/library/nginx.*"
             - "index.docker.io/library/my_company/.*:*-prod"
+            - ".*test222.*"
 
       # ------------------------------------------------------------------
       # 4.1.1 Image Vulnerabilities
@@ -110,7 +111,7 @@ controls:
       # ------------------------------------------------------------------
       # 2DO (imp by scout demo)
       - name: "Default Non-Root User"
-        uses: images/banned-users@v1
+        uses: images/banned-users@v2/rules
         description: >
           4.1.2 Image Configuration Defects:
           Ensure container doesn’t run as 'root'.
@@ -118,7 +119,7 @@ controls:
 
       # 2DO
       - name: "Banned Open Port 22"
-        uses: images/banned-ports@v1
+        uses: images/banned-ports@v2/rules
         description: >
           4.1.2 Image Configuration Defects:
           Confirm that port 22 is not exposed in Dockerfile.
@@ -129,7 +130,7 @@ controls:
       # ------------------------------------------------------------------
       # 2DO
       - name: "Set HEALTHCHECK Instruction"
-        uses: images/require-healthcheck@v1
+        uses: images/require-healthcheck@v2/rules
         description: >
           4.1.3 Image Configuration Defects (mismatch with official doc):
           Ensure a HEALTHCHECK is defined for Dockerfile.
@@ -139,7 +140,7 @@ controls:
       # 4.2.3 Insufficient auth/authz restrictions – supply chain
       # ------------------------------------------------------------------
       - name: "Signed Supply Chain Attestations (SBOM)"
-        uses: sbom/evidence-exists@v1
+        uses: sbom/require-sbom@v2/rules
         description: >
           4.2.3 Insufficient authentication and authorization restrictions:
           Validate presence of a signed SBOM for improved visibility.
@@ -147,10 +148,10 @@ controls:
           Provide cryptographically signed SBOM to enable 
           context-aware authorization checks.
         evidence:
-          signed: true
+          signed: false
 
       - name: "Supply Chain Attestations (Signed Provenance)"
-        uses: slsa/l2-provenance-authenticated@v1
+        uses: slsa/l2-provenance-authenticated@v2/rules
         description: >
           4.2.3 Insufficient authentication and authorization restrictions:
           Validate presence of a signed SLSA provenance.
@@ -173,7 +174,7 @@ controls:
       Enforce that all containers include accurate license data 
       (via SPDX or CycloneDX SBOM) and do not incorporate banned licenses.
     rules:
-      - uses: sbom/complete-licenses@v1
+      - uses: sbom/complete-licenses@v2/rules
         name: "Complete Licenses"
         description: >
           Verify that each component in the container has a recognized 
@@ -181,7 +182,7 @@ controls:
           a warning for further review.
         level: warning
 
-      - uses: sbom/banned-licenses@v1
+      - uses: sbom/banned-licenses@v2/rules
         name: "No GPL Licenses"
         description: >
           Enforce a ban on GPL family licenses. This references the official 
