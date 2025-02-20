@@ -28,13 +28,13 @@ controls:
         name: "Up-to-Date Base Images"
         description: "4.2.2 Up-to-Date Base Images (Check base image age)"
         with:
-          max_days: 5000
+          max_days: 100
 
       - uses: images/fresh-image@v2/rules
         name: "Up-to-Date Derived Images"
         description: "4.2.2 Up-to-Date Images (Check derived image age)"
         with:
-          max_days: 5000
+          max_days: 30
 
 
   ########################################################################
@@ -57,10 +57,8 @@ controls:
         description: "4.1.5 Use of trusted base images"
         with:
           approved_sources:
-            - "index.docker.io/library/node.*slim"
-            - "index.docker.io/library/python.*"
-            - "index.docker.io/library/debian.*"
-            - "index.docker.io/library/my_company/ubuntu.*:*-prod"
+            # - "index.docker.io/library/python.*slim"
+            # - "index.docker.io/library/my_company/base.*"
 
       # ------------------------------------------------------------------
       # 4.1.5 Use of trusted images
@@ -71,10 +69,9 @@ controls:
         description: "4.1.5 Use of trusted images"
         with:
           approved_sources:
-            - "index.docker.io/library/node.*slim"
-            - "index.docker.io/library/nginx.*"
-            - "index.docker.io/library/my_company/.*:*-prod"
-            - ".*test222.*"
+            # - "index.docker.io/library/nginx:.*"
+            # - "index.docker.io/library/my_company/.*"
+ 
 
       # ------------------------------------------------------------------
       # 4.1.1 Image Vulnerabilities
@@ -148,7 +145,7 @@ controls:
           Provide cryptographically signed SBOM to enable 
           context-aware authorization checks.
         evidence:
-          signed: false
+          signed: true
 
       - name: "Supply Chain Attestations (Signed Provenance)"
         uses: slsa/l2-provenance-authenticated@v2/rules
