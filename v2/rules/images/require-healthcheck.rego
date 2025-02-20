@@ -2,22 +2,24 @@ package verify
 
 import future.keywords.in
 
-##########################################################################
-# Defaults
-##########################################################################
 default allow := false
 default violations := []
+default asset := {}
+default errors := []
 
-##########################################################################
+# Retrieve Evidence Metadata: We assume the SBOM metadata is available at input.evidence.predicate.bom.metadata.
+asset = input.evidence.predicate.bom.metadata
+
 # Final Verify Object
-##########################################################################
-verify = v {
-  v := {
+verify = result {
+  result := {
     "allow": allow,
+    "errors": errors,
     "violation": {
-      "type": "MissingHealthcheck",
+      "type": "Image Healthcheck Check",
       "details": violations
     },
+    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason,
@@ -26,45 +28,30 @@ verify = v {
   }
 }
 
-##########################################################################
-# Decision Logic
-##########################################################################
+# Compute Healthcheck Properties
+# This collects the value of every property in asset.component.properties whose name (lowercased)
+# starts with "imagehealthcheck_".
+healthcheck_props = [ p.value |
+    asset.component.properties[i] = p;
+    startswith(lower(p.name), "imagehealthcheck_")
+]
+
+# Decision Logic: Allow if at least one healthcheck property is found.
 allow {
-  count(violations) == 0
+  count(healthcheck_props) > 0
 }
 
+# Reason for Summary
 reason = msg {
   allow
-  msg := "The image includes at least one healthcheck property."
+  msg := sprintf("Healthcheck defined: %v", [sprintf("%v", [healthcheck_props])])
 }
 reason = msg {
   not allow
-  msg := "No Docker HEALTHCHECK property found in the image."
+  msg := "No healthcheck property found in the image."
 }
 
-##########################################################################
-# Violations
-##########################################################################
-# If no property "imageHealthcheck_<i>" is found, we produce a single
-# violation explaining that the container lacks a HEALTHCHECK.
-##########################################################################
-violations = v {
-  not has_healthcheck
-  v := [
-    {
-      "reason": "Missing Dockerfile HEALTHCHECK instruction (no imageHealthcheck_ property)"
-    }
-  ]
-} or v := []
-
-##########################################################################
-# has_healthcheck
-##########################################################################
-# Returns 'true' if there's at least one property named "imageHealthcheck_<i>"
-# in the container's SBOM metadata.
-##########################################################################
-has_healthcheck {
-  some meta = input.evidence.predicate.bom.metadata
-  some prop in meta.component.properties
-  startswith(prop.name, "imageHealthcheck_")
+# Violations: If no healthcheck property is found, return a violation.
+violations = [ { "error": "Missing healthcheck property" } ] {
+  count(healthcheck_props) == 0
 }

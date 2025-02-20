@@ -2,22 +2,38 @@ package verify
 
 import future.keywords.in
 
-##########################################################################
-# Defaults
-##########################################################################
 default allow := false
 default violations := []
+default asset := {}
+default errors := []
+
+##########################################################################
+# Retrieve Evidence Metadata
+##########################################################################
+# We assume the SBOM metadata is available at input.evidence.predicate.bom.metadata.
+asset = input.evidence.predicate.bom.metadata
+
+##########################################################################
+# Banned Ports List
+##########################################################################
+# Retrieve the banned ports list from the with block.
+# Each banned port should be an object with a "port" field and optionally a "protocol" field.
+banned_ports = input.config.args.banned_ports {
+  input.config.args.banned_ports
+}
 
 ##########################################################################
 # Final Verify Object
 ##########################################################################
-verify = v {
-  v := {
+verify = result {
+  result := {
     "allow": allow,
+    "errors": errors,
     "violation": {
       "type": "BannedPorts",
       "details": violations
     },
+    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason,
@@ -33,57 +49,57 @@ allow {
   count(violations) == 0
 }
 
+##########################################################################
+# Compute Found Ports
+##########################################################################
+found_ports = [ p.value |
+  some p in asset.component.properties;
+  startswith(p.name, "imageExposedPorts_")
+]
+
+##########################################################################
+# Reason for Summary
+##########################################################################
 reason = msg {
   allow
-  msg := "No banned ports are exposed."
+  msg := sprintf("No banned ports are exposed. Found ports: %v", [sprintf("%v", [found_ports])])
 }
 reason = msg {
   not allow
-  msg := "Banned port(s) are exposed."
+  msg := sprintf("Banned port(s) are exposed. Found ports: %v.", [sprintf("%v", [found_ports])])
 }
 
 ##########################################################################
 # Violations
 ##########################################################################
-# We look for properties that match "imageExposedPorts_.*" (e.g. "imageExposedPorts_0"), 
-# then parse the string (e.g. "3000/tcp"). If the port/protocol is in the banned list, 
-# we record a violation.
-##########################################################################
-violations = results {
-  results := [
-    {
-      "component": meta.component.name,
-      "exposedPort": prop.value,
-      "matchBannedPort": banned
-    }
-    |
-    some meta = input.evidence.predicate.bom.metadata
-    some prop in meta.component.properties
-    startswith(prop.name, "imageExposedPorts_")
-
-    # Extract port/protocol from strings like "3000/tcp"
-    splitted := split(prop.value, "/")
-    count(splitted) == 2  # Expect [ "3000", "tcp" ]
-    portVal := splitted[0]
-    protoVal := splitted[1]
-
-    # Compare extracted port + protocol to the banned list
-    some banned in input.config.args.banned_ports
-    is_banned(portVal, protoVal, banned)
-  ]
-} or results := []
+violations = [ obj |
+  some p in asset.component.properties;
+  startswith(p.name, "imageExposedPorts_");
+  arr = split(p.value, "/");
+  count(arr) == 2;
+  arr[0] = portVal;
+  arr[1] = protoVal;
+  some b in banned_ports;
+  is_banned(portVal, protoVal, b);
+  obj := {
+    "component": asset.component.name,
+    "exposedPort": p.value,
+    "matchBannedPort": b
+  }
+]
 
 ##########################################################################
-# is_banned
+# Helper: is_banned
 ##########################################################################
-# This function compares the exposed port + protocol to a single "banned" record, 
-# which might specify "port", "protocol", or both. 
-# If "protocol" is absent, any protocol for that port is considered banned.
-##########################################################################
+# Clause 1: When the banned record specifies a protocol.
 is_banned(portVal, protoVal, banned) {
-  banned.port == portVal
-  banned.protocol == protoVal
-} or {
-  banned.port == portVal
-  not banned.protocol  # If no protocol is specified, ban all protocols for that port
+  lower(banned.port) == lower(portVal);
+  banned.protocol != null;
+  lower(banned.protocol) == lower(protoVal)
+}
+
+# Clause 2: When the banned record does not specify a protocol.
+is_banned(portVal, protoVal, banned) {
+  lower(banned.port) == lower(portVal);
+  banned.protocol == null
 }

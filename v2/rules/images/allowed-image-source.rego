@@ -3,19 +3,33 @@ package verify
 import data.scribe as scribe
 import future.keywords.in
 
-##########################################################################
-# Default Declarations
-##########################################################################
-
 default allow := false
 default violations := []
 default asset := {}
-default approved_sources := []
+default errors := []
 
-##########################################################################
-# Retrieve Evidence Metadata
-##########################################################################
+# Retrieve evidence (SBOM)
 asset = scribe.get_asset_data(input.evidence)
+
+# Extract main image information from metadata.component
+image_name   = input.evidence.predicate.bom.metadata.component.name
+image_version = input.evidence.predicate.bom.metadata.component.version
+
+verify = v {
+  v := {
+    "allow": allow,
+    "errors": errors,
+    "violation": {
+      "type": "Main Image Approved Source Check",
+      "details": violations,
+    },
+    "asset": asset,
+    "summary": [{
+      "allow": allow,
+      "reason": reason,
+    }],
+  }
+}
 
 ##########################################################################
 # Approved Source Patterns
@@ -25,67 +39,52 @@ approved_sources = input.config.args.approved_sources {
 }
 
 ##########################################################################
-# Final Verify Object
-##########################################################################
-verify = v {
-  v := {
-    "allow": allow,
-    "violation": {
-      "type": "A rule to verify the main image is from an approved source",
-      "details": violations,
-    },
-    "asset": asset,
-    "summary": [{
-      "allow": allow,
-      "reason": reason,
-      "violations": count(violations),
-    }],
-  }
-}
-
-##########################################################################
 # Decision Logic
 ##########################################################################
+# The rule allows if there is at least one approved source pattern and the
+# main image name matches one of those patterns.
 allow {
-  count(violations) == 0
+  count(approved_sources) > 0
+  is_valid(image_name)
 }
 
+##########################################################################
+# Reason for Summary
+##########################################################################
 reason = msg {
-  allow
-  msg := "Main container image is from an approved source"
+  count(approved_sources) == 0
+  msg := sprintf("Main image '%v' (version: %v) failed validation: no approved source patterns provided", [image_name, image_version])
 }
 reason = msg {
+  count(approved_sources) > 0
+  allow
+  msg := sprintf("Main image '%v' (version: %v) is from an approved source", [image_name, image_version])
+}
+reason = msg {
+  count(approved_sources) > 0
   not allow
-  msg := "Main container image is not from an approved source"
+  msg := sprintf("Main image '%v' (version: %v) is not from an approved source", [image_name, image_version])
 }
 
 ##########################################################################
 # Violations
 ##########################################################################
-# We read `metadata.component` from the SBOM (CycloneDX).
-# If the main component name does not match one of the 
-# approved_sources patterns, we add a single violation.
-##########################################################################
-
-violations = j {
-  # If there's no mismatch, return an empty list
-  some meta = input.evidence.predicate.bom.metadata
-  not is_valid(meta.component.name)
-
-  j := [{
-    "component": meta.component.name
-  }]
-} or j := []
+violations = v {
+  count(approved_sources) == 0
+  v = [{ "component": image_name, "version": image_version, "error": "No approved source patterns provided" }]
+} else = v {
+  count(approved_sources) > 0
+  not is_valid(image_name)
+  v = [{ "component": image_name, "version": image_version }]
+} else = []
 
 ##########################################################################
 # Helper: is_valid
 ##########################################################################
-# is_valid returns true if 'imageName' matches at least 
-# one regex pattern in 'approved_sources'.
-##########################################################################
-is_valid(imageName) {
+# is_valid returns true if the given image name matches at least one approved pattern.
+# Both the image name and approved pattern are lowercased and the pattern is anchored.
+is_valid(name) {
   count(approved_sources) > 0
-
   some pattern in approved_sources
-  regex.match(pattern, imageName)
+  regex.match(sprintf("^%v$", [lower(pattern)]), lower(name))
 }

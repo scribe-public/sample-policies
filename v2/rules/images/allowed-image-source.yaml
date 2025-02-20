@@ -14,10 +14,12 @@ labels:
 level: "error"
 
 evidence:
-  # Adjust these as needed for your environment
   signed: false
   content_body_type: "cyclonedx-json"
   target_type: "container"
-
+  filter-by:
+  - target
+  - product
 with:
-  approved_sources: []
+  approved_sources:
+  - .*busybox:latest

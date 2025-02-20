@@ -1,12 +1,11 @@
 config-type: rule
-id: "image-healthcheck"
-name: "Container Healthcheck"
-path: "image-healthcheck.rego"
+id: "require-healthcheck"
+name: "Require Healthcheck"
+path: "require-healthcheck.rego"
 
 description: |
-  Ensures that the container image includes a Dockerfile HEALTHCHECK. 
-  We look for at least one property starting with "imageHealthcheck_"
-  in the CycloneDX SBOM metadata. If none is found, the rule fails.
+  Checks that the container image includes at least one healthcheck property.
+  otherwise, it fails with a violation.
 
 labels:
   - "SBOM"
@@ -18,6 +17,8 @@ evidence:
   signed: false
   content_body_type: "cyclonedx-json"
   target_type: "container"
+  filter-by:
+  - target
+  - product
 
-# No special "with:" inputs needed for this rule
 with: {}

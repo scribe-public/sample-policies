@@ -1,28 +1,24 @@
 config-type: rule
-required-valint-version: "2.0.0"
 id: "allowed-base-image"
 name: "Allowed Base Image"
 path: "allowed-base-image.rego"
 
 description: |
-  Checks that the base image is from an approved source, matching
-  a list of regex patterns. This rule references the SBOM's 
-  components to find any labeled as "IsBaseImage" and 
-  fails if not approved.
+  Verifies that every base image is from an approved source. The rule returns a summary
+  including the component names and versions of valid base images, or lists the invalid ones.
+  This rule requires Dockerfile context; for example, run it with:
+  `valint my_image --base-image Dockerfile`.
 
-help: "https://docs.example.com/container-policy#allowed-base-image"
-
-disable: false
 labels:
   - "SBOM"
   - "Images"
-
-level: "error"
 
 evidence:
   signed: false
   content_body_type: "cyclonedx-json"
   target_type: "container"
-
+  filter-by:
+  - target
+  - product
 with:
   approved_sources: []

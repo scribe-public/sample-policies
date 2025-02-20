@@ -1,108 +1,121 @@
 package verify
 
 import data.scribe as scribe
-import future.keywords.in  # Allows 'in' keyword usage if needed
-
-##########################################################################
-# Default Declarations
-##########################################################################
+import future.keywords.in
 
 default allow := false
-default violations := []
 default asset := {}
-default approved_sources := []
+default errors := []
 
-##########################################################################
-# Retrieve Evidence Metadata
-##########################################################################
+# Retrieve evidence (SBOM)
 asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Approved Source Patterns
 ##########################################################################
-# If 'approved_sources' is passed via the 'with:' block in your rule config, 
-# store it here for use in is_valid() checks. 
 approved_sources = input.config.args.approved_sources {
   input.config.args.approved_sources
 }
 
 ##########################################################################
-# Main Verify Object
+# Base Image Detection
 ##########################################################################
-# This is the final output structure for Valint (or your OPA-based tool).
-verify = v {
-  v := {
-    "allow": allow,
-    "violation": {
-      "type": "A rule to verify base images are from an approved source",
-      "details": violations,
-    },
-    "asset": asset,
-    "summary": [{
-      "allow": allow,
-      "reason": reason,
-      "violations": count(violations),
-    }],
-  }
+# A base image component is defined as a component in group "container" that
+# has any property whose name ends with "isbaseimage" (case-insensitive)
+# and whose value is "true".
+found_base_image {
+  some c in input.evidence.predicate.bom.components
+  c.group == "container"
+  some p in c.properties
+  endswith(lower(p.name), "isbaseimage")
+  lower(p.value) == "true"
+}
+
+##########################################################################
+# Valid Base Images (as list of maps with name and version)
+##########################################################################
+valid_base_images = [ { "name": c.name, "version": c.version } |
+    some c in input.evidence.predicate.bom.components
+    c.group == "container"
+    some p in c.properties
+    endswith(lower(p.name), "isbaseimage")
+    lower(p.value) == "true"
+    is_valid(c.name)
+]
+
+##########################################################################
+# Invalid Base Images (as list of maps with name and version)
+##########################################################################
+invalid_base_images = [ { "name": c.name, "version": c.version } |
+    some c in input.evidence.predicate.bom.components
+    c.group == "container"
+    some p in c.properties
+    endswith(lower(p.name), "isbaseimage")
+    lower(p.value) == "true"
+    not is_valid(c.name)
+]
+
+##########################################################################
+# Violations
+##########################################################################
+# If a base image is found, then violations is the list of invalid base images.
+# Otherwise, return an array with a single error object.
+violations = v {
+    found_base_image
+    v = invalid_base_images
+} else = v {
+    not found_base_image
+    v = [{ "error": "No base image data found." }]
 }
 
 ##########################################################################
 # Decision Logic
 ##########################################################################
-
-# allow is true if no violations are found
 allow {
-  count(violations) == 0
+  found_base_image
+  count(invalid_base_images) == 0
 }
 
-# reason string for summary
+##########################################################################
+# Reason for Summary
+##########################################################################
 reason = msg {
-  allow
-  msg := "Base images are from an approved source"
+    not found_base_image
+    msg := "Base image component not found."
 }
 reason = msg {
-  not allow
-  msg := "Base image is not from an approved source"
+    found_base_image
+    not allow
+    msg := sprintf("The following base images are not from an approved source: %v", [sprintf("%v", [invalid_base_images])])
+}
+reason = msg {
+    found_base_image
+    allow
+    msg := sprintf("All base images (%v) are from an approved source.", [sprintf("%v", [valid_base_images])])
 }
 
 ##########################################################################
-# Violations
+# Final Verify Object
 ##########################################################################
-# Collect any base image that does not match one of the approved sources.
-# We look for components with property.name == "IsBaseImage" and 
-# property.value == "true".
-##########################################################################
-violations = j {
-  j := [
-    {
-      "version": component.version,
-      "base-image": component.name
-      # Potentially store entire component object if needed
-      # "component": component
-    }
-    |
-    some component in input.evidence.predicate.bom.components
-    component.group == "container"
-
-    some property in component.properties
-    property.name == "IsBaseImage"
-    property.value == "true"
-
-    not is_valid(component.name)
-  ]
+verify = result {
+  result := {
+    "allow": allow,
+    "errors": errors,
+    "violation": {
+      "type": "Approved Base Image Check",
+      "details": violations
+    },
+    "asset": asset,
+    "summary": [{
+      "allow": allow,
+      "reason": reason,
+      "violations": count(invalid_base_images)
+    }]
+  }
 }
 
-##########################################################################
-# is_valid
-##########################################################################
-# is_valid() checks if the given image name matches at least 
-# one of the patterns in 'approved_sources'.
-##########################################################################
 is_valid(image) {
-  # Ensure there's at least one approved_sources pattern
   count(approved_sources) > 0
-
-  # For each pattern in approved_sources, we do a regex match. 
   some pattern in approved_sources
-  regex.match(pattern, image)
+  regex.match(sprintf("^%v$", [lower(pattern)]), lower(image))
 }
