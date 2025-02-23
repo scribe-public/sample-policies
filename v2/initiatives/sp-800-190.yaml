@@ -133,68 +133,86 @@ controls:
           Ensure a HEALTHCHECK is defined for Dockerfile.
         mitigation: "Add HEALTHCHECK to detect container health issues."
 
+      - uses: images/verify-labels@v2/rules
+        name: "Verify Required Image Labels"
+        description: >
+          Ensure that container images include mandatory labels:
+          'org.opencontainers.image.created',
+          'org.opencontainers.image.revision',
+          'org.opencontainers.image.source',
+          'org.opencontainers.image.version',
+          'org.opencontainers.image.licenses'.
+        mitigation: "Reject images with missing or inconsistent metadata labels."
+        with:
+          labels:
+            - "org.opencontainers.image.created"
+            - "org.opencontainers.image.revision"
+            - "org.opencontainers.image.source"
+            - "org.opencontainers.image.version"
+            - "org.opencontainers.image.licenses"
+
       # ------------------------------------------------------------------
       # 4.2.3 Insufficient auth/authz restrictions – supply chain
       # ------------------------------------------------------------------
-      - name: "Signed Supply Chain Attestations (SBOM)"
-        uses: sbom/require-sbom@v2/rules
-        description: >
-          4.2.3 Insufficient authentication and authorization restrictions:
-          Validate presence of a signed SBOM for improved visibility.
-        mitigation: >
-          Provide cryptographically signed SBOM to enable 
-          context-aware authorization checks.
-        evidence:
-          signed: true
+      # - name: "Signed Supply Chain Attestations (SBOM)"
+      #   uses: sbom/require-sbom@v2/rules
+      #   description: >
+      #     4.2.3 Insufficient authentication and authorization restrictions:
+      #     Validate presence of a signed SBOM for improved visibility.
+      #   mitigation: >
+      #     Provide cryptographically signed SBOM to enable 
+      #     context-aware authorization checks.
+      #   evidence:
+      #     signed: true
 
-      - name: "Supply Chain Attestations (Signed Provenance)"
-        uses: slsa/l2-provenance-authenticated@v2/rules
-        description: >
-          4.2.3 Insufficient authentication and authorization restrictions:
-          Validate presence of a signed SLSA provenance.
-        mitigation: >
-          Ensure build integrity by verifying signed provenance artifacts.
-        evidence:
-          signed: true
-        level: warning
+      # - name: "Supply Chain Attestations (Signed Provenance)"
+      #   uses: slsa/l2-provenance-authenticated@v2/rules
+      #   description: >
+      #     4.2.3 Insufficient authentication and authorization restrictions:
+      #     Validate presence of a signed SLSA provenance.
+      #   mitigation: >
+      #     Ensure build integrity by verifying signed provenance artifacts.
+      #   evidence:
+      #     signed: true
+      #   level: warning
 
 
   ########################################################################
   # CONTROL 3: LICENSE CONTROLS (EXTENSION OF 4.1.5 TRUSTED IMAGES)
   ########################################################################
-  - name: "LICENSE-CONTROLS"
-    description: >
-      While NIST SP 800-190 does not explicitly address software licenses,
-      we consider license compliance part of the “trusted images” principle 
-      (Section 4.1.5). We reference SPDX for license identifiers.
-    mitigation: >
-      Enforce that all containers include accurate license data 
-      (via SPDX or CycloneDX SBOM) and do not incorporate banned licenses.
-    rules:
-      - uses: sbom/complete-licenses@v2/rules
-        name: "Complete Licenses"
-        description: >
-          Verify that each component in the container has a recognized 
-          SPDX license identifier. Missing or incomplete licenses trigger 
-          a warning for further review.
-        level: warning
+  # - name: "LICENSE-CONTROLS"
+  #   description: >
+  #     While NIST SP 800-190 does not explicitly address software licenses,
+  #     we consider license compliance part of the “trusted images” principle 
+  #     (Section 4.1.5). We reference SPDX for license identifiers.
+  #   mitigation: >
+  #     Enforce that all containers include accurate license data 
+  #     (via SPDX or CycloneDX SBOM) and do not incorporate banned licenses.
+  #   rules:
+  #     - uses: sbom/complete-licenses@v2/rules
+  #       name: "Complete Licenses"
+  #       description: >
+  #         Verify that each component in the container has a recognized 
+  #         SPDX license identifier. Missing or incomplete licenses trigger 
+  #         a warning for further review.
+  #       level: warning
 
-      - uses: sbom/banned-licenses@v2/rules
-        name: "No GPL Licenses"
-        description: >
-          Enforce a ban on GPL family licenses. This references the official 
-          SPDX short identifiers for GPL and AGPL. This is a policy choice 
-          rather than a NIST SP 800-190 requirement.
-        level: error
-        with:
-          banned-licenses:
-            - "AGPL-1.0-only"
-            - "AGPL-1.0-or-later"
-            - "AGPL-3.0-only"
-            - "AGPL-3.0-or-later"
-            - "GPL-1.0-only"
-            - "GPL-1.0-or-later"
-            - "GPL-2.0-only"
-            - "GPL-2.0-or-later"
-            - "GPL-3.0-only"
-            - "GPL-3.0-or-later"
+  #     - uses: sbom/banned-licenses@v2/rules
+  #       name: "No GPL Licenses"
+  #       description: >
+  #         Enforce a ban on GPL family licenses. This references the official 
+  #         SPDX short identifiers for GPL and AGPL. This is a policy choice 
+  #         rather than a NIST SP 800-190 requirement.
+  #       level: error
+  #       with:
+  #         banned-licenses:
+  #           - "AGPL-1.0-only"
+  #           - "AGPL-1.0-or-later"
+  #           - "AGPL-3.0-only"
+  #           - "AGPL-3.0-or-later"
+  #           - "GPL-1.0-only"
+  #           - "GPL-1.0-or-later"
+  #           - "GPL-2.0-only"
+  #           - "GPL-2.0-or-later"
+  #           - "GPL-3.0-only"
+  #           - "GPL-3.0-or-later"
