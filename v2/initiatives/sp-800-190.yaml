@@ -11,8 +11,6 @@ help: "https://csrc.nist.gov/publications/detail/sp/800-190/final"
 
 defaults:
   evidence:
-    # You currently have 'signed: false' here. If you want 
-    # to require signed attestations, flip to true:
     signed: false
 
 controls:
@@ -31,7 +29,6 @@ controls:
       # ------------------------------------------------------------------
       # 4.1.5 Use of trusted base images
       # ------------------------------------------------------------------
-      # TBD (imp by scout demo)
       - uses: images/allowed-base-image@v2/rules
         name: "4.1.5 Approved Source Base Images"
         description: "4.1.5 Use of trusted base images"
@@ -144,7 +141,7 @@ controls:
   ########################################################################
   # CONTROL 2: REGISTRY COUNTERMEASURES (4.2)
   ########################################################################
-  - name: "4.2 UP-TO-DATE-REGISTRY-IMAGES"
+  - name: "4.2 REGISTRY COUNTERMEASURES"
     description: "4.2 Registry Countermeasures"
     mitigation: "Ensure that base or derived images are fresh and not stale."
     rules:
