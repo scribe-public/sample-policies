@@ -148,6 +148,13 @@ controls:
     description: "4.2 Registry Countermeasures"
     mitigation: "Ensure that base or derived images are fresh and not stale."
     rules:
+
+      - name: "4.2.1 Registry Connection Enforcement"
+        rules:
+          - uses: images/enforce-https-registry@v1/rules
+            name: "Require HTTPS Registry Scheme"
+            description: "Checks if the image's registry transport is 'https'."
+
       - uses: images/fresh-base-image@v2/rules
         name: "4.2.2 Up-to-Date Base Images"
         description: "4.2.2 Up-to-Date Base Images (Check base image age)"

@@ -3,8 +3,7 @@ id: "allowed-image-source"
 name: "Allowed Main Image Source"
 path: "allowed-image-source.rego"
 description: |
-  Ensures the main container image referenced in the SBOM
-  (metadata.component.name) is from an approved source.
+  Ensures the main container image referenced in the SBOM is from an approved source.
 
 labels:
   - "SBOM"
