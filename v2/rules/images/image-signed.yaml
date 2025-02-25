@@ -1,0 +1,30 @@
+config-type: rule
+id: "require-signed-image"
+name: "Require Signed Container Image"
+path: "image-signed.rego"
+
+description: |
+  Enforces that container images (target_type=container) are cryptographically signed.
+  Allows you to skip checks for certain images matching skip_regex, and optionally
+  ensures that the signer's identity matches specified emails or common-names.
+
+labels:
+  - "Images"
+  - "Blueprint"
+
+fail-on-missing-evidence: false
+
+evidence:
+  target_type: container
+  signed: false # We want to gather both signed and unsigned evidence so we can skip `skip_image_regex`
+  filter-by:
+    - product
+    - target
+  content_body_type: cyclonedx-json
+
+with:
+  skip_image_regex:
+  - .*alpine.*
+  identity:
+    emails: []
+    common-names: []

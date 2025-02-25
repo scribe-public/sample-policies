@@ -20,5 +20,4 @@ evidence:
   - target
   - product
 with:
-  approved_sources:
-  - .*busybox:latest
+  approved_sources: []
