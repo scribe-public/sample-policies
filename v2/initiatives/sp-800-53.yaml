@@ -42,6 +42,17 @@ controls:
             - org.opencontainers.image.version
             - org.opencontainers.image.licenses
 
+      - uses: sbom/NTIA-compliance@v2/rules
+        name: "NTIA SBOM Compliance Check"
+        description: >
+          Verifies that the SBOM includes valid authors and supplier data
+          following NTIA guidelines. Optionally enforces a required_author and
+          required_supplier if provided.
+        mitigation: "Reject SBOM if authors or supplier metadata fails NTIA criteria."
+        with:
+          required_author: {}
+          required_supplier: {}
+
   - name: "Provenance Requirement (SA-8)"
     description: >
       Enforce that every container build includes provenance data,

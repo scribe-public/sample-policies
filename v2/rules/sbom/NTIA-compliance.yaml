@@ -1,0 +1,27 @@
+config-type: rule
+id: "NTIA-compliance"
+name: "NTIA SBOM Compliance Check"
+path: "NTIA-compliance.rego"
+
+description: |
+  Validates that SBOM metadata meets basic NTIA requirements for authors and supplier.
+  Checks that:
+    1) Authors exist, are non-empty, and each author has both a name and email.
+    2) Supplier exists with non-empty name, url, and contact. At least one contact has non-empty email.
+    3) Optionally enforces a required author (case-insensitive match for name/email).
+    4) Optionally enforces a required supplier (case-insensitive match for supplier name).
+  
+labels:
+  - "SBOM"
+  - "Compliance"
+
+level: "error"
+
+evidence:
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: "container"
+
+with:
+  required_author: {}     # e.g., { "name": "bom", "email": "bob@company.com" }
+  required_supplier: {}   # e.g., { "name": "alice" }
