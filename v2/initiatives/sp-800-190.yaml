@@ -33,7 +33,7 @@ controls:
         name: "4.1.5 Approved Source Base Images"
         description: "4.1.5 Use of trusted base images"
         with:
-          approved_sources:
+          approved_sources: []
             # - "index.docker.io/library/python.*slim"
             # - "index.docker.io/library/my_company/base.*"
 
