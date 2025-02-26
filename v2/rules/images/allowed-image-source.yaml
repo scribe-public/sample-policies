@@ -1,5 +1,5 @@
 config-type: rule
-id: "allowed-image-source"
+id: "images-allowed-image-source"
 name: "Allowed Main Image Source"
 path: "allowed-image-source.rego"
 description: |

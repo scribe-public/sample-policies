@@ -72,22 +72,16 @@ controls:
             cve:
               severity: 6
               max: 0
-
-      # TBD
-      # - name: "High-Profile Vulnerabilities (Scribe)"
-      #   uses: api/blocklist-scribe-api-cve@v2/rules
-      #   description: "4.1.1 Blocklist of Specific CVEs"
-      #   with:
-      #     cves:
-      #       - "CVE-2014-0160"
-      #       - "CVE-2021-44228"
-      #       - "CVE-2023-38545"
-      #       - "CVE-2023-44487"
-      #       - "CVE-2024-3094"
-      #       - "CVE-2024-47176"
-      #       - "CVE-2024-47076"
-      #       - "CVE-2024-47175"
-      #       - "CVE-2024-47177"
+              vulnerabilities: []
+       #       - "CVE-2014-0160"
+       #       - "CVE-2021-44228"
+       #       - "CVE-2023-38545"
+       #       - "CVE-2023-44487"
+       #       - "CVE-2024-3094"
+       #       - "CVE-2024-47176"
+       #       - "CVE-2024-47076"
+       #       - "CVE-2024-47175"
+       #       - "CVE-2024-47177"
 
       # ------------------------------------------------------------------
       # 4.1.2 Image Configuration Defects

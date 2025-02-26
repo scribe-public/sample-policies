@@ -1,5 +1,5 @@
 config-type: rule
-id: "registry-https-check"
+id: "images-registry-https-check"
 name: "4.2.1 Registry Connection HTTPS"
 path: "enforce-https-registry.rego"
 
