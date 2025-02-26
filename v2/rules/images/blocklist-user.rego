@@ -5,6 +5,9 @@ import future.keywords.in
 # By default, disallow (allow = false) if any violations exist.
 default allow := false
 default violations := []
+default asset := {}
+
+asset = scribe.get_asset_data(input.evidence)
 
 # Optional fallback for 'user' (not strictly used in logic below).
 default user := "root"
@@ -22,6 +25,7 @@ verify = v {
       "type": "Missing Labels",  # Kept from the original draft, can rename if desired
       "details": violations,
     },
+    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason,

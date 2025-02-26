@@ -5,6 +5,9 @@ import future.keywords.in
 default allow := false
 default violations := []
 default reason := "Registry scheme is not HTTPS."
+default asset  := {}
+
+asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Retrieve the Container Component
@@ -54,6 +57,7 @@ verify = output {
       "type": "RegistryHTTPSCheck",
       "details": violations
     },
+    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason

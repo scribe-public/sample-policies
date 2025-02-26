@@ -1,5 +1,5 @@
 config-type: rule
-id: "allowed-base-image"
+id: "images-allowed-base-image"
 name: "Allowed Base Image"
 path: "allowed-base-image.rego"
 

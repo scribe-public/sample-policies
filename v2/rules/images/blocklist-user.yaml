@@ -1,5 +1,5 @@
 config-type: rule
-id: "blocklist-user"
+id: "images-blocklist-user"
 name: "Blocklist Container User"
 path: "blocklist-user.rego"
 

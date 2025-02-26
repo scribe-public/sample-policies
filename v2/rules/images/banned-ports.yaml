@@ -1,5 +1,5 @@
 config-type: rule
-id: "banned-ports"
+id: "images-banned-ports"
 name: "Banned Ports"
 path: "banned-ports.rego"
 

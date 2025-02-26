@@ -1,5 +1,5 @@
 config-type: rule
-id: "require-healthcheck"
+id: "images-require-healthcheck"
 name: "Require Healthcheck"
 path: "require-healthcheck.rego"
 

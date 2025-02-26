@@ -1,5 +1,5 @@
 config-type: rule
-id: "require-signed-image"
+id: "images-require-signed-image"
 name: "Require Signed Container Image"
 path: "image-signed.rego"
 
