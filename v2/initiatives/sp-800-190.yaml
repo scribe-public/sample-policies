@@ -62,26 +62,54 @@ controls:
       # ------------------------------------------------------------------
       # 4.1.1 Image Vulnerabilities
       # ------------------------------------------------------------------
-      - uses: api/scribe-api-cve@v2/rules
-        name: "4.1.1 Vulnerability Scan (CVE Severity)"
-        description: >
-          4.1.1 Image Vulnerabilities (Scribe):
-          Scan for CVEs; block if severity >= 6 (high).
+
+      # TRIVY CVE SCAN
+      - uses: sarif/trivy/verify-cve-severity@v1
+        name: "Severity-Based Vulnerabilities (trivy)"
+        description: "Severity-Based Vulnerability: Trivy CVE Report"
+        level: error
         with:
-          superset:
-            cve:
-              severity: 6
-              max: 0
-              vulnerabilities: []
-       #       - "CVE-2014-0160"
-       #       - "CVE-2021-44228"
-       #       - "CVE-2023-38545"
-       #       - "CVE-2023-44487"
-       #       - "CVE-2024-3094"
-       #       - "CVE-2024-47176"
-       #       - "CVE-2024-47076"
-       #       - "CVE-2024-47175"
-       #       - "CVE-2024-47177"
+          severity_threshold: 5.5
+
+      - uses: sarif/trivy/blocklist-cve@v1
+        name: "High-Profile Vulnerabilities (trivy)"
+        description: "High-Profile Vulnerabilities: Trivy CVE Report"
+        level: error
+        with:
+          rule_ids:
+          # - CVE-2014-0160
+          # - CVE-2021-44228
+          # - CVE-2023-38545
+          # - CVE-2023-44487
+          # - CVE-2024-3094
+          # - CVE-2024-47176
+          # - CVE-2024-47076
+          # - CVE-2024-47175
+          # - CVE-2024-47177
+
+
+
+      # SCRIBE API CVE SCAN
+      # - uses: api/scribe-api-cve@v2/rules
+      #   name: "4.1.1 Vulnerability Scan (CVE Severity)"
+      #   description: >
+      #     4.1.1 Image Vulnerabilities (Scribe):
+      #     Scan for CVEs; block if severity >= 6 (high).
+      #   with:
+      #     superset:
+      #       cve:
+      #         severity: 6
+      #         max: 0
+      #         vulnerabilities: []
+      #  #       - "CVE-2014-0160"
+      #  #       - "CVE-2021-44228"
+      #  #       - "CVE-2023-38545"
+      #  #       - "CVE-2023-44487"
+      #  #       - "CVE-2024-3094"
+      #  #       - "CVE-2024-47176"
+      #  #       - "CVE-2024-47076"
+      #  #       - "CVE-2024-47175"
+      #  #       - "CVE-2024-47177"
 
       # ------------------------------------------------------------------
       # 4.1.2 Image Configuration Defects
