@@ -38,7 +38,7 @@ controls:
       the development environment.
     mitigation: "Implement security measures as per the defined rules."
     rules:
-      - uses: github/required-sig@v2/rules # Missing
+      - uses: github/repository/required-sig@v2/rules # Missing
         name: "Require Signed Commits"
         description: "Ensure all commits signing is required by branch protection, in order to aintain code integrity."
         # TODO: add this rule. consider how to run multiple such rules without the complicated policy validation
@@ -55,10 +55,16 @@ controls:
         # TODO: add this rule - vulns of git SBOM
         # Consider: this rule is about having a policy, not the policy results.
 
+        # Suggestion: name: "Check source code vulnerabilities", and check the existence of a git SBOM.
+
       - uses: #TBD
         name: "Automated Security Scanning"
         description: "Employ tools to detect and prevent security issues and vulnerable dependencies."
         # TODO: add rule for checking for SAST reports existence
+        # We do not have a way to iterate through the repos and check for the existence of the SAST reports for each of them
+        # this is a valint feature.
+        # Issue: how and who knows what has not been evaluated?
+        # need to create the attestations with asset_type and asset_name + a label for the scan type
 
       - uses: # TBD
         name: "Define Contributor Roles"
@@ -103,6 +109,8 @@ controls:
     # Consider: Can we run this rule based on SBOMs that have a label of "depdenencies"?
     # In python, it would be the final imags (since it includes the dependencies)
     # In other cases it would requires some other SBOMs.
+
+    # As first step, check existence of Git SBOM and assume (or check) that is has a package-lock etc.
     rules:
       - uses: # TBD
         name: "Assess Dependency Quality"
@@ -235,3 +243,5 @@ controls:
         # We do not have a way to verfy that consumer can get the SBOM, we just promise the SBOM is there.
         # We could provide a feature - build a public image with a signed SBOM and a public key + valint inside
         # Not for this initiative - here we shall combine all the rules.
+
+        # Verify use of OCI or Scribe as a distribution mechanism
