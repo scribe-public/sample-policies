@@ -63,6 +63,8 @@ rules:
   # TBD: Skip for now. 
   # consider doing the dependency integrity check
   # Do we have a mock rule to provide "success, not supported" for now?
+  # Consider a rule verifying through superset that we do not use any package 
+  # That has binaries it it - this is supported in OpenSSF Scorecard
 
 ########################################################################
 # CONTROL 4: CICD-SEC-4: Poisoned Pipeline Execution (PPE)
