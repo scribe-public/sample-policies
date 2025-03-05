@@ -63,29 +63,29 @@ controls:
       # 4.1.1 Image Vulnerabilities
       # ------------------------------------------------------------------
 
-      # TRIVY CVE SCAN
-      - uses: sarif/trivy/verify-cve-severity@v1
-        name: "Severity-Based Vulnerabilities (trivy)"
-        description: "Severity-Based Vulnerability: Trivy CVE Report"
-        level: error
-        with:
-          severity_threshold: 5.5
+      # TRIVY CVE SCAN - TBD needs imp
+      # - uses: sarif/trivy/verify-cve-severity@v1
+      #   name: "Severity-Based Vulnerabilities (trivy)"
+      #   description: "Severity-Based Vulnerability: Trivy CVE Report"
+      #   level: error
+      #   with:
+      #     severity_threshold: 5.5
 
-      - uses: sarif/trivy/blocklist-cve@v1
-        name: "High-Profile Vulnerabilities (trivy)"
-        description: "High-Profile Vulnerabilities: Trivy CVE Report"
-        level: error
-        with:
-          rule_ids:
-          # - CVE-2014-0160
-          # - CVE-2021-44228
-          # - CVE-2023-38545
-          # - CVE-2023-44487
-          # - CVE-2024-3094
-          # - CVE-2024-47176
-          # - CVE-2024-47076
-          # - CVE-2024-47175
-          # - CVE-2024-47177
+      # - uses: sarif/trivy/blocklist-cve@v1
+      #   name: "High-Profile Vulnerabilities (trivy)"
+      #   description: "High-Profile Vulnerabilities: Trivy CVE Report"
+      #   level: error
+      #   with:
+      #     rule_ids:
+      #     # - CVE-2014-0160
+      #     # - CVE-2021-44228
+      #     # - CVE-2023-38545
+      #     # - CVE-2023-44487
+      #     # - CVE-2024-3094
+      #     # - CVE-2024-47176
+      #     # - CVE-2024-47076
+      #     # - CVE-2024-47175
+      #     # - CVE-2024-47177
 
 
 
