@@ -1,0 +1,80 @@
+config-type: initiative
+# required-valint-version: "1.6.0"
+id: "fedramp-vuln-scanning-containers"
+name: "FedRamp Vulnerability Scanning for Containers"
+description: >
+  This initiative implements a policy to verify compliance with the FedRAMP requirement to scan container images for vulnerabilities.
+help: https://www.fedramp.gov/assets/resources/documents/Vulnerability_Scanning_Requirements_for_Containers.pdf
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+########################################################################
+# CONTROL 1: Hardened Images
+########################################################################
+  - name: "Hardened Images"
+    description: >
+      Ensure that container images are hardened and configured according to NIST benchmarks.
+
+    rules:
+
+      - name: CM-6 Harden Container Images
+
+      - name: SC-2 Separation of System and User Functionality
+
+      - name: SC-4 Information in Shared System Resources
+
+      - name: SC-6 Resource Availability
+
+      - name: SC-28 Protection of Information at Rest
+
+      - name: SC-39 Process Isolation
+
+########################################################################
+# CONTROL 2: Container Build, Test and Orchestration Pipeline
+########################################################################
+  - name: "Container Build, Test and Orchestration Pipeline"
+
+    rules: 
+      - name: CA-2 Control Assessment
+
+      - name: CM-2 Baseline Configuraion https://csf.tools/reference/nist-sp-800-53/r5/cm/cm-2/
+
+      - name: CM-3 Configuration Change Control https://csf.tools/reference/nist-sp-800-53/r5/cm/cm-3/
+
+      - name: SC-28 Protection of Information at Rest https://csf.tools/reference/nist-sp-800-53/r5/sc/sc-28/
+
+      - name: SI-3 Malicious Code Protection https://csf.tools/reference/nist-sp-800-53/r5/si/si-3/ 
+
+      - name: SI-7 Software, Firmware, and Information Integrity https://csf.tools/reference/nist-sp-800-53/r5/si/si-7/
+
+########################################################################
+# CONTROL 3: Vulnerability Scanning for Container Images
+########################################################################
+  - name: "Vulnerability Scanning for Container Images"
+    description: > 
+      See https://www.fedramp.gov/assets/resources/documents/CSP_Vulnerability_Scanning_Requirements.pdf
+
+########################################################################
+# CONTROL 4: Security Sensors
+########################################################################
+  - name: "Security Sensors"
+    description: > 
+      Independent security sensors are used to monitor container images for vulnerabilities, 
+      posture and inventory.
+        
+########################################################################
+# CONTROL 5: Registry Monitoring
+########################################################################
+  - name: "Registry Monitoring"
+    description: > 
+      Assure images not scanned in the past 30 days are note deployed.
+########################################################################
+# CONTROL 6: Asset Management and Inventory Reporting for Deployed Containers
+########################################################################
+  - name: "Asset Management and Inventory Reporting for Deployed Containers"
+    description: >
+      Unique identifiers are assigned to each container image and are used to track the image through the deployment lifecycle.
+      
