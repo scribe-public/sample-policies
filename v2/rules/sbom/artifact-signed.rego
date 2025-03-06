@@ -2,6 +2,7 @@ package verify
 
 import data.superset.policy as policy
 import data.scribe as scribe
+import future.keywords.in
 
 default asset := {}
 

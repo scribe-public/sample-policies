@@ -1,0 +1,24 @@
+config-type: rule
+id: "images-require-healthcheck"
+name: "Require Healthcheck"
+path: "require-healthcheck.rego"
+
+description: |
+  Checks that the container image includes at least one healthcheck property.
+  otherwise, it fails with a violation.
+
+labels:
+  - "SBOM"
+  - "Images"
+
+level: "error"
+
+evidence:
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: "container"
+  filter-by:
+  - target
+  - product
+
+with: {}

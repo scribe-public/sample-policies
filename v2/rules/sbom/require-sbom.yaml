@@ -1,7 +1,7 @@
 config-type: rule
 id: require-sbom
 name: Require SBOM Existence
-path: evidence-exists.rego
+path: require-sbom.rego
 
 description: Verify the SBOM exists as evidence.
 
