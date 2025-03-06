@@ -1,6 +1,7 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
 default violations := []

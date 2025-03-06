@@ -1,6 +1,7 @@
 package verify
 
 import future.keywords.in
+import data.scribe as scribe
 
 default allow := false
 default violations := []
@@ -11,7 +12,7 @@ default errors := []
 # Retrieve Evidence Metadata
 ##########################################################################
 # We assume the SBOM metadata is available at input.evidence.predicate.bom.metadata.
-asset = input.evidence.predicate.bom.metadata
+asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Banned Ports List
