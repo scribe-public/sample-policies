@@ -1,7 +1,7 @@
 config-type: rule
 id: sarif-semgrep-report
 name: Verify Semgrep Rule in SARIF
-path: verify-semgrep-report.rego
+path: blocklist-report.rego
 
 description: Verify the Semgrep SARIF report complies with predefined rules to ensure compliance and detect issues.
 

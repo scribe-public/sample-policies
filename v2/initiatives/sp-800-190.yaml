@@ -3,10 +3,14 @@ id: "SP-800-190"
 version: "1.0.0"
 name: "NIST Application Container Security Initiative"
 description: >
-  Enforces container security rules derived from NIST SP 800-190. 
-  Includes additional license compliance checks aligned with SPDX
-  to ensure both technical (CVE, configuration) and legal (license) risks 
-  are mitigated within the container supply chain.
+  This initiative enforces container security controls as outlined in 
+  NIST SP 800-190. It ensures that containerized applications follow 
+  security best practices, including vulnerability scanning, trusted 
+  image sources, registry security, and proper configuration to minimize risk.
+  The initiative enables policy-driven enforcement of security controls 
+  throughout the software development lifecycle (SDLC), providing real-time 
+  feedback to developers and enforcement in CI/CD pipelines.
+
 help: "https://csrc.nist.gov/publications/detail/sp/800-190/final"
 
 defaults:
@@ -18,139 +22,97 @@ controls:
   ########################################################################
   # CONTROL 1: IMAGE COUNTERMEASURES (4.1)
   ########################################################################
-  - name: "4.1 IMAGE-COUNTERMEASURES"
-    description: "4.1 Image Countermeasures"
+  - name: "4.1 IMAGE COUNTERMEASURES"
+    description: >
+      Implements security controls to reduce risks associated with 
+      container images, such as vulnerabilities, misconfigurations, 
+      and unauthorized images. The policies enforce CVE scanning, 
+      mandatory security settings, and allow only trusted sources.
     mitigation: >
-      Enforce fresh, trusted base images; scan for vulnerabilities; 
-      and apply secure configuration to reduce attack surface 
-      per SP 800-190 Section 4.1.
+      Ensures that all container images meet organizational security 
+      policies before deployment. Helps reduce the attack surface by 
+      blocking images with vulnerabilities, misconfigurations, or 
+      unauthorized sources.
+
     rules:
-
-      # ------------------------------------------------------------------
-      # 4.1.5 Use of trusted base images
-      # ------------------------------------------------------------------
-      - uses: images/allowed-base-image@v2/rules
-        name: "4.1.5 Approved Source Base Images"
-        description: "4.1.5 Use of trusted base images"
-        with:
-          approved_sources: []
-            # - "index.docker.io/library/python.*slim"
-            # - "index.docker.io/library/my_company/base.*"
-
-      # ------------------------------------------------------------------
-      # 4.1.5 Use of trusted images
-      # ------------------------------------------------------------------
-      # TBD
-      - uses: images/allowed-image-source@v2/rules
-        name: "4.1.5 Approved Source Images"
-        description: "4.1.5 Use of trusted images"
-        with:
-          approved_sources: []
-            # - "index.docker.io/library/nginx:.*"
-            # - "index.docker.io/library/my_company/.*"
- 
-      - uses: images/image-signed@v2/rules
-        name: "4.1.5 Signed Images"
-        description: "4.1.5 Use of trusted images (signed)"
-        # with:
-          #skip_image_regex:
-            #- "index.docker.io/library/nginx:.*"
-          # identity:
-          #   emails: []
-          #   common-names: []
 
       # ------------------------------------------------------------------
       # 4.1.1 Image Vulnerabilities
       # ------------------------------------------------------------------
+      - uses: sarif/trivy/verify-cve-severity@v2/rules
+        name: "4.1.1 Severity-Based Vulnerabilities (Trivy)"
+        description: >
+          Ensures that images do not contain high-severity vulnerabilities.
+          Blocks images if any CVEs exceed the defined severity threshold.
+        mitigation: >
+          Prevents known exploitable vulnerabilities from being deployed 
+          by blocking images with high CVSS scores.
+        level: error
+        with:
+          severity_threshold: 5.5
 
-      # TRIVY CVE SCAN - TBD needs imp
-      # - uses: sarif/trivy/verify-cve-severity@v1
-      #   name: "Severity-Based Vulnerabilities (trivy)"
-      #   description: "Severity-Based Vulnerability: Trivy CVE Report"
-      #   level: error
-      #   with:
-      #     severity_threshold: 5.5
-
-      # - uses: sarif/trivy/blocklist-cve@v1
-      #   name: "High-Profile Vulnerabilities (trivy)"
-      #   description: "High-Profile Vulnerabilities: Trivy CVE Report"
-      #   level: error
-      #   with:
-      #     rule_ids:
-      #     # - CVE-2014-0160
-      #     # - CVE-2021-44228
-      #     # - CVE-2023-38545
-      #     # - CVE-2023-44487
-      #     # - CVE-2024-3094
-      #     # - CVE-2024-47176
-      #     # - CVE-2024-47076
-      #     # - CVE-2024-47175
-      #     # - CVE-2024-47177
-
-
-
-      # SCRIBE API CVE SCAN
-      # - uses: api/scribe-api-cve@v2/rules
-      #   name: "4.1.1 Vulnerability Scan (CVE Severity)"
-      #   description: >
-      #     4.1.1 Image Vulnerabilities (Scribe):
-      #     Scan for CVEs; block if severity >= 6 (high).
-      #   with:
-      #     superset:
-      #       cve:
-      #         severity: 6
-      #         max: 0
-      #         vulnerabilities: []
-      #  #       - "CVE-2014-0160"
-      #  #       - "CVE-2021-44228"
-      #  #       - "CVE-2023-38545"
-      #  #       - "CVE-2023-44487"
-      #  #       - "CVE-2024-3094"
-      #  #       - "CVE-2024-47176"
-      #  #       - "CVE-2024-47076"
-      #  #       - "CVE-2024-47175"
-      #  #       - "CVE-2024-47177"
+      - name: "4.1.1 High-Profile Vulnerabilities (Trivy)"
+        uses: sarif/trivy/blocklist-cve@v2/rules
+        description: >
+          Blocks images that contain specific high-profile CVEs that are 
+          actively exploited or widely known.
+        mitigation: >
+          Prevents the deployment of images with critical vulnerabilities 
+          that may be exploited in the wild.
+        level: error
+        with:
+          rule_ids:
+          - CVE-2014-0160
+          - CVE-2021-44228
+          - CVE-2023-38545
+          - CVE-2023-44487
+          - CVE-2024-3094
+          - CVE-2024-47176
+          - CVE-2024-47076
+          - CVE-2024-47175
+          - CVE-2024-47177
+          - CVE-2019-1549
 
       # ------------------------------------------------------------------
       # 4.1.2 Image Configuration Defects
       # ------------------------------------------------------------------
-      # 2DO (imp by scout demo)
       - name: "4.1.2 Default Non-Root User"
         uses: images/banned-users@v2/rules
         description: >
-          4.1.2 Image Configuration Defects:
-          Ensure container doesn’t run as 'root'.
-        mitigation: "Block usage of root user in final image."
-
-      # 2DO
+          Ensures that containers do not run as the root user.
+        mitigation: >
+          Prevents privilege escalation attacks and reduces the impact 
+          of container breakouts.
+        
       - name: "4.1.2 Banned Open Port 22"
         uses: images/banned-ports@v2/rules
         description: >
-          4.1.2 Image Configuration Defects:
-          Confirm that port 22 is not exposed in Dockerfile.
-        mitigation: "Block usage of SSH in container base image."
+          Blocks images that expose SSH (port 22), which should not be 
+          used in containerized applications.
+        mitigation: >
+          Reduces the risk of unauthorized remote access and enforces 
+          immutable container principles.
 
       # ------------------------------------------------------------------
-      # 4.1.3 Labeled Here for Healthcheck (User-labeled mismatch)
+      # 4.1.3 Healthcheck Requirement
       # ------------------------------------------------------------------
-      # 2DO
       - name: "4.1.3 Set HEALTHCHECK Instruction"
         uses: images/require-healthcheck@v2/rules
         description: >
-          4.1.3 Image Configuration Defects (mismatch with official doc):
-          Ensure a HEALTHCHECK is defined for Dockerfile.
-        mitigation: "Add HEALTHCHECK to detect container health issues."
+          Ensures that container images include a HEALTHCHECK instruction 
+          to monitor their runtime health.
+        mitigation: >
+          Improves the resilience of applications by ensuring that unhealthy 
+          containers are detected and restarted.
 
       - uses: images/verify-labels@v2/rules
-        name: "Verify Required Image Labels"
+        name: "4.1.3 Verify Required Image Labels"
         description: >
-          Ensure that container images include mandatory labels:
-          'org.opencontainers.image.created',
-          'org.opencontainers.image.revision',
-          'org.opencontainers.image.source',
-          'org.opencontainers.image.version',
-          'org.opencontainers.image.licenses'.
-        mitigation: "Reject images with missing or inconsistent metadata labels."
+          Enforces the presence of essential OpenContainers labels, such as 
+          creation time, version, and source repository.
+        mitigation: >
+          Ensures traceability and compliance with software supply chain 
+          best practices.
         with:
           labels:
             - "org.opencontainers.image.created"
@@ -159,30 +121,80 @@ controls:
             - "org.opencontainers.image.version"
             - "org.opencontainers.image.licenses"
 
+      # ------------------------------------------------------------------
+      # 4.1.5 Use of Trusted Images
+      # ------------------------------------------------------------------
+      - uses: images/allowed-base-image@v2/rules
+        name: "4.1.5 Approved Source Base Images"
+        description: >
+          Ensures that base images originate from approved and trusted sources.
+        mitigation: >
+          Reduces the risk of compromised or outdated base images 
+          entering the supply chain.
+        with:
+          approved_sources: []
+            # - "index.docker.io/library/python.*slim"
+            # - "index.docker.io/library/my_company/base.*"
+
+      - uses: images/allowed-image-source@v2/rules
+        name: "4.1.5 Approved Source Images"
+        description: >
+          Ensures that application images are built from approved sources.
+        mitigation: >
+          Blocks images from untrusted registries, reducing the risk of 
+          using malicious or compromised images.
+        with:
+          approved_sources: []
+            # - "index.docker.io/library/nginx:.*"
+            # - "index.docker.io/library/my_company/.*"
+
+      - uses: images/image-signed@v2/rules
+        name: "4.1.5 Signed Images"
+        description: >
+          Ensures that images are cryptographically signed before execution.
+        mitigation: >
+          Verifies image authenticity and prevents tampering, ensuring 
+          only trusted images are deployed.
 
   ########################################################################
   # CONTROL 2: REGISTRY COUNTERMEASURES (4.2)
   ########################################################################
   - name: "4.2 REGISTRY COUNTERMEASURES"
-    description: "4.2 Registry Countermeasures"
-    mitigation: "Ensure that base or derived images are fresh and not stale."
+    description: >
+      Implements controls to secure container image registries by enforcing 
+      HTTPS connections, verifying image freshness, and preventing stale 
+      images from being used.
+    mitigation: >
+      Reduces risks associated with registry security, stale images, 
+      and unauthorized image pulls. Ensures that images are kept up-to-date 
+      and only retrieved from secure sources.
+
     rules:
 
       - name: "4.2.1 Registry Connection Enforcement"
-        rules:
-          - uses: images/enforce-https-registry@v1/rules
-            name: "Require HTTPS Registry Scheme"
-            description: "Checks if the image's registry transport is 'https'."
+        uses: images/enforce-https-registry@v1/rules
+        description: >
+          Ensures that images are only pulled from registries using HTTPS.
+        mitigation: >
+          Prevents man-in-the-middle (MITM) attacks and data interception 
+          when retrieving images.
 
       - uses: images/fresh-base-image@v2/rules
         name: "4.2.2 Up-to-Date Base Images"
-        description: "4.2.2 Up-to-Date Base Images (Check base image age)"
+        description: >
+          Ensures that base images are not older than a specified time limit.
+        mitigation: >
+          Reduces the risk of using outdated base images that may contain 
+          vulnerabilities or unsupported components.
         with:
           max_days: 100
 
       - uses: images/fresh-image@v2/rules
         name: "4.2.2 Up-to-Date Derived Images"
-        description: "4.2.2 Up-to-Date Images (Check derived image age)"
+        description: >
+          Ensures that derived images are refreshed regularly and not outdated.
+        mitigation: >
+          Reduces the risk of deploying stale application images with 
+          outdated dependencies.
         with:
           max_days: 30
-
