@@ -172,7 +172,7 @@ controls:
     rules:
 
       - name: "4.2.1 Registry Connection Enforcement"
-        uses: images/enforce-https-registry@v1/rules
+        uses: images/enforce-https-registry@v2/rules
         description: >
           Ensures that images are only pulled from registries using HTTPS.
         mitigation: >
