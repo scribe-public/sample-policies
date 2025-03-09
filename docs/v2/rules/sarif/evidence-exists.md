@@ -1,0 +1,18 @@
+# Rule: Verify Required Evidence in SARIF
+
+**ID**: `required-sarif-evidence`  
+**Source YAML**: `evidence-exists.yaml`  
+**Rego File Path**: `evidence-exists.rego`  
+
+**Labels**: SARIF
+
+**Short Description**: Verify all required evidence exists as defined by the SARIF policy.
+
+## Evidence Requirements
+
+```yaml
+signed: false
+content_body_type: generic
+target_type: data
+predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
+```

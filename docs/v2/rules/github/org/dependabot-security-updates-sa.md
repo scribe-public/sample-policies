@@ -1,0 +1,24 @@
+# Rule: Verify dependabot_security_updates setting in security_and_analysis
+
+**ID**: `github-org-dependabot-security-updates-sa`  
+**Source YAML**: `dependabot-security-updates-sa.yaml`  
+**Rego File Path**: `dependabot-security-updates-sa.rego`  
+
+**Labels**: GitHub, Organization
+
+**Short Description**: Verify Dependabot security updates are configured in the GitHub organization.
+
+## Evidence Requirements
+
+```yaml
+signed: false
+content_body_type: generic
+target_type: data
+predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+labels:
+- platform=github
+- asset_type=organization
+- '{{- if eq (index .Context "asset-type") "organization" -}} {{- asset_on_target
+  (index .Context "asset-name") -}} {{- else -}} {{- asset_on_target nil -}} {{- end
+  -}}'
+```
