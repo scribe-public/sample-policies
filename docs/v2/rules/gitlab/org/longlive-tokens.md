@@ -1,0 +1,29 @@
+# Rule: Forbid Long-Lived Tokens in GitLab Organization
+
+**ID**: `gitlab-org-token-excessive-lifespan`  
+**Source YAML**: `longlive-tokens.yaml`  
+**Rego File Path**: `longlive-tokens.rego`  
+
+**Labels**: Blueprint, Gitlab, Organization
+
+**Short Description**: Verify no GitLab organization tokens have an excessively long lifespan.
+
+## Evidence Requirements
+
+```yaml
+signed: false
+content_body_type: generic
+target_type: data
+predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+labels:
+- platform=gitlab
+- asset_type=organization
+- '{{- if eq (index .Context "asset-type") "organization" -}} {{- asset_on_target
+  (index .Context "asset-name") -}} {{- else -}} {{- asset_on_target nil -}} {{- end
+  -}}'
+```
+## Rule Parameters (`with`)
+
+```yaml
+exiring_in_days: 365
+```
