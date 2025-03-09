@@ -14,9 +14,6 @@
 signed: false
 content_body_type: cyclonedx-json
 target_type: container
-filter-by:
-- target
-- product
 ```
 ## Rule Parameters (`with`)
 
