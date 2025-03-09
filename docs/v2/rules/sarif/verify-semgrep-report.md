@@ -2,7 +2,7 @@
 
 **ID**: `sarif-semgrep-report`  
 **Source YAML**: `verify-semgrep-report.yaml`  
-**Rego File Path**: `blocklist-report.rego`  
+**Rego File Path**: `verify-semgrep-report.rego`  
 
 **Labels**: SARIF, Semgrep
 

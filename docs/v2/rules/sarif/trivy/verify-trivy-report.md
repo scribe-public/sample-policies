@@ -14,10 +14,8 @@
 signed: false
 content_body_type: generic
 target_type: data
-predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
 tool: Trivy Vulnerability Scanner
-filter-by:
-- product
+predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
 ```
 ## Rule Parameters (`with`)
 

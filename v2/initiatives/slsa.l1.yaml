@@ -12,6 +12,7 @@ defaults:
 controls:
   - id: "prov_exists"
     name: "Provenance exists"
+    mitigation: "Ensure that provenance metadata is present for critical build artifacts to support supply chain integrity."
     rules:
     - uses: slsa/l1-provenance-exists@v2/rules
       id: "prov_exists"

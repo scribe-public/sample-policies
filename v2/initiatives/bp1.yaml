@@ -12,12 +12,13 @@ controls:
   - name: "Restrict administrative access to CI/CD tools"
     id: "CT-1"
     description: "Restrict administrative access to CI/CD tools"
+    mitigation: "Limit administrative privileges to a minimal, controlled group to reduce the risk of unauthorized pipeline changes."
     full-description: |
-      It's important to ensure that only authorized persons can make administrative changes to the CI/CD system. If an unauthorized person is able to gain access, changes to pipeline definitions enable the subversion of many of the remaining controls in this document.
+      It's important to ensure that only authorized persons can make administrative changes to the CI/CD system. If an unauthorized person gains access, they could modify pipeline definitions and subvert other controls.
 
       Both host and application-layer access to CI/CD tools should be protected with multi-factor authentication.
 
-      > :skull: Instead of manipulating code, attackers will seek to control the CI/CD pipeline itself. This can enable both breaches without detection and long-term impact far greater than manipulating code. Attackers seek to introduce new pipelines, insert malicious code, or modify pipelines that introduce controls like code signing.
+      > :skull: Instead of manipulating code, attackers may target the CI/CD pipeline itself, leading to undetected breaches and long-term damage.
     when:
       gate: Code
     rules:
@@ -26,45 +27,44 @@ controls:
         with:
           max_admins: 1
 
-
   - name: "Only accept commits signed with a developer GPG key"
     id: "CT-2"
     description: "Only accept commits signed with a developer GPG key"
+    mitigation: "Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications."
     full-description: |
-      Unsigned code commits are challenging, if not impossible, to trace and pose a risk to the integrity of the code base. Requiring commits to be signed with a developer GPG key helps to ensure nonrepudiation of commits and increases the burden on the attacker seeking to insert malicious code.
+      Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.
 
-      > :skull: An easy win for attackers can be to infect developers’ machines or steal credentials that give access. Attackers can then manipulate code or inject new malicious code as they please.
+      > :skull: Attackers may exploit unsigned commits by stealing credentials or infecting developer machines, allowing them to inject malicious code.
     when:
       gate: Code
     rules:
       - uses: gitlab/project/reject-unsigned-commits@v2/rules
         level: error
-
       - uses: gitlab/project/check-signed-commits@v2/rules
         level: error
-
 
   - name: "Automation access keys expire automatically"
     id: "CT-3"
     description: "Automation access keys expire automatically"
+    mitigation: "Configure automation keys to expire automatically, limiting the window in which compromised keys can be exploited."
     full-description: |
-      Ensuring that access keys used by automation expire periodically creates a shorter window of attack when keys are compromised.
+      Ensuring that access keys used by automation expire periodically reduces the risk when keys are compromised.
 
-      > :skull: Automated build systems are a hacker’s dream: they are out of sight of humans and operate at machine speed. Attackers can either steal access keys or mint new ones through a series of attacks. These are especially hard to detect.
+      > :skull: Automated systems run continuously and are attractive targets; compromised keys with a short lifespan minimize potential damage.
     when:
       gate: Code
     rules:
       - uses: gitlab/org/longlive-tokens@v2/rules
         level: error
 
-
   - name: "Reduce automation access to read-only"
     id: "CT-4"
     description: "Reduce automation access to read-only"
+    mitigation: "Restrict automation accounts to read-only access, following the principle of least privilege to minimize potential damage."
     full-description: |
-      CI systems should have read access only to source code repositories following the principle of least privilege access.
+      CI systems should have read access only to source code repositories to limit the risk from compromised automation accounts.
 
-      > :skull: Automated build processes are a hacker’s dream: they are out of sight of humans and operate at machine speed. Attackers can bypass usual source code review process to make changes to the source code that may be hard to detect.
+      > :skull: Attackers who gain write access via automation credentials can bypass review processes; restricting access reduces this risk.
     when:
       gate: Code
     rules:
@@ -72,33 +72,26 @@ controls:
         level: error
         with:
           project_scopes:
-              - write_api
-              - write_repository
-              - write_registry
-              - write_registry_image
-              - write_package_registry
-              - write_package
-              - write_repository_hook
-
+            - write_api
+            - write_repository
+            - write_registry
+            - write_registry_image
+            - write_package_registry
+            - write_package
+            - write_repository_hook
 
   - name: "Any critical or high severity vulnerability breaks the build"
     id: "CT-6"
     description: "Any critical or high severity vulnerability breaks the build"
+    mitigation: "Immediately fail the build when critical or high-severity vulnerabilities are detected, forcing prompt investigation and remediation."
     full-description: |
-      Supply chain attacks may introduce code with vulnerabilities into the software pipeline. Using static application security testing (SAST) helps to identify serious security issues, including poor cryptographic practices, hard-coded credentials, and injection vulnerabilities. Performing SAST in the pipeline and failing the pipeline on the discovery of a critical- or high-severity discovery helps to minimize the chance of introducing intentionally insecure code.
+      Supply chain attacks may introduce code vulnerabilities. Using SAST and SCA to identify serious security issues and failing the build prevents insecure code from being merged.
 
-      Likewise, software composition analysis (SCA) identifies software libraries with known vulnerabilities. The pipeline should fail if a library with a critical- or high-severity vulnerability is identified.
-
-      > NOTE This control helps to mitigate against a failure of Control-4.
-
-      Both SAST and SCA might identify weaknesses in software that are not true vulnerabilities. So, selecting tools that allow you to set a baseline of acceptable findings can help to ensure that this control is adopted successfully.
-
-      This control should be applied at various stages of the pipeline, including IDE-integrated checks, when committing to a branch, at the start of every pull request, and at merge requests into the main branch. Early identification of vulnerabilities can reduce remediation costs.
-
-      > IMPORTANT! This control would also need a defined and documented vulnerability exception management process to be in place.
-
-      > :skull: Most often the result of unexpected consequences, vulnerabilities are a reality of developer life. But attackers, too, might contribute vulnerabilities that go unseen and undetected and can proliferate through a software supply chain quickly.
-
+      > NOTE: This control complements Control-4 by ensuring no critical vulnerabilities are ignored.
+      
+      Early detection reduces remediation costs, but also requires a well-defined vulnerability exception process.
+      
+      > :skull: Vulnerabilities, if undetected, can proliferate quickly and cause widespread damage.
     when:
       gate: Collaboration
     rules:
@@ -110,14 +103,14 @@ controls:
               severity: 6
               max: 0
 
-
   - name: "Validate artifact digest"
     id: "CT-8"
     description: "Validate artifact digest"
+    mitigation: "Validate the artifact’s digest before deployment to ensure it has not been tampered with and maintains software integrity."
     full-description: |
-      Before an artifact is deployed in any environment, its digest should be validated against the artifact in the repository to ensure that it has not been compromised.
+      Before deployment, an artifact’s digest is checked against the expected value to confirm it has not been compromised.
 
-      > :skull: At all times, attackers are attempting to infiltrate systems and make modifications to code through any variety of means. Adversaries insert targeted attacks or common vulnerabilities to suit their unpredictable needs.
+      > :skull: Attackers often attempt to alter artifacts; validating the digest helps ensure integrity.
     when:
       gate: Collaboration
     rules:
@@ -126,26 +119,28 @@ controls:
         evidence:
           content_body_type: cyclonedx-json
 
-
   - name: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
     id: "CT-9"
     description: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
+    mitigation: "Enforce a review process requiring at least two reviewers and a passing build, ensuring thorough evaluation and testing before code is merged."
     full-description: |
-      Require two code reviews at the time of pull-requests, including one from a developer who is an owner of that code. In addition to supporting good coding practices, this control also helps to ensure that no commits can be made without competent human oversight. Requiring that all tests are passed ensures that the above controls are not circumvented.
+      Requiring multiple code reviews and successful tests helps ensure that no changes are merged without proper oversight.
 
-      > :skull: At all times, attackers are attempting to infiltrate systems and make modifications to code through any variety of means. Adversaries insert targeted attacks or common vulnerabilities to suit their unpredictable needs. We cannot assume that the adversary is a member of your own team.
+      > :skull: Without proper reviews, attackers can insert malicious changes; this control mitigates that risk.
     when:
       gate: Collaboration
     rules:
       - uses: gitlab/project/approvals-policy-check@v2/rules
         level: error
 
-
   - name: "Available container images don’t have any high or critical vulnerabilities"
     id: "CT-11"
     description: "Available container images don’t have any high or critical vulnerabilities"
+    mitigation: "Continuously scan container images for vulnerabilities and ensure that only images without high or critical issues are deployed."
     full-description: |
-      Just as applications need to be tested for vulnerabilities before being placed in production, so do the container images into which they are packaged for deployment. Container images could have open-source vulnerabilities as long as they contain open-source software (such as web application servers, networking libraries, and databases). Additionally, containers might have configuration vulnerabilities that allow attackers to have more access than they should to the resources that containers manage. Container images can be tested with a container security tool in the pipeline.
+      Container images must be scanned before deployment to prevent the inclusion of images with serious vulnerabilities.
+
+      > :skull: Vulnerable containers can be a major attack vector; this control helps prevent their use.
     when:
       gate: Staging
     rules:
@@ -157,15 +152,14 @@ controls:
               severity: 6
               max: 0
 
-
   - name: "Validate artifact signatures and digests"
     id: "CT-12"
     description: "Validate artifact signatures and digests"
+    mitigation: "Ensure that artifacts are properly signed and their digests validated, confirming authenticity and preventing tampering."
     full-description: |
-      As part of deploying artifacts from the internal registry, validating the signature of the artifact against the digest ensures that the artifact was not tampered with in the repository and that the artifact being deployed is the same one that was tested.
+      Validating the signature and digest of an artifact ensures that it has not been altered between testing and deployment.
 
-      > :skull:
-      > Through credential theft, vulnerability exploit, targeted attack or more, attackers succeed in inserting their malicious code into pipelines and repositories. Code should be considered suspect and malicious.
+      > :skull: This control helps prevent the deployment of artifacts that may have been modified by attackers.
     when:
       gate: Staging
     rules:
@@ -174,15 +168,14 @@ controls:
         evidence:
           content_body_type: cyclonedx-json
 
-
   - name: "Scan deployed images in production"
     id: "CT-13"
     description: "Scan deployed images in production"
+    mitigation: "Continuously monitor and scan production images to ensure ongoing compliance with security standards."
     full-description: |
-      It is always a good idea to validate pre-production controls in production. This helps to ensure that the controls prior were followed for all software in production.
+      Production images should be validated to ensure that controls enforced during earlier stages continue to be effective in production.
 
-      > :skull:
-      > At all times, attackers are attempting to infiltrate systems and make modifications to code through any variety of means. Adversaries insert targeted attacks or common vulnerabilities to suit their unpredictable needs. We cannot assume that the adversary is a member of your own team.
+      > :skull: Ongoing monitoring helps detect any security issues that may emerge post-deployment.
     when:
       gate: Staging
     rules:
