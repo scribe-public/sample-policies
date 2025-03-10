@@ -102,6 +102,10 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(mitigation)
         md.append("")
 
+    skip_evidence = rule_data.get("skip-evidence", False)
+    if skip_evidence:
+        md.append(f"> Evidence **IS NOT** required for this rule.  ")
+
     fail_on_missing = rule_data.get("fail-on-missing-evidence", False)
     if fail_on_missing:
         md.append(f"> Evidence **IS** required for this rule and will fail if missing.  ")
@@ -113,10 +117,12 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(f"> Rule requires the Scribe API to be enabled.  ")
 
     sign_defaults = rule_data.get("evidence", {}).get("signed", False)
-    if sign_defaults:
-        md.append(f"> Signed Evidence for this rule **IS* required by default.  ")
-    else:
-        md.append(f"> Signed Evidence for this rule **IS NOT** required by default but is recommended.  ")
+
+    if not skip_evidence:
+        if sign_defaults:
+            md.append(f"> Signed Evidence for this rule **IS* required by default.  ")
+        else:
+            md.append(f"> Signed Evidence for this rule **IS NOT** required by default but is recommended.  ")
 
     if full_description:
         md.append("\n## Description  ")
