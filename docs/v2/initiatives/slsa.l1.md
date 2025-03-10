@@ -10,7 +10,7 @@ Evaluate SLSA L1
 **Help:** https://slsa.dev/  
 > Evidence for this initiative **IS NOT** required by default but is recommended.
 
-## **Full Description**
+## **Description**
 
 This initiative ensures that every critical build artifact includes the minimum required provenance metadata as specified in SLSA Level 1. By recording detailed information about the build process—such as timestamps, authors, and build details— organizations establish a traceable chain-of-custody for their software artifacts.
 

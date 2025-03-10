@@ -10,7 +10,7 @@ Evaluate PS rules from the SSDF initiative
 **Help:** https://csrc.nist.gov/pubs/sp/800/218/final  
 > Evidence for this initiative **IS NOT** required by default but is recommended.
 
-## **Full Description**
+## **Description**
 
 This initiative enforces key controls from the Secure Software Development Framework (SSDF) to ensure  the integrity and security of your software supply chain. It evaluates critical process (PS) rules  to detect vulnerabilities, enforce proper access and commit practices, and secure code repositories.
 

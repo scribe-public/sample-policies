@@ -14,7 +14,7 @@ By enforcing layered security controls across all phases of the software develop
 **Help:** https://github.com/Venafi/blueprint-securesoftwarepipeline  
 > Evidence for this initiative **IS** required by default.**
 
-## **Full Description**
+## **Description**
 
 This initiative defines a set of best practices and technical guidelines designed to safeguard every stage of the software delivery process—from code development and build, to testing and production deployment. It emphasizes the importance of ensuring code integrity, authenticating build artifacts, and continuously monitoring system changes to mitigate the risk of supply chain attacks. The framework is adaptable to various environments and aligned with industry standards, providing organizations with actionable steps to enhance their overall security posture.
 ## Controls Overview
@@ -50,7 +50,7 @@ Restrict administrative access to CI/CD tools
 ## Mitigation  
 Limit administrative privileges to a minimal, controlled group to reduce the risk of unauthorized pipeline changes.
 
-## **Full Description**
+## **Description**
 
 It's important to ensure that only authorized persons can make administrative changes to the CI/CD system. If an unauthorized person gains access, they could modify pipeline definitions and subvert other controls.
 
@@ -73,7 +73,7 @@ Only accept commits signed with a developer GPG key
 ## Mitigation  
 Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications.
 
-## **Full Description**
+## **Description**
 
 Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.
 
@@ -95,7 +95,7 @@ Automation access keys expire automatically
 ## Mitigation  
 Configure automation keys to expire automatically, limiting the window in which compromised keys can be exploited.
 
-## **Full Description**
+## **Description**
 
 Ensuring that access keys used by automation expire periodically reduces the risk when keys are compromised.
 
@@ -116,7 +116,7 @@ Reduce automation access to read-only
 ## Mitigation  
 Restrict automation accounts to read-only access, following the principle of least privilege to minimize potential damage.
 
-## **Full Description**
+## **Description**
 
 CI systems should have read access only to source code repositories to limit the risk from compromised automation accounts.
 
@@ -137,7 +137,7 @@ Any critical or high severity vulnerability breaks the build
 ## Mitigation  
 Immediately fail the build when critical or high-severity vulnerabilities are detected, forcing prompt investigation and remediation.
 
-## **Full Description**
+## **Description**
 
 Supply chain attacks may introduce code vulnerabilities. Using SAST and SCA to identify serious security issues and failing the build prevents insecure code from being merged.
 
@@ -162,7 +162,7 @@ Validate artifact digest
 ## Mitigation  
 Validate the artifact’s digest before deployment to ensure it has not been tampered with and maintains software integrity.
 
-## **Full Description**
+## **Description**
 
 Before deployment, an artifact’s digest is checked against the expected value to confirm it has not been compromised.
 
@@ -183,7 +183,7 @@ Pull-requests require two reviewers (including one default reviewer) and a passi
 ## Mitigation  
 Enforce a review process requiring at least two reviewers and a passing build, ensuring thorough evaluation and testing before code is merged.
 
-## **Full Description**
+## **Description**
 
 Requiring multiple code reviews and successful tests helps ensure that no changes are merged without proper oversight.
 
@@ -204,7 +204,7 @@ Available container images don’t have any high or critical vulnerabilities
 ## Mitigation  
 Continuously scan container images for vulnerabilities and ensure that only images without high or critical issues are deployed.
 
-## **Full Description**
+## **Description**
 
 Container images must be scanned before deployment to prevent the inclusion of images with serious vulnerabilities.
 
@@ -225,7 +225,7 @@ Validate artifact signatures and digests
 ## Mitigation  
 Ensure that artifacts are properly signed and their digests validated, confirming authenticity and preventing tampering.
 
-## **Full Description**
+## **Description**
 
 Validating the signature and digest of an artifact ensures that it has not been altered between testing and deployment.
 
@@ -246,7 +246,7 @@ Scan deployed images in production
 ## Mitigation  
 Continuously monitor and scan production images to ensure ongoing compliance with security standards.
 
-## **Full Description**
+## **Description**
 
 Production images should be validated to ensure that controls enforced during earlier stages continue to be effective in production.
 
