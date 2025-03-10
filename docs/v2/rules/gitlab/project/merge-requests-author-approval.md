@@ -21,7 +21,6 @@ Verify the binary field `merge_requests_author_approval` is set for the GitLab p
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-merge_requests_author_approval: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| merge_requests_author_approval | True |

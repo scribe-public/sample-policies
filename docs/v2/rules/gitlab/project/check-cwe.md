@@ -21,7 +21,6 @@ Verify that specified CWEs were not detected in the GitLab project.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-cwe_value: '89'
-```
-
+| Parameter | Default |
+|-----------|---------|
+| cwe_value | 89 |

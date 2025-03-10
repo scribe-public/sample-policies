@@ -21,7 +21,6 @@ Verify a specific substring is not found in the message attribute of vulnerabili
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-pattern: (?i)dghd
-```
-
+| Parameter | Default |
+|-----------|---------|
+| pattern | (?i)dghd |

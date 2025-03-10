@@ -21,7 +21,6 @@ Verify the `author_email_regex` for the GitLab project is set to the specified v
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-author_email_regex: ''
-```
-
+| Parameter | Default |
+|-----------|---------|
+| author_email_regex |  |

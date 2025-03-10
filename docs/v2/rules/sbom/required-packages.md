@@ -20,8 +20,7 @@ Verify the artifact includes all required dependencies.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-required_pkgs: []
-violations_limit: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| required_pkgs | [] |
+| violations_limit | 0 |

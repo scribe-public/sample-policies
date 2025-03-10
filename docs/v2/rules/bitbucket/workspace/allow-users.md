@@ -21,7 +21,6 @@ Verify only users specified in the Allowed List have user access to the Bitbucke
 | labels | - platform=bitbucket<br>- asset_type=workspace |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_users: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_users | [] |

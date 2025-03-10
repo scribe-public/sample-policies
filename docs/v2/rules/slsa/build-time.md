@@ -19,14 +19,8 @@ Verify the artifact was created within the specified time window.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-start_hour: 8
-end_hour: 20
-workdays:
-- Sunday
-- Monday
-- Tuesday
-- Wednesday
-- Thursday
-```
-
+| Parameter | Default |
+|-----------|---------|
+| start_hour | 8 |
+| end_hour | 20 |
+| workdays | ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'] |

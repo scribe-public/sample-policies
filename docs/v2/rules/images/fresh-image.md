@@ -19,7 +19,6 @@ Verify the image is not older than the specified threshold.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_days: 183
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_days | 183 |

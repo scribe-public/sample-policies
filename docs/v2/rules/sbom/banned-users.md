@@ -19,8 +19,6 @@ Verify specific users are not allowed in an SBOM.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-users:
-- root
-```
-
+| Parameter | Default |
+|-----------|---------|
+| users | ['root'] |

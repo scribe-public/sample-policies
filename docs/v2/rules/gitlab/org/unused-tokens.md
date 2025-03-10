@@ -21,7 +21,6 @@ Verify there are no unused GitLab organization tokens.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-unused_for_days: 90
-```
-
+| Parameter | Default |
+|-----------|---------|
+| unused_for_days | 90 |

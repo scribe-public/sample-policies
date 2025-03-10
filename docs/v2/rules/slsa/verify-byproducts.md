@@ -19,7 +19,6 @@ Verify the artifact has no disallowed builder dependencies.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-byproducts: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| byproducts | [] |

@@ -21,7 +21,6 @@ Verify secrets in the GitHub repository are not older than the specified thresho
 | labels | - platform=github<br>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_secret_age: 12
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_secret_age | 12 |

@@ -20,8 +20,7 @@ Verify the number of disallowed dependencies remains below the specified thresho
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-blocklist: []
-blocklisted_limit: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| blocklist | [] |
+| blocklisted_limit | 0 |

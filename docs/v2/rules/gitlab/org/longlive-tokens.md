@@ -21,7 +21,6 @@ Verify no GitLab organization tokens have an excessively long lifespan.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-exiring_in_days: 365
-```
-
+| Parameter | Default |
+|-----------|---------|
+| exiring_in_days | 365 |

@@ -21,8 +21,6 @@ Verify only users in the Allowed List commit by name in the GitLab project.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_committers:
-- somename
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_committers | ['somename'] |

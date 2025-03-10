@@ -21,7 +21,6 @@ Verify the GitLab project is active for a specified duration.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-inactive_for_days: 30
-```
-
+| Parameter | Default |
+|-----------|---------|
+| inactive_for_days | 30 |

@@ -21,7 +21,6 @@ Verify that commit messages in the GitLab project adhere to the specified format
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-commit_message_regex: .*JIRA-\d+.*
-```
-
+| Parameter | Default |
+|-----------|---------|
+| commit_message_regex | .*JIRA-\d+.* |

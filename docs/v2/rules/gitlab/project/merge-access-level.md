@@ -21,8 +21,7 @@ Verify the GitLab project's merge access level complies with requirements.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-branch: main
-access_level_description: Maintainers
-```
-
+| Parameter | Default |
+|-----------|---------|
+| branch | main |
+| access_level_description | Maintainers |

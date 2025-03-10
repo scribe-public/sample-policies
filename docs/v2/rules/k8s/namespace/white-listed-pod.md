@@ -21,9 +21,7 @@ Verify only pods explicitly listed in the Allowed List run within a Kubernetes n
 | labels | - asset_type=namespace |
 
 ## Rule Parameters (`with`)  
-```yaml
-white_listed_pod: []
-verify_namespaces:
-- .*
-```
-
+| Parameter | Default |
+|-----------|---------|
+| white_listed_pod | [] |
+| verify_namespaces | ['.*'] |

@@ -21,7 +21,6 @@ Verify `reset_approvals_on_push` is set for the GitLab project.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-reset_approvals_on_push: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| reset_approvals_on_push | True |

@@ -19,9 +19,6 @@ Verify the SBOM is signed.
 | signed | True |
 
 ## Rule Parameters (`with`)  
-```yaml
-identity:
-  common-names: []
-  emails: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| identity | {'common-names': [], 'emails': []} |

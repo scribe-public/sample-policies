@@ -21,7 +21,6 @@ Verify `members_can_create_private_repositories` is configured in the GitHub org
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | True |

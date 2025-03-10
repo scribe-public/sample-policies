@@ -20,7 +20,6 @@ Verify the artifact was created by the specified builder.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-id: '{{ .Env.HOSTNAME }}'
-```
-
+| Parameter | Default |
+|-----------|---------|
+| id | {{ .Env.HOSTNAME }} |

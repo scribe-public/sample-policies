@@ -20,8 +20,7 @@ Verify required evidence validates attack vectors in the SARIF report.
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
 ## Rule Parameters (`with`)  
-```yaml
-attack_vectors: []
-violations_threshold: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| attack_vectors | [] |
+| violations_threshold | 0 |

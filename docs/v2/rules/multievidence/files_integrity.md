@@ -20,8 +20,7 @@ Verify the checksum of each file in one SBOM matches the checksum in a second SB
 | labels | - new_evidence |
 
 ## Rule Parameters (`with`)  
-```yaml
-ref_sbom: '{{ .Env.REF_SBOM_DATA }}'
-path_prefix: pkg:file/
-```
-
+| Parameter | Default |
+|-----------|---------|
+| ref_sbom | {{ .Env.REF_SBOM_DATA }} |
+| path_prefix | pkg:file/ |

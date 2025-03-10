@@ -21,7 +21,6 @@ Verify force pushes in the GitLab project are disallowed to maintain repository 
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-branch: main
-```
-
+| Parameter | Default |
+|-----------|---------|
+| branch | main |

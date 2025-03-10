@@ -20,11 +20,10 @@ Verify the SARIF report complies with defined generic rules for compliance and s
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
 ## Rule Parameters (`with`)  
-```yaml
-rule_level: []
-precision: []
-rule_ids: []
-ignore: []
-max_allowed: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| rule_level | [] |
+| precision | [] |
+| rule_ids | [] |
+| ignore | [] |
+| max_allowed | 0 |

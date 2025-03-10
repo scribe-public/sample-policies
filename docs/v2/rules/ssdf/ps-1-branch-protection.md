@@ -16,7 +16,6 @@ Enforces branch protection policies to prevent unauthorized commits and maintain
 
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_protected: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_protected | True |

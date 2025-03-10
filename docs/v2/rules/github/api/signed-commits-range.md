@@ -12,12 +12,11 @@ Verify commits in the specified time range are signed.
 
 
 ## Rule Parameters (`with`)  
-```yaml
-access_token: ''
-owner: ''
-repo: ''
-since: null
-until: null
-sha: null
-```
-
+| Parameter | Default |
+|-----------|---------|
+| access_token |  |
+| owner |  |
+| repo |  |
+| since | None |
+| until | None |
+| sha | None |

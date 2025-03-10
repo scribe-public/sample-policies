@@ -21,7 +21,6 @@ Verify the GitLab project's visibility matches the required level.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-visibility: private
-```
-
+| Parameter | Default |
+|-----------|---------|
+| visibility | private |

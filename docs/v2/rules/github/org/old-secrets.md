@@ -21,7 +21,6 @@ Verify secrets in the GitHub organization are not older than the specified thres
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_secret_age: 12
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_secret_age | 12 |

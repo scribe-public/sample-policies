@@ -21,7 +21,6 @@ Verify `members_can_create_repositories` is appropriately configured in the GitH
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |

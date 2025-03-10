@@ -21,7 +21,6 @@ Verify the binary field `require_password_to_approve` is set for the GitLab proj
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-require_password_to_approve: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| require_password_to_approve | True |

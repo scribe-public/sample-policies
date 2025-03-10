@@ -21,8 +21,6 @@ Verify Kubernetes namespaces are properly terminated to prevent lingering resour
 | labels | - asset_type=namespace |
 
 ## Rule Parameters (`with`)  
-```yaml
-namespaces:
-- .*
-```
-
+| Parameter | Default |
+|-----------|---------|
+| namespaces | ['.*'] |

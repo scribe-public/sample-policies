@@ -21,7 +21,6 @@ Verify code owner approval is required for specific branches in the GitLab proje
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-branch: main
-```
-
+| Parameter | Default |
+|-----------|---------|
+| branch | main |

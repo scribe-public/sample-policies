@@ -21,7 +21,6 @@ Verify the maximum number of GitHub organization admins is restricted.
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_admins: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_admins | 0 |

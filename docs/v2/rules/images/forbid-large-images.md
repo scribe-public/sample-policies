@@ -19,7 +19,6 @@ Verify the image size is below the specified threshold.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_size: 77819980
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_size | 77819980 |

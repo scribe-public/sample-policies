@@ -18,7 +18,6 @@ Verify XX using the Scribe API template rule.
 | predicate_type | https://cyclonedx.org/bom |
 
 ## Rule Parameters (`with`)  
-```yaml
-superset: null
-```
-
+| Parameter | Default |
+|-----------|---------|
+| superset | None |

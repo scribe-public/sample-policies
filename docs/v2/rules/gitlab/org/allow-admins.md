@@ -21,7 +21,6 @@ Verify only users in the Allowed List have admin privileges in the GitLab organi
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_admins: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_admins | [] |

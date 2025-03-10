@@ -21,7 +21,6 @@ Verify container images in Kubernetes namespaces originate from registries in th
 | labels | - asset_type=namespace |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_registries: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_registries | [] |

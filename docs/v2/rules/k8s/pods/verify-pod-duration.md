@@ -21,7 +21,6 @@ Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecyc
 | labels | - asset_type=pod |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_days: '30'
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_days | 30 |

@@ -21,7 +21,6 @@ Verify the maximum number of admins for the GitLab project is restricted.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_admins: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_admins | 0 |

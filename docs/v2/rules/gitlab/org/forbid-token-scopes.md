@@ -21,9 +21,6 @@ Verify no GitLab organization tokens have disallowed scopes.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-project_scopes:
-- write_api
-- write_repository
-```
-
+| Parameter | Default |
+|-----------|---------|
+| project_scopes | ['write_api', 'write_repository'] |

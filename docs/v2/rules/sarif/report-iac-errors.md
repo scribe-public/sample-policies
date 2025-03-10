@@ -20,7 +20,6 @@ Verify the number of infrastructure-as-code (IaC) errors in the SARIF report rem
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
 ## Rule Parameters (`with`)  
-```yaml
-violations_threshold: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| violations_threshold | 0 |

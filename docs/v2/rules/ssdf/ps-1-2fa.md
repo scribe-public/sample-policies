@@ -16,7 +16,6 @@ Enforces two-factor authentication (2FA), significantly reducing the risk of com
 
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |

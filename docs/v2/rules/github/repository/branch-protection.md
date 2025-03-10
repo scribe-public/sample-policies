@@ -21,10 +21,7 @@ Verify branch protection is configured in the GitHub repository.
 | labels | - platform=github<br>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_protected: true
-branches:
-- main
-- master
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_protected | True |
+| branches | ['main', 'master'] |

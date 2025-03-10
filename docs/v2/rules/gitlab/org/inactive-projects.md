@@ -21,7 +21,6 @@ Verify no GitLab organization projects are inactive.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-inactive_for_days: 90
-```
-
+| Parameter | Default |
+|-----------|---------|
+| inactive_for_days | 90 |

@@ -16,7 +16,6 @@ Ensures that repositories remain private, reducing the risk of sensitive code be
 
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | True |

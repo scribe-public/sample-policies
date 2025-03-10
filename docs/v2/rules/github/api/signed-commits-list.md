@@ -12,10 +12,9 @@ Verify selected commits are signed in the GitHub organization.
 
 
 ## Rule Parameters (`with`)  
-```yaml
-commit_id_list: []
-access_token: ''
-owner: ''
-repo: ''
-```
-
+| Parameter | Default |
+|-----------|---------|
+| commit_id_list | [] |
+| access_token |  |
+| owner |  |
+| repo |  |
