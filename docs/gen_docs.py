@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import re
 import yaml
 
 # Root output directories for docs
@@ -174,6 +175,18 @@ def write_rule_doc(file_path, rule_data, base_source_git):
     }
 
 
+def generate_markdown_anchor(text):
+    """
+    Convert a control name into a valid Markdown anchor.
+    - Lowercase everything
+    - Replace spaces and special characters with hyphens
+    - Remove invalid characters
+    """
+    text = text.lower().strip()
+    text = re.sub(r"[^\w\s-]", "", text)  # Remove special characters
+    text = re.sub(r"\s+", "-", text)  # Replace spaces with hyphens
+    return f"#{text}"
+
 def generate_initiative_markdown(initiative_data, file_path, file_name, rule_docs_map, base_source_git):
     """
     Build the Markdown content for one initiative.
@@ -243,9 +256,12 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     for ctrl in controls:
         ctrl_id = ctrl.get("id", "")
         ctrl_name = ctrl.get("name", ctrl_id)
+        # ctrl_section_link = f"## [{ctrl_id}] {ctrl_name}".replace(" ", "-").lower()
+        ctrl_section_link = generate_markdown_anchor(f"{ctrl_id} {ctrl_name}")
+
         ctrl_desc = ctrl.get("description", "")
         ctrl_mitigation = ctrl.get("mitigation", "")
-        md.append(f"| {ctrl_id} | {ctrl_name} | {ctrl_desc} | {ctrl_mitigation} |")
+        md.append(f"|  [{ctrl_id}]({ctrl_section_link}) | {ctrl_name} | {ctrl_desc} | {ctrl_mitigation} |")
     md.append("")
 
     defaults = initiative_data.get("defaults", {})
