@@ -1,18 +1,14 @@
 # Initiative: SLSA L2 Framework”
 
-**ID**: `SLSA.L2`
-**Version**: `1.0.0`
-**Bundle-Version**: `v2`
-**Source**: [v2/initiatives/slsa.l2.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l2.yaml)
+- **ID**: `SLSA.L2`
+- **Version**: `1.0.0`
+- **Bundle-Version**: `v2`
+- **Source**: [v2/initiatives/slsa.l2.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l2.yaml)
 
-**Short Description**: Evaluate SLSA Level 2
-
-**Full Description**:
-
+- **Short Description**: Evaluate SLSA Level 2
+- **Help**: https://slsa.dev/
+- **Full Description**:
 Evaluate SLSA L2 and ensure that provenance information is both recorded and authenticated. This helps protect against unauthorized modifications and ensures artifact integrity."
-
-
-**Help**: https://slsa.dev/
 
 > ** Evidence for this initiative is not required by default but is recommended.**
 

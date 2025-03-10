@@ -1,18 +1,14 @@
 # Initiative: SSDF Client Initiative
 
-**ID**: `SSDF`
-**Version**: `1.0.0`
-**Bundle-Version**: `v2`
-**Source**: [v2/initiatives/ssdf.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/ssdf.yaml)
+- **ID**: `SSDF`
+- **Version**: `1.0.0`
+- **Bundle-Version**: `v2`
+- **Source**: [v2/initiatives/ssdf.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/ssdf.yaml)
 
-**Short Description**: Evaluate PS rules from the SSDF initiative
-
-**Full Description**:
-
+- **Short Description**: Evaluate PS rules from the SSDF initiative
+- **Help**: https://csrc.nist.gov/pubs/sp/800/218/final
+- **Full Description**:
 This initiative enforces key controls from the Secure Software Development Framework (SSDF) to ensure  the integrity and security of your software supply chain. It evaluates critical process (PS) rules  to detect vulnerabilities, enforce proper access and commit practices, and secure code repositories.
-
-
-**Help**: https://csrc.nist.gov/pubs/sp/800/218/final
 
 > ** Evidence for this initiative is not required by default but is recommended.**
 
