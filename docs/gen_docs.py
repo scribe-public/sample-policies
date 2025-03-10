@@ -216,7 +216,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append("\n## Mitigation  ")
         md.append(mitigation)
         md.append("")
-        
+
     if help_url:
         md.append(f"**Help:** {help_url}  ")
 
@@ -273,13 +273,20 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
 
         md.append(f"## [{ctrl_id}] {ctrl_name}")
         if help_url:
-            md.append(f"[Help]({help_url})\n")
-        if ctrl_desc:
-            md.append(f"**Description**: {ctrl_desc}\n")
+            md.append(f"[Help]({help_url})  ")
+
+        md.append(f"\n{ctrl_desc}")
+        md.append("")
+
         if ctrl_mitigation:
-            md.append(f"**Mitigation**: {ctrl_mitigation}\n")
+            md.append("\n## Mitigation  ")
+            md.append(ctrl_mitigation)
+            md.append("")
+
         if ctrl_full_desc:
-            md.append(f"**Full Description**:\n\n{ctrl_full_desc}\n")
+            md.append(f"## **Full Description**\n")
+            md.append(ctrl_full_desc)
+            md.append("")
 
         if not ctrl_rules:
             md.append("_No rules defined for this control._\n")

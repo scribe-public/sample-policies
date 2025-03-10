@@ -43,11 +43,14 @@ This initiative defines a set of best practices and technical guidelines designe
 # Detailed Controls
 
 ## [CT-1] Restrict administrative access to CI/CD tools
-**Description**: Restrict administrative access to CI/CD tools
 
-**Mitigation**: Limit administrative privileges to a minimal, controlled group to reduce the risk of unauthorized pipeline changes.
+Restrict administrative access to CI/CD tools
 
-**Full Description**:
+
+## Mitigation  
+Limit administrative privileges to a minimal, controlled group to reduce the risk of unauthorized pipeline changes.
+
+## **Full Description**
 
 It's important to ensure that only authorized persons can make administrative changes to the CI/CD system. If an unauthorized person gains access, they could modify pipeline definitions and subvert other controls.
 
@@ -63,11 +66,14 @@ Both host and application-layer access to CI/CD tools should be protected with m
 | gitlab-org-max-admins | [Limit Admins in GitLab Organization](../rules/gitlab/org/max-admins.md) | Verify the maximum number of admins for the GitLab project is restricted. |
 
 ## [CT-2] Only accept commits signed with a developer GPG key
-**Description**: Only accept commits signed with a developer GPG key
 
-**Mitigation**: Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications.
+Only accept commits signed with a developer GPG key
 
-**Full Description**:
+
+## Mitigation  
+Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications.
+
+## **Full Description**
 
 Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.
 
@@ -82,11 +88,14 @@ Unsigned code commits are difficult to trace and pose a risk to the integrity of
 | gitlab-project-signed-commits | [Ensure All Commits Are Signed in GitLab Project](../rules/gitlab/project/check-signed-commits.md) | Verify all commits in the GitLab project are signed. |
 
 ## [CT-3] Automation access keys expire automatically
-**Description**: Automation access keys expire automatically
 
-**Mitigation**: Configure automation keys to expire automatically, limiting the window in which compromised keys can be exploited.
+Automation access keys expire automatically
 
-**Full Description**:
+
+## Mitigation  
+Configure automation keys to expire automatically, limiting the window in which compromised keys can be exploited.
+
+## **Full Description**
 
 Ensuring that access keys used by automation expire periodically reduces the risk when keys are compromised.
 
@@ -100,11 +109,14 @@ Ensuring that access keys used by automation expire periodically reduces the ris
 | gitlab-org-token-excessive-lifespan | [Forbid Long-Lived Tokens in GitLab Organization](../rules/gitlab/org/longlive-tokens.md) | Verify no GitLab organization tokens have an excessively long lifespan. |
 
 ## [CT-4] Reduce automation access to read-only
-**Description**: Reduce automation access to read-only
 
-**Mitigation**: Restrict automation accounts to read-only access, following the principle of least privilege to minimize potential damage.
+Reduce automation access to read-only
 
-**Full Description**:
+
+## Mitigation  
+Restrict automation accounts to read-only access, following the principle of least privilege to minimize potential damage.
+
+## **Full Description**
 
 CI systems should have read access only to source code repositories to limit the risk from compromised automation accounts.
 
@@ -118,11 +130,14 @@ CI systems should have read access only to source code repositories to limit the
 | gitlab-org-disallowed-token-scope | [Forbid Token Scopes in GitLab Organization](../rules/gitlab/org/forbid-token-scopes.md) | Verify no GitLab organization tokens have disallowed scopes. |
 
 ## [CT-6] Any critical or high severity vulnerability breaks the build
-**Description**: Any critical or high severity vulnerability breaks the build
 
-**Mitigation**: Immediately fail the build when critical or high-severity vulnerabilities are detected, forcing prompt investigation and remediation.
+Any critical or high severity vulnerability breaks the build
 
-**Full Description**:
+
+## Mitigation  
+Immediately fail the build when critical or high-severity vulnerabilities are detected, forcing prompt investigation and remediation.
+
+## **Full Description**
 
 Supply chain attacks may introduce code vulnerabilities. Using SAST and SCA to identify serious security issues and failing the build prevents insecure code from being merged.
 
@@ -140,11 +155,14 @@ Early detection reduces remediation costs, but also requires a well-defined vuln
 | scribe-cve | [Verify No Critical or High Vulnerabilities](../rules/api/scribe-api-cve.md) | Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.). |
 
 ## [CT-8] Validate artifact digest
-**Description**: Validate artifact digest
 
-**Mitigation**: Validate the artifact’s digest before deployment to ensure it has not been tampered with and maintains software integrity.
+Validate artifact digest
 
-**Full Description**:
+
+## Mitigation  
+Validate the artifact’s digest before deployment to ensure it has not been tampered with and maintains software integrity.
+
+## **Full Description**
 
 Before deployment, an artifact’s digest is checked against the expected value to confirm it has not been compromised.
 
@@ -158,11 +176,14 @@ Before deployment, an artifact’s digest is checked against the expected value 
 | require-sbom | [Require SBOM Existence](../rules/sbom/evidence-exists.md) | Verify the SBOM exists as evidence. |
 
 ## [CT-9] Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged
-**Description**: Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged
 
-**Mitigation**: Enforce a review process requiring at least two reviewers and a passing build, ensuring thorough evaluation and testing before code is merged.
+Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged
 
-**Full Description**:
+
+## Mitigation  
+Enforce a review process requiring at least two reviewers and a passing build, ensuring thorough evaluation and testing before code is merged.
+
+## **Full Description**
 
 Requiring multiple code reviews and successful tests helps ensure that no changes are merged without proper oversight.
 
@@ -176,11 +197,14 @@ Requiring multiple code reviews and successful tests helps ensure that no change
 | gitlab-project-merge-approval | [Merge approval policy check for GitLab project](../rules/gitlab/project/approvals-policy-check.md) | Verify the project's merge approval policy complies with requirements. |
 
 ## [CT-11] Available container images don’t have any high or critical vulnerabilities
-**Description**: Available container images don’t have any high or critical vulnerabilities
 
-**Mitigation**: Continuously scan container images for vulnerabilities and ensure that only images without high or critical issues are deployed.
+Available container images don’t have any high or critical vulnerabilities
 
-**Full Description**:
+
+## Mitigation  
+Continuously scan container images for vulnerabilities and ensure that only images without high or critical issues are deployed.
+
+## **Full Description**
 
 Container images must be scanned before deployment to prevent the inclusion of images with serious vulnerabilities.
 
@@ -194,11 +218,14 @@ Container images must be scanned before deployment to prevent the inclusion of i
 | scribe-cve | [Verify No Critical or High Vulnerabilities](../rules/api/scribe-api-cve.md) | Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.). |
 
 ## [CT-12] Validate artifact signatures and digests
-**Description**: Validate artifact signatures and digests
 
-**Mitigation**: Ensure that artifacts are properly signed and their digests validated, confirming authenticity and preventing tampering.
+Validate artifact signatures and digests
 
-**Full Description**:
+
+## Mitigation  
+Ensure that artifacts are properly signed and their digests validated, confirming authenticity and preventing tampering.
+
+## **Full Description**
 
 Validating the signature and digest of an artifact ensures that it has not been altered between testing and deployment.
 
@@ -212,11 +239,14 @@ Validating the signature and digest of an artifact ensures that it has not been 
 | sbom-signed | [Require SBOM Signature](../rules/sbom/artifact-signed.md) | Verify the SBOM is signed. |
 
 ## [CT-13] Scan deployed images in production
-**Description**: Scan deployed images in production
 
-**Mitigation**: Continuously monitor and scan production images to ensure ongoing compliance with security standards.
+Scan deployed images in production
 
-**Full Description**:
+
+## Mitigation  
+Continuously monitor and scan production images to ensure ongoing compliance with security standards.
+
+## **Full Description**
 
 Production images should be validated to ensure that controls enforced during earlier stages continue to be effective in production.
 
