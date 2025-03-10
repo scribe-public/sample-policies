@@ -7,7 +7,7 @@
 **Short Description:** A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle.  
 **Mitigation:** By enforcing layered security controls across all phases of the software development lifecycle, this initiative significantly reduces the risk of supply chain compromises and ensures that only verified and trustworthy software components are deployed.  
 **Help:** https://github.com/Venafi/blueprint-securesoftwarepipeline  
-> Evidence for this initiative is required by default.**
+> Evidence for this initiative **IS** required by default.**
 
 ## **Full Description**
 

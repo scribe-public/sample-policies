@@ -5,7 +5,7 @@
 **Rego Source:** [required-packages.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.rego)  
 **Short Description:** Verify the artifact includes all required dependencies.  
 **Labels:** SBOM, Image  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

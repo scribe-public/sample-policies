@@ -5,7 +5,7 @@
 **Rego Source:** [force-push-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/force-push-protection.rego)  
 **Short Description:** Verify force pushes in the GitLab project are disallowed to maintain repository integrity.  
 **Labels:** Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

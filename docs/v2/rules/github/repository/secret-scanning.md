@@ -5,7 +5,7 @@
 **Rego Source:** [secret-scanning.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/secret-scanning.rego)  
 **Short Description:** Verify `secret_scanning` is configured in the GitHub repository.  
 **Labels:** GitHub, Repository  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

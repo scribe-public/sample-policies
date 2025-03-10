@@ -5,7 +5,7 @@
 **Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/evidence-exists.rego)  
 **Short Description:** Verify all required evidence exists as defined by the SARIF policy.  
 **Labels:** SARIF  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

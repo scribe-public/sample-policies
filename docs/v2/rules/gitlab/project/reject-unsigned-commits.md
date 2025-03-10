@@ -5,7 +5,7 @@
 **Rego Source:** [reject-unsigned-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/reject-unsigned-commits.rego)  
 **Short Description:** Verify `reject_unsigned_commits` is enabled for the GitLab project.  
 **Labels:** Blueprint, Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

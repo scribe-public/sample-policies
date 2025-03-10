@@ -5,7 +5,7 @@
 **Rego Source:** [old-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/old-secrets.rego)  
 **Short Description:** Verify secrets in the GitHub organization are not older than the specified threshold.  
 **Labels:** GitHub, Organization  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

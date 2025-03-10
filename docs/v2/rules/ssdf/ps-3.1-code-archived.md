@@ -8,7 +8,7 @@ We assume running in Github thus the code is allways stored in a repository
 **Mitigation:** Archives code changes to maintain a secure, immutable history for auditing and traceability.
   
 **Labels:** SSDF  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Rule Parameters (`with`)  

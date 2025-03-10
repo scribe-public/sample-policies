@@ -95,7 +95,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     if sign_defaults:
         md.append(f"> Evidence for this rule **IS* required by default.**\n")
     else:
-        md.append(f"> Evidence for this rule **IS NOT** required by default but is recommended\n")
+        md.append(f"> Evidence for this rule **IS NOT** required by default but is recommended.\n")
 
     if full_description:
         md.append("\n## Full Description  ")
@@ -212,9 +212,9 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
 
     sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
     if sign_defaults:
-        md.append(f"> Evidence for this initiative is required by default.**\n")
+        md.append(f"> Evidence for this initiative **IS** required by default.**\n")
     else:
-        md.append(f"> Evidence for this initiative is not required by default but is recommended.\n")
+        md.append(f"> Evidence for this initiative **IS NOT** required by default but is recommended.\n")
     
     if full_description:
         md.append(f"## **Full Description**\n")

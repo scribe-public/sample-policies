@@ -5,7 +5,7 @@
 **Rego Source:** [dependabot.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/dependabot.rego)  
 **Short Description:** Verify Dependabot security updates are configured in the GitHub repository.  
 **Labels:** GitHub, Repository  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

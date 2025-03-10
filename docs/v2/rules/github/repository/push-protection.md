@@ -5,7 +5,7 @@
 **Rego Source:** [push-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/push-protection.rego)  
 **Short Description:** Verify `secret_scanning_push_protection` is configured in the GitHub repository.  
 **Labels:** GitHub, Repository  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

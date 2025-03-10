@@ -5,7 +5,7 @@
 **Rego Source:** [longlive-tokens.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/longlive-tokens.rego)  
 **Short Description:** Verify no GitLab organization tokens have an excessively long lifespan.  
 **Labels:** Blueprint, Gitlab, Organization  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

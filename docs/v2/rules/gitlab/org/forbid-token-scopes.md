@@ -5,7 +5,7 @@
 **Rego Source:** [forbid-token-scopes.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/forbid-token-scopes.rego)  
 **Short Description:** Verify no GitLab organization tokens have disallowed scopes.  
 **Labels:** Blueprint, Gitlab, Organization  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

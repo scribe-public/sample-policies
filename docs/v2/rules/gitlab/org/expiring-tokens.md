@@ -5,7 +5,7 @@
 **Rego Source:** [expiring-tokens.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/expiring-tokens.rego)  
 **Short Description:** Verify no GitLab organization tokens are about to expire.  
 **Labels:** Gitlab, Organization  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

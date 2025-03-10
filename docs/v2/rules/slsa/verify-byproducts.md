@@ -5,7 +5,7 @@
 **Rego Source:** [verify-byproducts.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-byproducts.rego)  
 **Short Description:** Verify the artifact has no disallowed builder dependencies.  
 **Labels:** SLSA, Image  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

@@ -5,7 +5,7 @@
 **Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/evidence-exists.rego)  
 **Short Description:** Verify the SBOM exists as evidence.  
 **Labels:** SBOM, Blueprint  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

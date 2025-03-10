@@ -5,7 +5,7 @@
 **Rego Source:** [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-admins.rego)  
 **Short Description:** Verify only users in the Allowed List have admin privileges in the GitLab organization.  
 **Labels:** Gitlab, Organization  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

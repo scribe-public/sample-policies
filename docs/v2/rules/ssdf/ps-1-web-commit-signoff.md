@@ -6,7 +6,7 @@
 **Mitigation:** Requires signoff on web commits to ensure that code changes are reviewed and approved, thereby reducing the risk of unauthorized or malicious modifications.
   
 **Labels:** SSDF  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Rule Parameters (`with`)  

@@ -5,7 +5,7 @@
 **Rego Source:** [required-minimal-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/required-minimal-approvers.rego)  
 **Short Description:** Verify the required number of approvers for the GitLab project is met.  
 **Labels:** Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

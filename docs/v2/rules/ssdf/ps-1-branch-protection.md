@@ -6,7 +6,7 @@
 **Mitigation:** Enforces branch protection policies to prevent unauthorized commits and maintain the integrity of critical code branches.
   
 **Labels:** SSDF  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Rule Parameters (`with`)  

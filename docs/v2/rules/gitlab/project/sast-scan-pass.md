@@ -5,7 +5,7 @@
 **Rego Source:** [sast-scan-pass.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scan-pass.rego)  
 **Short Description:** Verify SAST scanning is successful for the GitLab project.  
 **Labels:** Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

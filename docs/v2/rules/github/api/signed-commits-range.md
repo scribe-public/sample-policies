@@ -5,7 +5,7 @@
 **Rego Source:** [signed-commits-range.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/signed-commits-range.rego)  
 **Short Description:** Verify commits in the specified time range are signed.  
 **Labels:** GitHub  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Rule Parameters (`with`)  

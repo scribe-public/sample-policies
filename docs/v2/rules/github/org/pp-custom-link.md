@@ -5,7 +5,7 @@
 **Rego Source:** [pp-custom-link.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.rego)  
 **Short Description:** Verify `secret_scanning_push_protection_custom_link` is enabled in the GitHub organization.  
 **Labels:** GitHub, Organization  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

@@ -5,7 +5,7 @@
 **Rego Source:** [verify-labels-exist.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels-exist.rego)  
 **Short Description:** Verify the image has the specified labels.  
 **Labels:** SBOM, Images  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

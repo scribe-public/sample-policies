@@ -5,7 +5,7 @@
 **Rego Source:** [no-unsigned-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/no-unsigned-commits.rego)  
 **Short Description:** Verify all commits are signed.  
 **Labels:** Git  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

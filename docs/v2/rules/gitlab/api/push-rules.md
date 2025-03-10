@@ -5,7 +5,7 @@
 **Rego Source:** [push-rules.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.rego)  
 **Short Description:** Verify GitLab push rules are configured via the API.  
 **Labels:** Gitlab, API  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Rule Parameters (`with`)  

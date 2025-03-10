@@ -5,7 +5,7 @@
 **Rego Source:** [blocked-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/blocked-users.rego)  
 **Short Description:** Verify no users in the GitLab organization are on the block list.  
 **Labels:** Gitlab, Organization  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  
