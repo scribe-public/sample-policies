@@ -18,7 +18,7 @@ Verify the default branch protection is enabled in the Bitbucket repository.
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['platform=bitbucket', 'asset_type=repository'] |
+| labels | - platform=bitbucket<br>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
 ```yaml

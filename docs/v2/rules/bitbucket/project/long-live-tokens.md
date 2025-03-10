@@ -17,7 +17,7 @@ Verify Bitbucket API tokens expire before the maximum time to live.
 | signed | False |
 | content_body_type | generic |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['asset_type=project', 'platform=bitbucket', 'platform_instance=bitbucket_dc'] |
+| labels | - asset_type=project<br>- platform=bitbucket<br>- platform_instance=bitbucket_dc |
 
 ## Rule Parameters (`with`)  
 ```yaml

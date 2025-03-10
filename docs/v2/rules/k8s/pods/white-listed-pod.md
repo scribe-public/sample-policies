@@ -18,7 +18,7 @@ Verify only pods explicitly listed in the Allowed List are allowed to run.
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['asset_type=pod'] |
+| labels | - asset_type=pod |
 
 ## Rule Parameters (`with`)  
 ```yaml

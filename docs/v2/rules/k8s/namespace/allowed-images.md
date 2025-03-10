@@ -18,7 +18,7 @@ Verify only container images specified in the Allowed List run within the Kubern
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['asset_type=namespace'] |
+| labels | - asset_type=namespace |
 
 ## Rule Parameters (`with`)  
 ```yaml

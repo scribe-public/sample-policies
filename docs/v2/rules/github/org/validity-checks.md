@@ -18,7 +18,7 @@ Verify `secret_scanning_validity_checks` is configured in the GitHub repository.
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['platform=github', 'asset_type=organization', '{{- if eq (index .Context "asset-type") "organization" -}} {{- asset_on_target (index .Context "asset-name") -}} {{- else -}} {{- asset_on_target nil -}} {{- end -}}'] |
+| labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
 ```yaml

@@ -18,5 +18,5 @@ Verify access to the Bitbucket project is blocked if exposed credentials are det
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['platform=bitbucket', 'asset_type=project'] |
+| labels | - platform=bitbucket<br>- asset_type=project |
 

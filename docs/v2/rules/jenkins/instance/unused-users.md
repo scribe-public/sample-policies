@@ -17,5 +17,5 @@ Verify there are no users with zero activity.
 | signed | False |
 | content_body_type | generic |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['asset_type=instance', 'platform=jenkins'] |
+| labels | - asset_type=instance<br>- platform=jenkins |
 

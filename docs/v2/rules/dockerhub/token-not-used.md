@@ -18,5 +18,5 @@ Verify that there are no unused Dockerhub.
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['asset_type=project'] |
+| labels | - asset_type=project |
 
