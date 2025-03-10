@@ -1,7 +1,7 @@
 # Rule: Verify dependabot_security_updates_enabled_for_new_repositories setting
 
 **ID**: `github-org-dependabot-security-updates`  
-**Source**: [v2/rules/github/org/dependabot-security-updates.yaml](scribe-public/sample-policies.git/v2/rules/github/org/dependabot-security-updates.yaml)  
+**Source**: [v2/rules/github/org/dependabot-security-updates.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates.yaml)  
 **Rego File Path**: `dependabot-security-updates.rego`  
 
 **Labels**: GitHub, Organization

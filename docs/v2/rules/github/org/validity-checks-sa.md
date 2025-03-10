@@ -1,7 +1,7 @@
 # Rule: Verify Secret_Scanning_Validity_Checks Setting in Security_And_Analysis
 
 **ID**: `github-org-validity-checks-sa`  
-**Source**: [v2/rules/github/org/validity-checks-sa.yaml](scribe-public/sample-policies.git/v2/rules/github/org/validity-checks-sa.yaml)  
+**Source**: [v2/rules/github/org/validity-checks-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/validity-checks-sa.yaml)  
 **Rego File Path**: `validity-checks-sa.rego`  
 
 **Labels**: GitHub, Organization

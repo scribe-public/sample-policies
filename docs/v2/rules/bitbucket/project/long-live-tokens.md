@@ -1,7 +1,7 @@
 # Rule: Prevent Long-Lived Tokens
 
 **ID**: `bb-project-long-live-tokens`  
-**Source**: [v2/rules/bitbucket/project/long-live-tokens.yaml](scribe-public/sample-policies.git/v2/rules/bitbucket/project/long-live-tokens.yaml)  
+**Source**: [v2/rules/bitbucket/project/long-live-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/long-live-tokens.yaml)  
 **Rego File Path**: `long-live-tokens.rego`  
 
 **Labels**: Bitbucket, Project

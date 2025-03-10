@@ -1,7 +1,7 @@
 # Rule: Limit Admin Number in GitHub Organization
 
 **ID**: `github-org-max-admins`  
-**Source**: [v2/rules/github/org/max-admins.yaml](scribe-public/sample-policies.git/v2/rules/github/org/max-admins.yaml)  
+**Source**: [v2/rules/github/org/max-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/max-admins.yaml)  
 **Rego File Path**: `max-admins.rego`  
 
 **Labels**: Blueprint, GitHub, Organization

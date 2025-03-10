@@ -1,7 +1,7 @@
 # Rule: Disallow Banned Approvers
 
 **ID**: `gitlab-project-disallowed-banned-approvers`  
-**Source**: [v2/rules/gitlab/project/disallowed-banned-approvers.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/disallowed-banned-approvers.yaml)  
+**Source**: [v2/rules/gitlab/project/disallowed-banned-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.yaml)  
 **Rego File Path**: `disallowed-banned-approvers.rego`  
 
 **Labels**: Gitlab, Project

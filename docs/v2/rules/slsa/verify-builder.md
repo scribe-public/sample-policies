@@ -1,7 +1,7 @@
 # Rule: Verify that artifact was created by the specified builder
 
 **ID**: `slsa-verify-builder`  
-**Source**: [v2/rules/slsa/verify-builder.yaml](scribe-public/sample-policies.git/v2/rules/slsa/verify-builder.yaml)  
+**Source**: [v2/rules/slsa/verify-builder.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-builder.yaml)  
 **Rego File Path**: `verify-builder.rego`  
 
 **Labels**: SLSA, Image

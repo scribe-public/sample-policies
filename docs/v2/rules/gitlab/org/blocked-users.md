@@ -1,7 +1,7 @@
 # Rule: Block Users in GitLab Organization
 
 **ID**: `gitlab-org-blocked-users`  
-**Source**: [v2/rules/gitlab/org/blocked-users.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/org/blocked-users.yaml)  
+**Source**: [v2/rules/gitlab/org/blocked-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/blocked-users.yaml)  
 **Rego File Path**: `blocked-users.rego`  
 
 **Labels**: Gitlab, Organization

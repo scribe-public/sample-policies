@@ -1,7 +1,7 @@
 # Rule: Verify Commit Message Format
 
 **ID**: `gitlab-project-verify-commit_message_check`  
-**Source**: [v2/rules/gitlab/project/commit-message-check.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/commit-message-check.yaml)  
+**Source**: [v2/rules/gitlab/project/commit-message-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-message-check.yaml)  
 **Rego File Path**: `commit-message-check.rego`  
 
 **Labels**: Gitlab, Project

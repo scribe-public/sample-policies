@@ -1,7 +1,7 @@
 # Rule: Enforce Critical Severity Limit
 
 **ID**: `gitlab-project-critical-severity-limit`  
-**Source**: [v2/rules/gitlab/project/critical-severity-limit.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/critical-severity-limit.yaml)  
+**Source**: [v2/rules/gitlab/project/critical-severity-limit.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/critical-severity-limit.yaml)  
 **Rego File Path**: `critical-severity-limit.rego`  
 
 **Labels**: Gitlab, Project

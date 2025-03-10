@@ -1,7 +1,7 @@
 # Rule: Require Minimal Approvers in GitLab Project
 
 **ID**: `gitlab-project-required-minimal-approvers`  
-**Source**: [v2/rules/gitlab/project/required-minimal-approvers.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/required-minimal-approvers.yaml)  
+**Source**: [v2/rules/gitlab/project/required-minimal-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/required-minimal-approvers.yaml)  
 **Rego File Path**: `required-minimal-approvers.rego`  
 
 **Labels**: Gitlab, Project

@@ -1,7 +1,7 @@
 # Rule: Sign Selected Commits in GitLab
 
 **ID**: `gitlab-api-signed-commits-list`  
-**Source**: [v2/rules/gitlab/api/signed-commits-list.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/api/signed-commits-list.yaml)  
+**Source**: [v2/rules/gitlab/api/signed-commits-list.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/signed-commits-list.yaml)  
 **Rego File Path**: `signed-commits-list.rego`  
 
 **Labels**: Gitlab, API

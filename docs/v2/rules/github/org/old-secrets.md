@@ -1,7 +1,7 @@
 # Rule: Verify GitHub Organization Secrets Are Not Too Old
 
 **ID**: `github-org-old-secrets`  
-**Source**: [v2/rules/github/org/old-secrets.yaml](scribe-public/sample-policies.git/v2/rules/github/org/old-secrets.yaml)  
+**Source**: [v2/rules/github/org/old-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/old-secrets.yaml)  
 **Rego File Path**: `old-secrets.rego`  
 
 **Labels**: GitHub, Organization

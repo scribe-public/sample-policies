@@ -1,7 +1,7 @@
 # Rule: Forbid Token Scopes in GitLab Organization
 
 **ID**: `gitlab-org-disallowed-token-scope`  
-**Source**: [v2/rules/gitlab/org/forbid-token-scopes.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/org/forbid-token-scopes.yaml)  
+**Source**: [v2/rules/gitlab/org/forbid-token-scopes.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/forbid-token-scopes.yaml)  
 **Rego File Path**: `forbid-token-scopes.rego`  
 
 **Labels**: Blueprint, Gitlab, Organization

@@ -1,7 +1,7 @@
 # Rule: Verify Branch Protection Setting
 
 **ID**: `github-repo-branch-protection`  
-**Source**: [v2/rules/github/repository/branch-protection.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/branch-protection.yaml)  
+**Source**: [v2/rules/github/repository/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-protection.yaml)  
 **Rego File Path**: `branch-protection.rego`  
 
 **Labels**: GitHub, Repository

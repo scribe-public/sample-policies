@@ -1,7 +1,7 @@
 # Rule: Disallow Container Shell Entrypoint
 
 **ID**: `images-disallow-shell-access`  
-**Source**: [v2/rules/images/restrict-shell-entrypoint.yaml](scribe-public/sample-policies.git/v2/rules/images/restrict-shell-entrypoint.yaml)  
+**Source**: [v2/rules/images/restrict-shell-entrypoint.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.yaml)  
 **Rego File Path**: `restrict-shell-entrypoint.rego`  
 
 **Labels**: SBOM, Images

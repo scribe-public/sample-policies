@@ -1,7 +1,7 @@
 # Rule: Verify Namespace Termination
 
 **ID**: `k8s-namespace-verify-namespace-termination`  
-**Source**: [v2/rules/k8s/namespace/verify-namespace-termination.yaml](scribe-public/sample-policies.git/v2/rules/k8s/namespace/verify-namespace-termination.yaml)  
+**Source**: [v2/rules/k8s/namespace/verify-namespace-termination.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-termination.yaml)  
 **Rego File Path**: `verify-namespace-termination.rego`  
 
 **Labels**: K8s, Namespace

@@ -1,7 +1,7 @@
 # Rule: Verify secret_scanning_enabled_for_new_repositories setting
 
 **ID**: `github-org-secret-scanning`  
-**Source**: [v2/rules/github/org/secret-scanning.yaml](scribe-public/sample-policies.git/v2/rules/github/org/secret-scanning.yaml)  
+**Source**: [v2/rules/github/org/secret-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/secret-scanning.yaml)  
 **Rego File Path**: `secret-scanning.rego`  
 
 **Labels**: GitHub, Organization
