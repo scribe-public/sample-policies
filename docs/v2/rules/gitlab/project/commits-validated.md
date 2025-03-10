@@ -1,7 +1,7 @@
 # Rule: Validate All Commits in GitLab Project
 
 **ID**: `gitlab-project-all-commits-validated`  
-**Source YAML**: `commits-validated.yaml`  
+**Source**: [v2/rules/gitlab/project/commits-validated.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/commits-validated.yaml)  
 **Rego File Path**: `commits-validated.rego`  
 
 **Labels**: Gitlab, Project

@@ -1,7 +1,7 @@
 # Rule: Allowed Users in GitLab Organization
 
 **ID**: `gitlab-org-allowed-users`  
-**Source YAML**: `allow-users.yaml`  
+**Source**: [v2/rules/gitlab/org/allow-users.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/org/allow-users.yaml)  
 **Rego File Path**: `allow-users.rego`  
 
 **Labels**: Gitlab, Organization

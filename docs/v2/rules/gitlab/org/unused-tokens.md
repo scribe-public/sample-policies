@@ -1,7 +1,7 @@
 # Rule: Forbid Unused Tokens in GitLab Organization
 
 **ID**: `gitlab-org-unused-tokens`  
-**Source YAML**: `unused-tokens.yaml`  
+**Source**: [v2/rules/gitlab/org/unused-tokens.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/org/unused-tokens.yaml)  
 **Rego File Path**: `unused-tokens.rego`  
 
 **Labels**: Gitlab, Organization

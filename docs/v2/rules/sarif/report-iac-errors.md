@@ -1,7 +1,7 @@
 # Rule: Verify IaC Misconfiguration Threshold in SARIF
 
 **ID**: `sarif-iac-findings`  
-**Source YAML**: `report-iac-errors.yaml`  
+**Source**: [v2/rules/sarif/report-iac-errors.yaml](scribe-public/sample-policies.git/v2/rules/sarif/report-iac-errors.yaml)  
 **Rego File Path**: `report-iac-errors.rego`  
 
 **Labels**: SARIF

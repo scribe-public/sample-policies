@@ -1,7 +1,7 @@
 # Rule: Verify no unused Dockerhub
 
 **ID**: `dockerhub-token-not-used`  
-**Source YAML**: `token-not-used.yaml`  
+**Source**: [v2/rules/dockerhub/token-not-used.yaml](scribe-public/sample-policies.git/v2/rules/dockerhub/token-not-used.yaml)  
 **Rego File Path**: `token-not-used.rego`  
 
 **Labels**: Dockerhub

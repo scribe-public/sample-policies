@@ -1,7 +1,7 @@
 # Rule: Prevent Token Expiration in GitLab Organization
 
 **ID**: `gitlab-org-token-about-to-expire`  
-**Source YAML**: `expiring-tokens.yaml`  
+**Source**: [v2/rules/gitlab/org/expiring-tokens.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/org/expiring-tokens.yaml)  
 **Rego File Path**: `expiring-tokens.rego`  
 
 **Labels**: Gitlab, Organization

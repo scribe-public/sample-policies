@@ -1,7 +1,7 @@
 # Rule: Verify Dependabot security updates setting
 
 **ID**: `github-repo-dependabot`  
-**Source YAML**: `dependabot.yaml`  
+**Source**: [v2/rules/github/repository/dependabot.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/dependabot.yaml)  
 **Rego File Path**: `dependabot.rego`  
 
 **Labels**: GitHub, Repository

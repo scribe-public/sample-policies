@@ -1,7 +1,7 @@
 # Rule: Allowed Namespace Registries
 
 **ID**: `k8s-namespace-allowed-registries`  
-**Source YAML**: `allowed-registries.yaml`  
+**Source**: [v2/rules/k8s/namespace/allowed-registries.yaml](scribe-public/sample-policies.git/v2/rules/k8s/namespace/allowed-registries.yaml)  
 **Rego File Path**: `allowed-registries.rego`  
 
 **Labels**: K8s, Namespace

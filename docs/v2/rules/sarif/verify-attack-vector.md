@@ -1,7 +1,7 @@
 # Rule: Verify Attack Vector Exists in SARIF
 
 **ID**: `sarif-attack-vectors`  
-**Source YAML**: `verify-attack-vector.yaml`  
+**Source**: [v2/rules/sarif/verify-attack-vector.yaml](scribe-public/sample-policies.git/v2/rules/sarif/verify-attack-vector.yaml)  
 **Rego File Path**: `verify-attack-vector.rego`  
 
 **Labels**: SARIF

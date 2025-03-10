@@ -1,7 +1,7 @@
 # Rule: Disallow Specific Users in SBOM
 
 **ID**: `sbom-disallowed-users`  
-**Source YAML**: `banned-users.yaml`  
+**Source**: [v2/rules/sbom/banned-users.yaml](scribe-public/sample-policies.git/v2/rules/sbom/banned-users.yaml)  
 **Rego File Path**: `banned-users.rego`  
 
 **Labels**: SBOM, Image

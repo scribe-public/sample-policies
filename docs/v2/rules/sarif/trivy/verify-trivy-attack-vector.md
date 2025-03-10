@@ -1,7 +1,7 @@
 # Rule: Verify Attack Vector Threshold in Trivy SARIF
 
 **ID**: `trivy-attack-vectors`  
-**Source YAML**: `verify-trivy-attack-vector.yaml`  
+**Source**: [v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml](scribe-public/sample-policies.git/v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml)  
 **Rego File Path**: `../verify-attack-vector.rego`  
 
 **Labels**: SARIF, Trivy

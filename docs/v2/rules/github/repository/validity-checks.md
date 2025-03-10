@@ -1,7 +1,7 @@
 # Rule: Verify secret scanning.
 
 **ID**: `github-repo-validity-checks`  
-**Source YAML**: `validity-checks.yaml`  
+**Source**: [v2/rules/github/repository/validity-checks.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/validity-checks.yaml)  
 **Rego File Path**: `validity-checks.rego`  
 
 **Labels**: GitHub, Repository

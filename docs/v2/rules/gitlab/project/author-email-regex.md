@@ -1,7 +1,7 @@
 # Rule: Set Author Email Regex in GitLab Project
 
 **ID**: `gitlab-project-author-email-regex`  
-**Source YAML**: `author-email-regex.yaml`  
+**Source**: [v2/rules/gitlab/project/author-email-regex.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/author-email-regex.yaml)  
 **Rego File Path**: `author-email-regex.rego`  
 
 **Labels**: Gitlab, Project

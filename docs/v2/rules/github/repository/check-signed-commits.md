@@ -1,7 +1,7 @@
 # Rule: Verify All Commits Are Signed in Repository
 
 **ID**: `github-repo-signed-commits`  
-**Source YAML**: `check-signed-commits.yaml`  
+**Source**: [v2/rules/github/repository/check-signed-commits.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/check-signed-commits.yaml)  
 **Rego File Path**: `check-signed-commits.rego`  
 
 **Labels**: GitHub, Repository

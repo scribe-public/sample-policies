@@ -1,7 +1,7 @@
 # Rule: Apply Scribe Template Policy
 
 **ID**: `scribe-template`  
-**Source YAML**: `scribe-api.yaml`  
+**Source**: [v2/rules/api/scribe-api.yaml](scribe-public/sample-policies.git/v2/rules/api/scribe-api.yaml)  
 
 **Labels**: Scribe
 

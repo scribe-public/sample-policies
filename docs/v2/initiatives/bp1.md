@@ -2,7 +2,7 @@
 
 **ID**: `blueprint-securesoftwarepipeline`  
 **Version**: ``  
-**Source YAML**: `bp1.yaml`  
+**Source**: [v2/initiatives/bp1.yaml](scribe-public/sample-policies.git/v2/initiatives/bp1.yaml)  
 
 **Short Description**: A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle.
 

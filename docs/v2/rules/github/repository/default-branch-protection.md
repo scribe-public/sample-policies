@@ -1,7 +1,7 @@
 # Rule: Verify Default Branch Protection
 
 **ID**: `github-repo-default-branch-protection`  
-**Source YAML**: `default-branch-protection.yaml`  
+**Source**: [v2/rules/github/repository/default-branch-protection.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/default-branch-protection.yaml)  
 **Rego File Path**: `default-branch-protection.rego`  
 
 **Labels**: GitHub, Repository

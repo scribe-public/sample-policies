@@ -1,7 +1,7 @@
 # Rule: Set Push Rules for GitLab Project
 
 **ID**: `gitlab-project-verify-push_rules`  
-**Source YAML**: `push-rules-set.yaml`  
+**Source**: [v2/rules/gitlab/project/push-rules-set.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/push-rules-set.yaml)  
 **Rego File Path**: `push-rules-set.rego`  
 
 **Labels**: Gitlab, Project

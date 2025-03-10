@@ -1,7 +1,7 @@
 # Rule: Protect CI Secrets in GitLab Project
 
 **ID**: `gitlab-project-protect-ci-secrets`  
-**Source YAML**: `protect-ci-secrets.yaml`  
+**Source**: [v2/rules/gitlab/project/protect-ci-secrets.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/protect-ci-secrets.yaml)  
 **Rego File Path**: `protect-ci-secrets.rego`  
 
 **Labels**: Gitlab, Project

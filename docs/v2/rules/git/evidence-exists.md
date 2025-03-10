@@ -1,7 +1,7 @@
 # Rule: Required Git Evidence Exists
 
 **ID**: `required-git-evidence`  
-**Source YAML**: `evidence-exists.yaml`  
+**Source**: [v2/rules/git/evidence-exists.yaml](scribe-public/sample-policies.git/v2/rules/git/evidence-exists.yaml)  
 **Rego File Path**: `evidence-exists.rego`  
 
 **Labels**: Git

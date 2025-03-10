@@ -1,7 +1,7 @@
 # Rule: Verify two_factor_requirement_enabled setting
 
 **ID**: `github-org-2fa`  
-**Source YAML**: `2fa.yaml`  
+**Source**: [v2/rules/github/org/2fa.yaml](scribe-public/sample-policies.git/v2/rules/github/org/2fa.yaml)  
 **Rego File Path**: `2fa.rego`  
 
 **Labels**: GitHub, Organization

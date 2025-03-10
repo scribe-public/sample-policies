@@ -1,7 +1,7 @@
 # Rule: Verify Repo Visibility Setting
 
 **ID**: `github-org-repo-visibility`  
-**Source YAML**: `repo-visibility.yaml`  
+**Source**: [v2/rules/github/org/repo-visibility.yaml](scribe-public/sample-policies.git/v2/rules/github/org/repo-visibility.yaml)  
 **Rego File Path**: `repo-visibility.rego`  
 
 **Labels**: GitHub, Organization

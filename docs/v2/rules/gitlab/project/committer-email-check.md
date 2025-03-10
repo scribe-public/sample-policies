@@ -1,7 +1,7 @@
 # Rule: Allowed Committer Emails in GitLab Project
 
 **ID**: `gitlab-project-allowed-committer-emails`  
-**Source YAML**: `committer-email-check.yaml`  
+**Source**: [v2/rules/gitlab/project/committer-email-check.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/committer-email-check.yaml)  
 **Rego File Path**: `committer-email-check.rego`  
 
 **Labels**: Gitlab, Project

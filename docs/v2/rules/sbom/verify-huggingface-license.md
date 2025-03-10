@@ -1,7 +1,7 @@
 # Rule: Require Specified SBOM Licenses
 
 **ID**: `sbom-hf-license`  
-**Source YAML**: `verify-huggingface-license.yaml`  
+**Source**: [v2/rules/sbom/verify-huggingface-license.yaml](scribe-public/sample-policies.git/v2/rules/sbom/verify-huggingface-license.yaml)  
 **Rego File Path**: `verify-hf-license.rego`  
 
 **Labels**: SBOM, Image

@@ -1,7 +1,7 @@
 # Rule: Verify dependabot_alerts_enabled_for_new_repositories setting
 
 **ID**: `github-org-dependabot-alerts`  
-**Source YAML**: `dependabot-alerts.yaml`  
+**Source**: [v2/rules/github/org/dependabot-alerts.yaml](scribe-public/sample-policies.git/v2/rules/github/org/dependabot-alerts.yaml)  
 **Rego File Path**: `dependabot-alerts.rego`  
 
 **Labels**: GitHub, Organization

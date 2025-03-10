@@ -1,7 +1,7 @@
 # Rule: Enable Commit Committer Check in GitLab Project
 
 **ID**: `gitlab-project-verify-commit_committer_check`  
-**Source YAML**: `commit-committer-check.yaml`  
+**Source**: [v2/rules/gitlab/project/commit-committer-check.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/commit-committer-check.yaml)  
 **Rego File Path**: `commit-committer-check.rego`  
 
 **Labels**: Gitlab, Project

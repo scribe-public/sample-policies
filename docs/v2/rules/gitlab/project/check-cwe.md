@@ -1,7 +1,7 @@
 # Rule: Check CWE Compliance
 
 **ID**: `gitlab-project-check-cwe`  
-**Source YAML**: `check-cwe.yaml`  
+**Source**: [v2/rules/gitlab/project/check-cwe.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/check-cwe.yaml)  
 **Rego File Path**: `check-cwe.rego`  
 
 **Labels**: Gitlab, Project

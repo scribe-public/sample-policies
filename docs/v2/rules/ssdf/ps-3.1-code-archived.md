@@ -1,7 +1,7 @@
 # Rule: Code archived
 
 **ID**: `PS.3.1`  
-**Source YAML**: `ps-3.1-code-archived.yaml`  
+**Source**: [v2/rules/ssdf/ps-3.1-code-archived.yaml](scribe-public/sample-policies.git/v2/rules/ssdf/ps-3.1-code-archived.yaml)  
 
 **Labels**: SSDF
 

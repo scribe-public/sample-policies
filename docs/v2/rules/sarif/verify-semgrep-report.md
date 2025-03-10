@@ -1,7 +1,7 @@
 # Rule: Verify Semgrep Rule in SARIF
 
 **ID**: `sarif-semgrep-report`  
-**Source YAML**: `verify-semgrep-report.yaml`  
+**Source**: [v2/rules/sarif/verify-semgrep-report.yaml](scribe-public/sample-policies.git/v2/rules/sarif/verify-semgrep-report.yaml)  
 **Rego File Path**: `verify-semgrep-report.rego`  
 
 **Labels**: SARIF, Semgrep
