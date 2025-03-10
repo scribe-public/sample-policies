@@ -1,4 +1,5 @@
-# Rule: Enforce SBOM License Completeness  
+# Enforce SBOM License Completeness  
+** Type:** Rule  
 **ID:** `sbom-require-complete-license-set`  
 **Uses:** `sbom/complete-licenses@v2/rules`  
 **Source:** [v2/rules/sbom/complete-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/complete-licenses.yaml)  

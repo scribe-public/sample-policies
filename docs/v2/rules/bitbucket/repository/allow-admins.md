@@ -1,4 +1,5 @@
-# Rule: Allowed Repository Admins  
+# Allowed Repository Admins  
+** Type:** Rule  
 **ID:** `bb-repo-allowed-repository-admins`  
 **Uses:** `bitbucket/repository/allow-admins@v2/rules`  
 **Source:** [v2/rules/bitbucket/repository/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-admins.yaml)  

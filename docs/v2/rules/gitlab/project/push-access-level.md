@@ -1,4 +1,5 @@
-# Rule: Set Push Access Level in GitLab Project  
+# Set Push Access Level in GitLab Project  
+** Type:** Rule  
 **ID:** `gitlab-project-push-access-level`  
 **Uses:** `gitlab/project/push-access-level@v2/rules`  
 **Source:** [v2/rules/gitlab/project/push-access-level.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.yaml)  

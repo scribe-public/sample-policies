@@ -1,4 +1,5 @@
-# Rule: Require SBOM Existence  
+# Require SBOM Existence  
+** Type:** Rule  
 **ID:** `require-sbom`  
 **Uses:** `sbom/evidence-exists@v2/rules`  
 **Source:** [v2/rules/sbom/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/evidence-exists.yaml)  

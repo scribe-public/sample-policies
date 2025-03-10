@@ -1,4 +1,5 @@
-# Rule: Restrict Disallowed Dependencies  
+# Restrict Disallowed Dependencies  
+** Type:** Rule  
 **ID:** `sbom-disallow-dependencies`  
 **Uses:** `sbom/blocklist-packages@v2/rules`  
 **Source:** [v2/rules/sbom/blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/blocklist-packages.yaml)  

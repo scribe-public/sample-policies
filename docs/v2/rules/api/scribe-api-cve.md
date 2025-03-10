@@ -1,4 +1,5 @@
-# Rule: Verify No Critical or High Vulnerabilities  
+# Verify No Critical or High Vulnerabilities  
+** Type:** Rule  
 **ID:** `scribe-cve`  
 **Uses:** `api/scribe-api-cve@v2/rules`  
 **Source:** [v2/rules/api/scribe-api-cve.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-cve.yaml)  

@@ -1,4 +1,5 @@
-# Rule: Allowed Repository Users  
+# Allowed Repository Users  
+** Type:** Rule  
 **ID:** `bb-repo-allowed-repository-users`  
 **Uses:** `bitbucket/repository/allow-users@v2/rules`  
 **Source:** [v2/rules/bitbucket/repository/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-users.yaml)  

@@ -1,4 +1,5 @@
-# Rule: Verify dependabot_security_updates_enabled_for_new_repositories setting  
+# Verify dependabot_security_updates_enabled_for_new_repositories setting  
+** Type:** Rule  
 **ID:** `github-org-dependabot-security-updates`  
 **Uses:** `github/org/dependabot-security-updates@v2/rules`  
 **Source:** [v2/rules/github/org/dependabot-security-updates.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates.yaml)  

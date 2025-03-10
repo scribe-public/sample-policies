@@ -1,4 +1,5 @@
-# Rule: Disallow Unsigned Commits  
+# Disallow Unsigned Commits  
+** Type:** Rule  
 **ID:** `git-disallow-unsigned-commits`  
 **Uses:** `git/no-unsigned-commits@v2/rules`  
 **Source:** [v2/rules/git/no-unsigned-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/no-unsigned-commits.yaml)  

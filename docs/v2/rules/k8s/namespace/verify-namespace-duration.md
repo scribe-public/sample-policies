@@ -1,4 +1,5 @@
-# Rule: Verify Namespace Runtime Duration  
+# Verify Namespace Runtime Duration  
+** Type:** Rule  
 **ID:** `k8s-namespace-verify-namespace-duration`  
 **Uses:** `k8s/namespace/verify-namespace-duration@v2/rules`  
 **Source:** [v2/rules/k8s/namespace/verify-namespace-duration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-duration.yaml)  

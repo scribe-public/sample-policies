@@ -1,4 +1,5 @@
-# Rule: Verify File Integrity  
+# Verify File Integrity  
+** Type:** Rule  
 **ID:** `file-integrity`  
 **Uses:** `multievidence/files_integrity@v2/rules`  
 **Source:** [v2/rules/multievidence/files_integrity.yaml](https://github.com/scribe-public/sample-policies/v2/rules/multievidence/files_integrity.yaml)  

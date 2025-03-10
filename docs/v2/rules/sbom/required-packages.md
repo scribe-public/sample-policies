@@ -1,4 +1,5 @@
-# Rule: Enforce SBOM Dependencies  
+# Enforce SBOM Dependencies  
+** Type:** Rule  
 **ID:** `sbom-required-dependencies`  
 **Uses:** `sbom/required-packages@v2/rules`  
 **Source:** [v2/rules/sbom/required-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.yaml)  

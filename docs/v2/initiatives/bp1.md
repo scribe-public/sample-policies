@@ -1,5 +1,5 @@
-# Initiative: Venafi Blueprint
-
+# Venafi Blueprint  
+** Type:** Initiative  
 **ID:** `blueprint-securesoftwarepipeline`  
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  

@@ -1,4 +1,5 @@
-# Rule: Set Push Rules for GitLab Project  
+# Set Push Rules for GitLab Project  
+** Type:** Rule  
 **ID:** `gitlab-project-verify-push_rules`  
 **Uses:** `gitlab/project/push-rules-set@v2/rules`  
 **Source:** [v2/rules/gitlab/project/push-rules-set.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-rules-set.yaml)  

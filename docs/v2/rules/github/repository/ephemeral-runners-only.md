@@ -1,4 +1,5 @@
-# Rule: Verify Only Ephemeral Runners Exist in Repository  
+# Verify Only Ephemeral Runners Exist in Repository  
+** Type:** Rule  
 **ID:** `github-repo-ephemeral-runners-only`  
 **Uses:** `github/repository/ephemeral-runners-only@v2/rules`  
 **Source:** [v2/rules/github/repository/ephemeral-runners-only.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/ephemeral-runners-only.yaml)  

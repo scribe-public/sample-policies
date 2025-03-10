@@ -1,4 +1,5 @@
-# Rule: Sign Selected Commits in GitLab  
+# Sign Selected Commits in GitLab  
+** Type:** Rule  
 **ID:** `gitlab-api-signed-commits-list`  
 **Uses:** `gitlab/api/signed-commits-list@v2/rules`  
 **Source:** [v2/rules/gitlab/api/signed-commits-list.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/signed-commits-list.yaml)  

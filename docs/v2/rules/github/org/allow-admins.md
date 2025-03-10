@@ -1,4 +1,5 @@
-# Rule: Allowed GitHub Organization Admins  
+# Allowed GitHub Organization Admins  
+** Type:** Rule  
 **ID:** `github-orgallowed-admins`  
 **Uses:** `github/org/allow-admins@v2/rules`  
 **Source:** [v2/rules/github/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-admins.yaml)  

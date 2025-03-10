@@ -1,4 +1,5 @@
-# Rule: Verify IaC Misconfiguration Threshold in SARIF  
+# Verify IaC Misconfiguration Threshold in SARIF  
+** Type:** Rule  
 **ID:** `sarif-iac-findings`  
 **Uses:** `sarif/report-iac-errors@v2/rules`  
 **Source:** [v2/rules/sarif/report-iac-errors.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/report-iac-errors.yaml)  

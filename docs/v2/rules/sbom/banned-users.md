@@ -1,4 +1,5 @@
-# Rule: Disallow Specific Users in SBOM  
+# Disallow Specific Users in SBOM  
+** Type:** Rule  
 **ID:** `sbom-disallowed-users`  
 **Uses:** `sbom/banned-users@v2/rules`  
 **Source:** [v2/rules/sbom/banned-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.yaml)  

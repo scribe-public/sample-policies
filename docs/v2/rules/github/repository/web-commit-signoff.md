@@ -1,4 +1,5 @@
-# Rule: Verify Repository Requires Commit Signoff  
+# Verify Repository Requires Commit Signoff  
+** Type:** Rule  
 **ID:** `github-repo-web-commit-signoff`  
 **Uses:** `github/repository/web-commit-signoff@v2/rules`  
 **Source:** [v2/rules/github/repository/web-commit-signoff.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/web-commit-signoff.yaml)  

@@ -1,4 +1,5 @@
-# Rule: Verify Attack Vector Exists in SARIF  
+# Verify Attack Vector Exists in SARIF  
+** Type:** Rule  
 **ID:** `sarif-attack-vectors`  
 **Uses:** `sarif/verify-attack-vector@v2/rules`  
 **Source:** [v2/rules/sarif/verify-attack-vector.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-attack-vector.yaml)  

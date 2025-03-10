@@ -1,5 +1,5 @@
-# Initiative: SLSA L1 Framework”
-
+# SLSA L1 Framework”  
+** Type:** Initiative  
 **ID:** `SLSA.L1`  
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  

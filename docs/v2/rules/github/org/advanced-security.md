@@ -1,11 +1,12 @@
-# Rule: Verify advanced_security_enabled_for_new_repositories setting  
+# Verify advanced security setting is enabled  
+** Type:** Rule  
 **ID:** `github-org-advanced-security`  
 **Uses:** `github/org/advanced-security@v2/rules`  
 **Source:** [v2/rules/github/org/advanced-security.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/advanced-security.yaml)  
 **Rego Source:** [advanced-security.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/advanced-security.rego)  
 **Labels:** GitHub, Organization  
 
-Verify `advanced_security` is enabled for new repositories in the GitHub organization.
+Verify `advanced_security_enabled_for_new_repositories` is enabled for new repositories in the GitHub organization.
 
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
