@@ -103,7 +103,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(f"> Evidence for this rule **IS NOT** required by default but is recommended.\n")
 
     if full_description:
-        md.append("\n## Full Description  ")
+        md.append("\n## Description  ")
         md.append(full_description)
         md.append("")
     else:
@@ -227,7 +227,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append(f"> Evidence for this initiative **IS NOT** required by default but is recommended.\n")
     
     if full_description:
-        md.append(f"## **Full Description**\n")
+        md.append(f"## **Description**\n")
         md.append(full_description)
 
     controls = initiative_data.get("controls", [])
@@ -284,7 +284,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
             md.append("")
 
         if ctrl_full_desc:
-            md.append(f"## **Full Description**\n")
+            md.append(f"## **Description**\n")
             md.append(ctrl_full_desc)
             md.append("")
 
