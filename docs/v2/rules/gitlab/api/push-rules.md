@@ -1,14 +1,12 @@
-# Rule: Set Push Rules in GitLab
+# Rule: Set Push Rules in GitLab  
+**ID:** `gitlab-api-push-rules`  
+**Uses:** `gitlab/api/push-rules@v2/rules`  
+**Source:** [v2/rules/gitlab/api/push-rules.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.yaml)  
+**Rego Source:** [push-rules.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.rego)  
+**Short Description:** Verify GitLab push rules are configured via the API.  
+**Labels:** Gitlab, API  
 
-**ID**: `gitlab-api-push-rules`  
-**Uses**: `gitlab/api/push-rules@v2/rules  
-**Source**: [v2/rules/gitlab/api/push-rules.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.yaml)  
-**Rego Source**: [push-rules.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.rego)  
-**Short Description**: Verify GitLab push rules are configured via the API.  
-**Labels**: Gitlab, API
-
-## Rule Parameters (`with`)
-
+## Rule Parameters (`with`)  
 ```yaml
 api_token: '{{ .Args.Token }}'
 project: '{{ .Args.Project }}'
@@ -25,3 +23,4 @@ push_rule:
   commit_committer_name_check: null
   reject_unsigned_commits: null
 ```
+

@@ -1,22 +1,20 @@
-# Rule: Verify Rule Compliance in SARIF
+# Rule: Verify Rule Compliance in SARIF  
+**ID:** `sarif-policy`  
+**Uses:** `sarif/verify-sarif@v2/rules`  
+**Source:** [v2/rules/sarif/verify-sarif.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.yaml)  
+**Rego Source:** [verify-sarif.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.rego)  
+**Short Description:** Verify the SARIF report complies with defined generic rules for compliance and security.  
+**Labels:** SARIF  
 
-**ID**: `sarif-policy`  
-**Uses**: `sarif/verify-sarif@v2/rules  
-**Source**: [v2/rules/sarif/verify-sarif.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.yaml)  
-**Rego Source**: [verify-sarif.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.rego)  
-**Short Description**: Verify the SARIF report complies with defined generic rules for compliance and security.  
-**Labels**: SARIF
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| signed | False |
+| content_body_type | generic |
+| target_type | data |
+| predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
-## Evidence Requirements
-
-```yaml
-signed: false
-content_body_type: generic
-target_type: data
-predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
-```
-## Rule Parameters (`with`)
-
+## Rule Parameters (`with`)  
 ```yaml
 rule_level: []
 precision: []
@@ -24,3 +22,4 @@ rule_ids: []
 ignore: []
 max_allowed: 0
 ```
+

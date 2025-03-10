@@ -6,7 +6,8 @@
 **Source:** [v2/initiatives/slsa.l1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l1.yaml)  
 **Short Description:** Evaluate SLSA L1  
 **Help:** https://slsa.dev/  
-**Full Description:**  
+## **Full Description**
+
 This initiative ensures that every critical build artifact includes the minimum required provenance metadata as specified in SLSA Level 1. By recording detailed information about the build process—such as timestamps, authors, and build details— organizations establish a traceable chain-of-custody for their software artifacts.
 
 > ** Evidence for this initiative is not required by default but is recommended.**

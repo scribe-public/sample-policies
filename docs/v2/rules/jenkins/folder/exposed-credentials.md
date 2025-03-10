@@ -1,19 +1,17 @@
-# Rule: Verify Exposed Credentials
+# Rule: Verify Exposed Credentials  
+**ID:** `jenkins-exposed-credentials`  
+**Uses:** `jenkins/folder/exposed-credentials@v2/rules`  
+**Source:** [v2/rules/jenkins/folder/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.yaml)  
+**Rego Source:** [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.rego)  
+**Short Description:** Verify there are no exposed credentials.  
+**Labels:** Jenkins, Folder  
 
-**ID**: `jenkins-exposed-credentials`  
-**Uses**: `jenkins/folder/exposed-credentials@v2/rules  
-**Source**: [v2/rules/jenkins/folder/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.yaml)  
-**Rego Source**: [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.rego)  
-**Short Description**: Verify there are no exposed credentials.  
-**Labels**: Jenkins, Folder
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| signed | False |
+| content_body_type | generic |
+| target_type | data |
+| predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
+| labels | ['asset_type=folder'] |
 
-## Evidence Requirements
-
-```yaml
-signed: false
-content_body_type: generic
-target_type: data
-predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
-labels:
-- asset_type=folder
-```

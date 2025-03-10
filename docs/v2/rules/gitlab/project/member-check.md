@@ -1,22 +1,17 @@
-# Rule: Enable Member Check for GitLab Project
+# Rule: Enable Member Check for GitLab Project  
+**ID:** `gitlab-project-verify-member_check`  
+**Uses:** `gitlab/project/member-check@v2/rules`  
+**Source:** [v2/rules/gitlab/project/member-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/member-check.yaml)  
+**Rego Source:** [member-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/member-check.rego)  
+**Short Description:** Verify `member_check` is enabled for the GitLab project.  
+**Labels:** Gitlab, Project  
 
-**ID**: `gitlab-project-verify-member_check`  
-**Uses**: `gitlab/project/member-check@v2/rules  
-**Source**: [v2/rules/gitlab/project/member-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/member-check.yaml)  
-**Rego Source**: [member-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/member-check.rego)  
-**Short Description**: Verify `member_check` is enabled for the GitLab project.  
-**Labels**: Gitlab, Project
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| signed | False |
+| content_body_type | generic |
+| target_type | data |
+| predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
+| labels | ['platform=gitlab', 'asset_type=project', '{{- if eq (index .Context "asset-type") "project" -}} {{- asset_on_target (index .Context "asset-name") -}} {{- else -}} {{- asset_on_target nil -}} {{- end -}}'] |
 
-## Evidence Requirements
-
-```yaml
-signed: false
-content_body_type: generic
-target_type: data
-predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
-labels:
-- platform=gitlab
-- asset_type=project
-- '{{- if eq (index .Context "asset-type") "project" -}} {{- asset_on_target (index
-  .Context "asset-name") -}} {{- else -}} {{- asset_on_target nil -}} {{- end -}}'
-```

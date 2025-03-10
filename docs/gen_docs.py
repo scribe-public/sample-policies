@@ -57,7 +57,11 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
     Given the YAML data for a rule, produce the Markdown content as a string.
     The doc will be written to a mirrored subdirectory under docs/v2/rules.
+    This version uses two trailing spaces to force Markdown line breaks.
     """
+    import os
+    import yaml
+
     rule_id = rule_data.get("id", os.path.splitext(file_name)[0])
     name = rule_data.get("name", rule_id)
     rego_path = rule_data.get("path", "")
@@ -66,43 +70,52 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     mitigation = rule_data.get("mitigation", "")
     help_url = rule_data.get("help", "")
     labels = rule_data.get("labels", [])
+    
     yaml_source_link = os.path.join(base_source_git, file_path)
     file_dir = os.path.dirname(file_path)
-    rego_source_link = os.path.join(base_source_git,file_dir,rego_path)
+    rego_source_link = os.path.join(base_source_git, file_dir, rego_path)
+    
     md = []
-    md.append(f"# Rule: {name}\n")
-    md.append(f"**ID**: `{rule_id}`  ")
-    md.append(f"**Uses**: `{filepath_to_uses(file_path)}  ")
-    md.append(f"**Source**: [{file_path}]({yaml_source_link})  ")
+    md.append(f"# Rule: {name}  ")
+    md.append(f"**ID:** `{rule_id}`  ")
+    md.append(f"**Uses:** `{filepath_to_uses(file_path)}`  ")
+    md.append(f"**Source:** [{file_path}]({yaml_source_link})  ")
     if rego_path:
-        md.append(f"**Rego Source**: [{rego_path}]({rego_source_link})  ")
-    md.append(f"**Short Description**: {description}  ")
-    # Calculate 'uses' from filepath vX/rules/group/.../rule.yaml to uses group/.../rule@vX/rules
+        md.append(f"**Rego Source:** [{rego_path}]({rego_source_link})  ")
+    md.append(f"**Short Description:** {description}  ")
     if mitigation:
-        md.append(f"**Mitigation**: {mitigation}  ")
+        md.append(f"**Mitigation:** {mitigation}  ")
     if help_url:
-        md.append(f"**Help**: {help_url}  ")
+        md.append(f"**Help:** {help_url}  ")
     if labels:
-        md.append(f"**Labels**: {', '.join(labels)}\n")
+        md.append(f"**Labels:** {', '.join(labels)}  ")
+
     if full_description:
-        md.append(f"**Full Description**:\n\n{full_description}\n")
+        md.append("\n## Full Description  ")
+        md.append(full_description)
+        md.append("")
+    else:
+        md.append("")
 
     evidence = rule_data.get("evidence", {})
     if evidence:
-        md.append("## Evidence Requirements\n")
-        md.append("```yaml")
-        md.append(yaml.safe_dump(evidence, sort_keys=False).strip())
-        md.append("```")
+        md.append("## Evidence Requirements  ")
+        md.append("| Field | Value |")
+        md.append("|-------|-------|")
+        for field, value in evidence.items():
+            md.append(f"| {field} | {value} |")
+        md.append("")
 
     with_block = rule_data.get("with", {})
     if with_block:
-        md.append("## Rule Parameters (`with`)\n")
+        md.append("## Rule Parameters (`with`)  ")
         md.append("```yaml")
         md.append(yaml.safe_dump(with_block, sort_keys=False).strip())
-        md.append("```")
-
+        md.append("```\n")
+    
     md.append("")
     return "\n".join(md)
+
 
 
 def get_current_repo_context():
@@ -190,7 +203,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     if help_url:
         md.append(f"**Help:** {help_url}  ")
     if full_description:
-        md.append("**Full Description:**  ")
+        md.append(f"## **Full Description**\n")
         md.append(full_description)
 
     controls = initiative_data.get("controls", [])
