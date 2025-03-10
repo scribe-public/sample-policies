@@ -33,7 +33,7 @@ This initiative enforces key controls from the Secure Software Development Frame
 
 # Detailed Controls
 
-## [] SSDF-IMAGE)
+## [] SSDF-IMAGE
 **Description**: Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity.
 
 **Mitigation**: Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
@@ -46,7 +46,7 @@ This initiative enforces key controls from the Secure Software Development Frame
 | PS.2 | [Image-verifiable](../rules/ssdf/ps-2-image-verifiable.md) | PS.2 Provide a mechanism to verify the integrity of the image |
 | PS.3.2 | [SBOM archived](../rules/ssdf/ps-3.2-archived-sbom.md) | PS.3.2 Archive SBOM |
 
-## [] SSDF-ORG)
+## [] SSDF-ORG
 **Description**: Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced.
 
 **Mitigation**: Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
@@ -60,7 +60,7 @@ This initiative enforces key controls from the Secure Software Development Frame
 | PS.1.3 | [Limit admins](../rules/ssdf/ps-1-limit-admins.md) | PS.1 Restrict the maximum number of organization admins |
 | PS.1.5 | [Require signoff on web commits](../rules/ssdf/ps-1-web-commit-signoff.md) | PS.1 Require contributors to sign when committing to Github through the web interface |
 
-## [] SSDF-REPO)
+## [] SSDF-REPO
 **Description**: Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy.
 
 **Mitigation**: Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.

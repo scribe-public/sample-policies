@@ -261,7 +261,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         ctrl_mitigation = ctrl.get("mitigation", "")
         ctrl_rules = ctrl.get("rules", [])
 
-        md.append(f"## [{ctrl_id}] {ctrl_name})")
+        md.append(f"## [{ctrl_id}] {ctrl_name}")
         if help_url:
             md.append(f"[Help]({help_url})\n")
         if ctrl_desc:
