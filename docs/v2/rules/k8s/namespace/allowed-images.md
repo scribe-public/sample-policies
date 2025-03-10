@@ -1,7 +1,7 @@
 # Rule: Allowed Container Images
 
 **ID**: `k8s-namespace-blocked-images`  
-**Source YAML**: `allowed-images.yaml`  
+**Source**: [v2/rules/k8s/namespace/allowed-images.yaml](scribe-public/sample-policies.git/v2/rules/k8s/namespace/allowed-images.yaml)  
 **Rego File Path**: `blocked-images.rego`  
 
 **Labels**: K8s, Namespace

@@ -1,7 +1,7 @@
 # Rule: Forbid Large Images
 
 **ID**: `images-project-large-image`  
-**Source YAML**: `forbid-large-images.yaml`  
+**Source**: [v2/rules/images/forbid-large-images.yaml](scribe-public/sample-policies.git/v2/rules/images/forbid-large-images.yaml)  
 **Rego File Path**: `forbid-large-images.rego`  
 
 **Labels**: SBOM, Images

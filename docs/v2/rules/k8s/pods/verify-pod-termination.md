@@ -1,7 +1,7 @@
 # Rule: Verify Pod Termination
 
 **ID**: `k8s-pods-verify-pod-termination`  
-**Source YAML**: `verify-pod-termination.yaml`  
+**Source**: [v2/rules/k8s/pods/verify-pod-termination.yaml](scribe-public/sample-policies.git/v2/rules/k8s/pods/verify-pod-termination.yaml)  
 **Rego File Path**: `verify-pod-termination.rego`  
 
 **Labels**: K8s, Pod

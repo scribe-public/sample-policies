@@ -1,7 +1,7 @@
 # Rule: GitLab pipeline verify labels exist
 
 **ID**: `gitlab-pipeline-verify-labels-exist`  
-**Source YAML**: `verify-labels-exist.yaml`  
+**Source**: [v2/rules/gitlab/pipeline/verify-labels-exist.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/pipeline/verify-labels-exist.yaml)  
 **Rego File Path**: `verify-labels-exist.rego`  
 
 **Labels**: Gitlab, Pipeline

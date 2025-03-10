@@ -1,7 +1,7 @@
 # Rule: Verify Inactive Users
 
 **ID**: `jenkins-inactive-users`  
-**Source YAML**: `inactive-users.yaml`  
+**Source**: [v2/rules/jenkins/instance/inactive-users.yaml](scribe-public/sample-policies.git/v2/rules/jenkins/instance/inactive-users.yaml)  
 **Rego File Path**: `inactive-users.rego`  
 
 **Labels**: Jenkins, Instance

@@ -1,7 +1,7 @@
 # Rule: Verify Project Activity
 
 **ID**: `gitlab-project-abandoned-project`  
-**Source YAML**: `abandoned-project.yaml`  
+**Source**: [v2/rules/gitlab/project/abandoned-project.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/abandoned-project.yaml)  
 **Rego File Path**: `abandoned-project.rego`  
 
 **Labels**: Gitlab, Project

@@ -1,7 +1,7 @@
 # Rule: Forbid Long-Lived Tokens in GitLab Organization
 
 **ID**: `gitlab-org-token-excessive-lifespan`  
-**Source YAML**: `longlive-tokens.yaml`  
+**Source**: [v2/rules/gitlab/org/longlive-tokens.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/org/longlive-tokens.yaml)  
 **Rego File Path**: `longlive-tokens.rego`  
 
 **Labels**: Blueprint, Gitlab, Organization

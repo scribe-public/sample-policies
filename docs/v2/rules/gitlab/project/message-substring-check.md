@@ -1,7 +1,7 @@
 # Rule: Check Message Substring
 
 **ID**: `gitlab-project-message-substring-check`  
-**Source YAML**: `message-substring-check.yaml`  
+**Source**: [v2/rules/gitlab/project/message-substring-check.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/message-substring-check.yaml)  
 **Rego File Path**: `message-substring-check.rego`  
 
 **Labels**: Gitlab, Project

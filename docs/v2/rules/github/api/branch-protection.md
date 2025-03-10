@@ -1,7 +1,7 @@
 # Rule: Branch protection enabled in GitHub repository
 
 **ID**: `github-api-branch-protection`  
-**Source YAML**: `branch-protection.yaml`  
+**Source**: [v2/rules/github/api/branch-protection.yaml](scribe-public/sample-policies.git/v2/rules/github/api/branch-protection.yaml)  
 **Rego File Path**: `branch-protection.rego`  
 
 **Labels**: GitHub

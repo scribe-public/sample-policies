@@ -1,7 +1,7 @@
 # Rule: Generic Artifact Signed
 
 **ID**: `generic-artifact-signed`  
-**Source YAML**: `artifact-signed.yaml`  
+**Source**: [v2/rules/generic/artifact-signed.yaml](scribe-public/sample-policies.git/v2/rules/generic/artifact-signed.yaml)  
 **Rego File Path**: `artifact-signed.rego`  
 
 **Labels**: 3rd-party

@@ -1,7 +1,7 @@
 # Rule: Verify Only Ephemeral Runners Exist in Repository
 
 **ID**: `github-repo-ephemeral-runners-only`  
-**Source YAML**: `ephemeral-runners-only.yaml`  
+**Source**: [v2/rules/github/repository/ephemeral-runners-only.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/ephemeral-runners-only.yaml)  
 **Rego File Path**: `ephemeral-runners-only.rego`  
 
 **Labels**: GitHub, Repository

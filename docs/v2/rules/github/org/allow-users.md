@@ -1,7 +1,7 @@
 # Rule: Allowed GitHub Organization Users
 
 **ID**: `github-org-allowed-users`  
-**Source YAML**: `allow-users.yaml`  
+**Source**: [v2/rules/github/org/allow-users.yaml](scribe-public/sample-policies.git/v2/rules/github/org/allow-users.yaml)  
 **Rego File Path**: `allow-users.rego`  
 
 **Labels**: GitHub, Organization

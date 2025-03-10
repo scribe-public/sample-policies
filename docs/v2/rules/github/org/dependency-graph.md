@@ -1,7 +1,7 @@
 # Rule: Verify dependency_graph_enabled_for_new_repositories setting
 
 **ID**: `github-org-dependency-graph`  
-**Source YAML**: `dependency-graph.yaml`  
+**Source**: [v2/rules/github/org/dependency-graph.yaml](scribe-public/sample-policies.git/v2/rules/github/org/dependency-graph.yaml)  
 **Rego File Path**: `dependency-graph.rego`  
 
 **Labels**: GitHub, Organization

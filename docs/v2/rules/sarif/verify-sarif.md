@@ -1,7 +1,7 @@
 # Rule: Verify Rule Compliance in SARIF
 
 **ID**: `sarif-policy`  
-**Source YAML**: `verify-sarif.yaml`  
+**Source**: [v2/rules/sarif/verify-sarif.yaml](scribe-public/sample-policies.git/v2/rules/sarif/verify-sarif.yaml)  
 **Rego File Path**: `verify-sarif.rego`  
 
 **Labels**: SARIF

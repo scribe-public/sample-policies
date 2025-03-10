@@ -1,7 +1,7 @@
 # Rule: Disallow Unsigned Commits In Time Range
 
 **ID**: `signed-commits-range`  
-**Source YAML**: `signed-commits-range.yaml`  
+**Source**: [v2/rules/github/api/signed-commits-range.yaml](scribe-public/sample-policies.git/v2/rules/github/api/signed-commits-range.yaml)  
 **Rego File Path**: `signed-commits-range.rego`  
 
 **Labels**: GitHub

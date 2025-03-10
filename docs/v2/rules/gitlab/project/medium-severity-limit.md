@@ -1,7 +1,7 @@
 # Rule: Enforce Medium Severity Limit
 
 **ID**: `gitlab-project-medium-severity-limit`  
-**Source YAML**: `medium-severity-limit.yaml`  
+**Source**: [v2/rules/gitlab/project/medium-severity-limit.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/medium-severity-limit.yaml)  
 **Rego File Path**: `medium-severity-limit.rego`  
 
 **Labels**: Gitlab, Project

@@ -1,7 +1,7 @@
 # Rule: Restrict Commit Authors in GitLab Project
 
 **ID**: `gitlab-project-allowed-commit-authors`  
-**Source YAML**: `commit-author-email-check.yaml`  
+**Source**: [v2/rules/gitlab/project/commit-author-email-check.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/commit-author-email-check.yaml)  
 **Rego File Path**: `commit-author-email-check.rego`  
 
 **Labels**: Gitlab, Project

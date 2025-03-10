@@ -1,7 +1,7 @@
 # Rule: Verify Selected Commits Are Signed API
 
 **ID**: `github-api-signed-commits-list`  
-**Source YAML**: `signed-commits-list.yaml`  
+**Source**: [v2/rules/github/api/signed-commits-list.yaml](scribe-public/sample-policies.git/v2/rules/github/api/signed-commits-list.yaml)  
 **Rego File Path**: `signed-commits-list.rego`  
 
 **Labels**: GitHub, API

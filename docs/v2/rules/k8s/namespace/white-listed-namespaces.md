@@ -1,7 +1,7 @@
 # Rule: Allowed Namespaces
 
 **ID**: `k8s-namespace-white-listed-namespaces`  
-**Source YAML**: `white-listed-namespaces.yaml`  
+**Source**: [v2/rules/k8s/namespace/white-listed-namespaces.yaml](scribe-public/sample-policies.git/v2/rules/k8s/namespace/white-listed-namespaces.yaml)  
 **Rego File Path**: `white-listed-namespaces.rego`  
 
 **Labels**: K8s, Namespace

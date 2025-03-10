@@ -2,7 +2,7 @@
 
 **ID**: `SSDF`  
 **Version**: `1.0.0`  
-**Source YAML**: `ssdf.yaml`  
+**Source**: [v2/initiatives/ssdf.yaml](scribe-public/sample-policies.git/v2/initiatives/ssdf.yaml)  
 
 **Short Description**: Evaluate PS rules from the SSDF initiative
 

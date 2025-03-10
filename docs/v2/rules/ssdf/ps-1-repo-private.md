@@ -1,7 +1,7 @@
 # Rule: Repo private
 
 **ID**: `PS.1.4`  
-**Source YAML**: `ps-1-repo-private.yaml`  
+**Source**: [v2/rules/ssdf/ps-1-repo-private.yaml](scribe-public/sample-policies.git/v2/rules/ssdf/ps-1-repo-private.yaml)  
 
 **Labels**: SSDF
 

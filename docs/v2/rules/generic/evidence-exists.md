@@ -1,7 +1,7 @@
 # Rule: Required Generic Evidence Exists
 
 **ID**: `generic-required-evidence`  
-**Source YAML**: `evidence-exists.yaml`  
+**Source**: [v2/rules/generic/evidence-exists.yaml](scribe-public/sample-policies.git/v2/rules/generic/evidence-exists.yaml)  
 **Rego File Path**: `evidence-exists.rego`  
 
 **Labels**: 3rd-party

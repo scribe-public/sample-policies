@@ -1,7 +1,7 @@
 # Rule: Verify File Integrity
 
 **ID**: `file-integrity`  
-**Source YAML**: `files_integrity.yaml`  
+**Source**: [v2/rules/multievidence/files_integrity.yaml](scribe-public/sample-policies.git/v2/rules/multievidence/files_integrity.yaml)  
 **Rego File Path**: `files_integrity.rego`  
 
 **Labels**: SBOM

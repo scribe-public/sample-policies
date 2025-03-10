@@ -1,7 +1,7 @@
 # Rule: Verify Branch Verification Setting
 
 **ID**: `github-repo-branch-verification`  
-**Source YAML**: `branch-verification.yaml`  
+**Source**: [v2/rules/github/repository/branch-verification.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/branch-verification.yaml)  
 **Rego File Path**: `branch-verification.rego`  
 
 **Labels**: GitHub, Repository

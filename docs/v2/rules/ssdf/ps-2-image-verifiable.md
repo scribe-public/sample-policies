@@ -1,7 +1,7 @@
 # Rule: Image-verifiable
 
 **ID**: `PS.2`  
-**Source YAML**: `ps-2-image-verifiable.yaml`  
+**Source**: [v2/rules/ssdf/ps-2-image-verifiable.yaml](scribe-public/sample-policies.git/v2/rules/ssdf/ps-2-image-verifiable.yaml)  
 
 **Labels**: SSDF
 

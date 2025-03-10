@@ -1,7 +1,7 @@
 # Rule: Disallow dependencies in SLSA Provenance Document
 
 **ID**: `slsa-builder-unallowed-dependencies`  
-**Source YAML**: `banned-builder-deps.yaml`  
+**Source**: [v2/rules/slsa/banned-builder-deps.yaml](scribe-public/sample-policies.git/v2/rules/slsa/banned-builder-deps.yaml)  
 **Rego File Path**: `banned-builder-deps.rego`  
 
 **Labels**: SLSA, Image

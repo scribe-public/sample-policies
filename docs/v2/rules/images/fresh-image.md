@@ -1,7 +1,7 @@
 # Rule: Fresh Image
 
 **ID**: `fresh-image`  
-**Source YAML**: `fresh-image.yaml`  
+**Source**: [v2/rules/images/fresh-image.yaml](scribe-public/sample-policies.git/v2/rules/images/fresh-image.yaml)  
 **Rego File Path**: `fresh-image.rego`  
 
 **Labels**: SBOM, Images

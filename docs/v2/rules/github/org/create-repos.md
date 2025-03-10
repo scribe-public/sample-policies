@@ -1,7 +1,7 @@
 # Rule: Verify members_can_create_repositories setting
 
 **ID**: `github-org-create-repos`  
-**Source YAML**: `create-repos.yaml`  
+**Source**: [v2/rules/github/org/create-repos.yaml](scribe-public/sample-policies.git/v2/rules/github/org/create-repos.yaml)  
 **Rego File Path**: `create-repos.rego`  
 
 **Labels**: GitHub, Organization

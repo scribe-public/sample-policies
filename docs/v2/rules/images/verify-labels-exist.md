@@ -1,7 +1,7 @@
 # Rule: Require Image Labels
 
 **ID**: `required-image-labels`  
-**Source YAML**: `verify-labels-exist.yaml`  
+**Source**: [v2/rules/images/verify-labels-exist.yaml](scribe-public/sample-policies.git/v2/rules/images/verify-labels-exist.yaml)  
 **Rego File Path**: `verify-labels-exist.rego`  
 
 **Labels**: SBOM, Images

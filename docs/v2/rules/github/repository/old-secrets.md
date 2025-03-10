@@ -1,7 +1,7 @@
 # Rule: Verify No Old Secrets Exist in Repository
 
 **ID**: `github-repo-old-secrets`  
-**Source YAML**: `old-secrets.yaml`  
+**Source**: [v2/rules/github/repository/old-secrets.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/old-secrets.yaml)  
 **Rego File Path**: `old-secrets.rego`  
 
 **Labels**: GitHub, Repository

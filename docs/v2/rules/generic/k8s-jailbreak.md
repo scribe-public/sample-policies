@@ -1,7 +1,7 @@
 # Rule: K8s Jailbreak
 
 **ID**: `k8s-jailbreak`  
-**Source YAML**: `k8s-jailbreak.yaml`  
+**Source**: [v2/rules/generic/k8s-jailbreak.yaml](scribe-public/sample-policies.git/v2/rules/generic/k8s-jailbreak.yaml)  
 **Rego File Path**: `k8s-jailbreak.rego`  
 
 **Labels**: K8s

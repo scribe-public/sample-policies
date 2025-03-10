@@ -1,12 +1,19 @@
 # Rule: Verify that provenance is authenticated
 
 **ID**: `SLSA.L2`  
-**Source YAML**: `l2-provenance-authenticated.yaml`  
+**Source**: [v2/rules/slsa/l2-provenance-authenticated.yaml](scribe-public/sample-policies.git/v2/rules/slsa/l2-provenance-authenticated.yaml)  
 **Rego File Path**: `l2-provenance-authenticated.rego`  
 
 **Labels**: SLSA
 
 **Short Description**: Verify the artifact is signed.
+
+**Mitigation**:
+
+Cryptographic authentication prevents tampering with provenance data, ensuring that only valid and secure build information is used to establish the integrity of the software supply chain.
+
+
+**Help**: https://slsa.dev/spec/v1.0/requirements
 
 ## Evidence Requirements
 

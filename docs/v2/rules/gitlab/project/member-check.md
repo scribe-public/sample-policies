@@ -1,7 +1,7 @@
 # Rule: Enable Member Check for GitLab Project
 
 **ID**: `gitlab-project-verify-member_check`  
-**Source YAML**: `member-check.yaml`  
+**Source**: [v2/rules/gitlab/project/member-check.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/member-check.yaml)  
 **Rego File Path**: `member-check.rego`  
 
 **Labels**: Gitlab, Project

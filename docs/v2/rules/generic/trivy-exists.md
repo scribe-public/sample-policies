@@ -1,7 +1,7 @@
 # Rule: Required Trivy Evidence Exists
 
 **ID**: `required-trivy-evidence`  
-**Source YAML**: `trivy-exists.yaml`  
+**Source**: [v2/rules/generic/trivy-exists.yaml](scribe-public/sample-policies.git/v2/rules/generic/trivy-exists.yaml)  
 
 **Labels**: 3rd-party
 

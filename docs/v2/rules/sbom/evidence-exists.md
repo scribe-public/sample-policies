@@ -1,7 +1,7 @@
 # Rule: Require SBOM Existence
 
 **ID**: `require-sbom`  
-**Source YAML**: `evidence-exists.yaml`  
+**Source**: [v2/rules/sbom/evidence-exists.yaml](scribe-public/sample-policies.git/v2/rules/sbom/evidence-exists.yaml)  
 **Rego File Path**: `evidence-exists.rego`  
 
 **Labels**: SBOM, Blueprint

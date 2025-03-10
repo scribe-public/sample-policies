@@ -7,6 +7,7 @@ import yaml
 DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
+SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
 
 
 def parse_yaml(file_path):
@@ -24,7 +25,7 @@ def ensure_output_dirs():
     os.makedirs(INITIATIVES_OUTDIR, exist_ok=True)
 
 
-def generate_rule_markdown(rule_data, file_name):
+def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
     Given the YAML data for a rule, produce the Markdown content as a string.
     The doc will be written to a mirrored subdirectory under docs/v2/rules.
@@ -37,11 +38,12 @@ def generate_rule_markdown(rule_data, file_name):
     mitigation = rule_data.get("mitigation", "")
     help_url = rule_data.get("help", "")
     labels = rule_data.get("labels", [])
-
+    source_link = os.path.join(base_source_git, file_path)
     md = []
     md.append(f"# Rule: {name}\n")
     md.append(f"**ID**: `{rule_id}`  ")
-    md.append(f"**Source YAML**: `{file_name}`  ")
+    md.append(f"**Source**: [{file_path}]({source_link})  ")
+
     if path:
         md.append(f"**Rego File Path**: `{path}`  ")
     md.append("")
@@ -76,7 +78,21 @@ def generate_rule_markdown(rule_data, file_name):
     return "\n".join(md)
 
 
-def write_rule_doc(file_path, rule_data):
+def get_current_repo_context():
+    from git import Repo
+    local_repo = Repo(path=".")
+    remote_repo = local_repo.remotes.origin.url
+    current_branch = local_repo.active_branch.name
+    
+    print(f"Current branch: {current_branch}")
+    print(f"Remote URL: {remote_repo}")
+    norm_github_repo = remote_repo.replace('git@github.com:','').replace('https://github.com/','')
+    # norm_github_repo_with_branch = os.path.join(norm_github_repo, f"tree/{current_branch}")
+    # print(f"Normalized GitHub repo: {norm_github_repo_with_branch}")
+
+    return norm_github_repo
+
+def write_rule_doc(file_path, rule_data, base_source_git):
     """
     Write the rule doc to a mirrored subdirectory under docs/v2/rules.
     Returns a dict with keys:
@@ -93,7 +109,7 @@ def write_rule_doc(file_path, rule_data):
 
     out_md_path = os.path.join(out_dir, base_name + ".md")
 
-    doc_content = generate_rule_markdown(rule_data, filename)
+    doc_content = generate_rule_markdown(rule_data, file_path, filename, base_source_git)
     with open(out_md_path, "w") as f:
         f.write(doc_content)
 
@@ -106,7 +122,7 @@ def write_rule_doc(file_path, rule_data):
     }
 
 
-def generate_initiative_markdown(initiative_data, file_name, rule_docs_map):
+def generate_initiative_markdown(initiative_data, file_path, file_name, rule_docs_map, base_source_git):
     """
     Build the Markdown content for one initiative.
     The document includes:
@@ -120,13 +136,13 @@ def generate_initiative_markdown(initiative_data, file_name, rule_docs_map):
     full_description = initiative_data.get("full-description", "")
     mitigation = initiative_data.get("mitigation", "")
     help_url = initiative_data.get("help", "")
-
+    source_link = os.path.join(base_source_git, file_path)
     md = []
     # Initiative header
     md.append(f"# Initiative: {name}\n")
     md.append(f"**ID**: `{init_id}`  ")
     md.append(f"**Version**: `{version}`  ")
-    md.append(f"**Source YAML**: `{file_name}`  ")
+    md.append(f"**Source**: [{file_path}]({source_link})  ")
     md.append("")
     md.append(f"**Short Description**: {description}\n")
     if full_description:
@@ -230,7 +246,7 @@ def generate_initiative_markdown(initiative_data, file_name, rule_docs_map):
     return "\n".join(md)
 
 
-def write_initiative_doc(file_path, initiative_data, rule_docs_map):
+def write_initiative_doc(file_path, initiative_data, rule_docs_map, base_source_git):
     """
     Write the initiative doc to docs/v2/initiatives/<original_filename>.md.
     For example, if the initiative file is "slsa.l2.yaml", the doc will be "slsa.l2.md".
@@ -241,7 +257,7 @@ def write_initiative_doc(file_path, initiative_data, rule_docs_map):
     out_md_path = os.path.join(INITIATIVES_OUTDIR, base_no_ext + ".md")
     os.makedirs(INITIATIVES_OUTDIR, exist_ok=True)
 
-    doc_content = generate_initiative_markdown(initiative_data, base_file, rule_docs_map)
+    doc_content = generate_initiative_markdown(initiative_data, file_path, base_file, rule_docs_map, base_source_git)
     with open(out_md_path, "w") as f:
         f.write(doc_content)
 
@@ -253,6 +269,8 @@ def main():
 
     rule_files = []        # list of (file_path, rule_yaml_data)
     initiative_files = []  # list of (file_path, initiative_yaml_data)
+
+    base_source_git = get_current_repo_context()
 
     for dirpath, _, filenames in os.walk("v2"):
         for filename in filenames:
@@ -268,6 +286,7 @@ def main():
             else:
                 pass
 
+
     # Build a map of rule docs.
     # Key: relative path from "v2/rules" without .yaml extension (e.g. "gitlab/org/max-admins")
     # Value: dict with "abs_path", "rel_path", "yaml_data"
@@ -280,11 +299,11 @@ def main():
             key_for_map = os.path.join(subdirs, base_name) if subdirs != "." else base_name
         else:
             key_for_map = os.path.splitext(os.path.basename(file_path))[0]
-        doc_info = write_rule_doc(file_path, r_data)
+        doc_info = write_rule_doc(file_path, r_data, base_source_git)
         rule_docs_map[key_for_map] = doc_info
 
     for file_path, i_data in initiative_files:
-        write_initiative_doc(file_path, i_data, rule_docs_map)
+        write_initiative_doc(file_path, i_data, rule_docs_map, base_source_git)
 
     print("[OK] Documentation has been generated under docs/v2/")
 

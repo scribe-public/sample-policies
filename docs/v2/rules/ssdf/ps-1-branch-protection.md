@@ -1,7 +1,7 @@
 # Rule: Branch protected
 
 **ID**: `PS.1.2`  
-**Source YAML**: `ps-1-branch-protection.yaml`  
+**Source**: [v2/rules/ssdf/ps-1-branch-protection.yaml](scribe-public/sample-policies.git/v2/rules/ssdf/ps-1-branch-protection.yaml)  
 
 **Labels**: SSDF
 

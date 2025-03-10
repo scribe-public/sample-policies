@@ -1,7 +1,7 @@
 # Rule: Verify No Organization Secrets Exist in Repository
 
 **ID**: `github-repo-no-org-secrets`  
-**Source YAML**: `no-org-secrets.yaml`  
+**Source**: [v2/rules/github/repository/no-org-secrets.yaml](scribe-public/sample-policies.git/v2/rules/github/repository/no-org-secrets.yaml)  
 **Rego File Path**: `no-org-secrets.rego`  
 
 **Labels**: GitHub, Repository

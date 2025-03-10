@@ -1,7 +1,7 @@
 # Rule: SLSA Field Exists in Provenance Document
 
 **ID**: `slsa-field-exists`  
-**Source YAML**: `field-exists.yaml`  
+**Source**: [v2/rules/slsa/field-exists.yaml](scribe-public/sample-policies.git/v2/rules/slsa/field-exists.yaml)  
 **Rego File Path**: `field-exists.rego`  
 
 **Labels**: SLSA, Image
