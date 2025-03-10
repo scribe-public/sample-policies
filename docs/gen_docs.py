@@ -78,7 +78,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     
     md = []
     md.append(f"# {name}  ")
-    md.append("** Type:** Rule  ")
+    md.append(f"** Type:** Rule  ")
     md.append(f"**ID:** `{rule_id}`  ")
     md.append(f"**Uses:** `{filepath_to_uses(file_path)}`  ")
     md.append(f"**Source:** [{file_path}]({yaml_source_link})  ")
@@ -219,7 +219,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md = []
     # Initiative header
     md.append(f"# {name}  ")
-    md.append("** Type:** Initiative  ")
+    md.append(f"** Type:** Initiative  ")
     md.append(f"**ID:** `{init_id}`  ")
     md.append(f"**Version:** `{version}`  ")
     md.append(f"**Bundle-Version:** `{bundle_version}`  ")
