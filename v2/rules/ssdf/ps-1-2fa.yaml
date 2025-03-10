@@ -4,6 +4,8 @@ name: Enforce 2FA
 uses: github/org/2fa@v2/rules
 
 description: PS.1 Require 2FA for accessing code
+mitigation: >
+  Enforces two-factor authentication (2FA), significantly reducing the risk of compromised credentials.
 
 labels:
   - SSDF
