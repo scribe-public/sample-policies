@@ -1,13 +1,11 @@
 # Rule: Verify Project Activity
 
-**ID**: `gitlab-project-abandoned-project`
-**Source**: [v2/rules/gitlab/project/abandoned-project.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.yaml)
-**Uses**: `gitlab/project/abandoned-project@v2/rules
-**Rego Source**: [abandoned-project.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.rego)
-
+**ID**: `gitlab-project-abandoned-project`  
+**Uses**: `gitlab/project/abandoned-project@v2/rules  
+**Source**: [v2/rules/gitlab/project/abandoned-project.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.yaml)  
+**Rego Source**: [abandoned-project.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.rego)  
+**Short Description**: Verify the GitLab project is active for a specified duration.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify the GitLab project is active for a specified duration.
 
 ## Evidence Requirements
 

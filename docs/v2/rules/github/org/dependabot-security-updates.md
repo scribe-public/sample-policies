@@ -1,13 +1,11 @@
 # Rule: Verify dependabot_security_updates_enabled_for_new_repositories setting
 
-**ID**: `github-org-dependabot-security-updates`
-**Source**: [v2/rules/github/org/dependabot-security-updates.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates.yaml)
-**Uses**: `github/org/dependabot-security-updates@v2/rules
-**Rego Source**: [dependabot-security-updates.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates.rego)
-
+**ID**: `github-org-dependabot-security-updates`  
+**Uses**: `github/org/dependabot-security-updates@v2/rules  
+**Source**: [v2/rules/github/org/dependabot-security-updates.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates.yaml)  
+**Rego Source**: [dependabot-security-updates.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates.rego)  
+**Short Description**: Verify Dependabot security updates for new repositories are configured in the GitHub organization.  
 **Labels**: GitHub, Organization
-
-**Short Description**: Verify Dependabot security updates for new repositories are configured in the GitHub organization.
 
 ## Evidence Requirements
 

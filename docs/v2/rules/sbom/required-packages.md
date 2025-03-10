@@ -1,13 +1,11 @@
 # Rule: Enforce SBOM Dependencies
 
-**ID**: `sbom-required-dependencies`
-**Source**: [v2/rules/sbom/required-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.yaml)
-**Uses**: `sbom/required-packages@v2/rules
-**Rego Source**: [required-packages.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.rego)
-
+**ID**: `sbom-required-dependencies`  
+**Uses**: `sbom/required-packages@v2/rules  
+**Source**: [v2/rules/sbom/required-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.yaml)  
+**Rego Source**: [required-packages.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.rego)  
+**Short Description**: Verify the artifact includes all required dependencies.  
 **Labels**: SBOM, Image
-
-**Short Description**: Verify the artifact includes all required dependencies.
 
 ## Evidence Requirements
 

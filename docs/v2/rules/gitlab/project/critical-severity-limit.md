@@ -1,13 +1,11 @@
 # Rule: Enforce Critical Severity Limit
 
-**ID**: `gitlab-project-critical-severity-limit`
-**Source**: [v2/rules/gitlab/project/critical-severity-limit.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/critical-severity-limit.yaml)
-**Uses**: `gitlab/project/critical-severity-limit@v2/rules
-**Rego Source**: [critical-severity-limit.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/critical-severity-limit.rego)
-
+**ID**: `gitlab-project-critical-severity-limit`  
+**Uses**: `gitlab/project/critical-severity-limit@v2/rules  
+**Source**: [v2/rules/gitlab/project/critical-severity-limit.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/critical-severity-limit.yaml)  
+**Rego Source**: [critical-severity-limit.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/critical-severity-limit.rego)  
+**Short Description**: Verify the maximum allowed critical severity alerts for the GitLab project.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify the maximum allowed critical severity alerts for the GitLab project.
 
 ## Evidence Requirements
 

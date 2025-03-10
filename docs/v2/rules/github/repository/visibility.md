@@ -1,13 +1,11 @@
 # Rule: Allowed Public Repositories
 
-**ID**: `github-repo-visibility`
-**Source**: [v2/rules/github/repository/visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.yaml)
-**Uses**: `github/repository/visibility@v2/rules
-**Rego Source**: [visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.rego)
-
+**ID**: `github-repo-visibility`  
+**Uses**: `github/repository/visibility@v2/rules  
+**Source**: [v2/rules/github/repository/visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.yaml)  
+**Rego Source**: [visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.rego)  
+**Short Description**: Verify only GitHub repositories in the Allowed List are public.  
 **Labels**: GitHub, Repository
-
-**Short Description**: Verify only GitHub repositories in the Allowed List are public.
 
 ## Evidence Requirements
 

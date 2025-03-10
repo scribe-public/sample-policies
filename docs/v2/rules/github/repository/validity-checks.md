@@ -1,13 +1,11 @@
 # Rule: Verify secret scanning.
 
-**ID**: `github-repo-validity-checks`
-**Source**: [v2/rules/github/repository/validity-checks.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/validity-checks.yaml)
-**Uses**: `github/repository/validity-checks@v2/rules
-**Rego Source**: [validity-checks.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/validity-checks.rego)
-
+**ID**: `github-repo-validity-checks`  
+**Uses**: `github/repository/validity-checks@v2/rules  
+**Source**: [v2/rules/github/repository/validity-checks.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/validity-checks.yaml)  
+**Rego Source**: [validity-checks.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/validity-checks.rego)  
+**Short Description**: Verify both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.  
 **Labels**: GitHub, Repository
-
-**Short Description**: Verify both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.
 
 ## Evidence Requirements
 

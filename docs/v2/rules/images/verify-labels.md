@@ -1,13 +1,11 @@
 # Rule: Verify Image Labels
 
-**ID**: `image-labels`
-**Source**: [v2/rules/images/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels.yaml)
-**Uses**: `images/verify-labels@v2/rules
-**Rego Source**: [verify-labels.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels.rego)
-
+**ID**: `image-labels`  
+**Uses**: `images/verify-labels@v2/rules  
+**Source**: [v2/rules/images/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels.yaml)  
+**Rego Source**: [verify-labels.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels.rego)  
+**Short Description**: Verify specified labels key-value pairs exist in the image.  
 **Labels**: SBOM, Images
-
-**Short Description**: Verify specified labels key-value pairs exist in the image.
 
 ## Evidence Requirements
 

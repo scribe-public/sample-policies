@@ -1,13 +1,11 @@
 # Rule: Verify dependabot_security_updates setting in security_and_analysis
 
-**ID**: `github-org-dependabot-security-updates-sa`
-**Source**: [v2/rules/github/org/dependabot-security-updates-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates-sa.yaml)
-**Uses**: `github/org/dependabot-security-updates-sa@v2/rules
-**Rego Source**: [dependabot-security-updates-sa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates-sa.rego)
-
+**ID**: `github-org-dependabot-security-updates-sa`  
+**Uses**: `github/org/dependabot-security-updates-sa@v2/rules  
+**Source**: [v2/rules/github/org/dependabot-security-updates-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates-sa.yaml)  
+**Rego Source**: [dependabot-security-updates-sa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates-sa.rego)  
+**Short Description**: Verify Dependabot security updates are configured in the GitHub organization.  
 **Labels**: GitHub, Organization
-
-**Short Description**: Verify Dependabot security updates are configured in the GitHub organization.
 
 ## Evidence Requirements
 

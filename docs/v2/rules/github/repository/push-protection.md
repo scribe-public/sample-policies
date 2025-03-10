@@ -1,13 +1,11 @@
 # Rule: Verify Push Protection Setting
 
-**ID**: `github-repo-push-protection`
-**Source**: [v2/rules/github/repository/push-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/push-protection.yaml)
-**Uses**: `github/repository/push-protection@v2/rules
-**Rego Source**: [push-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/push-protection.rego)
-
+**ID**: `github-repo-push-protection`  
+**Uses**: `github/repository/push-protection@v2/rules  
+**Source**: [v2/rules/github/repository/push-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/push-protection.yaml)  
+**Rego Source**: [push-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/push-protection.rego)  
+**Short Description**: Verify `secret_scanning_push_protection` is configured in the GitHub repository.  
 **Labels**: GitHub, Repository
-
-**Short Description**: Verify `secret_scanning_push_protection` is configured in the GitHub repository.
 
 ## Evidence Requirements
 

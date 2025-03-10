@@ -1,13 +1,11 @@
 # Rule: Verify Exposed Credentials
 
-**ID**: `jenkins-exposed-credentials`
-**Source**: [v2/rules/jenkins/folder/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.yaml)
-**Uses**: `jenkins/folder/exposed-credentials@v2/rules
-**Rego Source**: [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.rego)
-
+**ID**: `jenkins-exposed-credentials`  
+**Uses**: `jenkins/folder/exposed-credentials@v2/rules  
+**Source**: [v2/rules/jenkins/folder/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.yaml)  
+**Rego Source**: [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.rego)  
+**Short Description**: Verify there are no exposed credentials.  
 **Labels**: Jenkins, Folder
-
-**Short Description**: Verify there are no exposed credentials.
 
 ## Evidence Requirements
 

@@ -1,13 +1,11 @@
 # Rule: Branch protection enabled in GitHub repository
 
-**ID**: `github-api-branch-protection`
-**Source**: [v2/rules/github/api/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.yaml)
-**Uses**: `github/api/branch-protection@v2/rules
-**Rego Source**: [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.rego)
-
+**ID**: `github-api-branch-protection`  
+**Uses**: `github/api/branch-protection@v2/rules  
+**Source**: [v2/rules/github/api/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.yaml)  
+**Rego Source**: [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.rego)  
+**Short Description**: Verify GitHub branch protection rules  
 **Labels**: GitHub
-
-**Short Description**: Verify GitHub branch protection rules
 
 ## Rule Parameters (`with`)
 

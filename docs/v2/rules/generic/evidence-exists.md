@@ -1,13 +1,11 @@
 # Rule: Required Generic Evidence Exists
 
-**ID**: `generic-required-evidence`
-**Source**: [v2/rules/generic/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/evidence-exists.yaml)
-**Uses**: `generic/evidence-exists@v2/rules
-**Rego Source**: [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/generic/evidence-exists.rego)
-
+**ID**: `generic-required-evidence`  
+**Uses**: `generic/evidence-exists@v2/rules  
+**Source**: [v2/rules/generic/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/evidence-exists.yaml)  
+**Rego Source**: [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/generic/evidence-exists.rego)  
+**Short Description**: Verify required evidence exists.  
 **Labels**: 3rd-party
-
-**Short Description**: Verify required evidence exists.
 
 ## Evidence Requirements
 

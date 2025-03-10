@@ -1,13 +1,11 @@
 # Rule: Allowed Admins in GitLab Organization
 
-**ID**: `gitlab-org-allowed-admins`
-**Source**: [v2/rules/gitlab/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-admins.yaml)
-**Uses**: `gitlab/org/allow-admins@v2/rules
-**Rego Source**: [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-admins.rego)
-
+**ID**: `gitlab-org-allowed-admins`  
+**Uses**: `gitlab/org/allow-admins@v2/rules  
+**Source**: [v2/rules/gitlab/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-admins.yaml)  
+**Rego Source**: [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-admins.rego)  
+**Short Description**: Verify only users in the Allowed List have admin privileges in the GitLab organization.  
 **Labels**: Gitlab, Organization
-
-**Short Description**: Verify only users in the Allowed List have admin privileges in the GitLab organization.
 
 ## Evidence Requirements
 

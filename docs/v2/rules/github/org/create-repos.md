@@ -1,13 +1,11 @@
 # Rule: Verify members_can_create_repositories setting
 
-**ID**: `github-org-create-repos`
-**Source**: [v2/rules/github/org/create-repos.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-repos.yaml)
-**Uses**: `github/org/create-repos@v2/rules
-**Rego Source**: [create-repos.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-repos.rego)
-
+**ID**: `github-org-create-repos`  
+**Uses**: `github/org/create-repos@v2/rules  
+**Source**: [v2/rules/github/org/create-repos.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-repos.yaml)  
+**Rego Source**: [create-repos.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-repos.rego)  
+**Short Description**: Verify `members_can_create_repositories` is appropriately configured in the GitHub repository.  
 **Labels**: GitHub, Organization
-
-**Short Description**: Verify `members_can_create_repositories` is appropriately configured in the GitHub repository.
 
 ## Evidence Requirements
 

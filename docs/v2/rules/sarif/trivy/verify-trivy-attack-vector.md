@@ -1,13 +1,11 @@
 # Rule: Verify Attack Vector Threshold in Trivy SARIF
 
-**ID**: `trivy-attack-vectors`
-**Source**: [v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml)
-**Uses**: `sarif/trivy/verify-trivy-attack-vector@v2/rules
-**Rego Source**: [../verify-attack-vector.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../verify-attack-vector.rego)
-
+**ID**: `trivy-attack-vectors`  
+**Uses**: `sarif/trivy/verify-trivy-attack-vector@v2/rules  
+**Source**: [v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml)  
+**Rego Source**: [../verify-attack-vector.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../verify-attack-vector.rego)  
+**Short Description**: Verify no attack vector in the Trivy SARIF report exceeds the specified threshold.  
 **Labels**: SARIF, Trivy
-
-**Short Description**: Verify no attack vector in the Trivy SARIF report exceeds the specified threshold.
 
 ## Evidence Requirements
 

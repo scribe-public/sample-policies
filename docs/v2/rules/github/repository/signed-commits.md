@@ -1,13 +1,11 @@
 # Rule: Verify All Commits Are Signed in Repository
 
-**ID**: `github-repo-signed-commits`
-**Source**: [v2/rules/github/repository/signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.yaml)
-**Uses**: `github/repository/signed-commits@v2/rules
-**Rego Source**: [signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.rego)
-
+**ID**: `github-repo-signed-commits`  
+**Uses**: `github/repository/signed-commits@v2/rules  
+**Source**: [v2/rules/github/repository/signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.yaml)  
+**Rego Source**: [signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.rego)  
+**Short Description**: Verify all commits are signed in a repository attestation.  
 **Labels**: GitHub, Repository
-
-**Short Description**: Verify all commits are signed in a repository attestation.
 
 ## Evidence Requirements
 

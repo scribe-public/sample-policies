@@ -1,13 +1,11 @@
 # Rule: Disallow Unsigned Commits In Time Range
 
-**ID**: `signed-commits-range`
-**Source**: [v2/rules/github/api/signed-commits-range.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/signed-commits-range.yaml)
-**Uses**: `github/api/signed-commits-range@v2/rules
-**Rego Source**: [signed-commits-range.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/signed-commits-range.rego)
-
+**ID**: `signed-commits-range`  
+**Uses**: `github/api/signed-commits-range@v2/rules  
+**Source**: [v2/rules/github/api/signed-commits-range.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/signed-commits-range.yaml)  
+**Rego Source**: [signed-commits-range.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/signed-commits-range.rego)  
+**Short Description**: Verify commits in the specified time range are signed.  
 **Labels**: GitHub
-
-**Short Description**: Verify commits in the specified time range are signed.
 
 ## Rule Parameters (`with`)
 

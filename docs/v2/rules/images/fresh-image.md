@@ -1,13 +1,11 @@
 # Rule: Fresh Image
 
-**ID**: `fresh-image`
-**Source**: [v2/rules/images/fresh-image.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/fresh-image.yaml)
-**Uses**: `images/fresh-image@v2/rules
-**Rego Source**: [fresh-image.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/fresh-image.rego)
-
+**ID**: `fresh-image`  
+**Uses**: `images/fresh-image@v2/rules  
+**Source**: [v2/rules/images/fresh-image.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/fresh-image.yaml)  
+**Rego Source**: [fresh-image.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/fresh-image.rego)  
+**Short Description**: Verify the image is not older than the specified threshold.  
 **Labels**: SBOM, Images
-
-**Short Description**: Verify the image is not older than the specified threshold.
 
 ## Evidence Requirements
 

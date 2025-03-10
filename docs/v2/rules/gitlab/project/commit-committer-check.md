@@ -1,13 +1,11 @@
 # Rule: Enable Commit Committer Check in GitLab Project
 
-**ID**: `gitlab-project-verify-commit_committer_check`
-**Source**: [v2/rules/gitlab/project/commit-committer-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-committer-check.yaml)
-**Uses**: `gitlab/project/commit-committer-check@v2/rules
-**Rego Source**: [commit-committer-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-committer-check.rego)
-
+**ID**: `gitlab-project-verify-commit_committer_check`  
+**Uses**: `gitlab/project/commit-committer-check@v2/rules  
+**Source**: [v2/rules/gitlab/project/commit-committer-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-committer-check.yaml)  
+**Rego Source**: [commit-committer-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-committer-check.rego)  
+**Short Description**: Verify `commit_committer_check` is enabled for the GitLab project.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify `commit_committer_check` is enabled for the GitLab project.
 
 ## Evidence Requirements
 
