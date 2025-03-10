@@ -1,5 +1,8 @@
 package verify
 
+import data.scribe as scribe
+import future.keywords.in
+
 ##########################################################################
 # Defaults
 ##########################################################################
@@ -12,7 +15,7 @@ default errors := []
 # Retrieve Evidence Metadata
 ##########################################################################
 # We assume the SBOM metadata is found at input.evidence.predicate.bom.metadata.
-asset = input.evidence.predicate.bom.metadata
+asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Authors: Existence and Validity
