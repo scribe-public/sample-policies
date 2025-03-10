@@ -18,11 +18,11 @@ This initiative enforces key controls from the Secure Software Development Frame
 
 | Control ID | Control Name | Control Description | Mitigation |
 |------------|--------------|---------------------|------------|
-|  | SSDF-IMAGE | Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity. | Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
+|  [](#ssdf-image) | SSDF-IMAGE | Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity. | Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
  |
-|  | SSDF-ORG | Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced. | Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
+|  [](#ssdf-org) | SSDF-ORG | Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced. | Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
  |
-|  | SSDF-REPO | Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy. | Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
+|  [](#ssdf-repo) | SSDF-REPO | Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy. | Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
  |
 
 ## Evidence Defaults
