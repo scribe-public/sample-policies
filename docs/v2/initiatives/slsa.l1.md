@@ -1,18 +1,14 @@
 # Initiative: SLSA L1 Framework”
 
-**ID**: `SLSA.L1`
-**Version**: `1.0.0`
-**Bundle-Version**: `v2`
-**Source**: [v2/initiatives/slsa.l1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l1.yaml)
+- **ID**: `SLSA.L1`
+- **Version**: `1.0.0`
+- **Bundle-Version**: `v2`
+- **Source**: [v2/initiatives/slsa.l1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l1.yaml)
 
-**Short Description**: Evaluate SLSA L1
-
-**Full Description**:
-
+- **Short Description**: Evaluate SLSA L1
+- **Help**: https://slsa.dev/
+- **Full Description**:
 This initiative ensures that every critical build artifact includes the minimum required provenance metadata as specified in SLSA Level 1. By recording detailed information about the build process—such as timestamps, authors, and build details— organizations establish a traceable chain-of-custody for their software artifacts.
-
-
-**Help**: https://slsa.dev/
 
 > ** Evidence for this initiative is not required by default but is recommended.**
 

@@ -186,19 +186,18 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md = []
     # Initiative header
     md.append(f"# Initiative: {name}\n")
-    md.append(f"**ID**: `{init_id}`")
-    md.append(f"**Version**: `{version}`")
-    md.append(f"**Bundle-Version**: `{bundle_version}`")
-    md.append(f"**Source**: [{file_path}]({source_link})")
+    md.append(f"- **ID**: `{init_id}`")
+    md.append(f"- **Version**: `{version}`")
+    md.append(f"- **Bundle-Version**: `{bundle_version}`")
+    md.append(f"- **Source**: [{file_path}]({source_link})")
     md.append("")
-    md.append(f"**Short Description**: {description}\n")
-    if full_description:
-        md.append(f"**Full Description**:\n\n{full_description}\n")
+    md.append(f"- **Short Description**: {description}")
     if mitigation:
-        md.append(f"**Mitigation**: {mitigation}\n")
+        md.append(f"- **Mitigation**: {mitigation}")
     if help_url:
-        md.append(f"**Help**: {help_url}\n")
-
+        md.append(f"- **Help**: {help_url}")
+    if full_description:
+        md.append(f"- **Full Description**:\n{full_description}")
 
     controls = initiative_data.get("controls", [])
     if not controls:
