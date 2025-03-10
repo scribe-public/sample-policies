@@ -1,6 +1,7 @@
 config-type: initiative
 # required-valint-version: "1.6.0"
 id: "blueprint-securesoftwarepipeline"
+version: "1.0.0"
 name: "Venafi Blueprint"
 help: https://github.com/Venafi/blueprint-securesoftwarepipeline
 description: "A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle."

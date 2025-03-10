@@ -4,6 +4,8 @@ name: Image-verifiable
 uses: sbom/artifact-signed@v2/rules
 
 description: PS.2 Provide a mechanism to verify the integrity of the image
+mitigation: >
+  Ensures container images are cryptographically verifiable, preventing tampering and confirming their authenticity.
 
 labels:
   - SSDF
