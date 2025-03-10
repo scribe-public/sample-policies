@@ -13,8 +13,8 @@ Verify specified labels key-value pairs exist in the image.
 Ensures that all required metadata labels are present with the expected values, which is crucial for traceability, auditing, and compliance with container security standards.
 
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Description  
 This rule checks the CycloneDX SBOM evidence for the container image to verify that each 

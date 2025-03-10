@@ -12,8 +12,8 @@ PS.1 Assure the repository is private
 Ensures that repositories remain private, reducing the risk of sensitive code being exposed to unauthorized parties.
 
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

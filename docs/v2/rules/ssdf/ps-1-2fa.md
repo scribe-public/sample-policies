@@ -12,8 +12,8 @@ PS.1 Require 2FA for accessing code
 Enforces two-factor authentication (2FA), significantly reducing the risk of compromised credentials.
 
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

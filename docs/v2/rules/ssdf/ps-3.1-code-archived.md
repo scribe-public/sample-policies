@@ -14,8 +14,8 @@ We assume running in Github thus the code is allways stored in a repository
 Archives code changes to maintain a secure, immutable history for auditing and traceability.
 
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

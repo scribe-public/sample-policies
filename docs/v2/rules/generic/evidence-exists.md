@@ -8,8 +8,8 @@
 
 Verify required evidence exists.
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Evidence **IS** required for this rule and will fail if missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Evidence Requirements  
 | Field | Value |

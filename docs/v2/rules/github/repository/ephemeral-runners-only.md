@@ -8,8 +8,8 @@
 
 Verify self-hosted runners are disallowed in the GitHub repository.
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Evidence Requirements  
 | Field | Value |

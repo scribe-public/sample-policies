@@ -8,8 +8,8 @@
 
 Verify the Git artifact is signed.
 
-> Evidence for this rule **IS* required by default.**
-
+> Evidence **IS** required for this rule and will fail if missing.  
+> Signed Evidence for this rule **IS* required by default.  
 
 ## Evidence Requirements  
 | Field | Value |

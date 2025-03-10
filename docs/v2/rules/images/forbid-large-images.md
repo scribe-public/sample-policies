@@ -13,8 +13,8 @@ Verify the image size is below the specified threshold.
 Prevents the deployment of overly large container images, which helps control resource usage, reduces the attack surface by limiting unnecessary code and dependencies, and minimizes potential vulnerabilities.
 
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Description  
 This rule inspects the CycloneDX SBOM evidence for container images. It searches through the SBOM's components
