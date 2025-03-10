@@ -5,7 +5,7 @@
 **Rego Source:** [restrict-shell-entrypoint.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.rego)  
 **Short Description:** Verify the container image disallows shell entrypoint.  
 **Labels:** SBOM, Images  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

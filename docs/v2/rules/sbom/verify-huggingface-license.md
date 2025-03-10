@@ -5,7 +5,7 @@
 **Rego Source:** [verify-hf-license.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/verify-hf-license.rego)  
 **Short Description:** Verify the artifact includes all specified licenses.  
 **Labels:** SBOM, Image  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

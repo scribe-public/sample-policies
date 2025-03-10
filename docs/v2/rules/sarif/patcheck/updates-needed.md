@@ -5,7 +5,7 @@
 **Rego Source:** [updates-needed.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/patcheck/updates-needed.rego)  
 **Short Description:** Verify no security packages require updates.  
 **Labels:** SARIF  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

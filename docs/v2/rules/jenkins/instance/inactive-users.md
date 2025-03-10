@@ -5,7 +5,7 @@
 **Rego Source:** [inactive-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/instance/inactive-users.rego)  
 **Short Description:** Verify there are no inactive users.  
 **Labels:** Jenkins, Instance  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

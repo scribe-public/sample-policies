@@ -6,7 +6,7 @@
 **Source:** [v2/initiatives/ssdf.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/ssdf.yaml)  
 **Short Description:** Evaluate PS rules from the SSDF initiative  
 **Help:** https://csrc.nist.gov/pubs/sp/800/218/final  
-> Evidence for this initiative is not required by default but is recommended.
+> Evidence for this initiative **IS NOT** required by default but is recommended.
 
 ## **Full Description**
 

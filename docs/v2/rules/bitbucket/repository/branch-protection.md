@@ -5,7 +5,7 @@
 **Rego Source:** [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/branch-protection.rego)  
 **Short Description:** Verify the default branch protection is enabled in the Bitbucket repository.  
 **Labels:** Bitbucket, Repository  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

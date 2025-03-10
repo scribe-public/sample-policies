@@ -6,7 +6,7 @@
 **Source:** [v2/initiatives/slsa.l2.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l2.yaml)  
 **Short Description:** Evaluate SLSA Level 2  
 **Help:** https://slsa.dev/  
-> Evidence for this initiative is not required by default but is recommended.
+> Evidence for this initiative **IS NOT** required by default but is recommended.
 
 ## **Full Description**
 

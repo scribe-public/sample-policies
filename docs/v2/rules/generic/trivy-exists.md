@@ -4,7 +4,7 @@
 **Source:** [v2/rules/generic/trivy-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/trivy-exists.yaml)  
 **Short Description:** Verify required Trivy evidence exists  
 **Labels:** 3rd-party  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

@@ -5,7 +5,7 @@
 **Rego Source:** [branch-verification.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-verification.rego)  
 **Short Description:** Verify branch verification in the GitHub repository matches the value defined in the configuration file.  
 **Labels:** GitHub, Repository  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

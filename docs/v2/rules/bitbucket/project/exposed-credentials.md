@@ -5,7 +5,7 @@
 **Rego Source:** [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/exposed-credentials.rego)  
 **Short Description:** Verify access to the Bitbucket project is blocked if exposed credentials are detected.  
 **Labels:** Bitbucket, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

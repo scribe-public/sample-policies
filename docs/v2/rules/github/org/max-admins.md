@@ -5,7 +5,7 @@
 **Rego Source:** [max-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/max-admins.rego)  
 **Short Description:** Verify the maximum number of GitHub organization admins is restricted.  
 **Labels:** Blueprint, GitHub, Organization  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

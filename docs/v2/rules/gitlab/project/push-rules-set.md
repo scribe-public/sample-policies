@@ -5,7 +5,7 @@
 **Rego Source:** [push-rules-set.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-rules-set.rego)  
 **Short Description:** Verify push rules are set for the GitLab project.  
 **Labels:** Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

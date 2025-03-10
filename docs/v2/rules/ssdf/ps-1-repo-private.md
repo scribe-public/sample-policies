@@ -6,7 +6,7 @@
 **Mitigation:** Ensures that repositories remain private, reducing the risk of sensitive code being exposed to unauthorized parties.
   
 **Labels:** SSDF  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Rule Parameters (`with`)  

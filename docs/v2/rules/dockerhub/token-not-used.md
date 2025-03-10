@@ -5,7 +5,7 @@
 **Rego Source:** [token-not-used.rego](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-not-used.rego)  
 **Short Description:** Verify that there are no unused Dockerhub.  
 **Labels:** Dockerhub  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

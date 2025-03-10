@@ -5,7 +5,7 @@
 **Rego Source:** [commits-validated.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commits-validated.rego)  
 **Short Description:** Verify all commits in the GitLab project are validated.  
 **Labels:** Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

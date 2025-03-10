@@ -6,7 +6,7 @@
 **Mitigation:** Enforces two-factor authentication (2FA), significantly reducing the risk of compromised credentials.
   
 **Labels:** SSDF  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Rule Parameters (`with`)  

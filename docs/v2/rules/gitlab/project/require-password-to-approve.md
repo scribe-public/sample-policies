@@ -5,7 +5,7 @@
 **Rego Source:** [require-password-to-approve.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/require-password-to-approve.rego)  
 **Short Description:** Verify the binary field `require_password_to_approve` is set for the GitLab project.  
 **Labels:** Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

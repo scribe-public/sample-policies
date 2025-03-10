@@ -5,7 +5,7 @@
 **Rego Source:** [protect-ci-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/protect-ci-secrets.rego)  
 **Short Description:** Verify secrets in the GitLab project are not shared.  
 **Labels:** Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

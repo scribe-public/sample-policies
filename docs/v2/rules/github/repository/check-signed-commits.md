@@ -5,7 +5,7 @@
 **Rego Source:** [check-signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/check-signed-commits.rego)  
 **Short Description:** Verify all commits in the GitHub repository are signed.  
 **Labels:** GitHub, Repository  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

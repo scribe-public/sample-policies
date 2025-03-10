@@ -5,7 +5,7 @@
 **Rego Source:** [blocked-images.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/blocked-images.rego)  
 **Short Description:** Verify only container images specified in the Allowed List run within the Kubernetes namespace.  
 **Labels:** K8s, Namespace  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

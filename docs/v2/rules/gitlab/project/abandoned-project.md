@@ -5,7 +5,7 @@
 **Rego Source:** [abandoned-project.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.rego)  
 **Short Description:** Verify the GitLab project is active for a specified duration.  
 **Labels:** Gitlab, Project  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  

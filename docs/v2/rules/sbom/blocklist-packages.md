@@ -5,7 +5,7 @@
 **Rego Source:** [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/blocklist-packages.rego)  
 **Short Description:** Verify the number of disallowed dependencies remains below the specified threshold.  
 **Labels:** SBOM, Image, Blueprint  
-> Evidence for this rule **IS NOT** required by default but is recommended
+> Evidence for this rule **IS NOT** required by default but is recommended.
 
 
 ## Evidence Requirements  
