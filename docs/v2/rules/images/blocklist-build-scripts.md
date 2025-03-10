@@ -8,7 +8,18 @@
 
 Verify no build scripts commands appear in block list.
 
+
+## Mitigation  
+Prevents the execution of unauthorized or insecure build scripts during the image build process, reducing the risk of malicious command injection and ensuring a more secure supply chain.
+
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
+
+
+## Description  
+This rule inspects the SBOM (in CycloneDX JSON format) for each Layer component and specifically looks for a property named "CreatedBy". 
+It then checks whether the value of this property contains any substrings specified in the 'blocklist' parameter. 
+If a match is found, the rule generates a violation indicating that a disallowed build script command was used during the build process.
 
 
 ## Evidence Requirements  

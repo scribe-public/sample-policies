@@ -8,7 +8,24 @@
 
 Verify the image is not older than the specified threshold.
 
+
+## Mitigation  
+Prevents the deployment of outdated container images—which may include unpatched vulnerabilities or outdated dependencies— by enforcing a maximum age limit based on the image's build time.
+
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
+
+
+## Description  
+This rule extracts the Image creation timestamp from the SBOM evidence. It searches for a property named "created" 
+within the image's metadata (specifically under `metadata.component.properties`). The creation timestamp is parsed using RFC 3339.
+
+The rule compares the current time with the sum of the creation time and the maximum allowed age (by days). If the current time exceeds this sum, 
+the rule flags the image as too old and generates a violation with details on the calculated maximum allowed time.
+
+**Evidence Requirements:**
+- Evidence must be provided in the `cyclonedx-json` format.
+- The SBOM must contain a component under `metadata.component.properties` with a property named "created" in valid RFC 3339 format.
 
 
 ## Evidence Requirements  
