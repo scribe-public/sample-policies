@@ -1,7 +1,8 @@
 # Rule: Enforce 2FA
 
-**ID**: `PS.1.1`  
-**Source**: [v2/rules/ssdf/ps-1-2fa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/ssdf/ps-1-2fa.yaml)  
+**ID**: `PS.1.1`
+**Source**: [v2/rules/ssdf/ps-1-2fa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/ssdf/ps-1-2fa.yaml)
+**Uses**: `ssdf/ps-1-2fa@v2/rules
 
 **Labels**: SSDF
 

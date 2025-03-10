@@ -1,8 +1,9 @@
 # Rule: GitLab pipeline verify labels exist
 
-**ID**: `gitlab-pipeline-verify-labels-exist`  
-**Source**: [v2/rules/gitlab/pipeline/verify-labels-exist.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels-exist.yaml)  
-**Rego File Path**: `verify-labels-exist.rego`  
+**ID**: `gitlab-pipeline-verify-labels-exist`
+**Source**: [v2/rules/gitlab/pipeline/verify-labels-exist.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels-exist.yaml)
+**Uses**: `gitlab/pipeline/verify-labels-exist@v2/rules
+**Rego File Path**: `verify-labels-exist.rego`
 
 **Labels**: Gitlab, Pipeline
 

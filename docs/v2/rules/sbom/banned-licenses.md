@@ -1,8 +1,9 @@
 # Rule: Restrict Disallowed SBOM Licenses
 
-**ID**: `sbom-disallowed-licenses`  
-**Source**: [v2/rules/sbom/banned-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.yaml)  
-**Rego File Path**: `banned-licenses.rego`  
+**ID**: `sbom-disallowed-licenses`
+**Source**: [v2/rules/sbom/banned-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.yaml)
+**Uses**: `sbom/banned-licenses@v2/rules
+**Rego File Path**: `banned-licenses.rego`
 
 **Labels**: SBOM, Image
 

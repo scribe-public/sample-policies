@@ -1,8 +1,9 @@
 # Rule: Verify Repository Is Private
 
-**ID**: `github-repo-private`  
-**Source**: [v2/rules/github/repository/repo-private.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/repo-private.yaml)  
-**Rego File Path**: `repo-private.rego`  
+**ID**: `github-repo-private`
+**Source**: [v2/rules/github/repository/repo-private.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/repo-private.yaml)
+**Uses**: `github/repository/repo-private@v2/rules
+**Rego File Path**: `repo-private.rego`
 
 **Labels**: GitHub, Repository
 

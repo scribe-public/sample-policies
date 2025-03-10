@@ -1,8 +1,9 @@
 # Rule: Verify Push Protection Setting
 
-**ID**: `github-repo-push-protection`  
-**Source**: [v2/rules/github/repository/push-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/push-protection.yaml)  
-**Rego File Path**: `push-protection.rego`  
+**ID**: `github-repo-push-protection`
+**Source**: [v2/rules/github/repository/push-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/push-protection.yaml)
+**Uses**: `github/repository/push-protection@v2/rules
+**Rego File Path**: `push-protection.rego`
 
 **Labels**: GitHub, Repository
 

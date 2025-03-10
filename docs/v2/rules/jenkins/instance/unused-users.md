@@ -1,8 +1,9 @@
 # Rule: Disallow Unused Users
 
-**ID**: `jenkins-unused-users`  
-**Source**: [v2/rules/jenkins/instance/unused-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/instance/unused-users.yaml)  
-**Rego File Path**: `unused-users.rego`  
+**ID**: `jenkins-unused-users`
+**Source**: [v2/rules/jenkins/instance/unused-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/instance/unused-users.yaml)
+**Uses**: `jenkins/instance/unused-users@v2/rules
+**Rego File Path**: `unused-users.rego`
 
 **Labels**: Jenkins, Instance
 

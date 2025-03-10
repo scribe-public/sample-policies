@@ -1,8 +1,9 @@
 # Rule: Allowed Admins in GitLab Organization
 
-**ID**: `gitlab-org-allowed-admins`  
-**Source**: [v2/rules/gitlab/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-admins.yaml)  
-**Rego File Path**: `allow-admins.rego`  
+**ID**: `gitlab-org-allowed-admins`
+**Source**: [v2/rules/gitlab/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-admins.yaml)
+**Uses**: `gitlab/org/allow-admins@v2/rules
+**Rego File Path**: `allow-admins.rego`
 
 **Labels**: Gitlab, Organization
 

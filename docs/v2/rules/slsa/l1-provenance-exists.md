@@ -1,8 +1,9 @@
 # Rule: Verify Provenance Document Exists
 
-**ID**: `SLSA.L1`  
-**Source**: [v2/rules/slsa/l1-provenance-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/l1-provenance-exists.yaml)  
-**Rego File Path**: `l1-provenance-exists.rego`  
+**ID**: `SLSA.L1`
+**Source**: [v2/rules/slsa/l1-provenance-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/l1-provenance-exists.yaml)
+**Uses**: `slsa/l1-provenance-exists@v2/rules
+**Rego File Path**: `l1-provenance-exists.rego`
 
 **Labels**: SLSA
 

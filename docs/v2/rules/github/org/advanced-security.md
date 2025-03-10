@@ -1,8 +1,9 @@
 # Rule: Verify advanced_security_enabled_for_new_repositories setting
 
-**ID**: `github-org-advanced-security`  
-**Source**: [v2/rules/github/org/advanced-security.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/advanced-security.yaml)  
-**Rego File Path**: `advanced-security.rego`  
+**ID**: `github-org-advanced-security`
+**Source**: [v2/rules/github/org/advanced-security.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/advanced-security.yaml)
+**Uses**: `github/org/advanced-security@v2/rules
+**Rego File Path**: `advanced-security.rego`
 
 **Labels**: GitHub, Organization
 

@@ -1,8 +1,9 @@
 # Rule: Enable Secrets Prevention in GitLab Project
 
-**ID**: `gitlab-project-verify-prevent_secrets`  
-**Source**: [v2/rules/gitlab/project/prevent-secrets-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/prevent-secrets-check.yaml)  
-**Rego File Path**: `prevent-secrets-check.rego`  
+**ID**: `gitlab-project-verify-prevent_secrets`
+**Source**: [v2/rules/gitlab/project/prevent-secrets-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/prevent-secrets-check.yaml)
+**Uses**: `gitlab/project/prevent-secrets-check@v2/rules
+**Rego File Path**: `prevent-secrets-check.rego`
 
 **Labels**: Gitlab, Project
 

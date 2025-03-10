@@ -1,8 +1,9 @@
 # Rule: Verify Repository Requires Commit Signoff
 
-**ID**: `github-repo-web-commit-signoff`  
-**Source**: [v2/rules/github/repository/web-commit-signoff.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/web-commit-signoff.yaml)  
-**Rego File Path**: `web-commit-signoff.rego`  
+**ID**: `github-repo-web-commit-signoff`
+**Source**: [v2/rules/github/repository/web-commit-signoff.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/web-commit-signoff.yaml)
+**Uses**: `github/repository/web-commit-signoff@v2/rules
+**Rego File Path**: `web-commit-signoff.rego`
 
 **Labels**: GitHub, Repository
 

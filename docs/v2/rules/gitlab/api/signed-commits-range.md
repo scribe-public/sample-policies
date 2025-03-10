@@ -1,8 +1,9 @@
 # Rule: Sign Selected Commit Range in GitLab
 
-**ID**: `gitlab-api-signed-commits-range`  
-**Source**: [v2/rules/gitlab/api/signed-commits-range.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/signed-commits-range.yaml)  
-**Rego File Path**: `signed-commits-range.rego`  
+**ID**: `gitlab-api-signed-commits-range`
+**Source**: [v2/rules/gitlab/api/signed-commits-range.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/signed-commits-range.yaml)
+**Uses**: `gitlab/api/signed-commits-range@v2/rules
+**Rego File Path**: `signed-commits-range.rego`
 
 **Labels**: Gitlab, API
 

@@ -1,8 +1,9 @@
 # Rule: Verify dependabot_security_updates_enabled_for_new_repositories setting
 
-**ID**: `github-org-dependabot-security-updates`  
-**Source**: [v2/rules/github/org/dependabot-security-updates.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates.yaml)  
-**Rego File Path**: `dependabot-security-updates.rego`  
+**ID**: `github-org-dependabot-security-updates`
+**Source**: [v2/rules/github/org/dependabot-security-updates.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates.yaml)
+**Uses**: `github/org/dependabot-security-updates@v2/rules
+**Rego File Path**: `dependabot-security-updates.rego`
 
 **Labels**: GitHub, Organization
 

@@ -1,8 +1,9 @@
 # Rule: Enforce SBOM Freshness
 
-**ID**: `fresh-sbom`  
-**Source**: [v2/rules/sbom/fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.yaml)  
-**Rego File Path**: `fresh-sbom.rego`  
+**ID**: `fresh-sbom`
+**Source**: [v2/rules/sbom/fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.yaml)
+**Uses**: `sbom/fresh-sbom@v2/rules
+**Rego File Path**: `fresh-sbom.rego`
 
 **Labels**: SBOM
 

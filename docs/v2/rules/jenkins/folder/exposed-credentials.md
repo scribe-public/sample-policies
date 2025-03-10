@@ -1,8 +1,9 @@
 # Rule: Verify Exposed Credentials
 
-**ID**: `jenkins-exposed-credentials`  
-**Source**: [v2/rules/jenkins/folder/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.yaml)  
-**Rego File Path**: `exposed-credentials.rego`  
+**ID**: `jenkins-exposed-credentials`
+**Source**: [v2/rules/jenkins/folder/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.yaml)
+**Uses**: `jenkins/folder/exposed-credentials@v2/rules
+**Rego File Path**: `exposed-credentials.rego`
 
 **Labels**: Jenkins, Folder
 

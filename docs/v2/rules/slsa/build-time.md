@@ -1,8 +1,9 @@
 # Rule: Verify build time
 
-**ID**: `slsa-build-time`  
-**Source**: [v2/rules/slsa/build-time.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.yaml)  
-**Rego File Path**: `build-time.rego`  
+**ID**: `slsa-build-time`
+**Source**: [v2/rules/slsa/build-time.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.yaml)
+**Uses**: `slsa/build-time@v2/rules
+**Rego File Path**: `build-time.rego`
 
 **Labels**: SLSA, Image
 

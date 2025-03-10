@@ -1,8 +1,9 @@
 # Rule: Run Secrets Scanning in GitLab Project
 
-**ID**: `gitlab-project-secrets-scanning`  
-**Source**: [v2/rules/gitlab/project/secrets-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scanning.yaml)  
-**Rego File Path**: `secrets-scanning.rego`  
+**ID**: `gitlab-project-secrets-scanning`
+**Source**: [v2/rules/gitlab/project/secrets-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scanning.yaml)
+**Uses**: `gitlab/project/secrets-scanning@v2/rules
+**Rego File Path**: `secrets-scanning.rego`
 
 **Labels**: Gitlab, Project
 

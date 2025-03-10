@@ -1,8 +1,9 @@
 # Rule: Ensure All Commits Are Signed in GitLab Project
 
-**ID**: `gitlab-project-signed-commits`  
-**Source**: [v2/rules/gitlab/project/check-signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-signed-commits.yaml)  
-**Rego File Path**: `check-signed-commits.rego`  
+**ID**: `gitlab-project-signed-commits`
+**Source**: [v2/rules/gitlab/project/check-signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-signed-commits.yaml)
+**Uses**: `gitlab/project/check-signed-commits@v2/rules
+**Rego File Path**: `check-signed-commits.rego`
 
 **Labels**: Gitlab, Project
 

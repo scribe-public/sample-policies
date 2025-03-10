@@ -1,8 +1,9 @@
 # Rule: Enforce SBOM Dependencies
 
-**ID**: `sbom-required-dependencies`  
-**Source**: [v2/rules/sbom/required-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.yaml)  
-**Rego File Path**: `required-packages.rego`  
+**ID**: `sbom-required-dependencies`
+**Source**: [v2/rules/sbom/required-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.yaml)
+**Uses**: `sbom/required-packages@v2/rules
+**Rego File Path**: `required-packages.rego`
 
 **Labels**: SBOM, Image
 

@@ -2,6 +2,7 @@
 
 **ID**: `SLSA.L1`  
 **Version**: `1.0.0`  
+**Bundle-Version**: `1.0.0`  
 **Source**: [v2/initiatives/slsa.l1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l1.yaml)  
 
 **Short Description**: Evaluate SLSA L1

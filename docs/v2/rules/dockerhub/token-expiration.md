@@ -1,8 +1,9 @@
 # Rule: Verify DockerHub Tokens are Active
 
-**ID**: `dockerhub-token-expiration`  
-**Source**: [v2/rules/dockerhub/token-expiration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-expiration.yaml)  
-**Rego File Path**: `token-expiration.rego`  
+**ID**: `dockerhub-token-expiration`
+**Source**: [v2/rules/dockerhub/token-expiration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-expiration.yaml)
+**Uses**: `dockerhub/token-expiration@v2/rules
+**Rego File Path**: `token-expiration.rego`
 
 **Labels**: Dockerhub
 

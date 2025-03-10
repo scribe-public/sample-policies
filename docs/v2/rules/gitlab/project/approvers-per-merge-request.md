@@ -1,8 +1,9 @@
 # Rule: Restrict Approvers Per Merge Request
 
-**ID**: `gitlab-project-approvers-per-merge-request`  
-**Source**: [v2/rules/gitlab/project/approvers-per-merge-request.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvers-per-merge-request.yaml)  
-**Rego File Path**: `approvers-per-merge-request.rego`  
+**ID**: `gitlab-project-approvers-per-merge-request`
+**Source**: [v2/rules/gitlab/project/approvers-per-merge-request.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvers-per-merge-request.yaml)
+**Uses**: `gitlab/project/approvers-per-merge-request@v2/rules
+**Rego File Path**: `approvers-per-merge-request.rego`
 
 **Labels**: Gitlab, Project
 

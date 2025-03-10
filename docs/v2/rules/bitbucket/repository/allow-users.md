@@ -1,8 +1,9 @@
 # Rule: Allowed Repository Users
 
-**ID**: `bb-repo-allowed-repository-users`  
-**Source**: [v2/rules/bitbucket/repository/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-users.yaml)  
-**Rego File Path**: `allow-users.rego`  
+**ID**: `bb-repo-allowed-repository-users`
+**Source**: [v2/rules/bitbucket/repository/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-users.yaml)
+**Uses**: `bitbucket/repository/allow-users@v2/rules
+**Rego File Path**: `allow-users.rego`
 
 **Labels**: Bitbucket, Repository
 

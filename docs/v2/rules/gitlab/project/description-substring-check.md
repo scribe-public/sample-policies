@@ -1,8 +1,9 @@
 # Rule: Check Description Substring
 
-**ID**: `gitlab-project-description-substring-check`  
-**Source**: [v2/rules/gitlab/project/description-substring-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/description-substring-check.yaml)  
-**Rego File Path**: `description-substring-check.rego`  
+**ID**: `gitlab-project-description-substring-check`
+**Source**: [v2/rules/gitlab/project/description-substring-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/description-substring-check.yaml)
+**Uses**: `gitlab/project/description-substring-check@v2/rules
+**Rego File Path**: `description-substring-check.rego`
 
 **Labels**: Gitlab, Project
 

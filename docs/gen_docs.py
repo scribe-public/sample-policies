@@ -24,6 +24,34 @@ def ensure_output_dirs():
     os.makedirs(RULES_OUTDIR, exist_ok=True)
     os.makedirs(INITIATIVES_OUTDIR, exist_ok=True)
 
+def filepath_to_uses(filepath: str) -> str:
+    """
+    Translates a file path in the format 'vX/rules/group/.../rule.yaml'
+    into a 'uses' reference of the format 'group/.../rule@vX/rules'.
+
+    For example:
+      Input:  "v2/rules/sbom/verify-labels.yaml"
+      Output: "sbom/verify-labels@v2/rules"
+    """
+    # Split the file path by '/'
+    parts = filepath.split('/')
+    if len(parts) < 3 or parts[1] != "rules":
+        raise ValueError("File path must be in the format 'vX/rules/group/.../rule.yaml'")
+    
+    # The first part is the version (e.g., 'v2')
+    version = parts[0]
+    
+    # Skip the second element ("rules") and use the rest for the group and rule
+    group_and_rule_parts = parts[2:]
+    
+    # Remove the file extension from the last element (the rule filename)
+    group_and_rule_parts[-1] = os.path.splitext(group_and_rule_parts[-1])[0]
+    
+    # Join the remaining parts to form the rule path
+    rule_path = "/".join(group_and_rule_parts)
+    
+    # Build and return the uses reference in the required format
+    return f"{rule_path}@{version}/rules"
 
 def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
@@ -41,11 +69,13 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     source_link = os.path.join(base_source_git, file_path)
     md = []
     md.append(f"# Rule: {name}\n")
-    md.append(f"**ID**: `{rule_id}`  ")
-    md.append(f"**Source**: [{file_path}]({source_link})  ")
+    md.append(f"**ID**: `{rule_id}`")
+    md.append(f"**Source**: [{file_path}]({source_link})")
+    # Calculate 'uses' from filepath vX/rules/group/.../rule.yaml to uses group/.../rule@vX/rules
+    md.append(f"**Uses**: `{filepath_to_uses(file_path)}")
 
     if path:
-        md.append(f"**Rego File Path**: `{path}`  ")
+        md.append(f"**Rego File Path**: `{path}`")
     md.append("")
 
     if labels:
@@ -86,9 +116,9 @@ def get_current_repo_context():
     
     print(f"Current branch: {current_branch}")
     print(f"Remote URL: {remote_repo}")
-    norm_github_repo = remote_repo.replace('git@github.com:','').replace('https://github.com/','')
+    norm_github_repo = remote_repo.replace('git@github.com:','https://github.com/').strip('.git')
     # norm_github_repo_with_branch = os.path.join(norm_github_repo, f"tree/{current_branch}")
-    # print(f"Normalized GitHub repo: {norm_github_repo_with_branch}")
+    print(f"Normalized GitHub repo: {norm_github_repo}")
 
     return norm_github_repo
 
@@ -130,8 +160,21 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
       2) Detailed Controls: for each control, a subheading with its mitigation, plus a table of rules.
     """
     init_id = initiative_data.get("id", os.path.splitext(file_name)[0])
+    if init_id == "":
+        print(f"# Warning: 'id' field is missing for {file_path}")
+
+    # if file_path has suffix "vX/initiatives/", remove it
+    if file_path.startswith("v") and "initiatives" in file_path:
+        bundle_version = file_path.split("/")[0]
+
     version = initiative_data.get("version", "")
+    if version == "":
+        print(f"# Warning: 'version' field is missing for {file_path}")
+
     name = initiative_data.get("name", init_id)
+    if name == "":
+        print(f"# Warning: 'name' field is missing for {file_path}")
+
     description = initiative_data.get("description", "")
     full_description = initiative_data.get("full-description", "")
     mitigation = initiative_data.get("mitigation", "")
@@ -142,6 +185,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md.append(f"# Initiative: {name}\n")
     md.append(f"**ID**: `{init_id}`  ")
     md.append(f"**Version**: `{version}`  ")
+    md.append(f"**Bundle-Version**: `{version}`  ")
     md.append(f"**Source**: [{file_path}]({source_link})  ")
     md.append("")
     md.append(f"**Short Description**: {description}\n")

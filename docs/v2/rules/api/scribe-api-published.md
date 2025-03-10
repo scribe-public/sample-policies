@@ -1,8 +1,9 @@
 # Rule: Scribe Published Policy
 
-**ID**: `scribe-published-policy`  
-**Source**: [v2/rules/api/scribe-api-published.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-published.yaml)  
-**Rego File Path**: `scribe-api-published.rego`  
+**ID**: `scribe-published-policy`
+**Source**: [v2/rules/api/scribe-api-published.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-published.yaml)
+**Uses**: `api/scribe-api-published@v2/rules
+**Rego File Path**: `scribe-api-published.rego`
 
 **Labels**: Scribe
 
