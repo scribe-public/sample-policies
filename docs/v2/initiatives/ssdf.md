@@ -40,7 +40,7 @@ This initiative enforces key controls from the Secure Software Development Frame
 Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity.
 
 
-## Mitigation  
+### Mitigation  
 Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
 
 
@@ -56,7 +56,7 @@ Mitigates the risk of deploying untrusted or compromised container images by enf
 Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced.
 
 
-## Mitigation  
+### Mitigation  
 Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
 
 
@@ -73,7 +73,7 @@ Reduces risks of unauthorized access and changes by ensuring strong organization
 Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy.
 
 
-## Mitigation  
+### Mitigation  
 Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
 
 
