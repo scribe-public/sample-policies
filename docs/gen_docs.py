@@ -209,9 +209,14 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md.append(f"**Version:** `{version}`  ")
     md.append(f"**Bundle-Version:** `{bundle_version}`  ")
     md.append(f"**Source:** [{file_path}]({source_link})  ")
-    md.append(f"**Short Description:** {description}  ")
+    md.append(f"\n{description}")
+    md.append("")
+
     if mitigation:
-        md.append(f"**Mitigation:** {mitigation}  ")
+        md.append("\n## Mitigation  ")
+        md.append(mitigation)
+        md.append("")
+        
     if help_url:
         md.append(f"**Help:** {help_url}  ")
 
