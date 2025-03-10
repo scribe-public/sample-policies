@@ -1,5 +1,5 @@
 # Forbid Token Scopes in GitLab Organization  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-org-disallowed-token-scope`  
 **Uses:** `gitlab/org/forbid-token-scopes@v2/rules`  
 **Source:** [v2/rules/gitlab/org/forbid-token-scopes.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/forbid-token-scopes.yaml)  

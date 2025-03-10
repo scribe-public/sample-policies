@@ -1,5 +1,5 @@
 # Disallow Banned Approvers  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-project-disallowed-banned-approvers`  
 **Uses:** `gitlab/project/disallowed-banned-approvers@v2/rules`  
 **Source:** [v2/rules/gitlab/project/disallowed-banned-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.yaml)  

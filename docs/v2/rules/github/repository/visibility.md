@@ -1,5 +1,5 @@
 # Allowed Public Repositories  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-repo-visibility`  
 **Uses:** `github/repository/visibility@v2/rules`  
 **Source:** [v2/rules/github/repository/visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.yaml)  

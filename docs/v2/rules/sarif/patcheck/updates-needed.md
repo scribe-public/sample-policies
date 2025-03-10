@@ -1,5 +1,5 @@
 # SARIF Update Needed  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `sarif-update-needed`  
 **Uses:** `sarif/patcheck/updates-needed@v2/rules`  
 **Source:** [v2/rules/sarif/patcheck/updates-needed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/patcheck/updates-needed.yaml)  

@@ -1,5 +1,5 @@
 # Verify that artifact has no disallowed builder dependencies  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `slsa-verify-byproducts`  
 **Uses:** `slsa/verify-byproducts@v2/rules`  
 **Source:** [v2/rules/slsa/verify-byproducts.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-byproducts.yaml)  

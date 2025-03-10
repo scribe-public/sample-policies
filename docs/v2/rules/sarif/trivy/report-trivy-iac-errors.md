@@ -1,5 +1,5 @@
 # Verify IaC Misconfiguration Threshold in Trivy SARIF  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `trivy-iac-findings`  
 **Uses:** `sarif/trivy/report-trivy-iac-errors@v2/rules`  
 **Source:** [v2/rules/sarif/trivy/report-trivy-iac-errors.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/report-trivy-iac-errors.yaml)  

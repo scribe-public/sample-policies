@@ -1,5 +1,5 @@
 # Verify Rule Compliance in SARIF  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `sarif-policy`  
 **Uses:** `sarif/verify-sarif@v2/rules`  
 **Source:** [v2/rules/sarif/verify-sarif.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.yaml)  

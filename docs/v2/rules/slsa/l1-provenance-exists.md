@@ -1,5 +1,5 @@
 # Verify Provenance Document Exists  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `SLSA.L1`  
 **Uses:** `slsa/l1-provenance-exists@v2/rules`  
 **Source:** [v2/rules/slsa/l1-provenance-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/l1-provenance-exists.yaml)  

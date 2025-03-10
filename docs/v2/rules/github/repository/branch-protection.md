@@ -1,5 +1,5 @@
 # Verify Branch Protection Setting  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-repo-branch-protection`  
 **Uses:** `github/repository/branch-protection@v2/rules`  
 **Source:** [v2/rules/github/repository/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-protection.yaml)  

@@ -1,5 +1,5 @@
 # Verify Trivy SARIF Report Compliance  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `trivy-report`  
 **Uses:** `sarif/trivy/verify-trivy-report@v2/rules`  
 **Source:** [v2/rules/sarif/trivy/verify-trivy-report.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/verify-trivy-report.yaml)  

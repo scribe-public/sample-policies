@@ -1,5 +1,5 @@
 # Verify two_factor_requirement_enabled setting  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-org-2fa`  
 **Uses:** `github/org/2fa@v2/rules`  
 **Source:** [v2/rules/github/org/2fa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/2fa.yaml)  

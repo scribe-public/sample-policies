@@ -1,5 +1,5 @@
 # Scribe Published Policy  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `scribe-published-policy`  
 **Uses:** `api/scribe-api-published@v2/rules`  
 **Source:** [v2/rules/api/scribe-api-published.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-published.yaml)  

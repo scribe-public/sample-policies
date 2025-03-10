@@ -1,5 +1,5 @@
 # Forbid Large Images  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `images-project-large-image`  
 **Uses:** `images/forbid-large-images@v2/rules`  
 **Source:** [v2/rules/images/forbid-large-images.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/forbid-large-images.yaml)  

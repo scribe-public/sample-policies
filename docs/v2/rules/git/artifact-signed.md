@@ -1,5 +1,5 @@
 # Git Artifact Signed  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `git-artifact-signed`  
 **Uses:** `git/artifact-signed@v2/rules`  
 **Source:** [v2/rules/git/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/artifact-signed.yaml)  

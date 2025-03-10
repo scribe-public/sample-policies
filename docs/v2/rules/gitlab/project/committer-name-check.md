@@ -1,5 +1,5 @@
 # Allowed Committer Names in GitLab Project  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-project-allowed-committer-names`  
 **Uses:** `gitlab/project/committer-name-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/committer-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/committer-name-check.yaml)  

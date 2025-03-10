@@ -1,5 +1,5 @@
 # Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-org-pp-custom-link`  
 **Uses:** `github/org/pp-custom-link@v2/rules`  
 **Source:** [v2/rules/github/org/pp-custom-link.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.yaml)  

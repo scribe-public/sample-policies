@@ -1,5 +1,5 @@
 # Branch protection enabled in GitHub repository  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-api-branch-protection`  
 **Uses:** `github/api/branch-protection@v2/rules`  
 **Source:** [v2/rules/github/api/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.yaml)  

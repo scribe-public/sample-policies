@@ -1,5 +1,5 @@
 # Restrict Coding Permissions  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `git-coding-permissions`  
 **Uses:** `git/coding-permissions@v2/rules`  
 **Source:** [v2/rules/git/coding-permissions.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.yaml)  

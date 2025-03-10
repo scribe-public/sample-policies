@@ -1,5 +1,5 @@
 # Verify advanced security setting is enabled  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-org-advanced-security`  
 **Uses:** `github/org/advanced-security@v2/rules`  
 **Source:** [v2/rules/github/org/advanced-security.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/advanced-security.yaml)  

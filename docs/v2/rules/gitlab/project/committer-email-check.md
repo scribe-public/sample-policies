@@ -1,5 +1,5 @@
 # Allowed Committer Emails in GitLab Project  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-project-allowed-committer-emails`  
 **Uses:** `gitlab/project/committer-email-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/committer-email-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/committer-email-check.yaml)  

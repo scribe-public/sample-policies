@@ -1,5 +1,5 @@
 # Verify No Cache Usage Exists in Repository  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-repo-no-cache-usage`  
 **Uses:** `github/repository/no-cache-usage@v2/rules`  
 **Source:** [v2/rules/github/repository/no-cache-usage.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/no-cache-usage.yaml)  

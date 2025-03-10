@@ -1,5 +1,5 @@
 # Verify Artifact Signature in SARIF  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `sarif-artifact-signed`  
 **Uses:** `sarif/artifact-signed@v2/rules`  
 **Source:** [v2/rules/sarif/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/artifact-signed.yaml)  

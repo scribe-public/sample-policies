@@ -1,5 +1,5 @@
 # Require SBOM Signature  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `sbom-signed`  
 **Uses:** `sbom/artifact-signed@v2/rules`  
 **Source:** [v2/rules/sbom/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/artifact-signed.yaml)  

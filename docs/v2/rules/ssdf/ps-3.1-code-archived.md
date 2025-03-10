@@ -1,5 +1,5 @@
 # Code archived  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `PS.3.1`  
 **Uses:** `ssdf/ps-3.1-code-archived@v2/rules`  
 **Source:** [v2/rules/ssdf/ps-3.1-code-archived.yaml](https://github.com/scribe-public/sample-policies/v2/rules/ssdf/ps-3.1-code-archived.yaml)  

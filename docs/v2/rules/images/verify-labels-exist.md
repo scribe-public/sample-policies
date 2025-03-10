@@ -1,5 +1,5 @@
 # Require Image Labels  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `required-image-labels`  
 **Uses:** `images/verify-labels-exist@v2/rules`  
 **Source:** [v2/rules/images/verify-labels-exist.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels-exist.yaml)  

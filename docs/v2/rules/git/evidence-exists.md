@@ -1,5 +1,5 @@
 # Required Git Evidence Exists  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `required-git-evidence`  
 **Uses:** `git/evidence-exists@v2/rules`  
 **Source:** [v2/rules/git/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.yaml)  

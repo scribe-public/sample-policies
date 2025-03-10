@@ -1,5 +1,5 @@
 # SSDF Client Initiative  
-** Type:** Initiative  
+**Type:** Initiative  
 **ID:** `SSDF`  
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  

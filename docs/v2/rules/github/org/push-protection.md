@@ -1,5 +1,5 @@
 # Verify Secret_Scanning_Push_Protection_Enabled_For_New_Repositories Setting  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-org-push-protection`  
 **Uses:** `github/org/push-protection@v2/rules`  
 **Source:** [v2/rules/github/org/push-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection.yaml)  

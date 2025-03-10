@@ -1,5 +1,5 @@
 # Sign Selected Commit Range in GitLab  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-api-signed-commits-range`  
 **Uses:** `gitlab/api/signed-commits-range@v2/rules`  
 **Source:** [v2/rules/gitlab/api/signed-commits-range.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/signed-commits-range.yaml)  

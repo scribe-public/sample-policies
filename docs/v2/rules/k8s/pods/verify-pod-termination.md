@@ -1,5 +1,5 @@
 # Verify Pod Termination  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `k8s-pods-verify-pod-termination`  
 **Uses:** `k8s/pods/verify-pod-termination@v2/rules`  
 **Source:** [v2/rules/k8s/pods/verify-pod-termination.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/pods/verify-pod-termination.yaml)  

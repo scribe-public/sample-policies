@@ -1,5 +1,5 @@
 # Verify DockerHub Tokens are Active  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `dockerhub-token-expiration`  
 **Uses:** `dockerhub/token-expiration@v2/rules`  
 **Source:** [v2/rules/dockerhub/token-expiration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-expiration.yaml)  

@@ -1,5 +1,5 @@
 # Verify Secret_Scanning_Push_Protection Setting  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-org-push-protection-sa`  
 **Uses:** `github/org/push-protection-sa@v2/rules`  
 **Source:** [v2/rules/github/org/push-protection-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection-sa.yaml)  
