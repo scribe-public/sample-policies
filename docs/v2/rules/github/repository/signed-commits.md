@@ -3,7 +3,7 @@
 **ID**: `github-repo-signed-commits`
 **Source**: [v2/rules/github/repository/signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.yaml)
 **Uses**: `github/repository/signed-commits@v2/rules
-**Rego File Path**: `signed-commits.rego`
+**Rego Source**: [signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.rego)
 
 **Labels**: GitHub, Repository
 

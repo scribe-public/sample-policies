@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-required-minimal-approvers`
 **Source**: [v2/rules/gitlab/project/required-minimal-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/required-minimal-approvers.yaml)
 **Uses**: `gitlab/project/required-minimal-approvers@v2/rules
-**Rego File Path**: `required-minimal-approvers.rego`
+**Rego Source**: [required-minimal-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/required-minimal-approvers.rego)
 
 **Labels**: Gitlab, Project
 

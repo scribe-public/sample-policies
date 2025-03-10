@@ -3,7 +3,7 @@
 **ID**: `gitlab-pipeline-verify-labels`
 **Source**: [v2/rules/gitlab/pipeline/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels.yaml)
 **Uses**: `gitlab/pipeline/verify-labels@v2/rules
-**Rego File Path**: `verify-labels.rego`
+**Rego Source**: [verify-labels.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels.rego)
 
 **Labels**: Gitlab, Pipeline
 

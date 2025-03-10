@@ -3,7 +3,7 @@
 **ID**: `scribe-cve`
 **Source**: [v2/rules/api/scribe-api-cve.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-cve.yaml)
 **Uses**: `api/scribe-api-cve@v2/rules
-**Rego File Path**: `scribe-api.rego`
+**Rego Source**: [scribe-api.rego](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api.rego)
 
 **Labels**: SCA, Blueprint, Scribe
 

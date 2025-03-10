@@ -3,7 +3,7 @@
 **ID**: `sarif-policy`
 **Source**: [v2/rules/sarif/verify-sarif.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.yaml)
 **Uses**: `sarif/verify-sarif@v2/rules
-**Rego File Path**: `verify-sarif.rego`
+**Rego Source**: [verify-sarif.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.rego)
 
 **Labels**: SARIF
 

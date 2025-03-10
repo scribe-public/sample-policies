@@ -3,7 +3,7 @@
 **ID**: `github-repo-no-org-secrets`
 **Source**: [v2/rules/github/repository/no-org-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/no-org-secrets.yaml)
 **Uses**: `github/repository/no-org-secrets@v2/rules
-**Rego File Path**: `no-org-secrets.rego`
+**Rego Source**: [no-org-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/no-org-secrets.rego)
 
 **Labels**: GitHub, Repository
 

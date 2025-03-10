@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-merge-access-level`
 **Source**: [v2/rules/gitlab/project/merge-access-level.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-access-level.yaml)
 **Uses**: `gitlab/project/merge-access-level@v2/rules
-**Rego File Path**: `merge-access-level.rego`
+**Rego Source**: [merge-access-level.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-access-level.rego)
 
 **Labels**: Gitlab, Project
 

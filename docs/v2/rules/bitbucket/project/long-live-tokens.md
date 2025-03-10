@@ -3,7 +3,7 @@
 **ID**: `bb-project-long-live-tokens`
 **Source**: [v2/rules/bitbucket/project/long-live-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/long-live-tokens.yaml)
 **Uses**: `bitbucket/project/long-live-tokens@v2/rules
-**Rego File Path**: `long-live-tokens.rego`
+**Rego Source**: [long-live-tokens.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/long-live-tokens.rego)
 
 **Labels**: Bitbucket, Project
 

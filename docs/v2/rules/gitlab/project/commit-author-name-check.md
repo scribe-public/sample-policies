@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-allowed-commit-author-names`
 **Source**: [v2/rules/gitlab/project/commit-author-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-name-check.yaml)
 **Uses**: `gitlab/project/commit-author-name-check@v2/rules
-**Rego File Path**: `commit-author-name-check.rego`
+**Rego Source**: [commit-author-name-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-name-check.rego)
 
 **Labels**: Gitlab, Project
 

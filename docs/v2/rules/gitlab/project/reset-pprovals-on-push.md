@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-reset-pprovals-on-push`
 **Source**: [v2/rules/gitlab/project/reset-pprovals-on-push.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/reset-pprovals-on-push.yaml)
 **Uses**: `gitlab/project/reset-pprovals-on-push@v2/rules
-**Rego File Path**: `reset-pprovals-on-push.rego`
+**Rego Source**: [reset-pprovals-on-push.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/reset-pprovals-on-push.rego)
 
 **Labels**: Gitlab, Project
 

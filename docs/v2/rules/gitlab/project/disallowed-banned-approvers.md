@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-disallowed-banned-approvers`
 **Source**: [v2/rules/gitlab/project/disallowed-banned-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.yaml)
 **Uses**: `gitlab/project/disallowed-banned-approvers@v2/rules
-**Rego File Path**: `disallowed-banned-approvers.rego`
+**Rego Source**: [disallowed-banned-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.rego)
 
 **Labels**: Gitlab, Project
 

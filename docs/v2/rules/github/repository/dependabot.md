@@ -3,7 +3,7 @@
 **ID**: `github-repo-dependabot`
 **Source**: [v2/rules/github/repository/dependabot.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/dependabot.yaml)
 **Uses**: `github/repository/dependabot@v2/rules
-**Rego File Path**: `dependabot.rego`
+**Rego Source**: [dependabot.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/dependabot.rego)
 
 **Labels**: GitHub, Repository
 

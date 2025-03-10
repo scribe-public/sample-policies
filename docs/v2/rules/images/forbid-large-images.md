@@ -3,7 +3,7 @@
 **ID**: `images-project-large-image`
 **Source**: [v2/rules/images/forbid-large-images.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/forbid-large-images.yaml)
 **Uses**: `images/forbid-large-images@v2/rules
-**Rego File Path**: `forbid-large-images.rego`
+**Rego Source**: [forbid-large-images.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/forbid-large-images.rego)
 
 **Labels**: SBOM, Images
 

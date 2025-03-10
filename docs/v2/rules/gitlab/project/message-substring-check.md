@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-message-substring-check`
 **Source**: [v2/rules/gitlab/project/message-substring-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/message-substring-check.yaml)
 **Uses**: `gitlab/project/message-substring-check@v2/rules
-**Rego File Path**: `message-substring-check.rego`
+**Rego Source**: [message-substring-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/message-substring-check.rego)
 
 **Labels**: Gitlab, Project
 

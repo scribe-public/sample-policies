@@ -3,7 +3,7 @@
 **ID**: `file-integrity`
 **Source**: [v2/rules/multievidence/files_integrity.yaml](https://github.com/scribe-public/sample-policies/v2/rules/multievidence/files_integrity.yaml)
 **Uses**: `multievidence/files_integrity@v2/rules
-**Rego File Path**: `files_integrity.rego`
+**Rego Source**: [files_integrity.rego](https://github.com/scribe-public/sample-policies/v2/rules/multievidence/files_integrity.rego)
 
 **Labels**: SBOM
 

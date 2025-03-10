@@ -3,7 +3,7 @@
 **ID**: `fresh-image`
 **Source**: [v2/rules/images/fresh-image.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/fresh-image.yaml)
 **Uses**: `images/fresh-image@v2/rules
-**Rego File Path**: `fresh-image.rego`
+**Rego Source**: [fresh-image.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/fresh-image.rego)
 
 **Labels**: SBOM, Images
 

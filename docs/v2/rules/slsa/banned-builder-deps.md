@@ -3,7 +3,7 @@
 **ID**: `slsa-builder-unallowed-dependencies`
 **Source**: [v2/rules/slsa/banned-builder-deps.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/banned-builder-deps.yaml)
 **Uses**: `slsa/banned-builder-deps@v2/rules
-**Rego File Path**: `banned-builder-deps.rego`
+**Rego Source**: [banned-builder-deps.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/banned-builder-deps.rego)
 
 **Labels**: SLSA, Image
 

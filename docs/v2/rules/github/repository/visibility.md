@@ -3,7 +3,7 @@
 **ID**: `github-repo-visibility`
 **Source**: [v2/rules/github/repository/visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.yaml)
 **Uses**: `github/repository/visibility@v2/rules
-**Rego File Path**: `visibility.rego`
+**Rego Source**: [visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.rego)
 
 **Labels**: GitHub, Repository
 

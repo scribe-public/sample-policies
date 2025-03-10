@@ -3,7 +3,7 @@
 **ID**: `github-org-old-secrets`
 **Source**: [v2/rules/github/org/old-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/old-secrets.yaml)
 **Uses**: `github/org/old-secrets@v2/rules
-**Rego File Path**: `old-secrets.rego`
+**Rego Source**: [old-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/old-secrets.rego)
 
 **Labels**: GitHub, Organization
 

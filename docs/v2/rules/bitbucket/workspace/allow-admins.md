@@ -3,7 +3,7 @@
 **ID**: `bb-workspace-allowed-workspace-admins`
 **Source**: [v2/rules/bitbucket/workspace/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/workspace/allow-admins.yaml)
 **Uses**: `bitbucket/workspace/allow-admins@v2/rules
-**Rego File Path**: `allow-admins.rego`
+**Rego Source**: [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/workspace/allow-admins.rego)
 
 **Labels**: Bitbucket, Workspace
 

@@ -3,7 +3,7 @@
 **ID**: `dockerhub-token-not-used`
 **Source**: [v2/rules/dockerhub/token-not-used.yaml](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-not-used.yaml)
 **Uses**: `dockerhub/token-not-used@v2/rules
-**Rego File Path**: `token-not-used.rego`
+**Rego Source**: [token-not-used.rego](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-not-used.rego)
 
 **Labels**: Dockerhub
 

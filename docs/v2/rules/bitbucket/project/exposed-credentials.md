@@ -3,7 +3,7 @@
 **ID**: `bb-project-exposed-credentials`
 **Source**: [v2/rules/bitbucket/project/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/exposed-credentials.yaml)
 **Uses**: `bitbucket/project/exposed-credentials@v2/rules
-**Rego File Path**: `exposed-credentials.rego`
+**Rego Source**: [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/exposed-credentials.rego)
 
 **Labels**: Bitbucket, Project
 

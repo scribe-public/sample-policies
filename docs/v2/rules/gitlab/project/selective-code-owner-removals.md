@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-selective-code-owner-removals`
 **Source**: [v2/rules/gitlab/project/selective-code-owner-removals.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/selective-code-owner-removals.yaml)
 **Uses**: `gitlab/project/selective-code-owner-removals@v2/rules
-**Rego File Path**: `selective-code-owner-removals.rego`
+**Rego Source**: [selective-code-owner-removals.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/selective-code-owner-removals.rego)
 
 **Labels**: Gitlab, Project
 

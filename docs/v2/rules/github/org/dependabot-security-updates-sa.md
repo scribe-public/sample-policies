@@ -3,7 +3,7 @@
 **ID**: `github-org-dependabot-security-updates-sa`
 **Source**: [v2/rules/github/org/dependabot-security-updates-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates-sa.yaml)
 **Uses**: `github/org/dependabot-security-updates-sa@v2/rules
-**Rego File Path**: `dependabot-security-updates-sa.rego`
+**Rego Source**: [dependabot-security-updates-sa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates-sa.rego)
 
 **Labels**: GitHub, Organization
 

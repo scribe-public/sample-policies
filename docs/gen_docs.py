@@ -60,22 +60,25 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
     rule_id = rule_data.get("id", os.path.splitext(file_name)[0])
     name = rule_data.get("name", rule_id)
-    path = rule_data.get("path", "")
+    rego_path = rule_data.get("path", "")
     description = rule_data.get("description", "")
     full_description = rule_data.get("full-description", "")
     mitigation = rule_data.get("mitigation", "")
     help_url = rule_data.get("help", "")
     labels = rule_data.get("labels", [])
-    source_link = os.path.join(base_source_git, file_path)
+    yaml_source_link = os.path.join(base_source_git, file_path)
+    file_dir = os.path.dirname(file_path)
+    rego_source_link = os.path.join(base_source_git,file_dir,rego_path)
     md = []
     md.append(f"# Rule: {name}\n")
     md.append(f"**ID**: `{rule_id}`")
-    md.append(f"**Source**: [{file_path}]({source_link})")
+    md.append(f"**Source**: [{file_path}]({yaml_source_link})")
     # Calculate 'uses' from filepath vX/rules/group/.../rule.yaml to uses group/.../rule@vX/rules
     md.append(f"**Uses**: `{filepath_to_uses(file_path)}")
 
-    if path:
-        md.append(f"**Rego File Path**: `{path}`")
+    if rego_path:
+        md.append(f"**Rego Source**: [{rego_path}]({rego_source_link})")
+
     md.append("")
 
     if labels:

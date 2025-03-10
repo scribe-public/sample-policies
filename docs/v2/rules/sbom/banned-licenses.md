@@ -3,7 +3,7 @@
 **ID**: `sbom-disallowed-licenses`
 **Source**: [v2/rules/sbom/banned-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.yaml)
 **Uses**: `sbom/banned-licenses@v2/rules
-**Rego File Path**: `banned-licenses.rego`
+**Rego Source**: [banned-licenses.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.rego)
 
 **Labels**: SBOM, Image
 

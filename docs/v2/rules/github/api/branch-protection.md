@@ -3,7 +3,7 @@
 **ID**: `github-api-branch-protection`
 **Source**: [v2/rules/github/api/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.yaml)
 **Uses**: `github/api/branch-protection@v2/rules
-**Rego File Path**: `branch-protection.rego`
+**Rego Source**: [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.rego)
 
 **Labels**: GitHub
 

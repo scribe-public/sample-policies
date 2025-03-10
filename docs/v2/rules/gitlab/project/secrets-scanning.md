@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-secrets-scanning`
 **Source**: [v2/rules/gitlab/project/secrets-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scanning.yaml)
 **Uses**: `gitlab/project/secrets-scanning@v2/rules
-**Rego File Path**: `secrets-scanning.rego`
+**Rego Source**: [secrets-scanning.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scanning.rego)
 
 **Labels**: Gitlab, Project
 

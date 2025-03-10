@@ -3,7 +3,7 @@
 **ID**: `require-sbom`
 **Source**: [v2/rules/sbom/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/evidence-exists.yaml)
 **Uses**: `sbom/evidence-exists@v2/rules
-**Rego File Path**: `evidence-exists.rego`
+**Rego Source**: [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/evidence-exists.rego)
 
 **Labels**: SBOM, Blueprint
 

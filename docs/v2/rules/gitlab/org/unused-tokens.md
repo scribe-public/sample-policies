@@ -3,7 +3,7 @@
 **ID**: `gitlab-org-unused-tokens`
 **Source**: [v2/rules/gitlab/org/unused-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/unused-tokens.yaml)
 **Uses**: `gitlab/org/unused-tokens@v2/rules
-**Rego File Path**: `unused-tokens.rego`
+**Rego Source**: [unused-tokens.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/unused-tokens.rego)
 
 **Labels**: Gitlab, Organization
 

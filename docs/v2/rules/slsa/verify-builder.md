@@ -3,7 +3,7 @@
 **ID**: `slsa-verify-builder`
 **Source**: [v2/rules/slsa/verify-builder.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-builder.yaml)
 **Uses**: `slsa/verify-builder@v2/rules
-**Rego File Path**: `verify-builder.rego`
+**Rego Source**: [verify-builder.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-builder.rego)
 
 **Labels**: SLSA, Image
 

@@ -3,7 +3,7 @@
 **ID**: `sarif-artifact-signed`
 **Source**: [v2/rules/sarif/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/artifact-signed.yaml)
 **Uses**: `sarif/artifact-signed@v2/rules
-**Rego File Path**: `artifact-signed.rego`
+**Rego Source**: [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/artifact-signed.rego)
 
 **Labels**: SARIF
 

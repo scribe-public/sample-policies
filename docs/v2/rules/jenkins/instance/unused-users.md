@@ -3,7 +3,7 @@
 **ID**: `jenkins-unused-users`
 **Source**: [v2/rules/jenkins/instance/unused-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/instance/unused-users.yaml)
 **Uses**: `jenkins/instance/unused-users@v2/rules
-**Rego File Path**: `unused-users.rego`
+**Rego Source**: [unused-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/instance/unused-users.rego)
 
 **Labels**: Jenkins, Instance
 

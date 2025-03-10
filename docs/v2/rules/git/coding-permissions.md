@@ -3,7 +3,7 @@
 **ID**: `git-coding-permissions`
 **Source**: [v2/rules/git/coding-permissions.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.yaml)
 **Uses**: `git/coding-permissions@v2/rules
-**Rego File Path**: `coding-permissions.rego`
+**Rego Source**: [coding-permissions.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.rego)
 
 **Labels**: Git
 

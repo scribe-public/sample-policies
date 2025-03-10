@@ -3,7 +3,7 @@
 **ID**: `jenkins-exposed-credentials`
 **Source**: [v2/rules/jenkins/folder/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.yaml)
 **Uses**: `jenkins/folder/exposed-credentials@v2/rules
-**Rego File Path**: `exposed-credentials.rego`
+**Rego Source**: [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.rego)
 
 **Labels**: Jenkins, Folder
 

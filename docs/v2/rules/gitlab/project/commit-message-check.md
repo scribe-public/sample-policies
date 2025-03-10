@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-verify-commit_message_check`
 **Source**: [v2/rules/gitlab/project/commit-message-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-message-check.yaml)
 **Uses**: `gitlab/project/commit-message-check@v2/rules
-**Rego File Path**: `commit-message-check.rego`
+**Rego Source**: [commit-message-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-message-check.rego)
 
 **Labels**: Gitlab, Project
 

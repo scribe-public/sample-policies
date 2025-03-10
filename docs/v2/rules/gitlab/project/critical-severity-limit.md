@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-critical-severity-limit`
 **Source**: [v2/rules/gitlab/project/critical-severity-limit.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/critical-severity-limit.yaml)
 **Uses**: `gitlab/project/critical-severity-limit@v2/rules
-**Rego File Path**: `critical-severity-limit.rego`
+**Rego Source**: [critical-severity-limit.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/critical-severity-limit.rego)
 
 **Labels**: Gitlab, Project
 

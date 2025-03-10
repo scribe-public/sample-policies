@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-merge-approval`
 **Source**: [v2/rules/gitlab/project/approvals-policy-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvals-policy-check.yaml)
 **Uses**: `gitlab/project/approvals-policy-check@v2/rules
-**Rego File Path**: `approvals-policy-check.rego`
+**Rego Source**: [approvals-policy-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvals-policy-check.rego)
 
 **Labels**: Blueprint, Gitlab, Project
 

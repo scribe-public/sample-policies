@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-merge-requests-author-approval`
 **Source**: [v2/rules/gitlab/project/merge-requests-author-approval.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-requests-author-approval.yaml)
 **Uses**: `gitlab/project/merge-requests-author-approval@v2/rules
-**Rego File Path**: `merge-requests-author-approval.rego`
+**Rego Source**: [merge-requests-author-approval.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-requests-author-approval.rego)
 
 **Labels**: Gitlab, Project
 

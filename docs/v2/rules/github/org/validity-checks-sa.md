@@ -3,7 +3,7 @@
 **ID**: `github-org-validity-checks-sa`
 **Source**: [v2/rules/github/org/validity-checks-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/validity-checks-sa.yaml)
 **Uses**: `github/org/validity-checks-sa@v2/rules
-**Rego File Path**: `validity-checks-sa.rego`
+**Rego Source**: [validity-checks-sa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/validity-checks-sa.rego)
 
 **Labels**: GitHub, Organization
 

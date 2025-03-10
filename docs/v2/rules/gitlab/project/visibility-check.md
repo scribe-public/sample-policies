@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-project-visibility-level`
 **Source**: [v2/rules/gitlab/project/visibility-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/visibility-check.yaml)
 **Uses**: `gitlab/project/visibility-check@v2/rules
-**Rego File Path**: `visibility-check.rego`
+**Rego Source**: [visibility-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/visibility-check.rego)
 
 **Labels**: Gitlab, Project
 

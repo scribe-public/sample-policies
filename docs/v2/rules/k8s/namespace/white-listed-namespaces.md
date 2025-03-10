@@ -3,7 +3,7 @@
 **ID**: `k8s-namespace-white-listed-namespaces`
 **Source**: [v2/rules/k8s/namespace/white-listed-namespaces.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/white-listed-namespaces.yaml)
 **Uses**: `k8s/namespace/white-listed-namespaces@v2/rules
-**Rego File Path**: `white-listed-namespaces.rego`
+**Rego Source**: [white-listed-namespaces.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/white-listed-namespaces.rego)
 
 **Labels**: K8s, Namespace
 

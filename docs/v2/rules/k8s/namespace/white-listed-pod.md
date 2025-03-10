@@ -3,7 +3,7 @@
 **ID**: `k8s-namespace-white-listed-pod`
 **Source**: [v2/rules/k8s/namespace/white-listed-pod.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/white-listed-pod.yaml)
 **Uses**: `k8s/namespace/white-listed-pod@v2/rules
-**Rego File Path**: `white-listed-pod.rego`
+**Rego Source**: [white-listed-pod.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/white-listed-pod.rego)
 
 **Labels**: K8s, Namespace
 

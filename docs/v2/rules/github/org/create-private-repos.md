@@ -3,7 +3,7 @@
 **ID**: `github-org-create-private-repos`
 **Source**: [v2/rules/github/org/create-private-repos.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-private-repos.yaml)
 **Uses**: `github/org/create-private-repos@v2/rules
-**Rego File Path**: `create-private-repos.rego`
+**Rego Source**: [create-private-repos.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-private-repos.rego)
 
 **Labels**: GitHub, Organization
 

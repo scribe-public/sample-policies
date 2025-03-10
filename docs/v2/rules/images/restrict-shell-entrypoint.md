@@ -3,7 +3,7 @@
 **ID**: `images-disallow-shell-access`
 **Source**: [v2/rules/images/restrict-shell-entrypoint.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.yaml)
 **Uses**: `images/restrict-shell-entrypoint@v2/rules
-**Rego File Path**: `restrict-shell-entrypoint.rego`
+**Rego Source**: [restrict-shell-entrypoint.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.rego)
 
 **Labels**: SBOM, Images
 
