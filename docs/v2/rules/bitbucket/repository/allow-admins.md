@@ -1,8 +1,9 @@
 # Rule: Allowed Repository Admins
 
-**ID**: `bb-repo-allowed-repository-admins`  
-**Source**: [v2/rules/bitbucket/repository/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-admins.yaml)  
-**Rego File Path**: `allow-admins.rego`  
+**ID**: `bb-repo-allowed-repository-admins`
+**Source**: [v2/rules/bitbucket/repository/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-admins.yaml)
+**Uses**: `bitbucket/repository/allow-admins@v2/rules
+**Rego File Path**: `allow-admins.rego`
 
 **Labels**: Bitbucket, Repository
 

@@ -1,8 +1,9 @@
 # Rule: SARIF Update Needed
 
-**ID**: `sarif-update-needed`  
-**Source**: [v2/rules/sarif/patcheck/updates-needed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/patcheck/updates-needed.yaml)  
-**Rego File Path**: `updates-needed.rego`  
+**ID**: `sarif-update-needed`
+**Source**: [v2/rules/sarif/patcheck/updates-needed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/patcheck/updates-needed.yaml)
+**Uses**: `sarif/patcheck/updates-needed@v2/rules
+**Rego File Path**: `updates-needed.rego`
 
 **Labels**: SARIF
 

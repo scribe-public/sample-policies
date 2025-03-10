@@ -1,8 +1,9 @@
 # Rule: Verify Artifact Signature in SARIF
 
-**ID**: `sarif-artifact-signed`  
-**Source**: [v2/rules/sarif/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/artifact-signed.yaml)  
-**Rego File Path**: `artifact-signed.rego`  
+**ID**: `sarif-artifact-signed`
+**Source**: [v2/rules/sarif/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/artifact-signed.yaml)
+**Uses**: `sarif/artifact-signed@v2/rules
+**Rego File Path**: `artifact-signed.rego`
 
 **Labels**: SARIF
 

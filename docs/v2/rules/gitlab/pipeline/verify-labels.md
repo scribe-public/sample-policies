@@ -1,8 +1,9 @@
 # Rule: Verify GitLab Pipeline Labels
 
-**ID**: `gitlab-pipeline-verify-labels`  
-**Source**: [v2/rules/gitlab/pipeline/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels.yaml)  
-**Rego File Path**: `verify-labels.rego`  
+**ID**: `gitlab-pipeline-verify-labels`
+**Source**: [v2/rules/gitlab/pipeline/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels.yaml)
+**Uses**: `gitlab/pipeline/verify-labels@v2/rules
+**Rego File Path**: `verify-labels.rego`
 
 **Labels**: Gitlab, Pipeline
 

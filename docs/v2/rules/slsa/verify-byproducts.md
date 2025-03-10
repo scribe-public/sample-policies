@@ -1,8 +1,9 @@
 # Rule: Verify that artifact has no disallowed builder dependencies
 
-**ID**: `slsa-verify-byproducts`  
-**Source**: [v2/rules/slsa/verify-byproducts.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-byproducts.yaml)  
-**Rego File Path**: `verify-byproducts.rego`  
+**ID**: `slsa-verify-byproducts`
+**Source**: [v2/rules/slsa/verify-byproducts.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-byproducts.yaml)
+**Uses**: `slsa/verify-byproducts@v2/rules
+**Rego File Path**: `verify-byproducts.rego`
 
 **Labels**: SLSA, Image
 

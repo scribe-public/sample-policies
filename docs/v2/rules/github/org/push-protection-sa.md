@@ -1,8 +1,9 @@
 # Rule: Verify Secret_Scanning_Push_Protection Setting
 
-**ID**: `github-org-push-protection-sa`  
-**Source**: [v2/rules/github/org/push-protection-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection-sa.yaml)  
-**Rego File Path**: `push-protection-sa.rego`  
+**ID**: `github-org-push-protection-sa`
+**Source**: [v2/rules/github/org/push-protection-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection-sa.yaml)
+**Uses**: `github/org/push-protection-sa@v2/rules
+**Rego File Path**: `push-protection-sa.rego`
 
 **Labels**: GitHub, Organization
 

@@ -1,8 +1,9 @@
 # Rule: Verify secret_scanning setting
 
-**ID**: `github-repo-secret-scanning`  
-**Source**: [v2/rules/github/repository/secret-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/secret-scanning.yaml)  
-**Rego File Path**: `secret-scanning.rego`  
+**ID**: `github-repo-secret-scanning`
+**Source**: [v2/rules/github/repository/secret-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/secret-scanning.yaml)
+**Uses**: `github/repository/secret-scanning@v2/rules
+**Rego File Path**: `secret-scanning.rego`
 
 **Labels**: GitHub, Repository
 

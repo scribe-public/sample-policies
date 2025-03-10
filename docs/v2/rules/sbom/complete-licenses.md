@@ -1,8 +1,9 @@
 # Rule: Enforce SBOM License Completeness
 
-**ID**: `sbom-require-complete-license-set`  
-**Source**: [v2/rules/sbom/complete-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/complete-licenses.yaml)  
-**Rego File Path**: `complete-licenses.rego`  
+**ID**: `sbom-require-complete-license-set`
+**Source**: [v2/rules/sbom/complete-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/complete-licenses.yaml)
+**Uses**: `sbom/complete-licenses@v2/rules
+**Rego File Path**: `complete-licenses.rego`
 
 **Labels**: SBOM, Image
 

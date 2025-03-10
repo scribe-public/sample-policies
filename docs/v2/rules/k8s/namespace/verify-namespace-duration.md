@@ -1,8 +1,9 @@
 # Rule: Verify Namespace Runtime Duration
 
-**ID**: `k8s-namespace-verify-namespace-duration`  
-**Source**: [v2/rules/k8s/namespace/verify-namespace-duration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-duration.yaml)  
-**Rego File Path**: `verify-namespace-duration.rego`  
+**ID**: `k8s-namespace-verify-namespace-duration`
+**Source**: [v2/rules/k8s/namespace/verify-namespace-duration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-duration.yaml)
+**Uses**: `k8s/namespace/verify-namespace-duration@v2/rules
+**Rego File Path**: `verify-namespace-duration.rego`
 
 **Labels**: K8s, Namespace
 

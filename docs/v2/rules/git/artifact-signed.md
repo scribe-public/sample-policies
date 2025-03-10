@@ -1,8 +1,9 @@
 # Rule: Git Artifact Signed
 
-**ID**: `git-artifact-signed`  
-**Source**: [v2/rules/git/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/artifact-signed.yaml)  
-**Rego File Path**: `artifact-signed.rego`  
+**ID**: `git-artifact-signed`
+**Source**: [v2/rules/git/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/artifact-signed.yaml)
+**Uses**: `git/artifact-signed@v2/rules
+**Rego File Path**: `artifact-signed.rego`
 
 **Labels**: Git
 

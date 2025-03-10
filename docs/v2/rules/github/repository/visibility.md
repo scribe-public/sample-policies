@@ -1,8 +1,9 @@
 # Rule: Allowed Public Repositories
 
-**ID**: `github-repo-visibility`  
-**Source**: [v2/rules/github/repository/visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.yaml)  
-**Rego File Path**: `visibility.rego`  
+**ID**: `github-repo-visibility`
+**Source**: [v2/rules/github/repository/visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.yaml)
+**Uses**: `github/repository/visibility@v2/rules
+**Rego File Path**: `visibility.rego`
 
 **Labels**: GitHub, Repository
 

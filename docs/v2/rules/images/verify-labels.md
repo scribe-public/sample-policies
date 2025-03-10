@@ -1,8 +1,9 @@
 # Rule: Verify Image Labels
 
-**ID**: `image-labels`  
-**Source**: [v2/rules/images/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels.yaml)  
-**Rego File Path**: `verify-labels.rego`  
+**ID**: `image-labels`
+**Source**: [v2/rules/images/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels.yaml)
+**Uses**: `images/verify-labels@v2/rules
+**Rego File Path**: `verify-labels.rego`
 
 **Labels**: SBOM, Images
 

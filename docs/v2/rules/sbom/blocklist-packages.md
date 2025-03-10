@@ -1,8 +1,9 @@
 # Rule: Restrict Disallowed Dependencies
 
-**ID**: `sbom-disallow-dependencies`  
-**Source**: [v2/rules/sbom/blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/blocklist-packages.yaml)  
-**Rego File Path**: `blocklist-packages.rego`  
+**ID**: `sbom-disallow-dependencies`
+**Source**: [v2/rules/sbom/blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/blocklist-packages.yaml)
+**Uses**: `sbom/blocklist-packages@v2/rules
+**Rego File Path**: `blocklist-packages.rego`
 
 **Labels**: SBOM, Image, Blueprint
 

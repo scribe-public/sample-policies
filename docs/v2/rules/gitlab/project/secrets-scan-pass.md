@@ -1,8 +1,9 @@
 # Rule: Ensure Secrets Scanning Passes
 
-**ID**: `gitlab-project-secrets-scan-pass`  
-**Source**: [v2/rules/gitlab/project/secrets-scan-pass.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scan-pass.yaml)  
-**Rego File Path**: `secrets-scan-pass.rego`  
+**ID**: `gitlab-project-secrets-scan-pass`
+**Source**: [v2/rules/gitlab/project/secrets-scan-pass.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scan-pass.yaml)
+**Uses**: `gitlab/project/secrets-scan-pass@v2/rules
+**Rego File Path**: `secrets-scan-pass.rego`
 
 **Labels**: Gitlab, Project
 

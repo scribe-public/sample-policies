@@ -1,8 +1,9 @@
 # Rule: Verify Tool Evidence in SARIF
 
-**ID**: `sarif-tool-evidence`  
-**Source**: [v2/rules/sarif/verify-tool-evidence.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.yaml)  
-**Rego File Path**: `verify-tool-evidence.rego`  
+**ID**: `sarif-tool-evidence`
+**Source**: [v2/rules/sarif/verify-tool-evidence.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.yaml)
+**Uses**: `sarif/verify-tool-evidence@v2/rules
+**Rego File Path**: `verify-tool-evidence.rego`
 
 **Labels**: SARIF
 

@@ -1,8 +1,9 @@
 # Rule: Allowed Commit Authors in GitLab Project
 
-**ID**: `gitlab-project-allowed-commit-author-names`  
-**Source**: [v2/rules/gitlab/project/commit-author-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-name-check.yaml)  
-**Rego File Path**: `commit-author-name-check.rego`  
+**ID**: `gitlab-project-allowed-commit-author-names`
+**Source**: [v2/rules/gitlab/project/commit-author-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-name-check.yaml)
+**Uses**: `gitlab/project/commit-author-name-check@v2/rules
+**Rego File Path**: `commit-author-name-check.rego`
 
 **Labels**: Gitlab, Project
 

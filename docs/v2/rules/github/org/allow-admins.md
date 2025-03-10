@@ -1,8 +1,9 @@
 # Rule: Allowed GitHub Organization Admins
 
-**ID**: `github-orgallowed-admins`  
-**Source**: [v2/rules/github/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-admins.yaml)  
-**Rego File Path**: `allow-admins.rego`  
+**ID**: `github-orgallowed-admins`
+**Source**: [v2/rules/github/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-admins.yaml)
+**Uses**: `github/org/allow-admins@v2/rules
+**Rego File Path**: `allow-admins.rego`
 
 **Labels**: GitHub, Organization
 

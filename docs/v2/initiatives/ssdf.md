@@ -2,6 +2,7 @@
 
 **ID**: `SSDF`  
 **Version**: `1.0.0`  
+**Bundle-Version**: `1.0.0`  
 **Source**: [v2/initiatives/ssdf.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/ssdf.yaml)  
 
 **Short Description**: Evaluate PS rules from the SSDF initiative

@@ -1,8 +1,9 @@
 # Rule: Verify Required Evidence in SARIF
 
-**ID**: `required-sarif-evidence`  
-**Source**: [v2/rules/sarif/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/evidence-exists.yaml)  
-**Rego File Path**: `evidence-exists.rego`  
+**ID**: `required-sarif-evidence`
+**Source**: [v2/rules/sarif/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/evidence-exists.yaml)
+**Uses**: `sarif/evidence-exists@v2/rules
+**Rego File Path**: `evidence-exists.rego`
 
 **Labels**: SARIF
 
