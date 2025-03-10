@@ -21,8 +21,6 @@ Verify the default branch protection is enabled in the Bitbucket repository.
 | labels | - platform=bitbucket<br>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
-```yaml
-branches:
-- main
-```
-
+| Parameter | Default |
+|-----------|---------|
+| branches | ['main'] |

@@ -21,7 +21,6 @@ Verify secrets in the GitLab project are not shared.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-pattern: (?i)(token|secret)
-```
-
+| Parameter | Default |
+|-----------|---------|
+| pattern | (?i)(token|secret) |

@@ -20,9 +20,6 @@ Verify the Git artifact is signed.
 | target_type | git |
 
 ## Rule Parameters (`with`)  
-```yaml
-identity:
-  common-names: []
-  emails: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| identity | {'common-names': [], 'emails': []} |

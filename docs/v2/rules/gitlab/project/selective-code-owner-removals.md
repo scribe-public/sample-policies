@@ -21,7 +21,6 @@ Verify `selective_code_owner_removals` is set for the GitLab project.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-selective_code_owner_removals: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| selective_code_owner_removals | True |

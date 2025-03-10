@@ -21,7 +21,6 @@ Verify only users in the Allowed List have admin privileges in the GitHub organi
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_admins: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_admins | [] |

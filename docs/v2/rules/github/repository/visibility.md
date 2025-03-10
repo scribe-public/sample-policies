@@ -21,7 +21,6 @@ Verify only GitHub repositories in the Allowed List are public.
 | labels | - platform=github<br>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_repo_names: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_repo_names | [] |

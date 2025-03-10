@@ -19,8 +19,7 @@ Verify the specified field exists in the provenance document.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-paths: []
-violations_threshold: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| paths | [] |
+| violations_threshold | 0 |

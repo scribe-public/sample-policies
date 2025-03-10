@@ -12,10 +12,9 @@ Verify the selected range of commits is signed via the GitLab API.
 
 
 ## Rule Parameters (`with`)  
-```yaml
-since: ''
-until: ''
-project_id: ''
-private_token: ''
-```
-
+| Parameter | Default |
+|-----------|---------|
+| since |  |
+| until |  |
+| project_id |  |
+| private_token |  |

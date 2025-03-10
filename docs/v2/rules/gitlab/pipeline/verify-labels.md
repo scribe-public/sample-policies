@@ -21,8 +21,6 @@ Verify the pipeline includes all required label keys and values.
 | labels | - asset_type=pipeline |
 
 ## Rule Parameters (`with`)  
-```yaml
-labels:
-  app.kubernetes.io/instance: defaul1t
-```
-
+| Parameter | Default |
+|-----------|---------|
+| labels | {'app.kubernetes.io/instance': 'defaul1t'} |

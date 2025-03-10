@@ -21,8 +21,7 @@ Verify the project's merge approval policy complies with requirements.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-name: All Members
-approvals_required_min: 2
-```
-
+| Parameter | Default |
+|-----------|---------|
+| name | All Members |
+| approvals_required_min | 2 |

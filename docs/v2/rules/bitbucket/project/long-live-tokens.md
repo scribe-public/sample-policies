@@ -20,7 +20,6 @@ Verify Bitbucket API tokens expire before the maximum time to live.
 | labels | - asset_type=project<br>- platform=bitbucket<br>- platform_instance=bitbucket_dc |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_days: 30
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_days | 30 |

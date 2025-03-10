@@ -16,7 +16,6 @@ Limits the number of administrative accounts, minimizing the potential for abuse
 
 
 ## Rule Parameters (`with`)  
-```yaml
-max_admins: 3
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_admins | 3 |

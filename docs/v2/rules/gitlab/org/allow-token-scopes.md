@@ -21,11 +21,6 @@ Verify all tokens in the GitLab organization are restricted to allowed scopes to
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_token_scopes:
-- api
-- read_api
-- read_repository
-- read_registry
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_token_scopes | ['api', 'read_api', 'read_repository', 'read_registry'] |

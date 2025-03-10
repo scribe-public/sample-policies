@@ -21,7 +21,6 @@ Verify `secret_scanning` is enabled for new repositories in the GitHub organizat
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |

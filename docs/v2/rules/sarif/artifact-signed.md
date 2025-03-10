@@ -20,9 +20,6 @@ Verify the artifact referenced in the SARIF report is signed to confirm its inte
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
 ## Rule Parameters (`with`)  
-```yaml
-identity:
-  common-names: []
-  emails: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| identity | {'common-names': [], 'emails': []} |

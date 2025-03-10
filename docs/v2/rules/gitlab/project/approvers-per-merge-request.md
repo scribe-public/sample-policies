@@ -21,7 +21,6 @@ Verify the binary field `disable_overriding_approvers_per_merge_request` is set 
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-disable_overriding_approvers_per_merge_request: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| disable_overriding_approvers_per_merge_request | False |

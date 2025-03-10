@@ -20,10 +20,7 @@ Verify the artifact contains only allowed components.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-types:
-- library
-- operating-system
-allowlist: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| types | ['library', 'operating-system'] |
+| allowlist | [] |

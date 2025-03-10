@@ -21,8 +21,6 @@ Verify only users in the Allowed List use committer email addresses in the GitLa
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_committers:
-- mail@example.com
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_committers | ['mail@example.com'] |

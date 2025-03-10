@@ -19,7 +19,6 @@ Verify the SBOM is not older than the specified duration.
 | content_body_type | cyclonedx-json |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_days: 30
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_days | 30 |

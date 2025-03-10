@@ -21,7 +21,6 @@ Verify `secret_scanning_push_protection_custom_link` is enabled in the GitHub or
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |

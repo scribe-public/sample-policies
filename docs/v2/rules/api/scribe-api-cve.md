@@ -20,10 +20,6 @@ Verify via Scribe API that there no critical or high severity vulnerabilities in
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-superset:
-  cve:
-    max: 0
-    severity: 6
-```
-
+| Parameter | Default |
+|-----------|---------|
+| superset | {'cve': {'max': 0, 'severity': 6}} |

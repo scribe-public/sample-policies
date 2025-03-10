@@ -18,8 +18,6 @@ Verify image Scribe Publish flag is set for container image.
 | content_body_type | cyclonedx-json |
 
 ## Rule Parameters (`with`)  
-```yaml
-superset:
-  published: null
-```
-
+| Parameter | Default |
+|-----------|---------|
+| superset | {'published': None} |

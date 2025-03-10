@@ -21,7 +21,6 @@ Verify `merge_requests_disable_committers_approval` is set for the GitLab projec
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-merge_requests_disable_committers_approval: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| merge_requests_disable_committers_approval | False |

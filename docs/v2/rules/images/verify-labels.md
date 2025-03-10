@@ -19,7 +19,6 @@ Verify specified labels key-value pairs exist in the image.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-labels: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| labels | [] |

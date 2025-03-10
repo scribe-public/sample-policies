@@ -20,7 +20,6 @@ Verify the artifact includes all specified licenses.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-licenses: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| licenses | [] |

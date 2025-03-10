@@ -21,8 +21,6 @@ Verify only users in the Allowed List author commits in the GitLab project.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_authors:
-- examplename
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_authors | ['examplename'] |

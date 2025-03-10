@@ -18,11 +18,9 @@ Archives code changes to maintain a secure, immutable history for auditing and t
 
 
 ## Rule Parameters (`with`)  
-```yaml
-allow: true
-short_description: Code is archived.
-description: Since the code is within a repository, it is archived.
-reason: The code is archived in a repository. This is a demo rule, planned to run
-  from a workflow in a repository.
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allow | True |
+| short_description | Code is archived. |
+| description | Since the code is within a repository, it is archived. |
+| reason | The code is archived in a repository. This is a demo rule, planned to run from a workflow in a repository. |

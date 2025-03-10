@@ -12,9 +12,8 @@ Verify the selected commits are signed in the GitLab organization.
 
 
 ## Rule Parameters (`with`)  
-```yaml
-commit_id_list: []
-private_token: ''
-project_id: ''
-```
-
+| Parameter | Default |
+|-----------|---------|
+| commit_id_list | [] |
+| private_token |  |
+| project_id |  |

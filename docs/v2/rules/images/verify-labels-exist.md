@@ -19,7 +19,6 @@ Verify the image has the specified labels.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-labels: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| labels | [] |

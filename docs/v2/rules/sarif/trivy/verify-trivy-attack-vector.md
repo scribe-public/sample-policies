@@ -20,8 +20,7 @@ Verify no attack vector in the Trivy SARIF report exceeds the specified threshol
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
 ## Rule Parameters (`with`)  
-```yaml
-attack_vectors: []
-violations_threshold: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| attack_vectors | [] |
+| violations_threshold | 0 |

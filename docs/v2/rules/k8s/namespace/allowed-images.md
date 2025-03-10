@@ -21,7 +21,6 @@ Verify only container images specified in the Allowed List run within the Kubern
 | labels | - asset_type=namespace |
 
 ## Rule Parameters (`with`)  
-```yaml
-images_to_include: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| images_to_include | [] |

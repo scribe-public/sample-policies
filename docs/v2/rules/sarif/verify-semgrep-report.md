@@ -20,8 +20,7 @@ Verify the Semgrep SARIF report complies with predefined rules to ensure complia
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
 ## Rule Parameters (`with`)  
-```yaml
-rule_ids: []
-violations_threshold: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| rule_ids | [] |
+| violations_threshold | 0 |

@@ -16,7 +16,6 @@ Requires signoff on web commits to ensure that code changes are reviewed and app
 
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | True |

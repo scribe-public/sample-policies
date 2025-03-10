@@ -21,7 +21,6 @@ Verify Dependabot alerts for new repositories are enabled in the GitHub organiza
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |

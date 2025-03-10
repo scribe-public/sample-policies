@@ -20,8 +20,7 @@ Verify only allowed users committed to the repository.
 | target_type | git |
 
 ## Rule Parameters (`with`)  
-```yaml
-ids: []
-files: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| ids | [] |
+| files | [] |

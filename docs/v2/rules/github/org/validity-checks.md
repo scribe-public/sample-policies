@@ -21,7 +21,6 @@ Verify `secret_scanning_validity_checks` is configured in the GitHub repository.
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |

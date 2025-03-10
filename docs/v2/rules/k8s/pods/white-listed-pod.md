@@ -21,9 +21,7 @@ Verify only pods explicitly listed in the Allowed List are allowed to run.
 | labels | - asset_type=pod |
 
 ## Rule Parameters (`with`)  
-```yaml
-white_listed_pod: []
-verify_namespaces:
-- .*
-```
-
+| Parameter | Default |
+|-----------|---------|
+| white_listed_pod | [] |
+| verify_namespaces | ['.*'] |

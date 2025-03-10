@@ -25,9 +25,6 @@ Cryptographic authentication prevents tampering with provenance data, ensuring t
 | content_body_type | slsa |
 
 ## Rule Parameters (`with`)  
-```yaml
-identity:
-  common-names: []
-  emails: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| identity | {'common-names': [], 'emails': []} |

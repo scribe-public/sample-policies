@@ -21,7 +21,6 @@ Verify approvers in the GitLab project are not on the banned list.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-banned_list: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| banned_list | [] |

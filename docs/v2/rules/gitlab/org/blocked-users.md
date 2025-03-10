@@ -21,7 +21,6 @@ Verify no users in the GitLab organization are on the block list.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-blocked_users: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| blocked_users | [] |

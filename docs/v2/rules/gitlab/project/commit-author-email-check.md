@@ -21,8 +21,6 @@ Verify only GitLab project users in the Allowed List have commit author permissi
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_authors:
-- mail@example.com
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_authors | ['mail@example.com'] |

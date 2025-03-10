@@ -21,7 +21,6 @@ Verify no GitLab organization tokens are about to expire.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-exiring_in_days: 30
-```
-
+| Parameter | Default |
+|-----------|---------|
+| exiring_in_days | 30 |

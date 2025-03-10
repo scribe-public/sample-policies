@@ -19,7 +19,6 @@ Verify that dependencies in the block list do not appear in the SLSA Proveance d
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-blocklist: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| blocklist | [] |

@@ -21,7 +21,6 @@ Verify `two_factor_requirement` is enabled in the GitHub organization.
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |

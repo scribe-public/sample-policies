@@ -133,11 +133,13 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append("")
 
     with_block = rule_data.get("with", {})
+
     if with_block:
         md.append("## Rule Parameters (`with`)  ")
-        md.append("```yaml")
-        md.append(yaml.safe_dump(with_block, sort_keys=False).strip())
-        md.append("```\n")
+        md.append("| Parameter | Default |")
+        md.append("|-----------|---------|")
+        for param, value in with_block.items():
+            md.append(f"| {param} | {value} |")
     
     md.append("")
     return "\n".join(md)

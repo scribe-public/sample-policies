@@ -21,7 +21,6 @@ Verify only users in the Allowed List have access to the GitLab organization.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_users: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_users | [] |

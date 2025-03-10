@@ -20,7 +20,6 @@ Verify there are no inactive users.
 | labels | - asset_type=instance<br>- platform=jenkins |
 
 ## Rule Parameters (`with`)  
-```yaml
-inactive_for_days: 90
-```
-
+| Parameter | Default |
+|-----------|---------|
+| inactive_for_days | 90 |

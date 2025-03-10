@@ -21,7 +21,6 @@ Verify a specific substring is not found in the description attribute of vulnera
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-pattern: (?i)insdput
-```
-
+| Parameter | Default |
+|-----------|---------|
+| pattern | (?i)insdput |

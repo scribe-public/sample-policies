@@ -21,7 +21,6 @@ Verify the maximum allowed critical severity alerts for the GitLab project.
 | labels | - platform=gitlab<br>- asset_type=project |
 
 ## Rule Parameters (`with`)  
-```yaml
-max_allowed_vulnerability_count: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| max_allowed_vulnerability_count | 0 |

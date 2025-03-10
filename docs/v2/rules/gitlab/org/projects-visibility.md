@@ -21,9 +21,6 @@ Verify only allowed projects in the GitLab organization have public visibility.
 | labels | - platform=gitlab<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_public:
-- Learn GitLab
-- Scribe Gitlab Test
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_public | ['Learn GitLab', 'Scribe Gitlab Test'] |

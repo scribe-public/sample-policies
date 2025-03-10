@@ -21,7 +21,6 @@ Verify only users specified in the Allowed List have admin privileges in the Bit
 | labels | - platform=bitbucket<br>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_admins: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_admins | [] |

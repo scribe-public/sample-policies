@@ -21,7 +21,6 @@ Verify `advanced_security_enabled_for_new_repositories` is enabled for new repos
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |

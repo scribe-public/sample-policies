@@ -21,7 +21,6 @@ Verify only namespaces specified in the Allowed List are allowed within the clus
 | labels | - asset_type=namespace |
 
 ## Rule Parameters (`with`)  
-```yaml
-namespaces: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| namespaces | [] |

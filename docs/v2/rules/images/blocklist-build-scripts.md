@@ -19,7 +19,6 @@ Verify no build scripts commands appear in block list.
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-blocklist: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| blocklist | [] |

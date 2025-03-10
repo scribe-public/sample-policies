@@ -21,7 +21,6 @@ Verify branch verification in the GitHub repository matches the value defined in
 | labels | - platform=github<br>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_verified: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_verified | False |

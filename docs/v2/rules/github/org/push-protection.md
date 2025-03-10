@@ -21,7 +21,6 @@ Verify `secret_scanning_push_protection` is enabled for new repositories in the 
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: true
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | True |

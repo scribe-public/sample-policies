@@ -20,8 +20,7 @@ Verify the number of disallowed licenses in SBOM dependencies remains below the 
 | target_type | container |
 
 ## Rule Parameters (`with`)  
-```yaml
-blocklist: []
-blocklisted_limit: 0
-```
-
+| Parameter | Default |
+|-----------|---------|
+| blocklist | [] |
+| blocklisted_limit | 0 |

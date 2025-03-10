@@ -21,7 +21,6 @@ Verify Kubernetes namespaces adhere to a specified runtime duration to enforce l
 | labels | - asset_type=namespace |
 
 ## Rule Parameters (`with`)  
-```yaml
-threshold_date: '1970-01-01T00:00:00Z'
-```
-
+| Parameter | Default |
+|-----------|---------|
+| threshold_date | 1970-01-01T00:00:00Z |

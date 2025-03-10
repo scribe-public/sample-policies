@@ -21,7 +21,6 @@ Verify only users in the Allowed List have user access to the GitHub organizatio
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-allowed_users: []
-```
-
+| Parameter | Default |
+|-----------|---------|
+| allowed_users | [] |

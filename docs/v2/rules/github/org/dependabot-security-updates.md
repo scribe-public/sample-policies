@@ -21,7 +21,6 @@ Verify Dependabot security updates for new repositories are configured in the Gi
 | labels | - platform=github<br>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
-```yaml
-desired_value: false
-```
-
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |
