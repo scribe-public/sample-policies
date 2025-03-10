@@ -3,8 +3,10 @@
 **Uses:** `gitlab/api/push-rules@v2/rules`  
 **Source:** [v2/rules/gitlab/api/push-rules.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.yaml)  
 **Rego Source:** [push-rules.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.rego)  
-**Short Description:** Verify GitLab push rules are configured via the API.  
 **Labels:** Gitlab, API  
+
+Verify GitLab push rules are configured via the API.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

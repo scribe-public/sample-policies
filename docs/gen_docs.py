@@ -82,13 +82,18 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     md.append(f"**Source:** [{file_path}]({yaml_source_link})  ")
     if rego_path:
         md.append(f"**Rego Source:** [{rego_path}]({rego_source_link})  ")
-    md.append(f"**Short Description:** {description}  ")
-    if mitigation:
-        md.append(f"**Mitigation:** {mitigation}  ")
     if help_url:
         md.append(f"**Help:** {help_url}  ")
     if labels:
         md.append(f"**Labels:** {', '.join(labels)}  ")
+
+    md.append(f"\n{description}")
+    md.append("")
+
+    if mitigation:
+        md.append("\n## Mitigation  ")
+        md.append(mitigation)
+        md.append("")
 
 
     sign_defaults = rule_data.get("evidence", {}).get("signed", False)

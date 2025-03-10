@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/approvers-per-merge-request@v2/rules`  
 **Source:** [v2/rules/gitlab/project/approvers-per-merge-request.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvers-per-merge-request.yaml)  
 **Rego Source:** [approvers-per-merge-request.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvers-per-merge-request.rego)  
-**Short Description:** Verify the binary field `disable_overriding_approvers_per_merge_request` is set for the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify the binary field `disable_overriding_approvers_per_merge_request` is set for the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

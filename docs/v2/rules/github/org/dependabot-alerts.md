@@ -3,8 +3,10 @@
 **Uses:** `github/org/dependabot-alerts@v2/rules`  
 **Source:** [v2/rules/github/org/dependabot-alerts.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-alerts.yaml)  
 **Rego Source:** [dependabot-alerts.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-alerts.rego)  
-**Short Description:** Verify Dependabot alerts for new repositories are enabled in the GitHub organization.  
 **Labels:** GitHub, Organization  
+
+Verify Dependabot alerts for new repositories are enabled in the GitHub organization.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

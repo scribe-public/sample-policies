@@ -3,8 +3,10 @@
 **Uses:** `gitlab/org/inactive-projects@v2/rules`  
 **Source:** [v2/rules/gitlab/org/inactive-projects.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.yaml)  
 **Rego Source:** [inactive-projects.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.rego)  
-**Short Description:** Verify no GitLab organization projects are inactive.  
 **Labels:** Gitlab, Organization  
+
+Verify no GitLab organization projects are inactive.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

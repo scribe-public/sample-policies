@@ -3,8 +3,10 @@
 **Uses:** `sarif/verify-tool-evidence@v2/rules`  
 **Source:** [v2/rules/sarif/verify-tool-evidence.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.yaml)  
 **Rego Source:** [verify-tool-evidence.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.rego)  
-**Short Description:** Verify required tools were used to generate the SARIF report.  
 **Labels:** SARIF  
+
+Verify required tools were used to generate the SARIF report.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

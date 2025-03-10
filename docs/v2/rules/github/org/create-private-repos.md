@@ -3,8 +3,10 @@
 **Uses:** `github/org/create-private-repos@v2/rules`  
 **Source:** [v2/rules/github/org/create-private-repos.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-private-repos.yaml)  
 **Rego Source:** [create-private-repos.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-private-repos.rego)  
-**Short Description:** Verify `members_can_create_private_repositories` is configured in the GitHub organization (supported only in GitHub Enterprise).  
 **Labels:** GitHub, Organization  
+
+Verify `members_can_create_private_repositories` is configured in the GitHub organization (supported only in GitHub Enterprise).
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

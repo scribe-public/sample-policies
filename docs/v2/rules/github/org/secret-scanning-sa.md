@@ -3,8 +3,10 @@
 **Uses:** `github/org/secret-scanning-sa@v2/rules`  
 **Source:** [v2/rules/github/org/secret-scanning-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/secret-scanning-sa.yaml)  
 **Rego Source:** [secret-scanning-sa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/secret-scanning-sa.rego)  
-**Short Description:** Verify `secret_scanning` is configured in the GitHub repository.  
 **Labels:** GitHub, Organization  
+
+Verify `secret_scanning` is configured in the GitHub repository.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

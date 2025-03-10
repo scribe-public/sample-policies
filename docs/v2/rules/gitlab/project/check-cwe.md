@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/check-cwe@v2/rules`  
 **Source:** [v2/rules/gitlab/project/check-cwe.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-cwe.yaml)  
 **Rego Source:** [check-cwe.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-cwe.rego)  
-**Short Description:** Verify that specified CWEs were not detected in the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify that specified CWEs were not detected in the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `jenkins/folder/exposed-credentials@v2/rules`  
 **Source:** [v2/rules/jenkins/folder/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.yaml)  
 **Rego Source:** [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.rego)  
-**Short Description:** Verify there are no exposed credentials.  
 **Labels:** Jenkins, Folder  
+
+Verify there are no exposed credentials.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

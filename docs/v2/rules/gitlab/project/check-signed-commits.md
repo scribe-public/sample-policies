@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/check-signed-commits@v2/rules`  
 **Source:** [v2/rules/gitlab/project/check-signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-signed-commits.yaml)  
 **Rego Source:** [check-signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-signed-commits.rego)  
-**Short Description:** Verify all commits in the GitLab project are signed.  
 **Labels:** Gitlab, Project  
+
+Verify all commits in the GitLab project are signed.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/co-approval-required@v2/rules`  
 **Source:** [v2/rules/gitlab/project/co-approval-required.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/co-approval-required.yaml)  
 **Rego Source:** [co-approval-required.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/co-approval-required.rego)  
-**Short Description:** Verify code owner approval is required for specific branches in the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify code owner approval is required for specific branches in the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

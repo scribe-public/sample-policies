@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/prevent-secrets-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/prevent-secrets-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/prevent-secrets-check.yaml)  
 **Rego Source:** [prevent-secrets-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/prevent-secrets-check.rego)  
-**Short Description:** Verify `prevent_secrets` is enabled for the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify `prevent_secrets` is enabled for the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

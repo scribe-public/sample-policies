@@ -3,8 +3,10 @@
 **Uses:** `slsa/build-time@v2/rules`  
 **Source:** [v2/rules/slsa/build-time.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.yaml)  
 **Rego Source:** [build-time.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.rego)  
-**Short Description:** Verify the artifact was created within the specified time window.  
 **Labels:** SLSA, Image  
+
+Verify the artifact was created within the specified time window.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

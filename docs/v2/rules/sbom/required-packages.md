@@ -3,8 +3,10 @@
 **Uses:** `sbom/required-packages@v2/rules`  
 **Source:** [v2/rules/sbom/required-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.yaml)  
 **Rego Source:** [required-packages.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/required-packages.rego)  
-**Short Description:** Verify the artifact includes all required dependencies.  
 **Labels:** SBOM, Image  
+
+Verify the artifact includes all required dependencies.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/commit-author-name-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/commit-author-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-name-check.yaml)  
 **Rego Source:** [commit-author-name-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-name-check.rego)  
-**Short Description:** Verify only users in the Allowed List author commits in the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify only users in the Allowed List author commits in the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

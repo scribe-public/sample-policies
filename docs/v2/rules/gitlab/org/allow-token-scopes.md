@@ -3,8 +3,10 @@
 **Uses:** `gitlab/org/allow-token-scopes@v2/rules`  
 **Source:** [v2/rules/gitlab/org/allow-token-scopes.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-token-scopes.yaml)  
 **Rego Source:** [allow-token-scopes.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-token-scopes.rego)  
-**Short Description:** Verify all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.  
 **Labels:** Gitlab, Organization  
+
+Verify all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

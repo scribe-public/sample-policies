@@ -3,8 +3,10 @@
 **Uses:** `gitlab/org/blocked-users@v2/rules`  
 **Source:** [v2/rules/gitlab/org/blocked-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/blocked-users.yaml)  
 **Rego Source:** [blocked-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/blocked-users.rego)  
-**Short Description:** Verify no users in the GitLab organization are on the block list.  
 **Labels:** Gitlab, Organization  
+
+Verify no users in the GitLab organization are on the block list.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `github/org/push-protection-sa@v2/rules`  
 **Source:** [v2/rules/github/org/push-protection-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection-sa.yaml)  
 **Rego Source:** [push-protection-sa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection-sa.rego)  
-**Short Description:** Verify `secret_scanning_push_protection` is configured in the GitHub repository.  
 **Labels:** GitHub, Organization  
+
+Verify `secret_scanning_push_protection` is configured in the GitHub repository.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

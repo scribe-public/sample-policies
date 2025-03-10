@@ -3,8 +3,10 @@
 **Uses:** `github/repository/branch-protection@v2/rules`  
 **Source:** [v2/rules/github/repository/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-protection.yaml)  
 **Rego Source:** [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-protection.rego)  
-**Short Description:** Verify branch protection is configured in the GitHub repository.  
 **Labels:** GitHub, Repository  
+
+Verify branch protection is configured in the GitHub repository.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

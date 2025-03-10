@@ -3,8 +3,10 @@
 **Uses:** `k8s/namespace/verify-namespace-duration@v2/rules`  
 **Source:** [v2/rules/k8s/namespace/verify-namespace-duration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-duration.yaml)  
 **Rego Source:** [verify-namespace-duration.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-duration.rego)  
-**Short Description:** Verify Kubernetes namespaces adhere to a specified runtime duration to enforce lifecycle limits.  
 **Labels:** K8s, Namespace  
+
+Verify Kubernetes namespaces adhere to a specified runtime duration to enforce lifecycle limits.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

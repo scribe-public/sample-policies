@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/commit-message-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/commit-message-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-message-check.yaml)  
 **Rego Source:** [commit-message-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-message-check.rego)  
-**Short Description:** Verify that commit messages in the GitLab project adhere to the specified format template.  
 **Labels:** Gitlab, Project  
+
+Verify that commit messages in the GitLab project adhere to the specified format template.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

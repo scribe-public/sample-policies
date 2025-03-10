@@ -3,8 +3,10 @@
 **Uses:** `sbom/complete-licenses@v2/rules`  
 **Source:** [v2/rules/sbom/complete-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/complete-licenses.yaml)  
 **Rego Source:** [complete-licenses.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/complete-licenses.rego)  
-**Short Description:** Verify all dependencies in the artifact have a license.  
 **Labels:** SBOM, Image  
+
+Verify all dependencies in the artifact have a license.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

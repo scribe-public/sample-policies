@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/push-rules-set@v2/rules`  
 **Source:** [v2/rules/gitlab/project/push-rules-set.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-rules-set.yaml)  
 **Rego Source:** [push-rules-set.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-rules-set.rego)  
-**Short Description:** Verify push rules are set for the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify push rules are set for the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

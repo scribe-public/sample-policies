@@ -3,8 +3,10 @@
 **Uses:** `github/repository/branch-verification@v2/rules`  
 **Source:** [v2/rules/github/repository/branch-verification.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-verification.yaml)  
 **Rego Source:** [branch-verification.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-verification.rego)  
-**Short Description:** Verify branch verification in the GitHub repository matches the value defined in the configuration file.  
 **Labels:** GitHub, Repository  
+
+Verify branch verification in the GitHub repository matches the value defined in the configuration file.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `bitbucket/project/long-live-tokens@v2/rules`  
 **Source:** [v2/rules/bitbucket/project/long-live-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/long-live-tokens.yaml)  
 **Rego Source:** [long-live-tokens.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/long-live-tokens.rego)  
-**Short Description:** Verify Bitbucket API tokens expire before the maximum time to live.  
 **Labels:** Bitbucket, Project  
+
+Verify Bitbucket API tokens expire before the maximum time to live.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `jenkins/instance/inactive-users@v2/rules`  
 **Source:** [v2/rules/jenkins/instance/inactive-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/instance/inactive-users.yaml)  
 **Rego Source:** [inactive-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/instance/inactive-users.rego)  
-**Short Description:** Verify there are no inactive users.  
 **Labels:** Jenkins, Instance  
+
+Verify there are no inactive users.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `sbom/banned-users@v2/rules`  
 **Source:** [v2/rules/sbom/banned-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.yaml)  
 **Rego Source:** [banned-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.rego)  
-**Short Description:** Verify specific users are not allowed in an SBOM.  
 **Labels:** SBOM, Image  
+
+Verify specific users are not allowed in an SBOM.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

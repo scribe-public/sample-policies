@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/approvals-policy-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/approvals-policy-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvals-policy-check.yaml)  
 **Rego Source:** [approvals-policy-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvals-policy-check.rego)  
-**Short Description:** Verify the project's merge approval policy complies with requirements.  
 **Labels:** Blueprint, Gitlab, Project  
+
+Verify the project's merge approval policy complies with requirements.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

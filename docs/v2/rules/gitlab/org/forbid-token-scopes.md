@@ -3,8 +3,10 @@
 **Uses:** `gitlab/org/forbid-token-scopes@v2/rules`  
 **Source:** [v2/rules/gitlab/org/forbid-token-scopes.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/forbid-token-scopes.yaml)  
 **Rego Source:** [forbid-token-scopes.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/forbid-token-scopes.rego)  
-**Short Description:** Verify no GitLab organization tokens have disallowed scopes.  
 **Labels:** Blueprint, Gitlab, Organization  
+
+Verify no GitLab organization tokens have disallowed scopes.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

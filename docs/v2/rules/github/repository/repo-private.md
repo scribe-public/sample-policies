@@ -3,8 +3,10 @@
 **Uses:** `github/repository/repo-private@v2/rules`  
 **Source:** [v2/rules/github/repository/repo-private.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/repo-private.yaml)  
 **Rego Source:** [repo-private.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/repo-private.rego)  
-**Short Description:** Verify the GitHub repository is private.  
 **Labels:** GitHub, Repository  
+
+Verify the GitHub repository is private.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 
