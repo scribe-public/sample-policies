@@ -14,18 +14,19 @@ This initiative ensures that every critical build artifact includes the minimum 
 
 **Help**: https://slsa.dev/
 
-## Defaults
-
-```yaml
-evidence:
-  signed: false
-```
+> ** Evidence for this initiative is not required by default but is recommended.**
 
 ## Controls Overview
 
 | Control ID | Control Name | Control Description | Mitigation |
 |------------|--------------|---------------------|------------|
 | prov_exists | Provenance exists | This control verifies that essential provenance metadata is present for each build artifact. | Ensure that provenance metadata is present for critical build artifacts to support supply chain integrity. |
+
+## Evidence Defaults
+
+| Field | Value |
+|-------|-------|
+| signed | False |
 
 ---
 

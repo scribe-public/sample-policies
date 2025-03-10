@@ -15,12 +15,7 @@ This initiative defines a set of best practices and technical guidelines designe
 
 **Help**: https://github.com/Venafi/blueprint-securesoftwarepipeline
 
-## Defaults
-
-```yaml
-evidence:
-  signed: true
-```
+> ** Evidence for this initiative is required by default.**
 
 ## Controls Overview
 
@@ -36,6 +31,12 @@ evidence:
 | CT-11 | Available container images don’t have any high or critical vulnerabilities | Available container images don’t have any high or critical vulnerabilities | Continuously scan container images for vulnerabilities and ensure that only images without high or critical issues are deployed. |
 | CT-12 | Validate artifact signatures and digests | Validate artifact signatures and digests | Ensure that artifacts are properly signed and their digests validated, confirming authenticity and preventing tampering. |
 | CT-13 | Scan deployed images in production | Scan deployed images in production | Continuously monitor and scan production images to ensure ongoing compliance with security standards. |
+
+## Evidence Defaults
+
+| Field | Value |
+|-------|-------|
+| signed | True |
 
 ---
 

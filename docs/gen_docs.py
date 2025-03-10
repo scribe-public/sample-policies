@@ -199,19 +199,19 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     if help_url:
         md.append(f"**Help**: {help_url}\n")
 
-    defaults = initiative_data.get("defaults", {})
-    if defaults:
-        md.append("## Defaults\n")
-        md.append("```yaml")
-        md.append(yaml.safe_dump(defaults, sort_keys=False).strip())
-        md.append("```")
-        md.append("")
 
     controls = initiative_data.get("controls", [])
     if not controls:
         md.append("_No controls defined._")
         return "\n".join(md)
+    
+    sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
 
+    if sign_defaults:
+        md.append(f"> ** Evidence for this initiative is required by default.**\n")
+    else:
+        md.append(f"> ** Evidence for this initiative is not required by default but is recommended.**\n")
+    
     # Controls Overview with Mitigation column
     md.append("## Controls Overview\n")
     md.append("| Control ID | Control Name | Control Description | Mitigation |")
@@ -223,6 +223,17 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         ctrl_mitigation = ctrl.get("mitigation", "")
         md.append(f"| {ctrl_id} | {ctrl_name} | {ctrl_desc} | {ctrl_mitigation} |")
     md.append("")
+
+    defaults = initiative_data.get("defaults", {})
+    if defaults:
+        if "evidence" in defaults:
+            # Build default table for each field in "evidence"
+            md.append("## Evidence Defaults\n")
+            md.append("| Field | Value |")
+            md.append("|-------|-------|")
+            for field, value in defaults["evidence"].items():
+                md.append(f"| {field} | {value} |")
+            md.append("")
 
     # Detailed Controls
     md.append("---\n")
