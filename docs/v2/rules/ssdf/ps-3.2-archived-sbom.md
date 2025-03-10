@@ -8,3 +8,8 @@
 
 **Short Description**: PS.3.2 Archive SBOM
 
+**Mitigation**:
+
+Archives the SBOM for every build, providing a permanent record of the software components and their relationships, thereby reducing the risk of supply chain attacks.
+
+

@@ -8,6 +8,11 @@
 
 **Short Description**: PS.1 Assure the repository is private
 
+**Mitigation**:
+
+Ensures that repositories remain private, reducing the risk of sensitive code being exposed to unauthorized parties.
+
+
 ## Rule Parameters (`with`)
 
 ```yaml

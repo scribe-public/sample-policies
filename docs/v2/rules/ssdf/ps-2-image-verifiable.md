@@ -8,6 +8,11 @@
 
 **Short Description**: PS.2 Provide a mechanism to verify the integrity of the image
 
+**Mitigation**:
+
+Ensures container images are cryptographically verifiable, preventing tampering and confirming their authenticity.
+
+
 ## Evidence Requirements
 
 ```yaml

@@ -8,6 +8,11 @@
 
 **Short Description**: PS.1 Require branch protection for the repository
 
+**Mitigation**:
+
+Enforces branch protection policies to prevent unauthorized commits and maintain the integrity of critical code branches.
+
+
 ## Rule Parameters (`with`)
 
 ```yaml

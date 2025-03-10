@@ -8,6 +8,11 @@
 
 **Short Description**: PS.1 Restrict the maximum number of organization admins
 
+**Mitigation**:
+
+Limits the number of administrative accounts, minimizing the potential for abuse of elevated privileges.
+
+
 ## Rule Parameters (`with`)
 
 ```yaml

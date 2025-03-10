@@ -8,6 +8,11 @@
 
 **Short Description**: PS.1 Require contributors to sign when committing to Github through the web interface
 
+**Mitigation**:
+
+Requires signoff on web commits to ensure that code changes are reviewed and approved, thereby reducing the risk of unauthorized or malicious modifications.
+
+
 ## Rule Parameters (`with`)
 
 ```yaml
