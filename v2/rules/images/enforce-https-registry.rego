@@ -11,14 +11,10 @@ default asset  := {}
 asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
-# Retrieve the Container Component
-##########################################################################
-component = input.evidence.predicate.bom.metadata.component
-
-##########################################################################
 # Check If Registry Scheme Is HTTPS
 ##########################################################################
 allow {
+  component = input.evidence.predicate.bom.metadata.component
   some prop in component.properties
   prop.name == "registry_scheme"
   prop.value == "https"

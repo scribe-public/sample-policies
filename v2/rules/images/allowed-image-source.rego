@@ -7,6 +7,7 @@ default allow := false
 default violations := []
 default asset := {}
 default errors := []
+default approved_sources := []
 
 # Retrieve evidence (SBOM)
 asset = scribe.get_asset_data(input.evidence)

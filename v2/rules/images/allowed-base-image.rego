@@ -6,6 +6,11 @@ import future.keywords.in
 default allow := false
 default asset := {}
 default errors := []
+default approved_sources := []
+default found_base_image := false
+default valid_base_images := []
+default invalid_base_images := []
+default violations := []
 
 # Retrieve evidence (SBOM)
 asset = scribe.get_asset_data(input.evidence)

@@ -7,6 +7,7 @@ default allow := false
 default violations := []
 default asset := {}
 default errors := []
+default banned_ports := []
 
 ##########################################################################
 # Retrieve Evidence Metadata
