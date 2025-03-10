@@ -1,0 +1,25 @@
+# Verify IaC Misconfiguration Threshold in Trivy SARIF  
+**Type:** Rule  
+**ID:** `trivy-iac-findings`  
+**Uses:** `sarif/trivy/report-trivy-iac-errors@v2/rules`  
+**Source:** [v2/rules/sarif/trivy/report-trivy-iac-errors.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/report-trivy-iac-errors.yaml)  
+**Rego Source:** [../report-iac-errors.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../report-iac-errors.rego)  
+**Labels:** SARIF, Trivy  
+
+Verify the number of infrastructure-as-code (IaC) errors in the Trivy SARIF report remains below the specified threshold.
+
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| signed | False |
+| content_body_type | generic |
+| target_type | data |
+| predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
+
+## Rule Parameters (`with`)  
+| Parameter | Default |
+|-----------|---------|
+| violations_threshold | 0 |

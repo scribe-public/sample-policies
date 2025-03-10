@@ -4,6 +4,9 @@ name: Verify Provenance Document Exists
 path: l1-provenance-exists.rego
 
 description: Verify that the Provenance document evidence exists.
+mitigation: Recording comprehensive provenance metadata allows organizations to verify the integrity
+        of the build process and ensures that only authorized and untampered artifacts are deployed.
+help: https://slsa.dev/spec/v1.0/requirements
 
 labels:
   - SLSA

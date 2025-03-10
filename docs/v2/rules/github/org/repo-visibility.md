@@ -1,0 +1,26 @@
+# Verify Repo Visibility Setting  
+**Type:** Rule  
+**ID:** `github-org-repo-visibility`  
+**Uses:** `github/org/repo-visibility@v2/rules`  
+**Source:** [v2/rules/github/org/repo-visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/repo-visibility.yaml)  
+**Rego Source:** [repo-visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/repo-visibility.rego)  
+**Labels:** GitHub, Organization  
+
+Verify only repositories in the Allowed List are public in the GitHub organization.
+
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| signed | False |
+| content_body_type | generic |
+| target_type | data |
+| predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
+| labels | - platform=github<br>- asset_type=organization |
+
+## Rule Parameters (`with`)  
+| Parameter | Default |
+|-----------|---------|
+| allowed_repo_names | [] |
