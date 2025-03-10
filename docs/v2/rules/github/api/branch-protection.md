@@ -1,14 +1,12 @@
-# Rule: Branch protection enabled in GitHub repository
+# Rule: Branch protection enabled in GitHub repository  
+**ID:** `github-api-branch-protection`  
+**Uses:** `github/api/branch-protection@v2/rules`  
+**Source:** [v2/rules/github/api/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.yaml)  
+**Rego Source:** [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.rego)  
+**Short Description:** Verify GitHub branch protection rules  
+**Labels:** GitHub  
 
-**ID**: `github-api-branch-protection`  
-**Uses**: `github/api/branch-protection@v2/rules  
-**Source**: [v2/rules/github/api/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.yaml)  
-**Rego Source**: [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.rego)  
-**Short Description**: Verify GitHub branch protection rules  
-**Labels**: GitHub
-
-## Rule Parameters (`with`)
-
+## Rule Parameters (`with`)  
 ```yaml
 api_token: '{{ .Args.Token }}'
 owner: '{{ .Args.Owner }}'
@@ -41,3 +39,4 @@ branch_protection_rules:
   lock_branch: false
   allow_fork_syncing: false
 ```
+

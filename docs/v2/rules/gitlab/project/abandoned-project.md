@@ -1,27 +1,22 @@
-# Rule: Verify Project Activity
+# Rule: Verify Project Activity  
+**ID:** `gitlab-project-abandoned-project`  
+**Uses:** `gitlab/project/abandoned-project@v2/rules`  
+**Source:** [v2/rules/gitlab/project/abandoned-project.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.yaml)  
+**Rego Source:** [abandoned-project.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.rego)  
+**Short Description:** Verify the GitLab project is active for a specified duration.  
+**Labels:** Gitlab, Project  
 
-**ID**: `gitlab-project-abandoned-project`  
-**Uses**: `gitlab/project/abandoned-project@v2/rules  
-**Source**: [v2/rules/gitlab/project/abandoned-project.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.yaml)  
-**Rego Source**: [abandoned-project.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.rego)  
-**Short Description**: Verify the GitLab project is active for a specified duration.  
-**Labels**: Gitlab, Project
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| signed | False |
+| content_body_type | generic |
+| target_type | data |
+| predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
+| labels | ['platform=gitlab', 'asset_type=project', '{{- if eq (index .Context "asset-type") "project" -}} {{- asset_on_target (index .Context "asset-name") -}} {{- else -}} {{- asset_on_target nil -}} {{- end -}}'] |
 
-## Evidence Requirements
-
-```yaml
-signed: false
-content_body_type: generic
-target_type: data
-predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
-labels:
-- platform=gitlab
-- asset_type=project
-- '{{- if eq (index .Context "asset-type") "project" -}} {{- asset_on_target (index
-  .Context "asset-name") -}} {{- else -}} {{- asset_on_target nil -}} {{- end -}}'
-```
-## Rule Parameters (`with`)
-
+## Rule Parameters (`with`)  
 ```yaml
 inactive_for_days: 30
 ```
+

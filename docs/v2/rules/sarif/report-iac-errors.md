@@ -1,22 +1,21 @@
-# Rule: Verify IaC Misconfiguration Threshold in SARIF
+# Rule: Verify IaC Misconfiguration Threshold in SARIF  
+**ID:** `sarif-iac-findings`  
+**Uses:** `sarif/report-iac-errors@v2/rules`  
+**Source:** [v2/rules/sarif/report-iac-errors.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/report-iac-errors.yaml)  
+**Rego Source:** [report-iac-errors.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/report-iac-errors.rego)  
+**Short Description:** Verify the number of infrastructure-as-code (IaC) errors in the SARIF report remains below the specified threshold.  
+**Labels:** SARIF  
 
-**ID**: `sarif-iac-findings`  
-**Uses**: `sarif/report-iac-errors@v2/rules  
-**Source**: [v2/rules/sarif/report-iac-errors.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/report-iac-errors.yaml)  
-**Rego Source**: [report-iac-errors.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/report-iac-errors.rego)  
-**Short Description**: Verify the number of infrastructure-as-code (IaC) errors in the SARIF report remains below the specified threshold.  
-**Labels**: SARIF
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| signed | False |
+| content_body_type | generic |
+| target_type | data |
+| predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
-## Evidence Requirements
-
-```yaml
-signed: false
-content_body_type: generic
-target_type: data
-predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
-```
-## Rule Parameters (`with`)
-
+## Rule Parameters (`with`)  
 ```yaml
 violations_threshold: 0
 ```
+

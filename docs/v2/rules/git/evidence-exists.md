@@ -1,19 +1,16 @@
-# Rule: Required Git Evidence Exists
+# Rule: Required Git Evidence Exists  
+**ID:** `required-git-evidence`  
+**Uses:** `git/evidence-exists@v2/rules`  
+**Source:** [v2/rules/git/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.yaml)  
+**Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.rego)  
+**Short Description:** Verify required Git evidence exists.  
+**Labels:** Git  
 
-**ID**: `required-git-evidence`  
-**Uses**: `git/evidence-exists@v2/rules  
-**Source**: [v2/rules/git/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.yaml)  
-**Rego Source**: [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.rego)  
-**Short Description**: Verify required Git evidence exists.  
-**Labels**: Git
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| filter-by | ['product', 'target'] |
+| signed | False |
+| content_body_type | cyclonedx-json |
+| target_type | git |
 
-## Evidence Requirements
-
-```yaml
-filter-by:
-- product
-- target
-signed: false
-content_body_type: cyclonedx-json
-target_type: git
-```

@@ -1,22 +1,21 @@
-# Rule: Disallow Specific Users in SBOM
+# Rule: Disallow Specific Users in SBOM  
+**ID:** `sbom-disallowed-users`  
+**Uses:** `sbom/banned-users@v2/rules`  
+**Source:** [v2/rules/sbom/banned-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.yaml)  
+**Rego Source:** [banned-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.rego)  
+**Short Description:** Verify specific users are not allowed in an SBOM.  
+**Labels:** SBOM, Image  
 
-**ID**: `sbom-disallowed-users`  
-**Uses**: `sbom/banned-users@v2/rules  
-**Source**: [v2/rules/sbom/banned-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.yaml)  
-**Rego Source**: [banned-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.rego)  
-**Short Description**: Verify specific users are not allowed in an SBOM.  
-**Labels**: SBOM, Image
+## Evidence Requirements  
+| Field | Value |
+|-------|-------|
+| signed | False |
+| content_body_type | cyclonedx-json |
+| target_type | container |
 
-## Evidence Requirements
-
-```yaml
-signed: false
-content_body_type: cyclonedx-json
-target_type: container
-```
-## Rule Parameters (`with`)
-
+## Rule Parameters (`with`)  
 ```yaml
 users:
 - root
 ```
+
