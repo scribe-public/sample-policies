@@ -8,6 +8,11 @@
 
 **Short Description**: PS.1 Require 2FA for accessing code
 
+**Mitigation**:
+
+Enforces two-factor authentication (2FA), significantly reducing the risk of compromised credentials.
+
+
 ## Rule Parameters (`with`)
 
 ```yaml

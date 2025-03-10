@@ -7,6 +7,11 @@
 
 **Short Description**: Evaluate PS rules from the SSDF initiative
 
+**Full Description**:
+
+This initiative enforces key controls from the Secure Software Development Framework (SSDF) to ensure  the integrity and security of your software supply chain. It evaluates critical process (PS) rules  to detect vulnerabilities, enforce proper access and commit practices, and secure code repositories.
+
+
 **Help**: https://csrc.nist.gov/pubs/sp/800/218/final
 
 > ** Evidence for this initiative is not required by default but is recommended.**
@@ -15,9 +20,12 @@
 
 | Control ID | Control Name | Control Description | Mitigation |
 |------------|--------------|---------------------|------------|
-|  | SSDF-IMAGE |  |  |
-|  | SSDF-ORG |  |  |
-|  | SSDF-REPO |  |  |
+|  | SSDF-IMAGE | Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity. | Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
+ |
+|  | SSDF-ORG | Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced. | Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
+ |
+|  | SSDF-REPO | Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy. | Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
+ |
 
 ## Evidence Defaults
 
@@ -30,6 +38,11 @@
 # Detailed Controls
 
 ## SSDF-IMAGE (ID: ``)
+**Description**: Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity.
+
+**Mitigation**: Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
+
+
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
@@ -38,6 +51,11 @@
 | PS.3.2 | [SBOM archived](../rules/ssdf/ps-3.2-archived-sbom.md) | PS.3.2 Archive SBOM |
 
 ## SSDF-ORG (ID: ``)
+**Description**: Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced.
+
+**Mitigation**: Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
+
+
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
@@ -47,6 +65,11 @@
 | PS.1.5 | [Require signoff on web commits](../rules/ssdf/ps-1-web-commit-signoff.md) | PS.1 Require contributors to sign when committing to Github through the web interface |
 
 ## SSDF-REPO (ID: ``)
+**Description**: Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy.
+
+**Mitigation**: Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
+
+
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
