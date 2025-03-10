@@ -1,4 +1,5 @@
-# Rule: Check Description Substring  
+# Check Description Substring  
+** Type:** Rule  
 **ID:** `gitlab-project-description-substring-check`  
 **Uses:** `gitlab/project/description-substring-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/description-substring-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/description-substring-check.yaml)  

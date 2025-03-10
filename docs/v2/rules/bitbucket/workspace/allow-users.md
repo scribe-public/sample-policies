@@ -1,4 +1,5 @@
-# Rule: Allowed Workspace Users  
+# Allowed Workspace Users  
+** Type:** Rule  
 **ID:** `bb-workspace-allowed-workspace-users`  
 **Uses:** `bitbucket/workspace/allow-users@v2/rules`  
 **Source:** [v2/rules/bitbucket/workspace/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/workspace/allow-users.yaml)  

@@ -1,4 +1,5 @@
-# Rule: K8s Jailbreak  
+# K8s Jailbreak  
+** Type:** Rule  
 **ID:** `k8s-jailbreak`  
 **Uses:** `generic/k8s-jailbreak@v2/rules`  
 **Source:** [v2/rules/generic/k8s-jailbreak.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/k8s-jailbreak.yaml)  

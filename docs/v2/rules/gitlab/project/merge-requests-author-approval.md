@@ -1,4 +1,5 @@
-# Rule: Disable Author Approval for Merge Requests in GitLab  
+# Disable Author Approval for Merge Requests in GitLab  
+** Type:** Rule  
 **ID:** `gitlab-project-merge-requests-author-approval`  
 **Uses:** `gitlab/project/merge-requests-author-approval@v2/rules`  
 **Source:** [v2/rules/gitlab/project/merge-requests-author-approval.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-requests-author-approval.yaml)  

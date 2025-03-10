@@ -1,4 +1,5 @@
-# Rule: Verify Secret_Scanning_Validity_Checks_Enabled Setting  
+# Verify Secret_Scanning_Validity_Checks_Enabled Setting  
+** Type:** Rule  
 **ID:** `github-org-validity-checks`  
 **Uses:** `github/org/validity-checks@v2/rules`  
 **Source:** [v2/rules/github/org/validity-checks.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/validity-checks.yaml)  

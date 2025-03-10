@@ -1,4 +1,5 @@
-# Rule: Allowed Project Users  
+# Allowed Project Users  
+** Type:** Rule  
 **ID:** `bb-project-allowed-project-users`  
 **Uses:** `bitbucket/project/allow-users@v2/rules`  
 **Source:** [v2/rules/bitbucket/project/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/allow-users.yaml)  

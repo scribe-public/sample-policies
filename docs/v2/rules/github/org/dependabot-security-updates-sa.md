@@ -1,4 +1,5 @@
-# Rule: Verify dependabot_security_updates setting in security_and_analysis  
+# Verify dependabot_security_updates setting in security_and_analysis  
+** Type:** Rule  
 **ID:** `github-org-dependabot-security-updates-sa`  
 **Uses:** `github/org/dependabot-security-updates-sa@v2/rules`  
 **Source:** [v2/rules/github/org/dependabot-security-updates-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-security-updates-sa.yaml)  

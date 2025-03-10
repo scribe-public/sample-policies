@@ -1,4 +1,5 @@
-# Rule: Verify GitLab Pipeline Labels  
+# Verify GitLab Pipeline Labels  
+** Type:** Rule  
 **ID:** `gitlab-pipeline-verify-labels`  
 **Uses:** `gitlab/pipeline/verify-labels@v2/rules`  
 **Source:** [v2/rules/gitlab/pipeline/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels.yaml)  

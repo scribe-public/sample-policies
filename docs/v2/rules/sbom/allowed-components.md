@@ -1,4 +1,5 @@
-# Rule: Enforce Allowed SBOM Components  
+# Enforce Allowed SBOM Components  
+** Type:** Rule  
 **ID:** `sbom-allowed-components`  
 **Uses:** `sbom/allowed-components@v2/rules`  
 **Source:** [v2/rules/sbom/allowed-components.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/allowed-components.yaml)  

@@ -1,4 +1,5 @@
-# Rule: Prevent Credential Exposure  
+# Prevent Credential Exposure  
+** Type:** Rule  
 **ID:** `bb-project-exposed-credentials`  
 **Uses:** `bitbucket/project/exposed-credentials@v2/rules`  
 **Source:** [v2/rules/bitbucket/project/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/exposed-credentials.yaml)  

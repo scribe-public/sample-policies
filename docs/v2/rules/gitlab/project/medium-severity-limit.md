@@ -1,4 +1,5 @@
-# Rule: Enforce Medium Severity Limit  
+# Enforce Medium Severity Limit  
+** Type:** Rule  
 **ID:** `gitlab-project-medium-severity-limit`  
 **Uses:** `gitlab/project/medium-severity-limit@v2/rules`  
 **Source:** [v2/rules/gitlab/project/medium-severity-limit.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/medium-severity-limit.yaml)  

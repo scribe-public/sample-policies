@@ -1,4 +1,5 @@
-# Rule: Disallow Container Shell Entrypoint  
+# Disallow Container Shell Entrypoint  
+** Type:** Rule  
 **ID:** `images-disallow-shell-access`  
 **Uses:** `images/restrict-shell-entrypoint@v2/rules`  
 **Source:** [v2/rules/images/restrict-shell-entrypoint.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.yaml)  

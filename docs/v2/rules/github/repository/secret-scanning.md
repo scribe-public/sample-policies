@@ -1,4 +1,5 @@
-# Rule: Verify secret_scanning setting  
+# Verify secret_scanning setting  
+** Type:** Rule  
 **ID:** `github-repo-secret-scanning`  
 **Uses:** `github/repository/secret-scanning@v2/rules`  
 **Source:** [v2/rules/github/repository/secret-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/secret-scanning.yaml)  

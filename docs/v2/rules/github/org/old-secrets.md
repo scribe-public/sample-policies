@@ -1,4 +1,5 @@
-# Rule: Verify GitHub Organization Secrets Are Not Too Old  
+# Verify GitHub Organization Secrets Are Not Too Old  
+** Type:** Rule  
 **ID:** `github-org-old-secrets`  
 **Uses:** `github/org/old-secrets@v2/rules`  
 **Source:** [v2/rules/github/org/old-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/old-secrets.yaml)  

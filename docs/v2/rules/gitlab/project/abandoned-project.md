@@ -1,4 +1,5 @@
-# Rule: Verify Project Activity  
+# Verify Project Activity  
+** Type:** Rule  
 **ID:** `gitlab-project-abandoned-project`  
 **Uses:** `gitlab/project/abandoned-project@v2/rules`  
 **Source:** [v2/rules/gitlab/project/abandoned-project.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/abandoned-project.yaml)  

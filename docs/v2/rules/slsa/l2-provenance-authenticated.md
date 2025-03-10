@@ -1,4 +1,5 @@
-# Rule: Verify that provenance is authenticated  
+# Verify that provenance is authenticated  
+** Type:** Rule  
 **ID:** `SLSA.L2`  
 **Uses:** `slsa/l2-provenance-authenticated@v2/rules`  
 **Source:** [v2/rules/slsa/l2-provenance-authenticated.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/l2-provenance-authenticated.yaml)  

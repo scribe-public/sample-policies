@@ -1,4 +1,5 @@
-# Rule: Ensure Active Projects in GitLab Organization  
+# Ensure Active Projects in GitLab Organization  
+** Type:** Rule  
 **ID:** `gitlab-org-inactive-projects`  
 **Uses:** `gitlab/org/inactive-projects@v2/rules`  
 **Source:** [v2/rules/gitlab/org/inactive-projects.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.yaml)  

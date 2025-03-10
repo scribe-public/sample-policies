@@ -1,4 +1,5 @@
-# Rule: Verify Commit Message Format  
+# Verify Commit Message Format  
+** Type:** Rule  
 **ID:** `gitlab-project-verify-commit_message_check`  
 **Uses:** `gitlab/project/commit-message-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/commit-message-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-message-check.yaml)  

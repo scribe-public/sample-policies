@@ -1,4 +1,5 @@
-# Rule: Verify No Organization Secrets Exist in Repository  
+# Verify No Organization Secrets Exist in Repository  
+** Type:** Rule  
 **ID:** `github-repo-no-org-secrets`  
 **Uses:** `github/repository/no-org-secrets@v2/rules`  
 **Source:** [v2/rules/github/repository/no-org-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/no-org-secrets.yaml)  

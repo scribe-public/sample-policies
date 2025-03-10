@@ -1,4 +1,5 @@
-# Rule: Verify Repository Is Private  
+# Verify Repository Is Private  
+** Type:** Rule  
 **ID:** `github-repo-private`  
 **Uses:** `github/repository/repo-private@v2/rules`  
 **Source:** [v2/rules/github/repository/repo-private.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/repo-private.yaml)  

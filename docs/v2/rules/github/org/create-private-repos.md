@@ -1,4 +1,5 @@
-# Rule: Verify members_can_create_private_repositories setting  
+# Verify members_can_create_private_repositories setting  
+** Type:** Rule  
 **ID:** `github-org-create-private-repos`  
 **Uses:** `github/org/create-private-repos@v2/rules`  
 **Source:** [v2/rules/github/org/create-private-repos.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-private-repos.yaml)  

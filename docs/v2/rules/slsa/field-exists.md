@@ -1,4 +1,5 @@
-# Rule: SLSA Field Exists in Provenance Document  
+# SLSA Field Exists in Provenance Document  
+** Type:** Rule  
 **ID:** `slsa-field-exists`  
 **Uses:** `slsa/field-exists@v2/rules`  
 **Source:** [v2/rules/slsa/field-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/field-exists.yaml)  

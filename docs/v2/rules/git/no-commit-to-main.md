@@ -1,4 +1,5 @@
-# Rule: Disallow Commits to Main Branch  
+# Disallow Commits to Main Branch  
+** Type:** Rule  
 **ID:** `git-disallow-commits-to-main`  
 **Uses:** `git/no-commit-to-main@v2/rules`  
 **Source:** [v2/rules/git/no-commit-to-main.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/no-commit-to-main.yaml)  

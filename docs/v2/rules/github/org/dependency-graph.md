@@ -1,4 +1,5 @@
-# Rule: Verify dependency_graph_enabled_for_new_repositories setting  
+# Verify dependency_graph_enabled_for_new_repositories setting  
+** Type:** Rule  
 **ID:** `github-org-dependency-graph`  
 **Uses:** `github/org/dependency-graph@v2/rules`  
 **Source:** [v2/rules/github/org/dependency-graph.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependency-graph.yaml)  

@@ -1,4 +1,5 @@
-# Rule: Generic Artifact Signed  
+# Generic Artifact Signed  
+** Type:** Rule  
 **ID:** `generic-artifact-signed`  
 **Uses:** `generic/artifact-signed@v2/rules`  
 **Source:** [v2/rules/generic/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/artifact-signed.yaml)  

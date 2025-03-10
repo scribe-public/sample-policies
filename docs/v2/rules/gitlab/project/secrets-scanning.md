@@ -1,4 +1,5 @@
-# Rule: Run Secrets Scanning in GitLab Project  
+# Run Secrets Scanning in GitLab Project  
+** Type:** Rule  
 **ID:** `gitlab-project-secrets-scanning`  
 **Uses:** `gitlab/project/secrets-scanning@v2/rules`  
 **Source:** [v2/rules/gitlab/project/secrets-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scanning.yaml)  

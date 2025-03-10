@@ -1,4 +1,5 @@
-# Rule: Enforce SBOM Freshness  
+# Enforce SBOM Freshness  
+** Type:** Rule  
 **ID:** `fresh-sbom`  
 **Uses:** `sbom/fresh-sbom@v2/rules`  
 **Source:** [v2/rules/sbom/fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.yaml)  

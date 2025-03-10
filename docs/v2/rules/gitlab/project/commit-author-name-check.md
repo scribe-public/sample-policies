@@ -1,4 +1,5 @@
-# Rule: Allowed Commit Authors in GitLab Project  
+# Allowed Commit Authors in GitLab Project  
+** Type:** Rule  
 **ID:** `gitlab-project-allowed-commit-author-names`  
 **Uses:** `gitlab/project/commit-author-name-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/commit-author-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-name-check.yaml)  

@@ -1,4 +1,5 @@
-# Rule: Check CWE Compliance  
+# Check CWE Compliance  
+** Type:** Rule  
 **ID:** `gitlab-project-check-cwe`  
 **Uses:** `gitlab/project/check-cwe@v2/rules`  
 **Source:** [v2/rules/gitlab/project/check-cwe.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-cwe.yaml)  

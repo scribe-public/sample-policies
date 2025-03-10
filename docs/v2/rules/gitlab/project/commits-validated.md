@@ -1,4 +1,5 @@
-# Rule: Validate All Commits in GitLab Project  
+# Validate All Commits in GitLab Project  
+** Type:** Rule  
 **ID:** `gitlab-project-all-commits-validated`  
 **Uses:** `gitlab/project/commits-validated@v2/rules`  
 **Source:** [v2/rules/gitlab/project/commits-validated.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commits-validated.yaml)  
