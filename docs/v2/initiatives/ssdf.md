@@ -36,9 +36,12 @@ This initiative enforces key controls from the Secure Software Development Frame
 # Detailed Controls
 
 ## [] SSDF-IMAGE
-**Description**: Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity.
 
-**Mitigation**: Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
+Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity.
+
+
+## Mitigation  
+Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
 
 
 ### Rules
@@ -49,9 +52,12 @@ This initiative enforces key controls from the Secure Software Development Frame
 | PS.3.2 | [SBOM archived](../rules/ssdf/ps-3.2-archived-sbom.md) | PS.3.2 Archive SBOM |
 
 ## [] SSDF-ORG
-**Description**: Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced.
 
-**Mitigation**: Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
+Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced.
+
+
+## Mitigation  
+Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
 
 
 ### Rules
@@ -63,9 +69,12 @@ This initiative enforces key controls from the Secure Software Development Frame
 | PS.1.5 | [Require signoff on web commits](../rules/ssdf/ps-1-web-commit-signoff.md) | PS.1 Require contributors to sign when committing to Github through the web interface |
 
 ## [] SSDF-REPO
-**Description**: Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy.
 
-**Mitigation**: Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
+Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy.
+
+
+## Mitigation  
+Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
 
 
 ### Rules
