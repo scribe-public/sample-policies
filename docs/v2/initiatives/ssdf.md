@@ -9,12 +9,7 @@
 
 **Help**: https://csrc.nist.gov/pubs/sp/800/218/final
 
-## Defaults
-
-```yaml
-evidence:
-  signed: false
-```
+> ** Evidence for this initiative is not required by default but is recommended.**
 
 ## Controls Overview
 
@@ -23,6 +18,12 @@ evidence:
 |  | SSDF-IMAGE |  |  |
 |  | SSDF-ORG |  |  |
 |  | SSDF-REPO |  |  |
+
+## Evidence Defaults
+
+| Field | Value |
+|-------|-------|
+| signed | False |
 
 ---
 
