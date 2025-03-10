@@ -10,6 +10,7 @@ Verify the SBOM exists as evidence.
 
 > Evidence **IS** required for this rule and will fail if missing.  
 > Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+> This rule scoped by product and target.  
 
 ## Evidence Requirements  
 | Field | Value |
