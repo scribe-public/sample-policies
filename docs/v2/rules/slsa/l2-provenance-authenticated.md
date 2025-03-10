@@ -16,6 +16,7 @@ Cryptographic authentication prevents tampering with provenance data, ensuring t
 
 > Evidence **IS** required for this rule and will fail if missing.  
 > Signed Evidence for this rule **IS* required by default.  
+> This rule scoped by product and target.  
 
 ## Evidence Requirements  
 | Field | Value |

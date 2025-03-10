@@ -10,6 +10,7 @@ Verify the SBOM is not older than the specified duration.
 
 > Rule Result will be set as 'open' if evidence is missing.  
 > Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+> This rule scoped by product and target.  
 
 ## Evidence Requirements  
 | Field | Value |

@@ -15,6 +15,7 @@ Recording comprehensive provenance metadata allows organizations to verify the i
 
 > Evidence **IS** required for this rule and will fail if missing.  
 > Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+> This rule scoped by product and target.  
 
 ## Evidence Requirements  
 | Field | Value |

@@ -124,6 +124,12 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         else:
             md.append(f"> Signed Evidence for this rule **IS NOT** required by default but is recommended.  ")
 
+    filter_by = rule_data.get("evidence", {}).get("filter-by", [])
+    # Create a list seperated by , and last one seperated by "and"
+    if len(filter_by) > 0:
+        filter_by_md = ", ".join(filter_by[:-1]) + " and " + filter_by[-1] if len(filter_by) > 1 else filter_by[0]
+        md.append(f"> This rule scoped by {filter_by_md}.  ")
+
     if full_description:
         md.append("\n## Description  ")
         md.append(full_description)
