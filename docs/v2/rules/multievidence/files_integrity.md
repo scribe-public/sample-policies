@@ -9,7 +9,7 @@
 Verify the checksum of each file in one SBOM matches the checksum in a second SBOM.
 
 > Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS* required by default.  
+> Signed Evidence for this rule **IS** required by default.  
 
 ## Evidence Requirements  
 | Field | Value |

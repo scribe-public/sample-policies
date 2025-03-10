@@ -9,7 +9,7 @@
 Verify required evidence is signed.
 
 > Evidence **IS** required for this rule and will fail if missing.  
-> Signed Evidence for this rule **IS* required by default.  
+> Signed Evidence for this rule **IS** required by default.  
 
 ## Evidence Requirements  
 | Field | Value |
