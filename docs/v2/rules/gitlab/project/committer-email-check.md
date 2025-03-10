@@ -5,6 +5,8 @@
 **Rego Source:** [committer-email-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/committer-email-check.rego)  
 **Short Description:** Verify only users in the Allowed List use committer email addresses in the GitLab project.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

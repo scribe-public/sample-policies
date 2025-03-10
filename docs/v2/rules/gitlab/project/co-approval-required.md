@@ -5,6 +5,8 @@
 **Rego Source:** [co-approval-required.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/co-approval-required.rego)  
 **Short Description:** Verify code owner approval is required for specific branches in the GitLab project.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

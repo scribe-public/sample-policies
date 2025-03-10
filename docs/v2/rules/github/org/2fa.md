@@ -5,6 +5,8 @@
 **Rego Source:** [2fa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/2fa.rego)  
 **Short Description:** Verify `two_factor_requirement` is enabled in the GitHub organization.  
 **Labels:** GitHub, Organization  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

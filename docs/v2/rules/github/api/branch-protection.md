@@ -5,6 +5,8 @@
 **Rego Source:** [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/api/branch-protection.rego)  
 **Short Description:** Verify GitHub branch protection rules  
 **Labels:** GitHub  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Rule Parameters (`with`)  
 ```yaml

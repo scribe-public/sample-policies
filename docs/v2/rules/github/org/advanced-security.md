@@ -5,6 +5,8 @@
 **Rego Source:** [advanced-security.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/advanced-security.rego)  
 **Short Description:** Verify `advanced_security` is enabled for new repositories in the GitHub organization.  
 **Labels:** GitHub, Organization  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

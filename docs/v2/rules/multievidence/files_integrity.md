@@ -5,6 +5,8 @@
 **Rego Source:** [files_integrity.rego](https://github.com/scribe-public/sample-policies/v2/rules/multievidence/files_integrity.rego)  
 **Short Description:** Verify the checksum of each file in one SBOM matches the checksum in a second SBOM.  
 **Labels:** SBOM  
+> Evidence for this rule **IS* required by default.**
+
 
 ## Evidence Requirements  
 | Field | Value |

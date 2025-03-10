@@ -5,6 +5,8 @@
 **Rego Source:** [reset-pprovals-on-push.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/reset-pprovals-on-push.rego)  
 **Short Description:** Verify `reset_approvals_on_push` is set for the GitLab project.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

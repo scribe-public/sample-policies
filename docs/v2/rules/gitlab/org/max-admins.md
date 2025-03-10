@@ -5,6 +5,8 @@
 **Rego Source:** [max-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/max-admins.rego)  
 **Short Description:** Verify the maximum number of admins for the GitLab project is restricted.  
 **Labels:** Blueprint, GitLab, Organization  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

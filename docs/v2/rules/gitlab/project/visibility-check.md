@@ -5,6 +5,8 @@
 **Rego Source:** [visibility-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/visibility-check.rego)  
 **Short Description:** Verify the GitLab project's visibility matches the required level.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

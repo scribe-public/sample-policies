@@ -5,6 +5,8 @@
 **Rego Source:** [verify-namespace-termination.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-termination.rego)  
 **Short Description:** Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.  
 **Labels:** K8s, Namespace  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

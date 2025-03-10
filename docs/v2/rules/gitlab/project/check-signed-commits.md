@@ -5,6 +5,8 @@
 **Rego Source:** [check-signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-signed-commits.rego)  
 **Short Description:** Verify all commits in the GitLab project are signed.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

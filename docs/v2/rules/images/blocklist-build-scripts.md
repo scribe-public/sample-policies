@@ -5,6 +5,8 @@
 **Rego Source:** [blocklist-build-scripts.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/blocklist-build-scripts.rego)  
 **Short Description:** Verify no build scripts commands appear in block list.  
 **Labels:** SBOM, Images  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

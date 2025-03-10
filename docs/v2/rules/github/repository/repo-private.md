@@ -5,6 +5,8 @@
 **Rego Source:** [repo-private.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/repo-private.rego)  
 **Short Description:** Verify the GitHub repository is private.  
 **Labels:** GitHub, Repository  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

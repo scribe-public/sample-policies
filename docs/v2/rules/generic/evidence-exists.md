@@ -5,6 +5,8 @@
 **Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/generic/evidence-exists.rego)  
 **Short Description:** Verify required evidence exists.  
 **Labels:** 3rd-party  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

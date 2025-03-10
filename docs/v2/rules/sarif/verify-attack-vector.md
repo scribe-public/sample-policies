@@ -5,6 +5,8 @@
 **Rego Source:** [verify-attack-vector.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-attack-vector.rego)  
 **Short Description:** Verify required evidence validates attack vectors in the SARIF report.  
 **Labels:** SARIF  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

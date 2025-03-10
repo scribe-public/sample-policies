@@ -5,6 +5,8 @@
 **Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/artifact-signed.rego)  
 **Short Description:** Verify the Git artifact is signed.  
 **Labels:** Git  
+> Evidence for this rule **IS* required by default.**
+
 
 ## Evidence Requirements  
 | Field | Value |

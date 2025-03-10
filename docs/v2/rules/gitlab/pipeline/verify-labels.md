@@ -5,6 +5,8 @@
 **Rego Source:** [verify-labels.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels.rego)  
 **Short Description:** Verify the pipeline includes all required label keys and values.  
 **Labels:** Gitlab, Pipeline  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

@@ -5,6 +5,8 @@
 **Rego Source:** [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/workspace/allow-admins.rego)  
 **Short Description:** Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace.  
 **Labels:** Bitbucket, Workspace  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

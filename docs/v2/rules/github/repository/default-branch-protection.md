@@ -5,6 +5,8 @@
 **Rego Source:** [default-branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/default-branch-protection.rego)  
 **Short Description:** Verify the default branch protection is configured in the GitHub repository.  
 **Labels:** GitHub, Repository  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

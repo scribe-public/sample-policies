@@ -5,6 +5,8 @@
 **Rego Source:** [secrets-scan-pass.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scan-pass.rego)  
 **Short Description:** Verify secrets scanning is successful for the GitLab project.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

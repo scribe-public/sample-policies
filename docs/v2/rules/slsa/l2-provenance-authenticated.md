@@ -8,6 +8,8 @@
   
 **Help:** https://slsa.dev/spec/v1.0/requirements  
 **Labels:** SLSA  
+> Evidence for this rule **IS* required by default.**
+
 
 ## Evidence Requirements  
 | Field | Value |

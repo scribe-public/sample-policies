@@ -5,6 +5,8 @@
 **Rego Source:** [k8s-jailbreak.rego](https://github.com/scribe-public/sample-policies/v2/rules/generic/k8s-jailbreak.rego)  
 **Short Description:** Verify no misconfigurations from the prohibited ids list in the Kuberentes scan is below specified threshold  
 **Labels:** K8s  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

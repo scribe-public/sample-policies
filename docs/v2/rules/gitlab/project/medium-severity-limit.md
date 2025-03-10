@@ -5,6 +5,8 @@
 **Rego Source:** [medium-severity-limit.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/medium-severity-limit.rego)  
 **Short Description:** Verify the maximum allowed medium severity alerts for the GitLab project.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

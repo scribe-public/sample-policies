@@ -5,6 +5,8 @@
 **Rego Source:** [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/folder/exposed-credentials.rego)  
 **Short Description:** Verify there are no exposed credentials.  
 **Labels:** Jenkins, Folder  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

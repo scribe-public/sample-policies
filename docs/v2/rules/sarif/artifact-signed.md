@@ -5,6 +5,8 @@
 **Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/artifact-signed.rego)  
 **Short Description:** Verify the artifact referenced in the SARIF report is signed to confirm its integrity.  
 **Labels:** SARIF  
+> Evidence for this rule **IS* required by default.**
+
 
 ## Evidence Requirements  
 | Field | Value |

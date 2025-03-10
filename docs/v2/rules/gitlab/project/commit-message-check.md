@@ -5,6 +5,8 @@
 **Rego Source:** [commit-message-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-message-check.rego)  
 **Short Description:** Verify that commit messages in the GitLab project adhere to the specified format template.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

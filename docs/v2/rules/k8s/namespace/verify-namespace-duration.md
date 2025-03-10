@@ -5,6 +5,8 @@
 **Rego Source:** [verify-namespace-duration.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-duration.rego)  
 **Short Description:** Verify Kubernetes namespaces adhere to a specified runtime duration to enforce lifecycle limits.  
 **Labels:** K8s, Namespace  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |
