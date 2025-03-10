@@ -8,8 +8,8 @@
 
 Verify commits in the specified time range are signed.
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

@@ -8,8 +8,8 @@
 
 Verify both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Evidence Requirements  
 | Field | Value |

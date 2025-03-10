@@ -13,8 +13,8 @@ Verify the container image disallows shell entrypoint.
 Prevent unauthorized shell access by ensuring container images do not use a shell-based entrypoint. This reduces the risk of privilege escalation, unauthorized command execution, and potential security vulnerabilities from unrestricted shell access within containers.
 
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Description  
 This rule ensures that container images do not allow shell access by verifying their configured entrypoint. Attackers often exploit shell access in containerized environments to execute arbitrary commands, escalate privileges, or perform unauthorized actions. This rule extracts the 'entrypoint' property from the CycloneDX SBOM metadata and checks whether it contains a shell invocation (e.g., 'sh', 'bash').

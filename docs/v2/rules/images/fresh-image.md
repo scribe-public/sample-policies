@@ -13,8 +13,8 @@ Verify the image is not older than the specified threshold.
 Prevents the deployment of outdated container images—which may include unpatched vulnerabilities or outdated dependencies— by enforcing a maximum age limit based on the image's build time.
 
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Description  
 This rule extracts the Image creation timestamp from the SBOM evidence. It searches for a property named "created" 

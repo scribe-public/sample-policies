@@ -8,8 +8,8 @@
 
 Verify no attack vector in the Trivy SARIF report exceeds the specified threshold.
 
-> Evidence for this rule **IS NOT** required by default but is recommended.
-
+> Rule Result will be set as 'open' if evidence is missing.  
+> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Evidence Requirements  
 | Field | Value |
