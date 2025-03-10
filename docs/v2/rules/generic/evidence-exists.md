@@ -3,8 +3,10 @@
 **Uses:** `generic/evidence-exists@v2/rules`  
 **Source:** [v2/rules/generic/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/evidence-exists.yaml)  
 **Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/generic/evidence-exists.rego)  
-**Short Description:** Verify required evidence exists.  
 **Labels:** 3rd-party  
+
+Verify required evidence exists.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

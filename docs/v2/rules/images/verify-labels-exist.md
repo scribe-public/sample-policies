@@ -3,8 +3,10 @@
 **Uses:** `images/verify-labels-exist@v2/rules`  
 **Source:** [v2/rules/images/verify-labels-exist.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels-exist.yaml)  
 **Rego Source:** [verify-labels-exist.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels-exist.rego)  
-**Short Description:** Verify the image has the specified labels.  
 **Labels:** SBOM, Images  
+
+Verify the image has the specified labels.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

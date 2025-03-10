@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/protect-ci-secrets@v2/rules`  
 **Source:** [v2/rules/gitlab/project/protect-ci-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/protect-ci-secrets.yaml)  
 **Rego Source:** [protect-ci-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/protect-ci-secrets.rego)  
-**Short Description:** Verify secrets in the GitLab project are not shared.  
 **Labels:** Gitlab, Project  
+
+Verify secrets in the GitLab project are not shared.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

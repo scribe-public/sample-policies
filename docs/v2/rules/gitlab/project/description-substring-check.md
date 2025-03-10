@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/description-substring-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/description-substring-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/description-substring-check.yaml)  
 **Rego Source:** [description-substring-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/description-substring-check.rego)  
-**Short Description:** Verify a specific substring is not found in the description attribute of vulnerabilities for the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify a specific substring is not found in the description attribute of vulnerabilities for the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

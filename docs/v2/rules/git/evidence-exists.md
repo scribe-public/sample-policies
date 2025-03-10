@@ -3,8 +3,10 @@
 **Uses:** `git/evidence-exists@v2/rules`  
 **Source:** [v2/rules/git/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.yaml)  
 **Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.rego)  
-**Short Description:** Verify required Git evidence exists.  
 **Labels:** Git  
+
+Verify required Git evidence exists.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

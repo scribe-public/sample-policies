@@ -3,8 +3,10 @@
 **Uses:** `k8s/namespace/allowed-registries@v2/rules`  
 **Source:** [v2/rules/k8s/namespace/allowed-registries.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/allowed-registries.yaml)  
 **Rego Source:** [allowed-registries.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/allowed-registries.rego)  
-**Short Description:** Verify container images in Kubernetes namespaces originate from registries in the Allowed List.  
 **Labels:** K8s, Namespace  
+
+Verify container images in Kubernetes namespaces originate from registries in the Allowed List.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

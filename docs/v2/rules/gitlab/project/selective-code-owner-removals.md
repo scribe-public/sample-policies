@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/selective-code-owner-removals@v2/rules`  
 **Source:** [v2/rules/gitlab/project/selective-code-owner-removals.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/selective-code-owner-removals.yaml)  
 **Rego Source:** [selective-code-owner-removals.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/selective-code-owner-removals.rego)  
-**Short Description:** Verify `selective_code_owner_removals` is set for the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify `selective_code_owner_removals` is set for the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `sarif/verify-semgrep-report@v2/rules`  
 **Source:** [v2/rules/sarif/verify-semgrep-report.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-semgrep-report.yaml)  
 **Rego Source:** [verify-semgrep-report.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-semgrep-report.rego)  
-**Short Description:** Verify the Semgrep SARIF report complies with predefined rules to ensure compliance and detect issues.  
 **Labels:** SARIF, Semgrep  
+
+Verify the Semgrep SARIF report complies with predefined rules to ensure compliance and detect issues.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

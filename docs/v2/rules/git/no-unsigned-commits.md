@@ -3,8 +3,10 @@
 **Uses:** `git/no-unsigned-commits@v2/rules`  
 **Source:** [v2/rules/git/no-unsigned-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/no-unsigned-commits.yaml)  
 **Rego Source:** [no-unsigned-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/no-unsigned-commits.rego)  
-**Short Description:** Verify all commits are signed.  
 **Labels:** Git  
+
+Verify all commits are signed.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

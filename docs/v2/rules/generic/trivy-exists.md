@@ -2,8 +2,10 @@
 **ID:** `required-trivy-evidence`  
 **Uses:** `generic/trivy-exists@v2/rules`  
 **Source:** [v2/rules/generic/trivy-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/trivy-exists.yaml)  
-**Short Description:** Verify required Trivy evidence exists  
 **Labels:** 3rd-party  
+
+Verify required Trivy evidence exists
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

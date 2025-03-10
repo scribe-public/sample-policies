@@ -3,8 +3,10 @@
 **Uses:** `github/org/validity-checks-sa@v2/rules`  
 **Source:** [v2/rules/github/org/validity-checks-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/validity-checks-sa.yaml)  
 **Rego Source:** [validity-checks-sa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/validity-checks-sa.rego)  
-**Short Description:** Verify `secret_scanning_validity_checks` is configured in the GitHub organization.  
 **Labels:** GitHub, Organization  
+
+Verify `secret_scanning_validity_checks` is configured in the GitHub organization.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

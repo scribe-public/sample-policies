@@ -3,8 +3,10 @@
 **Uses:** `git/artifact-signed@v2/rules`  
 **Source:** [v2/rules/git/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/artifact-signed.yaml)  
 **Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/artifact-signed.rego)  
-**Short Description:** Verify the Git artifact is signed.  
 **Labels:** Git  
+
+Verify the Git artifact is signed.
+
 > Evidence for this rule **IS* required by default.**
 
 

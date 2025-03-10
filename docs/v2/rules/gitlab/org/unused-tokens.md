@@ -3,8 +3,10 @@
 **Uses:** `gitlab/org/unused-tokens@v2/rules`  
 **Source:** [v2/rules/gitlab/org/unused-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/unused-tokens.yaml)  
 **Rego Source:** [unused-tokens.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/unused-tokens.rego)  
-**Short Description:** Verify there are no unused GitLab organization tokens.  
 **Labels:** Gitlab, Organization  
+
+Verify there are no unused GitLab organization tokens.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

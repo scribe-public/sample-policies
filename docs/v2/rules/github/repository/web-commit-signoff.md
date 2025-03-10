@@ -3,8 +3,10 @@
 **Uses:** `github/repository/web-commit-signoff@v2/rules`  
 **Source:** [v2/rules/github/repository/web-commit-signoff.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/web-commit-signoff.yaml)  
 **Rego Source:** [web-commit-signoff.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/web-commit-signoff.rego)  
-**Short Description:** Verify contributors sign off on commits to the GitHub repository through the GitHub web interface.  
 **Labels:** GitHub, Repository  
+
+Verify contributors sign off on commits to the GitHub repository through the GitHub web interface.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

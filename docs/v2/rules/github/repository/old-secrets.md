@@ -3,8 +3,10 @@
 **Uses:** `github/repository/old-secrets@v2/rules`  
 **Source:** [v2/rules/github/repository/old-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/old-secrets.yaml)  
 **Rego Source:** [old-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/old-secrets.rego)  
-**Short Description:** Verify secrets in the GitHub repository are not older than the specified threshold.  
 **Labels:** GitHub, Repository  
+
+Verify secrets in the GitHub repository are not older than the specified threshold.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

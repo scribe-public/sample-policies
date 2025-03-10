@@ -3,8 +3,10 @@
 **Uses:** `github/repository/signed-commits@v2/rules`  
 **Source:** [v2/rules/github/repository/signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.yaml)  
 **Rego Source:** [signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.rego)  
-**Short Description:** Verify all commits are signed in a repository attestation.  
 **Labels:** GitHub, Repository  
+
+Verify all commits are signed in a repository attestation.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

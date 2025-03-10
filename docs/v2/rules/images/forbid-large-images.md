@@ -3,8 +3,10 @@
 **Uses:** `images/forbid-large-images@v2/rules`  
 **Source:** [v2/rules/images/forbid-large-images.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/forbid-large-images.yaml)  
 **Rego Source:** [forbid-large-images.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/forbid-large-images.rego)  
-**Short Description:** Verify the image size is below the specified threshold.  
 **Labels:** SBOM, Images  
+
+Verify the image size is below the specified threshold.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

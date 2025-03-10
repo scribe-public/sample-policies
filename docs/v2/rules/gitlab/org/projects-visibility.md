@@ -3,8 +3,10 @@
 **Uses:** `gitlab/org/projects-visibility@v2/rules`  
 **Source:** [v2/rules/gitlab/org/projects-visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/projects-visibility.yaml)  
 **Rego Source:** [projects-visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/projects-visibility.rego)  
-**Short Description:** Verify only allowed projects in the GitLab organization have public visibility.  
 **Labels:** Gitlab, Organization  
+
+Verify only allowed projects in the GitLab organization have public visibility.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

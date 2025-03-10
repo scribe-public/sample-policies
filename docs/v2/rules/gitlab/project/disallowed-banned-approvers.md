@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/disallowed-banned-approvers@v2/rules`  
 **Source:** [v2/rules/gitlab/project/disallowed-banned-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.yaml)  
 **Rego Source:** [disallowed-banned-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.rego)  
-**Short Description:** Verify approvers in the GitLab project are not on the banned list.  
 **Labels:** Gitlab, Project  
+
+Verify approvers in the GitLab project are not on the banned list.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

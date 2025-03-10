@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/sast-scanning@v2/rules`  
 **Source:** [v2/rules/gitlab/project/sast-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scanning.yaml)  
 **Rego Source:** [sast-scanning.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scanning.rego)  
-**Short Description:** Verify SAST scanning is performed for the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify SAST scanning is performed for the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

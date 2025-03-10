@@ -3,8 +3,10 @@
 **Uses:** `sbom/allowed-components@v2/rules`  
 **Source:** [v2/rules/sbom/allowed-components.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/allowed-components.yaml)  
 **Rego Source:** [allowed-components.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/allowed-components.rego)  
-**Short Description:** Verify the artifact contains only allowed components.  
 **Labels:** SBOM, Image  
+
+Verify the artifact contains only allowed components.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/commits-validated@v2/rules`  
 **Source:** [v2/rules/gitlab/project/commits-validated.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commits-validated.yaml)  
 **Rego Source:** [commits-validated.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commits-validated.rego)  
-**Short Description:** Verify all commits in the GitLab project are validated.  
 **Labels:** Gitlab, Project  
+
+Verify all commits in the GitLab project are validated.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/require-password-to-approve@v2/rules`  
 **Source:** [v2/rules/gitlab/project/require-password-to-approve.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/require-password-to-approve.yaml)  
 **Rego Source:** [require-password-to-approve.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/require-password-to-approve.rego)  
-**Short Description:** Verify the binary field `require_password_to_approve` is set for the GitLab project.  
 **Labels:** Gitlab, Project  
+
+Verify the binary field `require_password_to_approve` is set for the GitLab project.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

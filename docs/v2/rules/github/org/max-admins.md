@@ -3,8 +3,10 @@
 **Uses:** `github/org/max-admins@v2/rules`  
 **Source:** [v2/rules/github/org/max-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/max-admins.yaml)  
 **Rego Source:** [max-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/max-admins.rego)  
-**Short Description:** Verify the maximum number of GitHub organization admins is restricted.  
 **Labels:** Blueprint, GitHub, Organization  
+
+Verify the maximum number of GitHub organization admins is restricted.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `gitlab/project/push-access-level@v2/rules`  
 **Source:** [v2/rules/gitlab/project/push-access-level.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.yaml)  
 **Rego Source:** [push-access-level.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.rego)  
-**Short Description:** Verify the GitLab project's push access level policy complies with requirements.  
 **Labels:** Gitlab, Project  
+
+Verify the GitLab project's push access level policy complies with requirements.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

@@ -3,8 +3,10 @@
 **Uses:** `bitbucket/repository/allow-users@v2/rules`  
 **Source:** [v2/rules/bitbucket/repository/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-users.yaml)  
 **Rego Source:** [allow-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-users.rego)  
-**Short Description:** Verify only users specified in the Allowed List have user access to the Bitbucket repository.  
 **Labels:** Bitbucket, Repository  
+
+Verify only users specified in the Allowed List have user access to the Bitbucket repository.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

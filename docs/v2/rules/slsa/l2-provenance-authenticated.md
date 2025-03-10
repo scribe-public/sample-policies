@@ -3,11 +3,16 @@
 **Uses:** `slsa/l2-provenance-authenticated@v2/rules`  
 **Source:** [v2/rules/slsa/l2-provenance-authenticated.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/l2-provenance-authenticated.yaml)  
 **Rego Source:** [l2-provenance-authenticated.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/l2-provenance-authenticated.rego)  
-**Short Description:** Verify the artifact is signed.  
-**Mitigation:** Cryptographic authentication prevents tampering with provenance data, ensuring that only valid and secure build information is used to establish the integrity of the software supply chain.
-  
 **Help:** https://slsa.dev/spec/v1.0/requirements  
 **Labels:** SLSA  
+
+Verify the artifact is signed.
+
+
+## Mitigation  
+Cryptographic authentication prevents tampering with provenance data, ensuring that only valid and secure build information is used to establish the integrity of the software supply chain.
+
+
 > Evidence for this rule **IS* required by default.**
 
 

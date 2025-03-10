@@ -2,8 +2,10 @@
 **ID:** `scribe-template`  
 **Uses:** `api/scribe-api@v2/rules`  
 **Source:** [v2/rules/api/scribe-api.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api.yaml)  
-**Short Description:** Verify XX using the Scribe API template rule.  
 **Labels:** Scribe  
+
+Verify XX using the Scribe API template rule.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 

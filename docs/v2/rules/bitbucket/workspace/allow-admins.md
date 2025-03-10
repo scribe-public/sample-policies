@@ -3,8 +3,10 @@
 **Uses:** `bitbucket/workspace/allow-admins@v2/rules`  
 **Source:** [v2/rules/bitbucket/workspace/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/workspace/allow-admins.yaml)  
 **Rego Source:** [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/workspace/allow-admins.rego)  
-**Short Description:** Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace.  
 **Labels:** Bitbucket, Workspace  
+
+Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace.
+
 > Evidence for this rule **IS NOT** required by default but is recommended.
 
 
