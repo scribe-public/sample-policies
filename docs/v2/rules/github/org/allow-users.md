@@ -1,5 +1,5 @@
 # Allowed GitHub Organization Users  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-org-allowed-users`  
 **Uses:** `github/org/allow-users@v2/rules`  
 **Source:** [v2/rules/github/org/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-users.yaml)  

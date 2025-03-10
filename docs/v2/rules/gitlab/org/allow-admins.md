@@ -1,5 +1,5 @@
 # Allowed Admins in GitLab Organization  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-org-allowed-admins`  
 **Uses:** `gitlab/org/allow-admins@v2/rules`  
 **Source:** [v2/rules/gitlab/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-admins.yaml)  

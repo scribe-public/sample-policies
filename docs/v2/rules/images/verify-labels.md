@@ -1,5 +1,5 @@
 # Verify Image Labels  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `image-labels`  
 **Uses:** `images/verify-labels@v2/rules`  
 **Source:** [v2/rules/images/verify-labels.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels.yaml)  

@@ -1,5 +1,5 @@
 # Prevent Long-Lived Tokens  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `bb-project-long-live-tokens`  
 **Uses:** `bitbucket/project/long-live-tokens@v2/rules`  
 **Source:** [v2/rules/bitbucket/project/long-live-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/long-live-tokens.yaml)  

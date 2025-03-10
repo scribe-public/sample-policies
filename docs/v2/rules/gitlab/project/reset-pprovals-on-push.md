@@ -1,5 +1,5 @@
 # Reset Approvals on Push in GitLab Project  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-project-reset-pprovals-on-push`  
 **Uses:** `gitlab/project/reset-pprovals-on-push@v2/rules`  
 **Source:** [v2/rules/gitlab/project/reset-pprovals-on-push.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/reset-pprovals-on-push.yaml)  

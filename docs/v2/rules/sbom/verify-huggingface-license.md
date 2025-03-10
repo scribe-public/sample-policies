@@ -1,5 +1,5 @@
 # Require Specified SBOM Licenses  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `sbom-hf-license`  
 **Uses:** `sbom/verify-huggingface-license@v2/rules`  
 **Source:** [v2/rules/sbom/verify-huggingface-license.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/verify-huggingface-license.yaml)  

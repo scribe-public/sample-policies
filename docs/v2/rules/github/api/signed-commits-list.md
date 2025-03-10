@@ -1,5 +1,5 @@
 # Verify Selected Commits Are Signed API  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-api-signed-commits-list`  
 **Uses:** `github/api/signed-commits-list@v2/rules`  
 **Source:** [v2/rules/github/api/signed-commits-list.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/api/signed-commits-list.yaml)  

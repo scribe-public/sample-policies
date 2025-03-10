@@ -1,5 +1,5 @@
 # Allowed Pods  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `k8s-pods-white-listed-pod`  
 **Uses:** `k8s/pods/white-listed-pod@v2/rules`  
 **Source:** [v2/rules/k8s/pods/white-listed-pod.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/pods/white-listed-pod.yaml)  

@@ -1,5 +1,5 @@
 # Verify Pod Runtime Duration  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `k8s-pods-verify-pod-duration`  
 **Uses:** `k8s/pods/verify-pod-duration@v2/rules`  
 **Source:** [v2/rules/k8s/pods/verify-pod-duration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/pods/verify-pod-duration.yaml)  

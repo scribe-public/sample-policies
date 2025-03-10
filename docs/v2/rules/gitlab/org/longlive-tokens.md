@@ -1,5 +1,5 @@
 # Forbid Long-Lived Tokens in GitLab Organization  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-org-token-excessive-lifespan`  
 **Uses:** `gitlab/org/longlive-tokens@v2/rules`  
 **Source:** [v2/rules/gitlab/org/longlive-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/longlive-tokens.yaml)  

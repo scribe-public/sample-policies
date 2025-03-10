@@ -1,5 +1,5 @@
 # Enforce Critical Severity Limit  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-project-critical-severity-limit`  
 **Uses:** `gitlab/project/critical-severity-limit@v2/rules`  
 **Source:** [v2/rules/gitlab/project/critical-severity-limit.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/critical-severity-limit.yaml)  

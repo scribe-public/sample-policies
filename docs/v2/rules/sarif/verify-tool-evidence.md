@@ -1,5 +1,5 @@
 # Verify Tool Evidence in SARIF  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `sarif-tool-evidence`  
 **Uses:** `sarif/verify-tool-evidence@v2/rules`  
 **Source:** [v2/rules/sarif/verify-tool-evidence.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.yaml)  

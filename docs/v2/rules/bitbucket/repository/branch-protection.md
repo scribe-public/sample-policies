@@ -1,5 +1,5 @@
 # Verify Default Branch Protection Setting Is Configured  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `bb-repo-branch-protection`  
 **Uses:** `bitbucket/repository/branch-protection@v2/rules`  
 **Source:** [v2/rules/bitbucket/repository/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/branch-protection.yaml)  

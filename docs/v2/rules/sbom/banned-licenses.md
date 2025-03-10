@@ -1,5 +1,5 @@
 # Restrict Disallowed SBOM Licenses  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `sbom-disallowed-licenses`  
 **Uses:** `sbom/banned-licenses@v2/rules`  
 **Source:** [v2/rules/sbom/banned-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.yaml)  

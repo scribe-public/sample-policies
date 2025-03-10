@@ -1,5 +1,5 @@
 # Verify Branch Verification Setting  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-repo-branch-verification`  
 **Uses:** `github/repository/branch-verification@v2/rules`  
 **Source:** [v2/rules/github/repository/branch-verification.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-verification.yaml)  

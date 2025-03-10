@@ -1,5 +1,5 @@
 # Ensure Secrets Scanning Passes  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-project-secrets-scan-pass`  
 **Uses:** `gitlab/project/secrets-scan-pass@v2/rules`  
 **Source:** [v2/rules/gitlab/project/secrets-scan-pass.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/secrets-scan-pass.yaml)  

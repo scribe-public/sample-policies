@@ -1,5 +1,5 @@
 # Verify Attack Vector Threshold in Trivy SARIF  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `trivy-attack-vectors`  
 **Uses:** `sarif/trivy/verify-trivy-attack-vector@v2/rules`  
 **Source:** [v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml)  

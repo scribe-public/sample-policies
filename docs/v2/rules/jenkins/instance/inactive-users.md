@@ -1,5 +1,5 @@
 # Verify Inactive Users  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `jenkins-inactive-users`  
 **Uses:** `jenkins/instance/inactive-users@v2/rules`  
 **Source:** [v2/rules/jenkins/instance/inactive-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/jenkins/instance/inactive-users.yaml)  

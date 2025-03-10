@@ -1,5 +1,5 @@
 # Verify Required Evidence in SARIF  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `required-sarif-evidence`  
 **Uses:** `sarif/evidence-exists@v2/rules`  
 **Source:** [v2/rules/sarif/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/evidence-exists.yaml)  

@@ -1,5 +1,5 @@
 # Allowed Project Admins  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `bb-project-allowed-project-admins`  
 **Uses:** `bitbucket/project/allow-admins@v2/rules`  
 **Source:** [v2/rules/bitbucket/project/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/allow-admins.yaml)  

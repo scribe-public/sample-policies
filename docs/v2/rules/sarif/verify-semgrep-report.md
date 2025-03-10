@@ -1,5 +1,5 @@
 # Verify Semgrep Rule in SARIF  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `sarif-semgrep-report`  
 **Uses:** `sarif/verify-semgrep-report@v2/rules`  
 **Source:** [v2/rules/sarif/verify-semgrep-report.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-semgrep-report.yaml)  

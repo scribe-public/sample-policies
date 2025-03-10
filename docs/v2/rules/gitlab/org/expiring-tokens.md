@@ -1,5 +1,5 @@
 # Prevent Token Expiration in GitLab Organization  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `gitlab-org-token-about-to-expire`  
 **Uses:** `gitlab/org/expiring-tokens@v2/rules`  
 **Source:** [v2/rules/gitlab/org/expiring-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/expiring-tokens.yaml)  

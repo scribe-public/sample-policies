@@ -1,5 +1,5 @@
 # Verify secret scanning.  
-** Type:** Rule  
+**Type:** Rule  
 **ID:** `github-repo-validity-checks`  
 **Uses:** `github/repository/validity-checks@v2/rules`  
 **Source:** [v2/rules/github/repository/validity-checks.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/validity-checks.yaml)  
