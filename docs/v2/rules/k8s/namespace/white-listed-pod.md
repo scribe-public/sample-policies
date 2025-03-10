@@ -1,7 +1,7 @@
 # Rule: Allowed Pods in Namespace
 
 **ID**: `k8s-namespace-white-listed-pod`  
-**Source**: [v2/rules/k8s/namespace/white-listed-pod.yaml](scribe-public/sample-policies.git/v2/rules/k8s/namespace/white-listed-pod.yaml)  
+**Source**: [v2/rules/k8s/namespace/white-listed-pod.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/white-listed-pod.yaml)  
 **Rego File Path**: `white-listed-pod.rego`  
 
 **Labels**: K8s, Namespace

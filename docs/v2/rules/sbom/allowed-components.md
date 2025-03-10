@@ -1,7 +1,7 @@
 # Rule: Enforce Allowed SBOM Components
 
 **ID**: `sbom-allowed-components`  
-**Source**: [v2/rules/sbom/allowed-components.yaml](scribe-public/sample-policies.git/v2/rules/sbom/allowed-components.yaml)  
+**Source**: [v2/rules/sbom/allowed-components.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/allowed-components.yaml)  
 **Rego File Path**: `allowed-components.rego`  
 
 **Labels**: SBOM, Image

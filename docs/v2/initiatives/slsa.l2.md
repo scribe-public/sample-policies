@@ -2,7 +2,7 @@
 
 **ID**: `SLSA.L2`  
 **Version**: `1.0.0`  
-**Source**: [v2/initiatives/slsa.l2.yaml](scribe-public/sample-policies.git/v2/initiatives/slsa.l2.yaml)  
+**Source**: [v2/initiatives/slsa.l2.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l2.yaml)  
 
 **Short Description**: Evaluate SLSA Level 2
 

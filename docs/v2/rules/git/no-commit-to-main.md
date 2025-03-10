@@ -1,7 +1,7 @@
 # Rule: Disallow Commits to Main Branch
 
 **ID**: `git-disallow-commits-to-main`  
-**Source**: [v2/rules/git/no-commit-to-main.yaml](scribe-public/sample-policies.git/v2/rules/git/no-commit-to-main.yaml)  
+**Source**: [v2/rules/git/no-commit-to-main.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/no-commit-to-main.yaml)  
 **Rego File Path**: `no-commit-to-main.rego`  
 
 **Labels**: Git

@@ -1,7 +1,7 @@
 # Rule: Enforce Merge Access Level Policy for GitLab Project
 
 **ID**: `gitlab-project-merge-access-level`  
-**Source**: [v2/rules/gitlab/project/merge-access-level.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/merge-access-level.yaml)  
+**Source**: [v2/rules/gitlab/project/merge-access-level.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-access-level.yaml)  
 **Rego File Path**: `merge-access-level.rego`  
 
 **Labels**: Gitlab, Project

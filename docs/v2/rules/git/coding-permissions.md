@@ -1,7 +1,7 @@
 # Rule: Restrict Coding Permissions
 
 **ID**: `git-coding-permissions`  
-**Source**: [v2/rules/git/coding-permissions.yaml](scribe-public/sample-policies.git/v2/rules/git/coding-permissions.yaml)  
+**Source**: [v2/rules/git/coding-permissions.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.yaml)  
 **Rego File Path**: `coding-permissions.rego`  
 
 **Labels**: Git

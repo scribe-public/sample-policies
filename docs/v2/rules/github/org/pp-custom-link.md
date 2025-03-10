@@ -1,7 +1,7 @@
 # Rule: Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting
 
 **ID**: `github-org-pp-custom-link`  
-**Source**: [v2/rules/github/org/pp-custom-link.yaml](scribe-public/sample-policies.git/v2/rules/github/org/pp-custom-link.yaml)  
+**Source**: [v2/rules/github/org/pp-custom-link.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.yaml)  
 **Rego File Path**: `pp-custom-link.rego`  
 
 **Labels**: GitHub, Organization

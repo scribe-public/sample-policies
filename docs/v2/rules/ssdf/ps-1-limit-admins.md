@@ -1,7 +1,7 @@
 # Rule: Limit admins
 
 **ID**: `PS.1.3`  
-**Source**: [v2/rules/ssdf/ps-1-limit-admins.yaml](scribe-public/sample-policies.git/v2/rules/ssdf/ps-1-limit-admins.yaml)  
+**Source**: [v2/rules/ssdf/ps-1-limit-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/ssdf/ps-1-limit-admins.yaml)  
 
 **Labels**: SSDF
 

@@ -1,7 +1,7 @@
 # Rule: Ensure Active Projects in GitLab Organization
 
 **ID**: `gitlab-org-inactive-projects`  
-**Source**: [v2/rules/gitlab/org/inactive-projects.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/org/inactive-projects.yaml)  
+**Source**: [v2/rules/gitlab/org/inactive-projects.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.yaml)  
 **Rego File Path**: `inactive-projects.rego`  
 
 **Labels**: Gitlab, Organization

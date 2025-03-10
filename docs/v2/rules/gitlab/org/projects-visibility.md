@@ -1,7 +1,7 @@
 # Rule: Restrict Public Visibility in GitLab Organization
 
 **ID**: `gitlab-org-allowed-visible-projects`  
-**Source**: [v2/rules/gitlab/org/projects-visibility.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/org/projects-visibility.yaml)  
+**Source**: [v2/rules/gitlab/org/projects-visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/projects-visibility.yaml)  
 **Rego File Path**: `projects-visibility.rego`  
 
 **Labels**: Gitlab, Organization

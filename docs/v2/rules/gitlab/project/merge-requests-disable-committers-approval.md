@@ -1,7 +1,7 @@
 # Rule: Disable Committers' Approval for Merge Requests in GitLab
 
 **ID**: `gitlab-project-merge-requests-disable-committers-approval`  
-**Source**: [v2/rules/gitlab/project/merge-requests-disable-committers-approval.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/merge-requests-disable-committers-approval.yaml)  
+**Source**: [v2/rules/gitlab/project/merge-requests-disable-committers-approval.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-requests-disable-committers-approval.yaml)  
 **Rego File Path**: `merge-requests-disable-committers-approval.rego`  
 
 **Labels**: Gitlab, Project

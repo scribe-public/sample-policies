@@ -1,7 +1,7 @@
 # Rule: Disallow Force Push in GitLab Project
 
 **ID**: `gitlab-project-disallow-force-push`  
-**Source**: [v2/rules/gitlab/project/force-push-protection.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/force-push-protection.yaml)  
+**Source**: [v2/rules/gitlab/project/force-push-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/force-push-protection.yaml)  
 **Rego File Path**: `force-push-protection.rego`  
 
 **Labels**: Gitlab, Project

@@ -1,7 +1,7 @@
 # Rule: Verify No Critical or High Vulnerabilities
 
 **ID**: `scribe-cve`  
-**Source**: [v2/rules/api/scribe-api-cve.yaml](scribe-public/sample-policies.git/v2/rules/api/scribe-api-cve.yaml)  
+**Source**: [v2/rules/api/scribe-api-cve.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-cve.yaml)  
 **Rego File Path**: `scribe-api.rego`  
 
 **Labels**: SCA, Blueprint, Scribe

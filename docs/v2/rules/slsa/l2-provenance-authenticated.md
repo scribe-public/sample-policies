@@ -1,7 +1,7 @@
 # Rule: Verify that provenance is authenticated
 
 **ID**: `SLSA.L2`  
-**Source**: [v2/rules/slsa/l2-provenance-authenticated.yaml](scribe-public/sample-policies.git/v2/rules/slsa/l2-provenance-authenticated.yaml)  
+**Source**: [v2/rules/slsa/l2-provenance-authenticated.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/l2-provenance-authenticated.yaml)  
 **Rego File Path**: `l2-provenance-authenticated.rego`  
 
 **Labels**: SLSA

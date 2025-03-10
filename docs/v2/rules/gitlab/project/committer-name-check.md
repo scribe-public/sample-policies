@@ -1,7 +1,7 @@
 # Rule: Allowed Committer Names in GitLab Project
 
 **ID**: `gitlab-project-allowed-committer-names`  
-**Source**: [v2/rules/gitlab/project/committer-name-check.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/committer-name-check.yaml)  
+**Source**: [v2/rules/gitlab/project/committer-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/committer-name-check.yaml)  
 **Rego File Path**: `committer-name-check.rego`  
 
 **Labels**: Gitlab, Project

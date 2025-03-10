@@ -1,7 +1,7 @@
 # Rule: Verify Trivy SARIF Report Compliance
 
 **ID**: `trivy-report`  
-**Source**: [v2/rules/sarif/trivy/verify-trivy-report.yaml](scribe-public/sample-policies.git/v2/rules/sarif/trivy/verify-trivy-report.yaml)  
+**Source**: [v2/rules/sarif/trivy/verify-trivy-report.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/verify-trivy-report.yaml)  
 **Rego File Path**: `../verify-sarif.rego`  
 
 **Labels**: SARIF, Trivy

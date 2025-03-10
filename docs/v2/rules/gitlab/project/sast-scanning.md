@@ -1,7 +1,7 @@
 # Rule: Run SAST Scanning in GitLab Project
 
 **ID**: `gitlab-project-sast-scanning`  
-**Source**: [v2/rules/gitlab/project/sast-scanning.yaml](scribe-public/sample-policies.git/v2/rules/gitlab/project/sast-scanning.yaml)  
+**Source**: [v2/rules/gitlab/project/sast-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scanning.yaml)  
 **Rego File Path**: `sast-scanning.rego`  
 
 **Labels**: Gitlab, Project

@@ -1,7 +1,7 @@
 # Rule: Restrict Build Scripts
 
 **ID**: `images-disallowed-build-script`  
-**Source**: [v2/rules/images/blocklist-build-scripts.yaml](scribe-public/sample-policies.git/v2/rules/images/blocklist-build-scripts.yaml)  
+**Source**: [v2/rules/images/blocklist-build-scripts.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/blocklist-build-scripts.yaml)  
 **Rego File Path**: `blocklist-build-scripts.rego`  
 
 **Labels**: SBOM, Images

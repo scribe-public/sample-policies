@@ -1,7 +1,7 @@
 # Rule: Verify Secret_Scanning Setting in Security_And_Analysis
 
 **ID**: `github-org-secret-scanning-sa`  
-**Source**: [v2/rules/github/org/secret-scanning-sa.yaml](scribe-public/sample-policies.git/v2/rules/github/org/secret-scanning-sa.yaml)  
+**Source**: [v2/rules/github/org/secret-scanning-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/secret-scanning-sa.yaml)  
 **Rego File Path**: `secret-scanning-sa.rego`  
 
 **Labels**: GitHub, Organization

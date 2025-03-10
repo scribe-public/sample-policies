@@ -1,7 +1,7 @@
 # Rule: Require SBOM Signature
 
 **ID**: `sbom-signed`  
-**Source**: [v2/rules/sbom/artifact-signed.yaml](scribe-public/sample-policies.git/v2/rules/sbom/artifact-signed.yaml)  
+**Source**: [v2/rules/sbom/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/artifact-signed.yaml)  
 **Rego File Path**: `artifact-signed.rego`  
 
 **Labels**: SBOM, Blueprint
