@@ -18,5 +18,5 @@ Verify there are no exposed credentials.
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['asset_type=folder'] |
+| labels | - asset_type=folder |
 

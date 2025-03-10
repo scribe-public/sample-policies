@@ -18,7 +18,7 @@ Verify only users specified in the Allowed List have admin privileges in the Bit
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['platform=bitbucket', 'asset_type=repository'] |
+| labels | - platform=bitbucket<br>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
 ```yaml

@@ -17,7 +17,7 @@ Verify the checksum of each file in one SBOM matches the checksum in a second SB
 | signed | True |
 | content_body_type | cyclonedx-json |
 | target_type | container |
-| labels | ['new_evidence'] |
+| labels | - new_evidence |
 
 ## Rule Parameters (`with`)  
 ```yaml

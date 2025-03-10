@@ -18,7 +18,7 @@ Verify the pipeline includes all required label keys and values.
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['asset_type=pipeline'] |
+| labels | - asset_type=pipeline |
 
 ## Rule Parameters (`with`)  
 ```yaml

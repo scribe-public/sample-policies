@@ -18,7 +18,7 @@ Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecyc
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | ['asset_type=pod'] |
+| labels | - asset_type=pod |
 
 ## Rule Parameters (`with`)  
 ```yaml

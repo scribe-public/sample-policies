@@ -54,6 +54,11 @@ def filepath_to_uses(filepath: str) -> str:
     # Build and return the uses reference in the required format
     return f"{rule_path}@{version}/rules"
 
+def filter_labels(labels):
+    # if starts with "{{- if", remove it
+    return [label for label in labels if not label.startswith("{{- if")]
+    
+
 def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
     Given the YAML data for a rule, produce the Markdown content as a string.
@@ -117,6 +122,13 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append("| Field | Value |")
         md.append("|-------|-------|")
         for field, value in evidence.items():
+            if field == "labels":
+                
+                filtered_labels = filter_labels(value)
+                # Create a list of labels
+                list_md = "<br>".join([f"- {label}" for label in filtered_labels])
+                value = list_md
+
             md.append(f"| {field} | {value} |")
         md.append("")
 
