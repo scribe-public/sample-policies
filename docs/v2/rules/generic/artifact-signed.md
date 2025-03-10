@@ -5,6 +5,8 @@
 **Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/generic/artifact-signed.rego)  
 **Short Description:** Verify required evidence is signed.  
 **Labels:** 3rd-party  
+> Evidence for this rule **IS* required by default.**
+
 
 ## Evidence Requirements  
 | Field | Value |

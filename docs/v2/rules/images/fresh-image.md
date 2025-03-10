@@ -5,6 +5,8 @@
 **Rego Source:** [fresh-image.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/fresh-image.rego)  
 **Short Description:** Verify the image is not older than the specified threshold.  
 **Labels:** SBOM, Images  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

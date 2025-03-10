@@ -5,6 +5,8 @@
 **Rego Source:** [unused-tokens.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/unused-tokens.rego)  
 **Short Description:** Verify there are no unused GitLab organization tokens.  
 **Labels:** Gitlab, Organization  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

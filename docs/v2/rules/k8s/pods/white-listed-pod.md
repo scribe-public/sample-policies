@@ -5,6 +5,8 @@
 **Rego Source:** [white-listed-pod.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/pods/white-listed-pod.rego)  
 **Short Description:** Verify only pods explicitly listed in the Allowed List are allowed to run.  
 **Labels:** K8s, Pod  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

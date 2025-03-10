@@ -5,6 +5,8 @@
 **Rego Source:** [coding-permissions.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.rego)  
 **Short Description:** Verify only allowed users committed to the repository.  
 **Labels:** Git  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

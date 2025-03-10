@@ -5,6 +5,8 @@
 **Rego Source:** [../verify-attack-vector.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../verify-attack-vector.rego)  
 **Short Description:** Verify no attack vector in the Trivy SARIF report exceeds the specified threshold.  
 **Labels:** SARIF, Trivy  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

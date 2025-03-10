@@ -5,6 +5,8 @@
 **Rego Source:** [verify-labels.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels.rego)  
 **Short Description:** Verify specified labels key-value pairs exist in the image.  
 **Labels:** SBOM, Images  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

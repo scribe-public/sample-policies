@@ -7,6 +7,8 @@
 **Mitigation:** Recording comprehensive provenance metadata allows organizations to verify the integrity of the build process and ensures that only authorized and untampered artifacts are deployed.  
 **Help:** https://slsa.dev/spec/v1.0/requirements  
 **Labels:** SLSA  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

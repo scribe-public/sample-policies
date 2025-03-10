@@ -5,6 +5,8 @@
 **Rego Source:** [banned-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.rego)  
 **Short Description:** Verify specific users are not allowed in an SBOM.  
 **Labels:** SBOM, Image  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

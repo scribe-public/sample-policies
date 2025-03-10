@@ -5,6 +5,8 @@
 **Rego Source:** [build-time.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.rego)  
 **Short Description:** Verify the artifact was created within the specified time window.  
 **Labels:** SLSA, Image  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

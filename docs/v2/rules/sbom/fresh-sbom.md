@@ -5,6 +5,8 @@
 **Rego Source:** [fresh-sbom.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.rego)  
 **Short Description:** Verify the SBOM is not older than the specified duration.  
 **Labels:** SBOM  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

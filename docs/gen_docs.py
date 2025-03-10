@@ -90,6 +90,13 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     if labels:
         md.append(f"**Labels:** {', '.join(labels)}  ")
 
+
+    sign_defaults = rule_data.get("evidence", {}).get("signed", False)
+    if sign_defaults:
+        md.append(f"> Evidence for this rule **IS* required by default.**\n")
+    else:
+        md.append(f"> Evidence for this rule **IS NOT** required by default but is recommended\n")
+
     if full_description:
         md.append("\n## Full Description  ")
         md.append(full_description)
@@ -202,6 +209,13 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append(f"**Mitigation:** {mitigation}  ")
     if help_url:
         md.append(f"**Help:** {help_url}  ")
+
+    sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
+    if sign_defaults:
+        md.append(f"> Evidence for this initiative is required by default.**\n")
+    else:
+        md.append(f"> Evidence for this initiative is not required by default but is recommended.\n")
+    
     if full_description:
         md.append(f"## **Full Description**\n")
         md.append(full_description)
@@ -211,13 +225,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append("_No controls defined._")
         return "\n".join(md)
     
-    sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
 
-    if sign_defaults:
-        md.append(f"> ** Evidence for this initiative is required by default.**\n")
-    else:
-        md.append(f"> ** Evidence for this initiative is not required by default but is recommended.**\n")
-    
     # Controls Overview with Mitigation column
     md.append("## Controls Overview\n")
     md.append("| Control ID | Control Name | Control Description | Mitigation |")

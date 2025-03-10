@@ -5,6 +5,8 @@
 **Rego Source:** [verify-tool-evidence.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.rego)  
 **Short Description:** Verify required tools were used to generate the SARIF report.  
 **Labels:** SARIF  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

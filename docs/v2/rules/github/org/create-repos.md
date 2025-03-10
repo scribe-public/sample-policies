@@ -5,6 +5,8 @@
 **Rego Source:** [create-repos.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-repos.rego)  
 **Short Description:** Verify `members_can_create_repositories` is appropriately configured in the GitHub repository.  
 **Labels:** GitHub, Organization  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

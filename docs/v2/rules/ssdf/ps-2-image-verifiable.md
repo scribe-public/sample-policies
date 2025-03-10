@@ -6,6 +6,8 @@
 **Mitigation:** Ensures container images are cryptographically verifiable, preventing tampering and confirming their authenticity.
   
 **Labels:** SSDF  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

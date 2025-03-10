@@ -5,6 +5,8 @@
 **Rego Source:** [web-commit-signoff.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/web-commit-signoff.rego)  
 **Short Description:** Verify contributors sign off on commits to the GitHub repository through the GitHub web interface.  
 **Labels:** GitHub, Repository  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

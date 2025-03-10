@@ -5,6 +5,8 @@
 **Rego Source:** [token-expiration.rego](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-expiration.rego)  
 **Short Description:** Verify that all discovered Dockerhub tokens are set to Active in Dockerhub.  
 **Labels:** Dockerhub  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

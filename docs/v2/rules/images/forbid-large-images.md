@@ -5,6 +5,8 @@
 **Rego Source:** [forbid-large-images.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/forbid-large-images.rego)  
 **Short Description:** Verify the image size is below the specified threshold.  
 **Labels:** SBOM, Images  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

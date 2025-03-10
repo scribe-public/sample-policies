@@ -5,6 +5,8 @@
 **Rego Source:** [disallowed-banned-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.rego)  
 **Short Description:** Verify approvers in the GitLab project are not on the banned list.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

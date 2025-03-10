@@ -5,6 +5,8 @@
 **Rego Source:** [../report-iac-errors.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../report-iac-errors.rego)  
 **Short Description:** Verify the number of infrastructure-as-code (IaC) errors in the Trivy SARIF report remains below the specified threshold.  
 **Labels:** SARIF, Trivy  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

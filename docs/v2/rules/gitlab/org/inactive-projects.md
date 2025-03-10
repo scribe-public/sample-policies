@@ -5,6 +5,8 @@
 **Rego Source:** [inactive-projects.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.rego)  
 **Short Description:** Verify no GitLab organization projects are inactive.  
 **Labels:** Gitlab, Organization  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

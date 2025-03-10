@@ -5,6 +5,8 @@
 **Rego Source:** [visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/visibility.rego)  
 **Short Description:** Verify only GitHub repositories in the Allowed List are public.  
 **Labels:** GitHub, Repository  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

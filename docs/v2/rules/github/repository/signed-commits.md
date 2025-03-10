@@ -5,6 +5,8 @@
 **Rego Source:** [signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/signed-commits.rego)  
 **Short Description:** Verify all commits are signed in a repository attestation.  
 **Labels:** GitHub, Repository  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

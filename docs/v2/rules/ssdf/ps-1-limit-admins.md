@@ -6,6 +6,8 @@
 **Mitigation:** Limits the number of administrative accounts, minimizing the potential for abuse of elevated privileges.
   
 **Labels:** SSDF  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Rule Parameters (`with`)  
 ```yaml

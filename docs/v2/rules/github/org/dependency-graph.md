@@ -5,6 +5,8 @@
 **Rego Source:** [dependency-graph.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependency-graph.rego)  
 **Short Description:** Verify `dependency_graph` is enabled for new repositories in the GitHub organization.  
 **Labels:** GitHub, Organization  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

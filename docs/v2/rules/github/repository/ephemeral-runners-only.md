@@ -5,6 +5,8 @@
 **Rego Source:** [ephemeral-runners-only.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/ephemeral-runners-only.rego)  
 **Short Description:** Verify self-hosted runners are disallowed in the GitHub repository.  
 **Labels:** GitHub, Repository  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

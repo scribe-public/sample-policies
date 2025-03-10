@@ -5,6 +5,8 @@
 **Rego Source:** [merge-requests-author-approval.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-requests-author-approval.rego)  
 **Short Description:** Verify the binary field `merge_requests_author_approval` is set for the GitLab project.  
 **Labels:** Gitlab, Project  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

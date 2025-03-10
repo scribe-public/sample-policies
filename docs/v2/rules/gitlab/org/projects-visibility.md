@@ -5,6 +5,8 @@
 **Rego Source:** [projects-visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/projects-visibility.rego)  
 **Short Description:** Verify only allowed projects in the GitLab organization have public visibility.  
 **Labels:** Gitlab, Organization  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Evidence Requirements  
 | Field | Value |

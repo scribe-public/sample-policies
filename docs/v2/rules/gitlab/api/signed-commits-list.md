@@ -5,6 +5,8 @@
 **Rego Source:** [signed-commits-list.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/signed-commits-list.rego)  
 **Short Description:** Verify the selected commits are signed in the GitLab organization.  
 **Labels:** Gitlab, API  
+> Evidence for this rule **IS NOT** required by default but is recommended
+
 
 ## Rule Parameters (`with`)  
 ```yaml
