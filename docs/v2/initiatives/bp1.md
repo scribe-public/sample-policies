@@ -4,7 +4,6 @@
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  
 **Source:** [v2/initiatives/bp1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/bp1.yaml)  
-
 **Short Description:** A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle.  
 **Mitigation:** By enforcing layered security controls across all phases of the software development lifecycle, this initiative significantly reduces the risk of supply chain compromises and ensures that only verified and trustworthy software components are deployed.  
 **Help:** https://github.com/Venafi/blueprint-securesoftwarepipeline  

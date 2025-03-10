@@ -1,13 +1,11 @@
 # Rule: Restrict Coding Permissions
 
-**ID**: `git-coding-permissions`
-**Source**: [v2/rules/git/coding-permissions.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.yaml)
-**Uses**: `git/coding-permissions@v2/rules
-**Rego Source**: [coding-permissions.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.rego)
-
+**ID**: `git-coding-permissions`  
+**Uses**: `git/coding-permissions@v2/rules  
+**Source**: [v2/rules/git/coding-permissions.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.yaml)  
+**Rego Source**: [coding-permissions.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/coding-permissions.rego)  
+**Short Description**: Verify only allowed users committed to the repository.  
 **Labels**: Git
-
-**Short Description**: Verify only allowed users committed to the repository.
 
 ## Evidence Requirements
 

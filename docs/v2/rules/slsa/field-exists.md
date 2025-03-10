@@ -1,13 +1,11 @@
 # Rule: SLSA Field Exists in Provenance Document
 
-**ID**: `slsa-field-exists`
-**Source**: [v2/rules/slsa/field-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/field-exists.yaml)
-**Uses**: `slsa/field-exists@v2/rules
-**Rego Source**: [field-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/field-exists.rego)
-
+**ID**: `slsa-field-exists`  
+**Uses**: `slsa/field-exists@v2/rules  
+**Source**: [v2/rules/slsa/field-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/field-exists.yaml)  
+**Rego Source**: [field-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/field-exists.rego)  
+**Short Description**: Verify the specified field exists in the provenance document.  
 **Labels**: SLSA, Image
-
-**Short Description**: Verify the specified field exists in the provenance document.
 
 ## Evidence Requirements
 

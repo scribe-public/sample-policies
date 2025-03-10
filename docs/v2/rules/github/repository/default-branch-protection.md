@@ -1,13 +1,11 @@
 # Rule: Verify Default Branch Protection
 
-**ID**: `github-repo-default-branch-protection`
-**Source**: [v2/rules/github/repository/default-branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/default-branch-protection.yaml)
-**Uses**: `github/repository/default-branch-protection@v2/rules
-**Rego Source**: [default-branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/default-branch-protection.rego)
-
+**ID**: `github-repo-default-branch-protection`  
+**Uses**: `github/repository/default-branch-protection@v2/rules  
+**Source**: [v2/rules/github/repository/default-branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/default-branch-protection.yaml)  
+**Rego Source**: [default-branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/default-branch-protection.rego)  
+**Short Description**: Verify the default branch protection is configured in the GitHub repository.  
 **Labels**: GitHub, Repository
-
-**Short Description**: Verify the default branch protection is configured in the GitHub repository.
 
 ## Evidence Requirements
 

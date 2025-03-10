@@ -1,13 +1,11 @@
 # Rule: Verify Tool Evidence in SARIF
 
-**ID**: `sarif-tool-evidence`
-**Source**: [v2/rules/sarif/verify-tool-evidence.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.yaml)
-**Uses**: `sarif/verify-tool-evidence@v2/rules
-**Rego Source**: [verify-tool-evidence.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.rego)
-
+**ID**: `sarif-tool-evidence`  
+**Uses**: `sarif/verify-tool-evidence@v2/rules  
+**Source**: [v2/rules/sarif/verify-tool-evidence.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.yaml)  
+**Rego Source**: [verify-tool-evidence.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-tool-evidence.rego)  
+**Short Description**: Verify required tools were used to generate the SARIF report.  
 **Labels**: SARIF
-
-**Short Description**: Verify required tools were used to generate the SARIF report.
 
 ## Evidence Requirements
 

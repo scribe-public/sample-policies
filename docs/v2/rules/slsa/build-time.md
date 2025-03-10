@@ -1,13 +1,11 @@
 # Rule: Verify build time
 
-**ID**: `slsa-build-time`
-**Source**: [v2/rules/slsa/build-time.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.yaml)
-**Uses**: `slsa/build-time@v2/rules
-**Rego Source**: [build-time.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.rego)
-
+**ID**: `slsa-build-time`  
+**Uses**: `slsa/build-time@v2/rules  
+**Source**: [v2/rules/slsa/build-time.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.yaml)  
+**Rego Source**: [build-time.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.rego)  
+**Short Description**: Verify the artifact was created within the specified time window.  
 **Labels**: SLSA, Image
-
-**Short Description**: Verify the artifact was created within the specified time window.
 
 ## Evidence Requirements
 

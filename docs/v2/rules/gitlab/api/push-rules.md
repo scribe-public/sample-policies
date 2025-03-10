@@ -1,13 +1,11 @@
 # Rule: Set Push Rules in GitLab
 
-**ID**: `gitlab-api-push-rules`
-**Source**: [v2/rules/gitlab/api/push-rules.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.yaml)
-**Uses**: `gitlab/api/push-rules@v2/rules
-**Rego Source**: [push-rules.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.rego)
-
+**ID**: `gitlab-api-push-rules`  
+**Uses**: `gitlab/api/push-rules@v2/rules  
+**Source**: [v2/rules/gitlab/api/push-rules.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.yaml)  
+**Rego Source**: [push-rules.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/api/push-rules.rego)  
+**Short Description**: Verify GitLab push rules are configured via the API.  
 **Labels**: Gitlab, API
-
-**Short Description**: Verify GitLab push rules are configured via the API.
 
 ## Rule Parameters (`with`)
 

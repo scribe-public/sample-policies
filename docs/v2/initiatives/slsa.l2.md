@@ -4,7 +4,6 @@
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  
 **Source:** [v2/initiatives/slsa.l2.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l2.yaml)  
-
 **Short Description:** Evaluate SLSA Level 2  
 **Help:** https://slsa.dev/  
 **Full Description:**  

@@ -1,13 +1,11 @@
 # Rule: Set Author Email Regex in GitLab Project
 
-**ID**: `gitlab-project-author-email-regex`
-**Source**: [v2/rules/gitlab/project/author-email-regex.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/author-email-regex.yaml)
-**Uses**: `gitlab/project/author-email-regex@v2/rules
-**Rego Source**: [author-email-regex.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/author-email-regex.rego)
-
+**ID**: `gitlab-project-author-email-regex`  
+**Uses**: `gitlab/project/author-email-regex@v2/rules  
+**Source**: [v2/rules/gitlab/project/author-email-regex.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/author-email-regex.yaml)  
+**Rego Source**: [author-email-regex.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/author-email-regex.rego)  
+**Short Description**: Verify the `author_email_regex` for the GitLab project is set to the specified value.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify the `author_email_regex` for the GitLab project is set to the specified value.
 
 ## Evidence Requirements
 

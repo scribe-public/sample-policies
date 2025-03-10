@@ -1,13 +1,11 @@
 # Rule: Check Message Substring
 
-**ID**: `gitlab-project-message-substring-check`
-**Source**: [v2/rules/gitlab/project/message-substring-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/message-substring-check.yaml)
-**Uses**: `gitlab/project/message-substring-check@v2/rules
-**Rego Source**: [message-substring-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/message-substring-check.rego)
-
+**ID**: `gitlab-project-message-substring-check`  
+**Uses**: `gitlab/project/message-substring-check@v2/rules  
+**Source**: [v2/rules/gitlab/project/message-substring-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/message-substring-check.yaml)  
+**Rego Source**: [message-substring-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/message-substring-check.rego)  
+**Short Description**: Verify a specific substring is not found in the message attribute of vulnerabilities for the GitLab project.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify a specific substring is not found in the message attribute of vulnerabilities for the GitLab project.
 
 ## Evidence Requirements
 

@@ -1,13 +1,11 @@
 # Rule: Verify Required Evidence in SARIF
 
-**ID**: `required-sarif-evidence`
-**Source**: [v2/rules/sarif/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/evidence-exists.yaml)
-**Uses**: `sarif/evidence-exists@v2/rules
-**Rego Source**: [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/evidence-exists.rego)
-
+**ID**: `required-sarif-evidence`  
+**Uses**: `sarif/evidence-exists@v2/rules  
+**Source**: [v2/rules/sarif/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/evidence-exists.yaml)  
+**Rego Source**: [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/evidence-exists.rego)  
+**Short Description**: Verify all required evidence exists as defined by the SARIF policy.  
 **Labels**: SARIF
-
-**Short Description**: Verify all required evidence exists as defined by the SARIF policy.
 
 ## Evidence Requirements
 

@@ -1,13 +1,11 @@
 # Rule: Ensure SAST Scanning Passes
 
-**ID**: `gitlab-project-sast-scan-pass`
-**Source**: [v2/rules/gitlab/project/sast-scan-pass.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scan-pass.yaml)
-**Uses**: `gitlab/project/sast-scan-pass@v2/rules
-**Rego Source**: [sast-scan-pass.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scan-pass.rego)
-
+**ID**: `gitlab-project-sast-scan-pass`  
+**Uses**: `gitlab/project/sast-scan-pass@v2/rules  
+**Source**: [v2/rules/gitlab/project/sast-scan-pass.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scan-pass.yaml)  
+**Rego Source**: [sast-scan-pass.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scan-pass.rego)  
+**Short Description**: Verify SAST scanning is successful for the GitLab project.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify SAST scanning is successful for the GitLab project.
 
 ## Evidence Requirements
 

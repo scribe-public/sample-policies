@@ -1,13 +1,11 @@
 # Rule: Verify that artifact was created by the specified builder
 
-**ID**: `slsa-verify-builder`
-**Source**: [v2/rules/slsa/verify-builder.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-builder.yaml)
-**Uses**: `slsa/verify-builder@v2/rules
-**Rego Source**: [verify-builder.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-builder.rego)
-
+**ID**: `slsa-verify-builder`  
+**Uses**: `slsa/verify-builder@v2/rules  
+**Source**: [v2/rules/slsa/verify-builder.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-builder.yaml)  
+**Rego Source**: [verify-builder.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/verify-builder.rego)  
+**Short Description**: Verify the artifact was created by the specified builder.  
 **Labels**: SLSA, Image
-
-**Short Description**: Verify the artifact was created by the specified builder.
 
 ## Evidence Requirements
 

@@ -1,13 +1,11 @@
 # Rule: Disallow Container Shell Entrypoint
 
-**ID**: `images-disallow-shell-access`
-**Source**: [v2/rules/images/restrict-shell-entrypoint.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.yaml)
-**Uses**: `images/restrict-shell-entrypoint@v2/rules
-**Rego Source**: [restrict-shell-entrypoint.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.rego)
-
+**ID**: `images-disallow-shell-access`  
+**Uses**: `images/restrict-shell-entrypoint@v2/rules  
+**Source**: [v2/rules/images/restrict-shell-entrypoint.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.yaml)  
+**Rego Source**: [restrict-shell-entrypoint.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/restrict-shell-entrypoint.rego)  
+**Short Description**: Verify the container image disallows shell entrypoint.  
 **Labels**: SBOM, Images
-
-**Short Description**: Verify the container image disallows shell entrypoint.
 
 ## Evidence Requirements
 

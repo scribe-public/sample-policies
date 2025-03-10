@@ -1,13 +1,11 @@
 # Rule: Set Visibility Level in GitLab Project
 
-**ID**: `gitlab-project-project-visibility-level`
-**Source**: [v2/rules/gitlab/project/visibility-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/visibility-check.yaml)
-**Uses**: `gitlab/project/visibility-check@v2/rules
-**Rego Source**: [visibility-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/visibility-check.rego)
-
+**ID**: `gitlab-project-project-visibility-level`  
+**Uses**: `gitlab/project/visibility-check@v2/rules  
+**Source**: [v2/rules/gitlab/project/visibility-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/visibility-check.yaml)  
+**Rego Source**: [visibility-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/visibility-check.rego)  
+**Short Description**: Verify the GitLab project's visibility matches the required level.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify the GitLab project's visibility matches the required level.
 
 ## Evidence Requirements
 

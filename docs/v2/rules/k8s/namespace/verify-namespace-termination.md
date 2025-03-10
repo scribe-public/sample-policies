@@ -1,13 +1,11 @@
 # Rule: Verify Namespace Termination
 
-**ID**: `k8s-namespace-verify-namespace-termination`
-**Source**: [v2/rules/k8s/namespace/verify-namespace-termination.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-termination.yaml)
-**Uses**: `k8s/namespace/verify-namespace-termination@v2/rules
-**Rego Source**: [verify-namespace-termination.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-termination.rego)
-
+**ID**: `k8s-namespace-verify-namespace-termination`  
+**Uses**: `k8s/namespace/verify-namespace-termination@v2/rules  
+**Source**: [v2/rules/k8s/namespace/verify-namespace-termination.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-termination.yaml)  
+**Rego Source**: [verify-namespace-termination.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/verify-namespace-termination.rego)  
+**Short Description**: Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.  
 **Labels**: K8s, Namespace
-
-**Short Description**: Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
 ## Evidence Requirements
 

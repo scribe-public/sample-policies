@@ -1,13 +1,11 @@
 # Rule: Disallow Banned Approvers
 
-**ID**: `gitlab-project-disallowed-banned-approvers`
-**Source**: [v2/rules/gitlab/project/disallowed-banned-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.yaml)
-**Uses**: `gitlab/project/disallowed-banned-approvers@v2/rules
-**Rego Source**: [disallowed-banned-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.rego)
-
+**ID**: `gitlab-project-disallowed-banned-approvers`  
+**Uses**: `gitlab/project/disallowed-banned-approvers@v2/rules  
+**Source**: [v2/rules/gitlab/project/disallowed-banned-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.yaml)  
+**Rego Source**: [disallowed-banned-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/disallowed-banned-approvers.rego)  
+**Short Description**: Verify approvers in the GitLab project are not on the banned list.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify approvers in the GitLab project are not on the banned list.
 
 ## Evidence Requirements
 

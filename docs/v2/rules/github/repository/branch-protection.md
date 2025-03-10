@@ -1,13 +1,11 @@
 # Rule: Verify Branch Protection Setting
 
-**ID**: `github-repo-branch-protection`
-**Source**: [v2/rules/github/repository/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-protection.yaml)
-**Uses**: `github/repository/branch-protection@v2/rules
-**Rego Source**: [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-protection.rego)
-
+**ID**: `github-repo-branch-protection`  
+**Uses**: `github/repository/branch-protection@v2/rules  
+**Source**: [v2/rules/github/repository/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-protection.yaml)  
+**Rego Source**: [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-protection.rego)  
+**Short Description**: Verify branch protection is configured in the GitHub repository.  
 **Labels**: GitHub, Repository
-
-**Short Description**: Verify branch protection is configured in the GitHub repository.
 
 ## Evidence Requirements
 

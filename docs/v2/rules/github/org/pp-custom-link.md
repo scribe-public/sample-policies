@@ -1,13 +1,11 @@
 # Rule: Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting
 
-**ID**: `github-org-pp-custom-link`
-**Source**: [v2/rules/github/org/pp-custom-link.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.yaml)
-**Uses**: `github/org/pp-custom-link@v2/rules
-**Rego Source**: [pp-custom-link.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.rego)
-
+**ID**: `github-org-pp-custom-link`  
+**Uses**: `github/org/pp-custom-link@v2/rules  
+**Source**: [v2/rules/github/org/pp-custom-link.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.yaml)  
+**Rego Source**: [pp-custom-link.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.rego)  
+**Short Description**: Verify `secret_scanning_push_protection_custom_link` is enabled in the GitHub organization.  
 **Labels**: GitHub, Organization
-
-**Short Description**: Verify `secret_scanning_push_protection_custom_link` is enabled in the GitHub organization.
 
 ## Evidence Requirements
 

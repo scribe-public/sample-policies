@@ -1,13 +1,11 @@
 # Rule: GitLab pipeline verify labels exist
 
-**ID**: `gitlab-pipeline-verify-labels-exist`
-**Source**: [v2/rules/gitlab/pipeline/verify-labels-exist.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels-exist.yaml)
-**Uses**: `gitlab/pipeline/verify-labels-exist@v2/rules
-**Rego Source**: [verify-labels-exist.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels-exist.rego)
-
+**ID**: `gitlab-pipeline-verify-labels-exist`  
+**Uses**: `gitlab/pipeline/verify-labels-exist@v2/rules  
+**Source**: [v2/rules/gitlab/pipeline/verify-labels-exist.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels-exist.yaml)  
+**Rego Source**: [verify-labels-exist.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/pipeline/verify-labels-exist.rego)  
+**Short Description**: Verify the pipeline has all required label keys and values.  
 **Labels**: Gitlab, Pipeline
-
-**Short Description**: Verify the pipeline has all required label keys and values.
 
 ## Evidence Requirements
 

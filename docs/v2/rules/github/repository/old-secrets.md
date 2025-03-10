@@ -1,13 +1,11 @@
 # Rule: Verify No Old Secrets Exist in Repository
 
-**ID**: `github-repo-old-secrets`
-**Source**: [v2/rules/github/repository/old-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/old-secrets.yaml)
-**Uses**: `github/repository/old-secrets@v2/rules
-**Rego Source**: [old-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/old-secrets.rego)
-
+**ID**: `github-repo-old-secrets`  
+**Uses**: `github/repository/old-secrets@v2/rules  
+**Source**: [v2/rules/github/repository/old-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/old-secrets.yaml)  
+**Rego Source**: [old-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/old-secrets.rego)  
+**Short Description**: Verify secrets in the GitHub repository are not older than the specified threshold.  
 **Labels**: GitHub, Repository
-
-**Short Description**: Verify secrets in the GitHub repository are not older than the specified threshold.
 
 ## Evidence Requirements
 

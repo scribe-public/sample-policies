@@ -1,13 +1,11 @@
 # Rule: Enforce SBOM Freshness
 
-**ID**: `fresh-sbom`
-**Source**: [v2/rules/sbom/fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.yaml)
-**Uses**: `sbom/fresh-sbom@v2/rules
-**Rego Source**: [fresh-sbom.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.rego)
-
+**ID**: `fresh-sbom`  
+**Uses**: `sbom/fresh-sbom@v2/rules  
+**Source**: [v2/rules/sbom/fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.yaml)  
+**Rego Source**: [fresh-sbom.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.rego)  
+**Short Description**: Verify the SBOM is not older than the specified duration.  
 **Labels**: SBOM
-
-**Short Description**: Verify the SBOM is not older than the specified duration.
 
 ## Evidence Requirements
 

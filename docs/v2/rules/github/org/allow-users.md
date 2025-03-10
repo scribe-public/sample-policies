@@ -1,13 +1,11 @@
 # Rule: Allowed GitHub Organization Users
 
-**ID**: `github-org-allowed-users`
-**Source**: [v2/rules/github/org/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-users.yaml)
-**Uses**: `github/org/allow-users@v2/rules
-**Rego Source**: [allow-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-users.rego)
-
+**ID**: `github-org-allowed-users`  
+**Uses**: `github/org/allow-users@v2/rules  
+**Source**: [v2/rules/github/org/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-users.yaml)  
+**Rego Source**: [allow-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-users.rego)  
+**Short Description**: Verify only users in the Allowed List have user access to the GitHub organization.  
 **Labels**: GitHub, Organization
-
-**Short Description**: Verify only users in the Allowed List have user access to the GitHub organization.
 
 ## Evidence Requirements
 

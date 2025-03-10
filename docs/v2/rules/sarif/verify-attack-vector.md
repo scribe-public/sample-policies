@@ -1,13 +1,11 @@
 # Rule: Verify Attack Vector Exists in SARIF
 
-**ID**: `sarif-attack-vectors`
-**Source**: [v2/rules/sarif/verify-attack-vector.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-attack-vector.yaml)
-**Uses**: `sarif/verify-attack-vector@v2/rules
-**Rego Source**: [verify-attack-vector.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-attack-vector.rego)
-
+**ID**: `sarif-attack-vectors`  
+**Uses**: `sarif/verify-attack-vector@v2/rules  
+**Source**: [v2/rules/sarif/verify-attack-vector.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-attack-vector.yaml)  
+**Rego Source**: [verify-attack-vector.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-attack-vector.rego)  
+**Short Description**: Verify required evidence validates attack vectors in the SARIF report.  
 **Labels**: SARIF
-
-**Short Description**: Verify required evidence validates attack vectors in the SARIF report.
 
 ## Evidence Requirements
 

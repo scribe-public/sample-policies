@@ -1,13 +1,11 @@
 # Rule: Restrict Commit Authors in GitLab Project
 
-**ID**: `gitlab-project-allowed-commit-authors`
-**Source**: [v2/rules/gitlab/project/commit-author-email-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-email-check.yaml)
-**Uses**: `gitlab/project/commit-author-email-check@v2/rules
-**Rego Source**: [commit-author-email-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-email-check.rego)
-
+**ID**: `gitlab-project-allowed-commit-authors`  
+**Uses**: `gitlab/project/commit-author-email-check@v2/rules  
+**Source**: [v2/rules/gitlab/project/commit-author-email-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-email-check.yaml)  
+**Rego Source**: [commit-author-email-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/commit-author-email-check.rego)  
+**Short Description**: Verify only GitLab project users in the Allowed List have commit author permissions.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify only GitLab project users in the Allowed List have commit author permissions.
 
 ## Evidence Requirements
 

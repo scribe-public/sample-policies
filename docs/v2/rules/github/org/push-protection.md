@@ -1,13 +1,11 @@
 # Rule: Verify Secret_Scanning_Push_Protection_Enabled_For_New_Repositories Setting
 
-**ID**: `github-org-push-protection`
-**Source**: [v2/rules/github/org/push-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection.yaml)
-**Uses**: `github/org/push-protection@v2/rules
-**Rego Source**: [push-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection.rego)
-
+**ID**: `github-org-push-protection`  
+**Uses**: `github/org/push-protection@v2/rules  
+**Source**: [v2/rules/github/org/push-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection.yaml)  
+**Rego Source**: [push-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection.rego)  
+**Short Description**: Verify `secret_scanning_push_protection` is enabled for new repositories in the GitHub organization.  
 **Labels**: GitHub, Organization
-
-**Short Description**: Verify `secret_scanning_push_protection` is enabled for new repositories in the GitHub organization.
 
 ## Evidence Requirements
 

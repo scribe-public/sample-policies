@@ -1,13 +1,11 @@
 # Rule: Require Specified SBOM Licenses
 
-**ID**: `sbom-hf-license`
-**Source**: [v2/rules/sbom/verify-huggingface-license.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/verify-huggingface-license.yaml)
-**Uses**: `sbom/verify-huggingface-license@v2/rules
-**Rego Source**: [verify-hf-license.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/verify-hf-license.rego)
-
+**ID**: `sbom-hf-license`  
+**Uses**: `sbom/verify-huggingface-license@v2/rules  
+**Source**: [v2/rules/sbom/verify-huggingface-license.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/verify-huggingface-license.yaml)  
+**Rego Source**: [verify-hf-license.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/verify-hf-license.rego)  
+**Short Description**: Verify the artifact includes all specified licenses.  
 **Labels**: SBOM, Image
-
-**Short Description**: Verify the artifact includes all specified licenses.
 
 ## Evidence Requirements
 

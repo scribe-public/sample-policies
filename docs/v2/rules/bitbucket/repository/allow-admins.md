@@ -1,13 +1,11 @@
 # Rule: Allowed Repository Admins
 
-**ID**: `bb-repo-allowed-repository-admins`
-**Source**: [v2/rules/bitbucket/repository/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-admins.yaml)
-**Uses**: `bitbucket/repository/allow-admins@v2/rules
-**Rego Source**: [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-admins.rego)
-
+**ID**: `bb-repo-allowed-repository-admins`  
+**Uses**: `bitbucket/repository/allow-admins@v2/rules  
+**Source**: [v2/rules/bitbucket/repository/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-admins.yaml)  
+**Rego Source**: [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/allow-admins.rego)  
+**Short Description**: Verify only users specified in the Allowed List have admin privileges in the Bitbucket repository.  
 **Labels**: Bitbucket, Repository
-
-**Short Description**: Verify only users specified in the Allowed List have admin privileges in the Bitbucket repository.
 
 ## Evidence Requirements
 

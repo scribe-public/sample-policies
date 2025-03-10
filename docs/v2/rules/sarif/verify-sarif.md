@@ -1,13 +1,11 @@
 # Rule: Verify Rule Compliance in SARIF
 
-**ID**: `sarif-policy`
-**Source**: [v2/rules/sarif/verify-sarif.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.yaml)
-**Uses**: `sarif/verify-sarif@v2/rules
-**Rego Source**: [verify-sarif.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.rego)
-
+**ID**: `sarif-policy`  
+**Uses**: `sarif/verify-sarif@v2/rules  
+**Source**: [v2/rules/sarif/verify-sarif.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.yaml)  
+**Rego Source**: [verify-sarif.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-sarif.rego)  
+**Short Description**: Verify the SARIF report complies with defined generic rules for compliance and security.  
 **Labels**: SARIF
-
-**Short Description**: Verify the SARIF report complies with defined generic rules for compliance and security.
 
 ## Evidence Requirements
 

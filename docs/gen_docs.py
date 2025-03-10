@@ -71,27 +71,21 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     rego_source_link = os.path.join(base_source_git,file_dir,rego_path)
     md = []
     md.append(f"# Rule: {name}\n")
-    md.append(f"**ID**: `{rule_id}`")
-    md.append(f"**Source**: [{file_path}]({yaml_source_link})")
-    # Calculate 'uses' from filepath vX/rules/group/.../rule.yaml to uses group/.../rule@vX/rules
-    md.append(f"**Uses**: `{filepath_to_uses(file_path)}")
-
+    md.append(f"**ID**: `{rule_id}`  ")
+    md.append(f"**Uses**: `{filepath_to_uses(file_path)}  ")
+    md.append(f"**Source**: [{file_path}]({yaml_source_link})  ")
     if rego_path:
-        md.append(f"**Rego Source**: [{rego_path}]({rego_source_link})")
-
-    md.append("")
-
+        md.append(f"**Rego Source**: [{rego_path}]({rego_source_link})  ")
+    md.append(f"**Short Description**: {description}  ")
+    # Calculate 'uses' from filepath vX/rules/group/.../rule.yaml to uses group/.../rule@vX/rules
+    if mitigation:
+        md.append(f"**Mitigation**: {mitigation}  ")
+    if help_url:
+        md.append(f"**Help**: {help_url}  ")
     if labels:
         md.append(f"**Labels**: {', '.join(labels)}\n")
-
-    md.append(f"**Short Description**: {description}\n")
-
     if full_description:
         md.append(f"**Full Description**:\n\n{full_description}\n")
-    if mitigation:
-        md.append(f"**Mitigation**:\n\n{mitigation}\n")
-    if help_url:
-        md.append(f"**Help**: {help_url}\n")
 
     evidence = rule_data.get("evidence", {})
     if evidence:
@@ -190,7 +184,6 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md.append(f"**Version:** `{version}`  ")
     md.append(f"**Bundle-Version:** `{bundle_version}`  ")
     md.append(f"**Source:** [{file_path}]({source_link})  ")
-    md.append("")  # A blank line for spacing
     md.append(f"**Short Description:** {description}  ")
     if mitigation:
         md.append(f"**Mitigation:** {mitigation}  ")

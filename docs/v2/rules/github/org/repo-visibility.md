@@ -1,13 +1,11 @@
 # Rule: Verify Repo Visibility Setting
 
-**ID**: `github-org-repo-visibility`
-**Source**: [v2/rules/github/org/repo-visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/repo-visibility.yaml)
-**Uses**: `github/org/repo-visibility@v2/rules
-**Rego Source**: [repo-visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/repo-visibility.rego)
-
+**ID**: `github-org-repo-visibility`  
+**Uses**: `github/org/repo-visibility@v2/rules  
+**Source**: [v2/rules/github/org/repo-visibility.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/repo-visibility.yaml)  
+**Rego Source**: [repo-visibility.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/repo-visibility.rego)  
+**Short Description**: Verify only repositories in the Allowed List are public in the GitHub organization.  
 **Labels**: GitHub, Organization
-
-**Short Description**: Verify only repositories in the Allowed List are public in the GitHub organization.
 
 ## Evidence Requirements
 

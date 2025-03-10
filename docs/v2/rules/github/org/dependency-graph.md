@@ -1,13 +1,11 @@
 # Rule: Verify dependency_graph_enabled_for_new_repositories setting
 
-**ID**: `github-org-dependency-graph`
-**Source**: [v2/rules/github/org/dependency-graph.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependency-graph.yaml)
-**Uses**: `github/org/dependency-graph@v2/rules
-**Rego Source**: [dependency-graph.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependency-graph.rego)
-
+**ID**: `github-org-dependency-graph`  
+**Uses**: `github/org/dependency-graph@v2/rules  
+**Source**: [v2/rules/github/org/dependency-graph.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependency-graph.yaml)  
+**Rego Source**: [dependency-graph.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependency-graph.rego)  
+**Short Description**: Verify `dependency_graph` is enabled for new repositories in the GitHub organization.  
 **Labels**: GitHub, Organization
-
-**Short Description**: Verify `dependency_graph` is enabled for new repositories in the GitHub organization.
 
 ## Evidence Requirements
 

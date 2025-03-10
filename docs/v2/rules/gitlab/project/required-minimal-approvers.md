@@ -1,13 +1,11 @@
 # Rule: Require Minimal Approvers in GitLab Project
 
-**ID**: `gitlab-project-required-minimal-approvers`
-**Source**: [v2/rules/gitlab/project/required-minimal-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/required-minimal-approvers.yaml)
-**Uses**: `gitlab/project/required-minimal-approvers@v2/rules
-**Rego Source**: [required-minimal-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/required-minimal-approvers.rego)
-
+**ID**: `gitlab-project-required-minimal-approvers`  
+**Uses**: `gitlab/project/required-minimal-approvers@v2/rules  
+**Source**: [v2/rules/gitlab/project/required-minimal-approvers.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/required-minimal-approvers.yaml)  
+**Rego Source**: [required-minimal-approvers.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/required-minimal-approvers.rego)  
+**Short Description**: Verify the required number of approvers for the GitLab project is met.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify the required number of approvers for the GitLab project is met.
 
 ## Evidence Requirements
 

@@ -1,13 +1,11 @@
 # Rule: Set Push Access Level in GitLab Project
 
-**ID**: `gitlab-project-push-access-level`
-**Source**: [v2/rules/gitlab/project/push-access-level.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.yaml)
-**Uses**: `gitlab/project/push-access-level@v2/rules
-**Rego Source**: [push-access-level.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.rego)
-
+**ID**: `gitlab-project-push-access-level`  
+**Uses**: `gitlab/project/push-access-level@v2/rules  
+**Source**: [v2/rules/gitlab/project/push-access-level.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.yaml)  
+**Rego Source**: [push-access-level.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.rego)  
+**Short Description**: Verify the GitLab project's push access level policy complies with requirements.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify the GitLab project's push access level policy complies with requirements.
 
 ## Evidence Requirements
 

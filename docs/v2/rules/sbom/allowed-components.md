@@ -1,13 +1,11 @@
 # Rule: Enforce Allowed SBOM Components
 
-**ID**: `sbom-allowed-components`
-**Source**: [v2/rules/sbom/allowed-components.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/allowed-components.yaml)
-**Uses**: `sbom/allowed-components@v2/rules
-**Rego Source**: [allowed-components.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/allowed-components.rego)
-
+**ID**: `sbom-allowed-components`  
+**Uses**: `sbom/allowed-components@v2/rules  
+**Source**: [v2/rules/sbom/allowed-components.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/allowed-components.yaml)  
+**Rego Source**: [allowed-components.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/allowed-components.rego)  
+**Short Description**: Verify the artifact contains only allowed components.  
 **Labels**: SBOM, Image
-
-**Short Description**: Verify the artifact contains only allowed components.
 
 ## Evidence Requirements
 

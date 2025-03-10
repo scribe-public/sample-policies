@@ -1,13 +1,11 @@
 # Rule: Restrict Disallowed SBOM Licenses
 
-**ID**: `sbom-disallowed-licenses`
-**Source**: [v2/rules/sbom/banned-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.yaml)
-**Uses**: `sbom/banned-licenses@v2/rules
-**Rego Source**: [banned-licenses.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.rego)
-
+**ID**: `sbom-disallowed-licenses`  
+**Uses**: `sbom/banned-licenses@v2/rules  
+**Source**: [v2/rules/sbom/banned-licenses.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.yaml)  
+**Rego Source**: [banned-licenses.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-licenses.rego)  
+**Short Description**: Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.  
 **Labels**: SBOM, Image
-
-**Short Description**: Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.
 
 ## Evidence Requirements
 

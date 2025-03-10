@@ -1,13 +1,11 @@
 # Rule: Verify Only Ephemeral Runners Exist in Repository
 
-**ID**: `github-repo-ephemeral-runners-only`
-**Source**: [v2/rules/github/repository/ephemeral-runners-only.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/ephemeral-runners-only.yaml)
-**Uses**: `github/repository/ephemeral-runners-only@v2/rules
-**Rego Source**: [ephemeral-runners-only.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/ephemeral-runners-only.rego)
-
+**ID**: `github-repo-ephemeral-runners-only`  
+**Uses**: `github/repository/ephemeral-runners-only@v2/rules  
+**Source**: [v2/rules/github/repository/ephemeral-runners-only.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/ephemeral-runners-only.yaml)  
+**Rego Source**: [ephemeral-runners-only.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/ephemeral-runners-only.rego)  
+**Short Description**: Verify self-hosted runners are disallowed in the GitHub repository.  
 **Labels**: GitHub, Repository
-
-**Short Description**: Verify self-hosted runners are disallowed in the GitHub repository.
 
 ## Evidence Requirements
 

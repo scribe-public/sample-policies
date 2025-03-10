@@ -1,13 +1,11 @@
 # Rule: Run SAST Scanning in GitLab Project
 
-**ID**: `gitlab-project-sast-scanning`
-**Source**: [v2/rules/gitlab/project/sast-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scanning.yaml)
-**Uses**: `gitlab/project/sast-scanning@v2/rules
-**Rego Source**: [sast-scanning.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scanning.rego)
-
+**ID**: `gitlab-project-sast-scanning`  
+**Uses**: `gitlab/project/sast-scanning@v2/rules  
+**Source**: [v2/rules/gitlab/project/sast-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scanning.yaml)  
+**Rego Source**: [sast-scanning.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/sast-scanning.rego)  
+**Short Description**: Verify SAST scanning is performed for the GitLab project.  
 **Labels**: Gitlab, Project
-
-**Short Description**: Verify SAST scanning is performed for the GitLab project.
 
 ## Evidence Requirements
 
