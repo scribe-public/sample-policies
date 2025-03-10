@@ -35,7 +35,7 @@ This initiative ensures that every critical build artifact includes the minimum 
 This control verifies that essential provenance metadata is present for each build artifact.
 
 
-## Mitigation  
+### Mitigation  
 Ensure that provenance metadata is present for critical build artifacts to support supply chain integrity.
 
 ### Rules

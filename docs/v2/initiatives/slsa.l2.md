@@ -35,7 +35,7 @@ Evaluate SLSA L2 and ensure that provenance information is both recorded and aut
 Ensure that provenance metadata for build artifacts is authenticated, confirming that it originates from a trusted source.
 
 
-## Mitigation  
+### Mitigation  
 Authentication of provenance data prevents attackers from forging or modifying build metadata, ensuring the integrity of the software supply chain.
 
 ### Rules

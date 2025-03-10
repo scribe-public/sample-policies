@@ -279,12 +279,12 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append("")
 
         if ctrl_mitigation:
-            md.append("\n## Mitigation  ")
+            md.append("\n### Mitigation  ")
             md.append(ctrl_mitigation)
             md.append("")
 
         if ctrl_full_desc:
-            md.append(f"## **Description**\n")
+            md.append(f"### **Description**\n")
             md.append(ctrl_full_desc)
             md.append("")
 
