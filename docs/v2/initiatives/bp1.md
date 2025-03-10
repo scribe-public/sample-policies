@@ -1,9 +1,9 @@
 # Initiative: Venafi Blueprint
 
-**ID**: `blueprint-securesoftwarepipeline`  
-**Version**: ``  
-**Bundle-Version**: ``  
-**Source**: [v2/initiatives/bp1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/bp1.yaml)  
+**ID**: `blueprint-securesoftwarepipeline`
+**Version**: `1.0.0`
+**Bundle-Version**: `v2`
+**Source**: [v2/initiatives/bp1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/bp1.yaml)
 
 **Short Description**: A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle.
 

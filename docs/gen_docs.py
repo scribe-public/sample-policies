@@ -183,10 +183,10 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md = []
     # Initiative header
     md.append(f"# Initiative: {name}\n")
-    md.append(f"**ID**: `{init_id}`  ")
-    md.append(f"**Version**: `{version}`  ")
-    md.append(f"**Bundle-Version**: `{version}`  ")
-    md.append(f"**Source**: [{file_path}]({source_link})  ")
+    md.append(f"**ID**: `{init_id}`")
+    md.append(f"**Version**: `{version}`")
+    md.append(f"**Bundle-Version**: `{bundle_version}`")
+    md.append(f"**Source**: [{file_path}]({source_link})")
     md.append("")
     md.append(f"**Short Description**: {description}\n")
     if full_description:
