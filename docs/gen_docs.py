@@ -120,7 +120,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
 
     if not skip_evidence:
         if sign_defaults:
-            md.append(f"> Signed Evidence for this rule **IS* required by default.  ")
+            md.append(f"> Signed Evidence for this rule **IS** required by default.  ")
         else:
             md.append(f"> Signed Evidence for this rule **IS NOT** required by default but is recommended.  ")
 
