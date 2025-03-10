@@ -1,14 +1,14 @@
 # Initiative: Venafi Blueprint
 
- **ID**: `blueprint-securesoftwarepipeline`
- **Version**: `1.0.0`
- **Bundle-Version**: `v2`
- **Source**: [v2/initiatives/bp1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/bp1.yaml)
+**ID:** `blueprint-securesoftwarepipeline`  
+**Version:** `1.0.0`  
+**Bundle-Version:** `v2`  
+**Source:** [v2/initiatives/bp1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/bp1.yaml)  
 
- **Short Description**: A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle.
- **Mitigation**: By enforcing layered security controls across all phases of the software development lifecycle, this initiative significantly reduces the risk of supply chain compromises and ensures that only verified and trustworthy software components are deployed.
- **Help**: https://github.com/Venafi/blueprint-securesoftwarepipeline
- **Full Description**:
+**Short Description:** A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle.  
+**Mitigation:** By enforcing layered security controls across all phases of the software development lifecycle, this initiative significantly reduces the risk of supply chain compromises and ensures that only verified and trustworthy software components are deployed.  
+**Help:** https://github.com/Venafi/blueprint-securesoftwarepipeline  
+**Full Description:**  
 This initiative defines a set of best practices and technical guidelines designed to safeguard every stage of the software delivery process—from code development and build, to testing and production deployment. It emphasizes the importance of ensuring code integrity, authenticating build artifacts, and continuously monitoring system changes to mitigate the risk of supply chain attacks. The framework is adaptable to various environments and aligned with industry standards, providing organizations with actionable steps to enhance their overall security posture.
 > ** Evidence for this initiative is required by default.**
 
