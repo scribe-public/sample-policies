@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-allowed-committer-names`
 **Source**: [v2/rules/gitlab/project/committer-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/committer-name-check.yaml)
 **Uses**: `gitlab/project/committer-name-check@v2/rules
-**Rego File Path**: `committer-name-check.rego`
+**Rego Source**: [committer-name-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/committer-name-check.rego)
 
 **Labels**: Gitlab, Project
 

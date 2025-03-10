@@ -3,7 +3,7 @@
 **ID**: `scribe-published-policy`
 **Source**: [v2/rules/api/scribe-api-published.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-published.yaml)
 **Uses**: `api/scribe-api-published@v2/rules
-**Rego File Path**: `scribe-api-published.rego`
+**Rego Source**: [scribe-api-published.rego](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-published.rego)
 
 **Labels**: Scribe
 

@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-signed-commits`
 **Source**: [v2/rules/gitlab/project/check-signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-signed-commits.yaml)
 **Uses**: `gitlab/project/check-signed-commits@v2/rules
-**Rego File Path**: `check-signed-commits.rego`
+**Rego Source**: [check-signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-signed-commits.rego)
 
 **Labels**: Gitlab, Project
 

@@ -3,7 +3,7 @@
 **ID**: `trivy-iac-findings`
 **Source**: [v2/rules/sarif/trivy/report-trivy-iac-errors.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/report-trivy-iac-errors.yaml)
 **Uses**: `sarif/trivy/report-trivy-iac-errors@v2/rules
-**Rego File Path**: `../report-iac-errors.rego`
+**Rego Source**: [../report-iac-errors.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../report-iac-errors.rego)
 
 **Labels**: SARIF, Trivy
 

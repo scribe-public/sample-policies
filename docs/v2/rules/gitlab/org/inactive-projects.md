@@ -3,7 +3,7 @@
 **ID**: `gitlab-org-inactive-projects`
 **Source**: [v2/rules/gitlab/org/inactive-projects.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.yaml)
 **Uses**: `gitlab/org/inactive-projects@v2/rules
-**Rego File Path**: `inactive-projects.rego`
+**Rego Source**: [inactive-projects.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.rego)
 
 **Labels**: Gitlab, Organization
 

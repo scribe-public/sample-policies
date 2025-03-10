@@ -3,7 +3,7 @@
 **ID**: `gitlab-org-max-admins`
 **Source**: [v2/rules/gitlab/org/max-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/max-admins.yaml)
 **Uses**: `gitlab/org/max-admins@v2/rules
-**Rego File Path**: `max-admins.rego`
+**Rego Source**: [max-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/max-admins.rego)
 
 **Labels**: Blueprint, GitLab, Organization
 

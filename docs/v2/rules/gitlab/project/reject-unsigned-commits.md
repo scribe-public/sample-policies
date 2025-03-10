@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-disallow-unsigned-commits`
 **Source**: [v2/rules/gitlab/project/reject-unsigned-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/reject-unsigned-commits.yaml)
 **Uses**: `gitlab/project/reject-unsigned-commits@v2/rules
-**Rego File Path**: `reject-unsigned-commits.rego`
+**Rego Source**: [reject-unsigned-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/reject-unsigned-commits.rego)
 
 **Labels**: Blueprint, Gitlab, Project
 

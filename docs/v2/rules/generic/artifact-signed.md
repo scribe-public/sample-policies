@@ -3,7 +3,7 @@
 **ID**: `generic-artifact-signed`
 **Source**: [v2/rules/generic/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/artifact-signed.yaml)
 **Uses**: `generic/artifact-signed@v2/rules
-**Rego File Path**: `artifact-signed.rego`
+**Rego Source**: [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/generic/artifact-signed.rego)
 
 **Labels**: 3rd-party
 

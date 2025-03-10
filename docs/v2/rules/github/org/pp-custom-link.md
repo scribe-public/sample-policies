@@ -3,7 +3,7 @@
 **ID**: `github-org-pp-custom-link`
 **Source**: [v2/rules/github/org/pp-custom-link.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.yaml)
 **Uses**: `github/org/pp-custom-link@v2/rules
-**Rego File Path**: `pp-custom-link.rego`
+**Rego Source**: [pp-custom-link.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/pp-custom-link.rego)
 
 **Labels**: GitHub, Organization
 

@@ -3,7 +3,7 @@
 **ID**: `gitlab-org-token-excessive-lifespan`
 **Source**: [v2/rules/gitlab/org/longlive-tokens.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/longlive-tokens.yaml)
 **Uses**: `gitlab/org/longlive-tokens@v2/rules
-**Rego File Path**: `longlive-tokens.rego`
+**Rego Source**: [longlive-tokens.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/longlive-tokens.rego)
 
 **Labels**: Blueprint, Gitlab, Organization
 

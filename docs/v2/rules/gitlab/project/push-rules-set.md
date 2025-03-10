@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-verify-push_rules`
 **Source**: [v2/rules/gitlab/project/push-rules-set.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-rules-set.yaml)
 **Uses**: `gitlab/project/push-rules-set@v2/rules
-**Rego File Path**: `push-rules-set.rego`
+**Rego Source**: [push-rules-set.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-rules-set.rego)
 
 **Labels**: Gitlab, Project
 

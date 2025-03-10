@@ -3,7 +3,7 @@
 **ID**: `github-org-secret-scanning`
 **Source**: [v2/rules/github/org/secret-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/secret-scanning.yaml)
 **Uses**: `github/org/secret-scanning@v2/rules
-**Rego File Path**: `secret-scanning.rego`
+**Rego Source**: [secret-scanning.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/secret-scanning.rego)
 
 **Labels**: GitHub, Organization
 

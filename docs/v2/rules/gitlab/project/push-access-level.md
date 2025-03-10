@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-push-access-level`
 **Source**: [v2/rules/gitlab/project/push-access-level.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.yaml)
 **Uses**: `gitlab/project/push-access-level@v2/rules
-**Rego File Path**: `push-access-level.rego`
+**Rego Source**: [push-access-level.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/push-access-level.rego)
 
 **Labels**: Gitlab, Project
 

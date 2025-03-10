@@ -3,7 +3,7 @@
 **ID**: `github-org-allowed-users`
 **Source**: [v2/rules/github/org/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-users.yaml)
 **Uses**: `github/org/allow-users@v2/rules
-**Rego File Path**: `allow-users.rego`
+**Rego Source**: [allow-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/allow-users.rego)
 
 **Labels**: GitHub, Organization
 

@@ -3,7 +3,7 @@
 **ID**: `sbom-signed`
 **Source**: [v2/rules/sbom/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/artifact-signed.yaml)
 **Uses**: `sbom/artifact-signed@v2/rules
-**Rego File Path**: `artifact-signed.rego`
+**Rego Source**: [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/artifact-signed.rego)
 
 **Labels**: SBOM, Blueprint
 

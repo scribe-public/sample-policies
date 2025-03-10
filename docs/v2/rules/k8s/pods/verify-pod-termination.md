@@ -3,7 +3,7 @@
 **ID**: `k8s-pods-verify-pod-termination`
 **Source**: [v2/rules/k8s/pods/verify-pod-termination.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/pods/verify-pod-termination.yaml)
 **Uses**: `k8s/pods/verify-pod-termination@v2/rules
-**Rego File Path**: `verify-pod-termination.rego`
+**Rego Source**: [verify-pod-termination.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/pods/verify-pod-termination.rego)
 
 **Labels**: K8s, Pod
 

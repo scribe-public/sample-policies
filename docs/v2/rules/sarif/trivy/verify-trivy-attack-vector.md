@@ -3,7 +3,7 @@
 **ID**: `trivy-attack-vectors`
 **Source**: [v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/verify-trivy-attack-vector.yaml)
 **Uses**: `sarif/trivy/verify-trivy-attack-vector@v2/rules
-**Rego File Path**: `../verify-attack-vector.rego`
+**Rego Source**: [../verify-attack-vector.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../verify-attack-vector.rego)
 
 **Labels**: SARIF, Trivy
 

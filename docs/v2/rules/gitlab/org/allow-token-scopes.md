@@ -3,7 +3,7 @@
 **ID**: `gitlab-org-allowed-token-scope`
 **Source**: [v2/rules/gitlab/org/allow-token-scopes.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-token-scopes.yaml)
 **Uses**: `gitlab/org/allow-token-scopes@v2/rules
-**Rego File Path**: `allow-token-scopes.rego`
+**Rego Source**: [allow-token-scopes.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-token-scopes.rego)
 
 **Labels**: Gitlab, Organization
 

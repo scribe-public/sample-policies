@@ -3,7 +3,7 @@
 **ID**: `sbom-disallow-dependencies`
 **Source**: [v2/rules/sbom/blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/blocklist-packages.yaml)
 **Uses**: `sbom/blocklist-packages@v2/rules
-**Rego File Path**: `blocklist-packages.rego`
+**Rego Source**: [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/blocklist-packages.rego)
 
 **Labels**: SBOM, Image, Blueprint
 

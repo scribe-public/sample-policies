@@ -3,7 +3,7 @@
 **ID**: `trivy-report`
 **Source**: [v2/rules/sarif/trivy/verify-trivy-report.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/verify-trivy-report.yaml)
 **Uses**: `sarif/trivy/verify-trivy-report@v2/rules
-**Rego File Path**: `../verify-sarif.rego`
+**Rego Source**: [../verify-sarif.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../verify-sarif.rego)
 
 **Labels**: SARIF, Trivy
 

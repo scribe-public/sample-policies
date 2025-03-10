@@ -3,7 +3,7 @@
 **ID**: `git-disallow-unsigned-commits`
 **Source**: [v2/rules/git/no-unsigned-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/no-unsigned-commits.yaml)
 **Uses**: `git/no-unsigned-commits@v2/rules
-**Rego File Path**: `no-unsigned-commits.rego`
+**Rego Source**: [no-unsigned-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/no-unsigned-commits.rego)
 
 **Labels**: Git
 

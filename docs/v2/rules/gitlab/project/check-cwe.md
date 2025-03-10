@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-check-cwe`
 **Source**: [v2/rules/gitlab/project/check-cwe.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-cwe.yaml)
 **Uses**: `gitlab/project/check-cwe@v2/rules
-**Rego File Path**: `check-cwe.rego`
+**Rego Source**: [check-cwe.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-cwe.rego)
 
 **Labels**: Gitlab, Project
 

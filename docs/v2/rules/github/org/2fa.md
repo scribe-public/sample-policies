@@ -3,7 +3,7 @@
 **ID**: `github-org-2fa`
 **Source**: [v2/rules/github/org/2fa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/2fa.yaml)
 **Uses**: `github/org/2fa@v2/rules
-**Rego File Path**: `2fa.rego`
+**Rego Source**: [2fa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/2fa.rego)
 
 **Labels**: GitHub, Organization
 

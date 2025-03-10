@@ -3,7 +3,7 @@
 **ID**: `required-git-evidence`
 **Source**: [v2/rules/git/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.yaml)
 **Uses**: `git/evidence-exists@v2/rules
-**Rego File Path**: `evidence-exists.rego`
+**Rego Source**: [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.rego)
 
 **Labels**: Git
 

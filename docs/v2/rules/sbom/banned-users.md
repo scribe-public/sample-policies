@@ -3,7 +3,7 @@
 **ID**: `sbom-disallowed-users`
 **Source**: [v2/rules/sbom/banned-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.yaml)
 **Uses**: `sbom/banned-users@v2/rules
-**Rego File Path**: `banned-users.rego`
+**Rego Source**: [banned-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/banned-users.rego)
 
 **Labels**: SBOM, Image
 

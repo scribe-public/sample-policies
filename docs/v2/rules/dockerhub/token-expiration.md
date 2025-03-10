@@ -3,7 +3,7 @@
 **ID**: `dockerhub-token-expiration`
 **Source**: [v2/rules/dockerhub/token-expiration.yaml](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-expiration.yaml)
 **Uses**: `dockerhub/token-expiration@v2/rules
-**Rego File Path**: `token-expiration.rego`
+**Rego Source**: [token-expiration.rego](https://github.com/scribe-public/sample-policies/v2/rules/dockerhub/token-expiration.rego)
 
 **Labels**: Dockerhub
 

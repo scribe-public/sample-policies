@@ -3,7 +3,7 @@
 **ID**: `github-org-push-protection-sa`
 **Source**: [v2/rules/github/org/push-protection-sa.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection-sa.yaml)
 **Uses**: `github/org/push-protection-sa@v2/rules
-**Rego File Path**: `push-protection-sa.rego`
+**Rego Source**: [push-protection-sa.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/push-protection-sa.rego)
 
 **Labels**: GitHub, Organization
 

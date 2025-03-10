@@ -3,7 +3,7 @@
 **ID**: `github-org-dependency-graph`
 **Source**: [v2/rules/github/org/dependency-graph.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependency-graph.yaml)
 **Uses**: `github/org/dependency-graph@v2/rules
-**Rego File Path**: `dependency-graph.rego`
+**Rego Source**: [dependency-graph.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependency-graph.rego)
 
 **Labels**: GitHub, Organization
 

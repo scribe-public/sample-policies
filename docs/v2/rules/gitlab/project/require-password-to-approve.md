@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-require-password-to-approve`
 **Source**: [v2/rules/gitlab/project/require-password-to-approve.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/require-password-to-approve.yaml)
 **Uses**: `gitlab/project/require-password-to-approve@v2/rules
-**Rego File Path**: `require-password-to-approve.rego`
+**Rego Source**: [require-password-to-approve.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/require-password-to-approve.rego)
 
 **Labels**: Gitlab, Project
 

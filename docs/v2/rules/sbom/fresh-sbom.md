@@ -3,7 +3,7 @@
 **ID**: `fresh-sbom`
 **Source**: [v2/rules/sbom/fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.yaml)
 **Uses**: `sbom/fresh-sbom@v2/rules
-**Rego File Path**: `fresh-sbom.rego`
+**Rego Source**: [fresh-sbom.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/fresh-sbom.rego)
 
 **Labels**: SBOM
 

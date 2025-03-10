@@ -3,7 +3,7 @@
 **ID**: `slsa-build-time`
 **Source**: [v2/rules/slsa/build-time.yaml](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.yaml)
 **Uses**: `slsa/build-time@v2/rules
-**Rego File Path**: `build-time.rego`
+**Rego Source**: [build-time.rego](https://github.com/scribe-public/sample-policies/v2/rules/slsa/build-time.rego)
 
 **Labels**: SLSA, Image
 

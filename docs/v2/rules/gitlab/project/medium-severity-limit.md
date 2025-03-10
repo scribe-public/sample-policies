@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-medium-severity-limit`
 **Source**: [v2/rules/gitlab/project/medium-severity-limit.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/medium-severity-limit.yaml)
 **Uses**: `gitlab/project/medium-severity-limit@v2/rules
-**Rego File Path**: `medium-severity-limit.rego`
+**Rego Source**: [medium-severity-limit.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/medium-severity-limit.rego)
 
 **Labels**: Gitlab, Project
 

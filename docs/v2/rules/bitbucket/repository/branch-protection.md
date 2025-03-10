@@ -3,7 +3,7 @@
 **ID**: `bb-repo-branch-protection`
 **Source**: [v2/rules/bitbucket/repository/branch-protection.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/branch-protection.yaml)
 **Uses**: `bitbucket/repository/branch-protection@v2/rules
-**Rego File Path**: `branch-protection.rego`
+**Rego Source**: [branch-protection.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/repository/branch-protection.rego)
 
 **Labels**: Bitbucket, Repository
 

@@ -3,7 +3,7 @@
 **ID**: `github-org-create-repos`
 **Source**: [v2/rules/github/org/create-repos.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-repos.yaml)
 **Uses**: `github/org/create-repos@v2/rules
-**Rego File Path**: `create-repos.rego`
+**Rego Source**: [create-repos.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/create-repos.rego)
 
 **Labels**: GitHub, Organization
 

@@ -3,7 +3,7 @@
 **ID**: `required-image-labels`
 **Source**: [v2/rules/images/verify-labels-exist.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels-exist.yaml)
 **Uses**: `images/verify-labels-exist@v2/rules
-**Rego File Path**: `verify-labels-exist.rego`
+**Rego Source**: [verify-labels-exist.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/verify-labels-exist.rego)
 
 **Labels**: SBOM, Images
 

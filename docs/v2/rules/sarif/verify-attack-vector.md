@@ -3,7 +3,7 @@
 **ID**: `sarif-attack-vectors`
 **Source**: [v2/rules/sarif/verify-attack-vector.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-attack-vector.yaml)
 **Uses**: `sarif/verify-attack-vector@v2/rules
-**Rego File Path**: `verify-attack-vector.rego`
+**Rego Source**: [verify-attack-vector.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/verify-attack-vector.rego)
 
 **Labels**: SARIF
 

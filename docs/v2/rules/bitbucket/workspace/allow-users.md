@@ -3,7 +3,7 @@
 **ID**: `bb-workspace-allowed-workspace-users`
 **Source**: [v2/rules/bitbucket/workspace/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/workspace/allow-users.yaml)
 **Uses**: `bitbucket/workspace/allow-users@v2/rules
-**Rego File Path**: `allow-users.rego`
+**Rego Source**: [allow-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/workspace/allow-users.rego)
 
 **Labels**: Bitbucket, Workspace
 

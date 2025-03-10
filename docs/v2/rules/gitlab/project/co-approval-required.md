@@ -3,7 +3,7 @@
 **ID**: `gitlab-project-code-owner-approval`
 **Source**: [v2/rules/gitlab/project/co-approval-required.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/co-approval-required.yaml)
 **Uses**: `gitlab/project/co-approval-required@v2/rules
-**Rego File Path**: `co-approval-required.rego`
+**Rego Source**: [co-approval-required.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/co-approval-required.rego)
 
 **Labels**: Gitlab, Project
 
