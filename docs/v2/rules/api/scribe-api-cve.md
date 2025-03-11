@@ -9,8 +9,12 @@
 Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.).
 
 > Rule Result will be set as 'open' if evidence is missing.  
+
+
 > [!NOTE]  
 > Rule requires the Scribe API to be enabled.  
+
+
 > Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 > This rule scoped by product and target.  
 
