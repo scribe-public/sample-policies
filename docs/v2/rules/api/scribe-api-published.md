@@ -9,13 +9,8 @@
 Verify image Scribe Publish flag is set for container image.
 
 > Rule Result will be set as 'open' if evidence is missing.  
-
-:::  
-
-:::tip  
-
-[!NOTE]  
-Rule requires the Scribe API to be enabled.  
+> [!NOTE]  
+> Rule requires the Scribe API to be enabled.  
 > Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
 ## Evidence Requirements  

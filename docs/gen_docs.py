@@ -115,11 +115,11 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
 
     require_scribe_api = rule_data.get("require-scribe-api", False)
     if require_scribe_api:
-        md.append("\n:::  \n")
-        md.append(":::tip  \n")
+        # md.append("\n:::  \n")
+        # md.append(":::tip  \n")
 
-        md.append("[!NOTE]  ")
-        md.append(f"Rule requires the Scribe API to be enabled.  ")
+        md.append("> [!NOTE]  ")
+        md.append(f"> Rule requires the Scribe API to be enabled.  ")
 
     sign_defaults = rule_data.get("evidence", {}).get("signed", False)
 
