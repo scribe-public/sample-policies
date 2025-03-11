@@ -11,7 +11,7 @@ Verify XX using the Scribe API template rule.
 
 :::tip  
 
-> Rule requires the Scribe API to be enabled.  
+Rule requires the Scribe API to be enabled.  
 
 :::  
 

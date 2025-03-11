@@ -12,7 +12,7 @@ Verify image Scribe Publish flag is set for container image.
 
 :::tip  
 
-> Rule requires the Scribe API to be enabled.  
+Rule requires the Scribe API to be enabled.  
 
 :::  
 

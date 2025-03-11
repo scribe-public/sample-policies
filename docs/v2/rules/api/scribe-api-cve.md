@@ -12,7 +12,7 @@ Verify via Scribe API that there no critical or high severity vulnerabilities in
 
 :::tip  
 
-> Rule requires the Scribe API to be enabled.  
+Rule requires the Scribe API to be enabled.  
 
 :::  
 
