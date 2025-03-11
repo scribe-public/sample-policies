@@ -9,10 +9,11 @@ Verify XX using the Scribe API template rule.
 
 > Rule Result will be set as 'open' if evidence is missing.  
 
+:::tip  
 
-> [!NOTE]  
 > Rule requires the Scribe API to be enabled.  
 
+:::  
 
 > Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
