@@ -9,6 +9,7 @@ DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
 SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
+DOC_SITE_BASE = "https://scribe-security.netlify.app/docs/guides/policy-reference"
 
 
 def parse_yaml(file_path):
@@ -376,13 +377,17 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
                     if not final_r_desc:
                         final_r_desc = rule_yaml.get("description", "")
                     rel_path_from_initiatives = os.path.relpath(abs_rule_path, os.path.abspath(INITIATIVES_OUTDIR))
+                    doc_site_path = os.path.join(DOC_SITE_BASE, rel_path_from_initiatives.replace("../", "").replace("./", ""))
+                    link_doc = f"[{final_r_id}]({doc_site_path})"
                     link_md = f"[{final_r_name}]({rel_path_from_initiatives})"
                 else:
                     link_md = r_uses
+                    link_doc = r_uses
             else:
                 link_md = final_r_name
+                link_doc = final_r_id
 
-            row = f"| {final_r_id} | {link_md} | {final_r_desc} |"
+            row = f"| {link_doc} | {link_md} | {final_r_desc} |"
             md.append(row)
         md.append("")
     return "\n".join(md)
