@@ -9,6 +9,7 @@
 Verify image Scribe Publish flag is set for container image.
 
 > Rule Result will be set as 'open' if evidence is missing.  
+
 :::  
 
 :::tip  

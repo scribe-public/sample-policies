@@ -8,6 +8,7 @@
 Verify XX using the Scribe API template rule.
 
 > Rule Result will be set as 'open' if evidence is missing.  
+
 :::  
 
 :::tip  
