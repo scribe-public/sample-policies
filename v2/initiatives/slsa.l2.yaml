@@ -13,9 +13,9 @@ controls:
   - id: "prov_authn"
     name: "Provenance authenticated"
     rules:
-    - uses: slsa/l1-provenance-exists@v2/rules
+    - uses: slsa/l1-provenance-exists@v2
       id: "prov_exists"
       name: "Provenance exists"
-    - uses: slsa/l2-provenance-authenticated@v2/rules
+    - uses: slsa/l2-provenance-authenticated@v2
       id: "prov_authn"
       name: "Provenance authenticated"

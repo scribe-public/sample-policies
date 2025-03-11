@@ -1,7 +1,7 @@
 config-type: rule
 id: "PS.1.5"
 name: Require signoff on web commits
-uses: github/org/web-commit-signoff@v2/rules
+uses: github/org/web-commit-signoff@v2
 
 description: PS.1 Require contributors to sign when committing to Github through the web interface
 

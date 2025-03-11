@@ -12,22 +12,22 @@ defaults:
 controls:
   - name: "SSDF-IMAGE"
     rules:
-    - uses: ssdf/ps-2-image-verifiable@v2/rules
+    - uses: ssdf/ps-2-image-verifiable@v2
 
-    - uses: ssdf/ps-3.2-archived-sbom@v2/rules
+    - uses: ssdf/ps-3.2-archived-sbom@v2
 
   - name: "SSDF-ORG"
     rules:
-    - uses: ssdf/ps-1-2fa@v2/rules
+    - uses: ssdf/ps-1-2fa@v2
 
-    - uses: ssdf/ps-1-limit-admins@v2/rules
+    - uses: ssdf/ps-1-limit-admins@v2
 
-    - uses: ssdf/ps-1-web-commit-signoff@v2/rules
+    - uses: ssdf/ps-1-web-commit-signoff@v2
 
   - name: "SSDF-REPO"
     rules:
-    - uses: ssdf/ps-3.1-code-archived@v2/rules
+    - uses: ssdf/ps-3.1-code-archived@v2
 
-    - uses: ssdf/ps-1-branch-protection@v2/rules
+    - uses: ssdf/ps-1-branch-protection@v2
 
-    - uses: ssdf/ps-1-repo-private@v2/rules
+    - uses: ssdf/ps-1-repo-private@v2

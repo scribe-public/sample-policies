@@ -13,6 +13,6 @@ controls:
   - id: "prov_exists"
     name: "Provenance exists"
     rules:
-    - uses: slsa/l1-provenance-exists@v2/rules
+    - uses: slsa/l1-provenance-exists@v2
       id: "prov_exists"
       name: "Provenance exists"
