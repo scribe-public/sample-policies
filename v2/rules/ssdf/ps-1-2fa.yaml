@@ -22,7 +22,6 @@ full-description: |
   - The data should come from a trusted source (e.g., a GitHub organization scan).
   - The evidence must clearly indicate whether 2FA is enabled.
 
-
 labels:
   - SSDF
 
