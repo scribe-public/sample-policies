@@ -18,10 +18,11 @@ labels:
 level: "error"
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
-  content_body_type: "cyclonedx-json"
-  target_type: "container"
-
+  content_body_type: cyclonedx-json
 with:
   required_author: {}     # e.g., { "name": "bom", "email": "bob@company.com" }
   required_supplier: {}   # e.g., { "name": "alice" }
