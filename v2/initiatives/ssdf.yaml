@@ -20,9 +20,9 @@ controls:
       Mitigates the risk of deploying untrusted or compromised container images by enforcing rules 
       that verify image build integrity and preserve critical SBOM metadata.
     rules:
-    - uses: ssdf/ps-2-image-verifiable@v2/rules
+    - uses: ssdf/ps-2-image-verifiable@v2
 
-    - uses: ssdf/ps-3.2-archived-sbom@v2/rules
+    - uses: ssdf/ps-3.2-archived-sbom@v2
 
   - name: "SSDF-ORG"
     description: "Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced."
@@ -30,11 +30,11 @@ controls:
       Reduces risks of unauthorized access and changes by ensuring strong organizational security practices 
       and process signoffs.
     rules:
-    - uses: ssdf/ps-1-2fa@v2/rules
+    - uses: ssdf/ps-1-2fa@v2
 
-    - uses: ssdf/ps-1-limit-admins@v2/rules
+    - uses: ssdf/ps-1-limit-admins@v2
 
-    - uses: ssdf/ps-1-web-commit-signoff@v2/rules
+    - uses: ssdf/ps-1-web-commit-signoff@v2
 
   - name: "SSDF-REPO"
     description: "Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy."
@@ -42,8 +42,8 @@ controls:
       Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls 
       and preserving code history.
     rules:
-    - uses: ssdf/ps-3.1-code-archived@v2/rules
+    - uses: ssdf/ps-3.1-code-archived@v2
 
-    - uses: ssdf/ps-1-branch-protection@v2/rules
+    - uses: ssdf/ps-1-branch-protection@v2
 
-    - uses: ssdf/ps-1-repo-private@v2/rules
+    - uses: ssdf/ps-1-repo-private@v2
