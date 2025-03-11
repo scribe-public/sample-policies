@@ -14,6 +14,7 @@ Verify image Scribe Publish flag is set for container image.
 
 :::tip  
 
+[!NOTE]  
 Rule requires the Scribe API to be enabled.  
 > Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 
