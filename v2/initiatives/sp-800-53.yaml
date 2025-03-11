@@ -18,7 +18,7 @@ defaults:
 
 controls:
   - name: "SBOM Requirement (SR-4 / CM-8)"
-    id: SR4_CM8::SP800-53
+    id: SR4_CM8
     description: >
       Enforce that every container build includes a Software Bill of Materials (SBOM),
       ensuring that all components are inventoried and traceable.
@@ -55,7 +55,7 @@ controls:
           required_supplier: {}
 
   - name: "Provenance Requirement (SA-8)"
-    id: SA8::SP800-53
+    id: SA8
     description: >
       Enforce that every container build includes provenance data,
       supporting traceability within the security architecture as required by SA-8.
@@ -67,7 +67,7 @@ controls:
         mitigation: "Reject container builds that do not include valid provenance information."
 
   - name: "SBOM Signature Enforcement (SA-12)"
-    id: SA12::SP800-53
+    id: SA12
     description: >
       Enforce that the SBOM is cryptographically signed to verify its integrity and authenticity,
       aligning with SA-12 requirements.
