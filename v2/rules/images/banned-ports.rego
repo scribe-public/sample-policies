@@ -8,12 +8,15 @@ default violations := []
 default asset := {}
 default errors := []
 default banned_ports := []
+default metadata := {}
+
+asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Retrieve Evidence Metadata
 ##########################################################################
 # We assume the SBOM metadata is available at input.evidence.predicate.bom.metadata.
-asset = scribe.get_asset_data(input.evidence)
+metadata := input.evidence.predicate.bom.metadata
 
 ##########################################################################
 # Banned Ports List
@@ -55,7 +58,7 @@ allow {
 # Compute Found Ports
 ##########################################################################
 found_ports = [ p.value |
-  some p in asset.component.properties;
+  some p in metadata.component.properties;
   startswith(p.name, "imageExposedPorts_")
 ]
 
@@ -75,7 +78,7 @@ reason = msg {
 # Violations
 ##########################################################################
 violations = [ obj |
-  some p in asset.component.properties;
+  some p in metadata.component.properties;
   startswith(p.name, "imageExposedPorts_");
   arr = split(p.value, "/");
   count(arr) == 2;
@@ -84,7 +87,7 @@ violations = [ obj |
   some b in banned_ports;
   is_banned(portVal, protoVal, b);
   obj := {
-    "component": asset.component.name,
+    "component": metadata.component.name,
     "exposedPort": p.value,
     "matchBannedPort": b
   }
