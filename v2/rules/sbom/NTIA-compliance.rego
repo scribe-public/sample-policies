@@ -14,25 +14,26 @@ default errors := []
 ##########################################################################
 # Retrieve Evidence Metadata
 ##########################################################################
-# We assume the SBOM metadata is found at input.evidence.predicate.bom.metadata.
 asset = scribe.get_asset_data(input.evidence)
+
+metadata := input.evidence.predicate.bom.metadata
 
 ##########################################################################
 # Authors: Existence and Validity
 ##########################################################################
 authors_exist {
-  asset.authors != null
-  count(asset.authors) > 0
+  metadata.authors != null
+  count(metadata.authors) > 0
 }
 
 authors_has_empty_name {
   some i
-  asset.authors[i].name == ""
+  metadata.authors[i].name == ""
 }
 
 authors_has_empty_email {
   some i
-  asset.authors[i].email == ""
+  metadata.authors[i].email == ""
 }
 
 authors_ok {
@@ -45,26 +46,26 @@ authors_ok {
 # Supplier: Existence and Validity
 ##########################################################################
 supplier_exists {
-  asset.supplier != null
+  metadata.supplier != null
 }
 
 supplier_has_name {
-  asset.supplier.name != ""
+  metadata.supplier.name != ""
 }
 
 supplier_has_urls {
-  asset.supplier.url != null
-  count(asset.supplier.url) > 0
+  metadata.supplier.url != null
+  count(metadata.supplier.url) > 0
 }
 
 supplier_has_contacts {
-  asset.supplier.contact != null
-  count(asset.supplier.contact) > 0
+  metadata.supplier.contact != null
+  count(metadata.supplier.contact) > 0
 }
 
 supplier_has_valid_contact_email {
   some i
-  asset.supplier.contact[i].email != ""
+  metadata.supplier.contact[i].email != ""
 }
 
 supplier_ok {
@@ -90,8 +91,8 @@ have_required_author {
 
 matches_required_author {
   some i
-  lower(asset.authors[i].name) == lower(input.config.args.required_author.name)
-  lower(asset.authors[i].email) == lower(input.config.args.required_author.email)
+  lower(metadata.authors[i].name) == lower(input.config.args.required_author.name)
+  lower(metadata.authors[i].email) == lower(input.config.args.required_author.email)
 }
 
 # required_author_ok is OR: 
@@ -116,7 +117,7 @@ have_required_supplier {
 }
 
 matches_required_supplier {
-  lower(asset.supplier.name) == lower(input.config.args.required_supplier.name)
+  lower(metadata.supplier.name) == lower(input.config.args.required_supplier.name)
 }
 
 # required_supplier_ok is OR:

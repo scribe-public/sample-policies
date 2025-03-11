@@ -9,7 +9,7 @@ default asset := {}
 default errors := []
 
 # Retrieve Evidence Metadata: We assume the SBOM metadata is available at input.evidence.predicate.bom.metadata.
-asset = scribe.get_asset_data(input.evidence)
+#asset = scribe.get_asset_data(input.evidence)
 
 # Final Verify Object
 verify = result {
@@ -30,10 +30,10 @@ verify = result {
 }
 
 # Compute Healthcheck Properties
-# This collects the value of every property in asset.component.properties whose name (lowercased)
+# This collects the value of every property in main sbom component properties whose name (lowercased)
 # starts with "imagehealthcheck_".
 healthcheck_props = [ p.value |
-    asset.component.properties[i] = p;
+    input.evidence.predicate.bom.metadata.component.properties[i] = p;
     startswith(lower(p.name), "imagehealthcheck_")
 ]
 
