@@ -25,12 +25,12 @@ controls:
       This requirement addresses both SR-4 and the component inventory aspects of CM-8.
     mitigation: "Ensures complete visibility into container components, reducing the risk of unvetted or vulnerable code entering the supply chain."
     rules:
-      - uses: sbom/require-sbom@v2/rules
+      - uses: sbom/require-sbom@v2
         name: "Require SBOM"
         description: "Ensure an SBOM is provided for all container builds."
         mitigation: "Reject container builds lacking a valid SBOM."
 
-      - uses: images/verify-labels@v2/rules
+      - uses: images/verify-labels@v2
         mitigation: "Reject images with missing or inconsistent supply chain metadata."
         name: "Verify Supply Chain Labels"
         description: >
@@ -43,7 +43,7 @@ controls:
             - org.opencontainers.image.version
             - org.opencontainers.image.licenses
 
-      - uses: sbom/NTIA-compliance@v2/rules
+      - uses: sbom/NTIA-compliance@v2
         name: "NTIA SBOM Compliance Check"
         description: >
           Verifies that the SBOM includes valid authors and supplier data
@@ -61,7 +61,7 @@ controls:
       supporting traceability within the security architecture as required by SA-8.
     mitigation: "Provides a clear audit trail of the build process, mitigating risks related to unidentified or untraceable changes."
     rules:
-      - uses: slsa/l1-provenance-exists@v2/rules
+      - uses: slsa/l1-provenance-exists@v2
         name: "Require Provenance"
         description: "Ensure provenance data is present for container builds."
         mitigation: "Reject container builds that do not include valid provenance information."
@@ -73,14 +73,14 @@ controls:
       aligning with SA-12 requirements.
     mitigation: "Prevents unauthorized modifications by ensuring that only signed SBOMs are accepted."
     rules:
-      - uses: sbom/require-sbom@v2/rules
+      - uses: sbom/require-sbom@v2
         name: "Signed SBOM Requirement"
         description: "Validate that the SBOM is cryptographically signed."
         mitigation: "Reject container builds if the SBOM is not signed."
         evidence:
           signed: true
 
-      - uses: slsa/l2-provenance-authenticated@v2/rules
+      - uses: slsa/l2-provenance-authenticated@v2
         name: "Signed Provenance Requirement"
         description: "Validate that the provenance data is cryptographically signed."
         mitigation: "Reject container builds if the provenance data is not signed."
