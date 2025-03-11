@@ -10,24 +10,87 @@ defaults:
     signed: false
 
 controls:
-  - name: "SSDF-IMAGE"
+  - name: Protect All Forms of Code from Unauthorized Access and Tampering
+    id: PS.1
+    description: >
+      Help prevent unauthorized changes to code, both inadvertent and intentional,
+      which could circumvent or negate the intended security characteristics of the software.
+      For code that is not intended to be publicly accessible, this helps prevent
+      theft of the software and may make it more difficult or time-consuming for attackers
+      to find vulnerabilities in the software.
+    mitigation: >
+      Protect all forms of code from unauthorized access and tampering.
     rules:
-    - uses: ssdf/ps-2-image-verifiable@v2
+      - uses: github/org/2fa@v2
+        name: Enforce 2FA
+        id: "PS.1.1-1FA"
+        description: PS.1 Require 2FA for accessing code
 
-    - uses: ssdf/ps-3.2-archived-sbom@v2
+      - uses: github/org/max-admins@v2
+        name: Limit admins
+        id: "PS.1.1-LimitAdmins"
+        description: PS.1 Restrict the maximum number of organization admins
+        with:
+          max_admins: 3
 
-  - name: "SSDF-ORG"
+      - uses: github/org/web-commit-signoff@v2
+        name: Require signoff on web commits
+        id: "PS.1.1-CommitSigning"
+        description: PS.1 Require contributors to sign when committing to Github through the web interface
+        with:
+          desired_value: true
+
+      - uses: github/repository/branch-protection@v2
+        name: Branch protected
+        id: "PS.1.1-BranchProtection"
+        description: PS.1 Require branch protection for the repository
+        with:
+          desired_protected: true
+
+      - uses: github/repository/repo-private@v2
+        name: Repo private
+        id: "PS.1.1-RepoPrivate"
+        description: PS.1 Assure the repository is private
+        with:
+          desired_private: true
+
+  - name: Provide a Mechanism for Verifying Software Release Integrity
+    id: PS.2
+    description: >
+      Help software acquirers ensure that the software they acquire
+      is legitimate and has not been tampered with.
+    mitigation: >
+      Provide a mechanism for verifying the integrity of software releases.
     rules:
-    - uses: ssdf/ps-1-2fa@v2
+      - uses: sbom/artifact-signed@v2
+        name: Image-verifiable
+        id: "PS.2.1"
+        description: PS.2 Provide a mechanism to verify the integrity of the image
+        evidence:
+          target_type: container
 
-    - uses: ssdf/ps-1-limit-admins@v2
-
-    - uses: ssdf/ps-1-web-commit-signoff@v2
-
-  - name: "SSDF-REPO"
+  - name: Archive and Protect Each Software Release
+    id: PS.3
+    description: >
+      Preserve software releases in order to help identify, analyze, and eliminate
+      vulnerabilities discovered in the software after release.
+    mitigation: >
+      Archive and protect each software release.
     rules:
-    - uses: ssdf/ps-3.1-code-archived@v2
+      - uses: demodata/data@experimental
+        name: Code archived
+        id: "PS.3.1"
+        disable: true
+        description: |
+          PS.3.1 Verify that the software release data is archived.
+          We assume running in Github thus the code is allways stored in a repository
+        with: 
+          allow: true
+          short_description: Code is archived.
+          description: Since the code is within a repository, it is archived.
+          reason: "The code is archived in a repository. This is a demo rule, planned to run from a workflow in a repository."
 
-    - uses: ssdf/ps-1-branch-protection@v2
-
-    - uses: ssdf/ps-1-repo-private@v2
+      - uses: sbom/artifact-signed@v2
+        name: SBOM archived
+        id: "PS.3.2"
+        description: PS.3.2 Archive SBOM
