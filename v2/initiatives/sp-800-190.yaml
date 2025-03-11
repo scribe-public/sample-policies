@@ -23,6 +23,7 @@ controls:
   # CONTROL 1: IMAGE COUNTERMEASURES (4.1)
   ########################################################################
   - name: "4.1 IMAGE COUNTERMEASURES"
+    id: 4.1::SP800-190
     description: >
       Implements security controls to reduce risks associated with 
       container images, such as vulnerabilities, misconfigurations, 
@@ -160,6 +161,7 @@ controls:
   # CONTROL 2: REGISTRY COUNTERMEASURES (4.2)
   ########################################################################
   - name: "4.2 REGISTRY COUNTERMEASURES"
+    id: 4.2::SP800-190
     description: >
       Implements controls to secure container image registries by enforcing 
       HTTPS connections, verifying image freshness, and preventing stale 
