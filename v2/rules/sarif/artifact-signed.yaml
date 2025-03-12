@@ -1,6 +1,6 @@
 config-type: rule
 id: sarif-artifact-signed
-name: Verify Artifact Signature in SARIF
+name: Verify Artifact Signature Using SARIF Report
 path: artifact-signed.rego
 
 description: Verify the artifact referenced in the SARIF report is signed to confirm its integrity.
