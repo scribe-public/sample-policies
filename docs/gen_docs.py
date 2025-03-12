@@ -110,6 +110,10 @@ CATEGORY_CONFIG = {
         "label": "Gitlab API",
         "position": 1,
     },
+    "rules/sbom": {
+        "label": "SBOM",
+        "position": 1,
+    },
 }
 
 def create_category_file(directory, label, position):
