@@ -31,6 +31,7 @@ controls:
         with:
           max_admins: 1
 
+
   - name: "Only accept commits signed with a developer GPG key"
     id: "CT-2"
     description: "Only accept commits signed with a developer GPG key"

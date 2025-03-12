@@ -1,0 +1,24 @@
+config-type: rule
+id: "images-blocklist-user"
+name: "Blocklist Container User"
+path: "blocklist-user.rego"
+
+description: |
+  Ensures that the container image does not use a user in the blocklist.
+  We look for a SBOM property named "user" in metadata.component.properties. 
+  If it matches any username from the 'users' list, we fail.
+
+labels:
+  - "SBOM"
+  - "Images"
+
+level: "error"
+
+evidence:
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: "container"
+
+# 'with:' parameters are passed to the Rego script as input.config.args.
+with:
+  users: []

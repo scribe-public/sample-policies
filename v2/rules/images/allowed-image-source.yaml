@@ -1,0 +1,22 @@
+config-type: rule
+id: "images-allowed-image-source"
+name: "Allowed Main Image Source"
+path: "allowed-image-source.rego"
+description: |
+  Ensures the main container image referenced in the SBOM is from an approved source.
+
+labels:
+  - "SBOM"
+  - "Images"
+
+level: "error"
+
+evidence:
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: "container"
+  filter-by:
+  - target
+  - product
+with:
+  approved_sources: []

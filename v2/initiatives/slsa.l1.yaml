@@ -2,7 +2,7 @@ config-type: initiative
 id: "SLSA.L1"
 version: "1.0.0"
 name: "SLSA L1 Framework”"
-description: "Evaluate SLSA L1"
+description: "Evaluate SLSA Level 1"
 
 full-description: >
   This initiative ensures that every critical build artifact includes the

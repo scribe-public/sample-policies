@@ -1,0 +1,26 @@
+config-type: rule
+id: "images-registry-https-check"
+name: "4.2.1 Registry Connection HTTPS"
+path: "enforce-https-registry.rego"
+
+description: |
+  Checks if the container's registry scheme is HTTPS by looking for a
+  property named 'registry_scheme' with value 'https'. If none found,
+  the rule fails, indicating a non-HTTPS registry.
+
+labels:
+  - "Registry"
+  - "Images"
+
+fail-on-missing-evidence: false
+
+evidence:
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: "container"
+  filter-by:
+    - product
+    - target
+  
+
+with: {}
