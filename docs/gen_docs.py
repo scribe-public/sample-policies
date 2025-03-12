@@ -415,15 +415,15 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
 
 
 
-    sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
-    if sign_defaults:
-        md.append(f":::tip  ")
-        md.append(f"Evidence for this initiative **IS** required by default.**  ")
-        md.append(f":::  ")
-    else:
-        md.append(f":::tip  ")
-        md.append(f"Evidence for this initiative **IS NOT** required by default but is recommended.  ")
-        md.append(f":::  ")
+    # sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
+    # if sign_defaults:
+    #     md.append(f":::tip  ")
+    #     md.append(f"Evidence for this initiative **IS** required by default.**  ")
+    #     md.append(f":::  ")
+    # else:
+    #     md.append(f":::tip  ")
+    #     md.append(f"Evidence for this initiative **IS NOT** required by default but is recommended.  ")
+    #     md.append(f":::  ")
 
     
     if full_description:
@@ -530,6 +530,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
                         final_r_desc = rule_yaml.get("description", "")
                     rel_path_from_initiatives = os.path.relpath(abs_rule_path, os.path.abspath(INITIATIVES_OUTDIR))
                     doc_site_path = os.path.join(DOC_SITE_BASE, rel_path_from_initiatives.replace("../", "").replace("./", "")).strip(".md")
+                    
                     link_doc = f"[{final_r_id}]({doc_site_path})"
                     link_md = f"[{final_r_name}]({rel_path_from_initiatives})"
                 else:

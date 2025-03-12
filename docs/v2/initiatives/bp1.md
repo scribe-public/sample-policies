@@ -16,9 +16,6 @@ A comprehensive framework to secure the software supply chain by integrating rob
 ## Mitigation  
 By enforcing layered security controls across all phases of the software development lifecycle, this initiative significantly reduces the risk of supply chain compromises and ensures that only verified and trustworthy software components are deployed.
 
-:::tip  
-Evidence for this initiative **IS** required by default.**  
-:::  
 ## **Description**
 
 This initiative defines a set of best practices and technical guidelines designed to safeguard every stage of the software delivery process—from code development and build, to testing and production deployment. It emphasizes the importance of ensuring code integrity, authenticating build artifacts, and continuously monitoring system changes to mitigate the risk of supply chain attacks. The framework is adaptable to various environments and aligned with industry standards, providing organizations with actionable steps to enhance their overall security posture.
