@@ -11,7 +11,7 @@ DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives", "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
 SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
-DOC_SITE_BASE = "https://scribe-security.netlify.app/docs/guides/policy-reference"
+DOC_SITE_BASE = "https://scribe-security.netlify.app/docs/configuration/initiatives"
 
 
 def parse_yaml(file_path):
@@ -96,7 +96,7 @@ CATEGORY_CONFIG = {
     },
     'rules': {
         'label': 'Rule Configuration',
-        'position': 10
+        'position': 2
     },
     "rules/api": {
         "label": "Scribe API",
