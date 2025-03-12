@@ -2,11 +2,10 @@ config-type: initiative
 # required-valint-version: "1.6.0"
 id: "blueprint-securesoftwarepipeline"
 version: "1.0.0"
-name: "Venafi Blueprint"
+name: "Blueprint for Secure Pipelines"
 help: https://github.com/Venafi/blueprint-securesoftwarepipeline
-description: "A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle."
+description: "Blueprint for secure pipelines - Gitlab"
 full-description: "This initiative defines a set of best practices and technical guidelines designed to safeguard every stage of the software delivery process—from code development and build, to testing and production deployment. It emphasizes the importance of ensuring code integrity, authenticating build artifacts, and continuously monitoring system changes to mitigate the risk of supply chain attacks. The framework is adaptable to various environments and aligned with industry standards, providing organizations with actionable steps to enhance their overall security posture."
-mitigation: "By enforcing layered security controls across all phases of the software development lifecycle, this initiative significantly reduces the risk of supply chain compromises and ensures that only verified and trustworthy software components are deployed."
 
 defaults:
   evidence:
@@ -34,7 +33,7 @@ controls:
 
   - name: "Only accept commits signed with a developer GPG key"
     id: "CT-2"
-    description: "Only accept commits signed with a developer GPG key"
+    description: "The use of these two rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by Gitlab"
     mitigation: "Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications."
     full-description: |
       Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.

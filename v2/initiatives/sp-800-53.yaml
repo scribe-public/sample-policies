@@ -1,7 +1,7 @@
 config-type: initiative
 id: "SP-800-53"
 version: "1.0.0"
-name: "SP-800-53 Supply Chain Integrity Initiative"
+name: "NIST Supply Chain Integrity Initiative"
 description: >
   This initiative enforces key supply chain requirements from NIST SP 800-53.
   It mandates that container builds include:
