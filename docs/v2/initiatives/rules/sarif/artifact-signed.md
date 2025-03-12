@@ -24,7 +24,7 @@ Ensures that the referenced artifact has a valid digital signature, confirming i
 Signed Evidence for this rule **IS** required by default.  
 ::: 
 :::warning  
-his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
 ## Description  

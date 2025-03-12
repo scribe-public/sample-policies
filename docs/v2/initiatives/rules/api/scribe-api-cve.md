@@ -22,10 +22,10 @@ Rule requires the Scribe API to be enabled.
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
-his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 :::info  
-This rule scoped by product and target.  
+Rule is scoped by product and target.  
 :::  
 
 ## Evidence Requirements  

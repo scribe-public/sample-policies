@@ -137,16 +137,6 @@ def traverse_and_create_rule_category_files():
         parent_dir = os.path.basename(os.path.dirname(root))
         id = f"{parent_dir}/{dir_name}"
         if id in CATEGORY_CONFIG:
-            # if "parent" in CATEGORY_CONFIG[dir_name]:
-            #     parent = CATEGORY_CONFIG[dir_name]['parent']                
-            #     if parent == "root" and parent_dir == "rules":
-            #         # Do something specific if the parent is "root" and the parent directory is "rules"
-            #         print(f"{dir_name} is a direct child of 'rules'. with parent {parent_dir}")
-            #     elif parent_dir != parent:
-            #         print
-            #         create_category_file(root, dir_name.title(), 1)
-            #         continue
-
             label = CATEGORY_CONFIG[id]['label']
             position = CATEGORY_CONFIG[id]['position']
             create_category_file(root, label, position)
@@ -258,14 +248,15 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     filter_by = rule_data.get("evidence", {}).get("filter-by", [])
     if (not filter_by) or ("target" in [s.lower() for s in filter_by]):
         md.append(f":::warning  ")
-        md.append("his rule requires evaluation with a target; without one, the rule will be **disabled**.  ")
+        md.append("Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.")
+        # This rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
         md.append(f"::: ")
 
     # Create a list seperated by , and last one seperated by "and"
     if len(filter_by) > 0:
         filter_by_md = ", ".join(filter_by[:-1]) + " and " + filter_by[-1] if len(filter_by) > 1 else filter_by[0]
         md.append(f":::info  ")
-        md.append(f"This rule scoped by {filter_by_md}.  ")
+        md.append(f"Rule is scoped by {filter_by_md}.  ")
         md.append(f":::  ")
 
     if full_description:

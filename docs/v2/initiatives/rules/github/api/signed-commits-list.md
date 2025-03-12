@@ -19,7 +19,7 @@ Evidence **IS NOT** required for this rule.
 Rule Result will be set as 'open' if evidence is missing.  
 ::: 
 :::warning  
-his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
 ## Rule Parameters (`with`)  
