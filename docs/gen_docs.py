@@ -10,7 +10,7 @@ import json
 DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives", "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
-SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
+SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/blob/main/"
 DOC_SITE_BASE = "https://scribe-security.netlify.app/docs/configuration/initiatives"
 
 
