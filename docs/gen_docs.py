@@ -98,20 +98,17 @@ CATEGORY_CONFIG = {
         'label': 'Rule Configuration',
         'position': 10
     },
-    "api": {
+    "rules/api": {
         "label": "Scribe API",
         "position": 1,
-        "parent": "root",
     },
-    "api": {
+    "github/api": {
         "label": "Github API",
         "position": 1,
-        "parent": "github",
     },
-    "api": {
+    "gitlab/api": {
         "label": "Gitlab API",
         "position": 1,
-        "parent": "gitlab",
     },
 }
 
@@ -138,23 +135,26 @@ def traverse_and_create_rule_category_files():
         
         # Get the second to last part of the path
         parent_dir = os.path.basename(os.path.dirname(root))
+        id = f"{parent_dir}/{dir_name}"
+        if id in CATEGORY_CONFIG:
+            # if "parent" in CATEGORY_CONFIG[dir_name]:
+            #     parent = CATEGORY_CONFIG[dir_name]['parent']                
+            #     if parent == "root" and parent_dir == "rules":
+            #         # Do something specific if the parent is "root" and the parent directory is "rules"
+            #         print(f"{dir_name} is a direct child of 'rules'. with parent {parent_dir}")
+            #     elif parent_dir != parent:
+            #         print
+            #         create_category_file(root, dir_name.title(), 1)
+            #         continue
 
-        if dir_name in CATEGORY_CONFIG:
-            if "parent" in CATEGORY_CONFIG[dir_name]:
-                parent = CATEGORY_CONFIG[dir_name]['parent']                
-                if parent == "root" and parent_dir == "rules":
-                    # Do something specific if the parent is "root" and the parent directory is "rules"
-                    print(f"{dir_name} is a direct child of 'rules'. with parent {parent_dir}")
-                elif parent_dir != parent:
-                    create_category_file(root, dir_name.title(), 1)
-                    continue
-
-            label = CATEGORY_CONFIG[dir_name]['label']
-            position = CATEGORY_CONFIG[dir_name]['position']
+            label = CATEGORY_CONFIG[id]['label']
+            position = CATEGORY_CONFIG[id]['position']
             create_category_file(root, label, position)
+            continue
         else:
             # If the directory is not in CATEGORY_CONFIG, use a default title and position
             create_category_file(root, dir_name.title(), 1)
+            continue
 
 def traverse_and_create_category_files():
     """Traverse directories and create _category_.json files where applicable."""
