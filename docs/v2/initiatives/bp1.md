@@ -119,6 +119,8 @@ Restrict automation accounts to read-only access, following the principle of lea
 
 CI systems should have read access only to source code repositories to limit the risk from compromised automation accounts.
 
+> :bulb: Tokens explicitly approved via the `approved_tokens` parameter are skipped from this check, allowing trusted tokens to bypass the blocklist.
+
 > :skull: Attackers who gain write access via automation credentials can bypass review processes; restricting access reduces this risk.
 
 

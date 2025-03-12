@@ -13,7 +13,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "admins",
+			"type": "Disallowed Token Scope",
 			"details": violations,
 		},
 		"asset": asset,
@@ -36,7 +36,7 @@ reason = v {
 
 reason = v {
 	not allow
-	v := "Some of the tokens have scopes that are in the blocklist"
+	v := "Some tokens have scopes that are in the blocklist"
 }
 
 violations = j {
@@ -44,6 +44,7 @@ violations = j {
         some token in input.evidence.predicate.content[_].token
         token.result_object.revoked == false
         token.result_object.active == true
+        not token_allowed(token.name)
         some scope in token.result_object.scopes
 		match_any(scope)
         r = {
@@ -57,4 +58,10 @@ match_any(scope) {
     forbidden_scopes_list = input.config.args.project_scopes
 	some forbidden_scope in forbidden_scopes_list
 	forbidden_scope == scope
+}
+
+token_allowed(token_name) {
+    approved_tokens = input.config.args.approved_tokens
+    some t in approved_tokens
+    lower(t) == lower(token_name)
 }

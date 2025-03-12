@@ -21,11 +21,11 @@ This initiative enforces key controls from the Secure Software Development Frame
 
 | Control ID | Control Name | Control Description | Mitigation |
 |------------|--------------|---------------------|------------|
-|  [](#ssdf-image) | SSDF-IMAGE | Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity. | Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
+|  [SSDF-IMAGE](#ssdf-image) | SSDF-IMAGE | Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity. | Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
  |
-|  [](#ssdf-org) | SSDF-ORG | Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced. | Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
+|  [SSDF-ORG](#ssdf-org) | SSDF-ORG | Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced. | Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.
  |
-|  [](#ssdf-repo) | SSDF-REPO | Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy. | Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
+|  [SSDF-REPO](#ssdf-repo) | SSDF-REPO | Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy. | Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls  and preserving code history.
  |
 
 ## Evidence Defaults
@@ -38,7 +38,7 @@ This initiative enforces key controls from the Secure Software Development Frame
 
 # Detailed Controls
 
-## [] SSDF-IMAGE
+## SSDF-IMAGE
 
 Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity.
 
@@ -54,7 +54,7 @@ Mitigates the risk of deploying untrusted or compromised container images by enf
 | [PS.2](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-2-image-verifiable) | [Image-verifiable](rules/ssdf/ps-2-image-verifiable.md) | PS.2 Provide a mechanism to verify the integrity of the image |
 | [PS.3.2](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-3.2-archived-sbo) | [SBOM archived](rules/ssdf/ps-3.2-archived-sbom.md) | PS.3.2 Archive SBOM |
 
-## [] SSDF-ORG
+## SSDF-ORG
 
 Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced.
 
@@ -71,7 +71,7 @@ Reduces risks of unauthorized access and changes by ensuring strong organization
 | [PS.1.3](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-limit-admins) | [Limit admins](rules/ssdf/ps-1-limit-admins.md) | PS.1 Restrict the maximum number of organization admins |
 | [PS.1.5](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-web-commit-signoff) | [Require signoff on web commits](rules/ssdf/ps-1-web-commit-signoff.md) | PS.1 Require contributors to sign when committing to Github through the web interface |
 
-## [] SSDF-REPO
+## SSDF-REPO
 
 Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy.
 

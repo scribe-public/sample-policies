@@ -4,6 +4,21 @@ name: Forbid Token Scopes in GitLab Organization
 path: forbid-token-scopes.rego
 
 description: Verify no GitLab organization tokens have disallowed scopes.
+mitigation: >
+  Prevents the use of tokens with insecure or excessive scopes within the organization.
+  This check reduces the risk of unauthorized actions by ensuring that only tokens with allowed scopes are used,
+  while permitting trusted tokens via the approved tokens list.
+
+full-description: |  
+  This rule examines evidence from a GitLab organization scan to ensure that tokens do not contain any disallowed scopes.
+  It iterates over each token in the evidence (under `input.evidence.predicate.content[*].token`), filtering for tokens 
+  that are active and not revoked. For each token, it checks whether any of its scopes match the forbidden list specified 
+  in `with.project_scopes`. If a token's scope matches a forbidden value and the token is not listed in `with.approved_tokens`,
+  a violation is recorded with details including the token name and the disallowed scope.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided in a generic format.
+  - The evidence should include token data with fields such as `result_object.revoked`, `result_object.active`, and `result_object.scopes`.
 
 labels:
   - Blueprint
@@ -29,3 +44,5 @@ with:
     project_scopes:
         - write_api
         - write_repository
+    approved_tokens: []
+

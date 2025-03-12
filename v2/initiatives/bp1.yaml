@@ -67,6 +67,8 @@ controls:
     mitigation: "Restrict automation accounts to read-only access, following the principle of least privilege to minimize potential damage."
     full-description: |
       CI systems should have read access only to source code repositories to limit the risk from compromised automation accounts.
+      
+      > :bulb: Tokens explicitly approved via the `approved_tokens` parameter are skipped from this check, allowing trusted tokens to bypass the blocklist.
 
       > :skull: Attackers who gain write access via automation credentials can bypass review processes; restricting access reduces this risk.
     when:
@@ -83,6 +85,7 @@ controls:
             - write_package_registry
             - write_package
             - write_repository_hook
+          approved_tokens: []
 
   - name: "Any critical or high severity vulnerability breaks the build"
     id: "CT-6"
