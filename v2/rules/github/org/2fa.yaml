@@ -17,7 +17,7 @@ full-description: |
   the desired value, a violation is recorded. This ensures that all organizational accounts enforce 2FA, providing an additional 
   layer of security against unauthorized access.
   
-  **Evidence Requirements:**
+  ### **Evidence Requirements**
   - Evidence must include organization data with a field named `organization_details.two_factor_requirement_enabled`.
   - The data should come from a trusted source (e.g., a GitHub organization scan).
   - The evidence must clearly indicate whether 2FA is enabled.

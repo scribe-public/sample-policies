@@ -21,7 +21,7 @@ full-description: |
   If the number of violations exceeds the threshold, a violation is recorded with details including the rule identifier, 
   severity, and the corresponding location in the artifact.
   
-  **Evidence Requirements:**
+  ### **Evidence Requirements**
   
   - Evidence must be provided in a generic format that adheres to the SARIF 2.1.0 schema.
   - The SARIF report should include a structured list of vulnerability results, along with rule definitions and descriptions.
