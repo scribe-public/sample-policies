@@ -12,7 +12,7 @@ title: Allowed Project Users
 Verify only users specified in the Allowed List have user access to the Bitbucket project.
 
 :::note 
-This rule requires Unsigned Bitbucket Project Discovery Evidence.  
+This rule requires Bitbucket Project Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

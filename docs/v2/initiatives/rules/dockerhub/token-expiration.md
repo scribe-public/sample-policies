@@ -13,7 +13,7 @@ title: Verify DockerHub Tokens are Active
 Verify that all discovered Dockerhub tokens are set to Active in Dockerhub.
 
 :::note 
-This rule requires Unsigned Discovery Evidence.  
+This rule requires Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

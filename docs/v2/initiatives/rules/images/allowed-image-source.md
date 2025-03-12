@@ -14,7 +14,7 @@ Ensures the main container image referenced in the SBOM is from an approved sour
 
 
 :::note 
-This rule requires Unsigned Image SBOM.  
+This rule requires Image SBOM.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

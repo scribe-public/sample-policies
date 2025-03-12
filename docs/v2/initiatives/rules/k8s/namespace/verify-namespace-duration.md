@@ -13,7 +13,7 @@ title: Verify Namespace Runtime Duration
 Verify Kubernetes namespaces adhere to a specified runtime duration to enforce lifecycle limits.
 
 :::note 
-This rule requires Unsigned Discovery Evidence.  
+This rule requires Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

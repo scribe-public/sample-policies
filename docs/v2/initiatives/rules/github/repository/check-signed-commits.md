@@ -13,7 +13,7 @@ title: Verify All Commits Are Signed in Repository
 Verify all commits in the GitHub repository are signed.
 
 :::note 
-This rule requires Unsigned Github Repository Discovery Evidence.  
+This rule requires Github Repository Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

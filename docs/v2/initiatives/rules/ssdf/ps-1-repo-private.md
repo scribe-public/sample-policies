@@ -12,7 +12,7 @@ title: Repo private
 PS.1 Assure the repository is private
 
 :::note 
-This rule requires Unsigned Statement.  
+This rule requires Statement.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

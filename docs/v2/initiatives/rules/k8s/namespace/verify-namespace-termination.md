@@ -13,7 +13,7 @@ title: Verify Namespace Termination
 Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
 :::note 
-This rule requires Unsigned Discovery Evidence.  
+This rule requires Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

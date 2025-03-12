@@ -13,7 +13,7 @@ title: Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting
 Verify `secret_scanning_push_protection_custom_link` is enabled in the GitHub organization.
 
 :::note 
-This rule requires Unsigned Github Organization Discovery Evidence.  
+This rule requires Github Organization Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

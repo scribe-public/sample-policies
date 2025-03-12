@@ -14,7 +14,7 @@ Verifies that each base image is not older than the specified threshold (max_day
 
 
 :::note 
-This rule requires Unsigned Image SBOM.  
+This rule requires Image SBOM.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

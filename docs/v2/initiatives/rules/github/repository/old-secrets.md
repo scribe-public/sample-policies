@@ -13,7 +13,7 @@ title: Verify No Old Secrets Exist in Repository
 Verify secrets in the GitHub repository are not older than the specified threshold.
 
 :::note 
-This rule requires Unsigned Github Repository Discovery Evidence.  
+This rule requires Github Repository Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -13,7 +13,7 @@ title: Verify Secret_Scanning_Push_Protection Setting
 Verify `secret_scanning_push_protection` is configured in the GitHub repository.
 
 :::note 
-This rule requires Unsigned Github Organization Discovery Evidence.  
+This rule requires Github Organization Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

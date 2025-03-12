@@ -12,7 +12,7 @@ title: Branch protected
 PS.1 Require branch protection for the repository
 
 :::note 
-This rule requires Unsigned Statement.  
+This rule requires Statement.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

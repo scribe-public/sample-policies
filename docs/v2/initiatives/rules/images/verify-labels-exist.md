@@ -13,7 +13,7 @@ title: Require Image Labels
 Verify the image has the specified labels.
 
 :::note 
-This rule requires Unsigned Image SBOM.  
+This rule requires Image SBOM.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

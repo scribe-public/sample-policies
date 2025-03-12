@@ -13,7 +13,7 @@ title: Run SAST Scanning in GitLab Project
 Verify SAST scanning is performed for the GitLab project.
 
 :::note 
-This rule requires Unsigned Gitlab Project Discovery Evidence.  
+This rule requires Gitlab Project Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

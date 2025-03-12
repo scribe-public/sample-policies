@@ -16,7 +16,7 @@ Verify the SBOM exists as evidence.
 > Evidence **IS** required for this rule and will fail if missing.  
 ::: 
 :::note 
-This rule requires Unsigned SBOM.  
+This rule requires SBOM.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  

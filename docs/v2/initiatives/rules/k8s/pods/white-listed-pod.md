@@ -13,7 +13,7 @@ title: Allowed Pods
 Verify only pods explicitly listed in the Allowed List are allowed to run.
 
 :::note 
-This rule requires Unsigned Discovery Evidence.  
+This rule requires Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

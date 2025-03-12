@@ -12,7 +12,7 @@ title: Require signoff on web commits
 PS.1 Require contributors to sign when committing to Github through the web interface
 
 :::note 
-This rule requires Unsigned Statement.  
+This rule requires Statement.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

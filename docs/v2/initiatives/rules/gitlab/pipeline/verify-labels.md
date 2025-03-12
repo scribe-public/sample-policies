@@ -13,7 +13,7 @@ title: Verify GitLab Pipeline Labels
 Verify the pipeline includes all required label keys and values.
 
 :::note 
-This rule requires Unsigned Discovery Evidence.  
+This rule requires Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

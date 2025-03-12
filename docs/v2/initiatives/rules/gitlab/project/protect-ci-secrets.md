@@ -13,7 +13,7 @@ title: Protect CI Secrets in GitLab Project
 Verify secrets in the GitLab project are not shared.
 
 :::note 
-This rule requires Unsigned Gitlab Project Discovery Evidence.  
+This rule requires Gitlab Project Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

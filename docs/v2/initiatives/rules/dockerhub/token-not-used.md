@@ -13,7 +13,7 @@ title: Verify no unused Dockerhub
 Verify that there are no unused Dockerhub.
 
 :::note 
-This rule requires Unsigned Discovery Evidence.  
+This rule requires Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

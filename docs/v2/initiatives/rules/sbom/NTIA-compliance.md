@@ -19,7 +19,7 @@ Checks that:
 
 
 :::note 
-This rule requires Unsigned SBOM.  
+This rule requires SBOM.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

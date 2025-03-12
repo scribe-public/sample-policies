@@ -13,7 +13,7 @@ title: Verify Rule Compliance in SARIF
 Verify the SARIF report complies with defined generic rules for compliance and security.
 
 :::note 
-This rule requires Unsigned SARIF Evidence.  
+This rule requires SARIF Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

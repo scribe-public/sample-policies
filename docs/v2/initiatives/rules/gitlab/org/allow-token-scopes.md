@@ -13,7 +13,7 @@ title: Restrict Token Scopes in GitLab
 Verify all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.
 
 :::note 
-This rule requires Unsigned Gitlab Organization Discovery Evidence.  
+This rule requires Gitlab Organization Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

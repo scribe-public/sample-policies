@@ -13,7 +13,7 @@ title: Disallow Container Shell Entrypoint
 Verify the container image disallows shell entrypoint.
 
 :::note 
-This rule requires Unsigned Image SBOM.  
+This rule requires Image SBOM.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

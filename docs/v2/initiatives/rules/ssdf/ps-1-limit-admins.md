@@ -12,7 +12,7 @@ title: Limit admins
 PS.1 Restrict the maximum number of organization admins
 
 :::note 
-This rule requires Unsigned Statement.  
+This rule requires Statement.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

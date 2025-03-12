@@ -13,7 +13,7 @@ title: Verify secret_scanning_enabled_for_new_repositories setting
 Verify `secret_scanning` is enabled for new repositories in the GitHub organization.
 
 :::note 
-This rule requires Unsigned Github Organization Discovery Evidence.  
+This rule requires Github Organization Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

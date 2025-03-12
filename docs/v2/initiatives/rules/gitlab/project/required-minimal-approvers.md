@@ -13,7 +13,7 @@ title: Require Minimal Approvers in GitLab Project
 Verify the required number of approvers for the GitLab project is met.
 
 :::note 
-This rule requires Unsigned Gitlab Project Discovery Evidence.  
+This rule requires Gitlab Project Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

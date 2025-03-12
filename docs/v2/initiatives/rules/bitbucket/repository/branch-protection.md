@@ -13,7 +13,7 @@ title: Verify Default Branch Protection Setting Is Configured
 Verify the default branch protection is enabled in the Bitbucket repository.
 
 :::note 
-This rule requires Unsigned Bitbucket Repository Discovery Evidence.  
+This rule requires Bitbucket Repository Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

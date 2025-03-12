@@ -13,7 +13,7 @@ title: Verify secret scanning.
 Verify both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.
 
 :::note 
-This rule requires Unsigned Github Repository Discovery Evidence.  
+This rule requires Github Repository Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

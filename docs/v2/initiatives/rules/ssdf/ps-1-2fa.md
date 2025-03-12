@@ -12,7 +12,7 @@ title: Enforce 2FA
 PS.1 Require 2FA for accessing code
 
 :::note 
-This rule requires Unsigned Statement.  
+This rule requires Statement.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

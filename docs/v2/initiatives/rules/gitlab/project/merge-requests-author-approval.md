@@ -13,7 +13,7 @@ title: Disable Author Approval for Merge Requests in GitLab
 Verify the binary field `merge_requests_author_approval` is set for the GitLab project.
 
 :::note 
-This rule requires Unsigned Gitlab Project Discovery Evidence.  
+This rule requires Gitlab Project Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

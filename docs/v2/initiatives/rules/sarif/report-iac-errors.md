@@ -13,7 +13,7 @@ title: Verify IaC Misconfiguration Threshold in SARIF
 Verify the number of infrastructure-as-code (IaC) errors in the SARIF report remains below the specified threshold.
 
 :::note 
-This rule requires Unsigned SARIF Evidence.  
+This rule requires SARIF Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

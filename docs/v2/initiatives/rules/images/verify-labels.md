@@ -13,7 +13,7 @@ title: Verify Image Labels
 Verify specified labels key-value pairs exist in the image.
 
 :::note 
-This rule requires Unsigned Image SBOM.  
+This rule requires Image SBOM.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

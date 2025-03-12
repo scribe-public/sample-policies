@@ -13,7 +13,7 @@ title: Set Visibility Level in GitLab Project
 Verify the GitLab project's visibility matches the required level.
 
 :::note 
-This rule requires Unsigned Gitlab Project Discovery Evidence.  
+This rule requires Gitlab Project Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

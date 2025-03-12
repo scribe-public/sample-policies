@@ -13,7 +13,7 @@ title: Forbid Large Images
 Verify the image size is below the specified threshold.
 
 :::note 
-This rule requires Unsigned Image SBOM.  
+This rule requires Image SBOM.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -13,7 +13,7 @@ title: Restrict Coding Permissions
 Verify only allowed users committed to the repository.
 
 :::note 
-This rule requires Unsigned Git SBOM.  
+This rule requires Git SBOM.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -13,7 +13,7 @@ title: Verify No Cache Usage Exists in Repository
 Verify the GitHub repository has no cache usage.
 
 :::note 
-This rule requires Unsigned Github Repository Discovery Evidence.  
+This rule requires Github Repository Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

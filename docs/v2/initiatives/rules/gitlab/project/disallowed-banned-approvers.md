@@ -13,7 +13,7 @@ title: Disallow Banned Approvers
 Verify approvers in the GitLab project are not on the banned list.
 
 :::note 
-This rule requires Unsigned Gitlab Project Discovery Evidence.  
+This rule requires Gitlab Project Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

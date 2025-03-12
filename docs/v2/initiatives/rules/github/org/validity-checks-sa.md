@@ -13,7 +13,7 @@ title: Verify Secret_Scanning_Validity_Checks Setting in Security_And_Analysis
 Verify `secret_scanning_validity_checks` is configured in the GitHub organization.
 
 :::note 
-This rule requires Unsigned Github Organization Discovery Evidence.  
+This rule requires Github Organization Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

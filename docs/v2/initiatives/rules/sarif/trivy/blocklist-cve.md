@@ -14,7 +14,7 @@ title: Trivy Blocklist CVE Check
 Verify a CVE Blocklist against a SARIF report
 
 :::note 
-This rule requires Unsigned SARIF Evidence.  
+This rule requires SARIF Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

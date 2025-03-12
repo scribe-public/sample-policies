@@ -13,7 +13,7 @@ title: Verify GitHub Organization Requires Signoff on Web Commits
 Verify contributors sign commits through the GitHub web interface.
 
 :::note 
-This rule requires Unsigned Github Organization Discovery Evidence.  
+This rule requires Github Organization Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

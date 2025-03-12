@@ -13,7 +13,7 @@ title: Verify Attack Vector Exists in SARIF
 Verify required evidence validates attack vectors in the SARIF report.
 
 :::note 
-This rule requires Unsigned SARIF Evidence.  
+This rule requires SARIF Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

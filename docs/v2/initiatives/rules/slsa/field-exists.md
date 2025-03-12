@@ -13,7 +13,7 @@ title: SLSA Field Exists in Provenance Document
 Verify the specified field exists in the provenance document.
 
 :::note 
-This rule requires Unsigned SLSA Provenance.  
+This rule requires SLSA Provenance.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

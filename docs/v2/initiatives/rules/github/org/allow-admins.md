@@ -13,7 +13,7 @@ title: Allowed GitHub Organization Admins
 Verify only users in the Allowed List have admin privileges in the GitHub organization.
 
 :::note 
-This rule requires Unsigned Github Organization Discovery Evidence.  
+This rule requires Github Organization Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

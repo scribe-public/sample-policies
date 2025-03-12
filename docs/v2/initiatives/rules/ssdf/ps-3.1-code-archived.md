@@ -14,7 +14,7 @@ We assume running in Github thus the code is allways stored in a repository
 
 
 :::note 
-This rule requires Unsigned Statement.  
+This rule requires Statement.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
