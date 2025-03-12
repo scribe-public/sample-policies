@@ -114,6 +114,10 @@ CATEGORY_CONFIG = {
         "label": "SBOM",
         "position": 1,
     },
+    "rules/sarif": {
+        "label": "SARIF",
+        "position": 1,
+    },
 }
 
 def create_category_file(directory, label, position):
