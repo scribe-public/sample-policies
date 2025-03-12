@@ -6,8 +6,8 @@ title: Verify No Organization Secrets Exist in Repository
 **Type:** Rule  
 **ID:** `github-repo-no-org-secrets`  
 **Uses:** `github/repository/no-org-secrets@v2/rules`  
-**Source:** [v2/rules/github/repository/no-org-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/no-org-secrets.yaml)  
-**Rego Source:** [no-org-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/no-org-secrets.rego)  
+**Source:** [v2/rules/github/repository/no-org-secrets.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/no-org-secrets.yaml)  
+**Rego Source:** [no-org-secrets.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/no-org-secrets.rego)  
 **Labels:** GitHub, Repository  
 
 Verify no organization secrets exist in the GitHub repository.

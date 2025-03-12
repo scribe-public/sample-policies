@@ -6,8 +6,8 @@ title: Merge approval policy check for GitLab project
 **Type:** Rule  
 **ID:** `gitlab-project-merge-approval`  
 **Uses:** `gitlab/project/approvals-policy-check@v2/rules`  
-**Source:** [v2/rules/gitlab/project/approvals-policy-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvals-policy-check.yaml)  
-**Rego Source:** [approvals-policy-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/approvals-policy-check.rego)  
+**Source:** [v2/rules/gitlab/project/approvals-policy-check.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/approvals-policy-check.yaml)  
+**Rego Source:** [approvals-policy-check.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/approvals-policy-check.rego)  
 **Labels:** Blueprint, Gitlab, Project  
 
 Verify the project's merge approval policy complies with requirements.

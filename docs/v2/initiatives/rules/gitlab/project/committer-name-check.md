@@ -6,8 +6,8 @@ title: Allowed Committer Names in GitLab Project
 **Type:** Rule  
 **ID:** `gitlab-project-allowed-committer-names`  
 **Uses:** `gitlab/project/committer-name-check@v2/rules`  
-**Source:** [v2/rules/gitlab/project/committer-name-check.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/committer-name-check.yaml)  
-**Rego Source:** [committer-name-check.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/committer-name-check.rego)  
+**Source:** [v2/rules/gitlab/project/committer-name-check.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/committer-name-check.yaml)  
+**Rego Source:** [committer-name-check.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/committer-name-check.rego)  
 **Labels:** Gitlab, Project  
 
 Verify only users in the Allowed List commit by name in the GitLab project.

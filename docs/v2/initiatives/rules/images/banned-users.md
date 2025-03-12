@@ -6,8 +6,8 @@ title: Disallow Specific Users in SBOM
 **Type:** Rule  
 **ID:** `sbom-disallowed-users`  
 **Uses:** `images/banned-users@v2/rules`  
-**Source:** [v2/rules/images/banned-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/banned-users.yaml)  
-**Rego Source:** [banned-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/banned-users.rego)  
+**Source:** [v2/rules/images/banned-users.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/banned-users.yaml)  
+**Rego Source:** [banned-users.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/banned-users.rego)  
 **Labels:** SBOM, Image  
 
 Verify specific users are not allowed in an SBOM.

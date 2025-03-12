@@ -6,8 +6,8 @@ title: NTIA SBOM Compliance Check
 **Type:** Rule  
 **ID:** `NTIA-compliance`  
 **Uses:** `sbom/NTIA-compliance@v2/rules`  
-**Source:** [v2/rules/sbom/NTIA-compliance.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/NTIA-compliance.yaml)  
-**Rego Source:** [NTIA-compliance.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/NTIA-compliance.rego)  
+**Source:** [v2/rules/sbom/NTIA-compliance.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/NTIA-compliance.yaml)  
+**Rego Source:** [NTIA-compliance.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/NTIA-compliance.rego)  
 **Labels:** SBOM, Compliance  
 
 Validates that SBOM metadata meets basic NTIA requirements for authors and supplier.

@@ -6,8 +6,8 @@ title: Check CWE Compliance
 **Type:** Rule  
 **ID:** `gitlab-project-check-cwe`  
 **Uses:** `gitlab/project/check-cwe@v2/rules`  
-**Source:** [v2/rules/gitlab/project/check-cwe.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-cwe.yaml)  
-**Rego Source:** [check-cwe.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/check-cwe.rego)  
+**Source:** [v2/rules/gitlab/project/check-cwe.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/check-cwe.yaml)  
+**Rego Source:** [check-cwe.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/check-cwe.rego)  
 **Labels:** Gitlab, Project  
 
 Verify that specified CWEs were not detected in the GitLab project.

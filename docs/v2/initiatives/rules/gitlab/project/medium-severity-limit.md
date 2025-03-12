@@ -6,8 +6,8 @@ title: Enforce Medium Severity Limit
 **Type:** Rule  
 **ID:** `gitlab-project-medium-severity-limit`  
 **Uses:** `gitlab/project/medium-severity-limit@v2/rules`  
-**Source:** [v2/rules/gitlab/project/medium-severity-limit.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/medium-severity-limit.yaml)  
-**Rego Source:** [medium-severity-limit.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/medium-severity-limit.rego)  
+**Source:** [v2/rules/gitlab/project/medium-severity-limit.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/medium-severity-limit.yaml)  
+**Rego Source:** [medium-severity-limit.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/medium-severity-limit.rego)  
 **Labels:** Gitlab, Project  
 
 Verify the maximum allowed medium severity alerts for the GitLab project.

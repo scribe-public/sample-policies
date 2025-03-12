@@ -6,8 +6,8 @@ title: Allowed Users in GitLab Organization
 **Type:** Rule  
 **ID:** `gitlab-org-allowed-users`  
 **Uses:** `gitlab/org/allow-users@v2/rules`  
-**Source:** [v2/rules/gitlab/org/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-users.yaml)  
-**Rego Source:** [allow-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/allow-users.rego)  
+**Source:** [v2/rules/gitlab/org/allow-users.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/allow-users.yaml)  
+**Rego Source:** [allow-users.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/allow-users.rego)  
 **Labels:** Gitlab, Organization  
 
 Verify only users in the Allowed List have access to the GitLab organization.

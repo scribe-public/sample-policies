@@ -6,8 +6,8 @@ title: Scribe Published Policy
 **Type:** Rule  
 **ID:** `scribe-published-policy`  
 **Uses:** `api/scribe-api-published@v2/rules`  
-**Source:** [v2/rules/api/scribe-api-published.yaml](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-published.yaml)  
-**Rego Source:** [scribe-api-published.rego](https://github.com/scribe-public/sample-policies/v2/rules/api/scribe-api-published.rego)  
+**Source:** [v2/rules/api/scribe-api-published.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/api/scribe-api-published.yaml)  
+**Rego Source:** [scribe-api-published.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/api/scribe-api-published.rego)  
 **Labels:** Scribe  
 
 Verify image Scribe Publish flag is set for container image.

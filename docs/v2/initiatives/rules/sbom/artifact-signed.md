@@ -6,8 +6,8 @@ title: Require SBOM Signature
 **Type:** Rule  
 **ID:** `sbom-signed`  
 **Uses:** `sbom/artifact-signed@v2/rules`  
-**Source:** [v2/rules/sbom/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/artifact-signed.yaml)  
-**Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/artifact-signed.rego)  
+**Source:** [v2/rules/sbom/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/artifact-signed.yaml)  
+**Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/artifact-signed.rego)  
 **Labels:** SBOM, Blueprint  
 
 Verify the SBOM is signed.

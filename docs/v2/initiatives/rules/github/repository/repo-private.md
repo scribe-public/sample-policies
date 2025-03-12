@@ -6,8 +6,8 @@ title: Verify Repository Is Private
 **Type:** Rule  
 **ID:** `github-repo-private`  
 **Uses:** `github/repository/repo-private@v2/rules`  
-**Source:** [v2/rules/github/repository/repo-private.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/repo-private.yaml)  
-**Rego Source:** [repo-private.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/repo-private.rego)  
+**Source:** [v2/rules/github/repository/repo-private.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/repo-private.yaml)  
+**Rego Source:** [repo-private.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/repo-private.rego)  
 **Labels:** GitHub, Repository  
 
 Verify the GitHub repository is private.

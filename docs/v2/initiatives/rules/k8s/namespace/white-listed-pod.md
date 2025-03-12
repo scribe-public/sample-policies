@@ -6,8 +6,8 @@ title: Allowed Pods in Namespace
 **Type:** Rule  
 **ID:** `k8s-namespace-white-listed-pod`  
 **Uses:** `k8s/namespace/white-listed-pod@v2/rules`  
-**Source:** [v2/rules/k8s/namespace/white-listed-pod.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/white-listed-pod.yaml)  
-**Rego Source:** [white-listed-pod.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/namespace/white-listed-pod.rego)  
+**Source:** [v2/rules/k8s/namespace/white-listed-pod.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/namespace/white-listed-pod.yaml)  
+**Rego Source:** [white-listed-pod.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/namespace/white-listed-pod.rego)  
 **Labels:** K8s, Namespace  
 
 Verify only pods explicitly listed in the Allowed List run within a Kubernetes namespace.

@@ -6,8 +6,8 @@ title: Generic Artifact Signed
 **Type:** Rule  
 **ID:** `generic-artifact-signed`  
 **Uses:** `generic/artifact-signed@v2/rules`  
-**Source:** [v2/rules/generic/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/v2/rules/generic/artifact-signed.yaml)  
-**Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/v2/rules/generic/artifact-signed.rego)  
+**Source:** [v2/rules/generic/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/generic/artifact-signed.yaml)  
+**Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/generic/artifact-signed.rego)  
 **Labels:** 3rd-party  
 
 Verify required evidence is signed.

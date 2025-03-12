@@ -6,8 +6,8 @@ title: Verify dependabot_alerts_enabled_for_new_repositories setting
 **Type:** Rule  
 **ID:** `github-org-dependabot-alerts`  
 **Uses:** `github/org/dependabot-alerts@v2/rules`  
-**Source:** [v2/rules/github/org/dependabot-alerts.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-alerts.yaml)  
-**Rego Source:** [dependabot-alerts.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/dependabot-alerts.rego)  
+**Source:** [v2/rules/github/org/dependabot-alerts.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependabot-alerts.yaml)  
+**Rego Source:** [dependabot-alerts.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependabot-alerts.rego)  
 **Labels:** GitHub, Organization  
 
 Verify Dependabot alerts for new repositories are enabled in the GitHub organization.

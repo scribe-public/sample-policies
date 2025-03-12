@@ -6,8 +6,8 @@ title: Verify All Commits Are Signed in Repository
 **Type:** Rule  
 **ID:** `github-repo-signed-commits`  
 **Uses:** `github/repository/check-signed-commits@v2/rules`  
-**Source:** [v2/rules/github/repository/check-signed-commits.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/check-signed-commits.yaml)  
-**Rego Source:** [check-signed-commits.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/check-signed-commits.rego)  
+**Source:** [v2/rules/github/repository/check-signed-commits.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/check-signed-commits.yaml)  
+**Rego Source:** [check-signed-commits.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/check-signed-commits.rego)  
 **Labels:** GitHub, Repository  
 
 Verify all commits in the GitHub repository are signed.

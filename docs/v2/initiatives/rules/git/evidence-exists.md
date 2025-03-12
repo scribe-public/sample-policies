@@ -6,8 +6,8 @@ title: Required Git Evidence Exists
 **Type:** Rule  
 **ID:** `required-git-evidence`  
 **Uses:** `git/evidence-exists@v2/rules`  
-**Source:** [v2/rules/git/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.yaml)  
-**Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/v2/rules/git/evidence-exists.rego)  
+**Source:** [v2/rules/git/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/evidence-exists.yaml)  
+**Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/evidence-exists.rego)  
 **Labels:** Git  
 
 Verify required Git evidence exists.

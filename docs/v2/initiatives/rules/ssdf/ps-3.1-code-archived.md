@@ -6,7 +6,7 @@ title: Code archived
 **Type:** Rule  
 **ID:** `PS.3.1`  
 **Uses:** `ssdf/ps-3.1-code-archived@v2/rules`  
-**Source:** [v2/rules/ssdf/ps-3.1-code-archived.yaml](https://github.com/scribe-public/sample-policies/v2/rules/ssdf/ps-3.1-code-archived.yaml)  
+**Source:** [v2/rules/ssdf/ps-3.1-code-archived.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/ssdf/ps-3.1-code-archived.yaml)  
 **Labels:** SSDF  
 
 PS.3.1 Verify that the software release data is archived.

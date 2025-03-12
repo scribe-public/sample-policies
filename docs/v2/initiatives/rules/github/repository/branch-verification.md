@@ -6,8 +6,8 @@ title: Verify Branch Verification Setting
 **Type:** Rule  
 **ID:** `github-repo-branch-verification`  
 **Uses:** `github/repository/branch-verification@v2/rules`  
-**Source:** [v2/rules/github/repository/branch-verification.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-verification.yaml)  
-**Rego Source:** [branch-verification.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/repository/branch-verification.rego)  
+**Source:** [v2/rules/github/repository/branch-verification.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/branch-verification.yaml)  
+**Rego Source:** [branch-verification.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/branch-verification.rego)  
 **Labels:** GitHub, Repository  
 
 Verify branch verification in the GitHub repository matches the value defined in the configuration file.

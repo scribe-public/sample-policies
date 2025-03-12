@@ -6,8 +6,8 @@ title: Allowed Main Image Source
 **Type:** Rule  
 **ID:** `images-allowed-image-source`  
 **Uses:** `images/allowed-image-source@v2/rules`  
-**Source:** [v2/rules/images/allowed-image-source.yaml](https://github.com/scribe-public/sample-policies/v2/rules/images/allowed-image-source.yaml)  
-**Rego Source:** [allowed-image-source.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/allowed-image-source.rego)  
+**Source:** [v2/rules/images/allowed-image-source.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/allowed-image-source.yaml)  
+**Rego Source:** [allowed-image-source.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/allowed-image-source.rego)  
 **Labels:** SBOM, Images  
 
 Ensures the main container image referenced in the SBOM is from an approved source.

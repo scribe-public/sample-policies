@@ -7,7 +7,7 @@ title: Blueprint for Secure Pipelines
 **ID:** `blueprint-securesoftwarepipeline`  
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  
-**Source:** [v2/initiatives/bp1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/bp1.yaml)  
+**Source:** [v2/initiatives/bp1.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/initiatives/bp1.yaml)  
 **Help:** https://github.com/Venafi/blueprint-securesoftwarepipeline  
 
 Blueprint for secure pipelines - Gitlab

@@ -6,8 +6,8 @@ title: Ensure Active Projects in GitLab Organization
 **Type:** Rule  
 **ID:** `gitlab-org-inactive-projects`  
 **Uses:** `gitlab/org/inactive-projects@v2/rules`  
-**Source:** [v2/rules/gitlab/org/inactive-projects.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.yaml)  
-**Rego Source:** [inactive-projects.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/org/inactive-projects.rego)  
+**Source:** [v2/rules/gitlab/org/inactive-projects.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/inactive-projects.yaml)  
+**Rego Source:** [inactive-projects.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/inactive-projects.rego)  
 **Labels:** Gitlab, Organization  
 
 Verify no GitLab organization projects are inactive.

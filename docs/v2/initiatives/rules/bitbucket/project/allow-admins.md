@@ -6,8 +6,8 @@ title: Allowed Project Admins
 **Type:** Rule  
 **ID:** `bb-project-allowed-project-admins`  
 **Uses:** `bitbucket/project/allow-admins@v2/rules`  
-**Source:** [v2/rules/bitbucket/project/allow-admins.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/allow-admins.yaml)  
-**Rego Source:** [allow-admins.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/allow-admins.rego)  
+**Source:** [v2/rules/bitbucket/project/allow-admins.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/project/allow-admins.yaml)  
+**Rego Source:** [allow-admins.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/project/allow-admins.rego)  
 
 Verify only users specified in the Allowed List have admin privileges in the Bitbucket project.
 

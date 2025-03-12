@@ -6,8 +6,8 @@ title: Disable Author Approval for Merge Requests in GitLab
 **Type:** Rule  
 **ID:** `gitlab-project-merge-requests-author-approval`  
 **Uses:** `gitlab/project/merge-requests-author-approval@v2/rules`  
-**Source:** [v2/rules/gitlab/project/merge-requests-author-approval.yaml](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-requests-author-approval.yaml)  
-**Rego Source:** [merge-requests-author-approval.rego](https://github.com/scribe-public/sample-policies/v2/rules/gitlab/project/merge-requests-author-approval.rego)  
+**Source:** [v2/rules/gitlab/project/merge-requests-author-approval.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/merge-requests-author-approval.yaml)  
+**Rego Source:** [merge-requests-author-approval.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/merge-requests-author-approval.rego)  
 **Labels:** Gitlab, Project  
 
 Verify the binary field `merge_requests_author_approval` is set for the GitLab project.

@@ -6,8 +6,8 @@ title: Verify IaC Misconfiguration Threshold in Trivy SARIF
 **Type:** Rule  
 **ID:** `trivy-iac-findings`  
 **Uses:** `sarif/trivy/report-trivy-iac-errors@v2/rules`  
-**Source:** [v2/rules/sarif/trivy/report-trivy-iac-errors.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/report-trivy-iac-errors.yaml)  
-**Rego Source:** [../report-iac-errors.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../report-iac-errors.rego)  
+**Source:** [v2/rules/sarif/trivy/report-trivy-iac-errors.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/trivy/report-trivy-iac-errors.yaml)  
+**Rego Source:** [../report-iac-errors.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/trivy/../report-iac-errors.rego)  
 **Help:** https://scribe-security.netlify.app/docs/valint/generic#trivy-integration-example  
 **Labels:** SARIF, Trivy  
 

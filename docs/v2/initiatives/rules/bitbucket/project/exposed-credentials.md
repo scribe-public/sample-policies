@@ -6,8 +6,8 @@ title: Prevent Credential Exposure
 **Type:** Rule  
 **ID:** `bb-project-exposed-credentials`  
 **Uses:** `bitbucket/project/exposed-credentials@v2/rules`  
-**Source:** [v2/rules/bitbucket/project/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/exposed-credentials.yaml)  
-**Rego Source:** [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/exposed-credentials.rego)  
+**Source:** [v2/rules/bitbucket/project/exposed-credentials.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/project/exposed-credentials.yaml)  
+**Rego Source:** [exposed-credentials.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/project/exposed-credentials.rego)  
 **Labels:** Bitbucket, Project  
 
 Verify access to the Bitbucket project is blocked if exposed credentials are detected.

@@ -6,8 +6,8 @@ title: Verify IaC Misconfiguration Threshold in SARIF
 **Type:** Rule  
 **ID:** `sarif-iac-findings`  
 **Uses:** `sarif/report-iac-errors@v2/rules`  
-**Source:** [v2/rules/sarif/report-iac-errors.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/report-iac-errors.yaml)  
-**Rego Source:** [report-iac-errors.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/report-iac-errors.rego)  
+**Source:** [v2/rules/sarif/report-iac-errors.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/report-iac-errors.yaml)  
+**Rego Source:** [report-iac-errors.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/report-iac-errors.rego)  
 **Labels:** SARIF  
 
 Verify the number of infrastructure-as-code (IaC) errors in the SARIF report remains below the specified threshold.

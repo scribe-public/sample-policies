@@ -6,8 +6,8 @@ title: Restrict Disallowed Dependencies
 **Type:** Rule  
 **ID:** `sbom-disallow-dependencies`  
 **Uses:** `sbom/blocklist-packages@v2/rules`  
-**Source:** [v2/rules/sbom/blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sbom/blocklist-packages.yaml)  
-**Rego Source:** [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/v2/rules/sbom/blocklist-packages.rego)  
+**Source:** [v2/rules/sbom/blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/blocklist-packages.yaml)  
+**Rego Source:** [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/blocklist-packages.rego)  
 **Labels:** SBOM, Image, Blueprint  
 
 Verify the number of disallowed dependencies remains below the specified threshold.

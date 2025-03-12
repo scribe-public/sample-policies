@@ -6,8 +6,8 @@ title: Verify secret_scanning_enabled_for_new_repositories setting
 **Type:** Rule  
 **ID:** `github-org-secret-scanning`  
 **Uses:** `github/org/secret-scanning@v2/rules`  
-**Source:** [v2/rules/github/org/secret-scanning.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/secret-scanning.yaml)  
-**Rego Source:** [secret-scanning.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/secret-scanning.rego)  
+**Source:** [v2/rules/github/org/secret-scanning.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/secret-scanning.yaml)  
+**Rego Source:** [secret-scanning.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/secret-scanning.rego)  
 **Labels:** GitHub, Organization  
 
 Verify `secret_scanning` is enabled for new repositories in the GitHub organization.

@@ -6,8 +6,8 @@ title: Allowed Project Users
 **Type:** Rule  
 **ID:** `bb-project-allowed-project-users`  
 **Uses:** `bitbucket/project/allow-users@v2/rules`  
-**Source:** [v2/rules/bitbucket/project/allow-users.yaml](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/allow-users.yaml)  
-**Rego Source:** [allow-users.rego](https://github.com/scribe-public/sample-policies/v2/rules/bitbucket/project/allow-users.rego)  
+**Source:** [v2/rules/bitbucket/project/allow-users.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/project/allow-users.yaml)  
+**Rego Source:** [allow-users.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/project/allow-users.rego)  
 
 Verify only users specified in the Allowed List have user access to the Bitbucket project.
 

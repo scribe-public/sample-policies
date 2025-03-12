@@ -6,8 +6,8 @@ title: Verify GitHub Organization Secrets Are Not Too Old
 **Type:** Rule  
 **ID:** `github-org-old-secrets`  
 **Uses:** `github/org/old-secrets@v2/rules`  
-**Source:** [v2/rules/github/org/old-secrets.yaml](https://github.com/scribe-public/sample-policies/v2/rules/github/org/old-secrets.yaml)  
-**Rego Source:** [old-secrets.rego](https://github.com/scribe-public/sample-policies/v2/rules/github/org/old-secrets.rego)  
+**Source:** [v2/rules/github/org/old-secrets.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/old-secrets.yaml)  
+**Rego Source:** [old-secrets.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/old-secrets.rego)  
 **Labels:** GitHub, Organization  
 
 Verify secrets in the GitHub organization are not older than the specified threshold.

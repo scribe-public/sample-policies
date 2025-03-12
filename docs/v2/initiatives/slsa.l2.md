@@ -7,7 +7,7 @@ title: SLSA L2 Framework
 **ID:** `SLSA.L2`  
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  
-**Source:** [v2/initiatives/slsa.l2.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l2.yaml)  
+**Source:** [v2/initiatives/slsa.l2.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/initiatives/slsa.l2.yaml)  
 **Help:** https://slsa.dev/  
 
 Evaluate SLSA Level 2

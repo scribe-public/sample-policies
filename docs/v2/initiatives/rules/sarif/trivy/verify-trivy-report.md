@@ -6,8 +6,8 @@ title: Verify Trivy SARIF Report Compliance
 **Type:** Rule  
 **ID:** `trivy-report`  
 **Uses:** `sarif/trivy/verify-trivy-report@v2/rules`  
-**Source:** [v2/rules/sarif/trivy/verify-trivy-report.yaml](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/verify-trivy-report.yaml)  
-**Rego Source:** [../verify-sarif.rego](https://github.com/scribe-public/sample-policies/v2/rules/sarif/trivy/../verify-sarif.rego)  
+**Source:** [v2/rules/sarif/trivy/verify-trivy-report.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/trivy/verify-trivy-report.yaml)  
+**Rego Source:** [../verify-sarif.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/trivy/../verify-sarif.rego)  
 **Help:** https://scribe-security.netlify.app/docs/valint/generic#trivy-integration-example  
 **Labels:** SARIF, Trivy  
 

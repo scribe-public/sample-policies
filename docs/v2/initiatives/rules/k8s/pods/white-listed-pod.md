@@ -6,8 +6,8 @@ title: Allowed Pods
 **Type:** Rule  
 **ID:** `k8s-pods-white-listed-pod`  
 **Uses:** `k8s/pods/white-listed-pod@v2/rules`  
-**Source:** [v2/rules/k8s/pods/white-listed-pod.yaml](https://github.com/scribe-public/sample-policies/v2/rules/k8s/pods/white-listed-pod.yaml)  
-**Rego Source:** [white-listed-pod.rego](https://github.com/scribe-public/sample-policies/v2/rules/k8s/pods/white-listed-pod.rego)  
+**Source:** [v2/rules/k8s/pods/white-listed-pod.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/pods/white-listed-pod.yaml)  
+**Rego Source:** [white-listed-pod.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/pods/white-listed-pod.rego)  
 **Labels:** K8s, Pod  
 
 Verify only pods explicitly listed in the Allowed List are allowed to run.
