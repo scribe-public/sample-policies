@@ -1,8 +1,8 @@
 ---
-sidebar_label: Venafi Blueprint
-title: Venafi Blueprint
+sidebar_label: Blueprint for Secure Pipelines
+title: Blueprint for Secure Pipelines
 ---  
-# Venafi Blueprint  
+# Blueprint for Secure Pipelines  
 **Type:** Initiative  
 **ID:** `blueprint-securesoftwarepipeline`  
 **Version:** `1.0.0`  
@@ -10,7 +10,7 @@ title: Venafi Blueprint
 **Source:** [v2/initiatives/bp1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/bp1.yaml)  
 **Help:** https://github.com/Venafi/blueprint-securesoftwarepipeline  
 
-A comprehensive framework to secure the software supply chain by integrating robust security controls throughout the development lifecycle.
+Blueprint for secure pipelines - Gitlab
 
 
 ## Mitigation  
