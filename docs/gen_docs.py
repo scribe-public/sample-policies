@@ -118,6 +118,14 @@ CATEGORY_CONFIG = {
         "label": "SARIF",
         "position": 1,
     },
+    "rules/ssdf": {
+        "label": "SSDF",
+        "position": 1,
+    },
+    "rules/slsa": {
+        "label": "SLSA",
+        "position": 1,
+    },
 }
 
 def create_category_file(directory, label, position):
