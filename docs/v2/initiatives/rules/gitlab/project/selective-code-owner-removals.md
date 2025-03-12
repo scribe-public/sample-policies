@@ -13,9 +13,6 @@ title: Restrict Selective Code Owner Removals in GitLab
 Verify `selective_code_owner_removals` is set for the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

@@ -13,9 +13,6 @@ title: Ensure All Commits Are Signed in GitLab Project
 Verify all commits in the GitLab project are signed.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

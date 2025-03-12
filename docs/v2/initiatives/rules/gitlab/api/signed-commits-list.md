@@ -15,9 +15,6 @@ Verify the selected commits are signed in the GitLab organization.
 :::tip 
 Evidence **IS NOT** required for this rule.  
 ::: 
-:::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 

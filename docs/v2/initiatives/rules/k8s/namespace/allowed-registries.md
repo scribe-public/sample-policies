@@ -13,9 +13,6 @@ title: Allowed Namespace Registries
 Verify container images in Kubernetes namespaces originate from registries in the Allowed List.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

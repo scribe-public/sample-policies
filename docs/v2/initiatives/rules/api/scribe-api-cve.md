@@ -13,9 +13,6 @@ title: Verify No Critical or High Vulnerabilities
 Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.).
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Rule requires the Scribe API to be enabled.  
 ::: 
 :::tip 

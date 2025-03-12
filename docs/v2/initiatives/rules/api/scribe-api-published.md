@@ -13,9 +13,6 @@ title: Scribe Published Policy
 Verify image Scribe Publish flag is set for container image.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Rule requires the Scribe API to be enabled.  
 ::: 
 :::tip 

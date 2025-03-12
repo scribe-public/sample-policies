@@ -13,9 +13,6 @@ title: Prevent Long-Lived Tokens
 Verify Bitbucket API tokens expire before the maximum time to live.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

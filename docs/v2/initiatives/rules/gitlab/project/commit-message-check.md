@@ -13,9 +13,6 @@ title: Verify Commit Message Format
 Verify that commit messages in the GitLab project adhere to the specified format template.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

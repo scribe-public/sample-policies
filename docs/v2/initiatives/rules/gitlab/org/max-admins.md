@@ -13,9 +13,6 @@ title: Limit Admins in GitLab Organization
 Verify the maximum number of admins for the GitLab project is restricted.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

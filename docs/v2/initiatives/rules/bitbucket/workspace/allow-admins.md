@@ -13,9 +13,6 @@ title: Allowed Workspace Admins
 Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

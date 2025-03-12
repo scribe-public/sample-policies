@@ -13,9 +13,6 @@ title: Require Password for Approvals in GitLab Project
 Verify the binary field `require_password_to_approve` is set for the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

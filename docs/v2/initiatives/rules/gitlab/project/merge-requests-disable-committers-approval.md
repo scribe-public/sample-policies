@@ -13,9 +13,6 @@ title: Disable Committers' Approval for Merge Requests in GitLab
 Verify `merge_requests_disable_committers_approval` is set for the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

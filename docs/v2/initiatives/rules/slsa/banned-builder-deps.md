@@ -13,9 +13,6 @@ title: Disallow dependencies in SLSA Provenance Document
 Verify that dependencies in the block list do not appear in the SLSA Proveance document.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

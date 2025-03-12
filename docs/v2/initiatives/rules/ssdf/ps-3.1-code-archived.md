@@ -19,9 +19,6 @@ Archives code changes to maintain a secure, immutable history for auditing and t
 
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

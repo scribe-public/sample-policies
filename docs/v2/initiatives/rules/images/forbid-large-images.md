@@ -18,9 +18,6 @@ Prevents the deployment of overly large container images, which helps control re
 
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

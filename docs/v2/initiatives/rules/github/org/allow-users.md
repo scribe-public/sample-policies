@@ -13,9 +13,6 @@ title: Allowed GitHub Organization Users
 Verify only users in the Allowed List have user access to the GitHub organization.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

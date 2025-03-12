@@ -13,9 +13,6 @@ title: Enable Commit Committer Check in GitLab Project
 Verify `commit_committer_check` is enabled for the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

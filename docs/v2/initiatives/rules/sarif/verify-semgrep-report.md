@@ -18,9 +18,6 @@ Ensures that any violations detected in the SARIF report produced by Semgrep are
 
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

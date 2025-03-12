@@ -222,10 +222,10 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(f":::tip ")
         md.append(f"> Evidence **IS** required for this rule and will fail if missing.  ")
         md.append(f"::: ")
-    else:
-        md.append(f":::tip ")
-        md.append(f"Rule Result will be set as 'open' if evidence is missing.  ")
-        md.append(f"::: ")
+    # else:
+    #     md.append(f":::tip ")
+    #     md.append(f"Rule Result will be set as 'open' if evidence is missing.  ")
+    #     md.append(f"::: ")
 
     require_scribe_api = rule_data.get("require-scribe-api", False)
     if require_scribe_api:

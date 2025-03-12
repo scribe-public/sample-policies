@@ -13,9 +13,6 @@ title: Verify File Integrity
 Verify the checksum of each file in one SBOM matches the checksum in a second SBOM.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS** required by default.  
 ::: 
 :::warning  

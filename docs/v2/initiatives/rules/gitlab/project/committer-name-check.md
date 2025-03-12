@@ -13,9 +13,6 @@ title: Allowed Committer Names in GitLab Project
 Verify only users in the Allowed List commit by name in the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

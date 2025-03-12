@@ -13,9 +13,6 @@ title: Protect CI Secrets in GitLab Project
 Verify secrets in the GitLab project are not shared.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

@@ -19,9 +19,6 @@ Ensures that container images are built on up-to-date base images, reducing the 
 
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

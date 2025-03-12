@@ -13,9 +13,6 @@ title: Restrict Disallowed SBOM Licenses
 Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

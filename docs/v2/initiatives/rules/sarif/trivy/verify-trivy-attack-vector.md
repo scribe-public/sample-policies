@@ -13,9 +13,6 @@ title: Verify Attack Vector Threshold in Trivy SARIF
 Verify no attack vector in the Trivy SARIF report exceeds the specified threshold.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::info  

@@ -13,9 +13,6 @@ title: Set Author Email Regex in GitLab Project
 Verify the `author_email_regex` for the GitLab project is set to the specified value.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

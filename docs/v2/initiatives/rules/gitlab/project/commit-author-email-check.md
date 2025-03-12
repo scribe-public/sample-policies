@@ -13,9 +13,6 @@ title: Restrict Commit Authors in GitLab Project
 Verify only GitLab project users in the Allowed List have commit author permissions.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

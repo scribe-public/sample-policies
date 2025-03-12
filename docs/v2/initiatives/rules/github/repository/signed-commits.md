@@ -13,9 +13,6 @@ title: Verify All Commits Are Signed in Repository
 Verify all commits are signed in a repository attestation.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

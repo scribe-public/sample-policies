@@ -13,9 +13,6 @@ title: Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting
 Verify `secret_scanning_push_protection_custom_link` is enabled in the GitHub organization.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

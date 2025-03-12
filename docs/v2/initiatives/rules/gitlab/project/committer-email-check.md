@@ -13,9 +13,6 @@ title: Allowed Committer Emails in GitLab Project
 Verify only users in the Allowed List use committer email addresses in the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

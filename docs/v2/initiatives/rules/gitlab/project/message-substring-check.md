@@ -13,9 +13,6 @@ title: Check Message Substring
 Verify a specific substring is not found in the message attribute of vulnerabilities for the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

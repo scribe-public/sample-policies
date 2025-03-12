@@ -13,9 +13,6 @@ title: Restrict Approvers Per Merge Request
 Verify the binary field `disable_overriding_approvers_per_merge_request` is set for the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

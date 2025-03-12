@@ -19,9 +19,6 @@ Enforces that the main image comes from a trusted source, reducing the risk of d
 
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

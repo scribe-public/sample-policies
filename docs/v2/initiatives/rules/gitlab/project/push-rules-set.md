@@ -13,9 +13,6 @@ title: Set Push Rules for GitLab Project
 Verify push rules are set for the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

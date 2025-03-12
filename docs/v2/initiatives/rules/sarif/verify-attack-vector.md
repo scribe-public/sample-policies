@@ -18,9 +18,6 @@ Helps prevent the deployment of images vulnerable to specific attack vectors by 
 
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

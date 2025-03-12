@@ -13,9 +13,6 @@ title: Verify Inactive Users
 Verify there are no inactive users.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

@@ -13,9 +13,6 @@ title: Verify Secret_Scanning_Validity_Checks_Enabled Setting
 Verify `secret_scanning_validity_checks` is configured in the GitHub repository.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

@@ -13,9 +13,6 @@ title: Enforce SBOM Freshness
 Verify the SBOM is not older than the specified duration.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

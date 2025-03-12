@@ -13,9 +13,6 @@ title: Merge approval policy check for GitLab project
 Verify the project's merge approval policy complies with requirements.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

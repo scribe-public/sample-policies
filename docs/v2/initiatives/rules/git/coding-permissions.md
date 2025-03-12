@@ -13,9 +13,6 @@ title: Restrict Coding Permissions
 Verify only allowed users committed to the repository.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

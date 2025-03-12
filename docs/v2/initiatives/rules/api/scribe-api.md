@@ -12,9 +12,6 @@ title: Apply Scribe Template Policy
 Verify XX using the Scribe API template rule.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Rule requires the Scribe API to be enabled.  
 ::: 
 :::tip 

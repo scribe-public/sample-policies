@@ -13,9 +13,6 @@ title: Verify Repository Requires Commit Signoff
 Verify contributors sign off on commits to the GitHub repository through the GitHub web interface.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

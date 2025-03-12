@@ -13,9 +13,6 @@ title: Verify GitHub Organization Secrets Are Not Too Old
 Verify secrets in the GitHub organization are not older than the specified threshold.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

@@ -13,9 +13,6 @@ title: Verify Dependabot security updates setting
 Verify Dependabot security updates are configured in the GitHub repository.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

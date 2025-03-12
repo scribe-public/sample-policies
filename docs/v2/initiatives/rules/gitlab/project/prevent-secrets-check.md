@@ -13,9 +13,6 @@ title: Enable Secrets Prevention in GitLab Project
 Verify `prevent_secrets` is enabled for the GitLab project.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

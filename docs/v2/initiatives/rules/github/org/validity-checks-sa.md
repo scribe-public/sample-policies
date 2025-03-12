@@ -13,9 +13,6 @@ title: Verify Secret_Scanning_Validity_Checks Setting in Security_And_Analysis
 Verify `secret_scanning_validity_checks` is configured in the GitHub organization.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

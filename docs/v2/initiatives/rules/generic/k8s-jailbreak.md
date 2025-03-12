@@ -13,9 +13,6 @@ title: K8s Jailbreak
 Verify no misconfigurations from the prohibited ids list in the Kuberentes scan is below specified threshold
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

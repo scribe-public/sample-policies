@@ -13,9 +13,6 @@ title: Forbid Token Scopes in GitLab Organization
 Verify no GitLab organization tokens have disallowed scopes.
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

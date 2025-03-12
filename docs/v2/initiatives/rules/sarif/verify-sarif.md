@@ -18,9 +18,6 @@ Ensures that the SARIF report adheres to the predefined generic compliance rules
 
 
 :::tip 
-Rule Result will be set as 'open' if evidence is missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
