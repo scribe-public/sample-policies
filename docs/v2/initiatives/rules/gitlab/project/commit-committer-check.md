@@ -12,6 +12,9 @@ title: Enable Commit Committer Check in GitLab Project
 
 Verify `commit_committer_check` is enabled for the GitLab project.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

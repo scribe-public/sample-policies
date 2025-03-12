@@ -12,6 +12,9 @@ title: Verify File Integrity
 
 Verify the checksum of each file in one SBOM matches the checksum in a second SBOM.
 
+:::note 
+This rule requires Signed Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS** required by default.  
 ::: 

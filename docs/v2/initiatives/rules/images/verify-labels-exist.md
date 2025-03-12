@@ -12,17 +12,20 @@ title: Require Image Labels
 
 Verify the image has the specified labels.
 
-
-## Mitigation  
-Ensures that container images include all required metadata labels, which are essential for traceability, auditing, and enforcing compliance with security and operational standards.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Ensures that container images include all required metadata labels, which are essential for traceability, auditing, and enforcing compliance with security and operational standards.
+
+
 
 ## Description  
 This rule checks the CycloneDX SBOM evidence for the container image to verify that each required label 

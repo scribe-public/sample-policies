@@ -11,6 +11,9 @@ title: Allowed Project Admins
 
 Verify only users specified in the Allowed List have admin privileges in the Bitbucket project.
 
+:::note 
+This rule requires Unsigned Bitbucket Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

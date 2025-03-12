@@ -12,6 +12,9 @@ title: Verify Pod Termination
 
 Verify Kubernetes pods are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
+:::note 
+This rule requires Unsigned Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

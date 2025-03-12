@@ -161,6 +161,58 @@ def traverse_and_create_category_files():
 
     traverse_and_create_rule_category_files()
 
+def create_rule_string_from_evidence(evidence):
+    """
+    Generate a descriptive string for the evidence requirement based on the default evidence fields.
+    
+    Reads the following fields from the evidence dictionary:
+      - signed
+      - content_body_type
+      - target_type
+      - predicate_type
+      - labels (if available)
+    
+    Returns a string describing the evidence requirement.
+    """
+    signed = evidence.get("signed", False)
+    content_body_type = evidence.get("content_body_type", "")
+    target_type = evidence.get("target_type", None)
+    predicate_type = evidence.get("predicate_type", None)
+    labels = evidence.get("labels", None)
+    
+    if content_body_type == "cyclonedx-json":
+        if target_type == "container":
+            evidence_type = "Image SBOM"
+        elif target_type == "git":
+            evidence_type = "Git SBOM"
+        else:
+            evidence_type = "SBOM"
+    elif content_body_type == "slsa":
+        evidence_type = "SLSA Provenance"
+    elif content_body_type == "generic":
+        if predicate_type == "http://scribesecurity.com/evidence/discovery/v0.1":
+            platform = None
+            asset_type = None
+            if labels:
+                for label in labels:
+                    if label.startswith("platform="):
+                        platform = label.split("=")[1]
+                    elif label.startswith("asset_type="):
+                        asset_type = label.split("=")[1]
+            if platform and asset_type:
+                evidence_type = f"{platform.capitalize()} {asset_type.capitalize()} Discovery Evidence"
+            else:
+                evidence_type = "Discovery Evidence"
+        elif predicate_type == "http://docs.oasis-open.org/sarif/sarif/2.1.0":
+            evidence_type = "SARIF Evidence"
+        else:
+            evidence_type = "Generic Statement"
+    else:
+        evidence_type = "Statement"
+    
+    signed_str = "Signed" if signed else "Unsigned"
+    return f"This rule requires {signed_str} {evidence_type}."
+
 def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
     Given the YAML data for a rule, produce the Markdown content as a string.
@@ -206,10 +258,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     md.append(f"\n{description}")
     md.append("")
 
-    if mitigation:
-        md.append("\n## Mitigation  ")
-        md.append(mitigation)
-        md.append("")
+
 
     skip_evidence = rule_data.get("skip-evidence", False)
     if skip_evidence:
@@ -231,6 +280,12 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     if require_scribe_api:
         md.append(f":::tip ")
         md.append(f"Rule requires the Scribe API to be enabled.  ")
+        md.append(f"::: ")
+
+    evidence_str = create_rule_string_from_evidence(rule_data.get("evidence", {}))
+    if not skip_evidence and not require_scribe_api:
+        md.append(f":::note ")
+        md.append(f"{evidence_str}  ")
         md.append(f"::: ")
 
     sign_defaults = rule_data.get("evidence", {}).get("signed", False)
@@ -258,6 +313,11 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(f":::info  ")
         md.append(f"Rule is scoped by {filter_by_md}.  ")
         md.append(f":::  ")
+
+    if mitigation:
+        md.append("\n## Mitigation  ")
+        md.append(mitigation)
+        md.append("")
 
     if full_description:
         md.append("\n## Description  ")

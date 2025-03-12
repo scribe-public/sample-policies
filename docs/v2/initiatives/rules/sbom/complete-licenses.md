@@ -12,6 +12,9 @@ title: Enforce SBOM License Completeness
 
 Verify all dependencies in the artifact have a license.
 
+:::note 
+This rule requires Unsigned SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

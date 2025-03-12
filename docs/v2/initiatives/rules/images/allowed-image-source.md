@@ -13,11 +13,9 @@ title: Allowed Main Image Source
 Ensures the main container image referenced in the SBOM is from an approved source.
 
 
-
-## Mitigation  
-Enforces that the main image comes from a trusted source, reducing the risk of deploying images that are compromised or outdated. This check helps maintain container security by ensuring that only images matching approved source patterns are used.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
@@ -27,6 +25,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by target and product.  
 :::  
+
+## Mitigation  
+Enforces that the main image comes from a trusted source, reducing the risk of deploying images that are compromised or outdated. This check helps maintain container security by ensuring that only images matching approved source patterns are used.
+
+
 
 ## Description  
 This rule extracts the main image’s name and version from the SBOM evidence and verifies that it originates from an approved source.

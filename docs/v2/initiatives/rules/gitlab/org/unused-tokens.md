@@ -12,6 +12,9 @@ title: Forbid Unused Tokens in GitLab Organization
 
 Verify there are no unused GitLab organization tokens.
 
+:::note 
+This rule requires Unsigned Gitlab Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

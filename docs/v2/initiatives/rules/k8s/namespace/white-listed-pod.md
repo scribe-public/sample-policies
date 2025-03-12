@@ -12,6 +12,9 @@ title: Allowed Pods in Namespace
 
 Verify only pods explicitly listed in the Allowed List run within a Kubernetes namespace.
 
+:::note 
+This rule requires Unsigned Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

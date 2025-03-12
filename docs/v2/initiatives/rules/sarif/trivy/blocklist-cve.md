@@ -13,17 +13,20 @@ title: Trivy Blocklist CVE Check
 
 Verify a CVE Blocklist against a SARIF report
 
-
-## Mitigation  
-Ensures that any vulnerabilities matching a predefined CVE blocklist are flagged, preventing images with known high-risk vulnerabilities from progressing through the pipeline.
-
-
+:::note 
+This rule requires Unsigned SARIF Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::info  
 Rule is scoped by product.  
 :::  
+
+## Mitigation  
+Ensures that any vulnerabilities matching a predefined CVE blocklist are flagged, preventing images with known high-risk vulnerabilities from progressing through the pipeline.
+
+
 
 ## Description  
 This rule processes the SARIF report produced by the Trivy Vulnerability Scanner to verify that no vulnerabilities 

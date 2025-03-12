@@ -12,6 +12,9 @@ title: Verify advanced security setting is enabled
 
 Verify `advanced_security_enabled_for_new_repositories` is enabled for new repositories in the GitHub organization.
 
+:::note 
+This rule requires Unsigned Github Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

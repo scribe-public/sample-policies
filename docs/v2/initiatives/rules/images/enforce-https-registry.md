@@ -13,6 +13,9 @@ title: 4.2.1 Registry Connection HTTPS
 Checks if the container's registry scheme is HTTPS
 
 
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

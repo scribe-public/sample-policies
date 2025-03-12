@@ -12,6 +12,9 @@ title: Verify Inactive Users
 
 Verify there are no inactive users.
 
+:::note 
+This rule requires Unsigned Jenkins Instance Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

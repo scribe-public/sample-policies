@@ -13,11 +13,9 @@ title: Require Healthcheck
 Checks that the container image includes at least one healthcheck property.
 
 
-
-## Mitigation  
-Ensures that container images define a HEALTHCHECK instruction so that the runtime environment  can monitor and manage container health. This minimizes the risk of undetected failures at runtime.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
@@ -27,6 +25,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by target and product.  
 :::  
+
+## Mitigation  
+Ensures that container images define a HEALTHCHECK instruction so that the runtime environment  can monitor and manage container health. This minimizes the risk of undetected failures at runtime.
+
+
 
 ## Description  
 This rule examines the CycloneDX SBOM evidence for a container image to verify that a healthcheck is defined.

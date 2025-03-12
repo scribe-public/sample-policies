@@ -12,6 +12,9 @@ title: Require Code Owner Approval in GitLab Project
 
 Verify code owner approval is required for specific branches in the GitLab project.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

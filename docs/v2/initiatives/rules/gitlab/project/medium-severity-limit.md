@@ -12,6 +12,9 @@ title: Enforce Medium Severity Limit
 
 Verify the maximum allowed medium severity alerts for the GitLab project.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

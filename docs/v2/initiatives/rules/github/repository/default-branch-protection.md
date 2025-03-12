@@ -12,6 +12,9 @@ title: Verify Default Branch Protection
 
 Verify the default branch protection is configured in the GitHub repository.
 
+:::note 
+This rule requires Unsigned Github Repository Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

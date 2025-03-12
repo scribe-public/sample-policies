@@ -12,6 +12,9 @@ title: Verify members_can_create_repositories setting
 
 Verify `members_can_create_repositories` is appropriately configured in the GitHub repository.
 
+:::note 
+This rule requires Unsigned Github Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

@@ -13,12 +13,11 @@ title: Verify Provenance Document Exists
 
 Verify that the Provenance document evidence exists.
 
-
-## Mitigation  
-Recording comprehensive provenance metadata allows organizations to verify the integrity of the build process and ensures that only authorized and untampered artifacts are deployed.
-
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
+::: 
+:::note 
+This rule requires Unsigned SLSA Provenance.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -29,6 +28,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Mitigation  
+Recording comprehensive provenance metadata allows organizations to verify the integrity of the build process and ensures that only authorized and untampered artifacts are deployed.
+
 
 ## Evidence Requirements  
 | Field | Value |

@@ -12,6 +12,9 @@ title: Allowed Public Repositories
 
 Verify only GitHub repositories in the Allowed List are public.
 
+:::note 
+This rule requires Unsigned Github Repository Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

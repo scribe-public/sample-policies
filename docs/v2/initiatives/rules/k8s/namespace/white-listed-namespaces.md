@@ -12,6 +12,9 @@ title: Allowed Namespaces
 
 Verify only namespaces specified in the Allowed List are allowed within the cluster.
 
+:::note 
+This rule requires Unsigned Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

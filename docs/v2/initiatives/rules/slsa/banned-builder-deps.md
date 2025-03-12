@@ -12,6 +12,9 @@ title: Disallow dependencies in SLSA Provenance Document
 
 Verify that dependencies in the block list do not appear in the SLSA Proveance document.
 
+:::note 
+This rule requires Unsigned SLSA Provenance.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

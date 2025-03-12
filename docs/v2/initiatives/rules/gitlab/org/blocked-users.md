@@ -12,6 +12,9 @@ title: Block Users in GitLab Organization
 
 Verify no users in the GitLab organization are on the block list.
 
+:::note 
+This rule requires Unsigned Gitlab Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

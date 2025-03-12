@@ -12,6 +12,9 @@ title: Verify Project Activity
 
 Verify the GitLab project is active for a specified duration.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

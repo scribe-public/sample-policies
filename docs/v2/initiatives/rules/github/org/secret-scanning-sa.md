@@ -12,6 +12,9 @@ title: Verify Secret_Scanning Setting in Security_And_Analysis
 
 Verify `secret_scanning` is configured in the GitHub repository.
 
+:::note 
+This rule requires Unsigned Github Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

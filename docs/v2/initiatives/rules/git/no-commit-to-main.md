@@ -12,6 +12,9 @@ title: Disallow Commits to Main Branch
 
 Verify commits made directly to the main branch are disallowed.
 
+:::note 
+This rule requires Unsigned Git SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

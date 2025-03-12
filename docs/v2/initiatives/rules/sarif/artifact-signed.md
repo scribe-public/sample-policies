@@ -12,13 +12,11 @@ title: Verify Artifact Signature Using SARIF Report
 
 Verify the artifact referenced in the SARIF report is signed to confirm its integrity.
 
-
-## Mitigation  
-Ensures that the referenced artifact has a valid digital signature, confirming its integrity and authenticity. This prevents tampering and verifies that the artifact originates from a trusted source.
-
-
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
+::: 
+:::note 
+This rule requires Signed SARIF Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS** required by default.  
@@ -26,6 +24,11 @@ Signed Evidence for this rule **IS** required by default.
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Ensures that the referenced artifact has a valid digital signature, confirming its integrity and authenticity. This prevents tampering and verifies that the artifact originates from a trusted source.
+
+
 
 ## Description  
 This rule verifies that the artifact referenced in the SARIF report has been cryptographically signed.

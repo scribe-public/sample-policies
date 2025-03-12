@@ -12,6 +12,9 @@ title: Verify dependabot_security_updates setting in security_and_analysis
 
 Verify Dependabot security updates are configured in the GitHub organization.
 
+:::note 
+This rule requires Unsigned Github Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

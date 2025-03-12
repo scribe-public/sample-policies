@@ -13,11 +13,9 @@ title: Fresh Base Image
 Verifies that each base image is not older than the specified threshold (max_days) from its creation date.
 
 
-
-## Mitigation  
-Ensures that container images are built on up-to-date base images, reducing the risk of deploying images with outdated layers that may contain unpatched vulnerabilities or deprecated components. This check prevents the use of stale base images, thereby enhancing overall container security.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
@@ -27,6 +25,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by target and product.  
 :::  
+
+## Mitigation  
+Ensures that container images are built on up-to-date base images, reducing the risk of deploying images with outdated layers that may contain unpatched vulnerabilities or deprecated components. This check prevents the use of stale base images, thereby enhancing overall container security.
+
+
 
 ## Description  
 This rule processes the CycloneDX SBOM evidence for a container image to verify that its base image remains fresh. 

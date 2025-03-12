@@ -15,6 +15,9 @@ Verify the Git artifact is signed.
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
 ::: 
+:::note 
+This rule requires Signed Git SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS** required by default.  
 ::: 

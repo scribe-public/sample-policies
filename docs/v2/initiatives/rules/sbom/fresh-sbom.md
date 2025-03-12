@@ -12,6 +12,9 @@ title: Enforce SBOM Freshness
 
 Verify the SBOM is not older than the specified duration.
 
+:::note 
+This rule requires Unsigned SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

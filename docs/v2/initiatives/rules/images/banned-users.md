@@ -12,11 +12,9 @@ title: Disallow Specific Users in SBOM
 
 Verify specific users are not allowed in an SBOM.
 
-
-## Mitigation  
-Prevents the execution of container images with default or disallowed user accounts reducing the risk of privilege escalation and ensuring that only secure, non-privileged user configurations are used.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
@@ -26,6 +24,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by target and product.  
 :::  
+
+## Mitigation  
+Prevents the execution of container images with default or disallowed user accounts reducing the risk of privilege escalation and ensuring that only secure, non-privileged user configurations are used.
+
+
 
 ## Description  
 This rule inspects the CycloneDX SBOM evidence for a container image to ensure that the image is not configured 

@@ -12,6 +12,9 @@ title: Enforce Critical Severity Limit
 
 Verify the maximum allowed critical severity alerts for the GitLab project.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

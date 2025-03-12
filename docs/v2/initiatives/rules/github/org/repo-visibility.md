@@ -12,6 +12,9 @@ title: Verify Repo Visibility Setting
 
 Verify only repositories in the Allowed List are public in the GitHub organization.
 
+:::note 
+This rule requires Unsigned Github Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

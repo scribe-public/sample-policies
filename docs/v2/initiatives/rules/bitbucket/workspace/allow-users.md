@@ -12,6 +12,9 @@ title: Allowed Workspace Users
 
 Verify only users specified in the Allowed List have user access to the Bitbucket workspace.
 
+:::note 
+This rule requires Unsigned Bitbucket Workspace Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

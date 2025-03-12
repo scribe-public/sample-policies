@@ -15,11 +15,9 @@ The rule examines properties in the SBOM metadata and checks each value (expecte
 It fails if any banned port is exposed or if no banned ports list is provided.
 
 
-
-## Mitigation  
-Prevents deployment of container images that expose disallowed ports, reducing the risk of unauthorized network access  and potential exploitation. This check ensures that only images with approved port configurations are deployed.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
@@ -29,6 +27,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by target and product.  
 :::  
+
+## Mitigation  
+Prevents deployment of container images that expose disallowed ports, reducing the risk of unauthorized network access  and potential exploitation. This check ensures that only images with approved port configurations are deployed.
+
+
 
 ## Description  
 This rule evaluates the CycloneDX SBOM evidence for a container image to verify that no disallowed ports are exposed.

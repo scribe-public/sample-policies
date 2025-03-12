@@ -12,6 +12,9 @@ title: Verify that artifact has no disallowed builder dependencies
 
 Verify the artifact has no disallowed builder dependencies.
 
+:::note 
+This rule requires Unsigned SLSA Provenance.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

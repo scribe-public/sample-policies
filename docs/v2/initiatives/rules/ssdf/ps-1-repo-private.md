@@ -11,17 +11,20 @@ title: Repo private
 
 PS.1 Assure the repository is private
 
-
-## Mitigation  
-Ensures that repositories remain private, reducing the risk of sensitive code being exposed to unauthorized parties.
-
-
+:::note 
+This rule requires Unsigned Statement.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Ensures that repositories remain private, reducing the risk of sensitive code being exposed to unauthorized parties.
+
+
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

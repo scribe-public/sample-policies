@@ -11,17 +11,20 @@ title: Require signoff on web commits
 
 PS.1 Require contributors to sign when committing to Github through the web interface
 
-
-## Mitigation  
-Requires signoff on web commits to ensure that code changes are reviewed and approved, thereby reducing the risk of unauthorized or malicious modifications.
-
-
+:::note 
+This rule requires Unsigned Statement.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Requires signoff on web commits to ensure that code changes are reviewed and approved, thereby reducing the risk of unauthorized or malicious modifications.
+
+
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

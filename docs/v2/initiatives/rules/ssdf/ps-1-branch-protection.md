@@ -11,17 +11,20 @@ title: Branch protected
 
 PS.1 Require branch protection for the repository
 
-
-## Mitigation  
-Enforces branch protection policies to prevent unauthorized commits and maintain the integrity of critical code branches.
-
-
+:::note 
+This rule requires Unsigned Statement.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Enforces branch protection policies to prevent unauthorized commits and maintain the integrity of critical code branches.
+
+
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

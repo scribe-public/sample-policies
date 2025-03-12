@@ -12,6 +12,9 @@ title: Verify Commit Message Format
 
 Verify that commit messages in the GitLab project adhere to the specified format template.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

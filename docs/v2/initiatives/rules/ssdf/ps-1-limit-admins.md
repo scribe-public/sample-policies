@@ -11,17 +11,20 @@ title: Limit admins
 
 PS.1 Restrict the maximum number of organization admins
 
-
-## Mitigation  
-Limits the number of administrative accounts, minimizing the potential for abuse of elevated privileges.
-
-
+:::note 
+This rule requires Unsigned Statement.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Limits the number of administrative accounts, minimizing the potential for abuse of elevated privileges.
+
+
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

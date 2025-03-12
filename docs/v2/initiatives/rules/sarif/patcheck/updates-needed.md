@@ -12,6 +12,9 @@ title: SARIF Update Needed
 
 Verify no security packages require updates.
 
+:::note 
+This rule requires Unsigned SARIF Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

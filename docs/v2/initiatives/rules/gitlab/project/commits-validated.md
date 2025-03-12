@@ -12,6 +12,9 @@ title: Validate All Commits in GitLab Project
 
 Verify all commits in the GitLab project are validated.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

@@ -12,6 +12,9 @@ title: Disallow Force Push in GitLab Project
 
 Verify force pushes in the GitLab project are disallowed to maintain repository integrity.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

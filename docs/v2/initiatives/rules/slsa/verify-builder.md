@@ -12,6 +12,9 @@ title: Verify that artifact was created by the specified builder
 
 Verify the artifact was created by the specified builder.
 
+:::note 
+This rule requires Unsigned SLSA Provenance.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

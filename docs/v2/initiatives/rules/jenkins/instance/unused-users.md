@@ -12,6 +12,9 @@ title: Disallow Unused Users
 
 Verify there are no users with zero activity.
 
+:::note 
+This rule requires Unsigned Jenkins Instance Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

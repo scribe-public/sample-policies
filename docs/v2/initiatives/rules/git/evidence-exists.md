@@ -15,6 +15,9 @@ Verify required Git evidence exists.
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
 ::: 
+:::note 
+This rule requires Unsigned Git SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

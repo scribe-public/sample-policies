@@ -12,17 +12,20 @@ title: Verify Image Labels
 
 Verify specified labels key-value pairs exist in the image.
 
-
-## Mitigation  
-Ensures that all required metadata labels are present with the expected values, which is crucial for traceability, auditing, and compliance with container security standards.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Ensures that all required metadata labels are present with the expected values, which is crucial for traceability, auditing, and compliance with container security standards.
+
+
 
 ## Description  
 This rule checks the CycloneDX SBOM evidence for the container image to verify that each 

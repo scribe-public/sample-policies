@@ -11,17 +11,20 @@ title: Image-verifiable
 
 PS.2 Provide a mechanism to verify the integrity of the image
 
-
-## Mitigation  
-Ensures container images are cryptographically verifiable, preventing tampering and confirming their authenticity.
-
-
+:::note 
+This rule requires Unsigned Statement.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Ensures container images are cryptographically verifiable, preventing tampering and confirming their authenticity.
+
+
 
 ## Evidence Requirements  
 | Field | Value |

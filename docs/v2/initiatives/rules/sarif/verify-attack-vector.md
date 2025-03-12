@@ -12,17 +12,20 @@ title: Verify Attack Vector Exists in SARIF
 
 Verify required evidence validates attack vectors in the SARIF report.
 
-
-## Mitigation  
-Helps prevent the deployment of images vulnerable to specific attack vectors by ensuring that any findings related to disallowed attack vectors are detected and flagged. This rule minimizes potential exploitation paths by enforcing that only acceptable vulnerability profiles are present.
-
-
+:::note 
+This rule requires Unsigned SARIF Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Helps prevent the deployment of images vulnerable to specific attack vectors by ensuring that any findings related to disallowed attack vectors are detected and flagged. This rule minimizes potential exploitation paths by enforcing that only acceptable vulnerability profiles are present.
+
+
 
 ## Description  
 This rule evaluates the SARIF report produced by the Vulnerability Scanner to verify that vulnerabilities

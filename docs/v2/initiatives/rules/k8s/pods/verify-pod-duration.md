@@ -12,6 +12,9 @@ title: Verify Pod Runtime Duration
 
 Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecycle limits.
 
+:::note 
+This rule requires Unsigned Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

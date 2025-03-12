@@ -12,6 +12,9 @@ title: Ensure SAST Scanning Passes
 
 Verify SAST scanning is successful for the GitLab project.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

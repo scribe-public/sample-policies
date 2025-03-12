@@ -12,17 +12,20 @@ title: Forbid Large Images
 
 Verify the image size is below the specified threshold.
 
-
-## Mitigation  
-Prevents the deployment of overly large container images, which helps control resource usage, reduces the attack surface by limiting unnecessary code and dependencies, and minimizes potential vulnerabilities.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Prevents the deployment of overly large container images, which helps control resource usage, reduces the attack surface by limiting unnecessary code and dependencies, and minimizes potential vulnerabilities.
+
+
 
 ## Description  
 This rule inspects the CycloneDX SBOM evidence for container images. It searches through the SBOM's components

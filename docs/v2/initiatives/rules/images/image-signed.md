@@ -13,11 +13,9 @@ title: Require Signed Container Image
 Enforces that container images (target_type=container) are cryptographically signed.
 
 
-
-## Mitigation  
-Ensures that only container images with valid cryptographic signatures are deployed, mitigating the risk of tampering. By requiring evidence in the CycloneDX attest-cyclonedx-json format, this rule confirms that images have been signed by trusted entities.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
@@ -27,6 +25,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Mitigation  
+Ensures that only container images with valid cryptographic signatures are deployed, mitigating the risk of tampering. By requiring evidence in the CycloneDX attest-cyclonedx-json format, this rule confirms that images have been signed by trusted entities.
+
+
 
 ## Description  
 This rule evaluates the evidence for a container image to determine if it is properly signed. It checks the 

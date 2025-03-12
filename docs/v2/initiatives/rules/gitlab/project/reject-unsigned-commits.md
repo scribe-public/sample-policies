@@ -12,6 +12,9 @@ title: Reject Unsigned Commits in GitLab Project
 
 Verify `reject_unsigned_commits` is enabled for the GitLab project.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

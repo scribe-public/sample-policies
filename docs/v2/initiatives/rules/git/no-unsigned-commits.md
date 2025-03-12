@@ -12,6 +12,9 @@ title: Disallow Unsigned Commits
 
 Verify all commits are signed.
 
+:::note 
+This rule requires Unsigned Git SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

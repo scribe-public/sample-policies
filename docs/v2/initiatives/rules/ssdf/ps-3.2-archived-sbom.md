@@ -11,15 +11,18 @@ title: SBOM archived
 
 PS.3.2 Archive SBOM
 
-
-## Mitigation  
-Archives the SBOM for every build, providing a permanent record of the software components and their relationships, thereby reducing the risk of supply chain attacks.
-
-
+:::note 
+This rule requires Unsigned Statement.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Archives the SBOM for every build, providing a permanent record of the software components and their relationships, thereby reducing the risk of supply chain attacks.
+
+
 

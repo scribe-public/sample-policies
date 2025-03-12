@@ -18,6 +18,9 @@ Checks that:
   4) Optionally enforces a required supplier (case-insensitive match for supplier name).
 
 
+:::note 
+This rule requires Unsigned SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

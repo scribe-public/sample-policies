@@ -12,6 +12,9 @@ title: Verify Exposed Credentials
 
 Verify there are no exposed credentials.
 
+:::note 
+This rule requires Unsigned Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

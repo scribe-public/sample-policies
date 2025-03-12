@@ -12,17 +12,20 @@ title: Verify Rule Compliance in SARIF
 
 Verify the SARIF report complies with defined generic rules for compliance and security.
 
-
-## Mitigation  
-Ensures that the SARIF report adheres to the predefined generic compliance rules by validating  the vulnerability types, severity levels, and total number of findings. This verification helps maintain  a consistent security posture and prevents the use of images with unacceptable vulnerability profiles.
-
-
+:::note 
+This rule requires Unsigned SARIF Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Ensures that the SARIF report adheres to the predefined generic compliance rules by validating  the vulnerability types, severity levels, and total number of findings. This verification helps maintain  a consistent security posture and prevents the use of images with unacceptable vulnerability profiles.
+
+
 
 ## Description  
 This rule evaluates the SARIF report provided as evidence to verify that it meets a set of predefined generic rules.

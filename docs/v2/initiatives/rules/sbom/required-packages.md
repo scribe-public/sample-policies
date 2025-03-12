@@ -12,6 +12,9 @@ title: Enforce SBOM Dependencies
 
 Verify the artifact includes all required dependencies.
 
+:::note 
+This rule requires Unsigned SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

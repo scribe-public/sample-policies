@@ -12,6 +12,9 @@ title: Prevent Credential Exposure
 
 Verify access to the Bitbucket project is blocked if exposed credentials are detected.
 
+:::note 
+This rule requires Unsigned Bitbucket Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

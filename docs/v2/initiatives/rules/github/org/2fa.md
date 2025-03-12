@@ -12,17 +12,20 @@ title: Verify two_factor_requirement_enabled setting
 
 Verify `two_factor_requirement` is enabled in the GitHub organization.
 
-
-## Mitigation  
-Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access  through compromised credentials.
-
-
+:::note 
+This rule requires Unsigned Github Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access  through compromised credentials.
+
+
 
 ## Description  
 This rule verifies that two-factor authentication (2FA) is enabled for the organization by examining the provided evidence.

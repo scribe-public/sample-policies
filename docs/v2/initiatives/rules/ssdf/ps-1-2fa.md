@@ -11,17 +11,20 @@ title: Enforce 2FA
 
 PS.1 Require 2FA for accessing code
 
-
-## Mitigation  
-Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access  through compromised credentials.
-
-
+:::note 
+This rule requires Unsigned Statement.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access  through compromised credentials.
+
+
 
 ## Description  
 This rule verifies that two-factor authentication (2FA) is enabled for the organization by examining the provided evidence.

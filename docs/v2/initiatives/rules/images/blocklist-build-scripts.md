@@ -12,17 +12,20 @@ title: Restrict Build Scripts
 
 Verify no build scripts commands appear in block list.
 
-
-## Mitigation  
-Prevents the execution of unauthorized or insecure build scripts during the image build process, reducing the risk of malicious command injection and ensuring a more secure supply chain.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Prevents the execution of unauthorized or insecure build scripts during the image build process, reducing the risk of malicious command injection and ensuring a more secure supply chain.
+
+
 
 ## Description  
 This rule inspects the SBOM (in CycloneDX JSON format) for each Layer component and specifically looks for a property named "CreatedBy". 

@@ -16,11 +16,9 @@ This rule requires Dockerfile context; for example, run it with:
 `valint my_image --base-image Dockerfile`.
 
 
-
-## Mitigation  
-Ensures that only trusted base images are used in container builds, reducing the risk of deploying compromised or outdated images. This check mitigates vulnerabilities by enforcing that each base image matches an approved source pattern.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
@@ -30,6 +28,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by target and product.  
 :::  
+
+## Mitigation  
+Ensures that only trusted base images are used in container builds, reducing the risk of deploying compromised or outdated images. This check mitigates vulnerabilities by enforcing that each base image matches an approved source pattern.
+
+
 
 ## Description  
 This rule examines the SBOM evidence for a container image, focusing on components in the "container" group that represent base images.

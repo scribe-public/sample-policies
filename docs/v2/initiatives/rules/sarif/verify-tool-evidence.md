@@ -12,13 +12,11 @@ title: Verify Tool Evidence in SARIF
 
 Verify required tools were used to generate the SARIF report.
 
-
-## Mitigation  
-Confirms the SARIF report originates from the correct scanning tool, ensuring the evidence is trustworthy.
-
-
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
+::: 
+:::note 
+This rule requires Unsigned SARIF Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -26,6 +24,11 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Confirms the SARIF report originates from the correct scanning tool, ensuring the evidence is trustworthy.
+
+
 
 ## Description  
 This rule checks the `tool` field in the SARIF evidence to verify that it matches the expected scanner 

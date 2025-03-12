@@ -12,6 +12,9 @@ title: Prevent Token Expiration in GitLab Organization
 
 Verify no GitLab organization tokens are about to expire.
 
+:::note 
+This rule requires Unsigned Gitlab Organization Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

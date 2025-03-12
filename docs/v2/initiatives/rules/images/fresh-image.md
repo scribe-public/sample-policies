@@ -12,11 +12,9 @@ title: Fresh Image
 
 Verify the image is not older than the specified threshold.
 
-
-## Mitigation  
-Prevents the deployment of outdated container images—which may include unpatched vulnerabilities or outdated dependencies— by enforcing a maximum age limit based on the image's build time.
-
-
+:::note 
+This rule requires Unsigned Image SBOM.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
@@ -26,6 +24,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by target and product.  
 :::  
+
+## Mitigation  
+Prevents the deployment of outdated container images—which may include unpatched vulnerabilities or outdated dependencies— by enforcing a maximum age limit based on the image's build time.
+
+
 
 ## Description  
 This rule extracts the Image creation timestamp from the SBOM evidence. It searches for a property named "created" 

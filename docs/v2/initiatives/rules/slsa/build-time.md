@@ -12,6 +12,9 @@ title: Verify build time
 
 Verify the artifact was created within the specified time window.
 
+:::note 
+This rule requires Unsigned SLSA Provenance.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

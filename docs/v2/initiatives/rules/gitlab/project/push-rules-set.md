@@ -12,6 +12,9 @@ title: Set Push Rules for GitLab Project
 
 Verify push rules are set for the GitLab project.
 
+:::note 
+This rule requires Unsigned Gitlab Project Discovery Evidence.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 

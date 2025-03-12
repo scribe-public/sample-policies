@@ -11,6 +11,9 @@ title: Required Trivy Evidence Exists
 
 Verify required Trivy evidence exists
 
+:::note 
+This rule requires Unsigned Generic Statement.  
+::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
