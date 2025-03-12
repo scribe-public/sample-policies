@@ -12,10 +12,6 @@ title: Blueprint for Secure Pipelines
 
 Blueprint for secure pipelines - Gitlab
 
-
-## Mitigation  
-By enforcing layered security controls across all phases of the software development lifecycle, this initiative significantly reduces the risk of supply chain compromises and ensures that only verified and trustworthy software components are deployed.
-
 ## **Description**
 
 This initiative defines a set of best practices and technical guidelines designed to safeguard every stage of the software delivery process—from code development and build, to testing and production deployment. It emphasizes the importance of ensuring code integrity, authenticating build artifacts, and continuously monitoring system changes to mitigate the risk of supply chain attacks. The framework is adaptable to various environments and aligned with industry standards, providing organizations with actionable steps to enhance their overall security posture.
@@ -25,7 +21,7 @@ This initiative defines a set of best practices and technical guidelines designe
 | Control ID | Control Name | Control Description | Mitigation |
 |------------|--------------|---------------------|------------|
 |  [CT-1](#ct-1-restrict-administrative-access-to-cicd-tools) | Restrict administrative access to CI/CD tools | Restrict administrative access to CI/CD tools | Limit administrative privileges to a minimal, controlled group to reduce the risk of unauthorized pipeline changes. |
-|  [CT-2](#ct-2-only-accept-commits-signed-with-a-developer-gpg-key) | Only accept commits signed with a developer GPG key | Only accept commits signed with a developer GPG key | Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications. |
+|  [CT-2](#ct-2-only-accept-commits-signed-with-a-developer-gpg-key) | Only accept commits signed with a developer GPG key | The use of these two rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by Gitlab | Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications. |
 |  [CT-3](#ct-3-automation-access-keys-expire-automatically) | Automation access keys expire automatically | Automation access keys expire automatically | Configure automation keys to expire automatically, limiting the window in which compromised keys can be exploited. |
 |  [CT-4](#ct-4-reduce-automation-access-to-read-only) | Reduce automation access to read-only | Reduce automation access to read-only | Restrict automation accounts to read-only access, following the principle of least privilege to minimize potential damage. |
 |  [CT-6](#ct-6-any-critical-or-high-severity-vulnerability-breaks-the-build) | Any critical or high severity vulnerability breaks the build | Any critical or high severity vulnerability breaks the build | Immediately fail the build when critical or high-severity vulnerabilities are detected, forcing prompt investigation and remediation. |
@@ -70,7 +66,7 @@ Both host and application-layer access to CI/CD tools should be protected with m
 
 ## [CT-2] Only accept commits signed with a developer GPG key
 
-Only accept commits signed with a developer GPG key
+The use of these two rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by Gitlab
 
 
 ### Mitigation  
