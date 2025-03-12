@@ -8,10 +8,10 @@ title: SLSA L1 Framework
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  
 **Source:** [v2/initiatives/slsa.l1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l1.yaml)  
+**Help:** https://slsa.dev/  
 
 Evaluate SLSA Level 1
 
-**Help:** https://slsa.dev/  
 :::tip  
 Evidence for this initiative **IS NOT** required by default but is recommended.  
 :::  

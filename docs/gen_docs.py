@@ -402,6 +402,9 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md.append(f"**Version:** `{version}`  ")
     md.append(f"**Bundle-Version:** `{bundle_version}`  ")
     md.append(f"**Source:** [{file_path}]({source_link})  ")
+    if help_url:
+        md.append(f"**Help:** {help_url}  ")
+
     md.append(f"\n{description}")
     md.append("")
 
@@ -410,8 +413,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append(mitigation)
         md.append("")
 
-    if help_url:
-        md.append(f"**Help:** {help_url}  ")
+
 
     sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
     if sign_defaults:

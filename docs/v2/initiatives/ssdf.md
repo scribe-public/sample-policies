@@ -8,10 +8,10 @@ title: SSDF Client Initiative
 **Version:** `1.0.0`  
 **Bundle-Version:** `v2`  
 **Source:** [v2/initiatives/ssdf.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/ssdf.yaml)  
+**Help:** https://csrc.nist.gov/pubs/sp/800/218/final  
 
 Evaluate PS rules from the SSDF initiative
 
-**Help:** https://csrc.nist.gov/pubs/sp/800/218/final  
 :::tip  
 Evidence for this initiative **IS NOT** required by default but is recommended.  
 :::  
