@@ -28,8 +28,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 ::: 
 
 ## Description  
-This rule ensures that container images do not allow shell access by verifying their configured entrypoint. Attackers often exploit shell access in containerized environments to execute arbitrary commands, escalate privileges, or perform unauthorized actions. This rule extracts the 'entrypoint' property from the CycloneDX SBOM metadata and checks whether it contains a shell invocation (e.g., 'sh', 'bash').
-**Evidence Requirements:** - Evidence must be provided in the `cyclonedx-json` format. - The SBOM must contain a component under `metadata.component.properties` with a property named "entrypoint".
+This rule ensures that container images do not allow shell access by verifying their configured entrypoint.   Attackers often exploit shell access in containerized environments to execute arbitrary commands, escalate privileges, or perform unauthorized actions.   This rule extracts the 'entrypoint' property from the CycloneDX SBOM metadata and checks whether it contains a shell invocation (e.g., 'sh', 'bash').   <br/> test   ### **Evidence Requirements** - Evidence must be provided in the `cyclonedx-json` format.   - The SBOM must contain a component under `metadata.component.properties` with a property named "entrypoint".  
 
 
 ## Evidence Requirements  
