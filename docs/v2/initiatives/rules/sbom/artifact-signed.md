@@ -19,6 +19,9 @@ Verify the SBOM is signed.
 This rule requires Signed SBOM.  
 ::: 
 :::tip 
+> Evidence **IS** required for this rule and will fail if missing.  
+::: 
+:::tip 
 Signed Evidence for this rule **IS** required by default.  
 ::: 
 :::warning  

@@ -19,6 +19,9 @@ Verify required tools were used to generate the SARIF report.
 This rule requires Unsigned SARIF Evidence.  
 ::: 
 :::tip 
+> Evidence **IS** required for this rule and will fail if missing.  
+::: 
+:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

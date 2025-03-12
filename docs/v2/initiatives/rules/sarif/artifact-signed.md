@@ -19,6 +19,9 @@ Verify the artifact referenced in the SARIF report is signed to confirm its inte
 This rule requires Signed SARIF Evidence.  
 ::: 
 :::tip 
+> Evidence **IS** required for this rule and will fail if missing.  
+::: 
+:::tip 
 Signed Evidence for this rule **IS** required by default.  
 ::: 
 :::warning  
