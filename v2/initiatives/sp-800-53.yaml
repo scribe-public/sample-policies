@@ -1,5 +1,5 @@
 config-type: initiative
-id: "SP-800-53-SC-REQUIREMENTS"
+id: "SP-800-53"
 version: "1.0.0"
 name: "SP-800-53 Supply Chain Integrity Initiative"
 description: >
