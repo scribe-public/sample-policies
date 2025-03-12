@@ -3,10 +3,12 @@
 import os
 import re
 import yaml
+import json
+
 
 # Root output directories for docs
 DOCS_ROOT = "docs/v2"
-RULES_OUTDIR = os.path.join(DOCS_ROOT, "rules")
+RULES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives", "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
 SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
 DOC_SITE_BASE = "https://scribe-security.netlify.app/docs/guides/policy-reference"
@@ -23,8 +25,8 @@ def parse_yaml(file_path):
 
 def ensure_output_dirs():
     """Create the top-level output directories if they don't exist."""
-    os.makedirs(RULES_OUTDIR, exist_ok=True)
     os.makedirs(INITIATIVES_OUTDIR, exist_ok=True)
+    os.makedirs(RULES_OUTDIR, exist_ok=True)
 
 def filepath_to_uses(filepath: str) -> str:
     """
@@ -59,6 +61,88 @@ def filter_labels(labels):
     # if starts with "{{- if", remove it
     return [label for label in labels if not label.startswith("{{- if")]
     
+def escape_template(value):
+    """Escapes template-like values to be shown as string in markdown."""
+    # If value is a list, apply escape_template to each item in the list
+    # if isinstance(value, list):
+    #     return [escape_template(item) for item in value]
+    if isinstance(value, list):
+        return [escape_template(item) for item in value]
+    
+    if isinstance(value, dict):
+        return f'`{value}`'
+    
+    if isinstance(value, object):
+        # Serliaze the object to string
+        value_str = yaml.dump(value, default_flow_style=True)
+        if "{{" in value_str:
+            return value.replace("{{", "`{{").replace("}}", "}}`")
+    
+    if isinstance(value, str):
+        return value.replace("{{", "`{{").replace("}}", "}}`")
+    
+
+            
+
+    # If value is not a string or list, just return it as is
+    return value
+
+# Mapping of directory names to sidebar titles and positions
+CATEGORY_CONFIG = {
+    'initiatives': {
+        'label': 'Reference: Policies and Configuration Guide',
+        'position': 1
+    },
+    'rules': {
+        'label': 'Rule Configuration',
+        'position': 2
+    },
+    "api": {
+        "label": "Scribe API",
+        "position": 3
+    },
+}
+
+def create_category_file(directory, label, position):
+    """Create a _category_.json file in the specified directory."""
+    category_data = {
+        'label': label,
+        'position': position
+    }
+    category_file_path = os.path.join(directory, '_category_.json')
+    with open(category_file_path, 'w') as f:
+        json.dump(category_data, f, indent=2)
+
+def traverse_and_create_rule_category_files():
+    """Traverse directories and create _category_.json files where applicable."""
+    for root, dirs, files in os.walk(RULES_OUTDIR):
+        # Skip the root RULES_OUTDIR directory itself
+        if root == RULES_OUTDIR:
+            continue
+        # Extract the last part of the path to determine the directory name
+        dir_name = os.path.basename(root)
+        if dir_name in CATEGORY_CONFIG:
+            label = CATEGORY_CONFIG[dir_name]['label']
+            position = CATEGORY_CONFIG[dir_name]['position']
+            create_category_file(root, label, position)
+            # Camelize the directory name to create the label
+        else:
+            create_category_file(root, dir_name.title(), 1)
+
+def traverse_and_create_category_files():
+    """Traverse directories and create _category_.json files where applicable."""
+    for root, dirs, files in os.walk(DOCS_ROOT):
+        # Skip the root DOCS_ROOT directory itself
+        if root == DOCS_ROOT:
+            continue
+        # Extract the last part of the path to determine the directory name
+        dir_name = os.path.basename(root)
+        if dir_name in CATEGORY_CONFIG:
+            label = CATEGORY_CONFIG[dir_name]['label']
+            position = CATEGORY_CONFIG[dir_name]['position']
+            create_category_file(root, label, position)
+
+    traverse_and_create_rule_category_files()
 
 def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
@@ -82,7 +166,15 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     file_dir = os.path.dirname(file_path)
     rego_source_link = os.path.join(base_source_git, file_dir, rego_path)
     
+    front_matter = {
+        'sidebar_label': name,
+        'title': name
+    }
+    front_matter_yaml = yaml.dump(front_matter, default_flow_style=False).strip()
+
     md = []
+    md.append(f"---\n{front_matter_yaml}\n---  ")
+    
     md.append(f"# {name}  ")
     md.append(f"**Type:** Rule  ")
     md.append(f"**ID:** `{rule_id}`  ")
@@ -105,31 +197,50 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
 
     skip_evidence = rule_data.get("skip-evidence", False)
     if skip_evidence:
-        md.append(f"> Evidence **IS NOT** required for this rule.  ")
+        md.append(f":::tip ")
+        md.append(f"Evidence **IS NOT** required for this rule.  ")
+        md.append(f"::: ")
 
     fail_on_missing = rule_data.get("fail-on-missing-evidence", False)
     if fail_on_missing:
+        md.append(f":::tip ")
         md.append(f"> Evidence **IS** required for this rule and will fail if missing.  ")
+        md.append(f"::: ")
     else:
-        md.append(f"> Rule Result will be set as 'open' if evidence is missing.  ")
+        md.append(f":::tip ")
+        md.append(f"Rule Result will be set as 'open' if evidence is missing.  ")
+        md.append(f"::: ")
 
     require_scribe_api = rule_data.get("require-scribe-api", False)
     if require_scribe_api:
-        md.append(f"> Rule requires the Scribe API to be enabled.  ")
+        md.append(f":::tip ")
+        md.append(f"Rule requires the Scribe API to be enabled.  ")
+        md.append(f"::: ")
 
     sign_defaults = rule_data.get("evidence", {}).get("signed", False)
 
     if not skip_evidence:
         if sign_defaults:
-            md.append(f"> Signed Evidence for this rule **IS** required by default.  ")
+            md.append(f":::tip ")
+            md.append(f"Signed Evidence for this rule **IS** required by default.  ")
+            md.append(f"::: ")
         else:
-            md.append(f"> Signed Evidence for this rule **IS NOT** required by default but is recommended.  ")
+            md.append(f":::tip ")
+            md.append(f"Signed Evidence for this rule **IS NOT** required by default but is recommended.  ")
+            md.append(f"::: ")
 
     filter_by = rule_data.get("evidence", {}).get("filter-by", [])
+    if (not filter_by) or ("target" in [s.lower() for s in filter_by]):
+        md.append(f":::warning  ")
+        md.append("his rule requires evaluation with a target; without one, the rule will be **disabled**.  ")
+        md.append(f"::: ")
+
     # Create a list seperated by , and last one seperated by "and"
     if len(filter_by) > 0:
         filter_by_md = ", ".join(filter_by[:-1]) + " and " + filter_by[-1] if len(filter_by) > 1 else filter_by[0]
-        md.append(f"> This rule scoped by {filter_by_md}.  ")
+        md.append(f":::info  ")
+        md.append(f"This rule scoped by {filter_by_md}.  ")
+        md.append(f":::  ")
 
     if full_description:
         md.append("\n## Description  ")
@@ -148,7 +259,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
                 
                 filtered_labels = filter_labels(value)
                 # Create a list of labels
-                list_md = "<br>".join([f"- {label}" for label in filtered_labels])
+                list_md = "<br/>".join([f"- {label}" for label in filtered_labels])
                 value = list_md
 
             md.append(f"| {field} | {value} |")
@@ -161,6 +272,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append("| Parameter | Default |")
         md.append("|-----------|---------|")
         for param, value in with_block.items():
+            value = escape_template(value)
             md.append(f"| {param} | {value} |")
     
     md.append("")
@@ -253,6 +365,16 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     help_url = initiative_data.get("help", "")
     source_link = os.path.join(base_source_git, file_path)
     md = []
+
+    front_matter = {
+        'sidebar_label': name,
+        'title': name
+    }
+    front_matter_yaml = yaml.dump(front_matter, default_flow_style=False).strip()
+
+    md = []
+    md.append(f"---\n{front_matter_yaml}\n---  ")
+  
     # Initiative header
     md.append(f"# {name}  ")
     md.append(f"**Type:** Initiative  ")
@@ -273,9 +395,14 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
 
     sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
     if sign_defaults:
-        md.append(f"> Evidence for this initiative **IS** required by default.**\n")
+        md.append(f":::tip  ")
+        md.append(f"Evidence for this initiative **IS** required by default.**  ")
+        md.append(f":::  ")
     else:
-        md.append(f"> Evidence for this initiative **IS NOT** required by default but is recommended.\n")
+        md.append(f":::tip  ")
+        md.append(f"Evidence for this initiative **IS NOT** required by default but is recommended.  ")
+        md.append(f":::  ")
+
     
     if full_description:
         md.append(f"## **Description**\n")
@@ -451,6 +578,8 @@ def main():
 
     for file_path, i_data in initiative_files:
         write_initiative_doc(file_path, i_data, rule_docs_map, base_source_git)
+
+    traverse_and_create_category_files()
 
     print("[OK] Documentation has been generated under docs/v2/")
 

@@ -12,8 +12,9 @@ title: "SLSA L2 Framework\u201D"
 Evaluate SLSA Level 2
 
 **Help:** https://slsa.dev/  
-> Evidence for this initiative **IS NOT** required by default but is recommended.
-
+:::tip  
+Evidence for this initiative **IS NOT** required by default but is recommended.  
+:::  
 ## **Description**
 
 Evaluate SLSA L2 and ensure that provenance information is both recorded and authenticated. This helps protect against unauthorized modifications and ensures artifact integrity."
