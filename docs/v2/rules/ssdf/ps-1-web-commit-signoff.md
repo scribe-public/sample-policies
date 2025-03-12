@@ -12,8 +12,15 @@ PS.1 Require contributors to sign when committing to Github through the web inte
 Requires signoff on web commits to ensure that code changes are reviewed and approved, thereby reducing the risk of unauthorized or malicious modifications.
 
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

@@ -8,8 +8,15 @@
 
 Verify required evidence is signed.
 
+:::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
-> Signed Evidence for this rule **IS** required by default.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS** required by default.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Evidence Requirements  
 | Field | Value |

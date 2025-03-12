@@ -8,8 +8,15 @@
 
 Verify the checksum of each file in one SBOM matches the checksum in a second SBOM.
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS** required by default.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS** required by default.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Evidence Requirements  
 | Field | Value |

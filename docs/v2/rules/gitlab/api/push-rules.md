@@ -8,8 +8,15 @@
 
 Verify GitLab push rules are configured via the API.
 
-> Evidence **IS NOT** required for this rule.  
-> Rule Result will be set as 'open' if evidence is missing.  
+:::tip 
+Evidence **IS NOT** required for this rule.  
+::: 
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

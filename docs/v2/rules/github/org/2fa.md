@@ -8,8 +8,35 @@
 
 Verify `two_factor_requirement` is enabled in the GitHub organization.
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+
+## Mitigation  
+Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access  through compromised credentials.
+
+
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
+
+## Description  
+This rule verifies that two-factor authentication (2FA) is enabled for the organization by examining the provided evidence.
+It checks the organization's details (retrieved from the SARIF or equivalent evidence) and compares the value of the 
+`organization_details.two_factor_requirement_enabled` field against the expected value.
+
+The rule iterates over the organization data in the evidence, and if the `two_factor_requirement_enabled` field does not match 
+the desired value, a violation is recorded. This ensures that all organizational accounts enforce 2FA, providing an additional 
+layer of security against unauthorized access.
+
+**Evidence Requirements:**
+- Evidence must include organization data with a field named `organization_details.two_factor_requirement_enabled`.
+- The data should come from a trusted source (e.g., a GitHub organization scan).
+- The evidence must clearly indicate whether 2FA is enabled.
+
 
 ## Evidence Requirements  
 | Field | Value |

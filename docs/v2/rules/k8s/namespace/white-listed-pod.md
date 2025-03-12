@@ -8,8 +8,15 @@
 
 Verify only pods explicitly listed in the Allowed List run within a Kubernetes namespace.
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Evidence Requirements  
 | Field | Value |

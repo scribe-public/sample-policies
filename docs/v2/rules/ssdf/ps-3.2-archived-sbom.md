@@ -12,6 +12,13 @@ PS.3.2 Archive SBOM
 Archives the SBOM for every build, providing a permanent record of the software components and their relationships, thereby reducing the risk of supply chain attacks.
 
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 

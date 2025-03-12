@@ -12,8 +12,15 @@ PS.1 Require branch protection for the repository
 Enforces branch protection policies to prevent unauthorized commits and maintain the integrity of critical code branches.
 
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

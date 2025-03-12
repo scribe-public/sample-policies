@@ -8,8 +8,32 @@
 
 Verify the artifact referenced in the SARIF report is signed to confirm its integrity.
 
+
+## Mitigation  
+Ensures that the referenced artifact has a valid digital signature, confirming its integrity and authenticity. This prevents tampering and verifies that the artifact originates from a trusted source.
+
+
+:::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
-> Signed Evidence for this rule **IS** required by default.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS** required by default.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
+
+## Description  
+This rule verifies that the artifact referenced in the SARIF report has been cryptographically signed.
+It uses the provided evidence (which must adhere to the SARIF 2.1.0 schema) to confirm that a valid signature exists.
+The rule checks that the evidence indicates the artifact is signed, ensuring that it has not been modified since its creation.
+Additionally, the rule validates that the signature corresponds to one of the expected identities as defined in the configuration.
+
+**Evidence Requirements:**
+- Evidence must be provided in a generic format conforming to SARIF 2.1.0.
+- The SARIF report must indicate that the artifact is signed (i.e., the 'signed' flag is true).
+- The signer's identity should match one of the specified common names or emails in the configuration.
+
 
 ## Evidence Requirements  
 | Field | Value |

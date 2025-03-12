@@ -12,8 +12,15 @@ PS.2 Provide a mechanism to verify the integrity of the image
 Ensures container images are cryptographically verifiable, preventing tampering and confirming their authenticity.
 
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Evidence Requirements  
 | Field | Value |

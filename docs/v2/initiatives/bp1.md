@@ -173,7 +173,7 @@ Before deployment, an artifact’s digest is checked against the expected value 
 
 | Rule ID | Rule Name | Rule Description |
 |---------|-----------|------------------|
-| [require-sbom](https://scribe-security.netlify.app/docs/guides/policy-reference/rules/sbom/evidence-exists.md) | [Require SBOM Existence](../rules/sbom/evidence-exists.md) | Verify the SBOM exists as evidence. |
+| sbom/evidence-exists@v2 | sbom/evidence-exists@v2 |  |
 
 ## [CT-9] Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged
 

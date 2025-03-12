@@ -12,8 +12,15 @@ PS.1 Restrict the maximum number of organization admins
 Limits the number of administrative accounts, minimizing the potential for abuse of elevated privileges.
 
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

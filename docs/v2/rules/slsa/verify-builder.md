@@ -8,9 +8,15 @@
 
 Verify the artifact was created by the specified builder.
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
-> This rule scoped by pipeline and product.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::info  
+This rule scoped by pipeline and product.  
+:::  
 
 ## Evidence Requirements  
 | Field | Value |

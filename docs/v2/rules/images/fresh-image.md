@@ -13,8 +13,18 @@ Verify the image is not older than the specified threshold.
 Prevents the deployment of outdated container images—which may include unpatched vulnerabilities or outdated dependencies— by enforcing a maximum age limit based on the image's build time.
 
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
+:::info  
+This rule scoped by target and product.  
+:::  
 
 ## Description  
 This rule extracts the Image creation timestamp from the SBOM evidence. It searches for a property named "created" 
@@ -34,6 +44,7 @@ the rule flags the image as too old and generates a violation with details on th
 | signed | False |
 | content_body_type | cyclonedx-json |
 | target_type | container |
+| filter-by | ['target', 'product'] |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

@@ -5,7 +5,7 @@
 **Bundle-Version:** `v2`  
 **Source:** [v2/initiatives/slsa.l1.yaml](https://github.com/scribe-public/sample-policies/v2/initiatives/slsa.l1.yaml)  
 
-Evaluate SLSA L1
+Evaluate SLSA Level 1
 
 **Help:** https://slsa.dev/  
 > Evidence for this initiative **IS NOT** required by default but is recommended.

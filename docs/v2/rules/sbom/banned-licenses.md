@@ -8,9 +8,18 @@
 
 Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.
 
-> Rule Result will be set as 'open' if evidence is missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
-> This rule scoped by product and target.  
+:::tip 
+Rule Result will be set as 'open' if evidence is missing.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
+:::info  
+This rule scoped by product and target.  
+:::  
 
 ## Evidence Requirements  
 | Field | Value |
@@ -18,7 +27,6 @@ Verify the number of disallowed licenses in SBOM dependencies remains below the 
 | filter-by | ['product', 'target'] |
 | signed | False |
 | content_body_type | cyclonedx-json |
-| target_type | container |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

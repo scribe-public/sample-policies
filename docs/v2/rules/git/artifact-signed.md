@@ -8,9 +8,18 @@
 
 Verify the Git artifact is signed.
 
+:::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
-> Signed Evidence for this rule **IS** required by default.  
-> This rule scoped by product and target.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS** required by default.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
+:::info  
+This rule scoped by product and target.  
+:::  
 
 ## Evidence Requirements  
 | Field | Value |

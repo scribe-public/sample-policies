@@ -8,8 +8,20 @@
 
 Verify all required evidence exists as defined by the SARIF policy.
 
+
+## Mitigation  
+By confirming that all required evidence exists, this rule guarantees that the outputs from various security scans  (such as vulnerability assessments, configuration checks, and static analysis) are fully represented as evidence.
+
+
+:::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
 
 ## Evidence Requirements  
 | Field | Value |

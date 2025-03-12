@@ -8,9 +8,18 @@
 
 Verify required Git evidence exists.
 
+:::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
-> Signed Evidence for this rule **IS NOT** required by default but is recommended.  
-> This rule scoped by product and target.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS NOT** required by default but is recommended.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
+:::info  
+This rule scoped by product and target.  
+:::  
 
 ## Evidence Requirements  
 | Field | Value |

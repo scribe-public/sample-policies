@@ -14,9 +14,18 @@ Verify the artifact is signed.
 Cryptographic authentication prevents tampering with provenance data, ensuring that only valid and secure build information is used to establish the integrity of the software supply chain.
 
 
+:::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
-> Signed Evidence for this rule **IS** required by default.  
-> This rule scoped by product and target.  
+::: 
+:::tip 
+Signed Evidence for this rule **IS** required by default.  
+::: 
+:::warning  
+his rule requires evaluation with a target; without one, the rule will be **disabled**.  
+::: 
+:::info  
+This rule scoped by product and target.  
+:::  
 
 ## Evidence Requirements  
 | Field | Value |
