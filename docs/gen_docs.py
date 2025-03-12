@@ -92,11 +92,11 @@ def escape_template(value):
 CATEGORY_CONFIG = {
     'initiatives': {
         'label': 'Reference: Policies and Configuration Guide',
-        'position': 1
+        'position': 999
     },
     'rules': {
         'label': 'Rule Configuration',
-        'position': 2
+        'position': 999
     },
     "rules/api": {
         "label": "Scribe API",
