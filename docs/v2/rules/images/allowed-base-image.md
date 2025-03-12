@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Base Image
+title: Allowed Base Image
+---  
 # Allowed Base Image  
 **Type:** Rule  
 **ID:** `images-allowed-base-image`  

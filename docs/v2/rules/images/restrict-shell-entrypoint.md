@@ -1,3 +1,7 @@
+---
+sidebar_label: Disallow Container Shell Entrypoint
+title: Disallow Container Shell Entrypoint
+---  
 # Disallow Container Shell Entrypoint  
 **Type:** Rule  
 **ID:** `images-disallow-shell-access`  

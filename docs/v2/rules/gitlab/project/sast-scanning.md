@@ -1,3 +1,7 @@
+---
+sidebar_label: Run SAST Scanning in GitLab Project
+title: Run SAST Scanning in GitLab Project
+---  
 # Run SAST Scanning in GitLab Project  
 **Type:** Rule  
 **ID:** `gitlab-project-sast-scanning`  
@@ -25,5 +29,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=project |
+| labels | - platform=gitlab<br/>- asset_type=project |
 

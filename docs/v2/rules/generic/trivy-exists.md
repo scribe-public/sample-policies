@@ -1,3 +1,7 @@
+---
+sidebar_label: Required Trivy Evidence Exists
+title: Required Trivy Evidence Exists
+---  
 # Required Trivy Evidence Exists  
 **Type:** Rule  
 **ID:** `required-trivy-evidence`  

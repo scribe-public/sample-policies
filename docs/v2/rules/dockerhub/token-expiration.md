@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify DockerHub Tokens are Active
+title: Verify DockerHub Tokens are Active
+---  
 # Verify DockerHub Tokens are Active  
 **Type:** Rule  
 **ID:** `dockerhub-token-expiration`  

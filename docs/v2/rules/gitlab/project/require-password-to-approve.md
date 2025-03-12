@@ -1,3 +1,7 @@
+---
+sidebar_label: Require Password for Approvals in GitLab Project
+title: Require Password for Approvals in GitLab Project
+---  
 # Require Password for Approvals in GitLab Project  
 **Type:** Rule  
 **ID:** `gitlab-project-require-password-to-approve`  
@@ -25,7 +29,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=project |
+| labels | - platform=gitlab<br/>- asset_type=project |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

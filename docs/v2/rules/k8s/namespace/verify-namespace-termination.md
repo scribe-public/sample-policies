@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Namespace Termination
+title: Verify Namespace Termination
+---  
 # Verify Namespace Termination  
 **Type:** Rule  
 **ID:** `k8s-namespace-verify-namespace-termination`  

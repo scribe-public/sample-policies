@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Default Branch Protection
+title: Verify Default Branch Protection
+---  
 # Verify Default Branch Protection  
 **Type:** Rule  
 **ID:** `github-repo-default-branch-protection`  
@@ -25,5 +29,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=github<br>- asset_type=repository |
+| labels | - platform=github<br/>- asset_type=repository |
 

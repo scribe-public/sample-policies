@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify No Critical or High Vulnerabilities
+title: Verify No Critical or High Vulnerabilities
+---  
 # Verify No Critical or High Vulnerabilities  
 **Type:** Rule  
 **ID:** `scribe-cve`  
@@ -35,4 +39,4 @@ This rule scoped by product and target.
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| superset | {'cve': {'max': 0, 'severity': 6}} |
+| superset | `{'cve': {'max': 0, 'severity': 6}}` |

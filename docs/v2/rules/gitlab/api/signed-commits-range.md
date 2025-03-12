@@ -1,3 +1,7 @@
+---
+sidebar_label: Sign Selected Commit Range in GitLab
+title: Sign Selected Commit Range in GitLab
+---  
 # Sign Selected Commit Range in GitLab  
 **Type:** Rule  
 **ID:** `gitlab-api-signed-commits-range`  

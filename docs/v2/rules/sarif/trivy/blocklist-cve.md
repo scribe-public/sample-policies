@@ -1,3 +1,7 @@
+---
+sidebar_label: Trivy Blocklist CVE Check
+title: Trivy Blocklist CVE Check
+---  
 # Trivy Blocklist CVE Check  
 **Type:** Rule  
 **ID:** `trivy-blocklist-cve`  

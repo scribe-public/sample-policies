@@ -1,3 +1,7 @@
+---
+sidebar_label: K8s Jailbreak
+title: K8s Jailbreak
+---  
 # K8s Jailbreak  
 **Type:** Rule  
 **ID:** `k8s-jailbreak`  

@@ -1,3 +1,7 @@
+---
+sidebar_label: Disallow Unsigned Commits
+title: Disallow Unsigned Commits
+---  
 # Disallow Unsigned Commits  
 **Type:** Rule  
 **ID:** `git-disallow-unsigned-commits`  

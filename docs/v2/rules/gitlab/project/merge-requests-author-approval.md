@@ -1,3 +1,7 @@
+---
+sidebar_label: Disable Author Approval for Merge Requests in GitLab
+title: Disable Author Approval for Merge Requests in GitLab
+---  
 # Disable Author Approval for Merge Requests in GitLab  
 **Type:** Rule  
 **ID:** `gitlab-project-merge-requests-author-approval`  
@@ -25,7 +29,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=project |
+| labels | - platform=gitlab<br/>- asset_type=project |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

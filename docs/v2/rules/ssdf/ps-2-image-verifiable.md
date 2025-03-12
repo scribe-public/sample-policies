@@ -1,3 +1,7 @@
+---
+sidebar_label: Image-verifiable
+title: Image-verifiable
+---  
 # Image-verifiable  
 **Type:** Rule  
 **ID:** `PS.2`  

@@ -1,3 +1,7 @@
+---
+sidebar_label: Banned Ports
+title: Banned Ports
+---  
 # Banned Ports  
 **Type:** Rule  
 **ID:** `images-banned-ports`  
@@ -34,4 +38,4 @@ This rule scoped by target and product.
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| banned_ports | [{'port': '3000', 'protocol': 'tcp'}] |
+| banned_ports | ["`{'port': '3000', 'protocol': 'tcp'}`"] |

@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Repository Admins
+title: Allowed Repository Admins
+---  
 # Allowed Repository Admins  
 **Type:** Rule  
 **ID:** `bb-repo-allowed-repository-admins`  
@@ -25,7 +29,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=bitbucket<br>- asset_type=repository |
+| labels | - platform=bitbucket<br/>- asset_type=repository |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

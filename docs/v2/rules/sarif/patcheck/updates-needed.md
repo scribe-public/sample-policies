@@ -1,3 +1,7 @@
+---
+sidebar_label: SARIF Update Needed
+title: SARIF Update Needed
+---  
 # SARIF Update Needed  
 **Type:** Rule  
 **ID:** `sarif-update-needed`  

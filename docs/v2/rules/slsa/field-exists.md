@@ -1,3 +1,7 @@
+---
+sidebar_label: SLSA Field Exists in Provenance Document
+title: SLSA Field Exists in Provenance Document
+---  
 # SLSA Field Exists in Provenance Document  
 **Type:** Rule  
 **ID:** `slsa-field-exists`  

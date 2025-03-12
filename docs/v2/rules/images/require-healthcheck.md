@@ -1,3 +1,7 @@
+---
+sidebar_label: Require Healthcheck
+title: Require Healthcheck
+---  
 # Require Healthcheck  
 **Type:** Rule  
 **ID:** `images-require-healthcheck`  

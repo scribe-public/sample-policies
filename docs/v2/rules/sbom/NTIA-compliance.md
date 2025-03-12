@@ -1,3 +1,7 @@
+---
+sidebar_label: NTIA SBOM Compliance Check
+title: NTIA SBOM Compliance Check
+---  
 # NTIA SBOM Compliance Check  
 **Type:** Rule  
 **ID:** `NTIA-compliance`  
@@ -37,5 +41,5 @@ This rule scoped by product and target.
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| required_author | {} |
-| required_supplier | {} |
+| required_author | `{}` |
+| required_supplier | `{}` |

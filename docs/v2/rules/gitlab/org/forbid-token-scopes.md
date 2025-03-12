@@ -1,3 +1,7 @@
+---
+sidebar_label: Forbid Token Scopes in GitLab Organization
+title: Forbid Token Scopes in GitLab Organization
+---  
 # Forbid Token Scopes in GitLab Organization  
 **Type:** Rule  
 **ID:** `gitlab-org-disallowed-token-scope`  
@@ -25,7 +29,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=organization |
+| labels | - platform=gitlab<br/>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

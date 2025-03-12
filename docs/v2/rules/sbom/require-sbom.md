@@ -1,3 +1,7 @@
+---
+sidebar_label: Require SBOM Existence
+title: Require SBOM Existence
+---  
 # Require SBOM Existence  
 **Type:** Rule  
 **ID:** `require-sbom`  

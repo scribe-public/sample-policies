@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify GitHub Organization Requires Signoff on Web Commits
+title: Verify GitHub Organization Requires Signoff on Web Commits
+---  
 # Verify GitHub Organization Requires Signoff on Web Commits  
 **Type:** Rule  
 **ID:** `github-org-web-commit-signoff`  
@@ -25,5 +29,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=github<br>- asset_type=organization |
+| labels | - platform=github<br/>- asset_type=organization |
 

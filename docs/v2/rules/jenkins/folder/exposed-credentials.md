@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Exposed Credentials
+title: Verify Exposed Credentials
+---  
 # Verify Exposed Credentials  
 **Type:** Rule  
 **ID:** `jenkins-exposed-credentials`  

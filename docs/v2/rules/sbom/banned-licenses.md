@@ -1,3 +1,7 @@
+---
+sidebar_label: Restrict Disallowed SBOM Licenses
+title: Restrict Disallowed SBOM Licenses
+---  
 # Restrict Disallowed SBOM Licenses  
 **Type:** Rule  
 **ID:** `sbom-disallowed-licenses`  

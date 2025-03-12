@@ -1,3 +1,7 @@
+---
+sidebar_label: SSDF Client Initiative
+title: SSDF Client Initiative
+---  
 # SSDF Client Initiative  
 **Type:** Initiative  
 **ID:** `SSDF`  

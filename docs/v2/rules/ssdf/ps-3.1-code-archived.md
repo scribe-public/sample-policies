@@ -1,3 +1,7 @@
+---
+sidebar_label: Code archived
+title: Code archived
+---  
 # Code archived  
 **Type:** Rule  
 **ID:** `PS.3.1`  

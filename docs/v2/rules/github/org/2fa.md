@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify two_factor_requirement_enabled setting
+title: Verify two_factor_requirement_enabled setting
+---  
 # Verify two_factor_requirement_enabled setting  
 **Type:** Rule  
 **ID:** `github-org-2fa`  
@@ -45,7 +49,7 @@ layer of security against unauthorized access.
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=github<br>- asset_type=organization |
+| labels | - platform=github<br/>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

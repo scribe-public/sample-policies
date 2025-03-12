@@ -1,3 +1,7 @@
+---
+sidebar_label: Venafi Blueprint
+title: Venafi Blueprint
+---  
 # Venafi Blueprint  
 **Type:** Initiative  
 **ID:** `blueprint-securesoftwarepipeline`  

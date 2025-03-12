@@ -1,3 +1,7 @@
+---
+sidebar_label: Enforce 2FA
+title: Enforce 2FA
+---  
 # Enforce 2FA  
 **Type:** Rule  
 **ID:** `PS.1.1`  

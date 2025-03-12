@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify IaC Misconfiguration Threshold in Trivy SARIF
+title: Verify IaC Misconfiguration Threshold in Trivy SARIF
+---  
 # Verify IaC Misconfiguration Threshold in Trivy SARIF  
 **Type:** Rule  
 **ID:** `trivy-iac-findings`  

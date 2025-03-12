@@ -1,3 +1,7 @@
+---
+sidebar_label: Disallow Force Push in GitLab Project
+title: Disallow Force Push in GitLab Project
+---  
 # Disallow Force Push in GitLab Project  
 **Type:** Rule  
 **ID:** `gitlab-project-disallow-force-push`  
@@ -25,7 +29,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=project |
+| labels | - platform=gitlab<br/>- asset_type=project |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

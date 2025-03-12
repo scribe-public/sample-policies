@@ -1,3 +1,7 @@
+---
+sidebar_label: GitLab pipeline verify labels exist
+title: GitLab pipeline verify labels exist
+---  
 # GitLab pipeline verify labels exist  
 **Type:** Rule  
 **ID:** `gitlab-pipeline-verify-labels-exist`  

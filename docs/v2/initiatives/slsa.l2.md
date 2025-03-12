@@ -1,3 +1,7 @@
+---
+sidebar_label: "SLSA L2 Framework\u201D"
+title: "SLSA L2 Framework\u201D"
+---  
 # SLSA L2 Framework”  
 **Type:** Initiative  
 **ID:** `SLSA.L2`  

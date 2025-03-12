@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Image Labels
+title: Verify Image Labels
+---  
 # Verify Image Labels  
 **Type:** Rule  
 **ID:** `image-labels`  

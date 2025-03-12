@@ -1,3 +1,7 @@
+---
+sidebar_label: Restrict Coding Permissions
+title: Restrict Coding Permissions
+---  
 # Restrict Coding Permissions  
 **Type:** Rule  
 **ID:** `git-coding-permissions`  

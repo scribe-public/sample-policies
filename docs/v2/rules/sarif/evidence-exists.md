@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Required Evidence in SARIF
+title: Verify Required Evidence in SARIF
+---  
 # Verify Required Evidence in SARIF  
 **Type:** Rule  
 **ID:** `required-sarif-evidence`  

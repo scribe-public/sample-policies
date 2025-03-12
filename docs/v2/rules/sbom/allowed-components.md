@@ -1,3 +1,7 @@
+---
+sidebar_label: Enforce Allowed SBOM Components
+title: Enforce Allowed SBOM Components
+---  
 # Enforce Allowed SBOM Components  
 **Type:** Rule  
 **ID:** `sbom-allowed-components`  

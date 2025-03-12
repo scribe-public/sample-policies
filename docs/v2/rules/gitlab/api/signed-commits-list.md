@@ -1,3 +1,7 @@
+---
+sidebar_label: Sign Selected Commits in GitLab
+title: Sign Selected Commits in GitLab
+---  
 # Sign Selected Commits in GitLab  
 **Type:** Rule  
 **ID:** `gitlab-api-signed-commits-list`  

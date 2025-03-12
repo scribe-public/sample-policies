@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Attack Vector Threshold in Trivy SARIF
+title: Verify Attack Vector Threshold in Trivy SARIF
+---  
 # Verify Attack Vector Threshold in Trivy SARIF  
 **Type:** Rule  
 **ID:** `trivy-attack-vectors`  

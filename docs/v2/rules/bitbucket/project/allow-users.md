@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Project Users
+title: Allowed Project Users
+---  
 # Allowed Project Users  
 **Type:** Rule  
 **ID:** `bb-project-allowed-project-users`  
@@ -24,7 +28,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=bitbucket<br>- asset_type=project |
+| labels | - platform=bitbucket<br/>- asset_type=project |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

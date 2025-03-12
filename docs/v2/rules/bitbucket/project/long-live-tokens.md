@@ -1,3 +1,7 @@
+---
+sidebar_label: Prevent Long-Lived Tokens
+title: Prevent Long-Lived Tokens
+---  
 # Prevent Long-Lived Tokens  
 **Type:** Rule  
 **ID:** `bb-project-long-live-tokens`  
@@ -24,7 +28,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | signed | False |
 | content_body_type | generic |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - asset_type=project<br>- platform=bitbucket<br>- platform_instance=bitbucket_dc |
+| labels | - asset_type=project<br/>- platform=bitbucket<br/>- platform_instance=bitbucket_dc |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

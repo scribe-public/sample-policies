@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Trivy SARIF Report Compliance
+title: Verify Trivy SARIF Report Compliance
+---  
 # Verify Trivy SARIF Report Compliance  
 **Type:** Rule  
 **ID:** `trivy-report`  

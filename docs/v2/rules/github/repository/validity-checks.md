@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify secret scanning.
+title: Verify secret scanning.
+---  
 # Verify secret scanning.  
 **Type:** Rule  
 **ID:** `github-repo-validity-checks`  
@@ -25,5 +29,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=github<br>- asset_type=repository |
+| labels | - platform=github<br/>- asset_type=repository |
 

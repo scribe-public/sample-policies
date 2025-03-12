@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Tool Evidence in SARIF
+title: Verify Tool Evidence in SARIF
+---  
 # Verify Tool Evidence in SARIF  
 **Type:** Rule  
 **ID:** `sarif-tool-evidence`  

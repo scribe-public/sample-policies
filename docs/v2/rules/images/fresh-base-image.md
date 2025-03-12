@@ -1,3 +1,7 @@
+---
+sidebar_label: Fresh Base Image
+title: Fresh Base Image
+---  
 # Fresh Base Image  
 **Type:** Rule  
 **ID:** `images-fresh-base-image`  

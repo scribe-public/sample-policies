@@ -1,3 +1,7 @@
+---
+sidebar_label: Ensure Secrets Scanning Passes
+title: Ensure Secrets Scanning Passes
+---  
 # Ensure Secrets Scanning Passes  
 **Type:** Rule  
 **ID:** `gitlab-project-secrets-scan-pass`  
@@ -25,5 +29,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=project |
+| labels | - platform=gitlab<br/>- asset_type=project |
 

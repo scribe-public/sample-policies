@@ -1,3 +1,7 @@
+---
+sidebar_label: Require Image Labels
+title: Require Image Labels
+---  
 # Require Image Labels  
 **Type:** Rule  
 **ID:** `required-image-labels`  

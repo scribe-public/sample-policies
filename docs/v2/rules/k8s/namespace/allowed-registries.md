@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Namespace Registries
+title: Allowed Namespace Registries
+---  
 # Allowed Namespace Registries  
 **Type:** Rule  
 **ID:** `k8s-namespace-allowed-registries`  

@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify IaC Misconfiguration Threshold in SARIF
+title: Verify IaC Misconfiguration Threshold in SARIF
+---  
 # Verify IaC Misconfiguration Threshold in SARIF  
 **Type:** Rule  
 **ID:** `sarif-iac-findings`  

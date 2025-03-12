@@ -1,3 +1,7 @@
+---
+sidebar_label: Require SBOM Signature
+title: Require SBOM Signature
+---  
 # Require SBOM Signature  
 **Type:** Rule  
 **ID:** `sbom-signed`  
@@ -31,4 +35,4 @@ This rule scoped by product and target.
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| identity | {'common-names': [], 'emails': []} |
+| identity | `{'common-names': [], 'emails': []}` |

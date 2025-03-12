@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify that provenance is authenticated
+title: Verify that provenance is authenticated
+---  
 # Verify that provenance is authenticated  
 **Type:** Rule  
 **ID:** `SLSA.L2`  
@@ -37,4 +41,4 @@ This rule scoped by product and target.
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| identity | {'common-names': [], 'emails': []} |
+| identity | `{'common-names': [], 'emails': []}` |

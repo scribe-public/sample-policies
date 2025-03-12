@@ -1,3 +1,7 @@
+---
+sidebar_label: Blocklist Container User
+title: Blocklist Container User
+---  
 # Blocklist Container User  
 **Type:** Rule  
 **ID:** `images-blocklist-user`  

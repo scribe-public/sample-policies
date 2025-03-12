@@ -1,3 +1,7 @@
+---
+sidebar_label: Enforce SBOM License Completeness
+title: Enforce SBOM License Completeness
+---  
 # Enforce SBOM License Completeness  
 **Type:** Rule  
 **ID:** `sbom-require-complete-license-set`  

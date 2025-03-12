@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify no unused Dockerhub
+title: Verify no unused Dockerhub
+---  
 # Verify no unused Dockerhub  
 **Type:** Rule  
 **ID:** `dockerhub-token-not-used`  

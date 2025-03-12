@@ -1,3 +1,7 @@
+---
+sidebar_label: Repo private
+title: Repo private
+---  
 # Repo private  
 **Type:** Rule  
 **ID:** `PS.1.4`  

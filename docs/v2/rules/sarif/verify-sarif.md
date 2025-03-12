@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Rule Compliance in SARIF
+title: Verify Rule Compliance in SARIF
+---  
 # Verify Rule Compliance in SARIF  
 **Type:** Rule  
 **ID:** `sarif-policy`  

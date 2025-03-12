@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Secret_Scanning_Validity_Checks Setting in Security_And_Analysis
+title: Verify Secret_Scanning_Validity_Checks Setting in Security_And_Analysis
+---  
 # Verify Secret_Scanning_Validity_Checks Setting in Security_And_Analysis  
 **Type:** Rule  
 **ID:** `github-org-validity-checks-sa`  
@@ -25,5 +29,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=github<br>- asset_type=organization |
+| labels | - platform=github<br/>- asset_type=organization |
 

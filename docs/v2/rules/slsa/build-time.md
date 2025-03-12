@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify build time
+title: Verify build time
+---  
 # Verify build time  
 **Type:** Rule  
 **ID:** `slsa-build-time`  

@@ -1,3 +1,7 @@
+---
+sidebar_label: Disallow Specific Users in SBOM
+title: Disallow Specific Users in SBOM
+---  
 # Disallow Specific Users in SBOM  
 **Type:** Rule  
 **ID:** `sbom-disallowed-users`  

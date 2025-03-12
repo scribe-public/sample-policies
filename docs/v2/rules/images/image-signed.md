@@ -1,3 +1,7 @@
+---
+sidebar_label: Require Signed Container Image
+title: Require Signed Container Image
+---  
 # Require Signed Container Image  
 **Type:** Rule  
 **ID:** `images-require-signed-image`  
@@ -36,4 +40,4 @@ This rule scoped by product and target.
 | Parameter | Default |
 |-----------|---------|
 | skip_image_regex | ['.*alpine.*'] |
-| identity | {'emails': [], 'common-names': []} |
+| identity | `{'emails': [], 'common-names': []}` |

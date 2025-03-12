@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify that artifact has no disallowed builder dependencies
+title: Verify that artifact has no disallowed builder dependencies
+---  
 # Verify that artifact has no disallowed builder dependencies  
 **Type:** Rule  
 **ID:** `slsa-verify-byproducts`  

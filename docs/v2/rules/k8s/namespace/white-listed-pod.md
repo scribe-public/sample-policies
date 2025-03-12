@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Pods in Namespace
+title: Allowed Pods in Namespace
+---  
 # Allowed Pods in Namespace  
 **Type:** Rule  
 **ID:** `k8s-namespace-white-listed-pod`  

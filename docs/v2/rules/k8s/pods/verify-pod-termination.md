@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Pod Termination
+title: Verify Pod Termination
+---  
 # Verify Pod Termination  
 **Type:** Rule  
 **ID:** `k8s-pods-verify-pod-termination`  

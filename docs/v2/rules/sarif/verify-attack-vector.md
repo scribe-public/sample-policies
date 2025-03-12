@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Attack Vector Exists in SARIF
+title: Verify Attack Vector Exists in SARIF
+---  
 # Verify Attack Vector Exists in SARIF  
 **Type:** Rule  
 **ID:** `sarif-attack-vectors`  

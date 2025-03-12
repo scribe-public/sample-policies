@@ -1,3 +1,7 @@
+---
+sidebar_label: Limit admins
+title: Limit admins
+---  
 # Limit admins  
 **Type:** Rule  
 **ID:** `PS.1.3`  

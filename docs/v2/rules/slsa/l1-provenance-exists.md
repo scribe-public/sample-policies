@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Provenance Document Exists
+title: Verify Provenance Document Exists
+---  
 # Verify Provenance Document Exists  
 **Type:** Rule  
 **ID:** `SLSA.L1`  

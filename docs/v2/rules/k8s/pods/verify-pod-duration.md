@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Pod Runtime Duration
+title: Verify Pod Runtime Duration
+---  
 # Verify Pod Runtime Duration  
 **Type:** Rule  
 **ID:** `k8s-pods-verify-pod-duration`  

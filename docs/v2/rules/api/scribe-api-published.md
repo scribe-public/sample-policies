@@ -1,3 +1,7 @@
+---
+sidebar_label: Scribe Published Policy
+title: Scribe Published Policy
+---  
 # Scribe Published Policy  
 **Type:** Rule  
 **ID:** `scribe-published-policy`  
@@ -30,4 +34,4 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| superset | {'published': None} |
+| superset | `{'published': None}` |

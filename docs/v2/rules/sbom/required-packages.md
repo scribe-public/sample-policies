@@ -1,3 +1,7 @@
+---
+sidebar_label: Enforce SBOM Dependencies
+title: Enforce SBOM Dependencies
+---  
 # Enforce SBOM Dependencies  
 **Type:** Rule  
 **ID:** `sbom-required-dependencies`  

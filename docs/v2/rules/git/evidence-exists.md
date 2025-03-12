@@ -1,3 +1,7 @@
+---
+sidebar_label: Required Git Evidence Exists
+title: Required Git Evidence Exists
+---  
 # Required Git Evidence Exists  
 **Type:** Rule  
 **ID:** `required-git-evidence`  

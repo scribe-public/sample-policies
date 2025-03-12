@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Semgrep Rule in SARIF
+title: Verify Semgrep Rule in SARIF
+---  
 # Verify Semgrep Rule in SARIF  
 **Type:** Rule  
 **ID:** `sarif-semgrep-report`  

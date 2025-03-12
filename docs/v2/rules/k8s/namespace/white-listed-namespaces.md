@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Namespaces
+title: Allowed Namespaces
+---  
 # Allowed Namespaces  
 **Type:** Rule  
 **ID:** `k8s-namespace-white-listed-namespaces`  

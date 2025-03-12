@@ -1,3 +1,7 @@
+---
+sidebar_label: Git Artifact Signed
+title: Git Artifact Signed
+---  
 # Git Artifact Signed  
 **Type:** Rule  
 **ID:** `git-artifact-signed`  
@@ -32,4 +36,4 @@ This rule scoped by product and target.
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| identity | {'common-names': [], 'emails': []} |
+| identity | `{'common-names': [], 'emails': []}` |

@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Namespace Runtime Duration
+title: Verify Namespace Runtime Duration
+---  
 # Verify Namespace Runtime Duration  
 **Type:** Rule  
 **ID:** `k8s-namespace-verify-namespace-duration`  

@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify Selected Commits Are Signed API
+title: Verify Selected Commits Are Signed API
+---  
 # Verify Selected Commits Are Signed API  
 **Type:** Rule  
 **ID:** `github-api-signed-commits-list`  

@@ -1,3 +1,7 @@
+---
+sidebar_label: Enable Member Check for GitLab Project
+title: Enable Member Check for GitLab Project
+---  
 # Enable Member Check for GitLab Project  
 **Type:** Rule  
 **ID:** `gitlab-project-verify-member_check`  
@@ -25,5 +29,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=project |
+| labels | - platform=gitlab<br/>- asset_type=project |
 

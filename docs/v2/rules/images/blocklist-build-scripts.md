@@ -1,3 +1,7 @@
+---
+sidebar_label: Restrict Build Scripts
+title: Restrict Build Scripts
+---  
 # Restrict Build Scripts  
 **Type:** Rule  
 **ID:** `images-disallowed-build-script`  

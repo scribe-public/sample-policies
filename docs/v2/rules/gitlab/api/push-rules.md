@@ -1,3 +1,7 @@
+---
+sidebar_label: Set Push Rules in GitLab
+title: Set Push Rules in GitLab
+---  
 # Set Push Rules in GitLab  
 **Type:** Rule  
 **ID:** `gitlab-api-push-rules`  
@@ -21,6 +25,6 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| api_token | {{ .Args.Token }} |
-| project | {{ .Args.Project }} |
-| push_rule | {'commit_message_regex': '', 'commit_message_negative_regex': None, 'branch_name_regex': None, 'deny_delete_tag': False, 'member_check': False, 'prevent_secrets': False, 'author_email_regex': '', 'file_name_regex': 'abc', 'max_file_size': 100, 'commit_committer_name_check': None, 'reject_unsigned_commits': None} |
+| api_token | `{{ .Args.Token }}` |
+| project | `{{ .Args.Project }}` |
+| push_rule | `{'commit_message_regex': '', 'commit_message_negative_regex': None, 'branch_name_regex': None, 'deny_delete_tag': False, 'member_check': False, 'prevent_secrets': False, 'author_email_regex': '', 'file_name_regex': 'abc', 'max_file_size': 100, 'commit_committer_name_check': None, 'reject_unsigned_commits': None}` |

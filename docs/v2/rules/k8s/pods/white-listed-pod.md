@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Pods
+title: Allowed Pods
+---  
 # Allowed Pods  
 **Type:** Rule  
 **ID:** `k8s-pods-white-listed-pod`  

@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Container Images
+title: Allowed Container Images
+---  
 # Allowed Container Images  
 **Type:** Rule  
 **ID:** `k8s-namespace-blocked-images`  

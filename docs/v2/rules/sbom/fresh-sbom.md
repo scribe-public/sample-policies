@@ -1,3 +1,7 @@
+---
+sidebar_label: Enforce SBOM Freshness
+title: Enforce SBOM Freshness
+---  
 # Enforce SBOM Freshness  
 **Type:** Rule  
 **ID:** `fresh-sbom`  

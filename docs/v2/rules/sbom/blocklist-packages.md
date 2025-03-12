@@ -1,3 +1,7 @@
+---
+sidebar_label: Restrict Disallowed Dependencies
+title: Restrict Disallowed Dependencies
+---  
 # Restrict Disallowed Dependencies  
 **Type:** Rule  
 **ID:** `sbom-disallow-dependencies`  

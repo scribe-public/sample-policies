@@ -1,3 +1,7 @@
+---
+sidebar_label: Require Specified SBOM Licenses
+title: Require Specified SBOM Licenses
+---  
 # Require Specified SBOM Licenses  
 **Type:** Rule  
 **ID:** `sbom-hf-license`  

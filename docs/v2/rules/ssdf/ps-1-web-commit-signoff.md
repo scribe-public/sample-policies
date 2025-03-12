@@ -1,3 +1,7 @@
+---
+sidebar_label: Require signoff on web commits
+title: Require signoff on web commits
+---  
 # Require signoff on web commits  
 **Type:** Rule  
 **ID:** `PS.1.5`  

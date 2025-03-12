@@ -1,3 +1,7 @@
+---
+sidebar_label: Disallow Commits to Main Branch
+title: Disallow Commits to Main Branch
+---  
 # Disallow Commits to Main Branch  
 **Type:** Rule  
 **ID:** `git-disallow-commits-to-main`  

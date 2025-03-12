@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify that artifact was created by the specified builder
+title: Verify that artifact was created by the specified builder
+---  
 # Verify that artifact was created by the specified builder  
 **Type:** Rule  
 **ID:** `slsa-verify-builder`  
@@ -29,4 +33,4 @@ This rule scoped by pipeline and product.
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| id | {{ .Env.HOSTNAME }} |
+| id | `{{ .Env.HOSTNAME }}` |

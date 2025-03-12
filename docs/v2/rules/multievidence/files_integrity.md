@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify File Integrity
+title: Verify File Integrity
+---  
 # Verify File Integrity  
 **Type:** Rule  
 **ID:** `file-integrity`  
@@ -29,5 +33,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| ref_sbom | {{ .Env.REF_SBOM_DATA }} |
+| ref_sbom | `{{ .Env.REF_SBOM_DATA }}` |
 | path_prefix | pkg:file/ |

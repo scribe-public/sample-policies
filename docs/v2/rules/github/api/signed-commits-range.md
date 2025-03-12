@@ -1,3 +1,7 @@
+---
+sidebar_label: Disallow Unsigned Commits In Time Range
+title: Disallow Unsigned Commits In Time Range
+---  
 # Disallow Unsigned Commits In Time Range  
 **Type:** Rule  
 **ID:** `signed-commits-range`  

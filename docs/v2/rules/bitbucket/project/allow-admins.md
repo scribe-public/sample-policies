@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Project Admins
+title: Allowed Project Admins
+---  
 # Allowed Project Admins  
 **Type:** Rule  
 **ID:** `bb-project-allowed-project-admins`  
@@ -24,7 +28,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=bitbucket<br>- asset_type=project |
+| labels | - platform=bitbucket<br/>- asset_type=project |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

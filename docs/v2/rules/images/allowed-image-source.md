@@ -1,3 +1,7 @@
+---
+sidebar_label: Allowed Main Image Source
+title: Allowed Main Image Source
+---  
 # Allowed Main Image Source  
 **Type:** Rule  
 **ID:** `images-allowed-image-source`  

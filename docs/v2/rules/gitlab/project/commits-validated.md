@@ -1,3 +1,7 @@
+---
+sidebar_label: Validate All Commits in GitLab Project
+title: Validate All Commits in GitLab Project
+---  
 # Validate All Commits in GitLab Project  
 **Type:** Rule  
 **ID:** `gitlab-project-all-commits-validated`  
@@ -25,5 +29,5 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=project |
+| labels | - platform=gitlab<br/>- asset_type=project |
 

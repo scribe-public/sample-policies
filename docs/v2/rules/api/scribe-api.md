@@ -1,3 +1,7 @@
+---
+sidebar_label: Apply Scribe Template Policy
+title: Apply Scribe Template Policy
+---  
 # Apply Scribe Template Policy  
 **Type:** Rule  
 **ID:** `scribe-template`  

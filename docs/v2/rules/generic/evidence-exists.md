@@ -1,3 +1,7 @@
+---
+sidebar_label: Required Generic Evidence Exists
+title: Required Generic Evidence Exists
+---  
 # Required Generic Evidence Exists  
 **Type:** Rule  
 **ID:** `generic-required-evidence`  

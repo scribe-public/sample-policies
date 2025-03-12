@@ -1,3 +1,7 @@
+---
+sidebar_label: Disallow dependencies in SLSA Provenance Document
+title: Disallow dependencies in SLSA Provenance Document
+---  
 # Disallow dependencies in SLSA Provenance Document  
 **Type:** Rule  
 **ID:** `slsa-builder-unallowed-dependencies`  

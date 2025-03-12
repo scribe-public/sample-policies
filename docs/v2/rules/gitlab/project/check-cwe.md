@@ -1,3 +1,7 @@
+---
+sidebar_label: Check CWE Compliance
+title: Check CWE Compliance
+---  
 # Check CWE Compliance  
 **Type:** Rule  
 **ID:** `gitlab-project-check-cwe`  
@@ -25,7 +29,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=gitlab<br>- asset_type=project |
+| labels | - platform=gitlab<br/>- asset_type=project |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

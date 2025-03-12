@@ -1,3 +1,7 @@
+---
+sidebar_label: Branch protected
+title: Branch protected
+---  
 # Branch protected  
 **Type:** Rule  
 **ID:** `PS.1.2`  

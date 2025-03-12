@@ -1,3 +1,7 @@
+---
+sidebar_label: Generic Artifact Signed
+title: Generic Artifact Signed
+---  
 # Generic Artifact Signed  
 **Type:** Rule  
 **ID:** `generic-artifact-signed`  

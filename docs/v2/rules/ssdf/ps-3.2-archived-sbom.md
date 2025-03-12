@@ -1,3 +1,7 @@
+---
+sidebar_label: SBOM archived
+title: SBOM archived
+---  
 # SBOM archived  
 **Type:** Rule  
 **ID:** `PS.3.2`  

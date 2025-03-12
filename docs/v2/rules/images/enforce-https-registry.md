@@ -1,3 +1,7 @@
+---
+sidebar_label: 4.2.1 Registry Connection HTTPS
+title: 4.2.1 Registry Connection HTTPS
+---  
 # 4.2.1 Registry Connection HTTPS  
 **Type:** Rule  
 **ID:** `images-registry-https-check`  

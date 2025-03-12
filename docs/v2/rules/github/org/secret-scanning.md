@@ -1,3 +1,7 @@
+---
+sidebar_label: Verify secret_scanning_enabled_for_new_repositories setting
+title: Verify secret_scanning_enabled_for_new_repositories setting
+---  
 # Verify secret_scanning_enabled_for_new_repositories setting  
 **Type:** Rule  
 **ID:** `github-org-secret-scanning`  
@@ -25,7 +29,7 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - platform=github<br>- asset_type=organization |
+| labels | - platform=github<br/>- asset_type=organization |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |

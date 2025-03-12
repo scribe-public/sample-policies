@@ -1,3 +1,7 @@
+---
+sidebar_label: Forbid Large Images
+title: Forbid Large Images
+---  
 # Forbid Large Images  
 **Type:** Rule  
 **ID:** `images-project-large-image`  
