@@ -187,8 +187,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     full_description = rule_data.get("full-description", "")
     mitigation = rule_data.get("mitigation", "")
     help_url = rule_data.get("help", "")
-    labels = rule_data.get("labels", [])
-    
+    labels = rule_data.get("labels", [])    
     yaml_source_link = os.path.join(base_source_git, file_path)
     file_dir = os.path.dirname(file_path)
     rego_source_link = os.path.join(base_source_git, file_dir, rego_path)
@@ -271,7 +270,10 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
 
     if full_description:
         md.append("\n## Description  ")
-        md.append(full_description)
+        # md.append(full_description)
+        split_line = full_description.split("\n")
+        for line in split_line:
+            md.append(line)
         md.append("")
     else:
         md.append("")
@@ -433,7 +435,10 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     
     if full_description:
         md.append(f"## **Description**\n")
-        md.append(full_description)
+        split_line = full_description.split("\n")
+        for line in split_line:
+            md.append(line)
+        md.append("")
 
     controls = initiative_data.get("controls", [])
     if not controls:

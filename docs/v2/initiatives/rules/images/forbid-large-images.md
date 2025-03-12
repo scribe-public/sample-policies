@@ -36,7 +36,7 @@ The extracted size is then converted to a numeric value and compared against the
 - If the image size is less than or equal to the specified `max_size`, the rule passes and the image is considered acceptable.
 - If the image size exceeds the threshold, a violation is recorded with a message indicating the actual image size and the maximum allowed size.
 
-**Evidence Requirements:**
+### **Evidence Requirements**
 
 - Evidence must be provided in the `cyclonedx-json` format.
 - The SBOM must include a component in the "layer" group with a "size" property, and an "index" property set to "0".

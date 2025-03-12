@@ -19,6 +19,7 @@ Evidence for this initiative **IS NOT** required by default but is recommended.
 
 Evaluate SLSA L2 and ensure that provenance information is both recorded and authenticated. This helps protect against unauthorized modifications and ensures artifact integrity."
 
+
 ## Controls Overview
 
 | Control ID | Control Name | Control Description | Mitigation |

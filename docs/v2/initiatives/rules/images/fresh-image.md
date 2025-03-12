@@ -37,7 +37,7 @@ within the image's metadata (specifically under `metadata.component.properties`)
 The rule compares the current time with the sum of the creation time and the maximum allowed age (by days). If the current time exceeds this sum, 
 the rule flags the image as too old and generates a violation with details on the calculated maximum allowed time.
 
-**Evidence Requirements:**
+### **Evidence Requirements**
 - Evidence must be provided in the `cyclonedx-json` format.
 - The SBOM must contain a component under `metadata.component.properties` with a property named "created" in valid RFC 3339 format.
 

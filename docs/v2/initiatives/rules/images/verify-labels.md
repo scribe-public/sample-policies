@@ -37,7 +37,7 @@ required label (as defined in the `with.labels` parameter) exists with the corre
    where the property value matches the expected value.
 4. If such a property is not found, a violation is recorded with the missing label and expected value details.
 
-**Evidence Requirements:**
+### **Evidence Requirements**
 - Evidence must be provided in the `cyclonedx-json` format.
 - The SBOM should include a `metadata.component.properties` array that contains label information.
 
