@@ -54,8 +54,8 @@ Mitigates the risk of deploying untrusted or compromised container images by enf
 
 | Rule ID | Rule Name | Rule Description |
 |---------|-----------|------------------|
-| [PS.2](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-2-image-verifiable.md) | [Image-verifiable](rules/ssdf/ps-2-image-verifiable.md) | PS.2 Provide a mechanism to verify the integrity of the image |
-| [PS.3.2](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-3.2-archived-sbom.md) | [SBOM archived](rules/ssdf/ps-3.2-archived-sbom.md) | PS.3.2 Archive SBOM |
+| [PS.2](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-2-image-verifiable) | [Image-verifiable](rules/ssdf/ps-2-image-verifiable.md) | PS.2 Provide a mechanism to verify the integrity of the image |
+| [PS.3.2](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-3.2-archived-sbo) | [SBOM archived](rules/ssdf/ps-3.2-archived-sbom.md) | PS.3.2 Archive SBOM |
 
 ## [] SSDF-ORG
 
@@ -70,9 +70,9 @@ Reduces risks of unauthorized access and changes by ensuring strong organization
 
 | Rule ID | Rule Name | Rule Description |
 |---------|-----------|------------------|
-| [PS.1.1](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-2fa.md) | [Enforce 2FA](rules/ssdf/ps-1-2fa.md) | PS.1 Require 2FA for accessing code |
-| [PS.1.3](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-limit-admins.md) | [Limit admins](rules/ssdf/ps-1-limit-admins.md) | PS.1 Restrict the maximum number of organization admins |
-| [PS.1.5](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-web-commit-signoff.md) | [Require signoff on web commits](rules/ssdf/ps-1-web-commit-signoff.md) | PS.1 Require contributors to sign when committing to Github through the web interface |
+| [PS.1.1](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-2fa) | [Enforce 2FA](rules/ssdf/ps-1-2fa.md) | PS.1 Require 2FA for accessing code |
+| [PS.1.3](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-limit-admins) | [Limit admins](rules/ssdf/ps-1-limit-admins.md) | PS.1 Restrict the maximum number of organization admins |
+| [PS.1.5](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-web-commit-signoff) | [Require signoff on web commits](rules/ssdf/ps-1-web-commit-signoff.md) | PS.1 Require contributors to sign when committing to Github through the web interface |
 
 ## [] SSDF-REPO
 
@@ -87,8 +87,8 @@ Minimizes the risk of code tampering and unauthorized modifications by enforcing
 
 | Rule ID | Rule Name | Rule Description |
 |---------|-----------|------------------|
-| [PS.3.1](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-3.1-code-archived.md) | [Code archived](rules/ssdf/ps-3.1-code-archived.md) | PS.3.1 Verify that the software release data is archived.
+| [PS.3.1](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-3.1-code-archive) | [Code archived](rules/ssdf/ps-3.1-code-archived.md) | PS.3.1 Verify that the software release data is archived.
 We assume running in Github thus the code is allways stored in a repository
  |
-| [PS.1.2](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-branch-protection.md) | [Branch protected](rules/ssdf/ps-1-branch-protection.md) | PS.1 Require branch protection for the repository |
-| [PS.1.4](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-repo-private.md) | [Repo private](rules/ssdf/ps-1-repo-private.md) | PS.1 Assure the repository is private |
+| [PS.1.2](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-branch-protection) | [Branch protected](rules/ssdf/ps-1-branch-protection.md) | PS.1 Require branch protection for the repository |
+| [PS.1.4](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-repo-private) | [Repo private](rules/ssdf/ps-1-repo-private.md) | PS.1 Assure the repository is private |
