@@ -1,8 +1,8 @@
 ---
-sidebar_label: "SLSA L1 Framework\u201D"
-title: "SLSA L1 Framework\u201D"
+sidebar_label: SLSA L1 Framework
+title: SLSA L1 Framework
 ---  
-# SLSA L1 Framework”  
+# SLSA L1 Framework  
 **Type:** Initiative  
 **ID:** `SLSA.L1`  
 **Version:** `1.0.0`  

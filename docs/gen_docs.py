@@ -19,7 +19,8 @@ def parse_yaml(file_path):
     with open(file_path, "r") as f:
         try:
             return yaml.safe_load(f) or {}
-        except yaml.YAMLError:
+        except Exception as e:
+            print(f"# Error parsing {file_path}: {e}")
             return {}
 
 
@@ -95,11 +96,22 @@ CATEGORY_CONFIG = {
     },
     'rules': {
         'label': 'Rule Configuration',
-        'position': 2
+        'position': 10
     },
     "api": {
         "label": "Scribe API",
-        "position": 3
+        "position": 1,
+        "parent": "root",
+    },
+    "api": {
+        "label": "Github API",
+        "position": 1,
+        "parent": "github",
+    },
+    "api": {
+        "label": "Gitlab API",
+        "position": 1,
+        "parent": "gitlab",
     },
 }
 
@@ -113,20 +125,35 @@ def create_category_file(directory, label, position):
     with open(category_file_path, 'w') as f:
         json.dump(category_data, f, indent=2)
 
+
 def traverse_and_create_rule_category_files():
     """Traverse directories and create _category_.json files where applicable."""
     for root, dirs, files in os.walk(RULES_OUTDIR):
         # Skip the root RULES_OUTDIR directory itself
         if root == RULES_OUTDIR:
             continue
+        
         # Extract the last part of the path to determine the directory name
         dir_name = os.path.basename(root)
+        
+        # Get the second to last part of the path
+        parent_dir = os.path.basename(os.path.dirname(root))
+
         if dir_name in CATEGORY_CONFIG:
+            if "parent" in CATEGORY_CONFIG[dir_name]:
+                parent = CATEGORY_CONFIG[dir_name]['parent']                
+                if parent == "root" and parent_dir == "rules":
+                    # Do something specific if the parent is "root" and the parent directory is "rules"
+                    print(f"{dir_name} is a direct child of 'rules'. with parent {parent_dir}")
+                elif parent_dir != parent:
+                    create_category_file(root, dir_name.title(), 1)
+                    continue
+
             label = CATEGORY_CONFIG[dir_name]['label']
             position = CATEGORY_CONFIG[dir_name]['position']
             create_category_file(root, label, position)
-            # Camelize the directory name to create the label
         else:
+            # If the directory is not in CATEGORY_CONFIG, use a default title and position
             create_category_file(root, dir_name.title(), 1)
 
 def traverse_and_create_category_files():
@@ -525,6 +552,7 @@ def write_initiative_doc(file_path, initiative_data, rule_docs_map, base_source_
     Write the initiative doc to docs/v2/initiatives/<original_filename>.md.
     For example, if the initiative file is "slsa.l2.yaml", the doc will be "slsa.l2.md".
     """
+    print("# Writing initiative doc:", file_path)
     base_file = os.path.basename(file_path)
     base_no_ext = os.path.splitext(base_file)[0]
 
@@ -548,9 +576,10 @@ def main():
 
     for dirpath, _, filenames in os.walk("v2"):
         for filename in filenames:
-            if not filename.endswith(".yaml"):
+            if not filename.endswith(".yaml") and not filename.endswith(".yml"):
                 continue
             full_path = os.path.join(dirpath, filename)
+
             data = parse_yaml(full_path)
             ctype = data.get("config-type", "").lower()
             if ctype == "rule":
@@ -558,6 +587,8 @@ def main():
             elif ctype == "initiative":
                 initiative_files.append((full_path, data))
             else:
+                print("# Warning: Unknown config type in", full_path, ctype)
+                print("# JSON", json.dumps(data, indent=2))
                 pass
 
 
