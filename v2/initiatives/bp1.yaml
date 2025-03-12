@@ -83,6 +83,7 @@ controls:
             - write_package_registry
             - write_package
             - write_repository_hook
+          approved_tokens: []
 
   - name: "Any critical or high severity vulnerability breaks the build"
     id: "CT-6"
