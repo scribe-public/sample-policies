@@ -11,7 +11,11 @@ title: Require Healthcheck
 **Labels:** SBOM, Images  
 
 Checks that the container image includes at least one healthcheck property.
-otherwise, it fails with a violation.
+
+
+
+## Mitigation  
+Ensures that container images define a HEALTHCHECK instruction so that the runtime environment  can monitor and manage container health. This minimizes the risk of undetected failures at runtime.
 
 
 :::tip 
@@ -26,6 +30,17 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 :::info  
 This rule scoped by target and product.  
 :::  
+
+## Description  
+This rule examines the CycloneDX SBOM evidence for a container image to verify that a healthcheck is defined.
+It does so by scanning the `metadata.component.properties` array for any property whose name, when lowercased, 
+starts with "imagehealthcheck_". If at least one such property is found, the image is considered compliant; 
+otherwise, a violation is recorded indicating a missing healthcheck.
+
+**Evidence Requirements:**
+- Evidence must be provided in the CycloneDX JSON format.
+- The SBOM should include a `metadata.component.properties` array with entries that define healthcheck instructions.
+
 
 ## Evidence Requirements  
 | Field | Value |

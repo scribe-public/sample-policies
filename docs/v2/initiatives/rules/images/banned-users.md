@@ -12,6 +12,11 @@ title: Disallow Specific Users in SBOM
 
 Verify specific users are not allowed in an SBOM.
 
+
+## Mitigation  
+Prevents the execution of container images with default or disallowed user accounts reducing the risk of privilege escalation and ensuring that only secure, non-privileged user configurations are used.
+
+
 :::tip 
 Rule Result will be set as 'open' if evidence is missing.  
 ::: 
@@ -24,6 +29,20 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 :::info  
 This rule scoped by target and product.  
 :::  
+
+## Description  
+This rule inspects the CycloneDX SBOM evidence for a container image to ensure that the image is not configured 
+to run with a banned default user. It does so by examining the `metadata.component.properties` array for a property 
+with the name "user". The value of this property is then compared against a list of disallowed users specified in 
+the configuration (via `with.users`). If the image is found to be running as a banned user (for example, "root"), 
+a violation is recorded.
+
+**Evidence Requirements:**
+
+- Evidence must be provided in the CycloneDX JSON format.
+- The SBOM must include a `metadata.component.properties` array with an entry where the property name is "user".
+- The disallowed user list (e.g., ["root"]) must be provided in the `with.users` parameter.
+
 
 ## Evidence Requirements  
 | Field | Value |

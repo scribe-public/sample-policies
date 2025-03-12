@@ -10,9 +10,7 @@ title: 4.2.1 Registry Connection HTTPS
 **Rego Source:** [enforce-https-registry.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/enforce-https-registry.rego)  
 **Labels:** Registry, Images  
 
-Checks if the container's registry scheme is HTTPS by looking for a
-property named 'registry_scheme' with value 'https'. If none found,
-the rule fails, indicating a non-HTTPS registry.
+Checks if the container's registry scheme is HTTPS
 
 
 :::tip 
@@ -27,6 +25,18 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 :::info  
 This rule scoped by product and target.  
 :::  
+
+## Description  
+This rule examines the CycloneDX SBOM evidence for a container image to verify that the registry connection
+is secure. It does so by scanning the `metadata.component.properties` array for a property named 
+'registry_scheme'. If the value of this property is exactly 'https', the rule passes; otherwise, it fails,
+indicating that the image may have been pulled from an insecure registry.
+
+**Evidence Requirements:**
+
+- Evidence must be provided in the CycloneDX JSON format.
+- The SBOM should include a `metadata.component.properties` array with an entry for 'registry_scheme'.
+
 
 ## Evidence Requirements  
 | Field | Value |

@@ -11,8 +11,11 @@ title: Require Signed Container Image
 **Labels:** Images, Blueprint  
 
 Enforces that container images (target_type=container) are cryptographically signed.
-Allows you to skip checks for certain images matching skip_regex, and optionally
-ensures that the signer's identity matches specified emails or common-names.
+
+
+
+## Mitigation  
+Ensures that only container images with valid cryptographic signatures are deployed, mitigating the risk of tampering. By requiring evidence in the CycloneDX attest-cyclonedx-json format, this rule confirms that images have been signed by trusted entities.
 
 
 :::tip 
@@ -27,6 +30,19 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 :::info  
 This rule scoped by product and target.  
 :::  
+
+## Description  
+This rule evaluates the evidence for a container image to determine if it is properly signed. It checks the 
+environment field in the evidence to verify that the `content_type` is set to "attest-cyclonedx-json". If the 
+image name matches any pattern specified in `with.skip_image_regex`, the signature check is skipped, allowing flexibility 
+for images that do not require a signature. Otherwise, if the evidence does not indicate a valid signature, the rule fails.
+
+**Evidence Requirements:**
+
+- Evidence must be provided in CycloneDX JSON format with a `content_body_type` of "cyclonedx-json".
+- The evidence environment must include a `content_type` field that indicates the report is signed (i.e., "attest-cyclonedx-json").
+- The `with.skip_image_regex` parameter allows specifying patterns (e.g., "alpine") to bypass the signature requirement for certain images. 
+
 
 ## Evidence Requirements  
 | Field | Value |

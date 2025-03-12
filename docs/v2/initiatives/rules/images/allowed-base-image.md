@@ -16,6 +16,11 @@ This rule requires Dockerfile context; for example, run it with:
 `valint my_image --base-image Dockerfile`.
 
 
+
+## Mitigation  
+Ensures that only trusted base images are used in container builds, reducing the risk of deploying compromised or outdated images. This check mitigates vulnerabilities by enforcing that each base image matches an approved source pattern.
+
+
 :::tip 
 Rule Result will be set as 'open' if evidence is missing.  
 ::: 
@@ -28,6 +33,20 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 :::info  
 This rule scoped by target and product.  
 :::  
+
+## Description  
+This rule examines the SBOM evidence for a container image, focusing on components in the "container" group that represent base images.
+A base image is identified by the presence of a property whose name ends with "isbaseimage" (case-insensitive) and whose value is "true".
+For each detected base image, the rule verifies that its name matches one of the approved source patterns defined in the configuration 
+(via `with.approved_sources`). If a base image does not match any of the approved patterns, it is flagged as invalid. If no base image data 
+is found, a violation is recorded indicating that the necessary base image information is missing.
+
+**Evidence Requirements:**
+
+- The SBOM evidence must be provided in the `cyclonedx-json` format.
+- The SBOM should include a `metadata.component.properties` array containing properties that identify base images.
+- The approved source patterns must be specified in the `with.approved_sources` parameter.
+
 
 ## Evidence Requirements  
 | Field | Value |

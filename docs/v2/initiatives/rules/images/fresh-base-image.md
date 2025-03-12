@@ -10,7 +10,12 @@ title: Fresh Base Image
 **Rego Source:** [fresh-base-image.rego](https://github.com/scribe-public/sample-policies/v2/rules/images/fresh-base-image.rego)  
 **Labels:** SBOM, Images  
 
-Verifies that each base image is not older than the specified threshold (max_days) from its creation date. The rule fails if no base image is found or if any base image exceeds the allowed age. This rule requires Dockerfile context; for example, run it with: `valint my_image --base-image Dockerfile`.
+Verifies that each base image is not older than the specified threshold (max_days) from its creation date.
+
+
+
+## Mitigation  
+Ensures that container images are built on up-to-date base images, reducing the risk of deploying images with outdated layers that may contain unpatched vulnerabilities or deprecated components. This check prevents the use of stale base images, thereby enhancing overall container security.
 
 
 :::tip 
@@ -25,6 +30,17 @@ his rule requires evaluation with a target; without one, the rule will be **disa
 :::info  
 This rule scoped by target and product.  
 :::  
+
+## Description  
+This rule processes the CycloneDX SBOM evidence for a container image to verify that its base image remains fresh. 
+It identifies base image components by locating properties whose names end with "isbaseimage" (case-insensitive) and have a value of "true". 
+The rule then extracts the "created" timestamp from these components and calculates the image’s age against the allowed threshold specified in `with.max_days`. 
+If any base image is older than the allowed age, or if no base image data is found, the rule records a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided in CycloneDX JSON format.
+- The SBOM should include a `metadata.component.properties` array with properties for base image identification and creation timestamp.
+
 
 ## Evidence Requirements  
 | Field | Value |
