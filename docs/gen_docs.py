@@ -356,6 +356,14 @@ def generate_markdown_anchor(text):
     text = re.sub(r"\s+", "-", text)  # Replace spaces with hyphens
     return f"#{text}"
 
+def id_from_name(input_str):
+    """
+    Generate a control ID from the given string by replacing hyphens with spaces and converting to title case.
+    """
+    beautified = input_str.replace("-", " ")
+    return beautified.title()
+
+
 def generate_initiative_markdown(initiative_data, file_path, file_name, rule_docs_map, base_source_git):
     """
     Build the Markdown content for one initiative.
@@ -445,13 +453,25 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md.append("|------------|--------------|---------------------|------------|")
     for ctrl in controls:
         ctrl_id = ctrl.get("id", "")
+        
         ctrl_name = ctrl.get("name", ctrl_id)
+        if ctrl_id == "" and ctrl_name != "":
+            print(f"# Warning: 'id' field is missing for control '{ctrl_name}' in {file_path}")
+
+        if ctrl_name == "" and ctrl_id != "":
+            print(f"# Warning: 'name' field is missing for control '{ctrl_id}' in {file_path}")
+
         # ctrl_section_link = f"## [{ctrl_id}] {ctrl_name}".replace(" ", "-").lower()
-        ctrl_section_link = generate_markdown_anchor(f"{ctrl_id} {ctrl_name}")
+        if ctrl_id != "":
+            ctrl_section_link = generate_markdown_anchor(f"{ctrl_id} {ctrl_name}")
+            link = f"[{ctrl_id}]({ctrl_section_link})"
+        else :
+            ctrl_section_link = generate_markdown_anchor(f"{ctrl_name}")
+            link = f"[{ctrl_name}]({ctrl_section_link})"
 
         ctrl_desc = ctrl.get("description", "")
         ctrl_mitigation = ctrl.get("mitigation", "")
-        md.append(f"|  [{ctrl_id}]({ctrl_section_link}) | {ctrl_name} | {ctrl_desc} | {ctrl_mitigation} |")
+        md.append(f"|  {link} | {ctrl_name} | {ctrl_desc} | {ctrl_mitigation} |")
     md.append("")
 
     defaults = initiative_data.get("defaults", {})
@@ -471,13 +491,18 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     for ctrl in controls:
         ctrl_id = ctrl.get("id", "")
         ctrl_name = ctrl.get("name", ctrl_id)
+
         ctrl_desc = ctrl.get("description", "")
         ctrl_full_desc = ctrl.get("full-description", "")
         help_url = ctrl.get("help", "")
         ctrl_mitigation = ctrl.get("mitigation", "")
         ctrl_rules = ctrl.get("rules", [])
 
-        md.append(f"## [{ctrl_id}] {ctrl_name}")
+        if ctrl_id != "":
+            md.append(f"## [{ctrl_id}] {ctrl_name}")
+        else:
+            md.append(f"## {ctrl_name}")
+
         if help_url:
             md.append(f"[Help]({help_url})  ")
 
