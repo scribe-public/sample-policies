@@ -13,7 +13,7 @@ title: Verify DockerHub Tokens are Active
 Verify that all discovered Dockerhub tokens are set to Active in Dockerhub.
 
 :::note 
-This rule requires Discovery Evidence.  
+This rule requires Dockerhub Project Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -29,5 +29,5 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - asset_type=project |
+| labels | - asset_type=project<br/>- platform=dockerhub |
 
