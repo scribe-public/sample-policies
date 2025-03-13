@@ -13,7 +13,7 @@ title: Allowed Users in GitLab Organization
 Verify only users in the Allowed List have access to the GitLab organization.
 
 :::note 
-This rule requires [Gitlab Organization Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
+This rule requires Gitlab Organization Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

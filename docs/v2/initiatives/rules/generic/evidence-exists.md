@@ -13,7 +13,7 @@ title: Required Generic Evidence Exists
 Verify required evidence exists.
 
 :::note 
-This rule requires [Generic Statement](https://scribe-security.netlify.app/docs/valint/generic).  
+This rule requires Generic Statement. See [here](https://scribe-security.netlify.app/docs/valint/generic) for more details.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  

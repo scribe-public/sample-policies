@@ -12,7 +12,7 @@ title: Limit admins
 PS.1 Restrict the maximum number of organization admins
 
 :::note 
-This rule requires [Statement](https://scribe-security.netlify.app/docs/valint/generic).  
+This rule requires Statement. See [here](https://scribe-security.netlify.app/docs/valint/generic) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

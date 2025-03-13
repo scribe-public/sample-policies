@@ -13,7 +13,7 @@ title: Verify Inactive Users
 Verify there are no inactive users.
 
 :::note 
-This rule requires [Jenkins Instance Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#jenkins-discovery).  
+This rule requires Jenkins Instance Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#jenkins-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

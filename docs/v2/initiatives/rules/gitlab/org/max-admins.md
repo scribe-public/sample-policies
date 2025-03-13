@@ -13,7 +13,7 @@ title: Limit Admins in GitLab Organization
 Verify the maximum number of admins for the GitLab project is restricted.
 
 :::note 
-This rule requires [Gitlab Organization Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
+This rule requires Gitlab Organization Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

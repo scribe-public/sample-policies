@@ -13,7 +13,7 @@ title: Require SBOM Existence
 Verify the SBOM exists as evidence.
 
 :::note 
-This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
+This rule requires SBOM. See [here](https://scribe-security.netlify.app/docs/valint/sbom) for more details.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  

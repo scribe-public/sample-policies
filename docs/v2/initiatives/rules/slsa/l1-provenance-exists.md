@@ -14,7 +14,7 @@ title: Verify Provenance Document Exists
 Verify that the Provenance document evidence exists.
 
 :::note 
-This rule requires [SLSA Provenance](https://scribe-security.netlify.app/docs/valint/help/valint_slsa).  
+This rule requires SLSA Provenance. See [here](https://scribe-security.netlify.app/docs/valint/help/valint_slsa) for more details.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  

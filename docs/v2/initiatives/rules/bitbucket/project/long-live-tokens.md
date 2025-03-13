@@ -13,7 +13,7 @@ title: Prevent Long-Lived Tokens
 Verify Bitbucket API tokens expire before the maximum time to live.
 
 :::note 
-This rule requires [Bitbucket Project Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery).  
+This rule requires Bitbucket Project Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

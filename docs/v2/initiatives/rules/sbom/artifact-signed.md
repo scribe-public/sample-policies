@@ -13,7 +13,7 @@ title: Require SBOM Signature
 Verify the SBOM is signed.
 
 :::note 
-This rule requires Signed [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
+This rule requires Signed SBOM. See [here](https://scribe-security.netlify.app/docs/valint/sbom) for more details.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  

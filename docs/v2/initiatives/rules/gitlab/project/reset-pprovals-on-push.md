@@ -13,7 +13,7 @@ title: Reset Approvals on Push in GitLab Project
 Verify `reset_approvals_on_push` is set for the GitLab project.
 
 :::note 
-This rule requires [Gitlab Project Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
+This rule requires Gitlab Project Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

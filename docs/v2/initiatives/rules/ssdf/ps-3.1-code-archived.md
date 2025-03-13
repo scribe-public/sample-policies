@@ -14,7 +14,7 @@ We assume running in Github thus the code is allways stored in a repository
 
 
 :::note 
-This rule requires [Statement](https://scribe-security.netlify.app/docs/valint/generic).  
+This rule requires Statement. See [here](https://scribe-security.netlify.app/docs/valint/generic) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

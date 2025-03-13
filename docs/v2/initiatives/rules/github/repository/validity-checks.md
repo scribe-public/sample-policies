@@ -13,7 +13,7 @@ title: Verify secret scanning.
 Verify both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.
 
 :::note 
-This rule requires [Github Repository Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery).  
+This rule requires Github Repository Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

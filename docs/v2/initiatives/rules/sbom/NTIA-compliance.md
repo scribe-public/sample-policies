@@ -14,7 +14,9 @@ Validates that SBOM metadata meets basic NTIA requirements for authors and suppl
 
 
 :::note 
-  
+This rule requires SBOM. See [here](https://scribe-security.netlify.app/docs/valint/sbom) for more details.  
+::: 
+:::note 
 Ensure that the SBOM includes metadata for authors and suppliers to meet NTIA requirements.
 
 For example,  
@@ -24,24 +26,11 @@ valint bom my_company/my_image:latest \
   --author-email bob@my_company.com \
   --author-phone "123-456-7890" \
   --supplier-email bob@my_company.com  \
-   --supplier-name "alice" \
+  --supplier-name "alice" \
   --supplier-url "https://my_company.com" \
   --supplier-phone "123-456-7890" 
 ```
-
-**Input Example:**
-
-```yaml
-- uses: sbom/NTIA-compliance@v2/rules
-  with:
-    required_author: 
-      name: "bom"
-      email: "bob@company.com"
-    required_supplier: 
-      name: "alice"
-```
-
-This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
+  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -52,6 +41,19 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Usage example
+
+```yaml
+uses: sbom/NTIA-compliance@v2/rules
+with:
+  required_author: 
+    name: "bom"
+    email: "bob@company.com"
+  required_supplier: 
+    name: "alice"
+  
+```
 
 ## Mitigation  
 Ensures that the SBOM metadata meets NTIA requirements, reducing the risk of incomplete or inaccurate information about authors and suppliers.

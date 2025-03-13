@@ -13,7 +13,7 @@ title: Enforce Merge Access Level Policy for GitLab Project
 Verify the GitLab project's merge access level complies with requirements.
 
 :::note 
-This rule requires [Gitlab Project Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
+This rule requires Gitlab Project Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

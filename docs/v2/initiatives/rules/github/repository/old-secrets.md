@@ -13,7 +13,7 @@ title: Verify No Old Secrets Exist in Repository
 Verify secrets in the GitHub repository are not older than the specified threshold.
 
 :::note 
-This rule requires [Github Repository Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery).  
+This rule requires Github Repository Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
