@@ -180,15 +180,15 @@ def traverse_and_create_category_files():
     traverse_and_create_rule_category_files()
 
 table = {
-    "SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
-    "SARIF": f"{DOC_SITE_URL}/docs/valint/sarif",
-    "Statement": f"{DOC_SITE_URL}/docs/valint/generic",
-    "Image SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
-    "Git SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
-    "SLSA Provenance": f"{DOC_SITE_URL}/docs/valint/help/valint_slsa",
-    "Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover",
-    "SARIF Evidence": f"{DOC_SITE_URL}/docs/valint/sarif",
-    "Generic Statement": f"{DOC_SITE_URL}/docs/valint/generic",
+    "SBOM": f"{DOC_SITE_URL}/valint/sbom",
+    "SARIF": f"{DOC_SITE_URL}/valint/sarif",
+    "Statement": f"{DOC_SITE_URL}/valint/generic",
+    "Image SBOM": f"{DOC_SITE_URL}/valint/sbom",
+    "Git SBOM": f"{DOC_SITE_URL}/valint/sbom",
+    "SLSA Provenance": f"{DOC_SITE_URL}/valint/help/valint_slsa",
+    "Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover",
+    "SARIF Evidence": f"{DOC_SITE_URL}/valint/sarif",
+    "Generic Statement": f"{DOC_SITE_URL}/valint/generic",
 }
 
 def create_rule_string_from_evidence(evidence, file_name, skip_evidence, require_scribe_api):

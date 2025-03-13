@@ -13,7 +13,7 @@ title: Verify IaC Misconfiguration Threshold in SARIF
 Verify the number of infrastructure-as-code (IaC) errors in the SARIF report remains below the specified threshold.
 
 :::note 
-This rule requires [SARIF Evidence](https://scribe-security.netlify.app/docs/docs/valint/sarif).  
+This rule requires [SARIF Evidence](https://scribe-security.netlify.app/docs/valint/sarif).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

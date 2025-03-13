@@ -13,7 +13,7 @@ title: Verify Exposed Credentials
 Verify there are no exposed credentials.
 
 :::note 
-This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/docs/platforms/discover).  
+This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

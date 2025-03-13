@@ -13,7 +13,7 @@ title: Enforce SBOM Dependencies
 Verify the artifact includes all required dependencies.
 
 :::note 
-This rule requires [SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -16,7 +16,7 @@ It fails if any banned port is exposed or if no banned ports list is provided.
 
 
 :::note 
-This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
   
 **Input Example:**
 

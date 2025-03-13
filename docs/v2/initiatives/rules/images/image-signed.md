@@ -14,7 +14,7 @@ Enforces that container images (target_type=container) are cryptographically sig
 
 
 :::note 
-This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
   
 **Input Example:**
 

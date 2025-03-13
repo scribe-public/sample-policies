@@ -13,7 +13,7 @@ title: K8s Jailbreak
 Verify no misconfigurations from the prohibited ids list in the Kuberentes scan is below specified threshold
 
 :::note 
-This rule requires [SARIF Evidence](https://scribe-security.netlify.app/docs/docs/valint/sarif).  
+This rule requires [SARIF Evidence](https://scribe-security.netlify.app/docs/valint/sarif).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -13,7 +13,7 @@ title: Verify that artifact has no disallowed builder dependencies
 Verify the artifact has no disallowed builder dependencies.
 
 :::note 
-This rule requires [SLSA Provenance](https://scribe-security.netlify.app/docs/docs/valint/help/valint_slsa).  
+This rule requires [SLSA Provenance](https://scribe-security.netlify.app/docs/valint/help/valint_slsa).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

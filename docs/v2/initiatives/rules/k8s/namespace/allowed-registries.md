@@ -13,7 +13,7 @@ title: Allowed Namespace Registries
 Verify container images in Kubernetes namespaces originate from registries in the Allowed List.
 
 :::note 
-This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/docs/platforms/discover).  
+This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

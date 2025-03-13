@@ -13,7 +13,20 @@ title: Enforce Allowed SBOM Components
 Verify the artifact contains only allowed components.
 
 :::note 
-This rule requires [SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
+  
+Components type reference: https://cyclonedx.org/docs/1.6/json/#components_items_type
+
+**Input Example:**
+
+```yaml
+- uses: sbom/allowed-components@v2/rules
+  with:
+    types:
+      - library
+      - operating-system
+```
+
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -24,6 +37,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Mitigation  
+Ensures that only approved components are included in the SBOM, reducing the risk of introducing vulnerabilities or unapproved dependencies into the software supply chain.
+
+
+
+## Description  
+This rule inspects the CycloneDX SBOM evidence for the artifact to verify that it contains only allowed components.
+It performs the following steps:
+
+1. Iterates over the components listed in the SBOM.
+2. Checks each component's type against the allowed types specified in the `with.types` configuration.
+3. Compares each component's name against the allowlist provided in the `with.allowlist` configuration.
+   - If a component's type or name is not allowed, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided in the CycloneDX JSON format.
+- The SBOM must include a list of components with their types and names.
+
 
 ## Evidence Requirements  
 | Field | Value |

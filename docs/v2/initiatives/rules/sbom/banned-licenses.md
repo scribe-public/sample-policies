@@ -13,7 +13,7 @@ title: Restrict Disallowed SBOM Licenses
 Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.
 
 :::note 
-This rule requires [SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -24,6 +24,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Mitigation  
+Ensures that the software components used in the artifact comply with organizational policies by restricting the use of disallowed licenses. This helps prevent legal and compliance issues that may arise from using components with incompatible or risky licenses.
+
+
+
+## Description  
+This rule inspects the CycloneDX SBOM evidence for the artifact to verify that the number of components with disallowed licenses
+remains below the specified threshold. It performs the following steps:
+
+1. Iterates over the components listed in the SBOM.
+2. Checks each component's license against the blocklist provided in the `with.blocklist` configuration.
+3. Counts the number of components with disallowed licenses.
+   - If the count exceeds the specified `with.blocklisted_limit`, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided in the CycloneDX JSON format.
+- The SBOM must include a list of components with their licenses.
+
 
 ## Evidence Requirements  
 | Field | Value |

@@ -17,7 +17,7 @@ This rule requires Dockerfile context; for example, run it with:
 
 
 :::note 
-This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

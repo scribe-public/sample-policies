@@ -13,7 +13,7 @@ title: Require Image Labels
 Verify the image has the specified labels.
 
 :::note 
-This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -13,7 +13,7 @@ title: Required Git Evidence Exists
 Verify required Git evidence exists.
 
 :::note 
-This rule requires [Git SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+This rule requires [Git SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
