@@ -55,5 +55,5 @@ a violation is recorded.
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| users | list | False | A list of disallowed users. Each entry should be a string representing a username. |
+| users | array | False | A list of disallowed users. Each entry should be a string representing a username. |
 

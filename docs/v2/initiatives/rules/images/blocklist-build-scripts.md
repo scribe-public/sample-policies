@@ -40,8 +40,8 @@ If a match is found, the rule generates a violation indicating that a disallowed
 | content_body_type | cyclonedx-json |
 | target_type | container |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| blocklist | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| blocklist | array | False | A list of disallowed build script commands. Each entry should be a string representing a command or substring. |
 

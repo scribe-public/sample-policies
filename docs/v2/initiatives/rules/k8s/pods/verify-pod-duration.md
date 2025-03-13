@@ -13,7 +13,16 @@ title: Verify Pod Runtime Duration
 Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecycle limits.
 
 :::note 
-This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover).  
+This rule requires K8s Pod Discovery Evidence.  
+  
+**Input Example:**
+
+```yaml
+- uses: k8s/pods/verify-pod-duration@v2/rules
+  with:
+    max_days: 10
+```
+
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -22,6 +31,23 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Mitigation  
+Ensures that pods do not exceed their intended lifecycle, maintaining cluster hygiene and resource efficiency.
+
+
+
+## Description  
+This rule verifies that the duration of pods in Kubernetes does not exceed the specified limit.
+It performs the following steps:
+
+1. Iterates over the pods in the cluster.
+2. Checks each pod's duration against the limit specified in the `with.max_days` configuration.
+   - If a pod's duration exceeds the limit, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
@@ -29,10 +55,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - asset_type=pod |
+| labels | - asset_type=pod<br/>- platform=k8s |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| max_days | 30 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| max_days | integer | False | The maximum allowed duration for pods in days. |
 

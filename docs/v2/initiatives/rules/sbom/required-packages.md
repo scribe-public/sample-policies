@@ -10,10 +10,24 @@ title: Enforce SBOM Dependencies
 **Rego Source:** [required-packages.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/required-packages.rego)  
 **Labels:** SBOM, Image  
 
-Verify the artifact includes all required dependencies.
+Verify the artifact includes all required dependencies specified as a list of PURLs.
 
 :::note 
 This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
+  
+Ensure that the SBOM includes all required dependencies to meet compliance requirements.
+
+**Input Example:**
+
+```yaml
+- uses: sbom/required-packages@v2/rules
+  with:
+    required_pkgs:
+      - "pkg:maven/org.apache.commons/commons-lang3@3.9"
+      - "pkg:npm/lodash@4.17.15"
+    violations_limit: 0
+```
+
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -25,6 +39,24 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Mitigation  
+Ensures that all required dependencies are included in the SBOM, reducing the risk of missing critical components and ensuring compliance with dependency requirements.
+
+
+
+## Description  
+This rule verifies that the artifact includes all required dependencies as specified.
+It performs the following steps:
+
+1. Iterates over the dependencies listed in the SBOM.
+2. Checks each dependency against the required dependencies specified in the `with.required_pkgs` configuration.
+   - If a required dependency is missing, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided in the CycloneDX JSON format.
+- The SBOM must include a list of dependencies.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
@@ -32,9 +64,9 @@ Rule is scoped by product and target.
 | signed | False |
 | content_body_type | cyclonedx-json |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| required_pkgs | [] |
-| violations_limit | 0 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| required_pkgs | array | True | A list of required dependencies specified as PURLs. |
+| violations_limit | integer | False | The maximum number of allowed violations. |
 

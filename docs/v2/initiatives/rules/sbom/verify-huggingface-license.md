@@ -8,12 +8,26 @@ title: Require Specified SBOM Licenses
 **Uses:** `sbom/verify-huggingface-license@v2/rules`  
 **Source:** [v2/rules/sbom/verify-huggingface-license.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/verify-huggingface-license.yaml)  
 **Rego Source:** [verify-hf-license.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/verify-hf-license.rego)  
-**Labels:** SBOM, Image  
+**Labels:** SBOM, Image, Source  
 
 Verify the artifact includes all specified licenses.
 
 :::note 
 This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
+  
+Ensure that the SBOM includes all specified licenses to meet compliance requirements.
+This rule accesses the Hugging Face API to validate the licenses.
+
+**Input Example:**
+
+```yaml
+- uses: sbom/verify-huggingface-license@v2/rules
+  with:
+    licenses:
+      - "MIT"
+      - "Apache-2.0"
+```
+
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -25,6 +39,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Mitigation  
+Ensures that all specified licenses are included in the SBOM, reducing the risk of legal issues and ensuring compliance with open-source licenses.
+
+
+
+## Description  
+This rule verifies that the artifact includes all specified licenses.
+It performs the following steps:
+
+1. Iterates over the dependencies listed in the SBOM.
+2. Checks each dependency for the presence of the specified licenses in the `with.licenses` configuration.
+   - If a specified license is missing, the rule flags it as a violation.
+3. Accesses the Hugging Face API to validate the licenses.
+
+**Evidence Requirements:**
+- Evidence must be provided in the CycloneDX JSON format.
+- The SBOM must include a list of dependencies with their licenses.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
@@ -32,8 +65,8 @@ Rule is scoped by product and target.
 | signed | False |
 | content_body_type | cyclonedx-json |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| licenses | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| licenses | array | True | A list of specified licenses. |
 

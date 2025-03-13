@@ -14,6 +14,15 @@ Verify Kubernetes namespaces adhere to a specified runtime duration to enforce l
 
 :::note 
 This rule requires K8s Namespace Discovery Evidence.  
+  
+**Input Example:**
+
+```yaml
+- uses: k8s/namespace/verify-namespace-duration@v2/rules
+  with:
+    threshold_date: "1970-01-01T00:00:00Z"
+```
+
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -21,6 +30,23 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Ensures that namespaces do not exceed their intended lifecycle, maintaining cluster hygiene and resource efficiency.
+
+
+
+## Description  
+This rule verifies that the duration of namespaces in Kubernetes does not exceed the specified limit.
+It performs the following steps:
+
+1. Iterates over the namespaces in the cluster.
+2. Checks each namespace's duration against the limit specified in the `with.threshold_date` configuration.
+   - If a namespace's duration exceeds the limit, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -31,8 +57,8 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - asset_type=namespace<br/>- platform=k8s |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| threshold_date | 1970-01-01T00:00:00Z |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| threshold_date | string | False | The threshold date for namespace duration (supports regex). |
 

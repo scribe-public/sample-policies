@@ -8,7 +8,7 @@ title: Restrict Disallowed SBOM Licenses
 **Uses:** `sbom/banned-licenses@v2/rules`  
 **Source:** [v2/rules/sbom/banned-licenses.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/banned-licenses.yaml)  
 **Rego Source:** [banned-licenses.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/banned-licenses.rego)  
-**Labels:** SBOM, Image  
+**Labels:** SBOM, Image, Source  
 
 Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.
 
@@ -54,6 +54,6 @@ remains below the specified threshold. It performs the following steps:
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| blocklist | list | False | A list of disallowed licenses. |
+| blocklist | array | False | A list of disallowed licenses. |
 | blocklisted_limit | integer | False | The maximum number of components with disallowed licenses allowed. |
 

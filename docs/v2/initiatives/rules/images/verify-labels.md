@@ -52,5 +52,5 @@ required label (as defined in the `with.labels` parameter) exists with the corre
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| labels | list | False | A list of required labels. |
+| labels | array | False | A list of required labels. |
 

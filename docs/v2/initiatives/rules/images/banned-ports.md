@@ -71,5 +71,5 @@ It performs the following steps:
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| banned_ports | list | False | A list of banned ports and protocols. Each entry should be a dictionary with 'port' and 'protocol' keys. |
+| banned_ports | array | False | A list of banned ports and protocols. Each entry should be a dictionary with 'port' and 'protocol' keys. |
 

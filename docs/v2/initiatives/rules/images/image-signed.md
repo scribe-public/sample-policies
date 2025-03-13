@@ -20,11 +20,13 @@ This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/valint/
 
 ```yaml
 - uses: images/image-signed@v2/rules
-  identity:
-    emails:
-    - bob@company.com
-    - alice@company.com
-
+  with:
+    identity:
+      emails:
+      - bob@company.com
+      - alice@company.com
+    skip_image_regex:
+    - .*alpine.*
 ```
 ::: 
 :::tip 
@@ -63,9 +65,9 @@ for images that do not require a signature. Otherwise, if the evidence does not 
 | filter-by | ['product', 'target'] |
 | content_body_type | cyclonedx-json |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| skip_image_regex | ['.*alpine.*'] |
-| identity | `{'emails': [], 'common-names': []}` |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| identity | object | False | Identity information for the signers |
+| skip_image_regex | array | False | Patterns to bypass the signature requirement for certain images |
 

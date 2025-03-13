@@ -8,7 +8,7 @@ title: Enforce SBOM License Completeness
 **Uses:** `sbom/complete-licenses@v2/rules`  
 **Source:** [v2/rules/sbom/complete-licenses.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/complete-licenses.yaml)  
 **Rego Source:** [complete-licenses.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/complete-licenses.rego)  
-**Labels:** SBOM, Image  
+**Labels:** SBOM, Image, Source  
 
 Verify all dependencies in the artifact have a license.
 
@@ -24,6 +24,24 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Mitigation  
+Ensures that all dependencies have a complete set of licenses, reducing the risk of legal issues and ensuring compliance with open-source licenses.
+
+
+
+## Description  
+This rule inspects the CycloneDX SBOM evidence for the artifact to verify that all dependencies have a complete set of licenses.
+It performs the following steps:
+
+1. Iterates over the dependencies listed in the SBOM.
+2. Checks each dependency for the presence of a license.
+   - If a dependency does not have a license, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided in the CycloneDX JSON format.
+- The SBOM must include a list of dependencies with their licenses.
+
 
 ## Evidence Requirements  
 | Field | Value |

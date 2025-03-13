@@ -44,10 +44,11 @@ with:
     common-names: []
 
 inputs:
-  identity:
+  - name: identity
     description: "Identity information for the signers"
     type: object
-  skip_image_regex:
+    required: false
+  - name: skip_image_regex
     description: "Patterns to bypass the signature requirement for certain images"
     type: array
     required: false
