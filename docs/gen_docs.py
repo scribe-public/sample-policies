@@ -245,11 +245,8 @@ def create_rule_string_from_evidence(evidence, file_name, skip_evidence, require
         print("# Warning - Unknown Evidence Type:", evidence, evidence_type, file_name)
     
     signed_str = "Signed " if signed else ""
-    if evidence_type in table:
-        evidence_link = f"[{evidence_type}]({table[evidence_type]})"
-    else:
-        evidence_link = evidence_type 
-    return f"This rule requires {signed_str}{evidence_link}."
+    evidence_link = f" See [here]({table[evidence_type]}) for more details." if evidence_type in table else ""
+    return f"This rule requires {signed_str}{evidence_type}.{evidence_link}"
 
 
 def generate_parameters_table(rule_data):
@@ -340,13 +337,13 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     evidence_str = create_rule_string_from_evidence(rule_data.get("evidence", {}), file_path, skip_evidence, require_scribe_api)
     if evidence_str != "":
         md.append(f":::note ")
-        extra_notes = rule_data.get("notes", "")
-        if extra_notes != "":
-            split_line_note = extra_notes.split("\n")
-            md.append(f"  ")
-            for line in split_line_note:
-                md.append(line)
         md.append(f"{evidence_str}  ")
+        md.append(f"::: ")
+
+    extra_notes = rule_data.get("notes", [])
+    for note in extra_notes:
+        md.append(f":::note ")
+        md.append(f"{note}  ")
         md.append(f"::: ")
 
 
@@ -395,6 +392,16 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(f":::info  ")
         md.append(f"Rule is scoped by {filter_by_md}.  ")
         md.append(f":::  ")
+
+    input_example = rule_data.get("input_example", "")
+    if input_example:
+        md.append(f"\n## Usage example\n")
+        md.append("```yaml")
+        md.append(f"uses: {filepath_to_uses(file_path)}")
+        md.append("with:")
+        for line in input_example.split('\n'):
+            md.append(f"  {line}")
+        md.append("```")
 
     if mitigation:
         md.append("\n## Mitigation  ")
