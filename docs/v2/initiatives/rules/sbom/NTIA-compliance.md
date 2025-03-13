@@ -24,8 +24,9 @@ valint bom my_company/my_image:latest \
   --author-email bob@my_company.com \
   --author-phone "123-456-7890" \
   --supplier-email bob@my_company.com  \
-  --author-email "bob@my_company.com" --supplier-name "alice" \
-  --supplier-url "https://my_company.com" --supplier-phone "123-456-7890" 
+   --supplier-name "alice" \
+  --supplier-url "https://my_company.com" \
+  --supplier-phone "123-456-7890" 
 ```
 
 **Input Example:**
