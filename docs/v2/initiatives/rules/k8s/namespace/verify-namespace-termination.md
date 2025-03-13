@@ -13,7 +13,7 @@ title: Verify Namespace Termination
 Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
 :::note 
-This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover).  
+This rule requires K8s Namespace Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -29,7 +29,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
-| labels | - asset_type=namespace |
+| labels | - asset_type=namespace<br/>- platform=k8s |
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |
