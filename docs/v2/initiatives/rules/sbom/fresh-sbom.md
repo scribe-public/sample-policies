@@ -8,7 +8,7 @@ title: Enforce SBOM Freshness
 **Uses:** `sbom/fresh-sbom@v2/rules`  
 **Source:** [v2/rules/sbom/fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/fresh-sbom.yaml)  
 **Rego Source:** [fresh-sbom.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/fresh-sbom.rego)  
-**Labels:** SBOM, Image, Source  
+**Labels:** SBOM, Image, Git  
 
 Verify the SBOM is not older than the specified duration.
 

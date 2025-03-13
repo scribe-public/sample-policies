@@ -25,7 +25,7 @@ full-description: |
 labels:
   - SBOM
   - Image
-  - Source
+  - Git
 
 evidence:
   filter-by:

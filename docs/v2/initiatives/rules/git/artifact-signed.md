@@ -8,12 +8,25 @@ title: Git Artifact Signed
 **Uses:** `git/artifact-signed@v2/rules`  
 **Source:** [v2/rules/git/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/artifact-signed.yaml)  
 **Rego Source:** [artifact-signed.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/artifact-signed.rego)  
-**Labels:** Git  
+**Labels:** SBOM, Git  
 
 Verify the Git artifact is signed.
 
 :::note 
 This rule requires Signed [Git SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
+  
+**Input Example:**
+  ```yaml
+- uses: git/artifact-signed@v2/rules
+  with:
+    identity:
+      emails:
+      - bob@company.com
+      - alice@company.com
+    skip_image_regex:
+    - .*alpine.*
+```
+
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
@@ -30,6 +43,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Mitigation  
+Ensures that only Git artifacts with valid cryptographic signatures are deployed prevents source code tampering.
+
 
 ## Evidence Requirements  
 | Field | Value |

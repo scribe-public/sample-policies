@@ -10,7 +10,7 @@ labels:
   - "SBOM"
   - "Compliance"
   - Image
-  - Source
+  - Git
 
 level: "error"
 

@@ -6,6 +6,7 @@ path: no-commit-to-main.rego
 description: Verify commits made directly to the main branch are disallowed.
 
 labels:
+  - SBOM
   - Git
 
 evidence:
@@ -15,3 +16,17 @@ evidence:
   signed: false
   content_body_type: cyclonedx-json
   target_type: git
+
+full-description: |
+  This rule ensures that no commits are made directly to the main or master branches.
+  It performs the following steps:
+  
+  1. Check SBOM target branch
+  2. If the target branch is the main or master branch, the rule looks for commit objects.
+  3. If commit objects are found, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Git repository resources.
+
+mitigation: |
+  Enforcing no commits to the main branch ensures that changes are made through pull requests, allowing for code review and approval before merging.

@@ -9,7 +9,7 @@ labels:
   - SBOM
   - Image
   - Blueprint
-  - Source
+  - Git
 
 evidence:
   filter-by:

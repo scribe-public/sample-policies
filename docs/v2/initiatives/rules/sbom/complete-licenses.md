@@ -8,7 +8,7 @@ title: Enforce SBOM License Completeness
 **Uses:** `sbom/complete-licenses@v2/rules`  
 **Source:** [v2/rules/sbom/complete-licenses.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/complete-licenses.yaml)  
 **Rego Source:** [complete-licenses.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/complete-licenses.rego)  
-**Labels:** SBOM, Image, Source  
+**Labels:** SBOM, Image, Git  
 
 Verify all dependencies in the artifact have a license.
 

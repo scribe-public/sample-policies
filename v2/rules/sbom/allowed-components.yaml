@@ -12,7 +12,7 @@ mitigation: >
 labels:
   - SBOM
   - Image
-  - Source
+  - Git
 
 evidence:
   filter-by:

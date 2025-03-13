@@ -22,6 +22,22 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Mitigation  
+Ensure that all Dockerhub tokens are set to Active status in Dockerhub preventing unauthorized access to Dockerhub resources.
+
+
+## Description  
+This rule verifies that all discovered Dockerhub tokens are set to Active in Dockerhub.
+It performs the following steps:
+
+1. Iterates over the Dockerhub tokens in the project.
+2. Checks each token's status against the Active status.
+   - If a token's status is not Active, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Dockerhub resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

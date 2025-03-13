@@ -8,7 +8,7 @@ title: Enforce Allowed SBOM Components
 **Uses:** `sbom/allowed-components@v2/rules`  
 **Source:** [v2/rules/sbom/allowed-components.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/allowed-components.yaml)  
 **Rego Source:** [allowed-components.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/allowed-components.rego)  
-**Labels:** SBOM, Image, Source  
+**Labels:** SBOM, Image, Git  
 
 Verify the artifact contains only allowed components.
 

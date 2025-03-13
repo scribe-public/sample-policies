@@ -22,6 +22,16 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Description  
+This rule verifies that there are no unused Dockerhub.
+It performs the following steps:
+
+1. Iterates over the Dockerhub tokens in the project.
+2. Checks each token's last_used is null , the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Dockerhub resources.
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

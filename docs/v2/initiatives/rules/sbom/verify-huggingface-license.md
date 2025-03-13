@@ -8,7 +8,7 @@ title: Require Specified SBOM Licenses
 **Uses:** `sbom/verify-huggingface-license@v2/rules`  
 **Source:** [v2/rules/sbom/verify-huggingface-license.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/verify-huggingface-license.yaml)  
 **Rego Source:** [verify-hf-license.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/verify-hf-license.rego)  
-**Labels:** SBOM, Image, Source  
+**Labels:** SBOM, Image, Git  
 
 Verify the artifact includes all specified licenses.
 

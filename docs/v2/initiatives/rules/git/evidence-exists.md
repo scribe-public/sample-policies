@@ -8,7 +8,7 @@ title: Required Git Evidence Exists
 **Uses:** `git/evidence-exists@v2/rules`  
 **Source:** [v2/rules/git/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/evidence-exists.yaml)  
 **Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/evidence-exists.rego)  
-**Labels:** Git  
+**Labels:** SBOM, Git  
 
 Verify required Git evidence exists.
 
@@ -30,6 +30,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Mitigation  
+By confirming that all required evidence exists, this rule guarantees that a Source Code Bill of Materials (SBOM) is fully represented as evidence.
+
+
 
 ## Evidence Requirements  
 | Field | Value |

@@ -9,7 +9,7 @@ labels:
   - SBOM
   - Blueprint
   - Image
-  - Source
+  - Git
 
 fail-on-missing-evidence: true
 

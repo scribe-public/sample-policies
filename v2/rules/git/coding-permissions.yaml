@@ -19,3 +19,28 @@ evidence:
 with:
   ids: []
   files: []
+full-description: |
+  This rule verifies that only allowed users have committed to the repository.
+  It performs the following steps:
+  
+  1. Iterates over the commits in the repository.
+  2. Checks each commit's author against the list of allowed user IDs.
+     - If a commit's author is not in the allowed list, the rule flags it as a violation.
+  3. Checks each committed file against the list of allowed files.
+     - If a committed file is not in the allowed list, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Git repository resources.
+
+mitigation: |
+  Prevent unauthorized users from committing to the repository by restricting coding permissions.
+
+inputs:
+  - name: ids
+    type: array
+    description: "The list of user (commit.author) IDs allowed to commit to the repository."
+    required: false
+  - name: files
+    type: array
+    description: "The list of files that are allowed to be committed to the repository."
+    required: false

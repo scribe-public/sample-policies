@@ -8,7 +8,7 @@ description: Verify the SBOM is signed.
 labels:
   - SBOM
   - Blueprint
-  - Source
+  - Git
 
 fail-on-missing-evidence: true
 

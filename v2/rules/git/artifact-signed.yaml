@@ -6,6 +6,7 @@ path: artifact-signed.rego
 description: Verify the Git artifact is signed.
 
 labels:
+  - SBOM
   - Git
 
 fail-on-missing-evidence: true
@@ -22,3 +23,20 @@ with:
   identity:
     common-names: []
     emails: []
+
+
+notes: |
+  **Input Example:**
+    ```yaml
+  - uses: git/artifact-signed@v2/rules
+    with:
+      identity:
+        emails:
+        - bob@company.com
+        - alice@company.com
+      skip_image_regex:
+      - .*alpine.*
+  ```
+
+mitigation: |
+  Ensures that only Git artifacts with valid cryptographic signatures are deployed prevents source code tampering.

@@ -8,7 +8,7 @@ description: Verify the SBOM is not older than the specified duration.
 labels:
   - SBOM
   - Image
-  - Source
+  - Git
 
 evidence:
   filter-by:

@@ -25,6 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Mitigation  
+Regularly scan the target artifact for vulnerabilities to ensure that it remains secure.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
@@ -33,8 +37,8 @@ Rule is scoped by product and target.
 | content_body_type | cyclonedx-json |
 | target_type | container |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| superset | `{'cve': {'max': 0, 'severity': 6}}` |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| superset | object | False | The superset of CVEs to check for, including the following format {cve: {max: <int>, severity: <int}} |
 

@@ -28,3 +28,21 @@ with:
       # vulnerabilities: []
       # component_name: "liblzma5"
       # component_version: "5.6.0"
+
+inputs:
+  - name: superset
+    type: object
+    description: "The superset of CVEs to check for, including the following format {cve: {max: <int>, severity: <int}}"
+
+notes: |
+  **Input Example:**
+  
+  ```yaml
+  - uses: scribe/scribe-cve@v2/rules
+  - superset:
+      cve:
+        max: 0
+        severity: 6
+  ```
+
+mitigation: Regularly scan the target artifact for vulnerabilities to ensure that it remains secure.

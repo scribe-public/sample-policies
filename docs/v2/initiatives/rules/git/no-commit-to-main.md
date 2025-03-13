@@ -8,7 +8,7 @@ title: Disallow Commits to Main Branch
 **Uses:** `git/no-commit-to-main@v2/rules`  
 **Source:** [v2/rules/git/no-commit-to-main.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/no-commit-to-main.yaml)  
 **Rego Source:** [no-commit-to-main.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/no-commit-to-main.rego)  
-**Labels:** Git  
+**Labels:** SBOM, Git  
 
 Verify commits made directly to the main branch are disallowed.
 
@@ -24,6 +24,22 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 :::info  
 Rule is scoped by product and target.  
 :::  
+
+## Mitigation  
+Enforcing no commits to the main branch ensures that changes are made through pull requests, allowing for code review and approval before merging.
+
+
+## Description  
+This rule ensures that no commits are made directly to the main or master branches.
+It performs the following steps:
+
+1. Check SBOM target branch
+2. If the target branch is the main or master branch, the rule looks for commit objects.
+3. If commit objects are found, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Git repository resources.
+
 
 ## Evidence Requirements  
 | Field | Value |

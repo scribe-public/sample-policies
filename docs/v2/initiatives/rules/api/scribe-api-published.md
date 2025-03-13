@@ -22,14 +22,22 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Mitigation  
+Ensure that all critical or high severity vulnerabilities are addressed before delivering the product.
+
+
+## Description  
+This rule ensures that the product is published only after all critical or high severity vulnerabilities are addressed.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
 | signed | False |
 | content_body_type | cyclonedx-json |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| superset | `{'published': None}` |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| superset | object | False | The superset of CVEs to check for, including the following format {published: {flag: <bool>}} |
 

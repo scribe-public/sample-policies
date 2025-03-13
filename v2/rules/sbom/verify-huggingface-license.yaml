@@ -8,7 +8,7 @@ description: Verify the artifact includes all specified licenses.
 labels:
   - SBOM
   - Image
-  - Source
+  - Git
 
 evidence:
   filter-by:
