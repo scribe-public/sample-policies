@@ -19,7 +19,9 @@ controls:
       theft of the software and may make it more difficult or time-consuming for attackers
       to find vulnerabilities in the software.
     mitigation: >
-      Protect all forms of code from unauthorized access and tampering.
+      Implement strict access controls, enforce multi-factor authentication (MFA),
+      and regularly audit access logs to ensure only authorized personnel can access and modify the code.
+      Use branch protection rules, require signed commits, and make repositories private to prevent unauthorized access and tampering.
     rules:
       - uses: github/org/2fa@v2
         name: Enforce 2FA
@@ -60,7 +62,10 @@ controls:
       Help software acquirers ensure that the software they acquire
       is legitimate and has not been tampered with.
     mitigation: >
-      Provide a mechanism for verifying the integrity of software releases.
+      Use cryptographic signatures to sign software releases and provide a way for users to verify these signatures.
+      Ensure that the signing keys are stored securely and that access to them is restricted.
+      Implement automated processes to sign releases and verify their integrity before distribution.
+      Regularly audit the signing process and keys to ensure their security and integrity.
     rules:
       - uses: sbom/artifact-signed@v2
         name: Image-verifiable
@@ -75,7 +80,13 @@ controls:
       Preserve software releases in order to help identify, analyze, and eliminate
       vulnerabilities discovered in the software after release.
     mitigation: >
-      Archive and protect each software release.
+      Store each software release in a secure, version-controlled repository
+      to ensure that it can be retrieved and analyzed in the future.
+      Implement access controls to restrict who can modify or delete archived releases.
+      Use cryptographic hashes to verify the integrity of archived releases and ensure they have not been tampered with.
+      Regularly back up the repository to prevent data loss and ensure that archived releases are preserved
+      even in the event of a system failure.
+      Document the archiving process and train personnel on its importance and proper execution.
     rules:
       - uses: demodata/data@experimental
         name: Code archived
