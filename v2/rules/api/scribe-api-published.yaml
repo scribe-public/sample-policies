@@ -22,7 +22,7 @@ with:
 inputs:
   - name: superset
     type: object
-    description: "The superset of CVEs to check for, including the following format \{published: \{flag: bool\}\}"
+    description: "The superset of CVEs to check for, including the following format [published: [flag: bool]]"
 
 full-description: |
   This rule ensures that the product is published only after all critical or high severity vulnerabilities are addressed.
