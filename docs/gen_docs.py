@@ -837,7 +837,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     md_lines.append("|------|-------------|")
     for doc in initiative_docs:
         # Build a link to the initiative doc at "docs/initiative/<file.md>"
-        link = f"[{doc['name']}](docs/initiative/{doc['file']})"
+        link = f"[{doc['name']}]({DOC_SITE_BASE}docs/initiative/{doc['file']})"
         # Replace newlines in description with a space to avoid breaking the table.
         description = doc['description'].replace("\n", " ")
         md_lines.append(f"| {link} | {description} |")
@@ -860,7 +860,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
         # Get the relative path for the rule doc (e.g. "gitlab/org/max-admins.md")
         rel_path = doc_info["rel_path"]
         # Create a link to the rule doc relative to the initiatives folder.
-        rule_link = f"[{rule_name}](rules/{rel_path})"
+        rule_link = f"[{rule_name}]({DOC_SITE_BASE}/rules/{rel_path})"
         index_rows.append((evidence_type, rule_link, description, evidence_link))
     
     # Sort rules: prioritized groups first (using high_priority) then alphabetically.
