@@ -809,6 +809,75 @@ def create_rules_index_md(rule_docs_map):
     
     print(f"Created rules index at {index_file_path}")
 
+
+def create_combined_index_md(initiative_docs, rule_docs_map):
+    """
+    Create a combined index markdown file at initiatives/index.md with two sections:
+    
+    1. Initiatives – a table with columns:
+         - Name (linked to the doc site, e.g. "docs/initiative/<file.md>")
+         - Description
+    2. Rules – a table with columns:
+         - Rule Name
+         - Description
+         - Evidence Type (as a link, if available)
+         
+    Rules are sorted using high_priority (if defined) and then alphabetically.
+    """
+    index_file_path = os.path.join(INITIATIVES_OUTDIR, "index.md")
+    md_lines = []
+    
+    # Overall header
+    md_lines.append("# Documentation Index")
+    md_lines.append("")
+    
+    # Initiatives Section
+    md_lines.append("## Initiatives")
+    md_lines.append("")
+    md_lines.append("| Name | Description |")
+    md_lines.append("|------|-------------|")
+    for doc in initiative_docs:
+        # Build a link to the initiative doc at "docs/initiative/<file.md>"
+        link = f"[{doc['name']}]({DOC_SITE_BASE}/{doc['file']})"
+        md_lines.append(f"| {link} | {doc['description']} |")
+    md_lines.append("")
+    
+    # Rules Section
+    md_lines.append("## Rules")
+    md_lines.append("")
+    md_lines.append("| Rule Name | Description | Evidence Type |")
+    md_lines.append("|-----------|-------------|---------------|")
+    
+    index_rows = []
+    for key, doc_info in rule_docs_map.items():
+        rule_data = doc_info["yaml_data"]
+        rule_name = rule_data.get("name", key)
+        description = rule_data.get("description", "")
+        evidence = rule_data.get("evidence", {})
+        evidence_type, signed = get_evidence_type(evidence, rule_name)
+        # Build a link for the evidence type if available in the table
+        evidence_link = f" See [here]({table[evidence_type]})" if evidence_type in table else ""
+        index_rows.append((evidence_type, rule_name, description, evidence_link))
+    
+    # Sort rules: high_priority groups first (using high_priority dict) then alphabetically
+    def sort_key(row):
+        ev_type = row[0]
+        if ev_type in high_priority:
+            return (0, high_priority[ev_type])
+        else:
+            return (1, ev_type.lower())
+    index_rows.sort(key=sort_key)
+    
+    for _, rule_name, description, evidence_link in index_rows:
+        md_lines.append(f"| {rule_name} | {description} | {evidence_link} |")
+    
+    md_content = "\n".join(md_lines)
+    with open(index_file_path, "w") as f:
+        f.write(md_content)
+    
+    print(f"Created combined index at {index_file_path}")
+
+
 def main():
     ensure_output_dirs()
 
@@ -850,11 +919,20 @@ def main():
         doc_info = write_rule_doc(file_path, r_data, base_source_git)
         rule_docs_map[key_for_map] = doc_info
 
+    initiative_docs = []
     for file_path, i_data in initiative_files:
-        write_initiative_doc(file_path, i_data, rule_docs_map, base_source_git)
+        out_path = write_initiative_doc(file_path, i_data, rule_docs_map, base_source_git)
+        base_file = os.path.basename(out_path)  # e.g. "slsa.l2.md"
+        name = i_data.get("name", os.path.splitext(base_file)[0])
+        description = i_data.get("description", "")
+        initiative_docs.append({
+            "name": name,
+            "description": description,
+            "file": base_file
+        })
 
     traverse_and_create_category_files()
-    create_rules_index_md(rule_docs_map)
+    create_combined_index_md(initiative_docs, rule_docs_map)
     print("[OK] Documentation has been generated under docs/v2/")
 
 
