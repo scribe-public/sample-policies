@@ -14,7 +14,6 @@ Validates that SBOM metadata meets basic NTIA requirements for authors and suppl
 
 
 :::note 
-This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
   
 Ensure that the SBOM includes metadata for authors and suppliers to meet NTIA requirements.
 
@@ -41,6 +40,7 @@ valint bom my_company/my_image:latest \
       name: "alice"
 ```
 
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

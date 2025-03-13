@@ -21,3 +21,33 @@ evidence:
 with:
   namespaces:
     - ".*"
+
+inputs:
+  - name: namespaces
+    description: "A list of namespaces to verify (supports regex)."
+    type: array
+    required: false
+
+full-description: |
+  This rule verifies that namespaces in Kubernetes are terminated properly within the specified time frame.
+  It performs the following steps:
+  
+  1. Iterates over the namespaces marked for termination in the cluster.
+  2. Checks each namespace's termination time against the limit specified in the `with.max_termination_time` configuration.
+     - If a namespace's termination time exceeds the limit, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
+notes: |
+  **Input Example:**
+  
+  ```yaml
+  - uses: k8s/namespace/verify-namespace-termination@v2/rules
+    with:
+      namespaces:
+        - ".*"
+  ```
+
+mitigation: >
+  Ensures that namespaces are terminated in a timely manner, preventing lingering resources and maintaining cluster hygiene.

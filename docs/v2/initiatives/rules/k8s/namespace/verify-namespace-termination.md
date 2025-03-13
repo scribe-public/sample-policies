@@ -13,6 +13,16 @@ title: Verify Namespace Termination
 Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
 :::note 
+  
+**Input Example:**
+
+```yaml
+- uses: k8s/namespace/verify-namespace-termination@v2/rules
+  with:
+    namespaces:
+      - ".*"
+```
+
 This rule requires K8s Namespace Discovery Evidence.  
 ::: 
 :::tip 
@@ -21,6 +31,23 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 :::warning  
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
+
+## Mitigation  
+Ensures that namespaces are terminated in a timely manner, preventing lingering resources and maintaining cluster hygiene.
+
+
+
+## Description  
+This rule verifies that namespaces in Kubernetes are terminated properly within the specified time frame.
+It performs the following steps:
+
+1. Iterates over the namespaces marked for termination in the cluster.
+2. Checks each namespace's termination time against the limit specified in the `with.max_termination_time` configuration.
+   - If a namespace's termination time exceeds the limit, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -31,8 +58,8 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - asset_type=namespace<br/>- platform=k8s |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| namespaces | ['.*'] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| namespaces | array | False | A list of namespaces to verify (supports regex). |
 

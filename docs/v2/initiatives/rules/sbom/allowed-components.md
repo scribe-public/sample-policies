@@ -13,7 +13,6 @@ title: Enforce Allowed SBOM Components
 Verify the artifact contains only allowed components.
 
 :::note 
-This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
   
 Components type reference: https://cyclonedx.org/docs/1.6/json/#components_items_type
 
@@ -27,6 +26,7 @@ Components type reference: https://cyclonedx.org/docs/1.6/json/#components_items
       - operating-system
 ```
 
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

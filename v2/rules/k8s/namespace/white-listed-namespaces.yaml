@@ -25,7 +25,7 @@ inputs:
   - name: namespaces
     description: "A list of allowed namespaces."
     type: array
-    required: true
+    required: false
 
 full-description: |
   This rule ensures that only namespaces specified in the whitelist are allowed within the Kubernetes cluster.

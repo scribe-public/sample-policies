@@ -6,6 +6,7 @@ path: coding-permissions.rego
 description: Verify only allowed users committed to the repository.
 
 labels:
+  - SBOM
   - Git
 
 evidence:
@@ -33,7 +34,7 @@ full-description: |
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Git repository resources.
 
 mitigation: |
-  Prevent unauthorized users from committing to the repository by restricting coding permissions.
+  Prevent unauthorized users from committing to the repository by restricting commit permissions to allowed users only.
 
 inputs:
   - name: ids

@@ -26,7 +26,11 @@ Rule is scoped by product and target.
 :::  
 
 ## Mitigation  
-Regularly scan the target artifact for vulnerabilities to ensure that it remains secure.
+Ensure that all critical or high severity vulnerabilities are addressed before delivering the product.
+
+
+## Description  
+This rule ensures that there are no critical or high severity vulnerabilities in any deliverable component of the product by verifying via the Scribe API.
 
 
 ## Evidence Requirements  

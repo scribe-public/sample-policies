@@ -8,7 +8,7 @@ title: Restrict Coding Permissions
 **Uses:** `git/coding-permissions@v2/rules`  
 **Source:** [v2/rules/git/coding-permissions.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/coding-permissions.yaml)  
 **Rego Source:** [coding-permissions.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/git/coding-permissions.rego)  
-**Labels:** Git  
+**Labels:** SBOM, Git  
 
 Verify only allowed users committed to the repository.
 
@@ -26,7 +26,7 @@ Rule is scoped by product and target.
 :::  
 
 ## Mitigation  
-Prevent unauthorized users from committing to the repository by restricting coding permissions.
+Prevent unauthorized users from committing to the repository by restricting commit permissions to allowed users only.
 
 
 

@@ -13,7 +13,6 @@ title: Enforce SBOM Freshness
 Verify the SBOM is not older than the specified duration.
 
 :::note 
-This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
   
 Ensure that the SBOM includes a creation date to verify its freshness.
 
@@ -25,6 +24,7 @@ Ensure that the SBOM includes a creation date to verify its freshness.
     max_days: 30
 ```
 
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

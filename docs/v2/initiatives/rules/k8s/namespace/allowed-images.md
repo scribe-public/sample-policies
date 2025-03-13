@@ -13,7 +13,6 @@ title: Allowed Container Images
 Verify only container images specified in the Allowed List run within the Kubernetes namespace.
 
 :::note 
-This rule requires K8s Namespace Discovery Evidence.  
   
 **Input**
 `images_to_include` is a list of image repository names.
@@ -28,6 +27,7 @@ This rule requires K8s Namespace Discovery Evidence.
       - docker.io/my_org/my_image2
 ```
 
+This rule requires K8s Namespace Discovery Evidence.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

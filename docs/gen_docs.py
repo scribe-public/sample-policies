@@ -340,13 +340,13 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     evidence_str = create_rule_string_from_evidence(rule_data.get("evidence", {}), file_path, skip_evidence, require_scribe_api)
     if evidence_str != "":
         md.append(f":::note ")
-        md.append(f"{evidence_str}  ")
         extra_notes = rule_data.get("notes", "")
         if extra_notes != "":
             split_line_note = extra_notes.split("\n")
             md.append(f"  ")
             for line in split_line_note:
                 md.append(line)
+        md.append(f"{evidence_str}  ")
         md.append(f"::: ")
 
 
