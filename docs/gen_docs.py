@@ -856,7 +856,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
         description = rule_data.get("description", "").replace("\n", " ")
         evidence = rule_data.get("evidence", {})
         evidence_type, signed = get_evidence_type(evidence, rule_name)
-        evidence_link = f" See [here]({table[evidence_type]})" if evidence_type in table else ""
+        evidence_link = f" [{evidence_type}]({table[evidence_type]})" if evidence_type in table else ""
         # Get the relative path for the rule doc (e.g. "gitlab/org/max-admins.md")
         rel_path = doc_info["rel_path"]
         # Create a link to the rule doc relative to the initiatives folder.
