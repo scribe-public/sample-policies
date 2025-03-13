@@ -10,11 +10,11 @@ defaults:
     signed: false
 
 controls:
-
-########################################################################
-# CONTROL 1: CICD-SEC-1: Insufficient Flow Control Mechanisms
-########################################################################
-  - name:: "CICD-SEC-1: Insufficient Flow Control Mechanisms"
+  ########################################################################
+  # CONTROL 1: CICD-SEC-1: Insufficient Flow Control Mechanisms
+  ########################################################################
+  - name: "Insufficient Flow Control Mechanisms"
+    id: CICD-SEC-1
     description: >
       Ensure that the CI/CD pipeline has sufficient flow control mechanisms 
       to prevent unauthorized access to the push malicious code to artifacts.
@@ -25,15 +25,15 @@ controls:
 
       - uses: github/repository/required-sig@v2 # Missing
         name: Accept Signed Commits
-        description: "Ensure all commits signing is required by branch protection, in order to aintain code integrity."
-            # TODO: add this rule. consider how to run multiple such rules without the complicated policy validation
-
-
+        description:
+          "Ensure all commits signing is required by branch protection, in order to aintain code integrity."
+          # TODO: add this rule. consider how to run multiple such rules without the complicated policy validation
 
     ########################################################################
     # CONTROL 2: CICD-SEC-2: Inadequate Identity and Access Management
     ########################################################################
-  - name:: "CICD-SEC-2: Inadequate Identity and Access Management"
+  - name: "Inadequate Identity and Access Management"
+    id: CICD-SEC-2
     description: >
       Ensure that the CI/CD pipeline has adequate identity and access management
       to prevent unauthorized access to the pipeline and artifacts.
@@ -45,31 +45,31 @@ controls:
       - uses: github/org/max-admins@v2
         name: "Limit Admins"
         description: "Limit the number of admins to the minimum required."
-        with: 
+        with:
           max_admins: 4
 
       - uses: github/repository/repo-private@v2
         name: "Use Private Repositories"
         description: "Ensure that the repository is private."
 
-
     ########################################################################
     # CONTROL 3: CICD-SEC-3: Dependency Chain Abuse
     ########################################################################
-  # - name:: "CICD-SEC-3: Dependency Chain Abuse"
+  # - name: "Dependency Chain Abuse"
+  #   id: CICD-SEC-3
   #   description: >
   #     Ensure that the CI/CD pipeline has mechanisms to prevent dependency chain abuse.
   #   rules:
-  #     # TBD: Skip for now. 
+  #     # TBD: Skip for now.
   #     # consider doing the dependency integrity check
   #     # Do we have a mock rule to provide "success, not supported" for now?
-  #     # Consider a rule verifying through superset that we do not use any package 
+  #     # Consider a rule verifying through superset that we do not use any package
   #     # That has binaries it it - this is supported in OpenSSF Scorecard
-
-    ########################################################################
-    # CONTROL 4: CICD-SEC-4: Poisoned Pipeline Execution (PPE)
-    ########################################################################
-  - name:: "CICD-SEC-4: Poisoned Pipeline Execution"
+  ########################################################################
+  # CONTROL 4: CICD-SEC-4: Poisoned Pipeline Execution (PPE)
+  ########################################################################
+  - name: "Poisoned Pipeline Execution"
+    id: CICD-SEC-4
     description: >
       Ensure that the pipline script cannot be tampered with
 
@@ -77,16 +77,15 @@ controls:
       - uses: git/coding-permissions@v2
         name: "Restrict Pipeline Script Modification"
         description: "Restrict access to the pipeline script to prevent tampering."
-        with: 
+        with:
           files: [".github/workflow/*.yml", ".github/workflow/*.yaml"]
           ids: ["dn-scribe", "houdini91"]
-      
-
 
     ########################################################################
     # CONTROL 5: CICD-SEC-5: Insufficient PBAC (Pipeline-Based Access Controls)
     ########################################################################
-  - name:: "CICD-SEC-5: Insufficient Pipeline Access Controls"
+  - name: "Insufficient Pipeline Access Controls"
+    id: CICD-SEC-5
     description: >
       Ensure that the CI/CD pipeline has sufficient access controls to prevent unauthorized access to the pipeline and artifacts.
     rules:
@@ -101,7 +100,8 @@ controls:
     ########################################################################
     # CONTROL 6: CICD-SEC-6: Insufficient Credential Hygiene
     ########################################################################
-  - name:: "CICD-SEC-6: Insufficient Credential Hygiene"
+  - name: "Insufficient Credential Hygiene"
+    id: CICD-SEC-6
     description: >
       Ensure that the CI/CD pipeline has sufficient credential hygiene to prevent 
       unauthorized access to the pipeline and artifacts.
@@ -110,12 +110,13 @@ controls:
       uses: github/repository/old-secrets@v2
       name: "Verify No Old Secrets Exist in Repository"
       with:
-          max_secret_age: 6 # number of months
+        max_secret_age: 6 # number of months
 
     ########################################################################
     # CONTROL 7: CICD-SEC-7: Insecure System Configuration
     ########################################################################
-  - name:: "CICD-SEC-7: Insecure System Configuration"
+  - name: "Insecure System Configuration"
+    id: CICD-SEC-7
     description: >
       Ensure that the CI/CD pipeline has secure system configuration to prevent unauthorized access to the pipeline and artifacts.
     rules:
@@ -123,21 +124,19 @@ controls:
         name: "Use Github Runner"
         description: "Ensure that only Github-provided, ephemeral runners are used for CI/CD."
 
-
     ########################################################################
     # CONTROL 8: CICD-SEC-8: Ungoverned Usage of 3rd Party Services
     ########################################################################
-  # - name:: "CICD-SEC-8: Ungoverned Usage of 3rd Party Services"
+  # - name: "Ungoverned Usage of 3rd Party Services"
+  #   id: CICD-SEC-8
   #   description: >
   #     Ensure that the CI/CD pipeline has mechanisms to prevent ungoverned usage of 3rd party services.
-
   #   # Not supported
-
-
-    ########################################################################
-    # CONTROL 9: CICD-SEC-9: Improper Artifact Integrity Validation
-    ########################################################################
-  - name:: "CICD-SEC-9: Improper Artifact Integrity Validation"
+  ########################################################################
+  # CONTROL 9: CICD-SEC-9: Improper Artifact Integrity Validation
+  ########################################################################
+  - name: "Improper Artifact Integrity Validation"
+    id: CICD-SEC-9
     description: >
       Ensure that the CI/CD pipeline has mechanisms to validate the integrity of artifacts.
     rules:
@@ -148,11 +147,12 @@ controls:
     ########################################################################
     # CONTROL 10: CICD-SEC-10: Insufficient Logging and Visibility
     ########################################################################
-  - name:: "CICD-SEC-10: Insufficient Logging and Visibility"
+  - name: "Insufficient Logging and Visibility"
+    id: CICD-SEC-10
     description: >
       Ensure that the CI/CD pipeline has sufficient logging and visibility to detect unauthorized access to the pipeline and artifacts.
 
-    rules: 
-      - uses: evidence/platforms-evidence-exists# TBD 
+    rules:
+      - uses: evidence/platforms-evidence-exists# TBD
         name: "Github Organization"
       # Add rules for all platforms: verify existing evidence for the repository used.
