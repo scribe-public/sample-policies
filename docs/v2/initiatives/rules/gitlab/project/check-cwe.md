@@ -13,7 +13,7 @@ title: Check CWE Compliance
 Verify that specified CWEs were not detected in the GitLab project.
 
 :::note 
-This rule requires Gitlab Project Discovery Evidence. See [here](https://scribe-security.netlify.app/platforms/discover#gitlab-discovery) for more details.  
+This rule requires Gitlab Project Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#gitlab-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

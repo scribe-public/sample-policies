@@ -13,7 +13,7 @@ title: Require Password for Approvals in GitLab Project
 Verify the binary field `require_password_to_approve` is set for the GitLab project.
 
 :::note 
-This rule requires Gitlab Project Discovery Evidence. See [here](https://scribe-security.netlify.app/platforms/discover#gitlab-discovery) for more details.  
+This rule requires Gitlab Project Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#gitlab-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

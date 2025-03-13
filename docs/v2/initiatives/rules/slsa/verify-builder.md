@@ -13,7 +13,7 @@ title: Verify that artifact was created by the specified builder
 Verify the artifact was created by the specified builder.
 
 :::note 
-This rule requires SLSA Provenance. See [here](https://scribe-security.netlify.app/valint/help/valint_slsa) for more details.  
+This rule requires SLSA Provenance. See [here](https://deploy-preview-299--scribe-security.netlify.app/valint/help/valint_slsa) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

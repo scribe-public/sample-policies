@@ -12,7 +12,7 @@ title: Required Trivy Evidence Exists
 Verify required Trivy evidence exists
 
 :::note 
-This rule requires Generic Statement. See [here](https://scribe-security.netlify.app/valint/generic) for more details.  
+This rule requires Generic Statement. See [here](https://deploy-preview-299--scribe-security.netlify.app/valint/generic) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

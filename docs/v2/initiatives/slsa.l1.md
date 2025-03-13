@@ -45,4 +45,4 @@ Ensure that provenance metadata is present for critical build artifacts to suppo
 
 | Rule ID | Rule Name | Rule Description |
 |---------|-----------|------------------|
-| [prov_exists](https://scribe-security.netlify.app/docs/configuration/initiatives/rules/slsa/l1-provenance-exists) | [Provenance exists](rules/slsa/l1-provenance-exists.md) | Verify that the Provenance document evidence exists. |
+| [prov_exists](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/slsa/l1-provenance-exists) | [Provenance exists](rules/slsa/l1-provenance-exists.md) | Verify that the Provenance document evidence exists. |

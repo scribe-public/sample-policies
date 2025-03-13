@@ -13,7 +13,7 @@ title: Restrict Disallowed SBOM Licenses
 Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.
 
 :::note 
-This rule requires SBOM. See [here](https://scribe-security.netlify.app/valint/sbom) for more details.  
+This rule requires SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/valint/sbom) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
