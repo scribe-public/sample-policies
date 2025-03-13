@@ -18,16 +18,20 @@ controls:
     description: >
       Ensure that the CI/CD pipeline has sufficient flow control mechanisms 
       to prevent unauthorized access to the push malicious code to artifacts.
+    mitigation: >
+      Implement branch protection rules to prevent unauthorized changes. 
+      Require signed commits to maintain code integrity.
     rules:
       - uses: github/repository/branch-protection@v2
         name: Require Branch Protection
         description: "Implement branch protection rules to prevent unauthorized changes."
 
-      - uses: github/repository/required-sig@v2 # Missing
+      - uses: github/repository/check-signed-commits@v2
         name: Accept Signed Commits
         description:
-          "Ensure all commits signing is required by branch protection, in order to aintain code integrity."
-          # TODO: add this rule. consider how to run multiple such rules without the complicated policy validation
+          "Ensure all commits signing is required by branch protection, in order to maintain code integrity."
+      
+      - uses: github/repository/web-commit-signoff@v2
 
     ########################################################################
     # CONTROL 2: CICD-SEC-2: Inadequate Identity and Access Management
@@ -37,6 +41,7 @@ controls:
     description: >
       Ensure that the CI/CD pipeline has adequate identity and access management
       to prevent unauthorized access to the pipeline and artifacts.
+    
     rules:
       - uses: github/org/2fa@v2
         name: "Enforce MFA"
