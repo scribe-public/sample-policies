@@ -16,6 +16,36 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
     - "asset_type=pod"
-
+    - "platform=k8s"
+    
 with:
-  max_days: "30"
+  max_days: 30 # Maximum allowed duration in days
+
+inputs:
+  - name: max_days
+    description: "The maximum allowed duration for pods in days."
+    type: integer
+    required: false
+
+full-description: |
+  This rule verifies that the duration of pods in Kubernetes does not exceed the specified limit.
+  It performs the following steps:
+  
+  1. Iterates over the pods in the cluster.
+  2. Checks each pod's duration against the limit specified in the `with.max_days` configuration.
+     - If a pod's duration exceeds the limit, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
+notes: |
+  **Input Example:**
+  
+  ```yaml
+  - uses: k8s/pods/verify-pod-duration@v2/rules
+    with:
+      max_days: 10
+  ```
+
+mitigation: >
+  Ensures that pods do not exceed their intended lifecycle, maintaining cluster hygiene and resource efficiency.

@@ -37,5 +37,5 @@ with:
 inputs:
   - name: labels
     description: "A list of required labels."
-    type: list
+    type: array
     required: false

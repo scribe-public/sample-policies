@@ -59,5 +59,5 @@ is found, a violation is recorded indicating that the necessary base image infor
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| approved_sources | list | False | A list of approved base image  pattern. |
+| approved_sources | array | False | A list of approved base image  pattern. |
 

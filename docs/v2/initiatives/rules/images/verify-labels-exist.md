@@ -52,5 +52,5 @@ This rule checks the CycloneDX SBOM evidence for the container image to verify t
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| labels | list | False | A list of required labels. |
+| labels | array | False | A list of required labels. |
 

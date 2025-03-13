@@ -32,9 +32,9 @@ Rule is scoped by product.
 | tool | Trivy Vulnerability Scanner |
 | filter-by | ['product'] |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| attack_vectors | [] |
-| violations_threshold | 0 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| attack_vectors | array | False | List of attack vectors to check for in the Trivy SARIF report. |
+| violations_threshold | integer | False | The maximum number of allowed attack vector violations in the Trivy SARIF report. |
 

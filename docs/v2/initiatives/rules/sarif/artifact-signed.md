@@ -53,8 +53,3 @@ Additionally, the rule validates that the signature corresponds to one of the ex
 | target_type | data |
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| identity | `{'common-names': [], 'emails': []}` |
-

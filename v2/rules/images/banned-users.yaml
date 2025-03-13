@@ -39,5 +39,5 @@ with:
 inputs:
   - name: users
     description: "A list of disallowed users. Each entry should be a string representing a username."
-    type: list
+    type: array
     required: false

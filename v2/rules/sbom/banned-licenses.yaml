@@ -25,6 +25,7 @@ full-description: |
 labels:
   - SBOM
   - Image
+  - Source
 
 evidence:
   filter-by:
@@ -40,7 +41,7 @@ with:
 inputs:
   - name: blocklist
     description: "A list of disallowed licenses."
-    type: list
+    type: array
     required: false
   - name: blocklisted_limit
     description: "The maximum number of components with disallowed licenses allowed."

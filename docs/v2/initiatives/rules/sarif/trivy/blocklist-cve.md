@@ -56,9 +56,9 @@ the rule ID, severity (extracted from the rule’s properties), and the location
 | tool | Trivy Vulnerability Scanner |
 | filter-by | ['product'] |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| rule_ids | [] |
-| violations_threshold | 0 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| rule_ids | array | False | List of CVE identifiers to check for in the Trivy SARIF report. |
+| violations_threshold | integer | False | The maximum number of allowed violations. |
 

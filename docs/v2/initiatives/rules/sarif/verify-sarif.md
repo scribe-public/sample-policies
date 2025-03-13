@@ -54,12 +54,12 @@ severity, and the corresponding location in the artifact.
 | target_type | data |
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| rule_level | [] |
-| precision | [] |
-| rule_ids | [] |
-| ignore | [] |
-| max_allowed | 0 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| rule_level | array | False | List of rule levels to check for in the SARIF report. |
+| precision | array | False | List of precision levels to check for in the SARIF report. |
+| rule_ids | array | False | List of rule IDs to check for in the SARIF report. |
+| ignore | array | False | List of rule IDs to ignore in the SARIF report. |
+| max_allowed | integer | False | The maximum number of allowed violations. |
 

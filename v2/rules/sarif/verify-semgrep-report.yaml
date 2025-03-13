@@ -38,3 +38,25 @@ evidence:
 with:
   rule_ids: []
   violations_threshold: 0
+
+inputs:
+  - name: rule_level
+    type: array
+    description: List of rule levels to check for in the SARIF report.
+    required: false
+  - name: precision
+    type: array
+    description: List of precision levels to check for in the SARIF report.
+    required: false
+  - name: rule_ids
+    type: array
+    description: List of rule IDs to check for in the SARIF report.
+    required: false
+  - name: ignore
+    type: array
+    description: List of rule IDs to ignore in the SARIF report.
+    required: false
+  - name: max_allowed
+    type: integer
+    description: The maximum number of allowed violations.
+    required: false

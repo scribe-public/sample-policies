@@ -42,5 +42,5 @@ with:
 inputs:
   - name: approved_sources
     description: "A list of approved Image source patterns."
-    type: list
+    type: array
     required: false

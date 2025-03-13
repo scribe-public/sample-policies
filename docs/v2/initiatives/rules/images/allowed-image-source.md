@@ -56,5 +56,5 @@ The matching is performed using a case-insensitive, anchored regex.
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| approved_sources | list | False | A list of approved Image source patterns. |
+| approved_sources | array | False | A list of approved Image source patterns. |
 

@@ -7,6 +7,8 @@ description: Verify the SBOM is not older than the specified duration.
 
 labels:
   - SBOM
+  - Image
+  - Source
 
 evidence:
   filter-by:
@@ -16,3 +18,36 @@ evidence:
   content_body_type: cyclonedx-json
 with:
   max_days : 30
+
+mitigation: >
+  Ensures that the SBOM is up-to-date, reducing the risk of outdated information and ensuring accurate tracking of components.
+
+full-description: |  
+  This rule inspects the CycloneDX SBOM evidence for the artifact to verify that it is not older than the specified duration.
+  It performs the following steps:
+  
+  1. Checks the creation date of the SBOM.
+  2. Compares the creation date against the maximum allowed age specified in the `with.max_days` configuration.
+     - If the SBOM is older than the allowed duration, the rule flags it as a violation.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided in the CycloneDX JSON format.
+  - The SBOM must include a creation date.
+
+inputs:
+  - name: max_days
+    description: "The maximum allowed age of the SBOM in days."
+    type: integer
+    required: false
+
+notes: |
+  Ensure that the SBOM includes a creation date to verify its freshness.
+
+  **Input Example:**
+  
+  ```yaml
+  - uses: sbom/fresh-sbom@v2/rules
+    with:
+      max_days: 30
+  ```
+

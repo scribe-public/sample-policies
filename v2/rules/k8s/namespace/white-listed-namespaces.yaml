@@ -20,3 +20,37 @@ evidence:
 
 with:
   namespaces: []
+
+inputs:
+  - name: namespaces
+    description: "A list of allowed namespaces."
+    type: array
+    required: true
+
+full-description: |
+  This rule ensures that only namespaces specified in the whitelist are allowed within the Kubernetes cluster.
+  It performs the following steps:
+  
+  1. Iterates over the namespaces in the cluster.
+  2. Checks each namespace against the whitelist specified in the `with.namespaces` configuration.
+     - If a namespace is not in the whitelist, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
+notes: |
+  **Input**
+  `namespaces` is a list of allowed namespaces.
+
+  **Input Example:**
+  
+  ```yaml
+  - uses: k8s/namespace/white-listed-namespaces@v2/rules
+    with:
+      namespaces:
+        - default
+        - kube-system
+  ```
+
+mitigation: >
+  Ensures that only approved namespaces are allowed within the Kubernetes cluster, reducing the risk of unauthorized or misconfigured namespaces.

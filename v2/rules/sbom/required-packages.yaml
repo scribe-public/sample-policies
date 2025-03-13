@@ -3,7 +3,7 @@ id: sbom-required-dependencies
 name: Enforce SBOM Dependencies
 path: required-packages.rego
 
-description: Verify the artifact includes all required dependencies.
+description: Verify the artifact includes all required dependencies specified as a list of PURLs.
 
 labels:
   - SBOM
@@ -19,3 +19,43 @@ evidence:
 with:
   required_pkgs: []
   violations_limit: 0
+
+
+mitigation: >
+  Ensures that all required dependencies are included in the SBOM, reducing the risk of missing critical components and ensuring compliance with dependency requirements.
+
+full-description: |  
+  This rule verifies that the artifact includes all required dependencies as specified.
+  It performs the following steps:
+  
+  1. Iterates over the dependencies listed in the SBOM.
+  2. Checks each dependency against the required dependencies specified in the `with.required_pkgs` configuration.
+     - If a required dependency is missing, the rule flags it as a violation.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided in the CycloneDX JSON format.
+  - The SBOM must include a list of dependencies.
+
+inputs:
+  - name: required_pkgs
+    description: "A list of required dependencies specified as PURLs."
+    type: array
+    required: true
+  - name: violations_limit
+    description: "The maximum number of allowed violations."
+    type: integer
+    required: false
+
+notes: |
+  Ensure that the SBOM includes all required dependencies to meet compliance requirements.
+
+  **Input Example:**
+  
+  ```yaml
+  - uses: sbom/required-packages@v2/rules
+    with:
+      required_pkgs:
+        - "pkg:maven/org.apache.commons/commons-lang3@3.9"
+        - "pkg:npm/lodash@4.17.15"
+      violations_limit: 0
+  ```

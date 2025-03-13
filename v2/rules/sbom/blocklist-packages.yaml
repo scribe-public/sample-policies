@@ -9,6 +9,7 @@ labels:
   - SBOM
   - Image
   - Blueprint
+  - Source
 
 evidence:
   filter-by:

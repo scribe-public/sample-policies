@@ -46,7 +46,7 @@ with:
 inputs:
   - name: banned_ports
     description: "A list of banned ports and protocols. Each entry should be a dictionary with 'port' and 'protocol' keys."
-    type: list
+    type: array
     required: false
 
 

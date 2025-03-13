@@ -8,6 +8,7 @@ description: Verify the SBOM is signed.
 labels:
   - SBOM
   - Blueprint
+  - Source
 
 fail-on-missing-evidence: true
 
