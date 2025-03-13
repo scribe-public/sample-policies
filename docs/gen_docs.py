@@ -837,7 +837,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     md_lines.append("|------|-------------|")
     for doc in initiative_docs:
         # Build a link to the initiative doc at "docs/initiative/<file.md>"
-        link = f"[{doc['name']}]({DOC_SITE_BASE}docs/initiative/{doc['file']})"
+        link = f"[{doc['name']}]({DOC_SITE_BASE}/docs/initiative/{doc['file']})"
         # Replace newlines in description with a space to avoid breaking the table.
         description = doc['description'].replace("\n", " ")
         md_lines.append(f"| {link} | {description} |")
