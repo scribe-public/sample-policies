@@ -512,6 +512,7 @@ def write_rule_doc(file_path, rule_data, base_source_git):
     return {
         "abs_path": abs_path,
         "rel_path": rel_path,
+        "base_name": base_name,
         "yaml_data": rule_data
     }
 
@@ -858,9 +859,9 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
         evidence_type, signed = get_evidence_type(evidence, rule_name)
         evidence_link = f" [{evidence_type}]({table[evidence_type]})" if evidence_type in table else ""
         # Get the relative path for the rule doc (e.g. "gitlab/org/max-admins.md")
-        rel_path = doc_info["rel_path"].strip(".md")
+        rel_path = doc_info["rel_path"]
         # Create a link to the rule doc relative to the initiatives folder.
-        rule_link = f"[{rule_name}]({DOC_SITE_BASE}/rules/{rel_path})"
+        rule_link = f"[{rule_name}]({DOC_SITE_BASE}/rules/{rel_path.replace('.md', '')})"
         index_rows.append((evidence_type, rule_link, description, evidence_link))
     
     # Sort rules: prioritized groups first (using high_priority) then alphabetically.
