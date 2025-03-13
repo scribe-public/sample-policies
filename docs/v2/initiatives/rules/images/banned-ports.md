@@ -68,8 +68,8 @@ It performs the following steps:
 | target_type | container |
 | filter-by | ['target', 'product'] |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| banned_ports | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| banned_ports | list | False | A list of banned ports and protocols. Each entry should be a dictionary with 'port' and 'protocol' keys. |
 
