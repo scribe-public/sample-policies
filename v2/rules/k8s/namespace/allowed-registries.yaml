@@ -38,16 +38,10 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-notes: |
-  **Input Example:**
-  
-  ```yaml
-  - uses: k8s/namespace/allowed-registries@v2/rules
-    with:
-      allowed_registries:
-        - docker.io/*
-        - gcr.io/*
-  ```
-
 mitigation: >
   Ensures that only approved container registries are used within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
+
+input_example: |
+  allowed_registries:
+    - docker.io/*
+    - gcr.io/*

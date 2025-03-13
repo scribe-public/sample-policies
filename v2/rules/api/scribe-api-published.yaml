@@ -29,14 +29,9 @@ full-description: |
 
 mitigation: Ensure that all critical or high severity vulnerabilities are addressed before delivering the product.
 
-notes: |
-  Rule Uses Scribe API to check for CVEs in the target artifact, Ensure usage of Scribe Token in the environment.
+notes:
+- Rule Uses Scribe API to check for CVEs in the target artifact, Ensure usage of Scribe Token in the environment.
 
-  **Input Example:**
-  
-  ```yaml
-  - uses: scribe/scribe-published-policy@v2/rules
-    with:
-      superset:
-        published: true
-  ```
+input_example: |
+  superset:
+    published: true

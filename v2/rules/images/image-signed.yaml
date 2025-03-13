@@ -53,16 +53,10 @@ inputs:
     type: array
     required: false
 
-notes: |
-  **Input Example:**
-  
-  ```yaml
-  - uses: images/image-signed@v2/rules
-    with:
-      identity:
-        emails:
-        - bob@company.com
-        - alice@company.com
-      skip_image_regex:
-      - .*alpine.*
-  ```
+input_example: |
+  identity:
+    emails:
+    - bob@company.com
+    - alice@company.com
+  skip_image_regex:
+  - .*alpine.*

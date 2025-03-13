@@ -44,18 +44,12 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-notes: |
-  **Input Example:**
-  
-  ```yaml
-  - uses: k8s/pods/white-listed-pod@v2/rules
-    with:
-      white_listed_pod:
-        - my-pod-1.*
-        - my-pod-2.*
-      verify_namespaces:
-        - ".*"
-  ```
-
 mitigation: >
   Ensures that only approved pods are running within the Kubernetes cluster, reducing the risk of unauthorized or misconfigured pods.
+
+input_example: |
+  white_listed_pod:
+    - my-pod-1.*
+    - my-pod-2.*
+  verify_namespaces:
+    - ".*"

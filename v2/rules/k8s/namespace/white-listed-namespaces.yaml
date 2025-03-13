@@ -38,19 +38,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-notes: |
-  **Input**
-  `namespaces` is a list of allowed namespaces.
-
-  **Input Example:**
-  
-  ```yaml
-  - uses: k8s/namespace/white-listed-namespaces@v2/rules
-    with:
-      namespaces:
-        - default
-        - kube-system
-  ```
-
 mitigation: >
   Ensures that only approved namespaces are allowed within the Kubernetes cluster, reducing the risk of unauthorized or misconfigured namespaces.
+
+input_example: |

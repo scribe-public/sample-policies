@@ -42,16 +42,12 @@ inputs:
     type: array
     required: true
 
-notes: |
-  Ensure that the SBOM includes all specified licenses to meet compliance requirements.
+notes:
+- Ensure that the SBOM includes all specified licenses to meet compliance requirements.
   This rule accesses the Hugging Face API to validate the licenses.
 
-  **Input Example:**
-  
-  ```yaml
-  - uses: sbom/verify-huggingface-license@v2/rules
-    with:
-      licenses:
-        - "MIT"
-        - "Apache-2.0"
-  ```
+
+input_example: |
+  licenses:
+    - "MIT"
+    - "Apache-2.0"

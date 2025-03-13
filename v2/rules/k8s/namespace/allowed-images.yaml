@@ -38,19 +38,10 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-notes: |
-  **Input**
-  `images_to_include` is a list of image repository names.
-
-  **Input Example:**
-  
-  ```yaml
-  - uses: k8s/namespace/allowed-images@v2/rules
-    with:
-      images_to_include:
-        - docker.io/my_org/my_image1
-        - docker.io/my_org/my_image2
-  ```
-
 mitigation: >
   Ensures that only approved container images are running within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
+
+input_example: |
+  images_to_include:
+    - docker.io/my_org/my_image1
+    - docker.io/my_org/my_image2  

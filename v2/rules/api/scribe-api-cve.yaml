@@ -37,16 +37,11 @@ inputs:
     type: object
     description: "The superset of CVEs to check for, including the following format {cve: {max: <int>, severity: <int}}"
 
-notes: |
-  Rule Uses Scribe API to check for CVEs in the target artifact, Ensure usage of Scribe Token in the environment.
+notes:
+- Rule Uses Scribe API to check for CVEs in the target artifact, Ensure usage of Scribe Token in the environment.
 
-  **Input Example:**
-  
-  ```yaml
-  - uses: scribe/scribe-cve@v2/rules
-    with:
-      superset:
-        cve:
-          max: 0
-          severity: 6
-  ```
+input_example: |
+  superset:
+    cve:
+      max: 0
+      severity: 6

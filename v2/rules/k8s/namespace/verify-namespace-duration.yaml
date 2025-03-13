@@ -38,14 +38,8 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-notes: |
-  **Input Example:**
-  
-  ```yaml
-  - uses: k8s/namespace/verify-namespace-duration@v2/rules
-    with:
-      threshold_date: "1970-01-01T00:00:00Z"
-  ```
-
 mitigation: >
   Ensures that namespaces do not exceed their intended lifecycle, maintaining cluster hygiene and resource efficiency.
+
+input_example: |
+  threshold_date: "1970-01-01T00:00:00Z"

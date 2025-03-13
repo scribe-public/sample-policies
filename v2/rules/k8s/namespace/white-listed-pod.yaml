@@ -40,19 +40,10 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-notes: |
-  **Input**
-  `white_listed_pod` is a list of allowed pods.
-
-  **Input Example:**
-  
-  ```yaml
-  - uses: k8s/namespace/white-listed-pod@v2/rules
-    with:
-      white_listed_pod:
-        - my-pod-1.*
-        - my-pod-2.*
-  ```
-
 mitigation: >
   Ensures that only approved pods are running within the Kubernetes namespace, reducing the risk of unauthorized or misconfigured pods.
+
+input_example: |
+  white_listed_pod:
+    - my-pod-1.*
+    - my-pod-2.*

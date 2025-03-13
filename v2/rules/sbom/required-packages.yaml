@@ -46,16 +46,8 @@ inputs:
     type: integer
     required: false
 
-notes: |
-  Ensure that the SBOM includes all required dependencies to meet compliance requirements.
-
-  **Input Example:**
-  
-  ```yaml
-  - uses: sbom/required-packages@v2/rules
-    with:
-      required_pkgs:
-        - "pkg:maven/org.apache.commons/commons-lang3@3.9"
-        - "pkg:npm/lodash@4.17.15"
-      violations_limit: 0
-  ```
+input_example: |
+  required_pkgs:
+    - "pkg:maven/org.apache.commons/commons-lang3@3.9"
+    - "pkg:npm/lodash@4.17.15"
+  violations_limit: 0

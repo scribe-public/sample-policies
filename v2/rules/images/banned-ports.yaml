@@ -49,16 +49,9 @@ inputs:
     type: array
     required: false
 
-
-notes: |
-  **Input Example:**
-  
-  ```yaml
-  - uses: images/banned-ports@v2/rules
-    with:
-      banned_ports:
-        - port: "3000"
-          protocol: "tcp"
-        - port: "8080"
-          protocol: "tcp"
-  ```
+input_example: |
+  banned_ports:
+    - port: "3000"
+      protocol: "tcp"
+    - port: "8080"
+      protocol: "tcp"

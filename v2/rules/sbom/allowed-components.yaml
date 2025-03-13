@@ -50,15 +50,10 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a list of components with their types and names.
 
-notes: |
-  Components type reference: https://cyclonedx.org/docs/1.6/json/#components_items_type
+notes: 
+- "Components type reference: https://cyclonedx.org/docs/1.6/json/#components_items_type"
 
-  **Input Example:**
-  
-  ```yaml
-  - uses: sbom/allowed-components@v2/rules
-    with:
-      types:
-        - library
-        - operating-system
-  ```
+input_example: |
+  types:
+    - library
+    - operating-system

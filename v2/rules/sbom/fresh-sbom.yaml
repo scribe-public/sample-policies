@@ -40,14 +40,6 @@ inputs:
     type: integer
     required: false
 
-notes: |
-  Ensure that the SBOM includes a creation date to verify its freshness.
 
-  **Input Example:**
-  
-  ```yaml
-  - uses: sbom/fresh-sbom@v2/rules
-    with:
-      max_days: 30
-  ```
-
+input_example: |
+  max_days: 30
