@@ -22,6 +22,16 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule is scoped by product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: sarif/trivy/verify-trivy-attack-vector@v2/rules
+with:
+  attack_vectors:
+    - "stack buffer overflow"
+  violations_threshold: 2
+```
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

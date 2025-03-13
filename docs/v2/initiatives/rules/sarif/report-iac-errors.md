@@ -22,6 +22,14 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: sarif/report-iac-errors@v2/rules
+with:
+  violations_threshold: 2
+```
+
 ## Mitigation  
 Ensures that IaC misconfiguration errors remain within acceptable limits, reducing the risk of deploying images  with insecure configuration settings.
 

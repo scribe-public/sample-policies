@@ -25,6 +25,14 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by target and product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: images/fresh-image@v2/rules
+with:
+  max_days: 183
+```
+
 ## Mitigation  
 Prevents the deployment of outdated container images—which may include unpatched vulnerabilities or outdated dependencies— by enforcing a maximum age limit based on the image's build time.
 

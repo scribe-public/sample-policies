@@ -25,6 +25,15 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by target and product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: images/banned-users@v2/rules
+with:
+  users:
+    - root
+```
+
 ## Mitigation  
 Prevents the execution of container images with default or disallowed user accounts reducing the risk of privilege escalation and ensuring that only secure, non-privileged user configurations are used.
 

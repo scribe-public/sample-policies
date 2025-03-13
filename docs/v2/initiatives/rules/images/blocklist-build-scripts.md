@@ -22,6 +22,16 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: images/blocklist-build-scripts@v2/rules
+with:
+  blocklist:
+  - "wget"
+  - "curl"
+```
+
 ## Mitigation  
 Prevents the execution of unauthorized or insecure build scripts during the image build process, reducing the risk of malicious command injection and ensuring a more secure supply chain.
 

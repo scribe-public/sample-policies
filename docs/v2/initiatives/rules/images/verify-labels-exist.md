@@ -22,6 +22,19 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: images/verify-labels-exist@v2/rules
+with:
+  labels:
+    - "org.opencontainers.image.created"
+    - "org.opencontainers.image.revision"
+    - "org.opencontainers.image.title"
+    - "org.opencontainers.image.vendor"
+    - "org.opencontainers.image.version"
+```
+
 ## Mitigation  
 Ensures that container images include all required metadata labels, which are essential for traceability, auditing, and enforcing compliance with security and operational standards.
 

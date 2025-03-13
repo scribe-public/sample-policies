@@ -51,5 +51,5 @@ This rule ensures that the product is published only after all critical or high 
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| superset | object | False | The superset of CVEs to check for, including the following format {published: {flag: <bool>}} |
+| superset | object | False | The superset of CVEs to check for, including the following format [published: [flag: bool]] |
 

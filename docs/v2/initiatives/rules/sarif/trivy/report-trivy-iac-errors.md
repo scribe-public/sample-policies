@@ -23,6 +23,14 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule is scoped by product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: sarif/trivy/report-trivy-iac-errors@v2/rules
+with:
+  violations_threshold: 2
+```
+
 ## Mitigation  
 Ensures that IaC misconfiguration errors remain within acceptable limits, reducing the risk of deploying images  with insecure configuration settings.
 

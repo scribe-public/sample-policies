@@ -26,6 +26,14 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by target and product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: images/fresh-base-image@v2/rules
+with:
+  max_days: 183
+```
+
 ## Mitigation  
 Ensures that container images are built on up-to-date base images, reducing the risk of deploying images with outdated layers that may contain unpatched vulnerabilities or deprecated components. This check prevents the use of stale base images, thereby enhancing overall container security.
 

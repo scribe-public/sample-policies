@@ -22,6 +22,16 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: sarif/verify-attack-vector@v2/rules
+with:
+  attack_vectors:
+    - "stack buffer overflow"
+  violations_threshold: 2
+```
+
 ## Mitigation  
 Helps prevent the deployment of images vulnerable to specific attack vectors by ensuring that any findings related to disallowed attack vectors are detected and flagged. This rule minimizes potential exploitation paths by enforcing that only acceptable vulnerability profiles are present.
 

@@ -22,6 +22,14 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: images/forbid-large-images@v2/rules
+with:
+  max_size: 77819980
+```
+
 ## Mitigation  
 Prevents the deployment of overly large container images, which helps control resource usage, reduces the attack surface by limiting unnecessary code and dependencies, and minimizes potential vulnerabilities.
 

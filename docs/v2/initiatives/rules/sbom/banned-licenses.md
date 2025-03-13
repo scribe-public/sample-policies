@@ -25,6 +25,17 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: sbom/banned-licenses@v2/rules
+with:
+  blocklist:
+    - "GPL-2.0"
+    - "GPL-3.0"
+  blocklisted_limit: 1
+```
+
 ## Mitigation  
 Ensures that the software components used in the artifact comply with organizational policies by restricting the use of disallowed licenses. This helps prevent legal and compliance issues that may arise from using components with incompatible or risky licenses.
 

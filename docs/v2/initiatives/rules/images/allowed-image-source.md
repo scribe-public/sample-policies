@@ -26,6 +26,16 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by target and product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: images/allowed-image-source@v2/rules
+with:
+  approved_sources:
+    - "docker.io/library/*"
+    - "docker.io/my_org/*"
+```
+
 ## Mitigation  
 Enforces that the main image comes from a trusted source, reducing the risk of deploying images that are compromised or outdated. This check helps maintain container security by ensuring that only images matching approved source patterns are used.
 
