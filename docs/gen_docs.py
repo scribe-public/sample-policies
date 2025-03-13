@@ -809,7 +809,6 @@ def create_rules_index_md(rule_docs_map):
     
     print(f"Created rules index at {index_file_path}")
 
-
 def create_combined_index_md(initiative_docs, rule_docs_map):
     """
     Create a combined index markdown file at initiatives/index.md with two sections:
@@ -818,11 +817,11 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
          - Name (linked to the doc site, e.g. "docs/initiative/<file.md>")
          - Description
     2. Rules – a table with columns:
-         - Rule Name
+         - Rule Name (as a link to its rule doc)
          - Description
          - Evidence Type (as a link, if available)
          
-    Rules are sorted using high_priority (if defined) and then alphabetically.
+    Rules are sorted using high_priority for groups that should come first.
     """
     index_file_path = os.path.join(INITIATIVES_OUTDIR, "index.md")
     md_lines = []
@@ -838,9 +837,10 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     md_lines.append("|------|-------------|")
     for doc in initiative_docs:
         # Build a link to the initiative doc at "docs/initiative/<file.md>"
-        link = f"[{doc['name']}]({DOC_SITE_BASE}/{doc['file']})"
-        desc = doc['description'].replace("\n", "<br/>")
-        md_lines.append(f"| {link} | {desc} |")
+        link = f"[{doc['name']}](docs/initiative/{doc['file']})"
+        # Replace newlines in description with a space to avoid breaking the table.
+        description = doc['description'].replace("\n", " ")
+        md_lines.append(f"| {link} | {description} |")
     md_lines.append("")
     
     # Rules Section
@@ -853,14 +853,17 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     for key, doc_info in rule_docs_map.items():
         rule_data = doc_info["yaml_data"]
         rule_name = rule_data.get("name", key)
-        description = rule_data.get("description", "")
+        description = rule_data.get("description", "").replace("\n", " ")
         evidence = rule_data.get("evidence", {})
         evidence_type, signed = get_evidence_type(evidence, rule_name)
-        # Build a link for the evidence type if available in the table
-        evidence_link = f"[{evidence_type}]({table[evidence_type]})" if evidence_type in table else ""
-        index_rows.append((evidence_type, rule_name, description, evidence_link))
+        evidence_link = f" See [here]({table[evidence_type]})" if evidence_type in table else ""
+        # Get the relative path for the rule doc (e.g. "gitlab/org/max-admins.md")
+        rel_path = doc_info["rel_path"]
+        # Create a link to the rule doc relative to the initiatives folder.
+        rule_link = f"[{rule_name}](rules/{rel_path})"
+        index_rows.append((evidence_type, rule_link, description, evidence_link))
     
-    # Sort rules: high_priority groups first (using high_priority dict) then alphabetically
+    # Sort rules: prioritized groups first (using high_priority) then alphabetically.
     def sort_key(row):
         ev_type = row[0]
         if ev_type in high_priority:
@@ -869,8 +872,8 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
             return (1, ev_type.lower())
     index_rows.sort(key=sort_key)
     
-    for _, rule_name, description, evidence_link in index_rows:
-        md_lines.append(f"| {rule_name} | {description} | {evidence_link} |")
+    for _, rule_link, description, evidence_link in index_rows:
+        md_lines.append(f"| {rule_link} | {description} | {evidence_link} |")
     
     md_content = "\n".join(md_lines)
     with open(index_file_path, "w") as f:
