@@ -35,7 +35,7 @@ mitigation: Ensure that all critical or high severity vulnerabilities are addres
 inputs:
   - name: superset
     type: object
-    description: "The superset of CVEs to check for, including the following format {cve: {max: <int>, severity: <int}}"
+    description: "The superset of CVEs to check for, including the following format {cve: {max: int, severity: int}}"
 
 notes:
 - Rule Uses Scribe API to check for CVEs in the target artifact, Ensure usage of Scribe Token in the environment.
