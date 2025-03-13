@@ -23,33 +23,33 @@ controls:
     rules:
       - uses: github/org/2fa@v2
         name: Enforce 2FA
-        id: "PS.1.1-1FA"
+        id: "PS.1.1-1"
         description: PS.1 Require 2FA for accessing code
 
       - uses: github/org/max-admins@v2
         name: Limit admins
-        id: "PS.1.1-LimitAdmins"
+        id: "PS.1.1-2"
         description: PS.1 Restrict the maximum number of organization admins
         with:
           max_admins: 3
 
       - uses: github/org/web-commit-signoff@v2
         name: Require signoff on web commits
-        id: "PS.1.1-CommitSigning"
+        id: "PS.1.1-3"
         description: PS.1 Require contributors to sign when committing to Github through the web interface
         with:
           desired_value: true
 
       - uses: github/repository/branch-protection@v2
         name: Branch protected
-        id: "PS.1.1-BranchProtection"
+        id: "PS.1.1-4"
         description: PS.1 Require branch protection for the repository
         with:
           desired_protected: true
 
       - uses: github/repository/repo-private@v2
         name: Repo private
-        id: "PS.1.1-RepoPrivate"
+        id: "PS.1.1-5"
         description: PS.1 Assure the repository is private
         with:
           desired_private: true
