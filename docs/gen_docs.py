@@ -839,7 +839,8 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     for doc in initiative_docs:
         # Build a link to the initiative doc at "docs/initiative/<file.md>"
         link = f"[{doc['name']}]({DOC_SITE_BASE}/{doc['file']})"
-        md_lines.append(f"| {link} | {doc['description']} |")
+        desc = doc['description'].replace("\n", "<br/>")
+        md_lines.append(f"| {link} | {desc} |")
     md_lines.append("")
     
     # Rules Section
@@ -856,7 +857,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
         evidence = rule_data.get("evidence", {})
         evidence_type, signed = get_evidence_type(evidence, rule_name)
         # Build a link for the evidence type if available in the table
-        evidence_link = f" See [here]({table[evidence_type]})" if evidence_type in table else ""
+        evidence_link = f"[{evidence_type}]({table[evidence_type]})" if evidence_type in table else ""
         index_rows.append((evidence_type, rule_name, description, evidence_link))
     
     # Sort rules: high_priority groups first (using high_priority dict) then alphabetically
