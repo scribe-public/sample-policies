@@ -39,7 +39,7 @@ with:
     - operating-system
   allowlist: []
 
-input:
+inputs:
   - name: types
     description: "A list of allowed component types."
     type: list

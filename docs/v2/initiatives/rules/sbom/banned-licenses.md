@@ -51,9 +51,9 @@ remains below the specified threshold. It performs the following steps:
 | signed | False |
 | content_body_type | cyclonedx-json |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| blocklist | [] |
-| blocklisted_limit | 0 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| blocklist | list | False | A list of disallowed licenses. |
+| blocklisted_limit | integer | False | The maximum number of components with disallowed licenses allowed. |
 

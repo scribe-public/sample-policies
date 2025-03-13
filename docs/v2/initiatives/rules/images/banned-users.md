@@ -52,8 +52,8 @@ a violation is recorded.
 | target_type | container |
 | filter-by | ['target', 'product'] |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| users | ['root'] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| users | list | False | A list of disallowed users. Each entry should be a string representing a username. |
 

@@ -50,8 +50,8 @@ If any base image is older than the allowed age, or if no base image data is fou
 | target_type | container |
 | filter-by | ['target', 'product'] |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| max_days | 183 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| max_days | integer | True | The maximum allowed age of the base image in days. |
 

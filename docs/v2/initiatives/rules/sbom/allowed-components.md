@@ -64,9 +64,9 @@ It performs the following steps:
 | signed | False |
 | content_body_type | cyclonedx-json |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| types | ['library', 'operating-system'] |
-| allowlist | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| types | list | True | A list of allowed component types. |
+| allowlist | list | True | A list of allowed components. |
 

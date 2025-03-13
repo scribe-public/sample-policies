@@ -40,7 +40,7 @@ evidence:
 with:
   max_days: 183
 
-input:
+inputs:
   - name: max_days
     description: "The maximum allowed age of the base image in days."
     type: integer

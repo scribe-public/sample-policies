@@ -49,8 +49,8 @@ The extracted size is then converted to a numeric value and compared against the
 | content_body_type | cyclonedx-json |
 | target_type | container |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| max_size | 77819980 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| max_size | integer | True | The maximum allowed image size in bytes. |
 

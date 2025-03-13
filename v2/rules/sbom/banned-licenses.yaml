@@ -37,7 +37,7 @@ with:
   blocklist: []
   blocklisted_limit: 0
 
-input:
+inputs:
   - name: blocklist
     description: "A list of disallowed licenses."
     type: list
