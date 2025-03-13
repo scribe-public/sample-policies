@@ -12,11 +12,11 @@ title: Git Artifact Signed
 
 Verify the Git artifact is signed.
 
+:::note 
+This rule requires Signed [Git SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
-::: 
-:::note 
-This rule requires Signed Git SBOM.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
@@ -43,3 +43,4 @@ Rule is scoped by product and target.
 | Parameter | Default |
 |-----------|---------|
 | identity | `{'common-names': [], 'emails': []}` |
+

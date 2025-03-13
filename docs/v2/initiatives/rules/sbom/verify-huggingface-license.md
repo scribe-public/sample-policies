@@ -13,7 +13,7 @@ title: Require Specified SBOM Licenses
 Verify the artifact includes all specified licenses.
 
 :::note 
-This rule requires SBOM.  
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -36,3 +36,4 @@ Rule is scoped by product and target.
 | Parameter | Default |
 |-----------|---------|
 | licenses | [] |
+

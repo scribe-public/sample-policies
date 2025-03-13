@@ -14,7 +14,7 @@ Ensures the main container image referenced in the SBOM is from an approved sour
 
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -53,7 +53,8 @@ The matching is performed using a case-insensitive, anchored regex.
 | target_type | container |
 | filter-by | ['target', 'product'] |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| approved_sources | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| approved_sources | list | False | A list of approved Image source patterns. |
+

@@ -25,3 +25,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | api_token | `{{ .Args.Token }}` |
 | project | `{{ .Args.Project }}` |
 | push_rule | `{'commit_message_regex': '', 'commit_message_negative_regex': None, 'branch_name_regex': None, 'deny_delete_tag': False, 'member_check': False, 'prevent_secrets': False, 'author_email_regex': '', 'file_name_regex': 'abc', 'max_file_size': 100, 'commit_committer_name_check': None, 'reject_unsigned_commits': None}` |
+

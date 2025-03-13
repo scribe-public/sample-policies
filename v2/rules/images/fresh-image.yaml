@@ -32,3 +32,9 @@ evidence:
   - product
 with:
   max_days: 183
+
+inputs:
+  - name: max_days
+    description: "The maximum allowed age of the image in days."
+    type: integer
+    required: true

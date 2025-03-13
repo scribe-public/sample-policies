@@ -26,3 +26,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | until |  |
 | project_id |  |
 | private_token |  |
+

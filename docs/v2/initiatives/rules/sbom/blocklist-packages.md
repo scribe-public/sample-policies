@@ -13,7 +13,7 @@ title: Restrict Disallowed Dependencies
 Verify the number of disallowed dependencies remains below the specified threshold.
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -38,3 +38,4 @@ Rule is scoped by product and target.
 |-----------|---------|
 | blocklist | [] |
 | blocklisted_limit | 0 |
+

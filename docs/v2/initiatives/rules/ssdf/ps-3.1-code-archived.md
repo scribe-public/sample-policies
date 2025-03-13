@@ -14,7 +14,7 @@ We assume running in Github thus the code is allways stored in a repository
 
 
 :::note 
-This rule requires Statement.  
+This rule requires [Statement](https://scribe-security.netlify.app/docs/docs/valint/generic).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -35,3 +35,4 @@ Archives code changes to maintain a secure, immutable history for auditing and t
 | short_description | Code is archived. |
 | description | Since the code is within a repository, it is archived. |
 | reason | The code is archived in a repository. This is a demo rule, planned to run from a workflow in a repository. |
+

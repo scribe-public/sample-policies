@@ -13,7 +13,7 @@ title: SARIF Update Needed
 Verify no security packages require updates.
 
 :::note 
-This rule requires SARIF Evidence.  
+This rule requires [SARIF Evidence](https://scribe-security.netlify.app/docs/docs/valint/sarif).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

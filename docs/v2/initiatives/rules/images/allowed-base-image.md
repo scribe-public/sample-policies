@@ -17,7 +17,7 @@ This rule requires Dockerfile context; for example, run it with:
 
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -56,7 +56,8 @@ is found, a violation is recorded indicating that the necessary base image infor
 | target_type | container |
 | filter-by | ['target', 'product'] |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| approved_sources | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| approved_sources | list | False | A list of approved base image  pattern. |
+

@@ -13,7 +13,7 @@ title: Restrict Coding Permissions
 Verify only allowed users committed to the repository.
 
 :::note 
-This rule requires Git SBOM.  
+This rule requires [Git SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -38,3 +38,4 @@ Rule is scoped by product and target.
 |-----------|---------|
 | ids | [] |
 | files | [] |
+

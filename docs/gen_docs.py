@@ -11,7 +11,8 @@ DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives", "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
 SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
-DOC_SITE_BASE = "https://scribe-security.netlify.app/docs/configuration/initiatives"
+DOC_SITE_URL = "https://scribe-security.netlify.app/docs"
+DOC_SITE_BASE = f"{DOC_SITE_URL}/docs/configuration/initiatives"
 
 
 def parse_yaml(file_path):
@@ -177,7 +178,19 @@ def traverse_and_create_category_files():
 
     traverse_and_create_rule_category_files()
 
-def create_rule_string_from_evidence(evidence):
+table = {
+    "SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
+    "SARIF": f"{DOC_SITE_URL}/docs/valint/sarif",
+    "Statement": f"{DOC_SITE_URL}/docs/valint/generic",
+    "Image SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
+    "Git SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
+    "SLSA Provenance": f"{DOC_SITE_URL}/docs/valint/help/valint_slsa",
+    "Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover",
+    "SARIF Evidence": f"{DOC_SITE_URL}/docs/valint/sarif",
+    "Generic Statement": f"{DOC_SITE_URL}/docs/valint/generic",
+}
+
+def create_rule_string_from_evidence(evidence, file_name, skip_evidence, require_scribe_api):
     """
     Generate a descriptive string for the evidence requirement based on the default evidence fields.
     
@@ -190,6 +203,9 @@ def create_rule_string_from_evidence(evidence):
     
     Returns a string describing the evidence requirement.
     """
+    if skip_evidence or require_scribe_api:
+        return ""
+
     signed = evidence.get("signed", False)
     content_body_type = evidence.get("content_body_type", "")
     target_type = evidence.get("target_type", None)
@@ -225,10 +241,46 @@ def create_rule_string_from_evidence(evidence):
             evidence_type = "Generic Statement"
     else:
         evidence_type = "Statement"
+        print("# Warning - Unknown Evidence Type:", evidence, evidence_type, file_name)
     
     signed_str = "Signed " if signed else ""
-    return f"This rule requires {signed_str}{evidence_type}."
+    if evidence_type in table:
+        evidence_link = f"[{evidence_type}]({table[evidence_type]})"
+    else:
+        evidence_link = evidence_type 
+    return f"This rule requires {signed_str}{evidence_link}."
 
+
+def generate_parameters_table(rule_data):
+    """
+    Generates a Markdown table for rule parameters.
+    If the rule YAML contains an 'inputs' field (a list of input definitions),
+    an extended table is produced with columns: Parameter, Type, Required, and Description.
+    Otherwise, a simpler table is generated using the 'with' block.
+    """
+    md_lines = []
+    inputs_def = rule_data.get("inputs", [])
+    if inputs_def:
+        md_lines.append("## Input Definitions  ")
+        md_lines.append("| Parameter | Type | Required | Description |")
+        md_lines.append("|-----------|------|----------|-------------|")
+        for inp in inputs_def:
+            param = inp.get("name", "")
+            inp_type = inp.get("type", "")
+            required = inp.get("required", False)
+            desc = inp.get("description", "")
+            md_lines.append(f"| {param} | {inp_type} | {required} | {desc} |")
+        md_lines.append("")
+    else:
+        with_block = rule_data.get("with", {})
+        if with_block:
+            md_lines.append("## Rule Parameters (`with`)  ")
+            md_lines.append("| Parameter | Default |")
+            md_lines.append("|-----------|---------|")
+            for param, value in with_block.items():
+                md_lines.append(f"| {param} | {escape_template(value)} |")
+            md_lines.append("")
+    return "\n".join(md_lines)
 
 def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
@@ -236,8 +288,6 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     The doc will be written to a mirrored subdirectory under docs/v2/rules.
     This version uses two trailing spaces to force Markdown line breaks.
     """
-    import os
-    import yaml
 
     rule_id = rule_data.get("id", os.path.splitext(file_name)[0])
     name = rule_data.get("name", rule_id)
@@ -278,27 +328,35 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
 
 
     skip_evidence = rule_data.get("skip-evidence", False)
-    if skip_evidence:
-        md.append(f":::tip ")
-        md.append(f"Evidence **IS NOT** required for this rule.  ")
-        md.append(f"::: ")
-
     fail_on_missing = rule_data.get("fail-on-missing-evidence", False)
-    if fail_on_missing:
-        md.append(f":::tip ")
-        md.append(f"> Evidence **IS** required for this rule and will fail if missing.  ")
-        md.append(f"::: ")
+    require_scribe_api = rule_data.get("require-scribe-api", False)
     # else:
     #     md.append(f":::tip ")
     #     md.append(f"Rule Result will be set as 'open' if evidence is missing.  ")
     #     md.append(f"::: ")
 
-    require_scribe_api = rule_data.get("require-scribe-api", False)
 
-    evidence_str = create_rule_string_from_evidence(rule_data.get("evidence", {}))
-    if not skip_evidence and not require_scribe_api:
+    evidence_str = create_rule_string_from_evidence(rule_data.get("evidence", {}), file_path, skip_evidence, require_scribe_api)
+    if evidence_str != "":
         md.append(f":::note ")
         md.append(f"{evidence_str}  ")
+        extra_notes = rule_data.get("notes", "")
+        if extra_notes != "":
+            split_line_note = extra_notes.split("\n")
+            md.append(f"  ")
+            for line in split_line_note:
+                md.append(line)
+        md.append(f"::: ")
+
+
+    if skip_evidence:
+        md.append(f":::tip ")
+        md.append(f"Evidence **IS NOT** required for this rule.  ")
+        md.append(f"::: ")
+
+    if fail_on_missing:
+        md.append(f":::tip ")
+        md.append(f"> Evidence **IS** required for this rule and will fail if missing.  ")
         md.append(f"::: ")
 
     if fail_on_missing:
@@ -368,16 +426,11 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
             md.append(f"| {field} | {value} |")
         md.append("")
 
-    with_block = rule_data.get("with", {})
-
-    if with_block:
-        md.append("## Rule Parameters (`with`)  ")
-        md.append("| Parameter | Default |")
-        md.append("|-----------|---------|")
-        for param, value in with_block.items():
-            value = escape_template(value)
-            md.append(f"| {param} | {value} |")
-    
+    # Generate the parameters table (extended or simple) using a helper function.
+    parameters_table = generate_parameters_table(rule_data)
+    if parameters_table:
+        md.append(parameters_table)
+                  
     md.append("")
     return "\n".join(md)
 

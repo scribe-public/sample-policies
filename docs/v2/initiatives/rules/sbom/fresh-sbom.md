@@ -13,7 +13,7 @@ title: Enforce SBOM Freshness
 Verify the SBOM is not older than the specified duration.
 
 :::note 
-This rule requires SBOM.  
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -36,3 +36,4 @@ Rule is scoped by product and target.
 | Parameter | Default |
 |-----------|---------|
 | max_days | 30 |
+

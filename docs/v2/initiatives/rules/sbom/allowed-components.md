@@ -13,7 +13,7 @@ title: Enforce Allowed SBOM Components
 Verify the artifact contains only allowed components.
 
 :::note 
-This rule requires SBOM.  
+This rule requires [SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -37,3 +37,4 @@ Rule is scoped by product and target.
 |-----------|---------|
 | types | ['library', 'operating-system'] |
 | allowlist | [] |
+

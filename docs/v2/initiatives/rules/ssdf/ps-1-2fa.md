@@ -12,7 +12,7 @@ title: Enforce 2FA
 PS.1 Require 2FA for accessing code
 
 :::note 
-This rule requires Statement.  
+This rule requires [Statement](https://scribe-security.netlify.app/docs/docs/valint/generic).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -45,3 +45,4 @@ layer of security against unauthorized access.
 | Parameter | Default |
 |-----------|---------|
 | desired_value | False |
+

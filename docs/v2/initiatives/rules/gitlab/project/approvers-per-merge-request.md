@@ -35,3 +35,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | Parameter | Default |
 |-----------|---------|
 | disable_overriding_approvers_per_merge_request | False |
+

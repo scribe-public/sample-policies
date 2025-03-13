@@ -28,3 +28,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | since | None |
 | until | None |
 | sha | None |
+

@@ -14,7 +14,18 @@ Enforces that container images (target_type=container) are cryptographically sig
 
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+  
+**Input Example:**
+
+```yaml
+- uses: images/image-signed@v2/rules
+  identity:
+    emails:
+    - bob@company.com
+    - alice@company.com
+
+```
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -57,3 +68,4 @@ for images that do not require a signature. Otherwise, if the evidence does not 
 |-----------|---------|
 | skip_image_regex | ['.*alpine.*'] |
 | identity | `{'emails': [], 'common-names': []}` |
+

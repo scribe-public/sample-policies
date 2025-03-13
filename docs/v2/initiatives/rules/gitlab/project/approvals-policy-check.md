@@ -36,3 +36,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 |-----------|---------|
 | name | All Members |
 | approvals_required_min | 2 |
+

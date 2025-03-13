@@ -35,3 +35,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | Parameter | Default |
 |-----------|---------|
 | allowed_token_scopes | ['api', 'read_api', 'read_repository', 'read_registry'] |
+

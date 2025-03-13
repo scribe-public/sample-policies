@@ -14,7 +14,7 @@ title: Verify Trivy SARIF Report Compliance
 Verify the Trivy SARIF report complies with predefined rules to ensure compliance and detect issues.
 
 :::note 
-This rule requires SARIF Evidence.  
+This rule requires [SARIF Evidence](https://scribe-security.netlify.app/docs/docs/valint/sarif).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -63,3 +63,4 @@ threshold. If the number of such violations exceeds the allowed maximum, a viola
 | rule_ids | [] |
 | ignore | [] |
 | max_allowed | 0 |
+

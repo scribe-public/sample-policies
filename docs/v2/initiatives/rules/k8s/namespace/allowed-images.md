@@ -13,7 +13,7 @@ title: Allowed Container Images
 Verify only container images specified in the Allowed List run within the Kubernetes namespace.
 
 :::note 
-This rule requires Discovery Evidence.  
+This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/docs/platforms/discover).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -35,3 +35,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | Parameter | Default |
 |-----------|---------|
 | images_to_include | [] |
+

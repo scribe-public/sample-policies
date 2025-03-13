@@ -12,7 +12,7 @@ title: Branch protected
 PS.1 Require branch protection for the repository
 
 :::note 
-This rule requires Statement.  
+This rule requires [Statement](https://scribe-security.netlify.app/docs/docs/valint/generic).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -30,3 +30,4 @@ Enforces branch protection policies to prevent unauthorized commits and maintain
 | Parameter | Default |
 |-----------|---------|
 | desired_protected | True |
+

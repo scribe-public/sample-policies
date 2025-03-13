@@ -36,3 +36,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | Parameter | Default |
 |-----------|---------|
 | desired_value | True |
+

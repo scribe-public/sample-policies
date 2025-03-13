@@ -12,7 +12,7 @@ title: SBOM archived
 PS.3.2 Archive SBOM
 
 :::note 
-This rule requires Statement.  
+This rule requires [Statement](https://scribe-security.netlify.app/docs/docs/valint/generic).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

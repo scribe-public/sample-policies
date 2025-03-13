@@ -13,7 +13,7 @@ title: Disallow Commits to Main Branch
 Verify commits made directly to the main branch are disallowed.
 
 :::note 
-This rule requires Git SBOM.  
+This rule requires [Git SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

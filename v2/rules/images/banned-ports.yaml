@@ -42,3 +42,23 @@ evidence:
   - product
 with:
   banned_ports: []     # e.g., [{ "port": "3000", "protocol": "tcp" }]
+
+input:
+  - name: banned_ports
+    description: "A list of banned ports and protocols. Each entry should be a dictionary with 'port' and 'protocol' keys."
+    type: list
+    required: false
+
+
+notes: |
+  **Input Example:**
+  
+  ```yaml
+  - uses: images/banned-ports@v2/rules
+    with:
+      banned_ports:
+        - port: "3000"
+          protocol: "tcp"
+        - port: "8080"
+          protocol: "tcp"
+  ```

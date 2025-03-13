@@ -35,3 +35,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | Parameter | Default |
 |-----------|---------|
 | max_allowed_vulnerability_count | 0 |
+

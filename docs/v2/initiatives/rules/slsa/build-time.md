@@ -13,7 +13,7 @@ title: Verify build time
 Verify the artifact was created within the specified time window.
 
 :::note 
-This rule requires SLSA Provenance.  
+This rule requires [SLSA Provenance](https://scribe-security.netlify.app/docs/docs/valint/help/valint_slsa).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -35,3 +35,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | start_hour | 8 |
 | end_hour | 20 |
 | workdays | ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'] |
+

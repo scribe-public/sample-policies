@@ -42,3 +42,16 @@ with:
   identity:
     emails: []
     common-names: []
+
+
+notes: |
+  **Input Example:**
+  
+  ```yaml
+  - uses: images/image-signed@v2/rules
+    identity:
+      emails:
+      - bob@company.com
+      - alice@company.com
+  
+  ```

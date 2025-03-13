@@ -14,7 +14,7 @@ Checks that the container image includes at least one healthcheck property.
 
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

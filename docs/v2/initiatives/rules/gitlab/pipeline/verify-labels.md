@@ -13,7 +13,7 @@ title: Verify GitLab Pipeline Labels
 Verify the pipeline includes all required label keys and values.
 
 :::note 
-This rule requires Discovery Evidence.  
+This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/docs/platforms/discover).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -35,3 +35,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | Parameter | Default |
 |-----------|---------|
 | labels | `{'app.kubernetes.io/instance': 'defaul1t'}` |
+

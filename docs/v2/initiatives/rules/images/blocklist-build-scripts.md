@@ -13,7 +13,7 @@ title: Restrict Build Scripts
 Verify no build scripts commands appear in block list.
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -44,3 +44,4 @@ If a match is found, the rule generates a violation indicating that a disallowed
 | Parameter | Default |
 |-----------|---------|
 | blocklist | [] |
+

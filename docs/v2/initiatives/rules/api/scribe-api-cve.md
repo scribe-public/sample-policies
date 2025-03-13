@@ -37,3 +37,4 @@ Rule is scoped by product and target.
 | Parameter | Default |
 |-----------|---------|
 | superset | `{'cve': {'max': 0, 'severity': 6}}` |
+

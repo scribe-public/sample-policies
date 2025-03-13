@@ -36,3 +36,9 @@ evidence:
 
 with:
   labels: []
+
+inputs:
+  - name: labels
+    description: "A list of required labels."
+    type: list
+    required: false

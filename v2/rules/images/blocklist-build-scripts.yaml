@@ -24,3 +24,9 @@ evidence:
 
 with:
   blocklist: []
+
+input:
+  - name: blocklist
+    description: "A list of disallowed build script commands. Each entry should be a string representing a command or substring."
+    type: list
+    required: false

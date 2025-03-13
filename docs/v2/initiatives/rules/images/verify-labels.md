@@ -13,7 +13,7 @@ title: Verify Image Labels
 Verify specified labels key-value pairs exist in the image.
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -49,7 +49,8 @@ required label (as defined in the `with.labels` parameter) exists with the corre
 | content_body_type | cyclonedx-json |
 | target_type | container |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| labels | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| labels | list | False | A list of required labels. |
+

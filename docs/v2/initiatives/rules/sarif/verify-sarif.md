@@ -13,7 +13,7 @@ title: Verify Rule Compliance in SARIF
 Verify the SARIF report complies with defined generic rules for compliance and security.
 
 :::note 
-This rule requires SARIF Evidence.  
+This rule requires [SARIF Evidence](https://scribe-security.netlify.app/docs/docs/valint/sarif).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -62,3 +62,4 @@ severity, and the corresponding location in the artifact.
 | rule_ids | [] |
 | ignore | [] |
 | max_allowed | 0 |
+

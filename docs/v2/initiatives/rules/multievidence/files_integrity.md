@@ -13,7 +13,7 @@ title: Verify File Integrity
 Verify the checksum of each file in one SBOM matches the checksum in a second SBOM.
 
 :::note 
-This rule requires Signed Image SBOM.  
+This rule requires Signed [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS** required by default.  
@@ -35,3 +35,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 |-----------|---------|
 | ref_sbom | `{{ .Env.REF_SBOM_DATA }}` |
 | path_prefix | pkg:file/ |
+

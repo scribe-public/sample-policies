@@ -13,7 +13,7 @@ title: Verify Attack Vector Exists in SARIF
 Verify required evidence validates attack vectors in the SARIF report.
 
 :::note 
-This rule requires SARIF Evidence.  
+This rule requires [SARIF Evidence](https://scribe-security.netlify.app/docs/docs/valint/sarif).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -60,3 +60,4 @@ associated with specific attack vectors are properly identified. The rule works 
 |-----------|---------|
 | attack_vectors | [] |
 | violations_threshold | 0 |
+

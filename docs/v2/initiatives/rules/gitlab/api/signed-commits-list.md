@@ -25,3 +25,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 | commit_id_list | [] |
 | private_token |  |
 | project_id |  |
+

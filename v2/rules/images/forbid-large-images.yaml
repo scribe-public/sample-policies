@@ -33,3 +33,9 @@ evidence:
 
 with:
   max_size: 77819980
+
+input:
+  - name: max_size
+    description: "The maximum allowed image size in bytes."
+    type: integer
+    required: true

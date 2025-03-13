@@ -13,7 +13,7 @@ title: Allowed Pods in Namespace
 Verify only pods explicitly listed in the Allowed List run within a Kubernetes namespace.
 
 :::note 
-This rule requires Discovery Evidence.  
+This rule requires [Discovery Evidence](https://scribe-security.netlify.app/docs/docs/platforms/discover).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -36,3 +36,4 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 |-----------|---------|
 | white_listed_pod | [] |
 | verify_namespaces | ['.*'] |
+

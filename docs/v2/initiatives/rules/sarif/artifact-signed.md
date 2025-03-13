@@ -12,11 +12,11 @@ title: Verify Artifact Signature Using SARIF Report
 
 Verify the artifact referenced in the SARIF report is signed to confirm its integrity.
 
+:::note 
+This rule requires Signed [SARIF Evidence](https://scribe-security.netlify.app/docs/docs/valint/sarif).  
+::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
-::: 
-:::note 
-This rule requires Signed SARIF Evidence.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
@@ -57,3 +57,4 @@ Additionally, the rule validates that the signature corresponds to one of the ex
 | Parameter | Default |
 |-----------|---------|
 | identity | `{'common-names': [], 'emails': []}` |
+

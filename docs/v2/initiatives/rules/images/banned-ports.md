@@ -16,7 +16,19 @@ It fails if any banned port is exposed or if no banned ports list is provided.
 
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
+  
+**Input Example:**
+
+```yaml
+- uses: images/banned-ports@v2/rules
+  with:
+    banned_ports:
+      - port: "3000"
+        protocol: "tcp"
+      - port: "8080"
+        protocol: "tcp"
+```
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -60,3 +72,4 @@ It performs the following steps:
 | Parameter | Default |
 |-----------|---------|
 | banned_ports | [] |
+

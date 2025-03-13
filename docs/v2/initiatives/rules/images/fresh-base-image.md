@@ -14,7 +14,7 @@ Verifies that each base image is not older than the specified threshold (max_day
 
 
 :::note 
-This rule requires Image SBOM.  
+This rule requires [Image SBOM](https://scribe-security.netlify.app/docs/docs/valint/sbom).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -54,3 +54,4 @@ If any base image is older than the allowed age, or if no base image data is fou
 | Parameter | Default |
 |-----------|---------|
 | max_days | 183 |
+

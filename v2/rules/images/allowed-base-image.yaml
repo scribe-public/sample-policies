@@ -39,3 +39,9 @@ evidence:
   - product
 with:
   approved_sources: []
+
+inputs:
+  - name: approved_sources
+    description: "A list of approved base image  pattern."
+    type: list
+    required: false
