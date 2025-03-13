@@ -13,7 +13,7 @@ title: Verify Dependabot security updates setting
 Verify Dependabot security updates are configured in the GitHub repository.
 
 :::note 
-This rule requires Github Repository Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
+This rule requires Github Repository Discovery Evidence. See [here](https://scribe-security.netlify.app/platforms/discover#github-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

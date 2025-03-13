@@ -14,7 +14,7 @@ title: Verify that provenance is authenticated
 Verify the artifact is signed.
 
 :::note 
-This rule requires Signed SLSA Provenance. See [here](https://scribe-security.netlify.app/docs/valint/help/valint_slsa) for more details.  
+This rule requires Signed SLSA Provenance. See [here](https://scribe-security.netlify.app/valint/help/valint_slsa) for more details.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  

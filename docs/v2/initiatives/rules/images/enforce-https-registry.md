@@ -14,7 +14,7 @@ Checks if the container's registry scheme is HTTPS
 
 
 :::note 
-This rule requires Image SBOM. See [here](https://scribe-security.netlify.app/docs/valint/sbom) for more details.  
+This rule requires Image SBOM. See [here](https://scribe-security.netlify.app/valint/sbom) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

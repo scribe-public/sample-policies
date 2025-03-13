@@ -13,7 +13,7 @@ title: Verify Required Evidence in SARIF
 Verify all required evidence exists as defined by the SARIF policy.
 
 :::note 
-This rule requires SARIF Evidence. See [here](https://scribe-security.netlify.app/docs/valint/sarif) for more details.  
+This rule requires SARIF Evidence. See [here](https://scribe-security.netlify.app/valint/sarif) for more details.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  

@@ -13,7 +13,7 @@ title: Verify Pod Runtime Duration
 Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecycle limits.
 
 :::note 
-This rule requires K8s Pod Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#k8s-discovery) for more details.  
+This rule requires K8s Pod Discovery Evidence. See [here](https://scribe-security.netlify.app/platforms/discover#k8s-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -13,7 +13,7 @@ title: Disallow dependencies in SLSA Provenance Document
 Verify that dependencies in the block list do not appear in the SLSA Proveance document.
 
 :::note 
-This rule requires SLSA Provenance. See [here](https://scribe-security.netlify.app/docs/valint/help/valint_slsa) for more details.  
+This rule requires SLSA Provenance. See [here](https://scribe-security.netlify.app/valint/help/valint_slsa) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

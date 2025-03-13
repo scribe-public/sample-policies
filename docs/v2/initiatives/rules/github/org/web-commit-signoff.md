@@ -13,7 +13,7 @@ title: Verify GitHub Organization Requires Signoff on Web Commits
 Verify contributors sign commits through the GitHub web interface.
 
 :::note 
-This rule requires Github Organization Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
+This rule requires Github Organization Discovery Evidence. See [here](https://scribe-security.netlify.app/platforms/discover#github-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

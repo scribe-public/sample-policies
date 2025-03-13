@@ -12,7 +12,7 @@ title: Allowed Project Users
 Verify only users specified in the Allowed List have user access to the Bitbucket project.
 
 :::note 
-This rule requires Bitbucket Project Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery) for more details.  
+This rule requires Bitbucket Project Discovery Evidence. See [here](https://scribe-security.netlify.app/platforms/discover#bitbucket-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

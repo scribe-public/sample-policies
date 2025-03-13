@@ -13,7 +13,7 @@ title: Allowed Pods
 Verify only pods explicitly listed in the Allowed List are allowed to run.
 
 :::note 
-This rule requires K8s Pod Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#k8s-discovery) for more details.  
+This rule requires K8s Pod Discovery Evidence. See [here](https://scribe-security.netlify.app/platforms/discover#k8s-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

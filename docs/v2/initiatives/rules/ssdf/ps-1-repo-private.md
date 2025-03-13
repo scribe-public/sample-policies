@@ -12,7 +12,7 @@ title: Repo private
 PS.1 Assure the repository is private
 
 :::note 
-This rule requires Statement. See [here](https://scribe-security.netlify.app/docs/valint/generic) for more details.  
+This rule requires Statement. See [here](https://scribe-security.netlify.app/valint/generic) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

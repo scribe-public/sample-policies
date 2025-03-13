@@ -13,7 +13,7 @@ title: Forbid Token Scopes in GitLab Organization
 Verify no GitLab organization tokens have disallowed scopes.
 
 :::note 
-This rule requires Gitlab Organization Discovery Evidence. See [here](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery) for more details.  
+This rule requires Gitlab Organization Discovery Evidence. See [here](https://scribe-security.netlify.app/platforms/discover#gitlab-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

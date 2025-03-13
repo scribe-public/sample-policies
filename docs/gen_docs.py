@@ -11,7 +11,7 @@ DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives", "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
 SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
-DOC_SITE_URL = "https://scribe-security.netlify.app/docs"
+DOC_SITE_URL = "https://scribe-security.netlify.app"
 DOC_SITE_BASE = f"{DOC_SITE_URL}/docs/configuration/initiatives"
 
 

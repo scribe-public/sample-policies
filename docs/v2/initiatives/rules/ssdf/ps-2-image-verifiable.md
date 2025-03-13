@@ -12,7 +12,7 @@ title: Image-verifiable
 PS.2 Provide a mechanism to verify the integrity of the image
 
 :::note 
-This rule requires Statement. See [here](https://scribe-security.netlify.app/docs/valint/generic) for more details.  
+This rule requires Statement. See [here](https://scribe-security.netlify.app/valint/generic) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

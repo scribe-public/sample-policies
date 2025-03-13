@@ -13,7 +13,7 @@ title: SLSA Field Exists in Provenance Document
 Verify the specified field exists in the provenance document.
 
 :::note 
-This rule requires SLSA Provenance. See [here](https://scribe-security.netlify.app/docs/valint/help/valint_slsa) for more details.  
+This rule requires SLSA Provenance. See [here](https://scribe-security.netlify.app/valint/help/valint_slsa) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
