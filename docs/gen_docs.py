@@ -104,7 +104,7 @@ CATEGORY_CONFIG = {
         "position": 1,
     },
     "github/api": {
-        "label": "Github API",
+        "label": "GitHub API",
         "position": 1,
     },
     "gitlab/api": {
@@ -160,7 +160,8 @@ def traverse_and_create_rule_category_files():
             continue
         else:
             # If the directory is not in CATEGORY_CONFIG, use a default title and position
-            create_category_file(root, dir_name.title(), 1)
+            title = re.sub(r'\bGithub\b', 'GitHub', dir_name.title())
+            create_category_file(root, title, 1)
             continue
 
 def traverse_and_create_category_files():
