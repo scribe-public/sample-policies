@@ -39,3 +39,6 @@ inputs:
     description: "The maximum allowed image size in bytes."
     type: integer
     required: true
+
+input_example: |
+  max_size: 77819980

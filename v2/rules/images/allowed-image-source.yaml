@@ -44,3 +44,8 @@ inputs:
     description: "A list of approved Image source patterns."
     type: array
     required: false
+
+input_example: |
+  approved_sources:
+    - "docker.io/library/*"
+    - "docker.io/my_org/*"

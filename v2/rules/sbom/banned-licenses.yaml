@@ -47,3 +47,9 @@ inputs:
     description: "The maximum number of components with disallowed licenses allowed."
     type: integer
     required: false
+
+input_example: |
+  blocklist:
+    - "GPL-2.0"
+    - "GPL-3.0"
+  blocklisted_limit: 1

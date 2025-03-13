@@ -41,3 +41,7 @@ inputs:
     description: "A list of disallowed users. Each entry should be a string representing a username."
     type: array
     required: false
+
+input_example: |
+  users:
+    - root

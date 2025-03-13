@@ -36,3 +36,6 @@ inputs:
     type: integer
     description: The maximum number of allowed IaC misconfiguration errors.
     required: false
+
+input_example: |
+  violations_threshold: 2

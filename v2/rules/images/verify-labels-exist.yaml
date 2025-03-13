@@ -42,3 +42,11 @@ inputs:
     description: "A list of required labels."
     type: array
     required: false
+
+input_example: |
+  labels:
+    - "org.opencontainers.image.created"
+    - "org.opencontainers.image.revision"
+    - "org.opencontainers.image.title"
+    - "org.opencontainers.image.vendor"
+    - "org.opencontainers.image.version"

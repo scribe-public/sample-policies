@@ -38,3 +38,6 @@ inputs:
     description: "The maximum allowed age of the image in days."
     type: integer
     required: true
+
+input_example: |
+  max_days: 183

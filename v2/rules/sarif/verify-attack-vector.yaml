@@ -50,3 +50,8 @@ inputs:
     type: integer
     description: The maximum number of allowed attack vector violations.
     required: false
+
+input_example: |
+  attack_vectors:
+    - "stack buffer overflow"
+  violations_threshold: 2

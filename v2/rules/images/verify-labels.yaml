@@ -39,3 +39,7 @@ inputs:
     description: "A list of required labels."
     type: array
     required: false
+
+input_example: |
+  labels:
+    - "org.opencontainers.image.vendor=my_vendor"

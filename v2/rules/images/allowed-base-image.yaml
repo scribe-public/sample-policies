@@ -37,6 +37,7 @@ evidence:
   filter-by:
   - target
   - product
+
 with:
   approved_sources: []
 
@@ -45,3 +46,8 @@ inputs:
     description: "A list of approved base image  pattern."
     type: array
     required: false
+
+input_example: |
+  approved_sources:
+    - "docker.io/library/*"
+    - "docker.io/my_org/*"
