@@ -180,39 +180,34 @@ def traverse_and_create_category_files():
     traverse_and_create_rule_category_files()
 
 table = {
-    "SBOM": f"{DOC_SITE_URL}/valint/sbom",
-    "SARIF": f"{DOC_SITE_URL}/valint/sarif",
+    #https://deploy-preview-286--scribe-security.netlify.app/docs/guides/enforcing-sdlc-initiative#sbom
+    "SBOM": f"{DOC_SITE_URL}/guides/enforcing-sdlc-initiative#sbom",
+    "SARIF": f"{DOC_SITE_URL}/guides/enforcing-sdlc-initiative#sarif-reports",
     "Statement": f"{DOC_SITE_URL}/valint/generic",
-    "Image SBOM": f"{DOC_SITE_URL}/valint/sbom",
-    "Git SBOM": f"{DOC_SITE_URL}/valint/sbom",
-    "SLSA Provenance": f"{DOC_SITE_URL}/valint/help/valint_slsa",
+    "Image SBOM": f"{DOC_SITE_URL}/guides/enforcing-sdlc-initiative#sbom",
+    "Git SBOM": f"{DOC_SITE_URL}/guides/enforcing-sdlc-initiative#git",
+    "SLSA Provenance": f"{DOC_SITE_URL}/guides/enforcing-sdlc-initiative#slsa",
     "Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover",
-    "SARIF Evidence": f"{DOC_SITE_URL}/valint/sarif",
-    "Generic Statement": f"{DOC_SITE_URL}/valint/generic",
-    "Dockerhub Project Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#dockerhub-discovery",
-    "Jenkins Instance Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#jenkins-discovery",
-    "K8s Namespace Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#k8s-discovery",
-    "K8s Pod Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#k8s-discovery",
-    "Gitlab Project Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#gitlab-discovery",
-    "Gitlab Organization Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#gitlab-discovery",
-    "Bitbucket Project Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#bitbucket-discovery",
-    "Bitbucket Repository Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#bitbucket-discovery",
-    "Bitbucket Workspace Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#bitbucket-discovery",
-    "Github Organization Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#github-discovery",
-    "Github Repository Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#github-discovery",
+    "SARIF Evidence": f"{DOC_SITE_URL}/guides/enforcing-sdlc-initiative#sarif-reports",
+    "Generic Statement": f"{DOC_SITE_URL}/guides/enforcing-sdlc-initiative#sarif-reports",
 }
 
-high_priority = {
-    "SBOM": 1,
-    "Image SBOM": 2,
-    "Git SBOM": 3,
-    "SLA Provenance": 4,
-    "SARIF": 5,
-    "SARIF Evidence": 6,
-    "Generic Statement": 7,
-}
+def create_rule_string_from_evidence(evidence, file_name, skip_evidence, require_scribe_api):
+    """
+    Generate a descriptive string for the evidence requirement based on the default evidence fields.
+    
+    Reads the following fields from the evidence dictionary:
+      - signed
+      - content_body_type
+      - target_type
+      - predicate_type
+      - labels (if available)
+    
+    Returns a string describing the evidence requirement.
+    """
+    if skip_evidence or require_scribe_api:
+        return ""
 
-def get_evidence_type(evidence, file_name):
     signed = evidence.get("signed", False)
     content_body_type = evidence.get("content_body_type", "")
     target_type = evidence.get("target_type", None)
@@ -250,34 +245,11 @@ def get_evidence_type(evidence, file_name):
         evidence_type = "Statement"
         print("# Warning - Unknown Evidence Type:", evidence, evidence_type, file_name)
     
-
-    return evidence_type, signed
-
-def create_rule_string_from_evidence(evidence, file_name, skip_evidence, require_scribe_api):
-    """
-    Generate a descriptive string for the evidence requirement based on the default evidence fields.
-    
-    Reads the following fields from the evidence dictionary:
-      - signed
-      - content_body_type
-      - target_type
-      - predicate_type
-      - labels (if available)
-    
-    Returns a string describing the evidence requirement.
-    """
-    if skip_evidence or require_scribe_api:
-        return ""
-
-    evidence_type, signed = get_evidence_type(evidence, file_name)
-    
     signed_str = "Signed " if signed else ""
-
     if evidence_type in table:
         evidence_link = f"[{evidence_type}]({table[evidence_type]})"
     else:
         evidence_link = evidence_type 
-    
     return f"This rule requires {signed_str}{evidence_link}."
 
 
@@ -737,6 +709,49 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     return "\n".join(md)
 
 
+def create_rules_index(rule_docs_map):
+    """
+    Create a rules/index.md file with a rule index table ordered by "evidence_type".
+    Fields for the table include Description, Rule Name, and the Evidence Type (as a link to the doc).
+    """
+    index_md_path = os.path.join(RULES_OUTDIR, "index.md")
+    os.makedirs(RULES_OUTDIR, exist_ok=True)
+
+    # Collect rules data
+    rules_data = []
+    for key, rule_info in rule_docs_map.items():
+        rule_yaml = rule_info["yaml_data"]
+        rule_id = rule_yaml.get("id", "")
+        rule_name = rule_yaml.get("name", rule_id)
+        description = rule_yaml.get("description", "")
+        evidence = rule_yaml.get("evidence", {})
+        evidence_type = evidence.get("content_body_type", "Unknown")
+        rel_path = rule_info["rel_path"].replace(".md", "")
+        doc_link = f"{DOC_SITE_BASE}/{rel_path}"
+
+        rules_data.append({
+            "rule_name": rule_name,
+            "description": description,
+            "evidence_type": evidence_type,
+            "doc_link": doc_link
+        })
+
+    # Sort rules by evidence_type
+    rules_data.sort(key=lambda x: x["evidence_type"])
+
+    # Generate Markdown content
+    md_lines = []
+    md_lines.append("# Rule Index\n")
+    md_lines.append("| Evidence Type | Rule Name | Description |")
+    md_lines.append("|---------------|-----------|-------------|")
+    for rule in rules_data:
+        md_lines.append(f"| [{rule['evidence_type']}]({rule['doc_link']}) | {rule['rule_name']} | {rule['description']} |")
+
+    # Write to index.md
+    with open(index_md_path, "w") as f:
+        f.write("\n".join(md_lines))
+
+
 def write_initiative_doc(file_path, initiative_data, rule_docs_map, base_source_git):
     """
     Write the initiative doc to docs/v2/initiatives/<original_filename>.md.
@@ -755,57 +770,6 @@ def write_initiative_doc(file_path, initiative_data, rule_docs_map, base_source_
 
     return os.path.abspath(out_md_path)
 
-def create_rules_index_md(rule_docs_map):
-    """
-    Create a rules index markdown file (index.md) with a table of rules.
-    
-    The table has the following columns:
-      - Rule Name: the rule's title
-      - Description: the rule's description
-      - Evidence Type: a short evidence type label (with a link to documentation)
-      
-    The rows are ordered by evidence type using high_priority for groups that should come first.
-    """
-    index_file_path = os.path.join(RULES_OUTDIR, "index.md")
-    index_rows = []
-    
-    for key, doc_info in rule_docs_map.items():
-        rule_data = doc_info["yaml_data"]
-        rule_name = rule_data.get("name", key)
-        description = rule_data.get("description", "")
-        evidence = rule_data.get("evidence", {})
-        evidence_type, signed = get_evidence_type(evidence, rule_name)
-        if evidence_type in table:
-            evidence_link = f"[{evidence_type}]({table[evidence_type]})"
-        else:
-            print(f"# Warning - Unknown Doc link for Evidence Type: '{evidence_type}'")
-            evidence_link = evidence_type 
-        
-        index_rows.append((evidence_type, rule_name, description, evidence_link))
-    
-    # Use high_priority to sort the high priority groups at the top
-    def sort_key(row):
-        ev_type = row[0]
-        if ev_type in high_priority:
-            return (0, high_priority[ev_type])
-        else:
-            return (1, ev_type.lower())
-    
-    index_rows.sort(key=sort_key)
-    
-    md_lines = []
-    md_lines.append("# Rule Index")
-    md_lines.append("")
-    md_lines.append("| Rule Name | Description | Evidence Type |")
-    md_lines.append("|-----------|-------------|---------------|")
-    for _, rule_name, description, evidence_link in index_rows:
-        md_lines.append(f"| {rule_name} | {description} | {evidence_link} |")
-    
-    md_content = "\n".join(md_lines)
-    with open(index_file_path, "w") as f:
-        f.write(md_content)
-    
-    print(f"Created rules index at {index_file_path}")
 
 def main():
     ensure_output_dirs()
@@ -852,7 +816,8 @@ def main():
         write_initiative_doc(file_path, i_data, rule_docs_map, base_source_git)
 
     traverse_and_create_category_files()
-    create_rules_index_md(rule_docs_map)
+    create_rules_index(rule_docs_map)
+
     print("[OK] Documentation has been generated under docs/v2/")
 
 

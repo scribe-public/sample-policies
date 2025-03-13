@@ -22,7 +22,7 @@ Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecyc
     max_days: 10
 ```
 
-This rule requires K8s Pod Discovery Evidence.  
+This rule requires [K8s Pod Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#k8s-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

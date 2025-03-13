@@ -13,7 +13,7 @@ title: Restrict Commit Authors in GitLab Project
 Verify only GitLab project users in the Allowed List have commit author permissions.
 
 :::note 
-This rule requires Gitlab Project Discovery Evidence.  
+This rule requires [Gitlab Project Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

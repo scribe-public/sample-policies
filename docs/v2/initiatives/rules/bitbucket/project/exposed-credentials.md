@@ -13,7 +13,7 @@ title: Prevent Credential Exposure
 Verify access to the Bitbucket project is blocked if exposed credentials are detected.
 
 :::note 
-This rule requires Bitbucket Project Discovery Evidence.  
+This rule requires [Bitbucket Project Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -13,7 +13,7 @@ title: Allowed Workspace Admins
 Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace.
 
 :::note 
-This rule requires Bitbucket Workspace Discovery Evidence.  
+This rule requires [Bitbucket Workspace Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

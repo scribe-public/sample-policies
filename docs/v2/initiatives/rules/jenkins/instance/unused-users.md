@@ -13,7 +13,7 @@ title: Disallow Unused Users
 Verify there are no users with zero activity.
 
 :::note 
-This rule requires Jenkins Instance Discovery Evidence.  
+This rule requires [Jenkins Instance Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#jenkins-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

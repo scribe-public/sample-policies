@@ -13,7 +13,7 @@ title: Restrict Public Visibility in GitLab Organization
 Verify only allowed projects in the GitLab organization have public visibility.
 
 :::note 
-This rule requires Gitlab Organization Discovery Evidence.  
+This rule requires [Gitlab Organization Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

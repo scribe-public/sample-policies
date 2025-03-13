@@ -13,7 +13,7 @@ title: Enable Member Check for GitLab Project
 Verify `member_check` is enabled for the GitLab project.
 
 :::note 
-This rule requires Gitlab Project Discovery Evidence.  
+This rule requires [Gitlab Project Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

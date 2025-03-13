@@ -13,7 +13,7 @@ title: Ensure All Commits Are Signed in GitLab Project
 Verify all commits in the GitLab project are signed.
 
 :::note 
-This rule requires Gitlab Project Discovery Evidence.  
+This rule requires [Gitlab Project Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

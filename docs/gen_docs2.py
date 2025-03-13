@@ -5,7 +5,6 @@ import re
 import yaml
 import json
 
-
 # Root output directories for docs
 DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives", "rules")
@@ -13,7 +12,6 @@ INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
 SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
 DOC_SITE_URL = "https://scribe-security.netlify.app/docs"
 DOC_SITE_BASE = f"{DOC_SITE_URL}/docs/configuration/initiatives"
-
 
 def parse_yaml(file_path):
     """Safely parse a YAML file into a Python dict."""
@@ -23,7 +21,6 @@ def parse_yaml(file_path):
         except Exception as e:
             print(f"# Error parsing {file_path}: {e}")
             return {}
-
 
 def ensure_output_dirs():
     """Create the top-level output directories if they don't exist."""
@@ -39,24 +36,14 @@ def filepath_to_uses(filepath: str) -> str:
       Input:  "v2/rules/sbom/verify-labels.yaml"
       Output: "sbom/verify-labels@v2/rules"
     """
-    # Split the file path by '/'
     parts = filepath.split('/')
     if len(parts) < 3 or parts[1] != "rules":
         raise ValueError("File path must be in the format 'vX/rules/group/.../rule.yaml'")
     
-    # The first part is the version (e.g., 'v2')
     version = parts[0]
-    
-    # Skip the second element ("rules") and use the rest for the group and rule
     group_and_rule_parts = parts[2:]
-    
-    # Remove the file extension from the last element (the rule filename)
     group_and_rule_parts[-1] = os.path.splitext(group_and_rule_parts[-1])[0]
-    
-    # Join the remaining parts to form the rule path
     rule_path = "/".join(group_and_rule_parts)
-    
-    # Build and return the uses reference in the required format
     return f"{rule_path}@{version}/rules"
 
 def filter_labels(labels):
@@ -65,9 +52,6 @@ def filter_labels(labels):
     
 def escape_template(value):
     """Escapes template-like values to be shown as string in markdown."""
-    # If value is a list, apply escape_template to each item in the list
-    # if isinstance(value, list):
-    #     return [escape_template(item) for item in value]
     if isinstance(value, list):
         return [escape_template(item) for item in value]
     
@@ -75,7 +59,6 @@ def escape_template(value):
         return f'`{value}`'
     
     if isinstance(value, object):
-        # Serliaze the object to string
         value_str = yaml.dump(value, default_flow_style=True)
         if "{{" in value_str:
             return value.replace("{{", "`{{").replace("}}", "}}`")
@@ -83,10 +66,6 @@ def escape_template(value):
     if isinstance(value, str):
         return value.replace("{{", "`{{").replace("}}", "}}`")
     
-
-            
-
-    # If value is not a string or list, just return it as is
     return value
 
 # Mapping of directory names to sidebar titles and positions
@@ -139,18 +118,12 @@ def create_category_file(directory, label, position):
     with open(category_file_path, 'w') as f:
         json.dump(category_data, f, indent=2)
 
-
 def traverse_and_create_rule_category_files():
     """Traverse directories and create _category_.json files where applicable."""
     for root, dirs, files in os.walk(RULES_OUTDIR):
-        # Skip the root RULES_OUTDIR directory itself
         if root == RULES_OUTDIR:
             continue
-        
-        # Extract the last part of the path to determine the directory name
         dir_name = os.path.basename(root)
-        
-        # Get the second to last part of the path
         parent_dir = os.path.basename(os.path.dirname(root))
         id = f"{parent_dir}/{dir_name}"
         if id in CATEGORY_CONFIG:
@@ -159,7 +132,6 @@ def traverse_and_create_rule_category_files():
             create_category_file(root, label, position)
             continue
         else:
-            # If the directory is not in CATEGORY_CONFIG, use a default title and position
             title = re.sub(r'\bGithub\b', 'GitHub', dir_name.title())
             create_category_file(root, title, 1)
             continue
@@ -167,16 +139,13 @@ def traverse_and_create_rule_category_files():
 def traverse_and_create_category_files():
     """Traverse directories and create _category_.json files where applicable."""
     for root, dirs, files in os.walk(DOCS_ROOT):
-        # Skip the root DOCS_ROOT directory itself
         if root == DOCS_ROOT:
             continue
-        # Extract the last part of the path to determine the directory name
         dir_name = os.path.basename(root)
         if dir_name in CATEGORY_CONFIG:
             label = CATEGORY_CONFIG[dir_name]['label']
             position = CATEGORY_CONFIG[dir_name]['position']
             create_category_file(root, label, position)
-
     traverse_and_create_rule_category_files()
 
 table = {
@@ -189,30 +158,15 @@ table = {
     "Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover",
     "SARIF Evidence": f"{DOC_SITE_URL}/valint/sarif",
     "Generic Statement": f"{DOC_SITE_URL}/valint/generic",
-    "Dockerhub Project Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#dockerhub-discovery",
-    "Jenkins Instance Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#jenkins-discovery",
-    "K8s Namespace Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#k8s-discovery",
-    "K8s Pod Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#k8s-discovery",
-    "Gitlab Project Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#gitlab-discovery",
-    "Gitlab Organization Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#gitlab-discovery",
-    "Bitbucket Project Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#bitbucket-discovery",
-    "Bitbucket Repository Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#bitbucket-discovery",
-    "Bitbucket Workspace Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#bitbucket-discovery",
-    "Github Organization Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#github-discovery",
-    "Github Repository Discovery Evidence": f"{DOC_SITE_URL}/platforms/discover#github-discovery",
 }
 
-high_priority = {
-    "SBOM": 1,
-    "Image SBOM": 2,
-    "Git SBOM": 3,
-    "SLA Provenance": 4,
-    "SARIF": 5,
-    "SARIF Evidence": 6,
-    "Generic Statement": 7,
-}
+def create_rule_string_from_evidence(evidence, file_name, skip_evidence, require_scribe_api):
+    """
+    Generate a descriptive string for the evidence requirement based on the default evidence fields.
+    """
+    if skip_evidence or require_scribe_api:
+        return ""
 
-def get_evidence_type(evidence, file_name):
     signed = evidence.get("signed", False)
     content_body_type = evidence.get("content_body_type", "")
     target_type = evidence.get("target_type", None)
@@ -250,43 +204,16 @@ def get_evidence_type(evidence, file_name):
         evidence_type = "Statement"
         print("# Warning - Unknown Evidence Type:", evidence, evidence_type, file_name)
     
-
-    return evidence_type, signed
-
-def create_rule_string_from_evidence(evidence, file_name, skip_evidence, require_scribe_api):
-    """
-    Generate a descriptive string for the evidence requirement based on the default evidence fields.
-    
-    Reads the following fields from the evidence dictionary:
-      - signed
-      - content_body_type
-      - target_type
-      - predicate_type
-      - labels (if available)
-    
-    Returns a string describing the evidence requirement.
-    """
-    if skip_evidence or require_scribe_api:
-        return ""
-
-    evidence_type, signed = get_evidence_type(evidence, file_name)
-    
     signed_str = "Signed " if signed else ""
-
     if evidence_type in table:
         evidence_link = f"[{evidence_type}]({table[evidence_type]})"
     else:
         evidence_link = evidence_type 
-    
     return f"This rule requires {signed_str}{evidence_link}."
-
 
 def generate_parameters_table(rule_data):
     """
     Generates a Markdown table for rule parameters.
-    If the rule YAML contains an 'inputs' field (a list of input definitions),
-    an extended table is produced with columns: Parameter, Type, Required, and Description.
-    Otherwise, a simpler table is generated using the 'with' block.
     """
     md_lines = []
     inputs_def = rule_data.get("inputs", [])
@@ -315,10 +242,7 @@ def generate_parameters_table(rule_data):
 def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """
     Given the YAML data for a rule, produce the Markdown content as a string.
-    The doc will be written to a mirrored subdirectory under docs/v2/rules.
-    This version uses two trailing spaces to force Markdown line breaks.
     """
-
     rule_id = rule_data.get("id", os.path.splitext(file_name)[0])
     name = rule_data.get("name", rule_id)
     rego_path = rule_data.get("path", "")
@@ -355,16 +279,9 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     md.append(f"\n{description}")
     md.append("")
 
-
-
     skip_evidence = rule_data.get("skip-evidence", False)
     fail_on_missing = rule_data.get("fail-on-missing-evidence", False)
     require_scribe_api = rule_data.get("require-scribe-api", False)
-    # else:
-    #     md.append(f":::tip ")
-    #     md.append(f"Rule Result will be set as 'open' if evidence is missing.  ")
-    #     md.append(f"::: ")
-
 
     evidence_str = create_rule_string_from_evidence(rule_data.get("evidence", {}), file_path, skip_evidence, require_scribe_api)
     if evidence_str != "":
@@ -378,15 +295,9 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(f"{evidence_str}  ")
         md.append(f"::: ")
 
-
     if skip_evidence:
         md.append(f":::tip ")
         md.append(f"Evidence **IS NOT** required for this rule.  ")
-        md.append(f"::: ")
-
-    if fail_on_missing:
-        md.append(f":::tip ")
-        md.append(f"> Evidence **IS** required for this rule and will fail if missing.  ")
         md.append(f"::: ")
 
     if fail_on_missing:
@@ -400,7 +311,6 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(f"::: ")
 
     sign_defaults = rule_data.get("evidence", {}).get("signed", False)
-
     if not skip_evidence:
         if sign_defaults:
             md.append(f":::tip ")
@@ -415,10 +325,8 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     if (not filter_by) or ("target" in [s.lower() for s in filter_by]):
         md.append(f":::warning  ")
         md.append("Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.")
-        # This rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
         md.append(f"::: ")
 
-    # Create a list seperated by , and last one seperated by "and"
     if len(filter_by) > 0:
         filter_by_md = ", ".join(filter_by[:-1]) + " and " + filter_by[-1] if len(filter_by) > 1 else filter_by[0]
         md.append(f":::info  ")
@@ -432,7 +340,6 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
 
     if full_description:
         md.append("\n## Description  ")
-        # md.append(full_description)
         split_line = full_description.split("\n")
         for line in split_line:
             md.append(line)
@@ -447,24 +354,18 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append("|-------|-------|")
         for field, value in evidence.items():
             if field == "labels":
-                
                 filtered_labels = filter_labels(value)
-                # Create a list of labels
                 list_md = "<br/>".join([f"- {label}" for label in filtered_labels])
                 value = list_md
-
             md.append(f"| {field} | {value} |")
         md.append("")
 
-    # Generate the parameters table (extended or simple) using a helper function.
     parameters_table = generate_parameters_table(rule_data)
     if parameters_table:
         md.append(parameters_table)
                   
     md.append("")
     return "\n".join(md)
-
-
 
 def get_current_repo_context():
     from git import Repo
@@ -475,7 +376,6 @@ def get_current_repo_context():
     print(f"Current branch: {current_branch}")
     print(f"Remote URL: {remote_repo}")
     norm_github_repo = remote_repo.replace('git@github.com:','https://github.com/').strip('.git')
-    # norm_github_repo_with_branch = os.path.join(norm_github_repo, f"tree/{current_branch}")
     print(f"Normalized GitHub repo: {norm_github_repo}")
 
     return f"{norm_github_repo}/blob/main"
@@ -496,7 +396,6 @@ def write_rule_doc(file_path, rule_data, base_source_git):
     os.makedirs(out_dir, exist_ok=True)
 
     out_md_path = os.path.join(out_dir, base_name + ".md")
-
     doc_content = generate_rule_markdown(rule_data, file_path, filename, base_source_git)
     with open(out_md_path, "w") as f:
         f.write(doc_content)
@@ -509,39 +408,30 @@ def write_rule_doc(file_path, rule_data, base_source_git):
         "yaml_data": rule_data
     }
 
-
 def generate_markdown_anchor(text):
     """
     Convert a control name into a valid Markdown anchor.
-    - Lowercase everything
-    - Replace spaces and special characters with hyphens
-    - Remove invalid characters
     """
     text = text.lower().strip()
-    text = re.sub(r"[^\w\s-]", "", text)  # Remove special characters
-    text = re.sub(r"\s+", "-", text)  # Replace spaces with hyphens
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"\s+", "-", text)
     return f"#{text}"
 
 def id_from_name(input_str):
     """
-    Generate a control ID from the given string by replacing hyphens with spaces and converting to title case.
+    Generate a control ID from the given string.
     """
     beautified = input_str.replace("-", " ")
     return beautified.title()
 
-
 def generate_initiative_markdown(initiative_data, file_path, file_name, rule_docs_map, base_source_git):
     """
     Build the Markdown content for one initiative.
-    The document includes:
-      1) A Controls Overview table with Control ID, Name, Description, and Mitigation.
-      2) Detailed Controls: for each control, a subheading with its mitigation, plus a table of rules.
     """
     init_id = initiative_data.get("id", os.path.splitext(file_name)[0])
     if init_id == "":
         print(f"# Warning: 'id' field is missing for {file_path}")
 
-    # if file_path has suffix "vX/initiatives/", remove it
     if file_path.startswith("v") and "initiatives" in file_path:
         bundle_version = file_path.split("/")[0]
 
@@ -569,7 +459,6 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     md = []
     md.append(f"---\n{front_matter_yaml}\n---  ")
   
-    # Initiative header
     md.append(f"# {name}  ")
     md.append(f"**Type:** Initiative  ")
     md.append(f"**ID:** `{init_id}`  ")
@@ -587,19 +476,6 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append(mitigation)
         md.append("")
 
-
-
-    # sign_defaults = initiative_data.get("defaults", {}).get("evidence", {}).get("signed", False)
-    # if sign_defaults:
-    #     md.append(f":::tip  ")
-    #     md.append(f"Evidence for this initiative **IS** required by default.**  ")
-    #     md.append(f":::  ")
-    # else:
-    #     md.append(f":::tip  ")
-    #     md.append(f"Evidence for this initiative **IS NOT** required by default but is recommended.  ")
-    #     md.append(f":::  ")
-
-    
     if full_description:
         md.append(f"## **Description**\n")
         split_line = full_description.split("\n")
@@ -612,26 +488,21 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append("_No controls defined._")
         return "\n".join(md)
     
-
-    # Controls Overview with Mitigation column
     md.append("## Controls Overview\n")
     md.append("| Control ID | Control Name | Control Description | Mitigation |")
     md.append("|------------|--------------|---------------------|------------|")
     for ctrl in controls:
         ctrl_id = ctrl.get("id", "")
-        
         ctrl_name = ctrl.get("name", ctrl_id)
         if ctrl_id == "" and ctrl_name != "":
             print(f"# Warning: 'id' field is missing for control '{ctrl_name}' in {file_path}")
-
         if ctrl_name == "" and ctrl_id != "":
             print(f"# Warning: 'name' field is missing for control '{ctrl_id}' in {file_path}")
 
-        # ctrl_section_link = f"## [{ctrl_id}] {ctrl_name}".replace(" ", "-").lower()
         if ctrl_id != "":
             ctrl_section_link = generate_markdown_anchor(f"{ctrl_id} {ctrl_name}")
             link = f"[{ctrl_id}]({ctrl_section_link})"
-        else :
+        else:
             ctrl_section_link = generate_markdown_anchor(f"{ctrl_name}")
             link = f"[{ctrl_name}]({ctrl_section_link})"
 
@@ -643,7 +514,6 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     defaults = initiative_data.get("defaults", {})
     if defaults:
         if "evidence" in defaults:
-            # Build default table for each field in "evidence"
             md.append("## Evidence Defaults\n")
             md.append("| Field | Value |")
             md.append("|-------|-------|")
@@ -651,13 +521,11 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
                 md.append(f"| {field} | {value} |")
             md.append("")
 
-    # Detailed Controls
     md.append("---\n")
     md.append("# Detailed Controls\n")
     for ctrl in controls:
         ctrl_id = ctrl.get("id", "")
         ctrl_name = ctrl.get("name", ctrl_id)
-
         ctrl_desc = ctrl.get("description", "")
         ctrl_full_desc = ctrl.get("full-description", "")
         help_url = ctrl.get("help", "")
@@ -689,7 +557,6 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
             md.append("_No rules defined for this control._\n")
             continue
 
-        # Build a table for rules (Rule Name becomes clickable)
         md.append("### Rules\n")
         md.append("| Rule ID | Rule Name | Rule Description |")
         md.append("|---------|-----------|------------------|")
@@ -702,10 +569,10 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
             final_r_id = snippet_r_id
             final_r_name = snippet_r_name
             final_r_desc = snippet_r_desc
-            link_md = final_r_name  # default plain text
+            link_md = final_r_name
 
             if r_uses:
-                before_at = r_uses.split("@")[0]  # e.g. "gitlab/org/max-admins"
+                before_at = r_uses.split("@")[0]
                 subdirs, base_name = os.path.split(before_at)
                 key_for_map = os.path.join(subdirs, base_name) if subdirs else base_name
 
@@ -736,11 +603,9 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append("")
     return "\n".join(md)
 
-
 def write_initiative_doc(file_path, initiative_data, rule_docs_map, base_source_git):
     """
     Write the initiative doc to docs/v2/initiatives/<original_filename>.md.
-    For example, if the initiative file is "slsa.l2.yaml", the doc will be "slsa.l2.md".
     """
     print("# Writing initiative doc:", file_path)
     base_file = os.path.basename(file_path)
@@ -755,6 +620,50 @@ def write_initiative_doc(file_path, initiative_data, rule_docs_map, base_source_
 
     return os.path.abspath(out_md_path)
 
+# New helper function to determine the evidence type from a rule's evidence dictionary.
+def get_evidence_type(evidence):
+    """
+    Determine the evidence type based on the evidence dict.
+    Returns a short string such as "SBOM", "Image SBOM", "SLSA Provenance", etc.
+    """
+    if not evidence:
+        return "Statement"
+    
+    content_body_type = evidence.get("content_body_type", "")
+    target_type = evidence.get("target_type", None)
+    predicate_type = evidence.get("predicate_type", None)
+    labels = evidence.get("labels", [])
+    
+    if content_body_type == "cyclonedx-json":
+        if target_type == "container":
+            return "Image SBOM"
+        elif target_type == "git":
+            return "Git SBOM"
+        else:
+            return "SBOM"
+    elif content_body_type == "slsa":
+        return "SLSA Provenance"
+    elif content_body_type == "generic":
+        if predicate_type == "http://scribesecurity.com/evidence/discovery/v0.1":
+            platform = None
+            asset_type = None
+            for label in labels:
+                if label.startswith("platform="):
+                    platform = label.split("=")[1]
+                elif label.startswith("asset_type="):
+                    asset_type = label.split("=")[1]
+            if platform and asset_type:
+                return f"{platform.capitalize()} {asset_type.capitalize()} Discovery Evidence"
+            else:
+                return "Discovery Evidence"
+        elif predicate_type == "http://docs.oasis-open.org/sarif/sarif/2.1.0":
+            return "SARIF Evidence"
+        else:
+            return "Generic Statement"
+    else:
+        return "Statement"
+
+# New function to create a rules index markdown file using rule_docs_map.
 def create_rules_index_md(rule_docs_map):
     """
     Create a rules index markdown file (index.md) with a table of rules.
@@ -764,7 +673,7 @@ def create_rules_index_md(rule_docs_map):
       - Description: the rule's description
       - Evidence Type: a short evidence type label (with a link to documentation)
       
-    The rows are ordered by evidence type using high_priority for groups that should come first.
+    The rows are ordered alphabetically by evidence type.
     """
     index_file_path = os.path.join(RULES_OUTDIR, "index.md")
     index_rows = []
@@ -774,32 +683,19 @@ def create_rules_index_md(rule_docs_map):
         rule_name = rule_data.get("name", key)
         description = rule_data.get("description", "")
         evidence = rule_data.get("evidence", {})
-        evidence_type, signed = get_evidence_type(evidence, rule_name)
-        if evidence_type in table:
-            evidence_link = f"[{evidence_type}]({table[evidence_type]})"
-        else:
-            print(f"# Warning - Unknown Doc link for Evidence Type: '{evidence_type}'")
-            evidence_link = evidence_type 
-        
-        index_rows.append((evidence_type, rule_name, description, evidence_link))
+        ev_type = get_evidence_type(evidence)
+        ev_link = f"[{ev_type}]({table[ev_type]})" if ev_type in table else ev_type
+        index_rows.append((ev_type, rule_name, description, ev_link))
     
-    # Use high_priority to sort the high priority groups at the top
-    def sort_key(row):
-        ev_type = row[0]
-        if ev_type in high_priority:
-            return (0, high_priority[ev_type])
-        else:
-            return (1, ev_type.lower())
-    
-    index_rows.sort(key=sort_key)
+    index_rows.sort(key=lambda row: row[0])
     
     md_lines = []
     md_lines.append("# Rule Index")
     md_lines.append("")
     md_lines.append("| Rule Name | Description | Evidence Type |")
     md_lines.append("|-----------|-------------|---------------|")
-    for _, rule_name, description, evidence_link in index_rows:
-        md_lines.append(f"| {rule_name} | {description} | {evidence_link} |")
+    for _, rule_name, description, ev_link in index_rows:
+        md_lines.append(f"| {rule_name} | {description} | {ev_link} |")
     
     md_content = "\n".join(md_lines)
     with open(index_file_path, "w") as f:
@@ -820,7 +716,6 @@ def main():
             if not filename.endswith(".yaml") and not filename.endswith(".yml"):
                 continue
             full_path = os.path.join(dirpath, filename)
-
             data = parse_yaml(full_path)
             ctype = data.get("config-type", "").lower()
             if ctype == "rule":
@@ -832,10 +727,7 @@ def main():
                 print("# JSON", json.dumps(data, indent=2))
                 pass
 
-
     # Build a map of rule docs.
-    # Key: relative path from "v2/rules" without .yaml extension (e.g. "gitlab/org/max-admins")
-    # Value: dict with "abs_path", "rel_path", "yaml_data"
     rule_docs_map = {}
     for file_path, r_data in rule_files:
         if "v2/rules" in file_path:
@@ -852,9 +744,11 @@ def main():
         write_initiative_doc(file_path, i_data, rule_docs_map, base_source_git)
 
     traverse_and_create_category_files()
-    create_rules_index_md(rule_docs_map)
-    print("[OK] Documentation has been generated under docs/v2/")
 
+    # At the end, create the rules index markdown using the rule_docs_map context.
+    create_rules_index_md(rule_docs_map)
+
+    print("[OK] Documentation has been generated under docs/v2/")
 
 if __name__ == "__main__":
     main()

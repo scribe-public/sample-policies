@@ -13,7 +13,7 @@ title: Set Author Email Regex in GitLab Project
 Verify the `author_email_regex` for the GitLab project is set to the specified value.
 
 :::note 
-This rule requires Gitlab Project Discovery Evidence.  
+This rule requires [Gitlab Project Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

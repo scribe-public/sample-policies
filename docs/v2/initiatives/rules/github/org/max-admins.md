@@ -13,7 +13,7 @@ title: Limit Admin Number in GitHub Organization
 Verify the maximum number of GitHub organization admins is restricted.
 
 :::note 
-This rule requires Github Organization Discovery Evidence.  
+This rule requires [Github Organization Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

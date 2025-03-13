@@ -24,7 +24,7 @@ Verify container images in Kubernetes namespaces originate from registries in th
       - gcr.io/*
 ```
 
-This rule requires K8s Namespace Discovery Evidence.  
+This rule requires [K8s Namespace Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#k8s-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -13,7 +13,7 @@ title: Verify secret_scanning setting
 Verify `secret_scanning` is configured in the GitHub repository.
 
 :::note 
-This rule requires Github Repository Discovery Evidence.  
+This rule requires [Github Repository Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

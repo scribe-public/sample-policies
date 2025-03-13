@@ -13,7 +13,7 @@ title: Verify members_can_create_private_repositories setting
 Verify `members_can_create_private_repositories` is configured in the GitHub organization (supported only in GitHub Enterprise).
 
 :::note 
-This rule requires Github Organization Discovery Evidence.  
+This rule requires [Github Organization Discovery Evidence](https://scribe-security.netlify.app/docs/platforms/discover#github-discovery).  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
