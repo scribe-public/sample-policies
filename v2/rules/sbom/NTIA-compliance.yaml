@@ -50,29 +50,25 @@ inputs:
     type: object
     required: false
 
-notes: |
-  Ensure that the SBOM includes metadata for authors and suppliers to meet NTIA requirements.
+notes:
+  - |
+    Ensure that the SBOM includes metadata for authors and suppliers to meet NTIA requirements.
 
-  For example,  
-  ```yaml
-  valint bom my_company/my_image:latest \
-    --author-name "bob" \
-    --author-email bob@my_company.com \
-    --author-phone "123-456-7890" \
-    --supplier-email bob@my_company.com  \
-     --supplier-name "alice" \
-    --supplier-url "https://my_company.com" \
-    --supplier-phone "123-456-7890" 
-  ```
+    For example,  
+    ```yaml
+    valint bom my_company/my_image:latest \
+      --author-name "bob" \
+      --author-email bob@my_company.com \
+      --author-phone "123-456-7890" \
+      --supplier-email bob@my_company.com  \
+      --supplier-name "alice" \
+      --supplier-url "https://my_company.com" \
+      --supplier-phone "123-456-7890" 
+    ```
 
-  **Input Example:**
-  
-  ```yaml
-  - uses: sbom/NTIA-compliance@v2/rules
-    with:
-      required_author: 
-        name: "bom"
-        email: "bob@company.com"
-      required_supplier: 
-        name: "alice"
-  ```
+input_example: |
+  required_author: 
+    name: "bom"
+    email: "bob@company.com"
+  required_supplier: 
+    name: "alice"
