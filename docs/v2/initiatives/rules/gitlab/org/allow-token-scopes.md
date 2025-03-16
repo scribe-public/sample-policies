@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/org/allow-token-scopes@v2
+with:
+  allowed_token_scopes:
+    - api
+    - read_api
+    - read_repository
+    - read_registry
+  
 ```
+
+## Description  
+This rule ensures that all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.
+It performs the following steps:
+
+1. Checks the settings of the GitLab organization.
+2. Verifies that all tokens are restricted to allowed scopes.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/org/allow-token-scopes@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| allowed_token_scopes | ['api', 'read_api', 'read_repository', 'read_registry'] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| allowed_token_scopes | array | False | List of allowed token scopes in the GitLab organization. |
 

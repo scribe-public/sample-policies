@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/org/longlive-tokens@v2
+with:
+  exiring_in_days: 365
+  
 ```
+
+## Mitigation  
+Ensure that no GitLab organization tokens have an excessively long lifespan to prevent service disruption.
+
+
+## Description  
+This rule ensures that no GitLab organization tokens have an excessively long lifespan.
+It performs the following steps:
+
+1. Checks the settings of the GitLab organization.
+2. Verifies that no tokens have an excessively long lifespan.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/org/longlive-tokens@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| exiring_in_days | 365 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| exiring_in_days | number | False | Number of days before a token expires. |
 

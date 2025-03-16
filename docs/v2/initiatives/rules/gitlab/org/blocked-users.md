@@ -25,7 +25,28 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/org/blocked-users@v2
+with:
+  blocked_users:
+    - "user1"
+    - "user2"
+    - "user3"
+  
 ```
+
+## Mitigation  
+Ensure that no users are on the block list in the GitLab organization to reduce the risk of unauthorized access.
+
+
+## Description  
+This rule ensures that no users in the GitLab organization are on the block list.
+It performs the following steps:
+
+1. Checks the settings of the GitLab organization.
+2. Verifies that no users are on the block list.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +57,8 @@ uses: gitlab/org/blocked-users@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| blocked_users | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| blocked_users | array | False | List of users blocked in the GitLab organization. |
 

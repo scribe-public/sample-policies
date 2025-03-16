@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/org/max-admins@v2
+with:
+  max_admins: 0
+  
 ```
+
+## Mitigation  
+Ensure that the maximum number of admins for the GitLab project is restricted to reduce the risk of unauthorized changes.
+
+
+## Description  
+This rule ensures that the maximum number of admins for the GitLab project is restricted.
+It performs the following steps:
+
+1. Checks the settings of the GitLab organization.
+2. Verifies that the maximum number of admins is restricted.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/org/max-admins@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| max_admins | 0 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| max_admins | number | False | Maximum number of admins allowed in the GitLab organization. |
 

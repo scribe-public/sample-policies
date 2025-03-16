@@ -25,7 +25,29 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/org/allow-users@v2
+with:
+  allowed_users:
+    - "user1"
+    - "user2"
+    - "user3"
+  
 ```
+
+## Mitigation  
+Ensure that only users in the Allowed List have access to the GitLab organization to reduce the risk of unauthorized access.
+
+
+
+## Description  
+This rule ensures that only users in the Allowed List have access to the GitLab organization.
+It performs the following steps:
+
+1. Checks the settings of the GitLab organization.
+2. Verifies that only users in the Allowed List have access.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +58,8 @@ uses: gitlab/org/allow-users@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| allowed_users | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| allowed_users | array | False | List of users allowed to have access to the GitLab organization. |
 

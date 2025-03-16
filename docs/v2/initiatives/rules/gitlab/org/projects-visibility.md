@@ -25,7 +25,22 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/org/projects-visibility@v2
+with:
+  allowed_public:
+    - "Learn GitLab"
+    - "Scribe Gitlab Test"
+  
 ```
+
+## Description  
+This rule ensures that only allowed projects in the GitLab organization have public visibility.
+It performs the following steps:
+
+1. Checks the settings of the GitLab organization.
+2. Verifies that only allowed projects have public visibility.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +51,8 @@ uses: gitlab/org/projects-visibility@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| allowed_public | ['Learn GitLab', 'Scribe Gitlab Test'] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| allowed_public | array | False | List of projects allowed to have public visibility in the GitLab organization. |
 

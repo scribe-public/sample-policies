@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/org/unused-tokens@v2
+with:
+  unused_for_days: 90
+  
 ```
+
+## Mitigation  
+Ensure that no GitLab organization tokens are unused to prevent service disruption.
+
+
+## Description  
+This rule ensures that no GitLab organization tokens are unused.
+It performs the following steps:
+
+1. Checks the settings of the GitLab organization.
+2. Verifies that no tokens are unused.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/org/unused-tokens@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| unused_for_days | 90 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| unused_for_days | number | False | Number of days before a token is considered unused. |
 

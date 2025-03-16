@@ -30,3 +30,26 @@ with:
         - read_api
         - read_repository
         - read_registry
+
+inputs:
+  - name: allowed_token_scopes
+    type: array
+    description: List of allowed token scopes in the GitLab organization.
+    required: false
+
+input_example: |
+  allowed_token_scopes:
+    - api
+    - read_api
+    - read_repository
+    - read_registry
+
+full-description: |
+  This rule ensures that all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab organization.
+  2. Verifies that all tokens are restricted to allowed scopes.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
