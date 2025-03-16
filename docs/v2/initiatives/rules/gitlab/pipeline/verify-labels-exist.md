@@ -25,7 +25,26 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/pipeline/verify-labels-exist@v2
+with:
+  labels:
+    - "app.kubernetes.io/instance"
+  
 ```
+
+## Mitigation  
+Ensure that all required labels exist in the pipeline to reduce the risk of misconfiguration.
+
+
+## Description  
+This rule ensures that the pipeline has all required label keys and values.
+It performs the following steps:
+
+1. Checks the settings of the GitLab pipeline.
+2. Verifies that all required labels exist in the pipeline.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab pipeline resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +55,8 @@ uses: gitlab/pipeline/verify-labels-exist@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - asset_type=pipeline |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| labels | ['app.kubernetes.io/instance'] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| labels | array | True | List of labels to verify exist in the pipeline. |
 

@@ -32,6 +32,21 @@ uses: jenkins/instance/unused-users@v2
 with: jenkins/instance/unused-users@v2
 ```
 
+## Mitigation  
+Ensure that there are no users with zero activity in the Jenkins instance to prevent service disruption.
+
+
+## Description  
+This rule ensures that there are no users with zero activity in the Jenkins instance.
+It performs the following steps:
+
+1. Checks the settings of the Jenkins instance.
+2. Verifies that there are no users with zero activity.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Jenkins instance resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

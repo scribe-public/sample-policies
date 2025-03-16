@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: jenkins/instance/inactive-users@v2
+with:
+  inactive_for_days: 90
+  
 ```
+
+## Mitigation  
+Ensure that no Jenkins instance users are inactive to prevent service disruption.
+
+
+## Description  
+This rule ensures that no Jenkins instance users are inactive.
+It performs the following steps:
+
+1. Checks the settings of the Jenkins instance.
+2. Verifies that no users are inactive.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Jenkins instance resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -35,8 +53,8 @@ uses: jenkins/instance/inactive-users@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - asset_type=instance<br/>- platform=jenkins |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| inactive_for_days | 90 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| inactive_for_days | number | False | Number of days before a user is considered inactive. |
 

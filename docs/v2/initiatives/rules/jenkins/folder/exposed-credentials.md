@@ -32,6 +32,21 @@ uses: jenkins/folder/exposed-credentials@v2
 with: jenkins/folder/exposed-credentials@v2
 ```
 
+## Mitigation  
+Ensure that there are no exposed credentials in the Jenkins folder to reduce the risk of unauthorized access.
+
+
+## Description  
+This rule ensures that there are no exposed credentials in the Jenkins folder.
+It performs the following steps:
+
+1. Checks the Jenkins folder for exposed credentials.
+2. Verifies that there are no exposed credentials.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Jenkins folder resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
