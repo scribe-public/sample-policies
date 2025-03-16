@@ -24,6 +24,12 @@ Signed Evidence for this rule **IS** required by default.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: sarif/artifact-signed@v2/rules
+```
+
 ## Mitigation  
 Ensures that the referenced artifact has a valid digital signature, confirming its integrity and authenticity. This prevents tampering and verifies that the artifact originates from a trusted source.
 

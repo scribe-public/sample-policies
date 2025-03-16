@@ -21,6 +21,17 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: k8s/namespace/white-listed-namespaces@v2/rules
+with:
+  namespaces:
+    - "my-namespace1"
+    - "my-namespace2"
+  
+```
+
 ## Mitigation  
 Ensures that only approved namespaces are allowed within the Kubernetes cluster, reducing the risk of unauthorized or misconfigured namespaces.
 

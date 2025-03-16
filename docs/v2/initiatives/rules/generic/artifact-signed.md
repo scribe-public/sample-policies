@@ -24,6 +24,17 @@ Signed Evidence for this rule **IS** required by default.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: generic/artifact-signed@v2/rules
+```
+
+## Mitigation  
+Ensure that generic evidence artifacts (such as files) have valid cryptographic signatures to prevent tampering. This helps in maintaining the integrity and authenticity of the evidence.
+
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

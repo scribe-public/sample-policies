@@ -24,6 +24,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: sarif/evidence-exists@v2/rules
+```
+
 ## Mitigation  
 By confirming that all required evidence exists, this rule guarantees that the outputs from various security scans  (such as vulnerability assessments, configuration checks, and static analysis) are fully represented as evidence.
 

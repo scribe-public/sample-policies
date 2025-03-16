@@ -24,8 +24,15 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: git/no-commit-to-main@v2/rules
+```
+
 ## Mitigation  
 Enforcing no commits to the main branch ensures that changes are made through pull requests, allowing for code review and approval before merging.
+
 
 
 ## Description  

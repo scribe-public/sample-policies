@@ -24,6 +24,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: sbom/complete-licenses@v2/rules
+```
+
 ## Mitigation  
 Ensures that all dependencies have a complete set of licenses, reducing the risk of legal issues and ensuring compliance with open-source licenses.
 

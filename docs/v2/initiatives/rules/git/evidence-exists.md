@@ -27,6 +27,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: git/evidence-exists@v2/rules
+```
+
 ## Mitigation  
 By confirming that all required evidence exists, this rule guarantees that a Source Code Bill of Materials (SBOM) is fully represented as evidence.
 

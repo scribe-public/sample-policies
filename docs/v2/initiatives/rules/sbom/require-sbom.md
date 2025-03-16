@@ -27,6 +27,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: sbom/require-sbom@v2/rules
+```
+
 ## Mitigation  
 Ensures that an SBOM is present, which is essential for tracking and managing software components and their dependencies.
 

@@ -31,8 +31,8 @@ Rule is scoped by target and product.
 uses: images/allowed-image-source@v2/rules
 with:
   approved_sources:
-    - "docker.io/library/*"
-    - "docker.io/my_org/*"
+    - "docker.io/library/.*"
+    - "docker.io/my_org/.*"
 ```
 
 ## Mitigation  

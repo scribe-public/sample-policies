@@ -24,6 +24,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: git/no-unsigned-commits@v2/rules
+```
+
 ## Mitigation  
 Enforcing signed commits ensures reduced risk of unauthorized changes to the repository.
 

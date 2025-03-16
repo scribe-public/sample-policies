@@ -20,6 +20,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: ssdf/ps-3.2-archived-sbom@v2/rules
+```
+
 ## Mitigation  
 Archives the SBOM for every build, providing a permanent record of the software components and their relationships, thereby reducing the risk of supply chain attacks.
 

@@ -21,6 +21,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: images/restrict-shell-entrypoint@v2/rules
+```
+
 ## Mitigation  
 Prevent unauthorized shell access by ensuring container images do not use a shell-based entrypoint. This reduces the risk of privilege escalation, unauthorized command execution, and potential security vulnerabilities from unrestricted shell access within containers.
 

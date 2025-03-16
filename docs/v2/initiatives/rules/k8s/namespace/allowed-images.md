@@ -27,8 +27,8 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: k8s/namespace/allowed-images@v2/rules
 with:
   images_to_include:
-    - docker.io/my_org/my_image1
-    - docker.io/my_org/my_image2  
+    - "docker.io/my_org/my_image1"
+    - "docker.io/my_org/my_image2"
 ```
 
 ## Mitigation  

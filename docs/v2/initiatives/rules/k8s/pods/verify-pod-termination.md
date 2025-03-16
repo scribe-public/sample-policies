@@ -21,6 +21,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: k8s/pods/verify-pod-termination@v2/rules
+```
+
 ## Mitigation  
 Ensures that pods are terminated in a timely manner, preventing lingering resources and maintaining cluster hygiene.
 
