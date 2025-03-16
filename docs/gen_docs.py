@@ -817,12 +817,11 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     1. Initiatives – a table with columns:
          - Name (linked to the doc site, e.g. "docs/initiative/<file.md>")
          - Description
-    2. Rules – a table with columns:
+    2. Rules – a set of tables grouped by evidence type, each with columns:
          - Rule Name (as a link to its rule doc)
          - Description
-         - Evidence Type (as a link, if available)
          
-    Rules are sorted using high_priority for groups that should come first.
+    Each group will have its own subsection, and the evidence type and link will be in the table header.
     """
     index_file_path = os.path.join(INITIATIVES_OUTDIR, "index.md")
     md_lines = []
@@ -847,8 +846,6 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     # Rules Section
     md_lines.append("## Rules")
     md_lines.append("")
-    md_lines.append("| Rule Name | Description | Evidence Type |")
-    md_lines.append("|-----------|-------------|---------------|")
     
     index_rows = []
     for key, doc_info in rule_docs_map.items():
@@ -857,7 +854,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
         description = rule_data.get("description", "").replace("\n", " ")
         evidence = rule_data.get("evidence", {})
         evidence_type, signed = get_evidence_type(evidence, rule_name)
-        evidence_link = f" [{evidence_type}]({table[evidence_type]})" if evidence_type in table else ""
+        evidence_link = f"[{evidence_type}]({table[evidence_type]})" if evidence_type in table else evidence_type
         # Get the relative path for the rule doc (e.g. "gitlab/org/max-admins.md")
         rel_path = doc_info["rel_path"]
         # Create a link to the rule doc relative to the initiatives folder.
@@ -873,15 +870,29 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
             return (1, ev_type.lower())
     index_rows.sort(key=sort_key)
     
-    for _, rule_link, description, evidence_link in index_rows:
-        md_lines.append(f"| {rule_link} | {description} | {evidence_link} |")
+    # Group rules by evidence type
+    grouped_rules = {}
+    for evidence_type, rule_link, description, evidence_link in index_rows:
+        if evidence_type not in grouped_rules:
+            grouped_rules[evidence_type] = []
+        grouped_rules[evidence_type].append((rule_link, description, evidence_link))
+    
+    # Generate tables for each evidence type group
+    for evidence_type, rules in grouped_rules.items():
+        md_lines.append(f"### {evidence_type}")
+        md_lines.append(f"**Evidence Type:** {rules[0][2]}")
+        md_lines.append("")
+        md_lines.append("| Rule Name | Description |")
+        md_lines.append("|-----------|-------------|")
+        for rule_link, description, _ in rules:
+            md_lines.append(f"| {rule_link} | {description} |")
+        md_lines.append("")
     
     md_content = "\n".join(md_lines)
     with open(index_file_path, "w") as f:
         f.write(md_content)
     
     print(f"Created combined index at {index_file_path}")
-
 
 def main():
     ensure_output_dirs()
