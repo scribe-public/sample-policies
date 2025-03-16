@@ -10,10 +10,8 @@ import json
 DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives", "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
-SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
-DOC_SITE_URL = "https://deploy-preview-299--scribe-security.netlify.app"
-DOC_SITE_BASE = f"{DOC_SITE_URL}/docs/configuration/initiatives"
-
+SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/blob/main/"
+DOC_SITE_BASE = "https://scribe-security.netlify.app/docs/configuration/initiatives"
 
 def parse_yaml(file_path):
     """Safely parse a YAML file into a Python dict."""
@@ -640,7 +638,6 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
 
         if ctrl_name == "" and ctrl_id != "":
             print(f"# Warning: 'name' field is missing for control '{ctrl_id}' in {file_path}")
-
         if ctrl_name != "":
             ctrl_section_link = generate_markdown_anchor(f"{ctrl_name}")
             link_name = ctrl_name

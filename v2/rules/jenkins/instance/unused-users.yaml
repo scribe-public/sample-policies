@@ -16,3 +16,16 @@ evidence:
   labels:
     - "asset_type=instance"
     - "platform=jenkins"
+
+full-description: |
+  This rule ensures that there are no users with zero activity in the Jenkins instance.
+  It performs the following steps:
+  
+  1. Checks the settings of the Jenkins instance.
+  2. Verifies that there are no users with zero activity.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Jenkins instance resources.
+
+mitigation: >
+  Ensure that there are no users with zero activity in the Jenkins instance to prevent service disruption.
