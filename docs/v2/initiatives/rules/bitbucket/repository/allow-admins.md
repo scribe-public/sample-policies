@@ -25,7 +25,28 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: bitbucket/repository/allow-admins@v2
+with:
+  allowed_admins:
+    - "user1"
+    - "user2"
+    - "user3"
+  
 ```
+
+## Mitigation  
+Ensure that only users in the Allowed List have admin privileges in the Bitbucket repository to reduce the risk of unauthorized changes.
+
+
+## Description  
+This rule ensures that only users in the Allowed List have admin privileges in the Bitbucket repository.
+It performs the following steps:
+
+1. Checks the settings of the Bitbucket repository.
+2. Verifies that only users in the Allowed List have admin privileges.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket repository resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +57,8 @@ uses: bitbucket/repository/allow-admins@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=bitbucket<br/>- asset_type=repository |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| allowed_admins | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| allowed_admins | array | False | List of users allowed to have admin privileges in the Bitbucket repository. |
 

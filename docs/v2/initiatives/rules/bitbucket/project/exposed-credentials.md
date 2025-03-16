@@ -32,6 +32,22 @@ uses: bitbucket/project/exposed-credentials@v2
 with: bitbucket/project/exposed-credentials@v2
 ```
 
+## Mitigation  
+Ensure that access to the Bitbucket project is blocked if exposed credentials are detected to prevent unauthorized access.
+
+
+
+## Description  
+This rule ensures that access to the Bitbucket project is blocked if exposed credentials are detected.
+It performs the following steps:
+
+1. Checks the settings of the Bitbucket project.
+2. Verifies that access is blocked if exposed credentials are detected.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket project resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

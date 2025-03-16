@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: bitbucket/project/long-live-tokens@v2
+with:
+  max_days: 30
+  
 ```
+
+## Mitigation  
+Ensure that Bitbucket API tokens expire before the maximum time to live to reduce the risk of unauthorized access.
+
+
+## Description  
+This rule ensures that Bitbucket API tokens expire before the maximum time to live.
+It performs the following steps:
+
+1. Checks the settings of the Bitbucket project.
+2. Verifies that tokens expire before the maximum time to live.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -35,8 +53,8 @@ uses: bitbucket/project/long-live-tokens@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - asset_type=project<br/>- platform=bitbucket<br/>- platform_instance=bitbucket_dc |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| max_days | 30 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| max_days | number | False | Maximum number of days a token can be valid. |
 

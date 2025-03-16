@@ -25,7 +25,28 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: bitbucket/workspace/allow-users@v2
+with:
+  allowed_users:
+    - "user1"
+    - "user2"
+    - "user3"
+  
 ```
+
+## Mitigation  
+Ensure that only users in the Allowed List have user access to the Bitbucket workspace to reduce the risk of unauthorized access.
+
+
+## Description  
+This rule ensures that only users in the Allowed List have user access to the Bitbucket workspace.
+It performs the following steps:
+
+1. Checks the settings of the Bitbucket workspace.
+2. Verifies that only users in the Allowed List have user access.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket workspace resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +57,8 @@ uses: bitbucket/workspace/allow-users@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=bitbucket<br/>- asset_type=workspace |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| allowed_users | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| allowed_users | array | False | List of users allowed to have user access to the Bitbucket workspace. |
 
