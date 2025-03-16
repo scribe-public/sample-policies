@@ -20,3 +20,28 @@ evidence:
 
 with:
   allowed_users: []
+
+inputs:
+  - name: allowed_users
+    type: array
+    description: List of users allowed to have user access to the Bitbucket workspace.
+    required: false
+
+input_example: |
+  allowed_users:
+    - "user1"
+    - "user2"
+    - "user3"
+
+full-description: |
+  This rule ensures that only users in the Allowed List have user access to the Bitbucket workspace.
+  It performs the following steps:
+  
+  1. Checks the settings of the Bitbucket workspace.
+  2. Verifies that only users in the Allowed List have user access.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket workspace resources.
+
+mitigation: >
+  Ensure that only users in the Allowed List have user access to the Bitbucket workspace to reduce the risk of unauthorized access.
