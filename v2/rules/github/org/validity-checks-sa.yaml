@@ -1,9 +1,9 @@
 config-type: rule
 id: github-org-validity-checks-sa
-name: Verify Secret_Scanning_Validity_Checks Setting in Security_And_Analysis
+name: Verify Validity checks are configured and enabled in the GitHub organization.
 path: validity-checks-sa.rego
 
-description: Verify `secret_scanning_validity_checks` is configured in the GitHub organization.
+description: Verify Validity checks are configured and enabled in the GitHub organization.
 
 labels:
   - GitHub
@@ -23,3 +23,15 @@ evidence:
       {{- else -}}
       {{- asset_on_target nil -}}
       {{- end -}}
+
+mitigation: >
+  Ensure that the Validity checks under GitHub organization setting is enabled to maintain the integrity of the organization’s repositories, preventing potential issues and vulnerabilities.
+full-description: |
+  This rule checks if the `validity_checks` under GitHub organization setting is enabled to ensure the integrity of the organization’s repositories.
+  It performs the following steps:
+  
+  1. Checks the validity checks settings of the GitHub organization.
+  2. Verifies that the validity checks setting is enabled.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.

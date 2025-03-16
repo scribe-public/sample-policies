@@ -24,4 +24,15 @@ evidence:
       {{- asset_on_target nil -}}
       {{- end -}}
 
-with:
+mitigation: >
+  Ensure that the repository requires signoff on all commits made through the GitHub web interface, enhancing security and accountability.
+
+full-description: |
+  This rule checks if the repository requires signoff on all commits made through the GitHub web interface.
+  It performs the following steps:
+  
+  1. Checks the repository settings for commit signoff.
+  2. Verifies that the repository requires signoff on all commits made through the GitHub web interface.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.

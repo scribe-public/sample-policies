@@ -1,6 +1,6 @@
 config-type: rule
 id: github-org-dependabot-security-updates-sa
-name: Verify dependabot_security_updates setting in security_and_analysis
+name: Verify Dependabot Security Updates Setting in Security and Analysis
 path: dependabot-security-updates-sa.rego
 
 description: Verify Dependabot security updates are configured in the GitHub organization.
@@ -23,3 +23,25 @@ evidence:
       {{- else -}}
       {{- asset_on_target nil -}}
       {{- end -}}
+
+inputs:
+  - name: dependabot_security_updates
+    type: boolean
+    description: Indicates if Dependabot security updates are enabled.
+    required: false
+
+input_example: |
+  dependabot_security_updates: true
+
+full-description: |
+  This rule ensures that Dependabot security updates are enabled in the GitHub organization.
+  It performs the following steps:
+  
+  1. Checks the security and analysis settings of the GitHub organization.
+  2. Verifies that the Dependabot security updates setting is enabled.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >
+  Ensures that Dependabot security updates are enabled in the GitHub organization, reducing the risk of vulnerabilities in dependencies.

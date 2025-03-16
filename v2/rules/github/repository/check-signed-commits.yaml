@@ -23,3 +23,16 @@ evidence:
       {{- else -}}
       {{- asset_on_target nil -}}
       {{- end -}}
+
+full-description: |
+  This rule ensures that all commits in the GitHub repository are signed.
+  It performs the following steps:
+  
+  1. Iterates over the commits in the repository.
+  2. Checks each commit for a valid signature.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository commits.
+
+mitigation: >
+  Ensures that all commits are signed, reducing the risk of unauthorized changes.

@@ -1,6 +1,6 @@
 config-type: rule
 id: github-org-push-protection
-name: Verify Secret_Scanning_Push_Protection_Enabled_For_New_Repositories Setting
+name: Verify Secret Scanning Push Protection Enabled for New Repositories Setting
 path: push-protection.rego
 
 description: Verify `secret_scanning_push_protection` is enabled for new repositories in the GitHub organization.
@@ -25,4 +25,26 @@ evidence:
       {{- end -}}
 
 with:
+  desired_value: true
+
+full-description: |
+  This rule ensures that secret scanning push protection is enabled for new repositories in the GitHub organization.
+  It performs the following steps:
+  
+  1. Checks the security and analysis settings of the GitHub organization.
+  2. Verifies that the secret scanning push protection setting is enabled for new repositories.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >
+  Ensures that secret scanning push protection is enabled for new repositories in the GitHub organization, providing better security for secret scanning.
+
+inputs:
+  - name: desired_value
+    type: boolean
+    description: Indicates if the secret scanning push protection is enabled for new repositories.
+    required: false
+
+input_example: |
   desired_value: true
