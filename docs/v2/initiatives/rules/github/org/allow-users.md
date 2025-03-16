@@ -5,7 +5,6 @@ title: Allowed GitHub Organization Users
 # Allowed GitHub Organization Users  
 **Type:** Rule  
 **ID:** `github-org-allowed-users`  
-**Uses:** `github/org/allow-users@v2/rules`  
 **Source:** [v2/rules/github/org/allow-users.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/allow-users.yaml)  
 **Rego Source:** [allow-users.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/allow-users.rego)  
 **Labels:** GitHub, Organization  

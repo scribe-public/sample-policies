@@ -5,7 +5,6 @@ title: Check Message Substring
 # Check Message Substring  
 **Type:** Rule  
 **ID:** `gitlab-project-message-substring-check`  
-**Uses:** `gitlab/project/message-substring-check@v2/rules`  
 **Source:** [v2/rules/gitlab/project/message-substring-check.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/message-substring-check.yaml)  
 **Rego Source:** [message-substring-check.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/message-substring-check.rego)  
 **Labels:** Gitlab, Project  

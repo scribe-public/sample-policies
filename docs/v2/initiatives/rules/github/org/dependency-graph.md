@@ -5,7 +5,6 @@ title: Verify dependency_graph_enabled_for_new_repositories setting
 # Verify dependency_graph_enabled_for_new_repositories setting  
 **Type:** Rule  
 **ID:** `github-org-dependency-graph`  
-**Uses:** `github/org/dependency-graph@v2/rules`  
 **Source:** [v2/rules/github/org/dependency-graph.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependency-graph.yaml)  
 **Rego Source:** [dependency-graph.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependency-graph.rego)  
 **Labels:** GitHub, Organization  

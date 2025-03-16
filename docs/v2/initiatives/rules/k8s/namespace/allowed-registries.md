@@ -5,7 +5,6 @@ title: Allowed Namespace Registries
 # Allowed Namespace Registries  
 **Type:** Rule  
 **ID:** `k8s-namespace-allowed-registries`  
-**Uses:** `k8s/namespace/allowed-registries@v2/rules`  
 **Source:** [v2/rules/k8s/namespace/allowed-registries.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/namespace/allowed-registries.yaml)  
 **Rego Source:** [allowed-registries.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/namespace/allowed-registries.rego)  
 **Labels:** K8s, Namespace  

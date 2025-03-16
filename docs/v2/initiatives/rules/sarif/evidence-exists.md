@@ -5,7 +5,6 @@ title: Verify Required Evidence in SARIF
 # Verify Required Evidence in SARIF  
 **Type:** Rule  
 **ID:** `required-sarif-evidence`  
-**Uses:** `sarif/evidence-exists@v2/rules`  
 **Source:** [v2/rules/sarif/evidence-exists.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/evidence-exists.yaml)  
 **Rego Source:** [evidence-exists.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/evidence-exists.rego)  
 **Labels:** SARIF  

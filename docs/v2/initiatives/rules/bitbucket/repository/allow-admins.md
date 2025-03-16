@@ -5,7 +5,6 @@ title: Allowed Repository Admins
 # Allowed Repository Admins  
 **Type:** Rule  
 **ID:** `bb-repo-allowed-repository-admins`  
-**Uses:** `bitbucket/repository/allow-admins@v2/rules`  
 **Source:** [v2/rules/bitbucket/repository/allow-admins.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/repository/allow-admins.yaml)  
 **Rego Source:** [allow-admins.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/repository/allow-admins.rego)  
 **Labels:** Bitbucket, Repository  

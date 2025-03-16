@@ -5,7 +5,6 @@ title: Verify No Critical or High Vulnerabilities
 # Verify No Critical or High Vulnerabilities  
 **Type:** Rule  
 **ID:** `scribe-cve`  
-**Uses:** `api/scribe-api-cve@v2/rules`  
 **Source:** [v2/rules/api/scribe-api-cve.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/api/scribe-api-cve.yaml)  
 **Rego Source:** [scribe-api.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/api/scribe-api.rego)  
 **Labels:** SCA, Blueprint, Scribe  

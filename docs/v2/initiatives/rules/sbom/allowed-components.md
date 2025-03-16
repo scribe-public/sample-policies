@@ -5,7 +5,6 @@ title: Enforce Allowed SBOM Components
 # Enforce Allowed SBOM Components  
 **Type:** Rule  
 **ID:** `sbom-allowed-components`  
-**Uses:** `sbom/allowed-components@v2/rules`  
 **Source:** [v2/rules/sbom/allowed-components.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/allowed-components.yaml)  
 **Rego Source:** [allowed-components.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/allowed-components.rego)  
 **Labels:** SBOM, Image, Git  

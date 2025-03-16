@@ -5,7 +5,6 @@ title: Require Signed Container Image
 # Require Signed Container Image  
 **Type:** Rule  
 **ID:** `images-require-signed-image`  
-**Uses:** `images/image-signed@v2/rules`  
 **Source:** [v2/rules/images/image-signed.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/image-signed.yaml)  
 **Rego Source:** [image-signed.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/image-signed.rego)  
 **Labels:** Images, Blueprint  

@@ -5,7 +5,6 @@ title: Allowed Public Repositories
 # Allowed Public Repositories  
 **Type:** Rule  
 **ID:** `github-repo-visibility`  
-**Uses:** `github/repository/visibility@v2/rules`  
 **Source:** [v2/rules/github/repository/visibility.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/visibility.yaml)  
 **Rego Source:** [visibility.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/visibility.rego)  
 **Labels:** GitHub, Repository  

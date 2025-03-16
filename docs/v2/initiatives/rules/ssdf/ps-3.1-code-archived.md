@@ -5,7 +5,6 @@ title: Code archived
 # Code archived  
 **Type:** Rule  
 **ID:** `PS.3.1`  
-**Uses:** `ssdf/ps-3.1-code-archived@v2/rules`  
 **Source:** [v2/rules/ssdf/ps-3.1-code-archived.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/ssdf/ps-3.1-code-archived.yaml)  
 **Labels:** SSDF  
 

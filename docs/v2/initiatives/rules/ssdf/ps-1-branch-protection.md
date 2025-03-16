@@ -5,7 +5,6 @@ title: Branch protected
 # Branch protected  
 **Type:** Rule  
 **ID:** `PS.1.2`  
-**Uses:** `ssdf/ps-1-branch-protection@v2/rules`  
 **Source:** [v2/rules/ssdf/ps-1-branch-protection.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/ssdf/ps-1-branch-protection.yaml)  
 **Labels:** SSDF  
 

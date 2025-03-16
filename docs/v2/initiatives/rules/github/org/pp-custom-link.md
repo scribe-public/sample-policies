@@ -5,7 +5,6 @@ title: Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting
 # Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting  
 **Type:** Rule  
 **ID:** `github-org-pp-custom-link`  
-**Uses:** `github/org/pp-custom-link@v2/rules`  
 **Source:** [v2/rules/github/org/pp-custom-link.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/pp-custom-link.yaml)  
 **Rego Source:** [pp-custom-link.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/pp-custom-link.rego)  
 **Labels:** GitHub, Organization  

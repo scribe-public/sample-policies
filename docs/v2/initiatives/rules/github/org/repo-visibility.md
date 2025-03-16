@@ -5,7 +5,6 @@ title: Verify Repo Visibility Setting
 # Verify Repo Visibility Setting  
 **Type:** Rule  
 **ID:** `github-org-repo-visibility`  
-**Uses:** `github/org/repo-visibility@v2/rules`  
 **Source:** [v2/rules/github/org/repo-visibility.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/repo-visibility.yaml)  
 **Rego Source:** [repo-visibility.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/repo-visibility.rego)  
 **Labels:** GitHub, Organization  

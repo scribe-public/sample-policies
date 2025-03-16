@@ -5,7 +5,6 @@ title: Require Image Labels
 # Require Image Labels  
 **Type:** Rule  
 **ID:** `required-image-labels`  
-**Uses:** `images/verify-labels-exist@v2/rules`  
 **Source:** [v2/rules/images/verify-labels-exist.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/verify-labels-exist.yaml)  
 **Rego Source:** [verify-labels-exist.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/verify-labels-exist.rego)  
 **Labels:** SBOM, Images  

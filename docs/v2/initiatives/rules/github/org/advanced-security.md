@@ -5,7 +5,6 @@ title: Verify advanced security setting is enabled
 # Verify advanced security setting is enabled  
 **Type:** Rule  
 **ID:** `github-org-advanced-security`  
-**Uses:** `github/org/advanced-security@v2/rules`  
 **Source:** [v2/rules/github/org/advanced-security.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/advanced-security.yaml)  
 **Rego Source:** [advanced-security.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/advanced-security.rego)  
 **Labels:** GitHub, Organization  

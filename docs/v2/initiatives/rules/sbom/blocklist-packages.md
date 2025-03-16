@@ -5,7 +5,6 @@ title: Restrict Disallowed Dependencies
 # Restrict Disallowed Dependencies  
 **Type:** Rule  
 **ID:** `sbom-disallow-dependencies`  
-**Uses:** `sbom/blocklist-packages@v2/rules`  
 **Source:** [v2/rules/sbom/blocklist-packages.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/blocklist-packages.yaml)  
 **Rego Source:** [blocklist-packages.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/blocklist-packages.rego)  
 **Labels:** SBOM, Image, Blueprint, Git  

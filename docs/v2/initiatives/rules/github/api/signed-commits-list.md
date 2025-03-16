@@ -5,7 +5,6 @@ title: Verify Selected Commits Are Signed API
 # Verify Selected Commits Are Signed API  
 **Type:** Rule  
 **ID:** `github-api-signed-commits-list`  
-**Uses:** `github/api/signed-commits-list@v2/rules`  
 **Source:** [v2/rules/github/api/signed-commits-list.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/api/signed-commits-list.yaml)  
 **Rego Source:** [signed-commits-list.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/api/signed-commits-list.rego)  
 **Labels:** GitHub, API  

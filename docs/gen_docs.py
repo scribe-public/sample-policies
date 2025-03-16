@@ -346,7 +346,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     md.append(f"# {name}  ")
     md.append(f"**Type:** Rule  ")
     md.append(f"**ID:** `{rule_id}`  ")
-    md.append(f"**Uses:** `{filepath_to_uses(file_path)}`  ")
+    # md.append(f"**Uses:** `{filepath_to_uses(file_path)}`  ")
     md.append(f"**Source:** [{file_path}]({yaml_source_link})  ")
     if rego_path:
         md.append(f"**Rego Source:** [{rego_path}]({rego_source_link})  ")

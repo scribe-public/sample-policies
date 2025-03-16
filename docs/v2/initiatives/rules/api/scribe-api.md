@@ -5,7 +5,6 @@ title: Apply Scribe Template Policy
 # Apply Scribe Template Policy  
 **Type:** Rule  
 **ID:** `scribe-template`  
-**Uses:** `api/scribe-api@v2/rules`  
 **Source:** [v2/rules/api/scribe-api.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/api/scribe-api.yaml)  
 **Labels:** Scribe  
 

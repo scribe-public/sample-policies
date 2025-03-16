@@ -5,7 +5,6 @@ title: Verify Only Ephemeral Runners Exist in Repository
 # Verify Only Ephemeral Runners Exist in Repository  
 **Type:** Rule  
 **ID:** `github-repo-ephemeral-runners-only`  
-**Uses:** `github/repository/ephemeral-runners-only@v2/rules`  
 **Source:** [v2/rules/github/repository/ephemeral-runners-only.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/ephemeral-runners-only.yaml)  
 **Rego Source:** [ephemeral-runners-only.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/ephemeral-runners-only.rego)  
 **Labels:** GitHub, Repository  

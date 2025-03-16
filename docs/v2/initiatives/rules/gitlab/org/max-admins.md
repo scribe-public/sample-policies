@@ -5,7 +5,6 @@ title: Limit Admins in GitLab Organization
 # Limit Admins in GitLab Organization  
 **Type:** Rule  
 **ID:** `gitlab-org-max-admins`  
-**Uses:** `gitlab/org/max-admins@v2/rules`  
 **Source:** [v2/rules/gitlab/org/max-admins.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/max-admins.yaml)  
 **Rego Source:** [max-admins.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/max-admins.rego)  
 **Labels:** Blueprint, GitLab, Organization  

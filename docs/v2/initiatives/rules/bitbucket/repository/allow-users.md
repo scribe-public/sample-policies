@@ -5,7 +5,6 @@ title: Allowed Repository Users
 # Allowed Repository Users  
 **Type:** Rule  
 **ID:** `bb-repo-allowed-repository-users`  
-**Uses:** `bitbucket/repository/allow-users@v2/rules`  
 **Source:** [v2/rules/bitbucket/repository/allow-users.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/repository/allow-users.yaml)  
 **Rego Source:** [allow-users.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/bitbucket/repository/allow-users.rego)  
 **Labels:** Bitbucket, Repository  

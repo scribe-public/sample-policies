@@ -5,7 +5,6 @@ title: Require signoff on web commits
 # Require signoff on web commits  
 **Type:** Rule  
 **ID:** `PS.1.5`  
-**Uses:** `ssdf/ps-1-web-commit-signoff@v2/rules`  
 **Source:** [v2/rules/ssdf/ps-1-web-commit-signoff.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/ssdf/ps-1-web-commit-signoff.yaml)  
 **Labels:** SSDF  
 

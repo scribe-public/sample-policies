@@ -5,7 +5,6 @@ title: Verify dependabot_security_updates setting in security_and_analysis
 # Verify dependabot_security_updates setting in security_and_analysis  
 **Type:** Rule  
 **ID:** `github-org-dependabot-security-updates-sa`  
-**Uses:** `github/org/dependabot-security-updates-sa@v2/rules`  
 **Source:** [v2/rules/github/org/dependabot-security-updates-sa.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependabot-security-updates-sa.yaml)  
 **Rego Source:** [dependabot-security-updates-sa.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependabot-security-updates-sa.rego)  
 **Labels:** GitHub, Organization  

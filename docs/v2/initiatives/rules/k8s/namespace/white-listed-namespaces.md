@@ -5,7 +5,6 @@ title: Allowed Namespaces
 # Allowed Namespaces  
 **Type:** Rule  
 **ID:** `k8s-namespace-white-listed-namespaces`  
-**Uses:** `k8s/namespace/white-listed-namespaces@v2/rules`  
 **Source:** [v2/rules/k8s/namespace/white-listed-namespaces.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/namespace/white-listed-namespaces.yaml)  
 **Rego Source:** [white-listed-namespaces.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/namespace/white-listed-namespaces.rego)  
 **Labels:** K8s, Namespace  

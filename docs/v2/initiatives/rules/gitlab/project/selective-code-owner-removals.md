@@ -5,7 +5,6 @@ title: Restrict Selective Code Owner Removals in GitLab
 # Restrict Selective Code Owner Removals in GitLab  
 **Type:** Rule  
 **ID:** `gitlab-project-selective-code-owner-removals`  
-**Uses:** `gitlab/project/selective-code-owner-removals@v2/rules`  
 **Source:** [v2/rules/gitlab/project/selective-code-owner-removals.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/selective-code-owner-removals.yaml)  
 **Rego Source:** [selective-code-owner-removals.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/selective-code-owner-removals.rego)  
 **Labels:** Gitlab, Project  

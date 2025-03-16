@@ -5,7 +5,6 @@ title: Verify Rule Compliance in SARIF
 # Verify Rule Compliance in SARIF  
 **Type:** Rule  
 **ID:** `sarif-policy`  
-**Uses:** `sarif/verify-sarif@v2/rules`  
 **Source:** [v2/rules/sarif/verify-sarif.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/verify-sarif.yaml)  
 **Rego Source:** [verify-sarif.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/verify-sarif.rego)  
 **Labels:** SARIF  

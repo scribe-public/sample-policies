@@ -5,7 +5,6 @@ title: Verify that provenance is authenticated
 # Verify that provenance is authenticated  
 **Type:** Rule  
 **ID:** `SLSA.L2`  
-**Uses:** `slsa/l2-provenance-authenticated@v2/rules`  
 **Source:** [v2/rules/slsa/l2-provenance-authenticated.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/slsa/l2-provenance-authenticated.yaml)  
 **Rego Source:** [l2-provenance-authenticated.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/slsa/l2-provenance-authenticated.rego)  
 **Help:** https://slsa.dev/spec/v1.0/requirements  

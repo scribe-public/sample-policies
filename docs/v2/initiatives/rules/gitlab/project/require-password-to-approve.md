@@ -5,7 +5,6 @@ title: Require Password for Approvals in GitLab Project
 # Require Password for Approvals in GitLab Project  
 **Type:** Rule  
 **ID:** `gitlab-project-require-password-to-approve`  
-**Uses:** `gitlab/project/require-password-to-approve@v2/rules`  
 **Source:** [v2/rules/gitlab/project/require-password-to-approve.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/require-password-to-approve.yaml)  
 **Rego Source:** [require-password-to-approve.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/require-password-to-approve.rego)  
 **Labels:** Gitlab, Project  

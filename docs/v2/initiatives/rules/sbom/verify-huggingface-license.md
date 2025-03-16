@@ -5,7 +5,6 @@ title: Require Specified SBOM Licenses
 # Require Specified SBOM Licenses  
 **Type:** Rule  
 **ID:** `sbom-hf-license`  
-**Uses:** `sbom/verify-huggingface-license@v2/rules`  
 **Source:** [v2/rules/sbom/verify-huggingface-license.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/verify-huggingface-license.yaml)  
 **Rego Source:** [verify-hf-license.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/verify-hf-license.rego)  
 **Labels:** SBOM, Image, Git  

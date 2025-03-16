@@ -5,7 +5,6 @@ title: Allowed GitHub Organization Admins
 # Allowed GitHub Organization Admins  
 **Type:** Rule  
 **ID:** `github-orgallowed-admins`  
-**Uses:** `github/org/allow-admins@v2/rules`  
 **Source:** [v2/rules/github/org/allow-admins.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/allow-admins.yaml)  
 **Rego Source:** [allow-admins.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/allow-admins.rego)  
 **Labels:** GitHub, Organization  

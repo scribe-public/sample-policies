@@ -5,7 +5,6 @@ title: SBOM archived
 # SBOM archived  
 **Type:** Rule  
 **ID:** `PS.3.2`  
-**Uses:** `ssdf/ps-3.2-archived-sbom@v2/rules`  
 **Source:** [v2/rules/ssdf/ps-3.2-archived-sbom.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/ssdf/ps-3.2-archived-sbom.yaml)  
 **Labels:** SSDF  
 

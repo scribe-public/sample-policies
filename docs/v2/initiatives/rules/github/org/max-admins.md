@@ -5,7 +5,6 @@ title: Limit Admin Number in GitHub Organization
 # Limit Admin Number in GitHub Organization  
 **Type:** Rule  
 **ID:** `github-org-max-admins`  
-**Uses:** `github/org/max-admins@v2/rules`  
 **Source:** [v2/rules/github/org/max-admins.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/max-admins.yaml)  
 **Rego Source:** [max-admins.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/max-admins.rego)  
 **Labels:** Blueprint, GitHub, Organization  

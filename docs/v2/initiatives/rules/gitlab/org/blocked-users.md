@@ -5,7 +5,6 @@ title: Block Users in GitLab Organization
 # Block Users in GitLab Organization  
 **Type:** Rule  
 **ID:** `gitlab-org-blocked-users`  
-**Uses:** `gitlab/org/blocked-users@v2/rules`  
 **Source:** [v2/rules/gitlab/org/blocked-users.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/blocked-users.yaml)  
 **Rego Source:** [blocked-users.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/blocked-users.rego)  
 **Labels:** Gitlab, Organization  

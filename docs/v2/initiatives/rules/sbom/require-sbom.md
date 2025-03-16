@@ -5,7 +5,6 @@ title: Require SBOM Existence
 # Require SBOM Existence  
 **Type:** Rule  
 **ID:** `require-sbom`  
-**Uses:** `sbom/require-sbom@v2/rules`  
 **Source:** [v2/rules/sbom/require-sbom.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/require-sbom.yaml)  
 **Rego Source:** [require-sbom.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/require-sbom.rego)  
 **Labels:** SBOM, Blueprint, Image, Git  

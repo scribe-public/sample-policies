@@ -5,7 +5,6 @@ title: Verify File Integrity
 # Verify File Integrity  
 **Type:** Rule  
 **ID:** `file-integrity`  
-**Uses:** `multievidence/files_integrity@v2/rules`  
 **Source:** [v2/rules/multievidence/files_integrity.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/multievidence/files_integrity.yaml)  
 **Rego Source:** [files_integrity.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/multievidence/files_integrity.rego)  
 **Labels:** SBOM  

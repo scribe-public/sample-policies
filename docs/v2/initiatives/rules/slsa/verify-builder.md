@@ -5,7 +5,6 @@ title: Verify that artifact was created by the specified builder
 # Verify that artifact was created by the specified builder  
 **Type:** Rule  
 **ID:** `slsa-verify-builder`  
-**Uses:** `slsa/verify-builder@v2/rules`  
 **Source:** [v2/rules/slsa/verify-builder.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/slsa/verify-builder.yaml)  
 **Rego Source:** [verify-builder.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/slsa/verify-builder.rego)  
 **Labels:** SLSA, Image  

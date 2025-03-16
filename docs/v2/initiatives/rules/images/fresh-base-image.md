@@ -5,7 +5,6 @@ title: Fresh Base Image
 # Fresh Base Image  
 **Type:** Rule  
 **ID:** `images-fresh-base-image`  
-**Uses:** `images/fresh-base-image@v2/rules`  
 **Source:** [v2/rules/images/fresh-base-image.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/fresh-base-image.yaml)  
 **Rego Source:** [fresh-base-image.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/fresh-base-image.rego)  
 **Labels:** SBOM, Images  

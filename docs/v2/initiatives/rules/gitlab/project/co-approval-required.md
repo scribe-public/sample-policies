@@ -5,7 +5,6 @@ title: Require Code Owner Approval in GitLab Project
 # Require Code Owner Approval in GitLab Project  
 **Type:** Rule  
 **ID:** `gitlab-project-code-owner-approval`  
-**Uses:** `gitlab/project/co-approval-required@v2/rules`  
 **Source:** [v2/rules/gitlab/project/co-approval-required.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/co-approval-required.yaml)  
 **Rego Source:** [co-approval-required.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/co-approval-required.rego)  
 **Labels:** Gitlab, Project  

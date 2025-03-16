@@ -5,7 +5,6 @@ title: Verify members_can_create_repositories setting
 # Verify members_can_create_repositories setting  
 **Type:** Rule  
 **ID:** `github-org-create-repos`  
-**Uses:** `github/org/create-repos@v2/rules`  
 **Source:** [v2/rules/github/org/create-repos.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/create-repos.yaml)  
 **Rego Source:** [create-repos.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/create-repos.rego)  
 **Labels:** GitHub, Organization  

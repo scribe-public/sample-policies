@@ -5,7 +5,6 @@ title: Registry Connection HTTPS
 # Registry Connection HTTPS  
 **Type:** Rule  
 **ID:** `images-registry-https-check`  
-**Uses:** `images/enforce-https-registry@v2/rules`  
 **Source:** [v2/rules/images/enforce-https-registry.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/enforce-https-registry.yaml)  
 **Rego Source:** [enforce-https-registry.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/enforce-https-registry.rego)  
 **Labels:** Registry, Images  

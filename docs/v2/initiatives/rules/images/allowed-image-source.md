@@ -5,7 +5,6 @@ title: Allowed Main Image Source
 # Allowed Main Image Source  
 **Type:** Rule  
 **ID:** `images-allowed-image-source`  
-**Uses:** `images/allowed-image-source@v2/rules`  
 **Source:** [v2/rules/images/allowed-image-source.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/allowed-image-source.yaml)  
 **Rego Source:** [allowed-image-source.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/allowed-image-source.rego)  
 **Labels:** SBOM, Images  

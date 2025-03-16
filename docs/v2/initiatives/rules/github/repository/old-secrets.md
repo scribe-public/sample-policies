@@ -5,7 +5,6 @@ title: Verify No Old Secrets Exist in Repository
 # Verify No Old Secrets Exist in Repository  
 **Type:** Rule  
 **ID:** `github-repo-old-secrets`  
-**Uses:** `github/repository/old-secrets@v2/rules`  
 **Source:** [v2/rules/github/repository/old-secrets.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/old-secrets.yaml)  
 **Rego Source:** [old-secrets.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/old-secrets.rego)  
 **Labels:** GitHub, Repository  

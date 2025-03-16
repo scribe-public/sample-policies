@@ -5,7 +5,6 @@ title: Verify build time
 # Verify build time  
 **Type:** Rule  
 **ID:** `slsa-build-time`  
-**Uses:** `slsa/build-time@v2/rules`  
 **Source:** [v2/rules/slsa/build-time.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/slsa/build-time.yaml)  
 **Rego Source:** [build-time.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/slsa/build-time.rego)  
 **Labels:** SLSA, Image  

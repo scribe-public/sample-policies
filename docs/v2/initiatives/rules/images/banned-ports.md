@@ -5,7 +5,6 @@ title: Banned Ports
 # Banned Ports  
 **Type:** Rule  
 **ID:** `images-banned-ports`  
-**Uses:** `images/banned-ports@v2/rules`  
 **Source:** [v2/rules/images/banned-ports.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/banned-ports.yaml)  
 **Rego Source:** [banned-ports.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/banned-ports.rego)  
 **Labels:** SBOM, Images  

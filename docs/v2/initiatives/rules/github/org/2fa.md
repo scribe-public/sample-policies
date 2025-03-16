@@ -5,7 +5,6 @@ title: Verify two_factor_requirement_enabled setting
 # Verify two_factor_requirement_enabled setting  
 **Type:** Rule  
 **ID:** `github-org-2fa`  
-**Uses:** `github/org/2fa@v2/rules`  
 **Source:** [v2/rules/github/org/2fa.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/2fa.yaml)  
 **Rego Source:** [2fa.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/2fa.rego)  
 **Labels:** GitHub, Organization  

@@ -5,7 +5,6 @@ title: Allowed Base Image
 # Allowed Base Image  
 **Type:** Rule  
 **ID:** `images-allowed-base-image`  
-**Uses:** `images/allowed-base-image@v2/rules`  
 **Source:** [v2/rules/images/allowed-base-image.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/allowed-base-image.yaml)  
 **Rego Source:** [allowed-base-image.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/allowed-base-image.rego)  
 **Labels:** SBOM, Images  

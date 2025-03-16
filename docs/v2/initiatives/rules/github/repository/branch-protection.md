@@ -5,7 +5,6 @@ title: Verify Branch Protection Setting
 # Verify Branch Protection Setting  
 **Type:** Rule  
 **ID:** `github-repo-branch-protection`  
-**Uses:** `github/repository/branch-protection@v2/rules`  
 **Source:** [v2/rules/github/repository/branch-protection.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/branch-protection.yaml)  
 **Rego Source:** [branch-protection.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/branch-protection.rego)  
 **Labels:** GitHub, Repository  

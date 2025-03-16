@@ -5,7 +5,6 @@ title: Allowed Container Images
 # Allowed Container Images  
 **Type:** Rule  
 **ID:** `k8s-namespace-blocked-images`  
-**Uses:** `k8s/namespace/allowed-images@v2/rules`  
 **Source:** [v2/rules/k8s/namespace/allowed-images.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/namespace/allowed-images.yaml)  
 **Rego Source:** [blocked-images.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/namespace/blocked-images.rego)  
 **Labels:** K8s, Namespace  

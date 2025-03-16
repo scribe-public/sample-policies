@@ -5,7 +5,6 @@ title: Image-verifiable
 # Image-verifiable  
 **Type:** Rule  
 **ID:** `PS.2`  
-**Uses:** `ssdf/ps-2-image-verifiable@v2/rules`  
 **Source:** [v2/rules/ssdf/ps-2-image-verifiable.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/ssdf/ps-2-image-verifiable.yaml)  
 **Labels:** SSDF  
 

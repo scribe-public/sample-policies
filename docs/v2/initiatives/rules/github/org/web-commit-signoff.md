@@ -5,7 +5,6 @@ title: Verify GitHub Organization Requires Signoff on Web Commits
 # Verify GitHub Organization Requires Signoff on Web Commits  
 **Type:** Rule  
 **ID:** `github-org-web-commit-signoff`  
-**Uses:** `github/org/web-commit-signoff@v2/rules`  
 **Source:** [v2/rules/github/org/web-commit-signoff.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/web-commit-signoff.yaml)  
 **Rego Source:** [web-commit-signoff.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/web-commit-signoff.rego)  
 **Labels:** GitHub, Organization  

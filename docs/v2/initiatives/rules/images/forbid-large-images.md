@@ -5,7 +5,6 @@ title: Forbid Large Images
 # Forbid Large Images  
 **Type:** Rule  
 **ID:** `images-project-large-image`  
-**Uses:** `images/forbid-large-images@v2/rules`  
 **Source:** [v2/rules/images/forbid-large-images.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/forbid-large-images.yaml)  
 **Rego Source:** [forbid-large-images.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/forbid-large-images.rego)  
 **Labels:** SBOM, Images  

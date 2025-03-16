@@ -5,7 +5,6 @@ title: Verify Default Branch Protection
 # Verify Default Branch Protection  
 **Type:** Rule  
 **ID:** `github-repo-default-branch-protection`  
-**Uses:** `github/repository/default-branch-protection@v2/rules`  
 **Source:** [v2/rules/github/repository/default-branch-protection.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/default-branch-protection.yaml)  
 **Rego Source:** [default-branch-protection.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/default-branch-protection.rego)  
 **Labels:** GitHub, Repository  

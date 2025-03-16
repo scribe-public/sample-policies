@@ -5,7 +5,6 @@ title: Verify Pod Runtime Duration
 # Verify Pod Runtime Duration  
 **Type:** Rule  
 **ID:** `k8s-pods-verify-pod-duration`  
-**Uses:** `k8s/pods/verify-pod-duration@v2/rules`  
 **Source:** [v2/rules/k8s/pods/verify-pod-duration.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/pods/verify-pod-duration.yaml)  
 **Rego Source:** [verify-pod-duration.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/k8s/pods/verify-pod-duration.rego)  
 **Labels:** K8s, Pod  

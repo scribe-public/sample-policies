@@ -5,7 +5,6 @@ title: Ensure SAST Scanning Passes
 # Ensure SAST Scanning Passes  
 **Type:** Rule  
 **ID:** `gitlab-project-sast-scan-pass`  
-**Uses:** `gitlab/project/sast-scan-pass@v2/rules`  
 **Source:** [v2/rules/gitlab/project/sast-scan-pass.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/sast-scan-pass.yaml)  
 **Rego Source:** [sast-scan-pass.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/sast-scan-pass.rego)  
 **Labels:** Gitlab, Project  

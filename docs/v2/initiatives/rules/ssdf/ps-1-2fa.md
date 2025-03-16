@@ -5,7 +5,6 @@ title: Enforce 2FA
 # Enforce 2FA  
 **Type:** Rule  
 **ID:** `PS.1.1`  
-**Uses:** `ssdf/ps-1-2fa@v2/rules`  
 **Source:** [v2/rules/ssdf/ps-1-2fa.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/ssdf/ps-1-2fa.yaml)  
 **Labels:** SSDF  
 

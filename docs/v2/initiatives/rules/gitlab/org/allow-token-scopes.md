@@ -5,7 +5,6 @@ title: Restrict Token Scopes in GitLab
 # Restrict Token Scopes in GitLab  
 **Type:** Rule  
 **ID:** `gitlab-org-allowed-token-scope`  
-**Uses:** `gitlab/org/allow-token-scopes@v2/rules`  
 **Source:** [v2/rules/gitlab/org/allow-token-scopes.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/allow-token-scopes.yaml)  
 **Rego Source:** [allow-token-scopes.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/org/allow-token-scopes.rego)  
 **Labels:** Gitlab, Organization  
