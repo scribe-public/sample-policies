@@ -645,9 +645,15 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         if ctrl_name != "":
             ctrl_section_link = generate_markdown_anchor(f"{ctrl_name}")
             link_name = ctrl_name
+            link_custom_name = ctrl_name
             if ctrl_id != "":
                 ctrl_section_link = generate_markdown_anchor(f"{ctrl_id} {ctrl_name}")
-                link_name = f"[{ctrl_id}] {ctrl_name}"
+                print(link_custom_name, ctrl_id)
+                if link_custom_name.startswith(ctrl_id):
+                    print(f"# Info: Removing control ID from control name {link_custom_name}")
+                    link_custom_name = link_custom_name.strip(ctrl_id)
+
+                link_name = f"[{ctrl_id}] {link_custom_name}"
             link = f"[{link_name}]({ctrl_section_link})"
         elif ctrl_id != "":
             ctrl_section_link = generate_markdown_anchor(f"{ctrl_id} {ctrl_name}")
