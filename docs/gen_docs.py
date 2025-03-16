@@ -179,15 +179,16 @@ def traverse_and_create_category_files():
 
     traverse_and_create_rule_category_files()
 
+# https://deploy-preview-299--scribe-security.netlify.app/docs/guides/enforcing-sdlc-initiative/#sbom-1
 table = {
-    "SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
-    "SARIF": f"{DOC_SITE_URL}/docs/valint/sarif",
+    "SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#sbom-1 
+    "SARIF": f"{DOC_SITE_URL}/docs/valint/sarif", # 
     "Statement": f"{DOC_SITE_URL}/docs/valint/generic",
-    "Image SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
-    "Git SBOM": f"{DOC_SITE_URL}/docs/valint/sbom",
-    "SLSA Provenance": f"{DOC_SITE_URL}/docs/valint/help/valint_slsa",
+    "Image SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#images
+    "Git SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#git
+    "SLSA Provenance": f"{DOC_SITE_URL}/docs/valint/help/valint_slsa", # docs/guides/enforcing-sdlc-initiative/#slsa
     "Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover",
-    "SARIF Evidence": f"{DOC_SITE_URL}/docs/valint/sarif",
+    "SARIF Evidence": f"{DOC_SITE_URL}/docs/valint/sarif", # docs/guides/enforcing-sdlc-initiative/#sarif-reports
     "Generic Statement": f"{DOC_SITE_URL}/docs/valint/generic",
     "Dockerhub Project Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#dockerhub-discovery",
     "Jenkins Instance Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#jenkins-discovery",
