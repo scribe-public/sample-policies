@@ -22,12 +22,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/api/push-rules@v2
+with:
+  api_token: '{{ .Args.Token }}'
+  project: my_project
+  push_rule:
+    commit_message_regex: .*hotfix:.*
+    member_check: true
+    max_file_size: 100
+    prevent_secrets: true
+    deny_delete_tag: true
+    author_email_regex: .*@example.com
+    file_name_regex: "abc"
+    commit_committer_name_check: "enabled"
+    reject_unsigned_commits: "enabled"
 ```
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| api_token | `{{ .Args.Token }}` |
-| project | `{{ .Args.Project }}` |
-| push_rule | `{'commit_message_regex': '', 'commit_message_negative_regex': None, 'branch_name_regex': None, 'deny_delete_tag': False, 'member_check': False, 'prevent_secrets': False, 'author_email_regex': '', 'file_name_regex': 'abc', 'max_file_size': 100, 'commit_committer_name_check': None, 'reject_unsigned_commits': None}` |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| api_token | string | True | GitLab API access token. |
+| project | string | True | GitLab project name. |
+| push_rule | object | True | GitLab push rules. |
 

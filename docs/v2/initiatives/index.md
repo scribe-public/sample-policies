@@ -295,7 +295,7 @@
 
 | Rule Name | Description |
 |-----------|-------------|
-| [Sign Selected Commit Range in GitLab](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/api/signed-commits-range) | Verify the selected range of commits is signed via the GitLab API. |
+| [Sign Commits in Range in GitLab](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/api/signed-commits-range) | Verify the commits in a specified range are signed in the GitLab organization. |
 | [Sign Selected Commits in GitLab](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/api/signed-commits-list) | Verify the selected commits are signed in the GitLab organization. |
 | [Set Push Rules in GitLab](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/api/push-rules) | Verify GitLab push rules are configured via the API. |
 | [Enforce 2FA](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/ssdf/ps-1-2fa) | PS.1 Require 2FA for accessing code |
