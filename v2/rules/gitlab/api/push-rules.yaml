@@ -26,3 +26,31 @@ with:
     max_file_size: 100
     commit_committer_name_check: null
     reject_unsigned_commits: null
+
+inputs:
+  - name: api_token
+    type: string
+    description: GitLab API access token.
+    required: true
+  - name: project
+    type: string
+    description: GitLab project name.
+    required: true
+  - name: push_rule
+    type: object
+    description: GitLab push rules.
+    required: true
+
+input_example: |
+  api_token: '{{ .Args.Token }}'
+  project: my_project
+  push_rule:
+    commit_message_regex: .*hotfix:.*
+    member_check: true
+    max_file_size: 100
+    prevent_secrets: true
+    deny_delete_tag: true
+    author_email_regex: .*@example.com
+    file_name_regex: "abc"
+    commit_committer_name_check: "enabled"
+    reject_unsigned_commits: "enabled"
