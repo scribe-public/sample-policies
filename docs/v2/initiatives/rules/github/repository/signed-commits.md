@@ -32,6 +32,21 @@ uses: github/repository/signed-commits@v2
 with: github/repository/signed-commits@v2
 ```
 
+## Mitigation  
+Ensures that all commits are signed, reducing the risk of unauthorized changes.
+
+
+
+## Description  
+This rule ensures that all commits in the GitHub repository are signed.
+It performs the following steps:
+
+1. Iterates over the commits in the repository.
+2. Checks each commit for a valid signature.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository commits.
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

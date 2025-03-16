@@ -25,7 +25,26 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/old-secrets@v2
+with:
+  max_secret_age: 12
+  
 ```
+
+## Mitigation  
+Ensures that old secrets are removed from the GitHub organization, reducing the risk of exposure of outdated and potentially compromised secrets.
+
+
+
+## Description  
+This rule ensures that secrets in the GitHub organization are not older than the specified threshold.
+It performs the following steps:
+
+1. Checks the list of secrets in the GitHub organization.
+2. Verifies that no secrets are older than the value specified in the `with.max_secret_age` configuration.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +55,8 @@ uses: github/org/old-secrets@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=github<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| max_secret_age | 12 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| max_secret_age | integer | False | Maximum age of secrets in months. |
 

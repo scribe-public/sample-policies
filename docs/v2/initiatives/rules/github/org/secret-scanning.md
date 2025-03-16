@@ -9,7 +9,7 @@ title: Verify secret_scanning_enabled_for_new_repositories setting
 **Rego Source:** [secret-scanning.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/secret-scanning.rego)  
 **Labels:** GitHub, Organization  
 
-Verify `secret_scanning` is enabled for new repositories in the GitHub organization.
+Ensure `secret_scanning` is configured and enabled in the GitHub repository.
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -26,6 +26,22 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ```yaml
 uses: github/org/secret-scanning@v2
 ```
+
+## Mitigation  
+Ensure that the Secret scanning setting is enabled to detect and prevent the exposure of secrets in the repository, enhancing security.
+
+
+
+## Description  
+This rule ensures that `secret_scanning` is enabled to detect and prevent the exposure of secrets in the repository.
+It performs the following steps:
+
+1. Checks the secret scanning settings of the GitHub repository.
+2. Verifies that the secret scanning setting is enabled.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |

@@ -25,7 +25,27 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/dependabot-alerts@v2
+with:
+  desired_value: true
+  
 ```
+
+## Mitigation  
+Ensures that Dependabot alerts are enabled for new repositories in the GitHub organization, helping to identify and address vulnerabilities in dependencies.
+
+
+
+## Description  
+This rule verifies that Dependabot alerts for new repositories are enabled in the GitHub organization.
+It performs the following steps:
+
+1. Checks the organization's settings for the `dependabot_alerts_enabled_for_new_repositories` field.
+2. Compares the value of this field against the desired value specified in the `with.desired_value` configuration.
+   - If the field does not match the desired value, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization settings.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +56,8 @@ uses: github/org/dependabot-alerts@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=github<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| desired_value | False |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| desired_value | boolean | False | Desired value for the dependabot_alerts_enabled_for_new_repositories setting. |
 

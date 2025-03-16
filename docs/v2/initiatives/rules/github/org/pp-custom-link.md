@@ -1,8 +1,8 @@
 ---
-sidebar_label: Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting
-title: Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting
+sidebar_label: Verify Secret Scanning Push Protection Custom Link Enabled Setting
+title: Verify Secret Scanning Push Protection Custom Link Enabled Setting
 ---  
-# Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting  
+# Verify Secret Scanning Push Protection Custom Link Enabled Setting  
 **Type:** Rule  
 **ID:** `github-org-pp-custom-link`  
 **Source:** [v2/rules/github/org/pp-custom-link.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/pp-custom-link.yaml)  
@@ -25,7 +25,26 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/pp-custom-link@v2
+with:
+  desired_value: true
+  
 ```
+
+## Mitigation  
+Ensure that the secret scanning push protection custom link is enabled to provide better security for secret scanning in the GitHub organization.
+
+
+
+## Description  
+This rule ensures that the secret scanning push protection custom link is enabled in the GitHub organization.
+It performs the following steps:
+
+1. Checks the settings of the GitHub organization.
+2. Verifies that the secret scanning push protection custom link setting is enabled.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +55,8 @@ uses: github/org/pp-custom-link@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=github<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| desired_value | False |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| desired_value | boolean | False | Indicates if the secret scanning push protection custom link is enabled. |
 

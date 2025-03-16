@@ -32,6 +32,22 @@ uses: github/repository/no-cache-usage@v2
 with: github/repository/no-cache-usage@v2
 ```
 
+## Mitigation  
+Ensures that no cache is used, reducing the risk of outdated or insecure dependencies.
+
+
+
+## Description  
+This rule ensures that no cache is used in the GitHub repository.
+It performs the following steps:
+
+1. Checks the repository settings for cache usage.
+2. Verifies that no cache is used.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

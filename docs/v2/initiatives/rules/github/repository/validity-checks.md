@@ -9,7 +9,7 @@ title: Verify secret scanning.
 **Rego Source:** [validity-checks.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/validity-checks.rego)  
 **Labels:** GitHub, Repository  
 
-Verify both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.
+Verify both Secret Scanning Validity Checks and Security and Analysis Setting are configured in the GitHub organization and all the repositories.
 
 :::note 
 This rule requires Github Repository Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -31,6 +31,21 @@ uses: github/repository/validity-checks@v2
 ```yaml
 with: github/repository/validity-checks@v2
 ```
+
+## Mitigation  
+Ensure that the validity checks are set in the GitHub organization and all the repositories.
+
+
+
+## Description  
+This rule ensures that both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.
+It performs the following steps:
+
+1. Checks the organization settings for `secret_scanning_validity_checks` and `security_and_analysis`.
+2. Verifies that the settings are configured as expected.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
 ## Evidence Requirements  
 | Field | Value |

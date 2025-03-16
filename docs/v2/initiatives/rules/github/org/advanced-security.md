@@ -25,7 +25,27 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/advanced-security@v2
+with:
+  desired_value: true
 ```
+
+## Mitigation  
+Enforces advanced security for new repositories in the organization, significantly reducing the risk of introducing vulnerabilities or unapproved software.
+
+
+
+## Description  
+This rule verifies that advanced security is enabled for new repositories in the GitHub organization by examining the provided Discovery evidence.
+It checks the organization's details and compares the value of the 
+`organization_details.advanced_security_enabled_for_new_repositories` field against the expected value.
+
+The rule iterates over the organization data in the evidence, and if the `advanced_security_enabled_for_new_repositories` field does not match 
+the desired value, a violation is recorded. This ensures that all new repositories enforce advanced security, significantly reducing the risk of 
+introducing vulnerabilities or unapproved software.
+
+### **Evidence Requirements**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +56,8 @@ uses: github/org/advanced-security@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=github<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| desired_value | False |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| desired_value | boolean | False | Desired value for the advanced_security_enabled_for_new_repositories setting. |
 

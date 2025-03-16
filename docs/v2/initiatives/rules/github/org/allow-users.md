@@ -25,7 +25,29 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/allow-users@v2
+with:
+  allowed_users:
+    - "user1"
+    - "user2"
+  
 ```
+
+## Mitigation  
+Ensures that only approved users have access to the GitHub organization, reducing the risk of unauthorized access.
+
+
+
+## Description  
+This rule ensures that only users specified in the allowed list have access to the GitHub organization.
+It performs the following steps:
+
+1. Iterates over the users in the GitHub organization.
+2. Checks each user against the allowed list specified in the `with.allowed_users` configuration.
+   - If a user is not in the allowed list, the rule flags it as a violation.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +58,8 @@ uses: github/org/allow-users@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=github<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| allowed_users | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| allowed_users | array | False | List of allowed users. |
 

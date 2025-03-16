@@ -25,7 +25,29 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/repository/branch-protection@v2
+with:
+  desired_protected: true
+  branches:
+    - 'main'
+    - 'master'
+  
 ```
+
+## Mitigation  
+Ensures that branch protection settings are correctly configured, reducing the risk of unauthorized changes.
+
+
+
+## Description  
+This rule ensures that branch protection is configured in the GitHub repository.
+It performs the following steps:
+
+1. Checks the repository settings for branch protection.
+2. Verifies that the protection settings match the expected values.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,9 +58,9 @@ uses: github/repository/branch-protection@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=github<br/>- asset_type=repository |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| desired_protected | True |
-| branches | ['main', 'master'] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| desired_protected | boolean | False | Desired branch protection setting. |
+| branches | array | False | List of branches to be protected. |
 

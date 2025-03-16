@@ -1,9 +1,9 @@
 ---
-sidebar_label: Verify Secret_Scanning_Push_Protection_Enabled_For_New_Repositories
+sidebar_label: Verify Secret Scanning Push Protection Enabled for New Repositories
   Setting
-title: Verify Secret_Scanning_Push_Protection_Enabled_For_New_Repositories Setting
+title: Verify Secret Scanning Push Protection Enabled for New Repositories Setting
 ---  
-# Verify Secret_Scanning_Push_Protection_Enabled_For_New_Repositories Setting  
+# Verify Secret Scanning Push Protection Enabled for New Repositories Setting  
 **Type:** Rule  
 **ID:** `github-org-push-protection`  
 **Source:** [v2/rules/github/org/push-protection.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/push-protection.yaml)  
@@ -26,7 +26,26 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/push-protection@v2
+with:
+  desired_value: true
+  
 ```
+
+## Mitigation  
+Ensures that secret scanning push protection is enabled for new repositories in the GitHub organization, providing better security for secret scanning.
+
+
+
+## Description  
+This rule ensures that secret scanning push protection is enabled for new repositories in the GitHub organization.
+It performs the following steps:
+
+1. Checks the security and analysis settings of the GitHub organization.
+2. Verifies that the secret scanning push protection setting is enabled for new repositories.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -37,8 +56,8 @@ uses: github/org/push-protection@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=github<br/>- asset_type=organization |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| desired_value | True |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| desired_value | boolean | False | Indicates if the secret scanning push protection is enabled for new repositories. |
 

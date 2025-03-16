@@ -32,6 +32,22 @@ uses: github/repository/default-branch-protection@v2
 with: github/repository/default-branch-protection@v2
 ```
 
+## Mitigation  
+Ensures that the default branch is protected, reducing the risk of unauthorized changes.
+
+
+
+## Description  
+This rule ensures that the default branch protection is configured in the GitHub repository.
+It performs the following steps:
+
+1. Checks the repository settings for default branch protection configuration.
+2. Verifies that the configuration matches the expected settings.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

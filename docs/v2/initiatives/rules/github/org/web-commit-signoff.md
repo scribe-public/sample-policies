@@ -9,7 +9,7 @@ title: Verify GitHub Organization Requires Signoff on Web Commits
 **Rego Source:** [web-commit-signoff.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/web-commit-signoff.rego)  
 **Labels:** GitHub, Organization  
 
-Verify contributors sign commits through the GitHub web interface.
+Verify Web Commit Signoff is configured and enabled in the GitHub organization.
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -25,7 +25,27 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/web-commit-signoff@v2
+
+## Usage example
+
+```yaml
+with: github/org/web-commit-signoff@v2
 ```
+
+## Mitigation  
+Ensure that the Web Commit Signoff setting under the GitHub organization is enabled to require signoff on all web-based commits, enhancing security and accountability.
+
+
+
+## Description  
+This rule checks if the `web_commit_signoff` setting is enabled to ensure all web-based commits are signed off.
+It performs the following steps:
+
+1. Checks the web commit signoff settings of the GitHub organization.
+2. Verifies that the web commit signoff setting is enabled.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
 ## Evidence Requirements  
 | Field | Value |

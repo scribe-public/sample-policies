@@ -32,6 +32,22 @@ uses: github/repository/no-org-secrets@v2
 with: github/repository/no-org-secrets@v2
 ```
 
+## Mitigation  
+Ensures that no organization secrets are used, reducing the risk of unauthorized access.
+
+
+
+## Description  
+This rule ensures that no organization secrets are used in the GitHub repository.
+It performs the following steps:
+
+1. Checks the repository settings for organization secrets.
+2. Verifies that no organization secrets are used.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

@@ -32,6 +32,22 @@ uses: github/repository/ephemeral-runners-only@v2
 with: github/repository/ephemeral-runners-only@v2
 ```
 
+## Mitigation  
+Ensures that only ephemeral runners are used, reducing the risk of persistent runner vulnerabilities.
+
+
+
+## Description  
+This rule ensures that only ephemeral runners are used in the GitHub repository.
+It performs the following steps:
+
+1. Checks the repository settings for runner configuration.
+2. Verifies that only ephemeral runners are used.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

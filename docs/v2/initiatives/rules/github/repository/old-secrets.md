@@ -27,6 +27,21 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: github/repository/old-secrets@v2
 ```
 
+## Mitigation  
+Ensures that secrets are rotated regularly, reducing the risk of compromised secrets.
+
+
+## Description  
+This rule ensures that secrets in the GitHub repository are not older than the specified threshold.
+It performs the following steps:
+
+1. Checks the repository settings for secrets.
+2. Verifies that the age of each secret does not exceed the specified threshold.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

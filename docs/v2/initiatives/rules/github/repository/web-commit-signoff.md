@@ -25,7 +25,27 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/repository/web-commit-signoff@v2
+
+## Usage example
+
+```yaml
+with: github/repository/web-commit-signoff@v2
 ```
+
+## Mitigation  
+Ensure that the repository requires signoff on all commits made through the GitHub web interface, enhancing security and accountability.
+
+
+
+## Description  
+This rule checks if the repository requires signoff on all commits made through the GitHub web interface.
+It performs the following steps:
+
+1. Checks the repository settings for commit signoff.
+2. Verifies that the repository requires signoff on all commits made through the GitHub web interface.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
 
 ## Evidence Requirements  
 | Field | Value |
