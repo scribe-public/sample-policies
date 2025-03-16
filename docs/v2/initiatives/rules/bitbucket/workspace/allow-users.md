@@ -13,7 +13,7 @@ title: Allowed Workspace Users
 Verify only users specified in the Allowed List have user access to the Bitbucket workspace.
 
 :::note 
-This rule requires Bitbucket Workspace Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery) for more details.  
+This rule requires Bitbucket Workspace Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

@@ -12,7 +12,7 @@ title: Require signoff on web commits
 PS.1 Require contributors to sign when committing to Github through the web interface
 
 :::note 
-This rule requires Statement. See [here](https://deploy-preview-299--scribe-security.netlify.app/valint/generic) for more details.  
+This rule requires Statement. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/generic) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

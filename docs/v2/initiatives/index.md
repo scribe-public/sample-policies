@@ -15,7 +15,7 @@
 ## Rules
 
 ### SBOM
-**Evidence Type:** [SBOM](https://deploy-preview-299--scribe-security.netlify.app/valint/sbom)
+**Evidence Type:** [SBOM](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -32,7 +32,7 @@
 | [Scribe Published Policy](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/api/scribe-api-published) | Verify image Scribe Publish flag is set for container image. |
 
 ### Image SBOM
-**Evidence Type:** [Image SBOM](https://deploy-preview-299--scribe-security.netlify.app/valint/sbom)
+**Evidence Type:** [Image SBOM](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -55,7 +55,7 @@
 | [Verify No Critical or High Vulnerabilities](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/api/scribe-api-cve) | Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.). |
 
 ### Git SBOM
-**Evidence Type:** [Git SBOM](https://deploy-preview-299--scribe-security.netlify.app/valint/sbom)
+**Evidence Type:** [Git SBOM](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -66,7 +66,7 @@
 | [Git Artifact Signed](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/git/artifact-signed) | Verify the Git artifact is signed. |
 
 ### SARIF Evidence
-**Evidence Type:** [SARIF Evidence](https://deploy-preview-299--scribe-security.netlify.app/valint/sarif)
+**Evidence Type:** [SARIF Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sarif)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -86,7 +86,7 @@
 | [K8s Jailbreak](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/generic/k8s-jailbreak) | Verify no misconfigurations from the prohibited ids list in the Kuberentes scan is below specified threshold |
 
 ### Generic Statement
-**Evidence Type:** [Generic Statement](https://deploy-preview-299--scribe-security.netlify.app/valint/generic)
+**Evidence Type:** [Generic Statement](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/generic)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -95,7 +95,7 @@
 | [Generic Artifact Signed](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/generic/artifact-signed) | Verify required evidence is signed. |
 
 ### Github Organization Discovery Evidence
-**Evidence Type:** [Github Organization Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#github-discovery)
+**Evidence Type:** [Github Organization Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -122,7 +122,7 @@
 | [Verify secret_scanning_enabled_for_new_repositories setting](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/github/org/secret-scanning) | Verify `secret_scanning` is enabled for new repositories in the GitHub organization. |
 
 ### Github Repository Discovery Evidence
-**Evidence Type:** [Github Repository Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#github-discovery)
+**Evidence Type:** [Github Repository Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -144,7 +144,7 @@
 | [Verify secret_scanning setting](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/github/repository/secret-scanning) | Verify `secret_scanning` is configured in the GitHub repository. |
 
 ### Gitlab Organization Discovery Evidence
-**Evidence Type:** [Gitlab Organization Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#gitlab-discovery)
+**Evidence Type:** [Gitlab Organization Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -161,7 +161,7 @@
 | [Restrict Public Visibility in GitLab Organization](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/org/projects-visibility) | Verify only allowed projects in the GitLab organization have public visibility. |
 
 ### Gitlab Project Discovery Evidence
-**Evidence Type:** [Gitlab Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#gitlab-discovery)
+**Evidence Type:** [Gitlab Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -205,7 +205,7 @@
 | [Run SAST Scanning in GitLab Project](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/project/sast-scanning) | Verify SAST scanning is performed for the GitLab project. |
 
 ### K8s Namespace Discovery Evidence
-**Evidence Type:** [K8s Namespace Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#k8s-discovery)
+**Evidence Type:** [K8s Namespace Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#k8s-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -217,7 +217,7 @@
 | [Allowed Pods in Namespace](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/k8s/namespace/white-listed-pod) | Verify only pods explicitly listed in the Allowed List run within a Kubernetes namespace. |
 
 ### K8s Pod Discovery Evidence
-**Evidence Type:** [K8s Pod Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#k8s-discovery)
+**Evidence Type:** [K8s Pod Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#k8s-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -226,7 +226,7 @@
 | [Allowed Pods](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/k8s/pods/white-listed-pod) | Verify only pods explicitly listed in the Allowed List are allowed to run. |
 
 ### Bitbucket Project Discovery Evidence
-**Evidence Type:** [Bitbucket Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
+**Evidence Type:** [Bitbucket Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -236,7 +236,7 @@
 | [Allowed Project Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket project. |
 
 ### Bitbucket Repository Discovery Evidence
-**Evidence Type:** [Bitbucket Repository Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
+**Evidence Type:** [Bitbucket Repository Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -245,7 +245,7 @@
 | [Allowed Repository Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/repository/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket repository. |
 
 ### Bitbucket Workspace Discovery Evidence
-**Evidence Type:** [Bitbucket Workspace Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
+**Evidence Type:** [Bitbucket Workspace Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#bitbucket-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -253,7 +253,7 @@
 | [Allowed Workspace Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/workspace/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace. |
 
 ### Discovery Evidence
-**Evidence Type:** [Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover)
+**Evidence Type:** [Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -262,7 +262,7 @@
 | [Verify GitLab Pipeline Labels](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/pipeline/verify-labels) | Verify the pipeline includes all required label keys and values. |
 
 ### Dockerhub Project Discovery Evidence
-**Evidence Type:** [Dockerhub Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#dockerhub-discovery)
+**Evidence Type:** [Dockerhub Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#dockerhub-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -270,7 +270,7 @@
 | [Verify no unused Dockerhub](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/dockerhub/token-not-used) | Verify that there are no unused Dockerhub. |
 
 ### Jenkins Instance Discovery Evidence
-**Evidence Type:** [Jenkins Instance Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#jenkins-discovery)
+**Evidence Type:** [Jenkins Instance Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#jenkins-discovery)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -278,7 +278,7 @@
 | [Verify Inactive Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/jenkins/instance/inactive-users) | Verify there are no inactive users. |
 
 ### SLSA Provenance
-**Evidence Type:** [SLSA Provenance](https://deploy-preview-299--scribe-security.netlify.app/valint/help/valint_slsa)
+**Evidence Type:** [SLSA Provenance](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/help/valint_slsa)
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -291,7 +291,7 @@
 | [Verify Provenance Document Exists](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/slsa/l1-provenance-exists) | Verify that the Provenance document evidence exists. |
 
 ### Statement
-**Evidence Type:** [Statement](https://deploy-preview-299--scribe-security.netlify.app/valint/generic)
+**Evidence Type:** [Statement](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/generic)
 
 | Rule Name | Description |
 |-----------|-------------|

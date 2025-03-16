@@ -13,7 +13,7 @@ title: Verify DockerHub Tokens are Active
 Verify that all discovered Dockerhub tokens are set to Active in Dockerhub.
 
 :::note 
-This rule requires Dockerhub Project Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#dockerhub-discovery) for more details.  
+This rule requires Dockerhub Project Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#dockerhub-discovery) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

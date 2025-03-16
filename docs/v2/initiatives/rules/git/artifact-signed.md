@@ -13,7 +13,7 @@ title: Git Artifact Signed
 Verify the Git artifact is signed.
 
 :::note 
-This rule requires Signed Git SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/valint/sbom) for more details.  
+This rule requires Signed Git SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  

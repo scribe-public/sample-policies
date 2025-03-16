@@ -13,7 +13,7 @@ title: Require Specified SBOM Licenses
 Verify the artifact includes all specified licenses.
 
 :::note 
-This rule requires SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/valint/sbom) for more details.  
+This rule requires SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
 ::: 
 :::note 
 Ensure that the SBOM includes all specified licenses to meet compliance requirements. This rule accesses the Hugging Face API to validate the licenses.  

@@ -13,7 +13,7 @@ title: Generic Artifact Signed
 Verify required evidence is signed.
 
 :::note 
-This rule requires Signed Generic Statement. See [here](https://deploy-preview-299--scribe-security.netlify.app/valint/generic) for more details.  
+This rule requires Signed Generic Statement. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/generic) for more details.  
 ::: 
 :::tip 
 > Evidence **IS** required for this rule and will fail if missing.  
