@@ -646,6 +646,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
             ctrl_section_link = generate_markdown_anchor(f"{ctrl_name}")
             link_name = ctrl_name
             if ctrl_id != "":
+                ctrl_section_link = generate_markdown_anchor(f"{ctrl_id} {ctrl_name}")
                 link_name = f"[{ctrl_id}] {ctrl_name}"
             link = f"[{link_name}]({ctrl_section_link})"
         elif ctrl_id != "":
