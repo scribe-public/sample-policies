@@ -26,3 +26,25 @@ evidence:
 
 with:
   author_email_regex: ""
+
+inputs:
+  - name: author_email_regex
+    type: string
+    description: The regular expression for the author email.
+    required: false
+
+input_example: |
+  author_email_regex: ".*@mycompany.com"
+
+full-description: |
+  This rule ensures that the `author_email_regex` for the GitLab project is set to the specified value.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the Author Email matches the 'author_email_regex' field.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Ensure that the Author Email reduces the risk of unauthorized access by setting the `author_email_regex` field to the specified value.

@@ -25,4 +25,26 @@ evidence:
       {{- end -}}
 
 with:
+  commit_message_regex: ""
+
+inputs:
+  - name: commit_message_regex
+    type: string
+    description: The regular expression to match the commit message format.
+    required: true
+
+input_example: |
   commit_message_regex: ".*JIRA-\\d+.*"
+
+full-description: |
+  This rule ensures that commit messages in the GitLab project adhere to the specified format template.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that commit messages adhere to the specified format template.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Ensure that commit messages adhere to the specified format template to maintain consistency and readability.

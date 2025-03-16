@@ -26,3 +26,25 @@ evidence:
 
 with:
   branch: "main"
+
+inputs:
+  - name: branch
+    type: string
+    description: The branch to require code owner approval.
+    required: true
+
+input_example: |
+  branch: "main"
+
+full-description: |
+  This rule ensures that code owner approval is required for specific branches in the GitLab project.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that code owner approval is required for the specified branch.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Require code owner approval for specific branches in the GitLab project to prevent unauthorized changes.

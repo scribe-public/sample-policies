@@ -26,3 +26,27 @@ evidence:
 
 with:
   banned_list: []
+
+inputs:
+  - name: banned_list
+    type: array
+    description: List of users banned from approving in the GitLab project.
+    required: false
+
+input_example: |
+  banned_list:
+    - user1
+    - user2
+
+full-description: |
+  This rule ensures that approvers in the GitLab project are not on the banned list.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that approvers are not on the banned list.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Ensure that approvers in the GitLab project are not on the banned list to prevent unauthorized approvals.
