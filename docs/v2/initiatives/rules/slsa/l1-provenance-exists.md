@@ -19,9 +19,6 @@ This rule requires SLSA Provenance. See [here](https://deploy-preview-299--scrib
 > Evidence **IS** required for this rule and will fail if missing.  
 ::: 
 :::tip 
-> Evidence **IS** required for this rule and will fail if missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
 ::: 
 :::warning  

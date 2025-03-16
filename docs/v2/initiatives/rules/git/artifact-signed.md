@@ -18,9 +18,6 @@ This rule requires Signed Git SBOM. See [here](https://deploy-preview-299--scrib
 > Evidence **IS** required for this rule and will fail if missing.  
 ::: 
 :::tip 
-> Evidence **IS** required for this rule and will fail if missing.  
-::: 
-:::tip 
 Signed Evidence for this rule **IS** required by default.  
 ::: 
 :::warning  
