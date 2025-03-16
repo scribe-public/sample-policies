@@ -182,7 +182,7 @@ def traverse_and_create_category_files():
 # https://deploy-preview-299--scribe-security.netlify.app/docs/guides/enforcing-sdlc-initiative/#sbom-1
 table = {
     "SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#sbom-1 
-    "SARIF": f"{DOC_SITE_URL}/docs/valint/sarif", # 
+    "SARIF": f"{DOC_SITE_URL}/docs/valint/sarif", # docs/guides/enforcing-sdlc-initiative/#sarif-reports
     "Statement": f"{DOC_SITE_URL}/docs/valint/generic",
     "Image SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#images
     "Git SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#git
