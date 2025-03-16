@@ -19,9 +19,9 @@ Evaluate SLSA L2 and ensure that provenance information is both recorded and aut
 
 ## Controls Overview
 
-| Control ID | Control Name | Control Description | Mitigation |
+| Control Name | Control Description | Mitigation |
 |------------|--------------|---------------------|------------|
-|  [prov_authn](#prov_authn-provenance-authenticated) | Provenance authenticated | Ensure that provenance metadata for build artifacts is authenticated, confirming that it originates from a trusted source. | Authentication of provenance data prevents attackers from forging or modifying build metadata, ensuring the integrity of the software supply chain. |
+| [[prov_authn] Provenance authenticated](#provenance-authenticated) | Ensure that provenance metadata for build artifacts is authenticated, confirming that it originates from a trusted source. | Authentication of provenance data prevents attackers from forging or modifying build metadata, ensuring the integrity of the software supply chain. |
 
 ## Evidence Defaults
 

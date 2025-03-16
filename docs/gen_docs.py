@@ -630,7 +630,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
 
     # Controls Overview with Mitigation column
     md.append("## Controls Overview\n")
-    md.append("| Control ID | Control Name | Control Description | Mitigation |")
+    md.append("| Control Name | Control Description | Mitigation |")
     md.append("|------------|--------------|---------------------|------------|")
     for ctrl in controls:
         ctrl_id = ctrl.get("id", "")
@@ -642,17 +642,19 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         if ctrl_name == "" and ctrl_id != "":
             print(f"# Warning: 'name' field is missing for control '{ctrl_id}' in {file_path}")
 
-        # ctrl_section_link = f"## [{ctrl_id}] {ctrl_name}".replace(" ", "-").lower()
-        if ctrl_id != "":
+        if ctrl_name != "":
+            ctrl_section_link = generate_markdown_anchor(f"{ctrl_name}")
+            link_name = ctrl_name
+            if ctrl_id != "":
+                link_name = f"[{ctrl_id}] {ctrl_name}"
+            link = f"[{link_name}]({ctrl_section_link})"
+        elif ctrl_id != "":
             ctrl_section_link = generate_markdown_anchor(f"{ctrl_id} {ctrl_name}")
             link = f"[{ctrl_id}]({ctrl_section_link})"
-        else :
-            ctrl_section_link = generate_markdown_anchor(f"{ctrl_name}")
-            link = f"[{ctrl_name}]({ctrl_section_link})"
 
         ctrl_desc = ctrl.get("description", "")
         ctrl_mitigation = ctrl.get("mitigation", "")
-        md.append(f"|  {link} | {ctrl_name} | {ctrl_desc} | {ctrl_mitigation} |")
+        md.append(f"| {link} | {ctrl_desc} | {ctrl_mitigation} |")
     md.append("")
 
     defaults = initiative_data.get("defaults", {})

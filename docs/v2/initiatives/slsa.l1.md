@@ -19,9 +19,9 @@ This initiative ensures that every critical build artifact includes the minimum 
 
 ## Controls Overview
 
-| Control ID | Control Name | Control Description | Mitigation |
+| Control Name | Control Description | Mitigation |
 |------------|--------------|---------------------|------------|
-|  [prov_exists](#prov_exists-provenance-exists) | Provenance exists | This control verifies that essential provenance metadata is present for each build artifact. | Ensure that provenance metadata is present for critical build artifacts to support supply chain integrity. |
+| [[prov_exists] Provenance exists](#provenance-exists) | This control verifies that essential provenance metadata is present for each build artifact. | Ensure that provenance metadata is present for critical build artifacts to support supply chain integrity. |
 
 ## Evidence Defaults
 
