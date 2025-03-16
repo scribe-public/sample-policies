@@ -33,6 +33,10 @@ controls:
       
       - uses: github/repository/web-commit-signoff@v2
 
+      - uses: sbom/artifact-signed@v2
+        name: "Require Image and Git SBOMs to be signed"
+        description: "Verify images and git SBOMs are signed."
+
     ########################################################################
     # CONTROL 2: CICD-SEC-2: Inadequate Identity and Access Management
     ########################################################################
@@ -41,7 +45,12 @@ controls:
     description: >
       Ensure that the CI/CD pipeline has adequate identity and access management
       to prevent unauthorized access to the pipeline and artifacts.
-    
+    mitigation: >
+      Implement strong identity and access management practices.
+      Enforce multi-factor authentication (MFA) for all users.
+      Limit the number of administrators to the minimum required.
+      Ensure repositories are private to prevent unauthorized access.
+
     rules:
       - uses: github/org/2fa@v2
         name: "Enforce MFA"
@@ -52,6 +61,12 @@ controls:
         description: "Limit the number of admins to the minimum required."
         with:
           max_admins: 4
+
+      - uses: github/org/allow-admins@v2
+        name: "Allowed Admins"
+        description: "Verify only users in the Allowed List have admin privileges."
+        with:
+          allowed_admins: []
 
       - uses: github/repository/repo-private@v2
         name: "Use Private Repositories"
@@ -70,21 +85,46 @@ controls:
   #     # Do we have a mock rule to provide "success, not supported" for now?
   #     # Consider a rule verifying through superset that we do not use any package
   #     # That has binaries it it - this is supported in OpenSSF Scorecard
+
   ########################################################################
   # CONTROL 4: CICD-SEC-4: Poisoned Pipeline Execution (PPE)
   ########################################################################
   - name: "Poisoned Pipeline Execution"
     id: CICD-SEC-4
     description: >
-      Ensure that the pipline script cannot be tampered with
-
+      Ensure that the pipeline script cannot be tampered with
+    mitigation: >
+      Restrict access to the pipeline script to prevent unauthorized modifications. 
+      Implement strict permissions and review processes for any changes to the pipeline script.
     rules:
       - uses: git/coding-permissions@v2
         name: "Restrict Pipeline Script Modification"
         description: "Restrict access to the pipeline script to prevent tampering."
         with:
           files: [".github/workflow/*.yml", ".github/workflow/*.yaml"]
-          ids: ["dn-scribe", "houdini91"]
+          ids: []
+
+      - uses: github/repository/no-org-secrets@v2
+        name: "Separate Repo Secrets"
+        description: "Ensure that no organization secrets are used in the pipeline."
+
+      - uses: github/repository/old-secrets@v2
+        name: "Verify No Old Secrets Exist in Repository"
+        with:
+          max_secret_age: 12 # number of months
+
+      - uses: github/repository/branch-protection@v2
+        name: "Require Branch Protection"
+        description: "Implement branch protection rules to prevent unauthorized changes."
+        with:
+          desired_protected: true
+          branches: # use the value of "--rule-args branch=..." if provided, otherwise use the context git branch
+            - >-
+              {{- with .Args.branch -}}
+              {{.}}
+              {{- else -}}
+              {{- .Context.git_branch -}}
+              {{- end -}}
 
     ########################################################################
     # CONTROL 5: CICD-SEC-5: Insufficient PBAC (Pipeline-Based Access Controls)
