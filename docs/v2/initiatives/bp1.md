@@ -19,7 +19,7 @@ This initiative defines a set of best practices and technical guidelines designe
 ## Controls Overview
 
 | Control Name | Control Description | Mitigation |
-|------------|--------------|---------------------|------------|
+|--------------|---------------------|------------|
 | [[CT-1] Restrict administrative access to CI/CD tools](#restrict-administrative-access-to-cicd-tools) | Restrict administrative access to CI/CD tools | Limit administrative privileges to a minimal, controlled group to reduce the risk of unauthorized pipeline changes. |
 | [[CT-2] Only accept commits signed with a developer GPG key](#only-accept-commits-signed-with-a-developer-gpg-key) | The use of these two rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by Gitlab | Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications. |
 | [[CT-3] Automation access keys expire automatically](#automation-access-keys-expire-automatically) | Automation access keys expire automatically | Configure automation keys to expire automatically, limiting the window in which compromised keys can be exploited. |

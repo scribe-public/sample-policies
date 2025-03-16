@@ -20,7 +20,7 @@ This initiative enforces key controls from the Secure Software Development Frame
 ## Controls Overview
 
 | Control Name | Control Description | Mitigation |
-|------------|--------------|---------------------|------------|
+|--------------|---------------------|------------|
 | [SSDF-IMAGE](#ssdf-image) | Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity. | Mitigates the risk of deploying untrusted or compromised container images by enforcing rules  that verify image build integrity and preserve critical SBOM metadata.
  |
 | [SSDF-ORG](#ssdf-org) | Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced. | Reduces risks of unauthorized access and changes by ensuring strong organizational security practices  and process signoffs.

@@ -631,7 +631,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     # Controls Overview with Mitigation column
     md.append("## Controls Overview\n")
     md.append("| Control Name | Control Description | Mitigation |")
-    md.append("|------------|--------------|---------------------|------------|")
+    md.append("|--------------|---------------------|------------|")
     for ctrl in controls:
         ctrl_id = ctrl.get("id", "")
         
