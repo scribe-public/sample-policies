@@ -2,6 +2,7 @@
 
 ## Initiatives
 
+<!-- START TABLE -->
 | Name | Description |
 |------|-------------|
 | [SLSA L1 Framework](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/slsa.l1) | Evaluate SLSA Level 1 |
@@ -92,50 +93,6 @@
 | [Required Generic Evidence Exists](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/generic/evidence-exists) | Verify required evidence exists. |
 | [Required Trivy Evidence Exists](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/generic/trivy-exists) | Verify required Trivy evidence exists |
 | [Generic Artifact Signed](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/generic/artifact-signed) | Verify required evidence is signed. |
-
-### Bitbucket Project Discovery Evidence
-**Evidence Type:** [Bitbucket Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
-
-| Rule Name | Description |
-|-----------|-------------|
-| [Prevent Long-Lived Tokens](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/long-live-tokens) | Verify Bitbucket API tokens expire before the maximum time to live. |
-| [Prevent Credential Exposure](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/exposed-credentials) | Verify access to the Bitbucket project is blocked if exposed credentials are detected. |
-| [Allowed Project Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/allow-users) | Verify only users specified in the Allowed List have user access to the Bitbucket project. |
-| [Allowed Project Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket project. |
-
-### Bitbucket Repository Discovery Evidence
-**Evidence Type:** [Bitbucket Repository Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
-
-| Rule Name | Description |
-|-----------|-------------|
-| [Verify Default Branch Protection Setting Is Configured](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/repository/branch-protection) | Verify the default branch protection is enabled in the Bitbucket repository. |
-| [Allowed Repository Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/repository/allow-users) | Verify only users specified in the Allowed List have user access to the Bitbucket repository. |
-| [Allowed Repository Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/repository/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket repository. |
-
-### Bitbucket Workspace Discovery Evidence
-**Evidence Type:** [Bitbucket Workspace Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
-
-| Rule Name | Description |
-|-----------|-------------|
-| [Allowed Workspace Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/workspace/allow-users) | Verify only users specified in the Allowed List have user access to the Bitbucket workspace. |
-| [Allowed Workspace Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/workspace/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace. |
-
-### Discovery Evidence
-**Evidence Type:** [Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover)
-
-| Rule Name | Description |
-|-----------|-------------|
-| [Verify Exposed Credentials](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/jenkins/folder/exposed-credentials) | Verify there are no exposed credentials. |
-| [GitLab pipeline verify labels exist](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/pipeline/verify-labels-exist) | Verify the pipeline has all required label keys and values. |
-| [Verify GitLab Pipeline Labels](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/pipeline/verify-labels) | Verify the pipeline includes all required label keys and values. |
-
-### Dockerhub Project Discovery Evidence
-**Evidence Type:** [Dockerhub Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#dockerhub-discovery)
-
-| Rule Name | Description |
-|-----------|-------------|
-| [Verify DockerHub Tokens are Active](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/dockerhub/token-expiration) | Verify that all discovered Dockerhub tokens are set to Active in Dockerhub. |
-| [Verify no unused Dockerhub](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/dockerhub/token-not-used) | Verify that there are no unused Dockerhub. |
 
 ### Github Organization Discovery Evidence
 **Evidence Type:** [Github Organization Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#github-discovery)
@@ -247,14 +204,6 @@
 | [Set Push Rules for GitLab Project](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/project/push-rules-set) | Verify push rules are set for the GitLab project. |
 | [Run SAST Scanning in GitLab Project](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/project/sast-scanning) | Verify SAST scanning is performed for the GitLab project. |
 
-### Jenkins Instance Discovery Evidence
-**Evidence Type:** [Jenkins Instance Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#jenkins-discovery)
-
-| Rule Name | Description |
-|-----------|-------------|
-| [Disallow Unused Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/jenkins/instance/unused-users) | Verify there are no users with zero activity. |
-| [Verify Inactive Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/jenkins/instance/inactive-users) | Verify there are no inactive users. |
-
 ### K8s Namespace Discovery Evidence
 **Evidence Type:** [K8s Namespace Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#k8s-discovery)
 
@@ -275,6 +224,58 @@
 | [Verify Pod Termination](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/k8s/pods/verify-pod-termination) | Verify Kubernetes pods are properly terminated to prevent lingering resources and maintain cluster hygiene. |
 | [Verify Pod Runtime Duration](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/k8s/pods/verify-pod-duration) | Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecycle limits. |
 | [Allowed Pods](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/k8s/pods/white-listed-pod) | Verify only pods explicitly listed in the Allowed List are allowed to run. |
+
+### Bitbucket Project Discovery Evidence
+**Evidence Type:** [Bitbucket Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
+
+| Rule Name | Description |
+|-----------|-------------|
+| [Prevent Long-Lived Tokens](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/long-live-tokens) | Verify Bitbucket API tokens expire before the maximum time to live. |
+| [Prevent Credential Exposure](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/exposed-credentials) | Verify access to the Bitbucket project is blocked if exposed credentials are detected. |
+| [Allowed Project Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/allow-users) | Verify only users specified in the Allowed List have user access to the Bitbucket project. |
+| [Allowed Project Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/project/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket project. |
+
+### Bitbucket Repository Discovery Evidence
+**Evidence Type:** [Bitbucket Repository Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
+
+| Rule Name | Description |
+|-----------|-------------|
+| [Verify Default Branch Protection Setting Is Configured](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/repository/branch-protection) | Verify the default branch protection is enabled in the Bitbucket repository. |
+| [Allowed Repository Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/repository/allow-users) | Verify only users specified in the Allowed List have user access to the Bitbucket repository. |
+| [Allowed Repository Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/repository/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket repository. |
+
+### Bitbucket Workspace Discovery Evidence
+**Evidence Type:** [Bitbucket Workspace Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#bitbucket-discovery)
+
+| Rule Name | Description |
+|-----------|-------------|
+| [Allowed Workspace Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/workspace/allow-users) | Verify only users specified in the Allowed List have user access to the Bitbucket workspace. |
+| [Allowed Workspace Admins](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/bitbucket/workspace/allow-admins) | Verify only users specified in the Allowed List have admin privileges in the Bitbucket workspace. |
+
+### Discovery Evidence
+**Evidence Type:** [Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover)
+
+| Rule Name | Description |
+|-----------|-------------|
+| [Verify Exposed Credentials](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/jenkins/folder/exposed-credentials) | Verify there are no exposed credentials. |
+| [GitLab pipeline verify labels exist](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/pipeline/verify-labels-exist) | Verify the pipeline has all required label keys and values. |
+| [Verify GitLab Pipeline Labels](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/gitlab/pipeline/verify-labels) | Verify the pipeline includes all required label keys and values. |
+
+### Dockerhub Project Discovery Evidence
+**Evidence Type:** [Dockerhub Project Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#dockerhub-discovery)
+
+| Rule Name | Description |
+|-----------|-------------|
+| [Verify DockerHub Tokens are Active](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/dockerhub/token-expiration) | Verify that all discovered Dockerhub tokens are set to Active in Dockerhub. |
+| [Verify no unused Dockerhub](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/dockerhub/token-not-used) | Verify that there are no unused Dockerhub. |
+
+### Jenkins Instance Discovery Evidence
+**Evidence Type:** [Jenkins Instance Discovery Evidence](https://deploy-preview-299--scribe-security.netlify.app/platforms/discover#jenkins-discovery)
+
+| Rule Name | Description |
+|-----------|-------------|
+| [Disallow Unused Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/jenkins/instance/unused-users) | Verify there are no users with zero activity. |
+| [Verify Inactive Users](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/jenkins/instance/inactive-users) | Verify there are no inactive users. |
 
 ### SLSA Provenance
 **Evidence Type:** [SLSA Provenance](https://deploy-preview-299--scribe-security.netlify.app/valint/help/valint_slsa)

@@ -210,6 +210,13 @@ high_priority = {
     "SARIF": 5,
     "SARIF Evidence": 6,
     "Generic Statement": 7,
+    "Github Organization Discovery Evidence": 8,
+    "Github Repository Discovery Evidence": 9,
+    "Gitlab Organization Discovery Evidence": 10,
+    "Gitlab Project Discovery Evidence": 11,
+    "K8s Namespace Discovery Evidence": 12,
+    "K8s Pod Discovery Evidence": 13,
+
 }
 
 def get_evidence_type(evidence, file_name):
@@ -833,6 +840,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     # Initiatives Section
     md_lines.append("## Initiatives")
     md_lines.append("")
+    md_lines.append(f"<!-- START TABLE -->")
     md_lines.append("| Name | Description |")
     md_lines.append("|------|-------------|")
     for doc in initiative_docs:
@@ -892,6 +900,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     with open(index_file_path, "w") as f:
         f.write(md_content)
     
+    md_lines.append(f"<!-- END TABLE -->")
     print(f"Created combined index at {index_file_path}")
 
 def main():
