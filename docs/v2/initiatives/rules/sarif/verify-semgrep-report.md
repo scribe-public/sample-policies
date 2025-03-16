@@ -21,6 +21,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: sarif/verify-semgrep-report@v2
+```
+
 ## Mitigation  
 Ensures that any violations detected in the SARIF report produced by Semgrep are promptly identified and flagged, helping to prevent the use of assets that do not meet the required security standards.
 

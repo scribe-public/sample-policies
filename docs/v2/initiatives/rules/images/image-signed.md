@@ -28,7 +28,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: images/image-signed@v2/rules
+uses: images/image-signed@v2
 with:
   identity:
     emails:

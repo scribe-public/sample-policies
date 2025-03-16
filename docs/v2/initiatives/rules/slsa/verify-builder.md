@@ -21,6 +21,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule is scoped by pipeline and product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: slsa/verify-builder@v2
+```
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

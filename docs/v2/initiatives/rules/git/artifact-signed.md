@@ -30,7 +30,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: git/artifact-signed@v2/rules
+uses: git/artifact-signed@v2
 with:
   identity:
     emails:
@@ -41,7 +41,7 @@ with:
 ```
 
 ## Mitigation  
-Ensure that only Git artifacts with valid cryptographic signatures are built to prevent source code tampering.
+Ensure that only Git artifacts with valid cryptographic signatures are deployed to prevent source code tampering.
 
 
 

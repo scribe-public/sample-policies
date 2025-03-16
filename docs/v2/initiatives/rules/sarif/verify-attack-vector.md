@@ -24,7 +24,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: sarif/verify-attack-vector@v2/rules
+uses: sarif/verify-attack-vector@v2
 with:
   attack_vectors:
     - "stack buffer overflow"

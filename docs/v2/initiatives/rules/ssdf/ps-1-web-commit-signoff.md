@@ -20,6 +20,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: ssdf/ps-1-web-commit-signoff@v2
+```
+
 ## Mitigation  
 Requires signoff on web commits to ensure that code changes are reviewed and approved, thereby reducing the risk of unauthorized or malicious modifications.
 

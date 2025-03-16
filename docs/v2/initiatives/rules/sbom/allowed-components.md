@@ -30,7 +30,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: sbom/allowed-components@v2/rules
+uses: sbom/allowed-components@v2
 with:
   types:
     - library

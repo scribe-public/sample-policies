@@ -24,12 +24,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: k8s/namespace/white-listed-namespaces@v2/rules
-with:
-  namespaces:
-    - "my-namespace1"
-    - "my-namespace2"
-  
+uses: k8s/namespace/white-listed-namespaces@v2
 ```
 
 ## Mitigation  

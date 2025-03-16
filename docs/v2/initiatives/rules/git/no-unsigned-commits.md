@@ -27,7 +27,12 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: git/no-unsigned-commits@v2/rules
+uses: git/no-unsigned-commits@v2
+
+## Usage example
+
+```yaml
+with: git/no-unsigned-commits@v2
 ```
 
 ## Mitigation  

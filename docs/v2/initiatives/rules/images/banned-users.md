@@ -27,7 +27,7 @@ Rule is scoped by target and product.
 ## Usage example
 
 ```yaml
-uses: images/banned-users@v2/rules
+uses: images/banned-users@v2
 with:
   users:
     - root

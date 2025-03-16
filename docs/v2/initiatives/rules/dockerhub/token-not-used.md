@@ -24,12 +24,13 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: dockerhub/token-not-used@v2/rules
+uses: dockerhub/token-not-used@v2
+
+## Usage example
+
+```yaml
+with: dockerhub/token-not-used@v2
 ```
-
-## Mitigation  
-Regularly review and remove any unused Dockerhub tokens to minimize security risks. This helps in ensuring that only necessary tokens are active, reducing the potential attack surface.
-
 
 ## Description  
 This rule verifies that there are no unused Dockerhub.
@@ -40,7 +41,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Dockerhub resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

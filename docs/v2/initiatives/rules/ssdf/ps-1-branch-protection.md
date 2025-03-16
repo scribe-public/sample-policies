@@ -20,6 +20,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: ssdf/ps-1-branch-protection@v2
+```
+
 ## Mitigation  
 Enforces branch protection policies to prevent unauthorized commits and maintain the integrity of critical code branches.
 

@@ -28,7 +28,7 @@ Rule is scoped by target and product.
 ## Usage example
 
 ```yaml
-uses: images/fresh-base-image@v2/rules
+uses: images/fresh-base-image@v2
 with:
   max_days: 183
 ```

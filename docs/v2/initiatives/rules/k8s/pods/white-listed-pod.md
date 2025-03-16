@@ -24,7 +24,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: k8s/pods/white-listed-pod@v2/rules
+uses: k8s/pods/white-listed-pod@v2
 with:
   white_listed_pod:
     - my-pod-1.*

@@ -24,7 +24,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: dockerhub/token-expiration@v2/rules
+uses: dockerhub/token-expiration@v2
+
+## Usage example
+
+```yaml
+with: dockerhub/token-expiration@v2
 ```
 
 ## Mitigation  

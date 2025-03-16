@@ -27,7 +27,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: sbom/required-packages@v2/rules
+uses: sbom/required-packages@v2
 with:
   required_pkgs:
     - "pkg:maven/org.apache.commons/commons-lang3@3.9"

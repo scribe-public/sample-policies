@@ -24,7 +24,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: github/org/dependabot-security-updates-sa@v2/rules
+uses: github/org/dependabot-security-updates-sa@v2
+
+## Usage example
+
+```yaml
+with: github/org/dependabot-security-updates-sa@v2
 ```
 
 ## Evidence Requirements  

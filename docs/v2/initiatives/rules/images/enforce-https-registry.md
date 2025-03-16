@@ -25,6 +25,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: images/enforce-https-registry@v2
+```
+
 ## Description  
 This rule examines the CycloneDX SBOM evidence for a container image to verify that the registry connection
 is secure. It does so by scanning the `metadata.component.properties` array for a property named 

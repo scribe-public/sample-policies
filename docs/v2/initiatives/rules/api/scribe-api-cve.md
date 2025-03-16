@@ -30,7 +30,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: api/scribe-api-cve@v2/rules
+uses: api/scribe-api-cve@v2
 with:
   superset:
     cve:

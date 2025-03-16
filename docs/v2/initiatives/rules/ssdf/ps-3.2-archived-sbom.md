@@ -23,7 +23,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: ssdf/ps-3.2-archived-sbom@v2/rules
+uses: ssdf/ps-3.2-archived-sbom@v2
+
+## Usage example
+
+```yaml
+with: ssdf/ps-3.2-archived-sbom@v2
 ```
 
 ## Mitigation  

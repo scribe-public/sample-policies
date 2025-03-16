@@ -44,7 +44,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: sbom/NTIA-compliance@v2/rules
+uses: sbom/NTIA-compliance@v2
 with:
   required_author: 
     name: "bom"

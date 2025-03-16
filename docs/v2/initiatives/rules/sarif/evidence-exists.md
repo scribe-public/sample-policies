@@ -27,7 +27,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: sarif/evidence-exists@v2/rules
+uses: sarif/evidence-exists@v2
+
+## Usage example
+
+```yaml
+with: sarif/evidence-exists@v2
 ```
 
 ## Mitigation  

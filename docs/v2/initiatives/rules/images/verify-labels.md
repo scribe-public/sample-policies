@@ -24,7 +24,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: images/verify-labels@v2/rules
+uses: images/verify-labels@v2
 with:
   labels:
     - "org.opencontainers.image.vendor=my_vendor"

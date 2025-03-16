@@ -24,11 +24,11 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: k8s/namespace/allowed-registries@v2/rules
+uses: k8s/namespace/allowed-registries@v2
 with:
   allowed_registries:
-    - docker.io/.*
-    - gcr.io/.*
+    - docker.io/*
+    - gcr.io/*
 ```
 
 ## Mitigation  

@@ -31,7 +31,7 @@ Rule is scoped by target and product.
 ## Usage example
 
 ```yaml
-uses: images/allowed-base-image@v2/rules
+uses: images/allowed-base-image@v2
 with:
   approved_sources:
     - "docker.io/library/*"

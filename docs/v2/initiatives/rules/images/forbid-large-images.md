@@ -24,7 +24,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: images/forbid-large-images@v2/rules
+uses: images/forbid-large-images@v2
 with:
   max_size: 77819980
 ```

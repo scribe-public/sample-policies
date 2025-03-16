@@ -27,6 +27,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: sbom/artifact-signed@v2
+```
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

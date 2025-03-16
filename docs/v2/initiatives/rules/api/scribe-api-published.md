@@ -27,7 +27,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: api/scribe-api-published@v2/rules
+uses: api/scribe-api-published@v2
 with:
   superset:
     published: true

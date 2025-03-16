@@ -22,6 +22,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: ssdf/ps-3.1-code-archived@v2
+```
+
 ## Mitigation  
 Archives code changes to maintain a secure, immutable history for auditing and traceability.
 

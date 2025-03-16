@@ -24,7 +24,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: k8s/namespace/verify-namespace-duration@v2/rules
+uses: k8s/namespace/verify-namespace-duration@v2
 with:
   threshold_date: "1970-01-01T00:00:00Z"
 ```

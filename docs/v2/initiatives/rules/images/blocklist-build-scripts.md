@@ -24,7 +24,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: images/blocklist-build-scripts@v2/rules
+uses: images/blocklist-build-scripts@v2
 with:
   blocklist:
   - "wget"

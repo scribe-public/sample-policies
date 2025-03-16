@@ -24,7 +24,7 @@ Rule is scoped by product.
 ## Usage example
 
 ```yaml
-uses: sarif/trivy/verify-trivy-attack-vector@v2/rules
+uses: sarif/trivy/verify-trivy-attack-vector@v2
 with:
   attack_vectors:
     - "stack buffer overflow"

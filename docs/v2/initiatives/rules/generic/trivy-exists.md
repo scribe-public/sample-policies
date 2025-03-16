@@ -23,7 +23,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: generic/trivy-exists@v2/rules
+uses: generic/trivy-exists@v2
+
+## Usage example
+
+```yaml
+with: generic/trivy-exists@v2
 ```
 
 ## Evidence Requirements  

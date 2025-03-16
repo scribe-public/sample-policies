@@ -25,7 +25,7 @@ Rule is scoped by product.
 ## Usage example
 
 ```yaml
-uses: sarif/trivy/report-trivy-iac-errors@v2/rules
+uses: sarif/trivy/report-trivy-iac-errors@v2
 with:
   violations_threshold: 2
 ```

@@ -30,7 +30,12 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: git/evidence-exists@v2/rules
+uses: git/evidence-exists@v2
+
+## Usage example
+
+```yaml
+with: git/evidence-exists@v2
 ```
 
 ## Mitigation  

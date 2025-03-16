@@ -27,13 +27,13 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: generic/artifact-signed@v2/rules
+uses: generic/artifact-signed@v2
+
+## Usage example
+
+```yaml
+with: generic/artifact-signed@v2
 ```
-
-## Mitigation  
-Ensure that generic evidence artifacts (such as files) have valid cryptographic signatures to prevent tampering. This helps in maintaining the integrity and authenticity of the evidence.
-
-
 
 ## Evidence Requirements  
 | Field | Value |

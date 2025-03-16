@@ -21,6 +21,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: sarif/verify-sarif@v2
+```
+
 ## Mitigation  
 Ensures that the SARIF report adheres to the predefined generic compliance rules by validating  the vulnerability types, severity levels, and total number of findings. This verification helps maintain  a consistent security posture and prevents the use of images with unacceptable vulnerability profiles.
 

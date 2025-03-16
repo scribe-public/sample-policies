@@ -30,7 +30,7 @@ Rule is scoped by target and product.
 ## Usage example
 
 ```yaml
-uses: images/banned-ports@v2/rules
+uses: images/banned-ports@v2
 with:
   banned_ports:
     - port: "3000"

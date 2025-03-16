@@ -21,6 +21,12 @@ Signed Evidence for this rule **IS** required by default.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: multievidence/files_integrity@v2
+```
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

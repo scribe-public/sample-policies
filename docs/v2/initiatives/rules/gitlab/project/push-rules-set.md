@@ -24,7 +24,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: gitlab/project/push-rules-set@v2/rules
+uses: gitlab/project/push-rules-set@v2
+
+## Usage example
+
+```yaml
+with: gitlab/project/push-rules-set@v2
 ```
 
 ## Evidence Requirements  

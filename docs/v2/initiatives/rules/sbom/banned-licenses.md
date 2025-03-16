@@ -27,7 +27,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: sbom/banned-licenses@v2/rules
+uses: sbom/banned-licenses@v2
 with:
   blocklist:
     - "GPL-2.0"

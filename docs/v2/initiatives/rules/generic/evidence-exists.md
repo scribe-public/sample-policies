@@ -27,7 +27,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: generic/evidence-exists@v2/rules
+uses: generic/evidence-exists@v2
+
+## Usage example
+
+```yaml
+with: generic/evidence-exists@v2
 ```
 
 ## Evidence Requirements  

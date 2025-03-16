@@ -25,6 +25,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by target and product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: images/require-healthcheck@v2
+```
+
 ## Mitigation  
 Ensures that container images define a HEALTHCHECK instruction so that the runtime environment  can monitor and manage container health. This minimizes the risk of undetected failures at runtime.
 

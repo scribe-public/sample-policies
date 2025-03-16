@@ -24,7 +24,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: github/repository/validity-checks@v2/rules
+uses: github/repository/validity-checks@v2
+
+## Usage example
+
+```yaml
+with: github/repository/validity-checks@v2
 ```
 
 ## Evidence Requirements  

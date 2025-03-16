@@ -22,6 +22,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule is scoped by product.  
 :::  
 
+## Usage example
+
+```yaml
+uses: sarif/trivy/blocklist-cve@v2
+```
+
 ## Mitigation  
 Ensures that any vulnerabilities matching a predefined CVE blocklist are flagged, preventing images with known high-risk vulnerabilities from progressing through the pipeline.
 

@@ -27,7 +27,12 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: sbom/complete-licenses@v2/rules
+uses: sbom/complete-licenses@v2
+
+## Usage example
+
+```yaml
+with: sbom/complete-licenses@v2
 ```
 
 ## Mitigation  

@@ -28,6 +28,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 Rule is scoped by product and target.  
 :::  
 
+## Usage example
+
+```yaml
+uses: slsa/l2-provenance-authenticated@v2
+```
+
 ## Mitigation  
 Cryptographic authentication prevents tampering with provenance data, ensuring that only valid and secure build information is used to establish the integrity of the software supply chain.
 

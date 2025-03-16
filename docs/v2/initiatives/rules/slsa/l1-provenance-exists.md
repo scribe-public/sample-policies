@@ -31,7 +31,12 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: slsa/l1-provenance-exists@v2/rules
+uses: slsa/l1-provenance-exists@v2
+
+## Usage example
+
+```yaml
+with: slsa/l1-provenance-exists@v2
 ```
 
 ## Mitigation  

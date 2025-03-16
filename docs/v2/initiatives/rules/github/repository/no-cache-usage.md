@@ -24,7 +24,12 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: github/repository/no-cache-usage@v2/rules
+uses: github/repository/no-cache-usage@v2
+
+## Usage example
+
+```yaml
+with: github/repository/no-cache-usage@v2
 ```
 
 ## Evidence Requirements  

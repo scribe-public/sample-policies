@@ -27,12 +27,16 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: git/no-commit-to-main@v2/rules
+uses: git/no-commit-to-main@v2
+
+## Usage example
+
+```yaml
+with: git/no-commit-to-main@v2
 ```
 
 ## Mitigation  
 Enforcing no commits to the main branch ensures that changes are made through pull requests, allowing for code review and approval before merging.
-
 
 
 ## Description  

@@ -30,7 +30,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: sbom/verify-huggingface-license@v2/rules
+uses: sbom/verify-huggingface-license@v2
 with:
   licenses:
     - "MIT"

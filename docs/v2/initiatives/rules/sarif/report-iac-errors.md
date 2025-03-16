@@ -24,7 +24,7 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 ## Usage example
 
 ```yaml
-uses: sarif/report-iac-errors@v2/rules
+uses: sarif/report-iac-errors@v2
 with:
   violations_threshold: 2
 ```

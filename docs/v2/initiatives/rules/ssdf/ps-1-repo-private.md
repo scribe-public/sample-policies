@@ -20,6 +20,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: ssdf/ps-1-repo-private@v2
+```
+
 ## Mitigation  
 Ensures that repositories remain private, reducing the risk of sensitive code being exposed to unauthorized parties.
 

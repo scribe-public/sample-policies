@@ -27,7 +27,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: sbom/fresh-sbom@v2/rules
+uses: sbom/fresh-sbom@v2
 with:
   max_days: 30
 ```

@@ -27,14 +27,7 @@ Rule is scoped by product and target.
 ## Usage example
 
 ```yaml
-uses: git/coding-permissions@v2/rules
-with:
-  ids:
-    - "user1@mycomany.com"
-    - "another@mycoman.com"
-  files:
-    - "src/.*"
-    - "file2/.*"
+uses: git/coding-permissions@v2
 ```
 
 ## Mitigation  
@@ -68,5 +61,5 @@ It performs the following steps:
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | ids | array | False | The list of user (commit.author) IDs allowed to commit to the repository. |
-| files | array | False | The list of file patterns that are allowed to be committed to the repository. |
+| files | array | False | The list of files that are allowed to be committed to the repository. |
 

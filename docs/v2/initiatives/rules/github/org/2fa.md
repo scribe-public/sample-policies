@@ -21,6 +21,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: github/org/2fa@v2
+```
+
 ## Mitigation  
 Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access  through compromised credentials.
 
@@ -50,8 +56,8 @@ layer of security against unauthorized access.
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=github<br/>- asset_type=organization |
 
-## Input Definitions  
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| desired_value | boolean | False | Desired value for the two_factor_requirement_enabled setting. |
+## Rule Parameters (`with`)  
+| Parameter | Default |
+|-----------|---------|
+| desired_value | False |
 

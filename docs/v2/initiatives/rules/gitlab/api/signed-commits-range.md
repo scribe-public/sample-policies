@@ -18,6 +18,12 @@ Evidence **IS NOT** required for this rule.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: gitlab/api/signed-commits-range@v2
+```
+
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|

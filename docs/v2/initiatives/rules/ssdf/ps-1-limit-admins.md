@@ -20,6 +20,12 @@ Signed Evidence for this rule **IS NOT** required by default but is recommended.
 Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
 ::: 
 
+## Usage example
+
+```yaml
+uses: ssdf/ps-1-limit-admins@v2
+```
+
 ## Mitigation  
 Limits the number of administrative accounts, minimizing the potential for abuse of elevated privileges.
 
