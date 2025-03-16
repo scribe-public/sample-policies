@@ -28,6 +28,12 @@ with:
   selective_code_owner_removals: true
 
 inputs:
+  - name: selective_code_owner_removals
+    description: "Indicates whether `selective_code_owner_removals` is set for the GitLab project."
+    type: boolean
+    required: true
+
+input_example: |
   selective_code_owner_removals: true
 
 full-description: |

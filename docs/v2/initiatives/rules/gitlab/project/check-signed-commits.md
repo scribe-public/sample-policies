@@ -32,6 +32,21 @@ uses: gitlab/project/check-signed-commits@v2
 with: gitlab/project/check-signed-commits@v2
 ```
 
+## Mitigation  
+Ensure that all commits in the GitLab project are signed to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that all commits in the GitLab project are signed.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that all commits are signed.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

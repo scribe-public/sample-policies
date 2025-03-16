@@ -32,6 +32,22 @@ uses: gitlab/project/commit-committer-check@v2
 with: gitlab/project/commit-committer-check@v2
 ```
 
+## Mitigation  
+Enable `commit_committer_check` in the GitLab project to prevent unauthorized changes.
+
+
+
+## Description  
+This rule ensures that `commit_committer_check` is enabled for the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that `commit_committer_check` is enabled.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

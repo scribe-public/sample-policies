@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/force-push-protection@v2
+with:
+  branch: "main"
+  
 ```
+
+## Mitigation  
+Ensure that force pushes in the GitLab project are disallowed to maintain repository integrity.
+
+
+## Description  
+This rule ensures that force pushes in the GitLab project are disallowed to maintain repository integrity.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that force pushes are disallowed.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/force-push-protection@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| branch | main |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| branch | string | False | The branch to disallow force pushes. |
 

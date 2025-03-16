@@ -32,6 +32,21 @@ uses: gitlab/project/push-rules-set@v2
 with: gitlab/project/push-rules-set@v2
 ```
 
+## Mitigation  
+Ensure that push rules are set for the GitLab project to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that push rules are set for the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that push rules are set.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

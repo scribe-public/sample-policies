@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/check-cwe@v2
+with:
+  cwe_value: "89"
+  
 ```
+
+## Mitigation  
+Ensure that the specified CWEs were not detected in the GitLab project to prevent vulnerabilities.
+
+
+## Description  
+This rule ensures that the specified CWEs were not detected in the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the specified CWEs were not detected in the GitLab project.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/check-cwe@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| cwe_value | 89 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| cwe_value | string | True | The CWE value to check for. |
 

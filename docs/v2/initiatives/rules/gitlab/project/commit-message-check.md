@@ -25,7 +25,26 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/commit-message-check@v2
+with:
+  commit_message_regex: ".*JIRA-\\d+.*"
+  
 ```
+
+## Mitigation  
+Ensure that commit messages adhere to the specified format template to maintain consistency and readability.
+
+
+
+## Description  
+This rule ensures that commit messages in the GitLab project adhere to the specified format template.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that commit messages adhere to the specified format template.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +55,8 @@ uses: gitlab/project/commit-message-check@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| commit_message_regex | .*JIRA-\d+.* |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| commit_message_regex | string | True | The regular expression to match the commit message format. |
 

@@ -32,6 +32,21 @@ uses: gitlab/project/reject-unsigned-commits@v2
 with: gitlab/project/reject-unsigned-commits@v2
 ```
 
+## Mitigation  
+Ensure that Reject Unsigned Commits is enabled for the GitLab project to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that `reject_unsigned_commits` is enabled for the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that `reject_unsigned_commits` is enabled.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

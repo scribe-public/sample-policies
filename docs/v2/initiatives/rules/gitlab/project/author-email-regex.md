@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/author-email-regex@v2
+with:
+  author_email_regex: ".*@mycompany.com"
+  
 ```
+
+## Mitigation  
+Ensure that the Author Email reduces the risk of unauthorized access by setting the `author_email_regex` field to the specified value.
+
+
+## Description  
+This rule ensures that the `author_email_regex` for the GitLab project is set to the specified value.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the Author Email matches the 'author_email_regex' field.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/author-email-regex@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| author_email_regex |  |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| author_email_regex | string | False | The regular expression for the author email. |
 

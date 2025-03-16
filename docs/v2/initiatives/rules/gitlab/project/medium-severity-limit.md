@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/medium-severity-limit@v2
+with:
+  max_allowed_specific_severity: 0
+  
 ```
+
+## Mitigation  
+Ensure that the maximum allowed medium severity alerts for the GitLab project is enforced to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that the maximum allowed medium severity alerts for the GitLab project is enforced.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the maximum allowed medium severity alerts is enforced.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/medium-severity-limit@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| max_allowed_specific_severity | 0 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| max_allowed_specific_severity | number | False | Maximum allowed medium severity alerts for the GitLab project. |
 

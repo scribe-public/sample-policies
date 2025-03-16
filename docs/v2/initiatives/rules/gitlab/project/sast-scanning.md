@@ -32,6 +32,22 @@ uses: gitlab/project/sast-scanning@v2
 with: gitlab/project/sast-scanning@v2
 ```
 
+## Mitigation  
+Ensure that SAST scanning is performed for the GitLab project to prevent unauthorized changes.\
+
+
+
+## Description  
+This rule ensures that SAST scanning is performed for the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that SAST scanning is performed.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

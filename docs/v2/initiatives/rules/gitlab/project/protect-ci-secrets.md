@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/protect-ci-secrets@v2
+with:
+  pattern: "(?i)(token|secret)"
+  
 ```
+
+## Mitigation  
+Ensure that secrets in the GitLab project are not shared to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that secrets in the GitLab project are not shared.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that secrets are not shared.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/protect-ci-secrets@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| pattern | (?i)(token|secret) |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| pattern | string | False | The pattern to match secrets. |
 

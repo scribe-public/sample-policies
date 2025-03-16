@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/visibility-check@v2
+with:
+  visibility: private
+  
 ```
+
+## Mitigation  
+Ensure that the GitLab project's visibility matches the required level to prevent unauthorized access.
+
+
+## Description  
+This rule ensures that the GitLab project's visibility matches the required level.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the visibility level matches the required level.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/visibility-check@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| visibility | private |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| visibility | string | True | The visibility level to enforce for the GitLab project. |
 

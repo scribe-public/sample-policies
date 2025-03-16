@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/reset-pprovals-on-push@v2
+with:
+  reset_approvals_on_push: true
+  
 ```
+
+## Mitigation  
+Ensure that the binary field `reset_approvals_on_push` is set for the GitLab project to prevent unauthorized approvals.
+
+
+## Description  
+This rule ensures that the binary field `reset_approvals_on_push` is set for the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the binary field `reset_approvals_on_push` is set.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/reset-pprovals-on-push@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| reset_approvals_on_push | True |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| reset_approvals_on_push | boolean | False | The binary field to enforce for resetting approvals on push. |
 

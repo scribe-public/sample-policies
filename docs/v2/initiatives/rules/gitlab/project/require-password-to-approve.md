@@ -25,7 +25,26 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/require-password-to-approve@v2
+with:
+  require_password_to_approve: true
+  
 ```
+
+## Mitigation  
+Ensure that the binary field `require_password_to_approve` is set for the GitLab project to prevent unauthorized approvals.
+
+
+
+## Description  
+This rule ensures that the binary field `require_password_to_approve` is set for the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the binary field `require_password_to_approve` is set.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +55,8 @@ uses: gitlab/project/require-password-to-approve@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| require_password_to_approve | True |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| require_password_to_approve | boolean | False | The binary field to enforce for requiring password to approve. |
 

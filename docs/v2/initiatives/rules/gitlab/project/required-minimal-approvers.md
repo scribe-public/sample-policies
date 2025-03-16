@@ -32,6 +32,21 @@ uses: gitlab/project/required-minimal-approvers@v2
 with: gitlab/project/required-minimal-approvers@v2
 ```
 
+## Mitigation  
+Ensure that the required number of approvers for the GitLab project is met to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that the required number of approvers for the GitLab project is met.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the required number of approvers is met.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

@@ -286,35 +286,39 @@ def create_rule_string_from_evidence(evidence, file_name, skip_evidence, require
 
 
 def generate_parameters_table(rule_data):
-    """
-    Generates a Markdown table for rule parameters.
-    If the rule YAML contains an 'inputs' field (a list of input definitions),
-    an extended table is produced with columns: Parameter, Type, Required, and Description.
-    Otherwise, a simpler table is generated using the 'with' block.
-    """
-    md_lines = []
-    inputs_def = rule_data.get("inputs", [])
-    if inputs_def:
-        md_lines.append("## Input Definitions  ")
-        md_lines.append("| Parameter | Type | Required | Description |")
-        md_lines.append("|-----------|------|----------|-------------|")
-        for inp in inputs_def:
-            param = inp.get("name", "")
-            inp_type = inp.get("type", "")
-            required = inp.get("required", False)
-            desc = inp.get("description", "")
-            md_lines.append(f"| {param} | {inp_type} | {required} | {desc} |")
-        md_lines.append("")
-    else:
-        with_block = rule_data.get("with", {})
-        if with_block:
-            md_lines.append("## Rule Parameters (`with`)  ")
-            md_lines.append("| Parameter | Default |")
-            md_lines.append("|-----------|---------|")
-            for param, value in with_block.items():
-                md_lines.append(f"| {param} | {escape_template(value)} |")
+    try:
+        """
+        Generates a Markdown table for rule parameters.
+        If the rule YAML contains an 'inputs' field (a list of input definitions),
+        an extended table is produced with columns: Parameter, Type, Required, and Description.
+        Otherwise, a simpler table is generated using the 'with' block.
+        """
+        md_lines = []
+        inputs_def = rule_data.get("inputs", [])
+        if inputs_def:
+            md_lines.append("## Input Definitions  ")
+            md_lines.append("| Parameter | Type | Required | Description |")
+            md_lines.append("|-----------|------|----------|-------------|")
+            for inp in inputs_def:
+                param = inp.get("name", "")
+                inp_type = inp.get("type", "")
+                required = inp.get("required", False)
+                desc = inp.get("description", "")
+                md_lines.append(f"| {param} | {inp_type} | {required} | {desc} |")
             md_lines.append("")
-    return "\n".join(md_lines)
+        else:
+            with_block = rule_data.get("with", {})
+            if with_block:
+                md_lines.append("## Rule Parameters (`with`)  ")
+                md_lines.append("| Parameter | Default |")
+                md_lines.append("|-----------|---------|")
+                for param, value in with_block.items():
+                    md_lines.append(f"| {param} | {escape_template(value)} |")
+                md_lines.append("")
+        return "\n".join(md_lines)
+    except Exception as e:
+        print(f"# Error generating parameters table: {e} {rule_data}")
+        raise e
 
 def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
     """

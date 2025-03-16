@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/description-substring-check@v2
+with:
+  pattern: "(?i)insdput"
+  
 ```
+
+## Mitigation  
+Ensure that the specified substring is not found in the description attribute of vulnerabilities to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that a specific substring is not found in the description attribute of vulnerabilities for the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the specified substring is not found in the description attribute of vulnerabilities.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/description-substring-check@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| pattern | (?i)insdput |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| pattern | string | False | The substring to search for in the description attribute of vulnerabilities. |
 

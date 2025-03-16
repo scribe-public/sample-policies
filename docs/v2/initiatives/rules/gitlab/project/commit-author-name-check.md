@@ -25,7 +25,26 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/commit-author-name-check@v2
+with:
+  allowed_authors:
+    - examplename
+  
 ```
+
+## Mitigation  
+Ensure that only users in the Allowed List author commits in the GitLab project to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that only users in the Allowed List author commits in the GitLab project.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that only users in the Allowed List author commits.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +55,8 @@ uses: gitlab/project/commit-author-name-check@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| allowed_authors | ['examplename'] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| allowed_authors | array | False | List of users allowed to author commits in the GitLab project. |
 

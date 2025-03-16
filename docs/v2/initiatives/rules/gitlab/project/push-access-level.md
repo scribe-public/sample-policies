@@ -25,7 +25,27 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/push-access-level@v2
+with:
+  branch: "main"
+  # access_level: 30
+  access_level_description: "Maintainers"
+  
 ```
+
+## Mitigation  
+Ensure that the GitLab project's push access level complies with requirements to prevent unauthorized changes.
+
+
+## Description  
+This rule ensures that the GitLab project's push access level complies with requirements.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. For scoped branchs, verifies that the push access level complies with the specified requirements.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.  
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,9 +56,10 @@ uses: gitlab/project/push-access-level@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| branch | main |
-| access_level_description | Maintainers |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| branch | string | False | The branch to enforce push access level policy. |
+| access_level | number | False | The access level to enforce for push access level policy. |
+| access_level_description | string | False | The access level description to enforce for push access level policy. |
 

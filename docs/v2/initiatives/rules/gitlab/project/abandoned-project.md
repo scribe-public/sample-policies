@@ -25,7 +25,25 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/abandoned-project@v2
+with:
+  inactive_for_days: 30
+  
 ```
+
+## Mitigation  
+Ensure that the GitLab project is active for the specified duration to prevent project abandonment.
+
+
+## Description  
+This rule ensures that the GitLab project is active for a specified duration.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the project has been active for the specified duration.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +54,8 @@ uses: gitlab/project/abandoned-project@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| inactive_for_days | 30 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| inactive_for_days | number | False | Number of days the project has been inactive. |
 

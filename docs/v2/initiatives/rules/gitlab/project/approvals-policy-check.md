@@ -25,7 +25,28 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/approvals-policy-check@v2
+with:
+  name: "All Members"
+  approvals_required_min: 2
+  
 ```
+
+## Mitigation  
+Ensure that the project's merge approval policy complies with requirements to prevent unauthorized merges.
+
+
+
+## Description  
+This rule ensures that the project's merge approval policy complies with requirements.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that the project's merge approval policy matchinig the 'name' field.
+2.1. Verifies that the project's merge approval policy requires a minimum number of approvals as specified in the 'approvals_required_min' field.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,9 +57,9 @@ uses: gitlab/project/approvals-policy-check@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| name | All Members |
-| approvals_required_min | 2 |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| name | string | True | Name of the group or user that must approve the merge request. |
+| approvals_required_min | number | True | Minimum number of approvals required for merge requests. |
 

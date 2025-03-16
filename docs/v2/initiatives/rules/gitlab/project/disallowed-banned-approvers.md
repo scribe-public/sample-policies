@@ -25,7 +25,27 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/disallowed-banned-approvers@v2
+with:
+  banned_list:
+    - user1
+    - user2
+  
 ```
+
+## Mitigation  
+Ensure that approvers in the GitLab project are not on the banned list to prevent unauthorized approvals.
+
+
+## Description  
+This rule ensures that approvers in the GitLab project are not on the banned list.
+It performs the following steps:
+
+1. Checks the settings of the GitLab project.
+2. Verifies that approvers are not on the banned list.
+
+**Evidence Requirements:**
+- Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
 
 ## Evidence Requirements  
 | Field | Value |
@@ -36,8 +56,8 @@ uses: gitlab/project/disallowed-banned-approvers@v2
 | predicate_type | http://scribesecurity.com/evidence/discovery/v0.1 |
 | labels | - platform=gitlab<br/>- asset_type=project |
 
-## Rule Parameters (`with`)  
-| Parameter | Default |
-|-----------|---------|
-| banned_list | [] |
+## Input Definitions  
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| banned_list | array | False | List of users banned from approving in the GitLab project. |
 
