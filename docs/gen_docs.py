@@ -37,7 +37,7 @@ def filepath_to_uses(filepath: str) -> str:
 
     For example:
       Input:  "v2/rules/sbom/verify-labels.yaml"
-      Output: "sbom/verify-labels@v2/rules"
+      Output: "sbom/verify-labels@v2"
     """
     # Split the file path by '/'
     parts = filepath.split('/')
@@ -57,7 +57,7 @@ def filepath_to_uses(filepath: str) -> str:
     rule_path = "/".join(group_and_rule_parts)
     
     # Build and return the uses reference in the required format
-    return f"{rule_path}@{version}/rules"
+    return f"{rule_path}@{version}"
 
 def filter_labels(labels):
     # if starts with "{{- if", remove it
@@ -425,14 +425,14 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append(f":::  ")
 
     input_example = rule_data.get("input_example", "")
+    md.append(f"\n## Usage example\n")
+    md.append("```yaml")
+    md.append(f"uses: {filepath_to_uses(file_path)}")
     if input_example:
-        md.append(f"\n## Usage example\n")
-        md.append("```yaml")
-        md.append(f"uses: {filepath_to_uses(file_path)}")
         md.append("with:")
         for line in input_example.split('\n'):
             md.append(f"  {line}")
-        md.append("```")
+    md.append("```")
 
     elif "with" not in rule_data:
         md.append(f"\n## Usage example\n")
