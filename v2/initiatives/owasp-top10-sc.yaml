@@ -236,38 +236,38 @@ controls:
     id: CICD-SEC-9
     description: >
       Ensure that the CI/CD pipeline has mechanisms to validate the integrity of artifacts.
+    mitigation: >
+      Implement processes and technologies to validate the integrity of resources all the way from development to production.
     rules:
       - uses: sbom/artifact-signed@v2
         name: Artifact verification software (Image SBOM)
         description: Verify image SBOMs are signed.
         mitigation: >
-           Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
+          Implement processes and technologies to validate the integrity of resources all the way from development to production.
 
       - uses:: git/artifact-signed@v2
         name: Artifact verification software (Git SBOM)
         description: Verify Git SBOMs are signed.
         mitigation: >
-           Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
+           Implement processes and technologies to validate the integrity of resources all the way from development to production.
 
       - uses: slsa/artifact-signed@v2
         name: Artifact verification software (SLSA)
         description: Verify SLSA Provenance attestations are signed.
         mitigation: >
-           Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
+           Implement processes and technologies to validate the integrity of resources all the way from development to production.
 
       - uses: git/no-unsigned-commits@v2
         name: Code signing (Git SBOM)
         description: Verify all commits are signed.
         mitigation: >
-           SCM solutions provide the ability to sign commits using a unique key for each contributor.
-           This measure can then be leveraged to prevent unsigned commits from flowing down the pipeline.
+           Implement processes and technologies to validate the integrity of resources all the way from development to production.
 
       - uses: github/repository/check-signed-commits@v2
         name: Code signing (GitHub repo)
         description: Verify all commits are verified on GitHub.
         mitigation: >
-           SCM solutions provide the ability to sign commits using a unique key for each contributor.
-           This measure can then be leveraged to prevent unsigned commits from flowing down the pipeline.
+           Implement processes and technologies to validate the integrity of resources all the way from development to production.
 
     ########################################################################
     # CONTROL 10: CICD-SEC-10: Insufficient Logging and Visibility
