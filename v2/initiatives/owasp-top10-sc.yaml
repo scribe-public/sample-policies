@@ -272,12 +272,20 @@ controls:
     ########################################################################
     # CONTROL 10: CICD-SEC-10: Insufficient Logging and Visibility
     ########################################################################
-  # - name: "Insufficient Logging and Visibility"
-  #   id: CICD-SEC-10
-  #   description: >
-  #     Ensure that the CI/CD pipeline has sufficient logging and visibility to detect unauthorized access to the pipeline and artifacts.
+  - name: "Insufficient Logging and Visibility"
+    id: CICD-SEC-10
+    description: >
+      Ensure that the CI/CD pipeline has sufficient logging and visibility to detect unauthorized access to the pipeline and artifacts.
+    mitigation: >
+      Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
 
-  #   rules:
-  #     - uses: evidence/platforms-evidence-exists# TBD
-  #       name: "Github Organization"
-  #     # Add rules for all platforms: verify existing evidence for the repository used.
+    rules:
+      - uses: github/org/evidence-exists@v2
+        name: "GitHub organization"
+        mitigation: >
+          Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
+      
+      - uses: github/repository/evidence-exists@v2
+        name: "GitHub repository"
+        mitigation: >
+          Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
