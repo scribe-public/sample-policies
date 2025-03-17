@@ -34,7 +34,7 @@ with:
 ```
 
 ## Mitigation  
-Ensures that branch protection settings are correctly configured, reducing the risk of unauthorized changes.
+Ensure branch protection settings are correctly configured to reduce the risk of unauthorized changes.
 
 
 

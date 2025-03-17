@@ -12,10 +12,10 @@ labels:
 skip-evidence: true
 
 with:
-  since: "" # ISO 8601 date-time string (optional)
-  until: "" # ISO 8601 date-time string (optional)
-  project_id: ""
-  private_token: ""
+  since: "2021-01-01T00:00:00Z"
+  until: "2021-01-31T23:59:59Z"
+  project_id: '{{ .Args.ProjectID }}'
+  private_token: '{{ .Args.Token }}'
 
 inputs:
   - name: since

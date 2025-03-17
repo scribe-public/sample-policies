@@ -27,7 +27,7 @@ uses: gitlab/api/signed-commits-list@v2
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| commit_id_list | [] |
-| private_token |  |
-| project_id |  |
+| commit_id_list | ['commit1', 'commit2', 'commit3'] |
+| private_token | `{{ .Args.Token }}` |
+| project_id | `{{ .Args.ProjectID }}` |
 

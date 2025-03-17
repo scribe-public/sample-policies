@@ -33,7 +33,7 @@ with: dockerhub/token-expiration@v2
 ```
 
 ## Mitigation  
-Ensure that all Dockerhub tokens are set to Active status in Dockerhub preventing unauthorized access to Dockerhub resources.
+Ensure all Dockerhub tokens are set to Active status to prevent unauthorized access.
 
 
 ## Description  
