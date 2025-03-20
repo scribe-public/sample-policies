@@ -1,0 +1,247 @@
+config-type: initiative
+# required-valint-version: "1.6.0"
+id: "cncf-sscp-v1"
+name: "CNCF SSCP V1"
+description: >
+  CNCF SSCP is a comprehensive set of security best practices for the
+  software supply chain. This initiative enforces security rules derived
+  from the CNCF SSCP self-assessment questionnaire, which stands for an abbreviated
+  version of the CNCF Secure Software Supply Chain Paper.
+help: https://github.com/cncf/tag-security/blob/main/community/working-groups/supply-chain-security/supply-chain-security-paper/secure-supply-chain-assessment.md
+
+defaults:
+  evidence:
+    signed: false
+
+# conclions:
+# Our mechanism is super inefficient; we have quite similar rules, each requires pulling attestations etc.
+# The caching saves effort.
+# Need for many attestations
+# Missing many rules.
+# Need to document the exact conditions for success, and beware we would need to modify 
+# For probably any customer.
+# The per-platform parts are also painful.
+
+controls:
+
+  ########################################################################
+  # CONTROL 1: Verify Source Code
+  ########################################################################
+  # The control requires the following evidence:
+  # github discovery
+  # Secret scanning resutls for a realworld, non public github repo
+  # SAST results
+
+  - name: "Verify the Source Code"
+    description: >
+      Security controls to mitigate risks associated with source code and
+      the development environment.
+    mitigation: "Implement security measures as per the defined rules."
+    rules:
+      - uses: github/repository/required-sig@v2/rules # Missing
+        name: "Require Signed Commits"
+        description: "Ensure all commits signing is required by branch protection, in order to aintain code integrity."
+        # TODO: add this rule. consider how to run multiple such rules without the complicated policy validation
+
+      - uses: github/secret-scanning@v2/rules # Checks configuration of secret scanning in GitHub repositories
+        name: "Prevent Committing Secrets"
+        description: "Utilize git hooks to prevent accidental inclusion of secrets in the codebase."
+        # TODO: consider alternative: to get a verify existence scanning attestation.
+        #    That would be generic but would require additional configuration.
+
+      - uses: # TBD
+        name: "Define Vulnerability Risk Levels"
+        description: "Set unacceptable risk levels (e.g., no Critical or High vulnerabilities) for committed code."
+        # TODO: add this rule - vulns of git SBOM
+        # Consider: this rule is about having a policy, not the policy results.
+
+        # Suggestion: name: "Check source code vulnerabilities", and check the existence of a git SBOM.
+
+      - uses: #TBD
+        name: "Automated Security Scanning"
+        description: "Employ tools to detect and prevent security issues and vulnerable dependencies."
+        # TODO: add rule for checking for SAST reports existence
+        # We do not have a way to iterate through the repos and check for the existence of the SAST reports for each of them
+        # this is a valint feature.
+        # Issue: how and who knows what has not been evaluated?
+        # need to create the attestations with asset_type and asset_name + a label for the scan type
+
+      - uses: # TBD
+        name: "Define Contributor Roles"
+        description: "Establish and document clear contributor roles and make them easily accessible."
+        # TODO: check for existence of CONTRIBUTING.md
+        # Or just leave this out
+
+      - uses: #TBD
+        name: "Enforce Code Review"
+        description: "Require review and approval of contributions before merging."
+        # TODO: add a branch protection rule requireing code review
+        # TODO: how do we take into account the branch?
+
+      - uses: github/branch-protection@v2/rules
+        name: "Enable Branch Protection"
+        description: "Implement branch protection rules to prevent unauthorized changes."
+
+      - uses: github/2fa@v2/rules
+        name: "Enforce MFA"
+        description: "Mandate multi-factor authentication and SSH keys for all human users."
+
+      - uses: # TBD
+        name: "SSH Key Rotation Policy"
+        description: "Establish a plan for regular SSH key rotation and procedures for key leaks."
+        #TODO: omit from policy, or implement SSH evidence and track when it was modified
+        # This is not supported by Github API
+
+      - uses: # TBD
+        name: "Limit Automation Agent Access"
+        description: "Apply the principle of least privilege and just-in-time access for CI/CD pipelines."
+        # TODO: remove for now, we do not have this data, and it is not easily available
+        # See https://docs.github.com/en/rest/orgs/personal-access-tokens?apiVersion=2022-11-28#list-fine-grained-personal-access-tokens-with-access-to-organization-resources
+
+  ########################################################################
+  # CONTROL 2: Verify Materials
+  ########################################################################
+  - name: "Verify Materials"
+    description: >
+      Ensure all dependencies and materials meet organizational standards
+      for quality, security, and compliance.
+    mitigation: "Implement verification processes and tools as per the defined rules."
+    # Consider: Can we run this rule based on SBOMs that have a label of "depdenencies"?
+    # In python, it would be the final imags (since it includes the dependencies)
+    # In other cases it would requires some other SBOMs.
+
+    # As first step, check existence of Git SBOM and assume (or check) that is has a package-lock etc.
+    rules:
+      - uses: # TBD
+        name: "Assess Dependency Quality"
+        description: "Verify that all dependencies meet minimum quality and reliability standards."
+        # Can be done using SSF Scorecard querying the product-version
+        # Thus bypassing the question which SBOM has the dependencies.
+
+      - uses: # TBD
+        name: "Automated Dependency Scanning"
+        description: "Automatically scan dependencies for security vulnerabilities and license compliance."
+        # Supported by default if attestations are uploaded to Scribe
+
+      - uses: # TBD
+        name: "Software Composition Analysis"
+        description: "Perform SCA on dependencies during download or installation."
+        # Consider checking existence of DIR SBOM labeled "dependencies"
+        # Or git SBOM that has a dependency-lock file.
+
+      - uses: # TBD
+        name: "Monitor Dependency Updates"
+        description: "Keep track of updates and security issues in dependencies."
+        # We have updated security data, we show the updated vulns in ScribeHub
+        # Again, existence of dependency SBOM is OK.
+
+      - uses: # TBD
+        name: "Build Dependencies In-House"
+        description: "Compile dependencies internally instead of relying on public package managers."
+        # TODO: change to "do not allow binary artifacts" and take this from scorecard data
+
+      - uses: # TBD
+        name: "Generate SBOM"
+        description: "Create a Software Bill of Materials for all artifacts produced."
+        # SBOM of artifact - an image.
+
+  ########################################################################
+  # CONTROL 3: Protect Build Pipelines
+  ########################################################################
+  - name: "Protect Build Pipelines"
+    description: >
+      Safeguard the build and test pipelines to prevent unauthorized access
+      and ensure the integrity of the build process.
+    mitigation: "Apply security measures to build pipelines as per the defined rules."
+    rules:
+      
+      - uses: github/repository/ephemeral-runners-only@v2/rules
+        name: "Use Hardened Build Containers"
+        description: "Utilize minimal, hardened containers for build workers."
+        # Github runner is not minimal but it is supposed to be well maintained.
+        # Hmmm
+      
+      - uses: # TBD
+        name: "Scripted Build Pipelines"
+        description: "Maintain build pipelines as code for consistency and version control."
+        # Check we have a workflow name in the SBOM context? or just check github context?
+        # Can this be multi platform (check sbom has context of known CI/CD systems)
+      
+      # - uses: # TBD
+      #   name: "Automate Build Steps"
+      #   description: "Automate all steps in the build pipeline, excluding code reviews and final approvals."
+        # Skip; this is usually done when there is a scripted build
+        
+      
+      - uses: # TBD
+        name: "Sign Build Artifacts"
+        description: "Sign the artifacts built int the pipeline"
+        # Search all image sboms should be signed
+        # Original rule is "in-toto": 
+        # "Sign outputs at each pipeline stage to ensure verifiable integrity."
+        # There is some value in this (although it is similare to the third control, for internal use of artifacs)
+        # For example, enabling verification of the image on a testing pipeline.
+      
+      - uses: # TBD
+        name: "Validate Dependencies"
+        description: "Check signatures and checksums of all dependencies before use."
+        # We can create an attestation in pipeline of such a verification
+        # Could go along with a dir SBOM of dependencies
+        # consider as part of the reference SBOMs of Git for integrity - to also create a git integrity
+        # attestation. Consider such for each high level dependency.
+        # This could be noisy - if the depedencies are not pinned. 
+      
+      # - uses: # TBD
+      #   name: "Isolate Build Steps"
+      #   description: "Use separate build workers or containers for each pipeline step."
+        # Not that practical
+      
+      - uses: github/repository/ephemeral-runners-only@v2/rules
+        name: "Control Build Environments"
+        description: "Define and enforce allowed environments, tools, and commands for build workers."
+        # For a Github self runner this should default to true
+        # Or have a blocklist for github actions.
+
+      - uses: github/repository/ephemeral-runners-only@v2/rules
+        name: "Network Isolation"
+        description: "Isolate build workers and pipelines to minimize network exposure."
+        # For a Github self runner this should default to true
+      
+      # Removed: this is theoreric:
+      # - uses: ci-cd/reproducible-builds
+      #   name: "Enable Reproducible Builds"
+      #   description: "Ensure builds are reproducible to verify consistency and detect tampering."
+
+
+  ########################################################################
+  # CONTROL 4: Protect Artifacts and Deployments
+  ########################################################################
+  # Requires signed artifact attestatsion
+  # Success criteria: signed attestation exist.
+  - name: "Protect Artifacts and Deployments"
+    description: >
+      Ensure the security and integrity of artifacts throughout the deployment
+      process and provide verifiable guarantees to consumers.
+    mitigation: "Implement security measures for artifacts and deployments as per the defined rules."
+    rules:
+    
+      - uses: # TBD - verify signed image attestations for the product version
+        name: "Sign All Artifacts"
+        description: "Sign every artifact, including metadata and intermediate files."
+    
+      - uses: # TBD - same as above
+        name: "Distribute Verifiable Metadata"
+        description: "Share metadata in a manner that allows downstream consumers to verify its authenticity."
+        # We have a sharing mechanism, but no way to measure if the information is shared
+        # I suggest omitting this part and leaving the two above, just verifying the SBOMs are signed.
+    
+      - uses: # TBD - same as above
+        name: "Enable Consumer Verification"
+        description: "Provide mechanisms for consumers to validate artifacts before use or deployment."
+
+        # All the rules are more or less the same, so we can consider combining them into one rule.
+        # We do not have a way to verfy that consumer can get the SBOM, we just promise the SBOM is there.
+        # We could provide a feature - build a public image with a signed SBOM and a public key + valint inside
+        # Not for this initiative - here we shall combine all the rules.
+
+        # Verify use of OCI or Scribe as a distribution mechanism
