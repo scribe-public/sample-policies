@@ -245,7 +245,7 @@ controls:
         mitigation: >
           Implement processes and technologies to validate the integrity of resources all the way from development to production.
 
-      - uses:: git/artifact-signed@v2
+      - uses: git/artifact-signed@v2
         name: Artifact verification software (Git SBOM)
         description: Verify Git SBOMs are signed.
         mitigation: >
