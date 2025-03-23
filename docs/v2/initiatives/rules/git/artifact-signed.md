@@ -36,8 +36,6 @@ with:
     emails:
       - bob@company.com
       - alice@company.com
-    skip_image_regex:
-    - .*alpine.*
 ```
 
 ## Mitigation  
