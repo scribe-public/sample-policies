@@ -10,14 +10,11 @@ defaults:
     signed: false
 
 controls:
-  - name: Protect All Forms of Code from Unauthorized Access and Tampering
-    id: PS.1
+  - name: Store all forms of code based on the principle of least privilege
+    id: PS.1.1
     description: >
-      Help prevent unauthorized changes to code, both inadvertent and intentional,
-      which could circumvent or negate the intended security characteristics of the software.
-      For code that is not intended to be publicly accessible, this helps prevent
-      theft of the software and may make it more difficult or time-consuming for attackers
-      to find vulnerabilities in the software.
+      Store all forms of code – including source code, executable code, and configuration-as-code –
+      based on the principle of least privilege so that only authorized personnel, tools, services, etc. have access.
     mitigation: >
       Implement strict access controls, enforce multi-factor authentication (MFA),
       and regularly audit access logs to ensure only authorized personnel can access and modify the code.
@@ -25,39 +22,34 @@ controls:
     rules:
       - uses: github/org/2fa@v2
         name: Enforce 2FA
-        id: "PS.1.1-1"
         description: PS.1 Require 2FA for accessing code
 
       - uses: github/org/max-admins@v2
         name: Limit admins
-        id: "PS.1.1-2"
         description: PS.1 Restrict the maximum number of organization admins
         with:
           max_admins: 3
 
       - uses: github/org/web-commit-signoff@v2
         name: Require signoff on web commits
-        id: "PS.1.1-3"
         description: PS.1 Require contributors to sign when committing to Github through the web interface
         with:
           desired_value: true
 
       - uses: github/repository/branch-protection@v2
         name: Branch protected
-        id: "PS.1.1-4"
         description: PS.1 Require branch protection for the repository
         with:
           desired_protected: true
 
       - uses: github/repository/repo-private@v2
         name: Repo private
-        id: "PS.1.1-5"
         description: PS.1 Assure the repository is private
         with:
           desired_private: true
 
-  - name: Provide a Mechanism for Verifying Software Release Integrity
-    id: PS.2
+  - name: Make software integrity verification information available to software acquirers
+    id: PS.2.1
     description: >
       Help software acquirers ensure that the software they acquire
       is legitimate and has not been tampered with.
@@ -69,38 +61,42 @@ controls:
     rules:
       - uses: sbom/artifact-signed@v2
         name: Image-verifiable
-        id: "PS.2.1"
         description: PS.2 Provide a mechanism to verify the integrity of the image
         evidence:
           target_type: container
 
-  - name: Archive and Protect Each Software Release
-    id: PS.3
+  - name:  Securely archive the necessary files and supporting data to be retained for each software release
+    id: PS.3.1
     description: >
-      Preserve software releases in order to help identify, analyze, and eliminate
-      vulnerabilities discovered in the software after release.
+      Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data)
+      to be retained for each software release
     mitigation: >
-      Store each software release in a secure, version-controlled repository
-      to ensure that it can be retrieved and analyzed in the future.
-      Implement access controls to restrict who can modify or delete archived releases.
-      Use cryptographic hashes to verify the integrity of archived releases and ensure they have not been tampered with.
-      Regularly back up the repository to prevent data loss and ensure that archived releases are preserved
+      Use secure, version-controlled repositories to store software releases and their supporting data.
+      Implement access controls to restrict who can modify or delete these repositories.
+      Use cryptographic signatures to sign software releases and provide a way for users to verify these signatures.
+      Regularly back up the repositories to prevent data loss and ensure that software releases are preserved
       even in the event of a system failure.
-      Document the archiving process and train personnel on its importance and proper execution.
     rules:
-      - uses: demodata/data@experimental
-        name: Code archived
-        id: "PS.3.1"
+      - uses: slsa/l1-provenance-exists@v2
+        name: Provenance exists
         description: |
-          PS.3.1 Verify that the software release data is archived.
-          We assume running in Github thus the code is allways stored in a repository
-        with: 
-          allow: true
-          short_description: Code is archived.
-          description: Since the code is within a repository, it is archived.
-          reason: "The code is archived in a repository. This is a demo rule, planned to run from a workflow in a repository."
+          PS.3 Provenance exists
+          Ensure that provenance information is available for each software release
 
+  - name: Collect, safeguard, maintain, and share provenance data for all components of each software release
+    id: PS.3.2
+    description: >
+      Collect, safeguard, maintain, and share provenance data for all components of each software release (e.g., in a software bill of materials [SBOM])
+    mitigation: >
+      Use software bill of materials (SBOM) to document the provenance of each software release
+      and its components. Store SBOMs in a secure, version-controlled repository
+      to ensure they can be retrieved and analyzed in the future.
+      Implement access controls to restrict who can modify or delete SBOMs.
+      Use cryptographic signatures to sign SBOMs and provide a way for users to verify these signatures.
+      Regularly back up the repository to prevent data loss and ensure that SBOMs are preserved
+      even in the event of a system failure.
+      Document the SBOM creation process and train personnel on its importance and
+    rules:
       - uses: sbom/artifact-signed@v2
         name: SBOM archived
-        id: "PS.3.2"
-        description: PS.3.2 Archive SBOM
+        description: PS.3 Archive SBOM
