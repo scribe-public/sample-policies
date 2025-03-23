@@ -4,6 +4,7 @@ name: Verify Required Evidence in SARIF
 path: evidence-exists.rego
 
 description: Verify all required evidence exists as defined by the SARIF policy.
+
 mitigation: >
   By confirming that all required evidence exists, this rule guarantees that the outputs from various security scans 
   (such as vulnerability assessments, configuration checks, and static analysis) are fully represented as evidence.
@@ -18,3 +19,4 @@ evidence:
   content_body_type: generic
   target_type: data
   predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
+

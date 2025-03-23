@@ -5,18 +5,6 @@ path: no-commit-to-main.rego
 
 description: Verify commits made directly to the main branch are disallowed.
 
-labels:
-  - SBOM
-  - Git
-
-evidence:
-  filter-by:
-    - product
-    - target
-  signed: false
-  content_body_type: cyclonedx-json
-  target_type: git
-
 full-description: |
   This rule ensures that no commits are made directly to the main or master branches.
   It performs the following steps:
@@ -30,3 +18,16 @@ full-description: |
 
 mitigation: |
   Enforcing no commits to the main branch ensures that changes are made through pull requests, allowing for code review and approval before merging.
+
+labels:
+  - SBOM
+  - Git
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: git
+

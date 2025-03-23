@@ -5,6 +5,31 @@ path: allowed-registries.rego
 
 description: Verify container images in Kubernetes namespaces originate from registries in the Allowed List.
 
+full-description: |
+  This rule ensures that only container images from specified registries are allowed within the Kubernetes namespace.
+  It performs the following steps:
+  
+  1. Iterates over the container images running in the namespace.
+  2. Checks each image's registry against the allowed registries specified in the `with.allowed_registries` configuration.
+     - If an image's registry is not in the allowed list, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
+mitigation: >
+  Ensures that only approved container registries are used within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
+
+inputs:
+  - name: allowed_registries
+    description: "A list of allowed container registries Regex patterns."
+    type: array
+    required: false
+
+input_example: |
+  allowed_registries:
+    - docker.io/*
+    - gcr.io/*
+
 labels:
   - K8s
   - Namespace
@@ -20,28 +45,3 @@ evidence:
 
 with:
   allowed_registries: []
-
-inputs:
-  - name: allowed_registries
-    description: "A list of allowed container registries Regex patterns."
-    type: array
-    required: false
-
-full-description: |
-  This rule ensures that only container images from specified registries are allowed within the Kubernetes namespace.
-  It performs the following steps:
-  
-  1. Iterates over the container images running in the namespace.
-  2. Checks each image's registry against the allowed registries specified in the `with.allowed_registries` configuration.
-     - If an image's registry is not in the allowed list, the rule flags it as a violation.
-
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
-mitigation: >
-  Ensures that only approved container registries are used within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
-
-input_example: |
-  allowed_registries:
-    - docker.io/*
-    - gcr.io/*

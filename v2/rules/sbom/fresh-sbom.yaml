@@ -5,23 +5,6 @@ path: fresh-sbom.rego
 
 description: Verify the SBOM is not older than the specified duration.
 
-labels:
-  - SBOM
-  - Image
-  - Git
-
-evidence:
-  filter-by:
-    - product
-    - target
-  signed: false
-  content_body_type: cyclonedx-json
-with:
-  max_days : 30
-
-mitigation: >
-  Ensures that the SBOM is up-to-date, reducing the risk of outdated information and ensuring accurate tracking of components.
-
 full-description: |  
   This rule inspects the CycloneDX SBOM evidence for the artifact to verify that it is not older than the specified duration.
   It performs the following steps:
@@ -34,6 +17,9 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a creation date.
 
+mitigation: >
+  Ensures that the SBOM is up-to-date, reducing the risk of outdated information and ensuring accurate tracking of components.
+
 inputs:
   - name: max_days
     description: "The maximum allowed age of the SBOM in days."
@@ -43,3 +29,16 @@ inputs:
 
 input_example: |
   max_days: 30
+
+labels:
+  - SBOM
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+
+with:
+  max_days : 30

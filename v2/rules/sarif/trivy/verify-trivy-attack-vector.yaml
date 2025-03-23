@@ -5,6 +5,21 @@ path: ../verify-attack-vector.rego
 
 description: Verify no attack vector in the Trivy SARIF report exceeds the specified threshold.
 
+inputs:
+  - name: attack_vectors
+    type: array
+    description: List of attack vectors to check for in the Trivy SARIF report.
+    required: false
+  - name: violations_threshold
+    type: integer
+    description: The maximum number of allowed attack vector violations in the Trivy SARIF report.
+    required: false
+
+input_example: |
+  attack_vectors:
+    - "stack buffer overflow"
+  violations_threshold: 0
+
 labels:
   - SARIF
   - Trivy
@@ -20,18 +35,3 @@ evidence:
 with:
   attack_vectors: []
   violations_threshold: 0
-
-inputs:
-  - name: attack_vectors
-    type: array
-    description: List of attack vectors to check for in the Trivy SARIF report.
-    required: false
-  - name: violations_threshold
-    type: integer
-    description: The maximum number of allowed attack vector violations in the Trivy SARIF report.
-    required: false
-
-input_example: |
-  attack_vectors:
-    - "stack buffer overflow"
-  violations_threshold: 2

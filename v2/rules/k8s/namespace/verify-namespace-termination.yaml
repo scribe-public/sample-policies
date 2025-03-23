@@ -5,29 +5,6 @@ path: verify-namespace-termination.rego
 
 description: Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
-labels:
-  - K8s
-  - Namespace
-
-evidence:
-  signed: false
-  content_body_type: generic
-  target_type: data
-  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
-  labels:
-    - "asset_type=namespace"
-    - "platform=k8s"
-
-with:
-  namespaces:
-    - ".*"
-
-inputs:
-  - name: namespaces
-    description: "A list of namespaces to verify (supports regex)."
-    type: array
-    required: false
-
 full-description: |
   This rule verifies that namespaces in Kubernetes are terminated properly within the specified time frame.
   It performs the following steps:
@@ -42,6 +19,29 @@ full-description: |
 mitigation: >
   Ensures that namespaces are terminated in a timely manner, preventing lingering resources and maintaining cluster hygiene.
 
+inputs:
+  - name: namespaces
+    description: "A list of namespaces to verify (supports regex)."
+    type: array
+    required: false
+
 input_example: |
+  namespaces:
+    - ".*"
+
+labels:
+  - K8s
+  - Namespace
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+    - "platform=k8s"
+
+with:
   namespaces:
     - ".*"

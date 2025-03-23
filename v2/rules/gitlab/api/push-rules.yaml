@@ -5,27 +5,24 @@ path: push-rules.rego
 
 description: Verify GitLab push rules are configured via the API.
 
-labels:
-  - Gitlab
-  - API
+full-description: |
+  This rule ensures that GitLab push rules are configured via the API.
+  It performs the following steps:
 
-skip-evidence: true
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the push rules are configured via the API.
+  2.1 Verifies that the push rules are configured with the proper settings.
+  2.2 Verifies that the push rules are configured with the proper regular expressions.
+  2.3 Verifies that the push rules are configured with the proper file size.
+  2.4 Verifies that the push rules are configured with the proper member check.
+  2.5 Verifies that the push rules are configured with the proper secrets prevention.
+  2.6 Verifies that the push rules are configured with the proper tag deletion prevention.
+  2.7 Verifies that the push rules are configured with the proper author email regular expression.
+  2.8 Verifies that the push rules are configured with the proper file name regular expression.
 
-with:
-  api_token: '{{ .Args.Token }}'
-  project: '{{ .Args.Project }}'
-  push_rule:
-    commit_message_regex: ""
-    commit_message_negative_regex: null
-    branch_name_regex: null
-    deny_delete_tag: false
-    member_check: false
-    prevent_secrets: false
-    author_email_regex: ""
-    file_name_regex: "abc"
-    max_file_size: 100
-    commit_committer_name_check: null
-    reject_unsigned_commits: null
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+  - GitLab API token must be provided to access the GitLab API.
 
 inputs:
   - name: api_token
@@ -57,21 +54,24 @@ input_example: |
     commit_committer_name_check: "enabled"
     reject_unsigned_commits: "enabled"
 
-full-description: |
-  This rule ensures that GitLab push rules are configured via the API.
-  It performs the following steps:
+labels:
+  - Gitlab
+  - API
 
-  1. Checks the settings of the GitLab project.
-  2. Verifies that the push rules are configured via the API.
-  2.1 Verifies that the push rules are configured with the proper settings.
-  2.2 Verifies that the push rules are configured with the proper regular expressions.
-  2.3 Verifies that the push rules are configured with the proper file size.
-  2.4 Verifies that the push rules are configured with the proper member check.
-  2.5 Verifies that the push rules are configured with the proper secrets prevention.
-  2.6 Verifies that the push rules are configured with the proper tag deletion prevention.
-  2.7 Verifies that the push rules are configured with the proper author email regular expression.
-  2.8 Verifies that the push rules are configured with the proper file name regular expression.
+skip-evidence: true
 
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-  - GitLab API token must be provided to access the GitLab API.
+with:
+  api_token: '{{ .Args.Token }}'
+  project: '{{ .Args.Project }}'
+  push_rule:
+    commit_message_regex: ""
+    commit_message_negative_regex: null
+    branch_name_regex: null
+    deny_delete_tag: false
+    member_check: false
+    prevent_secrets: false
+    author_email_regex: ""
+    file_name_regex: "abc"
+    max_file_size: 100
+    commit_committer_name_check: null
+    reject_unsigned_commits: null

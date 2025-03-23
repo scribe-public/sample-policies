@@ -4,8 +4,11 @@ name: SBOM archived
 uses: sbom/artifact-signed@v2
 
 description: PS.3.2 Archive SBOM
+
 mitigation: >
   Archives the SBOM for every build, providing a permanent record of the software components and their relationships,
   thereby reducing the risk of supply chain attacks.
+
 labels:
   - SSDF
+

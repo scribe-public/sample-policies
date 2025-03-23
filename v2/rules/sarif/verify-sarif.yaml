@@ -3,11 +3,7 @@ id: sarif-policy
 name: Verify Rule Compliance in SARIF
 path: verify-sarif.rego
 
-description: Verify the SARIF report complies with defined generic rules for compliance and security.
-mitigation: >
-  Ensures that the SARIF report adheres to the predefined generic compliance rules by validating 
-  the vulnerability types, severity levels, and total number of findings. This verification helps maintain 
-  a consistent security posture and prevents the use of images with unacceptable vulnerability profiles.
+description: Verify the SARIF report complies with defined generic rules for compliance and security. vulnerability profiles.
 
 full-description: |  
   This rule evaluates the SARIF report provided as evidence to verify that it meets a set of predefined generic rules.
@@ -27,21 +23,10 @@ full-description: |
   - The SARIF report should include a structured list of vulnerability results, along with rule definitions and descriptions.
   - The evaluation uses the configuration parameters provided in the `with` section to guide the verification process.
 
-labels:
-  - SARIF
-
-evidence:
-  signed: false
-  content_body_type: generic
-  target_type: data
-  predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
-
-with:
-  rule_level: []
-  precision: []
-  rule_ids: []
-  ignore: []
-  max_allowed: 0
+mitigation: >
+  Ensures that the SARIF report adheres to the predefined generic compliance rules by validating 
+  the vulnerability types, severity levels, and total number of findings. This verification helps maintain 
+  a consistent security posture and prevents the use of images with unacceptable
 
 inputs:
   - name: rule_level
@@ -64,3 +49,19 @@ inputs:
     type: integer
     description: The maximum number of allowed violations.
     required: false
+
+labels:
+  - SARIF
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
+
+with:
+  rule_level: []
+  precision: []
+  rule_ids: []
+  ignore: []
+  max_allowed: 0

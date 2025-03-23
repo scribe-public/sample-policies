@@ -5,6 +5,11 @@ path: scribe-api-published.rego
 
 description: Verify image Scribe Publish flag is set for container image.
 
+full-description: |
+  This rule ensures that the product is published only after all critical or high severity vulnerabilities are addressed.
+
+mitigation: Ensure that all critical or high severity vulnerabilities are addressed before delivering the product.
+
 labels:
   - Scribe
 
@@ -18,20 +23,3 @@ evidence:
 with:
   superset:
     published:
-
-inputs:
-  - name: superset
-    type: object
-    description: "The superset of CVEs to check for, including the following format [published: [flag: bool]]"
-
-full-description: |
-  This rule ensures that the product is published only after all critical or high severity vulnerabilities are addressed.
-
-mitigation: Ensure that all critical or high severity vulnerabilities are addressed before delivering the product.
-
-notes:
-- Rule Uses Scribe API to check for CVEs in the target artifact, Ensure usage of Scribe Token in the environment.
-
-input_example: |
-  superset:
-    published: true

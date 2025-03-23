@@ -5,20 +5,17 @@ path: signed-commits-range.rego
 
 description: Verify commits in the specified time range are signed.
 
-labels:
-  - GitHub
+full-description: |
+  This rule ensures that the commits in the specified time range are signed in the GitHub repository.
+  It performs the following steps:
 
-skip-evidence: true
+  1. Checks the commits in the specified time range in the GitHub repository.
+  2. Verifies that the commits in the specified time range are signed.
+  2.1 Verifies that the commits in the specified time range are signed by the proper owner.
 
-with:
-  # Required
-  access_token: ""
-  owner: ""
-  repo: ""
-  # Optional
-  since: # ISO 8601 date-time string
-  until: # ISO 8601 date-time string
-  sha:
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository resources.
+  - Github API token must be provided to access the GitHub API.
 
 inputs:
   - name: access_token
@@ -56,14 +53,17 @@ input_example: |
   until: "2021-01-31T23:59:59Z"
   sha: "11111115644ea629569e6a3c98c8375111111"
 
-full-description: |
-  This rule ensures that the commits in the specified time range are signed in the GitHub repository.
-  It performs the following steps:
+labels:
+  - GitHub
 
-  1. Checks the commits in the specified time range in the GitHub repository.
-  2. Verifies that the commits in the specified time range are signed.
-  2.1 Verifies that the commits in the specified time range are signed by the proper owner.
+skip-evidence: true
 
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository resources.
-  - Github API token must be provided to access the GitHub API.
+with:
+  # Required
+  access_token: ""
+  owner: ""
+  repo: ""
+  # Optional
+  since: # ISO 8601 date-time string
+  until: # ISO 8601 date-time string
+  sha:

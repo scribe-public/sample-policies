@@ -3,26 +3,7 @@ id: sbom-required-dependencies
 name: Enforce SBOM Dependencies
 path: required-packages.rego
 
-description: Verify the artifact includes all required dependencies specified as a list of PURLs.
-
-labels:
-  - SBOM
-  - Image
-
-evidence:
-  filter-by:
-    - product
-    - target
-  signed: false
-  content_body_type: cyclonedx-json
-
-with:
-  required_pkgs: []
-  violations_limit: 0
-
-
-mitigation: >
-  Ensures that all required dependencies are included in the SBOM, reducing the risk of missing critical components and ensuring compliance with dependency requirements.
+description: Verify the artifact includes all required dependencies.
 
 full-description: |  
   This rule verifies that the artifact includes all required dependencies as specified.
@@ -35,6 +16,9 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a list of dependencies.
+
+mitigation: >
+  Ensures that all required dependencies are included in the SBOM, reducing the risk of missing critical components and ensuring compliance with dependency requirements.
 
 inputs:
   - name: required_pkgs
@@ -50,4 +34,20 @@ input_example: |
   required_pkgs:
     - "pkg:maven/org.apache.commons/commons-lang3@3.9"
     - "pkg:npm/lodash@4.17.15"
+  violations_limit: 0
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  required_pkgs: []
   violations_limit: 0

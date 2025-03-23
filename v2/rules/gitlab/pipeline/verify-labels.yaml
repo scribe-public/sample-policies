@@ -5,6 +5,30 @@ path: verify-labels.rego
 
 description: Verify the pipeline includes all required label keys and values.
 
+full-description: |
+  This rule ensures that the pipeline includes all required label keys and values.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab pipeline.
+  2. Verifies that all required labels exist in the pipeline.
+  2.1 Verify that all the label values match the expected values.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab pipeline resources.
+
+mitigation: >
+  Ensure that all required labels exist in the pipeline to reduce the risk of misconfiguration.
+
+inputs:
+  - name: labels
+    type: object
+    description: List of labels to verify exist in the pipeline.
+    required: true
+
+input_example: |
+  labels:
+    app.kubernetes.io/instance: "defaul1t"
+
 labels:
   - Gitlab
   - Pipeline
@@ -22,27 +46,3 @@ evidence:
 with:
   labels:
     app.kubernetes.io/instance: "defaul1t"
-
-inputs:
-  - name: labels
-    type: object
-    description: List of labels to verify exist in the pipeline.
-    required: true
-
-input_example: |
-  labels:
-    app.kubernetes.io/instance: "defaul1t"
-
-full-description: |
-  This rule ensures that the pipeline includes all required label keys and values.
-  It performs the following steps:
-  
-  1. Checks the settings of the GitLab pipeline.
-  2. Verifies that all required labels exist in the pipeline.
-  2.1 Verify that all the label values match the expected values.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab pipeline resources.
-
-mitigation: >
-  Ensure that all required labels exist in the pipeline to reduce the risk of misconfiguration.

@@ -5,28 +5,6 @@ path: verify-namespace-duration.rego
 
 description: Verify Kubernetes namespaces adhere to a specified runtime duration to enforce lifecycle limits.
 
-labels:
-  - K8s
-  - Namespace
-
-evidence:
-  signed: false
-  content_body_type: generic
-  target_type: data
-  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
-  labels:
-    - "asset_type=namespace"
-    - "platform=k8s"
-    
-with:
-  threshold_date: "1970-01-01T00:00:00Z" # ISO 8601 string date format
-
-inputs:
-  - name: threshold_date
-    description: "The threshold date for namespace duration (supports regex)."
-    type: string
-    required: false
-
 full-description: |
   This rule verifies that the duration of namespaces in Kubernetes does not exceed the specified limit.
   It performs the following steps:
@@ -41,5 +19,27 @@ full-description: |
 mitigation: >
   Ensures that namespaces do not exceed their intended lifecycle, maintaining cluster hygiene and resource efficiency.
 
+inputs:
+  - name: threshold_date
+    description: "The threshold date for namespace duration (supports regex)."
+    type: string
+    required: false
+
 input_example: |
+  threshold_date: "1970-01-01T00:00:00Z"
+
+labels:
+  - K8s
+  - Namespace
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=namespace"
+    - "platform=k8s"
+
+with:
   threshold_date: "1970-01-01T00:00:00Z"

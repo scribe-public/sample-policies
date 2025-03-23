@@ -5,6 +5,31 @@ path: blocked-images.rego
 
 description: Verify only container images specified in the Allowed List run within the Kubernetes namespace.
 
+full-description: |
+  This rule ensures that only container images specified in the allowed list are running within the Kubernetes namespace.
+  It performs the following steps:
+  
+  1. Iterates over the container images running in the namespace.
+  2. Checks each image against the allowed list specified in the `with.images_to_include` configuration.
+     - If an image is not in the allowed list, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
+mitigation: >
+  Ensures that only approved container images are running within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
+
+inputs:
+  - name: images_to_include
+    type: array
+    description: List of allowed container images.
+    required: false
+
+input_example: |
+  images_to_include:
+    - docker.io/my_org/my_image1
+    - docker.io/my_org/my_image2
+
 labels:
   - K8s
   - Namespace
@@ -20,28 +45,3 @@ evidence:
 
 with:
   images_to_include: []
-
-inputs:
-  - name: images_to_include
-    type: array
-    description: List of allowed container images.
-    required: false
-
-full-description: |
-  This rule ensures that only container images specified in the allowed list are running within the Kubernetes namespace.
-  It performs the following steps:
-  
-  1. Iterates over the container images running in the namespace.
-  2. Checks each image against the allowed list specified in the `with.images_to_include` configuration.
-     - If an image is not in the allowed list, the rule flags it as a violation.
-
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
-mitigation: >
-  Ensures that only approved container images are running within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
-
-input_example: |
-  images_to_include:
-    - docker.io/my_org/my_image1
-    - docker.io/my_org/my_image2  

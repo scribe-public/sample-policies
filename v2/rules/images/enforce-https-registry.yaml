@@ -17,7 +17,6 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM should include a `metadata.component.properties` array with an entry for 'registry_scheme'.
  
-
 labels:
   - "Registry"
   - "Images"
@@ -32,5 +31,4 @@ evidence:
     - product
     - target
   
-
 with: {}

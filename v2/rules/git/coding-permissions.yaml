@@ -5,21 +5,6 @@ path: coding-permissions.rego
 
 description: Verify only allowed users committed to the repository.
 
-labels:
-  - SBOM
-  - Git
-
-evidence:
-  filter-by:
-    - product
-    - target
-  signed: false
-  content_body_type: "cyclonedx-json"
-  target_type: git
-
-with:
-  ids: []
-  files: []
 full-description: |
   This rule verifies that only allowed users have committed to the repository.
   It performs the following steps:
@@ -45,3 +30,20 @@ inputs:
     type: array
     description: "The list of files that are allowed to be committed to the repository."
     required: false
+
+labels:
+  - SBOM
+  - Git
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: "cyclonedx-json"
+  target_type: git
+
+with:
+  ids: []
+  files: []
+

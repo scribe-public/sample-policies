@@ -5,6 +5,23 @@ path: scribe-api.rego
 
 description: Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.).
 
+full-description: |
+  This rule ensures that there are no critical or high severity vulnerabilities in any deliverable component of the product by verifying via the Scribe API.
+
+mitigation: Ensure that all critical or high severity vulnerabilities are addressed before delivering the product.
+
+inputs:
+  - name: superset
+    type: object
+    description: "The superset of CVEs to check for, including the following format [cve: [max: int, severity: int]]"
+    required: false
+
+input_example: |
+  superset:
+    cve:
+      max: 0
+      severity: 6
+
 labels:
   - SCA
   - Blueprint
@@ -28,20 +45,3 @@ with:
       # vulnerabilities: []
       # component_name: "liblzma5"
       # component_version: "5.6.0"
-
-full-description: |
-  This rule ensures that there are no critical or high severity vulnerabilities in any deliverable component of the product by verifying via the Scribe API.
-mitigation: Ensure that all critical or high severity vulnerabilities are addressed before delivering the product.
-inputs:
-  - name: superset
-    type: object
-    description: "The superset of CVEs to check for, including the following format [cve: [max: int, severity: int]]"
-
-notes:
-- Rule Uses Scribe API to check for CVEs in the target artifact, Ensure usage of Scribe Token in the environment.
-
-input_example: |
-  superset:
-    cve:
-      max: 0
-      severity: 6

@@ -3,7 +3,29 @@ id: gitlab-project-approvers-per-merge-request
 name: Restrict Approvers Per Merge Request
 path: approvers-per-merge-request.rego
 
-description: Verify the binary field Disable Overriding Approvers Per Merge Request is set for the GitLab project.
+description: Verify the binary field `disable_overriding_approvers_per_merge_request` is set for the GitLab project.
+
+full-description: |
+  This rule ensures that the binary field Disable Overriding Approvers Per Merge Request is set for the GitLab project.
+  
+  It performs the following steps:
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the binary field Disable Overriding Approvers Per Merge Request is set.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Ensure that the binary field Disable Overriding Approvers Per Merge Request reduces the risk of unauthorized access by setting it to the specified value.
+
+inputs:
+  - name: disable_overriding_approvers_per_merge_request
+    type: boolean
+    description: Whether to disable overriding approvers per merge request.
+    required: false
+
+input_example: |
+  disable_overriding_approvers_per_merge_request: false
 
 labels:
   - Gitlab
@@ -26,25 +48,3 @@ evidence:
 
 with:
   disable_overriding_approvers_per_merge_request: false
-
-inputs:
-  - name: disable_overriding_approvers_per_merge_request
-    type: boolean
-    description: Whether to disable overriding approvers per merge request.
-    required: false
-
-input_example: |
-  disable_overriding_approvers_per_merge_request: false
-
-full-description: |
-  This rule ensures that the binary field Disable Overriding Approvers Per Merge Request is set for the GitLab project.
-  
-  It performs the following steps:
-  1. Checks the settings of the GitLab project.
-  2. Verifies that the binary field Disable Overriding Approvers Per Merge Request is set.
-
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
-mitigation: >
-  Ensure that the binary field Disable Overriding Approvers Per Merge Request reduces the risk of unauthorized access by setting it to the specified value.

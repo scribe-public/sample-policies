@@ -4,8 +4,6 @@ name: Verify Tool Evidence in SARIF
 path: verify-tool-evidence.rego
 
 description: Verify required tools were used to generate the SARIF report.
-mitigation: >
-  Confirms the SARIF report originates from the correct scanning tool, ensuring the evidence is trustworthy.
 
 full-description: |  
   This rule checks the `tool` field in the SARIF evidence to verify that it matches the expected scanner 
@@ -17,6 +15,8 @@ full-description: |
   - Evidence must adhere to the SARIF 2.1.0 schema.
   - The report must include a valid `tool` field.
 
+mitigation: >
+  Confirms the SARIF report originates from the correct scanning tool, ensuring the evidence is trustworthy.
   
 labels:
   - SARIF
@@ -27,5 +27,6 @@ evidence:
   signed: false
   content_body_type: generic
   target_type: data
+  tool: semgrep
   predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
-  # tool: semgrep
+

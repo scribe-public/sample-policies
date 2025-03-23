@@ -6,27 +6,6 @@ path: "NTIA-compliance.rego"
 description: |
   Validates that SBOM metadata meets basic NTIA requirements for authors and supplier.
 
-labels:
-  - "SBOM"
-  - "Compliance"
-  - Image
-  - Git
-
-level: "error"
-
-evidence:
-  filter-by:
-    - product
-    - target
-  signed: false
-  content_body_type: cyclonedx-json
-with:
-  required_author: {}     # e.g., { "name": "bom", "email": "bob@company.com" }
-  required_supplier: {}   # e.g., { "name": "alice" }
-
-mitigation: >
-  Ensures that the SBOM metadata meets NTIA requirements, reducing the risk of incomplete or inaccurate information about authors and suppliers.
-
 full-description: |  
   This rule validates that the SBOM metadata meets basic NTIA requirements for authors and suppliers.
   It performs the following steps:
@@ -40,15 +19,8 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include metadata for authors and suppliers.
 
-inputs:
-  - name: required_author
-    description: "The required author (case-insensitive match for name/email)."
-    type: object
-    required: false
-  - name: required_supplier
-    description: "The required supplier (case-insensitive match for supplier name)."
-    type: object
-    required: false
+mitigation: >
+  Ensures that the SBOM metadata meets NTIA requirements, reducing the risk of incomplete or inaccurate information about authors and suppliers.
 
 notes:
   - |
@@ -66,9 +38,37 @@ notes:
       --supplier-phone "123-456-7890" 
     ```
 
+inputs:
+  - name: required_author
+    description: "The required author (case-insensitive match for name/email)."
+    type: object
+    required: false
+  - name: required_supplier
+    description: "The required supplier (case-insensitive match for supplier name)."
+    type: object
+    required: false
+
 input_example: |
   required_author: 
     name: "bom"
     email: "bob@company.com"
   required_supplier: 
     name: "alice"
+
+labels:
+  - "SBOM"
+  - "Compliance"
+  - Image
+  - Git
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+
+with:
+  required_author: {}
+  required_supplier: {}
+

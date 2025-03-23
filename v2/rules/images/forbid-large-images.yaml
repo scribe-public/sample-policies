@@ -4,9 +4,6 @@ name: Forbid Large Images
 path: forbid-large-images.rego
 
 description: Verify the image size is below the specified threshold.
-mitigation: >
-  Prevents the deployment of overly large container images, which helps control resource usage,
-  reduces the attack surface by limiting unnecessary code and dependencies, and minimizes potential vulnerabilities.
 
 full-description: |
   This rule inspects the CycloneDX SBOM evidence for container images. It searches through the SBOM's components
@@ -22,6 +19,19 @@ full-description: |
   - Evidence must be provided in the `cyclonedx-json` format.
   - The SBOM must include a component in the "layer" group with a "size" property, and an "index" property set to "0".
 
+mitigation: >
+  Prevents the deployment of overly large container images, which helps control resource usage,
+  reduces the attack surface by limiting unnecessary code and dependencies, and minimizes potential vulnerabilities.
+
+inputs:
+  - name: max_size
+    description: "The maximum allowed image size in bytes."
+    type: integer
+    required: true
+
+input_example: |
+  max_size: 77819980
+
 labels:
   - SBOM
   - Images
@@ -32,13 +42,4 @@ evidence:
   target_type: container
 
 with:
-  max_size: 77819980
-
-inputs:
-  - name: max_size
-    description: "The maximum allowed image size in bytes."
-    type: integer
-    required: true
-
-input_example: |
   max_size: 77819980

@@ -5,6 +5,19 @@ path: no-cache-usage.rego
 
 description: Verify the GitHub repository has no cache usage.
 
+full-description: |
+  This rule ensures that no cache is used in the GitHub repository.
+  It performs the following steps:
+  
+  1. Checks the repository settings for cache usage.
+  2. Verifies that no cache is used.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+mitigation: >
+  Ensures that no cache is used, reducing the risk of outdated or insecure dependencies.
+
 labels:
   - GitHub
   - Repository
@@ -23,17 +36,4 @@ evidence:
       {{- else -}}
       {{- asset_on_target nil -}}
       {{- end -}}
-
-full-description: |
-  This rule ensures that no cache is used in the GitHub repository.
-  It performs the following steps:
-  
-  1. Checks the repository settings for cache usage.
-  2. Verifies that no cache is used.
-
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
-
-mitigation: >
-  Ensures that no cache is used, reducing the risk of outdated or insecure dependencies.
 

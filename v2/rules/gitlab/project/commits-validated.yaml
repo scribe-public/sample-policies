@@ -5,6 +5,19 @@ path: commits-validated.rego
 
 description: Verify all commits in the GitLab project are validated.
 
+full-description: |
+  This rule ensures that all commits in the GitLab project are validated.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that all commits are validated.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Ensure that all commits in the GitLab project are validated to prevent unauthorized changes.
+
 labels:
   - Gitlab
   - Project
@@ -24,15 +37,3 @@ evidence:
       {{- asset_on_target nil -}}
       {{- end -}}
 
-full-description: |
-  This rule ensures that all commits in the GitLab project are validated.
-  It performs the following steps:
-  
-  1. Checks the settings of the GitLab project.
-  2. Verifies that all commits are validated.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
-mitigation: >
-  Ensure that all commits in the GitLab project are validated to prevent unauthorized changes.

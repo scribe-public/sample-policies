@@ -2,13 +2,13 @@ config-type: rule
 id: "SLSA.L2"
 name: Verify that provenance is authenticated
 path: l2-provenance-authenticated.rego
+help: https://slsa.dev/spec/v1.0/requirements
 
 description: Verify the artifact is signed.
+
 mitigation: >
   Cryptographic authentication prevents tampering with provenance data, ensuring that only valid and secure build
   information is used to establish the integrity of the software supply chain.
-
-help: https://slsa.dev/spec/v1.0/requirements
 
 labels:
   - SLSA

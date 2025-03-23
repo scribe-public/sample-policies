@@ -5,6 +5,28 @@ path: reset-pprovals-on-push.rego
 
 description: Verify `reset_approvals_on_push` is set for the GitLab project.
 
+full-description: |
+  This rule ensures that the binary field `reset_approvals_on_push` is set for the GitLab project.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the binary field `reset_approvals_on_push` is set.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Ensure that the binary field `reset_approvals_on_push` is set for the GitLab project to prevent unauthorized approvals.
+
+inputs:
+  - name: reset_approvals_on_push
+    type: boolean
+    description: The binary field to enforce for resetting approvals on push.
+    required: false
+
+input_example: |
+  reset_approvals_on_push: true
+
 labels:
   - Gitlab
   - Project
@@ -26,25 +48,3 @@ evidence:
 
 with:
   reset_approvals_on_push: true
-
-inputs:
-  - name: reset_approvals_on_push
-    type: boolean
-    description: The binary field to enforce for resetting approvals on push.
-    required: false
-
-input_example: |
-  reset_approvals_on_push: true
-
-full-description: |
-  This rule ensures that the binary field `reset_approvals_on_push` is set for the GitLab project.
-  It performs the following steps:
-  
-  1. Checks the settings of the GitLab project.
-  2. Verifies that the binary field `reset_approvals_on_push` is set.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
-mitigation: >
-  Ensure that the binary field `reset_approvals_on_push` is set for the GitLab project to prevent unauthorized approvals.

@@ -5,6 +5,28 @@ path: visibility-check.rego
 
 description: Verify the GitLab project's visibility matches the required level.
 
+full-description: |
+  This rule ensures that the GitLab project's visibility matches the required level.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the visibility level matches the required level.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Ensure that the GitLab project's visibility matches the required level to prevent unauthorized access.
+
+inputs:
+  - name: visibility
+    type: string
+    description: The visibility level to enforce for the GitLab project.
+    required: true
+
+input_example: |
+  visibility: private
+
 labels:
   - Gitlab
   - Project
@@ -26,25 +48,3 @@ evidence:
 
 with:
   visibility: private
-
-inputs:
-  - name: visibility
-    type: string
-    description: The visibility level to enforce for the GitLab project.
-    required: true
-
-input_example: |
-  visibility: private
-
-full-description: |
-  This rule ensures that the GitLab project's visibility matches the required level.
-  It performs the following steps:
-  
-  1. Checks the settings of the GitLab project.
-  2. Verifies that the visibility level matches the required level.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
-mitigation: >
-  Ensure that the GitLab project's visibility matches the required level to prevent unauthorized access.

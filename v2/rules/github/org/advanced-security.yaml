@@ -1,31 +1,9 @@
 config-type: rule
 id: github-org-advanced-security
-name: Verify advanced security setting is enabled
+name: Verify advanced_security_enabled_for_new_repositories setting
 path: advanced-security.rego
 
-description: Verify `advanced_security_enabled_for_new_repositories` is enabled for new repositories in the GitHub organization.
-
-labels:
-  - GitHub
-  - Organization
-
-evidence:
-  signed: false
-  content_body_type: generic
-  target_type: data
-  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
-  labels:
-    - "platform=github"
-    - "asset_type=organization"
-    - >-
-      {{- if eq (index .Context "asset-type") "organization" -}}
-      {{- asset_on_target (index .Context "asset-name") -}}
-      {{- else -}}
-      {{- asset_on_target nil -}}
-      {{- end -}}
-
-with:
-  desired_value: false
+description: Verify `advanced_security` is enabled for new repositories in the GitHub organization.
 
 full-description: |
   This rule verifies that advanced security is enabled for new repositories in the GitHub organization by examining the provided Discovery evidence.
@@ -50,3 +28,26 @@ inputs:
 
 input_example: |
   desired_value: true
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset-type") "organization" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_value: true
+

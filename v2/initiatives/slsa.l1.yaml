@@ -17,7 +17,6 @@ defaults:
     signed: false
 
 controls:
-
   - id: "prov_exists"
     name: "Provenance exists"
     description: This control verifies that essential provenance metadata is present for each build artifact.

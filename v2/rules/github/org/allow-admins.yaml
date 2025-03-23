@@ -5,28 +5,6 @@ path: allow-admins.rego
 
 description: Verify only users in the Allowed List have admin privileges in the GitHub organization.
 
-labels:
-  - GitHub
-  - Organization
-
-evidence:
-  signed: false
-  content_body_type: generic
-  target_type: data
-  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
-  labels:
-    - "platform=github"
-    - "asset_type=organization"
-    - >-
-      {{- if eq (index .Context "asset-type") "organization" -}}
-      {{- asset_on_target (index .Context "asset-name") -}}
-      {{- else -}}
-      {{- asset_on_target nil -}}
-      {{- end -}}
-
-with:
-    allowed_admins: []
-
 full-description: |
   This rule verifies that only users in the Allowed List have admin privileges in the GitHub organization.
   It checks the organization's details and compares the value of the 
@@ -53,3 +31,26 @@ input_example: |
     - user1
     - user2
     - user3
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset-type") "organization" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+    allowed_admins: []
+

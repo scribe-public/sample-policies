@@ -5,6 +5,28 @@ path: inactive-projects.rego
 
 description: Verify no GitLab organization projects are inactive.
 
+full-description: |
+  This rule ensures that no GitLab organization projects are inactive.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab organization.
+  2. Verifies that no projects are inactive.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
+mitigation: >
+  Ensure that no GitLab organization projects are inactive to prevent service disruption.
+
+inputs:
+  - name: inactive_for_days
+    type: number
+    description: Number of days before a project is considered inactive.
+    required: false
+
+input_example: |
+  inactive_for_days: 90
+
 labels:
   - Gitlab
   - Organization
@@ -26,25 +48,3 @@ evidence:
 
 with:
   inactive_for_days: 90
-
-inputs:
-  - name: inactive_for_days
-    type: number
-    description: Number of days before a project is considered inactive.
-    required: false
-
-input_example: |
-  inactive_for_days: 90
-
-full-description: |
-  This rule ensures that no GitLab organization projects are inactive.
-  It performs the following steps:
-  
-  1. Checks the settings of the GitLab organization.
-  2. Verifies that no projects are inactive.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
-
-mitigation: >
-  Ensure that no GitLab organization projects are inactive to prevent service disruption.

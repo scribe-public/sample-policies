@@ -399,7 +399,8 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         
     if require_scribe_api:
         md.append(f":::tip ")
-        md.append(f"Rule requires the Scribe API to be enabled.  ")
+        md.append(
+            f"Rule requires the Scribe API to be enabled. Ensure that you provide the Scribe Token to the `valint` utility.  ")
         md.append(f"::: ")
 
     sign_defaults = rule_data.get("evidence", {}).get("signed", False)

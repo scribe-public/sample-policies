@@ -8,10 +8,6 @@ description: |
   The rule examines properties in the SBOM metadata and checks each value (expected in the format "port/protocol") against a provided banned ports list.
   It fails if any banned port is exposed or if no banned ports list is provided.
 
-mitigation: >
-  Prevents deployment of container images that expose disallowed ports, reducing the risk of unauthorized network access 
-  and potential exploitation. This check ensures that only images with approved port configurations are deployed.
-
 full-description: |  
   This rule evaluates the CycloneDX SBOM evidence for a container image to verify that no disallowed ports are exposed.
   It performs the following steps:
@@ -27,21 +23,9 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a `metadata.component.properties` array with entries for exposed ports.
   
-
-labels:
-  - "SBOM"
-  - "Images"
-
-level: "error"
-
-evidence:
-  content_body_type: "cyclonedx-json"
-  target_type: "container"
-  filter-by:
-  - target
-  - product
-with:
-  banned_ports: []     # e.g., [{ "port": "3000", "protocol": "tcp" }]
+mitigation: >
+  Prevents deployment of container images that expose disallowed ports, reducing the risk of unauthorized network access 
+  and potential exploitation. This check ensures that only images with approved port configurations are deployed.
 
 inputs:
   - name: banned_ports
@@ -55,3 +39,18 @@ input_example: |
       protocol: "tcp"
     - port: "8080"
       protocol: "tcp"
+
+labels:
+  - "SBOM"
+  - "Images"
+
+evidence:
+  content_body_type: "cyclonedx-json"
+  target_type: "container"
+  filter-by:
+  - target
+  - product
+
+with:
+  banned_ports: []
+

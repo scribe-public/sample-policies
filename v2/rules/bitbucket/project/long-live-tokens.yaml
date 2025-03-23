@@ -5,6 +5,28 @@ path: long-live-tokens.rego
 
 description: Verify Bitbucket API tokens expire before the maximum time to live.
 
+full-description: |
+  This rule ensures that Bitbucket API tokens expire before the maximum time to live.
+  It performs the following steps:
+  
+  1. Checks the settings of the Bitbucket project.
+  2. Verifies that tokens expire before the maximum time to live.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket project resources.
+
+mitigation: >
+  Ensure that Bitbucket API tokens expire before the maximum time to live to reduce the risk of unauthorized access.
+
+inputs:
+  - name: max_days
+    type: number
+    description: Maximum number of days a token can be valid.
+    required: false
+
+input_example: |
+  max_days: 30
+
 labels:
   - Bitbucket
   - Project
@@ -20,25 +42,3 @@ evidence:
 
 with:
     max_days: 30
-
-inputs:
-  - name: max_days
-    type: number
-    description: Maximum number of days a token can be valid.
-    required: false
-
-input_example: |
-  max_days: 30
-
-full-description: |
-  This rule ensures that Bitbucket API tokens expire before the maximum time to live.
-  It performs the following steps:
-  
-  1. Checks the settings of the Bitbucket project.
-  2. Verifies that tokens expire before the maximum time to live.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket project resources.
-
-mitigation: >
-  Ensure that Bitbucket API tokens expire before the maximum time to live to reduce the risk of unauthorized access.

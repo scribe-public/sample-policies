@@ -5,6 +5,28 @@ path: expiring-tokens.rego
 
 description: Verify no GitLab organization tokens are about to expire.
 
+full-description: |
+  This rule ensures that no GitLab organization tokens are about to expire.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab organization.
+  2. Verifies that no tokens are about to expire.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
+mitigation: >
+  Ensure that no GitLab organization tokens are about to expire to prevent service disruption.
+
+inputs:
+  - name: exiring_in_days
+    type: number
+    description: Number of days before a token expires.
+    required: false
+
+input_example: |
+  exiring_in_days: 30
+
 labels:
   - Gitlab
   - Organization
@@ -26,25 +48,3 @@ evidence:
 
 with:
   exiring_in_days: 30
-
-inputs:
-  - name: exiring_in_days
-    type: number
-    description: Number of days before a token expires.
-    required: false
-
-input_example: |
-  exiring_in_days: 30
-
-full-description: |
-  This rule ensures that no GitLab organization tokens are about to expire.
-  It performs the following steps:
-  
-  1. Checks the settings of the GitLab organization.
-  2. Verifies that no tokens are about to expire.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
-
-mitigation: >
-  Ensure that no GitLab organization tokens are about to expire to prevent service disruption.

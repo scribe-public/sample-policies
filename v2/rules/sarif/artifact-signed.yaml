@@ -1,12 +1,9 @@
 config-type: rule
 id: sarif-artifact-signed
-name: Verify Artifact Signature Using SARIF Report
+name: Verify Artifact Signature in SARIF
 path: artifact-signed.rego
 
 description: Verify the artifact referenced in the SARIF report is signed to confirm its integrity.
-mitigation: >
-  Ensures that the referenced artifact has a valid digital signature, confirming its integrity and authenticity.
-  This prevents tampering and verifies that the artifact originates from a trusted source.
 
 full-description: |
   This rule verifies that the artifact referenced in the SARIF report has been cryptographically signed.
@@ -19,6 +16,10 @@ full-description: |
   - The SARIF report must indicate that the artifact is signed (i.e., the 'signed' flag is true).
   - The signer's identity should match one of the specified common names or emails in the configuration.
 
+mitigation: >
+  Ensures that the referenced artifact has a valid digital signature, confirming its integrity and authenticity.
+  This prevents tampering and verifies that the artifact originates from a trusted source.
+
 labels:
   - SARIF
 
@@ -29,3 +30,8 @@ evidence:
   content_body_type: generic
   target_type: data
   predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
+
+with:
+  identity:
+    common-names: []
+    emails: []

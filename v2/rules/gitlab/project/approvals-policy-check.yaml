@@ -5,6 +5,34 @@ path: approvals-policy-check.rego
 
 description: Verify the project's merge approval policy complies with requirements.
 
+full-description: |
+  This rule ensures that the project's merge approval policy complies with requirements.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the project's merge approval policy matchinig the 'name' field.
+  2.1. Verifies that the project's merge approval policy requires a minimum number of approvals as specified in the 'approvals_required_min' field.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >
+  Ensure that the project's merge approval policy complies with requirements to prevent unauthorized merges.
+
+inputs:
+  - name: name
+    type: string
+    description: Name of the group or user that must approve the merge request.
+    required: true
+  - name: approvals_required_min
+    type: number
+    description: Minimum number of approvals required for merge requests.
+    required: true
+
+input_example: |
+  name: "All Members"
+  approvals_required_min: 2
+
 labels:
   - Blueprint
   - Gitlab
@@ -28,31 +56,3 @@ evidence:
 with:
   name: "All Members"
   approvals_required_min: 2
-
-inputs:
-  - name: name
-    type: string
-    description: Name of the group or user that must approve the merge request.
-    required: true
-  - name: approvals_required_min
-    type: number
-    description: Minimum number of approvals required for merge requests.
-    required: true
-
-input_example: |
-  name: "All Members"
-  approvals_required_min: 2
-
-full-description: |
-  This rule ensures that the project's merge approval policy complies with requirements.
-  It performs the following steps:
-  
-  1. Checks the settings of the GitLab project.
-  2. Verifies that the project's merge approval policy matchinig the 'name' field.
-  2.1. Verifies that the project's merge approval policy requires a minimum number of approvals as specified in the 'approvals_required_min' field.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
-mitigation: >
-  Ensure that the project's merge approval policy complies with requirements to prevent unauthorized merges.

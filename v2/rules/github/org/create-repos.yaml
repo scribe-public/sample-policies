@@ -1,9 +1,32 @@
 config-type: rule
 id: github-org-create-repos
-name: Create Repositories
+name: Verify members_can_create_repositories setting
 path: create-repos.rego
 
-description: Verify that only allowed users can create repositories in the GitHub organization.
+description: Verify `members_can_create_repositories` is appropriately configured in the GitHub repository.
+
+full-description: |
+  This rule ensures that only users specified in the allowed list can create repositories in the GitHub organization.
+  It performs the following steps:
+  
+  1. Iterates over the users in the GitHub organization.
+  2. Checks each user's permissions to create repositories against the allowed list specified in the `with.allowed_users` configuration.
+     - If a user not in the allowed list has permissions to create repositories, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >
+  Ensures that only approved users can create repositories in the GitHub organization, reducing the risk of unauthorized repository creation.
+
+inputs:
+  - name: desired_value
+    type: boolean
+    description: "The desired value for the `members_can_create_repositories` setting."
+    required: false
+
+input_example: |
+  desired_value: false
 
 labels:
   - GitHub
@@ -25,29 +48,5 @@ evidence:
       {{- end -}}
 
 with:
-  allowed_users: []
+  desired_value: false
 
-full-description: |
-  This rule ensures that only users specified in the allowed list can create repositories in the GitHub organization.
-  It performs the following steps:
-  
-  1. Iterates over the users in the GitHub organization.
-  2. Checks each user's permissions to create repositories against the allowed list specified in the `with.allowed_users` configuration.
-     - If a user not in the allowed list has permissions to create repositories, the rule flags it as a violation.
-
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
-mitigation: >
-  Ensures that only approved users can create repositories in the GitHub organization, reducing the risk of unauthorized repository creation.
-
-inputs:
-  - name: allowed_users
-    type: array
-    description: List of allowed users.
-    required: false
-
-input_example: |
-  allowed_users:
-    - "user1"
-    - "user2"

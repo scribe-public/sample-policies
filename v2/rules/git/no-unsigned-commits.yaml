@@ -5,18 +5,6 @@ path: no-unsigned-commits.rego
 
 description: Verify all commits are signed.
 
-labels:
-  - Git
-
-evidence:
-  filter-by:
-    - product
-    - target
-  signed: false
-  content_body_type: cyclonedx-json
-  target_type: git
-
-
 full-description: |
   This rule ensures that all commits are signed.
   It performs the following steps:
@@ -31,3 +19,15 @@ full-description: |
 
 mitigation: >
   Enforcing signed commits ensures reduced risk of unauthorized changes to the repository.
+
+labels:
+  - Git
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: git
+

@@ -5,6 +5,32 @@ path: blocked-users.rego
 
 description: Verify no users in the GitLab organization are on the block list.
 
+full-description: |
+  This rule ensures that no users in the GitLab organization are on the block list.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab organization.
+  2. Verifies that no users are on the block list.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
+mitigation: >
+  Ensure that no users are on the block list in the GitLab organization to reduce the risk of unauthorized access.
+
+
+inputs:
+  - name: blocked_users
+    type: array
+    description: List of users blocked in the GitLab organization.
+    required: false
+
+input_example: |
+  blocked_users:
+    - "user1"
+    - "user2"
+    - "user3"
+
 labels:
   - Gitlab
   - Organization
@@ -25,30 +51,4 @@ evidence:
       {{- end -}}
 
 with:
-  blocked_users: []
-
-
-inputs:
-  - name: blocked_users
-    type: array
-    description: List of users blocked in the GitLab organization.
-    required: false
-
-input_example: |
-  blocked_users:
-    - "user1"
-    - "user2"
-    - "user3"
-
-full-description: |
-  This rule ensures that no users in the GitLab organization are on the block list.
-  It performs the following steps:
-  
-  1. Checks the settings of the GitLab organization.
-  2. Verifies that no users are on the block list.
-  
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
-
-mitigation: >
-  Ensure that no users are on the block list in the GitLab organization to reduce the risk of unauthorized access.
+    blocked_users: []

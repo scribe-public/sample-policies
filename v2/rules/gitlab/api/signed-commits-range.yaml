@@ -1,21 +1,24 @@
 config-type: rule
 id: gitlab-api-signed-commits-range
-name: Sign Commits in Range in GitLab
+name: Sign Selected Commit Range in GitLab
 path: signed-commits-range.rego
 
-description: Verify the commits in a specified range are signed in the GitLab organization.
+description: Verify the selected range of commits is signed via the GitLab API.
 
-labels:
-  - Gitlab
-  - API
+full-description: |
+  This rule ensures that the commits in the specified time range are signed in the GitLab repository.
+  It performs the following steps:
 
-skip-evidence: true
+  1. Checks the commits in the specified time range in the GitLab repository.
+  2. Verifies that the commits in the specified time range are signed.
+  2.1 Verifies that the commits in the specified time range are signed by the proper owner.
 
-with:
-  since: "2021-01-01T00:00:00Z"
-  until: "2021-01-31T23:59:59Z"
-  project_id: '{{ .Args.ProjectID }}'
-  private_token: '{{ .Args.Token }}'
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab repository resources.
+  - GitLab API token must be provided to access the GitLab API.
+
+mitigation: >
+  Ensure that the commits in the specified time range are signed in the GitLab repository.
 
 inputs:
   - name: since
@@ -41,17 +44,14 @@ input_example: |
   project_id: my_project_id
   private_token: '{{ .Args.Token }}'
 
-full-description: |
-  This rule ensures that the commits in the specified time range are signed in the GitLab repository.
-  It performs the following steps:
+labels:
+  - Gitlab
+  - API
 
-  1. Checks the commits in the specified time range in the GitLab repository.
-  2. Verifies that the commits in the specified time range are signed.
-  2.1 Verifies that the commits in the specified time range are signed by the proper owner.
+skip-evidence: true
 
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab repository resources.
-  - GitLab API token must be provided to access the GitLab API.
-
-mitigation: >
-  Ensure that the commits in the specified time range are signed in the GitLab repository.
+with:
+  since: ""
+  until: ""
+  project_id: ""
+  private_token: ""

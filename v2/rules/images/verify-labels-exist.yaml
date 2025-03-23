@@ -4,10 +4,6 @@ name: Require Image Labels
 path: verify-labels-exist.rego
 
 description: Verify the image has the specified labels.
-mitigation: >
-  Ensures that container images include all required metadata labels,
-  which are essential for traceability, auditing, and enforcing compliance
-  with security and operational standards.
 
 full-description: |  
   This rule checks the CycloneDX SBOM evidence for the container image to verify that each required label 
@@ -23,19 +19,10 @@ full-description: |
   - Evidence must be provided in the `cyclonedx-json` format.
   - The SBOM should include a `metadata.component.properties` array that contains label information.
 
-labels:
-  - SBOM
-  - Images
-
-aggregate-results: true
-
-evidence:
-  signed: false
-  content_body_type: cyclonedx-json
-  target_type: container
-
-with:
-  labels: []
+mitigation: >
+  Ensures that container images include all required metadata labels,
+  which are essential for traceability, auditing, and enforcing compliance
+  with security and operational standards.
 
 inputs:
   - name: labels
@@ -50,3 +37,17 @@ input_example: |
     - "org.opencontainers.image.title"
     - "org.opencontainers.image.vendor"
     - "org.opencontainers.image.version"
+
+labels:
+  - SBOM
+  - Images
+
+aggregate-results: true
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  labels: []

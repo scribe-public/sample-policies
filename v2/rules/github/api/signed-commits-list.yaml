@@ -5,18 +5,17 @@ path: signed-commits-list.rego
 
 description: Verify selected commits are signed in the GitHub organization.
 
-labels:
-  - GitHub
-  - API
+full-description: |
+  This rule ensures that the selected commits are signed in the GitHub organization.
+  It performs the following steps:
 
-skip-evidence: true
+  1. Checks the selected commits in the Selected GitHub repository.
+  2. Verifies that the selected commits are signed.
+  2.1 Verifies that the selected commits are signed by the proper owner.
 
-with:
-  commit_id_list: []
-  access_token: ""
-  owner: ""
-  repo: ""
-
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository resources.
+  - Github API token must be provided to access the GitHub API.
 
 inputs:
   - name: commit_id_list
@@ -43,14 +42,14 @@ input_example: |
   access_token: '{{ .Args.Token }}'
   owner: my_owner
 
-full-description: |
-  This rule ensures that the selected commits are signed in the GitHub organization.
-  It performs the following steps:
+labels:
+  - GitHub
+  - API
 
-  1. Checks the selected commits in the Selected GitHub repository.
-  2. Verifies that the selected commits are signed.
-  2.1 Verifies that the selected commits are signed by the proper owner.
+skip-evidence: true
 
-  **Evidence Requirements:**
-  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository resources.
-  - Github API token must be provided to access the GitHub API.
+with:
+  commit_id_list: []
+  access_token: ""
+  owner: ""
+  repo: ""
