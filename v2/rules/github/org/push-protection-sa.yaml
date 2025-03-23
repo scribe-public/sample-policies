@@ -1,6 +1,6 @@
 config-type: rule
 id: github-org-push-protection-sa
-name: Verify Secret_Scanning_Push_Protection Setting
+name: Verify `secret_scanning_push_protection` Setting
 path: push-protection-sa.rego
 
 description: Verify `secret_scanning_push_protection` is configured in the GitHub repository.

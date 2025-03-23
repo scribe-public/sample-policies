@@ -1,6 +1,6 @@
 config-type: rule
 id: github-org-validity-checks
-name: Verify Secret_Scanning_Validity_Checks_Enabled Setting
+name: Verify `secret_scanning_validity_checks_enabled` Setting
 path: validity-checks.rego
 
 description: Verify `secret_scanning_validity_checks` is configured in the GitHub repository.

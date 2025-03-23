@@ -1,6 +1,6 @@
 config-type: rule
 id: github-org-pp-custom-link
-name: Verify Secret_Scanning_Push_Protection_Custom_Link_Enabled Setting
+name: Verify `secret_scanning_push_protection_custom_link_enabled` Setting
 path: pp-custom-link.rego
 
 description: Verify `secret_scanning_push_protection_custom_link` is enabled in the GitHub organization.
