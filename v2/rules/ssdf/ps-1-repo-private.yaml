@@ -5,7 +5,7 @@ uses: github/repository/repo-private@v2
 
 description: PS.1 Assure the repository is private
 
-mitigation: >
+mitigation: >-
   Ensures that repositories remain private, reducing the risk of sensitive code being exposed to unauthorized parties.
   
 labels:

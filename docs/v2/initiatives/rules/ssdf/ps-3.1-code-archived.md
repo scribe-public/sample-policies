@@ -32,7 +32,6 @@ uses: ssdf/ps-3.1-code-archived@v2
 Archives code changes to maintain a secure, immutable history for auditing and traceability.
 
 
-
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|

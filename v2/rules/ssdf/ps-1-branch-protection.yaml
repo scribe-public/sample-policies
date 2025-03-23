@@ -5,7 +5,7 @@ uses: github/repository/branch-protection@v2
 
 description: PS.1 Require branch protection for the repository
 
-mitigation: >
+mitigation: >-
   Enforces branch protection policies to prevent unauthorized commits and maintain the integrity of critical code branches.
 
 labels:

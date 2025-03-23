@@ -5,7 +5,7 @@ path: token-expiration.rego
 
 description: Verify that all discovered Dockerhub tokens are set to Active in Dockerhub.
 
-full-description: |
+full-description: |-
   This rule verifies that all discovered Dockerhub tokens are set to Active in Dockerhub.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Dockerhub resources.
 
-mitigation: |
+mitigation: >-
   Ensure all Dockerhub tokens are set to Active status to prevent unauthorized access.
 
 labels:
@@ -29,4 +29,5 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
   labels:
     - "asset_type=project"
+    - "platform=dockerhub"
 

@@ -1,15 +1,15 @@
 ---
-sidebar_label: Create Private Repositories
-title: Create Private Repositories
+sidebar_label: Verify members_can_create_private_repositories setting
+title: Verify members_can_create_private_repositories setting
 ---  
-# Create Private Repositories  
+# Verify members_can_create_private_repositories setting  
 **Type:** Rule  
 **ID:** `github-org-create-private-repos`  
 **Source:** [v2/rules/github/org/create-private-repos.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/create-private-repos.yaml)  
 **Rego Source:** [create-private-repos.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/create-private-repos.rego)  
 **Labels:** GitHub, Organization  
 
-Verify that only allowed users can create private repositories in the GitHub organization.
+Verify `members_can_create_private_repositories` is configured in the GitHub organization (supported only in GitHub Enterprise).
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -29,12 +29,10 @@ with:
   allowed_users:
     - "user1"
     - "user2"
-  
 ```
 
 ## Mitigation  
 Ensures that only approved users can create private repositories in the GitHub organization, reducing the risk of unauthorized repository creation.
-
 
 
 ## Description  
@@ -47,7 +45,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

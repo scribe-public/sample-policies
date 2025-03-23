@@ -5,7 +5,7 @@ path: merge-requests-disable-committers-approval.rego
 
 description: Verify `merge_requests_disable_committers_approval` is set for the GitLab project.
 
-full-description: |
+full-description: |-
   This rule ensures that the binary field Merge Requests Disable Committers Approval is set for the GitLab project.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that the binary Merge Requests Disable Committers Approval field is set for the GitLab project to prevent unauthorized approvals.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: The binary field to enforce for merge requests committers' approval.
     required: false
 
-input_example: |
+input_example: |-
   merge_requests_disable_committers_approval: false
 
 labels:

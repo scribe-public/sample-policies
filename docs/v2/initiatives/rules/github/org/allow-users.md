@@ -29,12 +29,10 @@ with:
   allowed_users:
     - "user1"
     - "user2"
-  
 ```
 
 ## Mitigation  
 Ensures that only approved users have access to the GitHub organization, reducing the risk of unauthorized access.
-
 
 
 ## Description  
@@ -47,7 +45,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -1,8 +1,8 @@
 ---
-sidebar_label: Verify Artifact Signature Using SARIF Report
-title: Verify Artifact Signature Using SARIF Report
+sidebar_label: Verify Artifact Signature in SARIF
+title: Verify Artifact Signature in SARIF
 ---  
-# Verify Artifact Signature Using SARIF Report  
+# Verify Artifact Signature in SARIF  
 **Type:** Rule  
 **ID:** `sarif-artifact-signed`  
 **Source:** [v2/rules/sarif/artifact-signed.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/artifact-signed.yaml)  
@@ -28,16 +28,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: sarif/artifact-signed@v2
-
-## Usage example
-
-```yaml
-with: sarif/artifact-signed@v2
 ```
 
 ## Mitigation  
 Ensures that the referenced artifact has a valid digital signature, confirming its integrity and authenticity. This prevents tampering and verifies that the artifact originates from a trusted source.
-
 
 
 ## Description  
@@ -51,7 +45,6 @@ Additionally, the rule validates that the signature corresponds to one of the ex
 - The SARIF report must indicate that the artifact is signed (i.e., the 'signed' flag is true).
 - The signer's identity should match one of the specified common names or emails in the configuration.
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
@@ -59,4 +52,9 @@ Additionally, the rule validates that the signature corresponds to one of the ex
 | content_body_type | generic |
 | target_type | data |
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
+
+## Rule Parameters (`with`)  
+| Parameter | Default |
+|-----------|---------|
+| identity | `{'common-names': [], 'emails': []}` |
 

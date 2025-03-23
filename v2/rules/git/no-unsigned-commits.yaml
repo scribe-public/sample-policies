@@ -5,7 +5,7 @@ path: no-unsigned-commits.rego
 
 description: Verify all commits are signed.
 
-full-description: |
+full-description: |-
   This rule ensures that all commits are signed.
   It performs the following steps:
   
@@ -17,7 +17,7 @@ full-description: |
   - The Source SBOM should include a `metadata.component.properties` array containing properties that identify base images.
   - The Source SBOM (Software Bill of Materials) must include the `PGPSignature` property for each commit Component.
 
-mitigation: >
+mitigation: >-
   Enforcing signed commits ensures reduced risk of unauthorized changes to the repository.
 
 labels:

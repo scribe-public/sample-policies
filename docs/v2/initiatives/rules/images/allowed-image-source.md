@@ -39,7 +39,6 @@ with:
 Enforces that the main image comes from a trusted source, reducing the risk of deploying images that are compromised or outdated. This check helps maintain container security by ensuring that only images matching approved source patterns are used.
 
 
-
 ## Description  
 This rule extracts the main image’s name and version from the SBOM evidence and verifies that it originates from an approved source.
 It does so by comparing the image name against a list of approved source patterns provided via the configuration (`with.approved_sources`).
@@ -52,7 +51,6 @@ The matching is performed using a case-insensitive, anchored regex.
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM must include a `metadata.component` section containing the main image’s `name` and `version` fields.
 - The approved source patterns must be specified in `with.approved_sources`.
-
 
 ## Evidence Requirements  
 | Field | Value |

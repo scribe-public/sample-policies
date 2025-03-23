@@ -11,7 +11,7 @@ title: Apply Scribe Template Policy
 Verify XX using the Scribe API template rule.
 
 :::tip 
-Rule requires the Scribe API to be enabled.  
+Rule requires the Scribe API to be enabled. Ensure that you provide the Scribe Token to the `valint` utility.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  

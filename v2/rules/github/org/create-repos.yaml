@@ -5,7 +5,7 @@ path: create-repos.rego
 
 description: Verify `members_can_create_repositories` is appropriately configured in the GitHub repository.
 
-full-description: |
+full-description: |-
   This rule ensures that only users specified in the allowed list can create repositories in the GitHub organization.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
-mitigation: >
+mitigation: >-
   Ensures that only approved users can create repositories in the GitHub organization, reducing the risk of unauthorized repository creation.
 
 inputs:
@@ -25,7 +25,7 @@ inputs:
     description: "The desired value for the `members_can_create_repositories` setting."
     required: false
 
-input_example: |
+input_example: |-
   desired_value: false
 
 labels:

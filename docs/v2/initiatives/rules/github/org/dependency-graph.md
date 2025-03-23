@@ -1,15 +1,15 @@
 ---
-sidebar_label: Verify Dependency Graph Enabled
-title: Verify Dependency Graph Enabled
+sidebar_label: Verify dependency_graph_enabled_for_new_repositories setting
+title: Verify dependency_graph_enabled_for_new_repositories setting
 ---  
-# Verify Dependency Graph Enabled  
+# Verify dependency_graph_enabled_for_new_repositories setting  
 **Type:** Rule  
 **ID:** `github-org-dependency-graph`  
 **Source:** [v2/rules/github/org/dependency-graph.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependency-graph.yaml)  
 **Rego Source:** [dependency-graph.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependency-graph.rego)  
 **Labels:** GitHub, Organization  
 
-Verify that the dependency graph is enabled in the GitHub organization.
+Verify `dependency_graph` is enabled for new repositories in the GitHub organization.
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -27,12 +27,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: github/org/dependency-graph@v2
 with:
   desired_value: true
-  
 ```
 
 ## Mitigation  
 Ensures that the dependency graph is enabled in the GitHub organization, providing better visibility into dependencies and potential vulnerabilities.
-
 
 
 ## Description  
@@ -44,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

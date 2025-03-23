@@ -38,7 +38,6 @@ uses: slsa/l2-provenance-authenticated@v2
 Cryptographic authentication prevents tampering with provenance data, ensuring that only valid and secure build information is used to establish the integrity of the software supply chain.
 
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

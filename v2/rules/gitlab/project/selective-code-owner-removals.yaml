@@ -5,7 +5,7 @@ path: selective-code-owner-removals.rego
 
 description: Verify `selective_code_owner_removals` is set for the GitLab project.
 
-full-description: |
+full-description: |-
   This rule ensures that `selective_code_owner_removals` is set for the GitLab project.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that `selective_code_owner_removals` is set for the GitLab project to prevent unauthorized changes.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     type: boolean
     required: true
 
-input_example: |
+input_example: |-
   selective_code_owner_removals: true
 
 labels:

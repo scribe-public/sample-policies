@@ -5,7 +5,7 @@ path: fresh-image.rego
 
 description: Verify the image is not older than the specified threshold.
 
-full-description: |  
+full-description: |-  
   This rule extracts the Image creation timestamp from the SBOM evidence. It searches for a property named "created" 
   within the image's metadata (specifically under `metadata.component.properties`). The creation timestamp is parsed using RFC 3339.
   
@@ -16,7 +16,7 @@ full-description: |
   - Evidence must be provided in the `cyclonedx-json` format.
   - The SBOM must contain a component under `metadata.component.properties` with a property named "created" in valid RFC 3339 format.
 
-mitigation: >
+mitigation: >-
   Prevents the deployment of outdated container images—which may include unpatched vulnerabilities or outdated dependencies—
   by enforcing a maximum age limit based on the image's build time.
 
@@ -26,7 +26,7 @@ inputs:
     type: integer
     required: true
 
-input_example: |
+input_example: |-
   max_days: 183
   
 labels:

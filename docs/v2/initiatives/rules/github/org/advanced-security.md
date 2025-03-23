@@ -1,15 +1,15 @@
 ---
-sidebar_label: Verify advanced security setting is enabled
-title: Verify advanced security setting is enabled
+sidebar_label: Verify `advanced_security_enabled_for_new_repositories` setting
+title: Verify `advanced_security_enabled_for_new_repositories` setting
 ---  
-# Verify advanced security setting is enabled  
+# Verify `advanced_security_enabled_for_new_repositories` setting  
 **Type:** Rule  
 **ID:** `github-org-advanced-security`  
 **Source:** [v2/rules/github/org/advanced-security.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/advanced-security.yaml)  
 **Rego Source:** [advanced-security.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/advanced-security.rego)  
 **Labels:** GitHub, Organization  
 
-Verify `advanced_security_enabled_for_new_repositories` is enabled for new repositories in the GitHub organization.
+Verify `advanced_security` is enabled for new repositories in the GitHub organization.
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -33,7 +33,6 @@ with:
 Enforces advanced security for new repositories in the organization, significantly reducing the risk of introducing vulnerabilities or unapproved software.
 
 
-
 ## Description  
 This rule verifies that advanced security is enabled for new repositories in the GitHub organization by examining the provided Discovery evidence.
 It checks the organization's details and compares the value of the 
@@ -45,7 +44,6 @@ introducing vulnerabilities or unapproved software.
 
 ### **Evidence Requirements**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

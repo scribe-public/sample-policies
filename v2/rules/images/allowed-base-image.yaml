@@ -9,7 +9,7 @@ description: |
   This rule requires Dockerfile context; for example, run it with:
   `valint my_image --base-image Dockerfile`.
 
-full-description: |
+full-description: |-
   This rule examines the SBOM evidence for a container image, focusing on components in the "container" group that represent base images.
   A base image is identified by the presence of a property whose name ends with "isbaseimage" (case-insensitive) and whose value is "true".
   For each detected base image, the rule verifies that its name matches one of the approved source patterns defined in the configuration 
@@ -22,7 +22,7 @@ full-description: |
   - The SBOM should include a `metadata.component.properties` array containing properties that identify base images.
   - The approved source patterns must be specified in the `with.approved_sources` parameter.
 
-mitigation: >
+mitigation: >-
   Ensures that only trusted base images are used in container builds, reducing the risk of deploying compromised or outdated images.
   This check mitigates vulnerabilities by enforcing that each base image matches an approved source pattern.
 
@@ -32,7 +32,7 @@ inputs:
     type: array
     required: false
 
-input_example: |
+input_example: |-
   approved_sources:
     - "docker.io/library/*"
     - "docker.io/my_org/*"

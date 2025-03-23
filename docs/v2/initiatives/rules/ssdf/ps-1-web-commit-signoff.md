@@ -30,7 +30,6 @@ uses: ssdf/ps-1-web-commit-signoff@v2
 Requires signoff on web commits to ensure that code changes are reviewed and approved, thereby reducing the risk of unauthorized or malicious modifications.
 
 
-
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|

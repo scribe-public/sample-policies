@@ -22,12 +22,19 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/api/signed-commits-list@v2
+with:
+  commit_id_list:
+    - 'commit1'
+    - 'commit2'
+    - 'commit3'
+  private_token: {{ .Args.Token }}
+  project_id: {{ .Args.ProjectID }}
 ```
 
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| commit_id_list | ['commit1', 'commit2', 'commit3'] |
-| private_token | `{{ .Args.Token }}` |
-| project_id | `{{ .Args.ProjectID }}` |
+| commit_id_list | [] |
+| private_token |  |
+| project_id |  |
 

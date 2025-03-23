@@ -33,7 +33,6 @@ with:
 Prevents the deployment of overly large container images, which helps control resource usage, reduces the attack surface by limiting unnecessary code and dependencies, and minimizes potential vulnerabilities.
 
 
-
 ## Description  
 This rule inspects the CycloneDX SBOM evidence for container images. It searches through the SBOM's components
 to locate a component belonging to the "layer" group where a property named "size" is defined. The rule specifically
@@ -47,7 +46,6 @@ The extracted size is then converted to a numeric value and compared against the
 
 - Evidence must be provided in the `cyclonedx-json` format.
 - The SBOM must include a component in the "layer" group with a "size" property, and an "index" property set to "0".
-
 
 ## Evidence Requirements  
 | Field | Value |

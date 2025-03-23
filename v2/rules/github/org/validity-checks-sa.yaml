@@ -5,7 +5,7 @@ path: validity-checks-sa.rego
 
 description: Verify `secret_scanning_validity_checks` is configured in the GitHub organization.
 
-full-description: |
+full-description: |-
   This rule checks if the `validity_checks` under GitHub organization setting is enabled to ensure the integrity of the organization’s repositories.
   It performs the following steps:
 
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
-mitigation: >
+mitigation: >-
   Ensure that the Validity checks under GitHub organization setting is enabled to maintain the integrity of the organization’s repositories, preventing potential issues and vulnerabilities.
 
 labels:

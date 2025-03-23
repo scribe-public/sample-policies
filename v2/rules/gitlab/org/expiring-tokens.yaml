@@ -5,7 +5,7 @@ path: expiring-tokens.rego
 
 description: Verify no GitLab organization tokens are about to expire.
 
-full-description: |
+full-description: |-
   This rule ensures that no GitLab organization tokens are about to expire.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
 
-mitigation: >
+mitigation: >-
   Ensure that no GitLab organization tokens are about to expire to prevent service disruption.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: Number of days before a token expires.
     required: false
 
-input_example: |
+input_example: |-
   exiring_in_days: 30
 
 labels:

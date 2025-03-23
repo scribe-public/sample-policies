@@ -6,7 +6,7 @@ path: "require-healthcheck.rego"
 description: >
   Checks that the container image includes at least one healthcheck property.
 
-full-description: |  
+full-description: |-  
   This rule examines the CycloneDX SBOM evidence for a container image to verify that a healthcheck is defined.
   It does so by scanning the `metadata.component.properties` array for any property whose name, when lowercased, 
   starts with "imagehealthcheck_". If at least one such property is found, the image is considered compliant; 
@@ -16,7 +16,7 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM should include a `metadata.component.properties` array with entries that define healthcheck instructions.
 
-mitigation: >
+mitigation: >-
   Ensures that container images define a HEALTHCHECK instruction so that the runtime environment 
   can monitor and manage container health. This minimizes the risk of undetected failures at runtime.
 

@@ -24,15 +24,9 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: ssdf/ps-3.2-archived-sbom@v2
-
-## Usage example
-
-```yaml
-with: ssdf/ps-3.2-archived-sbom@v2
 ```
 
 ## Mitigation  
 Archives the SBOM for every build, providing a permanent record of the software components and their relationships, thereby reducing the risk of supply chain attacks.
-
 
 

@@ -5,7 +5,7 @@ path: repo-private.rego
 
 description: Verify the GitHub repository is private.
 
-full-description: |
+full-description: |-
   This rule ensures that the GitHub repository is private.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
 
 
-mitigation: >
+mitigation: >-
   Ensures that the repository is private, reducing the risk of unauthorized access.
 
 labels:

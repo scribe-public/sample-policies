@@ -29,7 +29,6 @@ with:
     - "user1"
     - "user2"
     - "user3"
-  
 ```
 
 ## Mitigation  
@@ -45,7 +44,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -5,7 +5,7 @@ path: force-push-protection.rego
 
 description: Verify force pushes in the GitLab project are disallowed to maintain repository integrity.
 
-full-description: |
+full-description: |-
   This rule ensures that force pushes in the GitLab project are disallowed to maintain repository integrity.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that force pushes in the GitLab project are disallowed to maintain repository integrity.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: The branch to disallow force pushes.
     required: false
 
-input_example: |
+input_example: |-
   branch: "main"
 
 labels:

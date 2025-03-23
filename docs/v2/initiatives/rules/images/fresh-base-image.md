@@ -37,7 +37,6 @@ with:
 Ensures that container images are built on up-to-date base images, reducing the risk of deploying images with outdated layers that may contain unpatched vulnerabilities or deprecated components. This check prevents the use of stale base images, thereby enhancing overall container security.
 
 
-
 ## Description  
 This rule processes the CycloneDX SBOM evidence for a container image to verify that its base image remains fresh. 
 It identifies base image components by locating properties whose names end with "isbaseimage" (case-insensitive) and have a value of "true". 
@@ -47,7 +46,6 @@ If any base image is older than the allowed age, or if no base image data is fou
 **Evidence Requirements:**
 - Evidence must be provided in CycloneDX JSON format.
 - The SBOM should include a `metadata.component.properties` array with properties for base image identification and creation timestamp.
-
 
 ## Evidence Requirements  
 | Field | Value |

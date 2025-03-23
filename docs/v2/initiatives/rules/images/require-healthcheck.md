@@ -35,7 +35,6 @@ uses: images/require-healthcheck@v2
 Ensures that container images define a HEALTHCHECK instruction so that the runtime environment  can monitor and manage container health. This minimizes the risk of undetected failures at runtime.
 
 
-
 ## Description  
 This rule examines the CycloneDX SBOM evidence for a container image to verify that a healthcheck is defined.
 It does so by scanning the `metadata.component.properties` array for any property whose name, when lowercased, 
@@ -45,7 +44,6 @@ otherwise, a violation is recorded indicating a missing healthcheck.
 **Evidence Requirements:**
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM should include a `metadata.component.properties` array with entries that define healthcheck instructions.
-
 
 ## Evidence Requirements  
 | Field | Value |

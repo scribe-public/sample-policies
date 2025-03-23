@@ -27,7 +27,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: gitlab/org/unused-tokens@v2
 with:
   unused_for_days: 90
-  
 ```
 
 ## Mitigation  
@@ -43,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

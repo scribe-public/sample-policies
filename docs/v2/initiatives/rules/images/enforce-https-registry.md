@@ -42,7 +42,6 @@ indicating that the image may have been pulled from an insecure registry.
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM should include a `metadata.component.properties` array with an entry for 'registry_scheme'.
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

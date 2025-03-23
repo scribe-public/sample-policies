@@ -28,16 +28,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: sarif/verify-tool-evidence@v2
-
-## Usage example
-
-```yaml
-with: sarif/verify-tool-evidence@v2
 ```
 
 ## Mitigation  
 Confirms the SARIF report originates from the correct scanning tool, ensuring the evidence is trustworthy.
-
 
 
 ## Description  
@@ -50,12 +44,12 @@ A mismatch indicates that the report may not be reliable.
 - Evidence must adhere to the SARIF 2.1.0 schema.
 - The report must include a valid `tool` field.
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
 | signed | False |
 | content_body_type | generic |
 | target_type | data |
+| tool | semgrep |
 | predicate_type | http://docs.oasis-open.org/sarif/sarif/2.1.0 |
 

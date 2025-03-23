@@ -28,12 +28,11 @@ uses: k8s/namespace/allowed-images@v2
 with:
   images_to_include:
     - docker.io/my_org/my_image1
-    - docker.io/my_org/my_image2  
+    - docker.io/my_org/my_image2
 ```
 
 ## Mitigation  
 Ensures that only approved container images are running within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
-
 
 
 ## Description  
@@ -46,7 +45,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

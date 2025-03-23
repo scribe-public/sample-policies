@@ -1,15 +1,15 @@
 ---
-sidebar_label: Verify Secret_Scanning Setting in Security_And_Analysis
-title: Verify Secret_Scanning Setting in Security_And_Analysis
+sidebar_label: Verify `secret_scanning` Setting in `security_and_analysis`
+title: Verify `secret_scanning` Setting in `security_and_analysis`
 ---  
-# Verify Secret_Scanning Setting in Security_And_Analysis  
+# Verify `secret_scanning` Setting in `security_and_analysis`  
 **Type:** Rule  
 **ID:** `github-org-secret-scanning-sa`  
 **Source:** [v2/rules/github/org/secret-scanning-sa.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/secret-scanning-sa.yaml)  
 **Rego Source:** [secret-scanning-sa.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/secret-scanning-sa.rego)  
 **Labels:** GitHub, Organization  
 
-Verify `secret_scanning` is configured and enabled in the GitHub organization.
+Verify `secret_scanning` is configured in the GitHub repository.
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/secret-scanning-sa@v2
-
-## Usage example
-
-```yaml
-with: github/org/secret-scanning-sa@v2
 ```
 
 ## Mitigation  
 Ensure that the Secret Scanning setting is enabled to detect and prevent the exposure of secrets in the organization’s repositories, enhancing security.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

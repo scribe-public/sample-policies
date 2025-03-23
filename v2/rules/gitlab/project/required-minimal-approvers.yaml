@@ -5,7 +5,7 @@ path: required-minimal-approvers.rego
 
 description: Verify the required number of approvers for the GitLab project is met.
 
-full-description: |
+full-description: |-
   This rule ensures that the required number of approvers for the GitLab project is met.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that the required number of approvers for the GitLab project is met to prevent unauthorized changes.
 
 labels:

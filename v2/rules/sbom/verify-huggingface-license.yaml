@@ -5,7 +5,7 @@ path: verify-hf-license.rego
 
 description: Verify the artifact includes all specified licenses.
 
-full-description: |  
+full-description: |-  
   This rule verifies that the artifact includes all specified licenses.
   It performs the following steps:
   
@@ -18,7 +18,7 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a list of dependencies with their licenses.
 
-mitigation: >
+mitigation: >-
   Ensures that all specified licenses are included in the SBOM, reducing the risk of legal issues and ensuring compliance with open-source licenses.
 
 notes:
@@ -32,7 +32,7 @@ inputs:
     required: true
 
 
-input_example: |
+input_example: |-
   licenses:
     - "MIT"
     - "Apache-2.0"

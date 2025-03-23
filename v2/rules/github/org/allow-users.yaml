@@ -5,7 +5,7 @@ path: allow-users.rego
 
 description: Verify only users in the Allowed List have user access to the GitHub organization.
 
-full-description: |
+full-description: |-
   This rule ensures that only users specified in the allowed list have access to the GitHub organization.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
-mitigation: >
+mitigation: >-
   Ensures that only approved users have access to the GitHub organization, reducing the risk of unauthorized access.
 
 inputs:
@@ -25,7 +25,7 @@ inputs:
     description: List of allowed users.
     required: false
 
-input_example: |
+input_example: |-
   allowed_users:
     - "user1"
     - "user2"

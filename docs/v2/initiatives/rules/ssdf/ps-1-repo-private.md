@@ -30,7 +30,6 @@ uses: ssdf/ps-1-repo-private@v2
 Ensures that repositories remain private, reducing the risk of sensitive code being exposed to unauthorized parties.
 
 
-
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|

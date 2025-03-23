@@ -5,7 +5,7 @@ path: co-approval-required.rego
 
 description: Verify code owner approval is required for specific branches in the GitLab project.
 
-full-description: |
+full-description: |-
   This rule ensures that code owner approval is required for specific branches in the GitLab project.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Require code owner approval for specific branches in the GitLab project to prevent unauthorized changes.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: The branch to require code owner approval.
     required: true
 
-input_example: |
+input_example: |-
   branch: "main"
 
 labels:

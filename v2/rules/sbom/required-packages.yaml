@@ -5,7 +5,7 @@ path: required-packages.rego
 
 description: Verify the artifact includes all required dependencies.
 
-full-description: |  
+full-description: |-  
   This rule verifies that the artifact includes all required dependencies as specified.
   It performs the following steps:
   
@@ -17,7 +17,7 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a list of dependencies.
 
-mitigation: >
+mitigation: >-
   Ensures that all required dependencies are included in the SBOM, reducing the risk of missing critical components and ensuring compliance with dependency requirements.
 
 inputs:
@@ -30,7 +30,7 @@ inputs:
     type: integer
     required: false
 
-input_example: |
+input_example: |-
   required_pkgs:
     - "pkg:maven/org.apache.commons/commons-lang3@3.9"
     - "pkg:npm/lodash@4.17.15"

@@ -4,7 +4,7 @@ version: "1.0.0"
 name: "SLSA L2 Framework"
 description: "Evaluate SLSA Level 2"
 
-full-description: |
+full-description: |-
   Evaluate SLSA L2 and ensure that provenance information is both recorded and authenticated. This helps protect against unauthorized modifications and ensures artifact integrity."
 
 

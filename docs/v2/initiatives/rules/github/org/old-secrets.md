@@ -27,12 +27,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: github/org/old-secrets@v2
 with:
   max_secret_age: 12
-  
 ```
 
 ## Mitigation  
 Ensures that old secrets are removed from the GitHub organization, reducing the risk of exposure of outdated and potentially compromised secrets.
-
 
 
 ## Description  
@@ -44,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

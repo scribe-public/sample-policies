@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/repository/default-branch-protection@v2
-
-## Usage example
-
-```yaml
-with: github/repository/default-branch-protection@v2
 ```
 
 ## Mitigation  
 Ensures that the default branch is protected, reducing the risk of unauthorized changes.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
-
 
 ## Evidence Requirements  
 | Field | Value |

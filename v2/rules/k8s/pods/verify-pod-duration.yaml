@@ -5,7 +5,7 @@ path: verify-pod-duration.rego
 
 description: Verify Kubernetes pods adhere to a specified runtime duration to enforce lifecycle limits.
 
-full-description: |
+full-description: |-
   This rule verifies that the duration of pods in Kubernetes does not exceed the specified limit.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-mitigation: >
+mitigation: >-
   Ensures that pods do not exceed their intended lifecycle, maintaining cluster hygiene and resource efficiency.
 
 inputs:
@@ -25,7 +25,7 @@ inputs:
     type: integer
     required: false
 
-input_example: |
+input_example: |-
   max_days: 30
 
 labels:

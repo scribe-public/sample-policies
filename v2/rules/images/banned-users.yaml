@@ -5,7 +5,7 @@ path: banned-users.rego
 
 description: Verify specific users are not allowed in an SBOM.
 
-full-description: |  
+full-description: |-  
   This rule inspects the CycloneDX SBOM evidence for a container image to ensure that the image is not configured 
   to run with a banned default user. It does so by examining the `metadata.component.properties` array for a property 
   with the name "user". The value of this property is then compared against a list of disallowed users specified in 
@@ -18,7 +18,7 @@ full-description: |
   - The SBOM must include a `metadata.component.properties` array with an entry where the property name is "user".
   - The disallowed user list (e.g., ["root"]) must be provided in the `with.users` parameter.
 
-mitigation: >
+mitigation: >-
   Prevents the execution of container images with default or disallowed user accounts reducing the risk of privilege escalation and ensuring that only secure, non-privileged user configurations are used.
 
 inputs:
@@ -27,7 +27,7 @@ inputs:
     type: array
     required: false
 
-input_example: |
+input_example: |-
   users:
     - root
 

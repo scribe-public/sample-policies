@@ -5,7 +5,7 @@ path: push-protection.rego
 
 description: Verify `secret_scanning_push_protection` is configured in the GitHub repository.
 
-full-description: |
+full-description: |-
   This rule ensures that push protection is enabled in the GitHub repository.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
 
-mitigation: >
+mitigation: >-
   Ensures that push protection is enabled, reducing the risk of unauthorized changes.
 
 labels:

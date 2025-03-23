@@ -36,7 +36,6 @@ with:
 Ensures that only approved users have admin privileges in the GitHub organization, reducing the risk of unauthorized access  through compromised credentials.
 
 
-
 ## Description  
 This rule verifies that only users in the Allowed List have admin privileges in the GitHub organization.
 It checks the organization's details and compares the value of the 
@@ -47,7 +46,6 @@ the desired value, a violation is recorded. This ensures that only users in the 
 
 ### **Evidence Requirements**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -5,7 +5,7 @@ path: max-admins.rego
 
 description: Verify the maximum number of GitHub organization admins is restricted.
 
-full-description: |
+full-description: |-
   This rule ensures that the number of admins in the GitHub organization does not exceed the specified maximum.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
-mitigation: >
+mitigation: >-
   Ensures that the number of admins in the GitHub organization is kept within a manageable limit, reducing the risk of unauthorized administrative actions.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: Maximum number of admins allowed.
     required: false
 
-input_example: |
+input_example: |-
   max_admins: 5
 
 labels:

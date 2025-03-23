@@ -1,15 +1,15 @@
 ---
-sidebar_label: Verify Secret Scanning Push Protection Enabled in Security and Analysis
-title: Verify Secret Scanning Push Protection Enabled in Security and Analysis
+sidebar_label: Verify `secret_scanning_push_protection` Setting
+title: Verify `secret_scanning_push_protection` Setting
 ---  
-# Verify Secret Scanning Push Protection Enabled in Security and Analysis  
+# Verify `secret_scanning_push_protection` Setting  
 **Type:** Rule  
 **ID:** `github-org-push-protection-sa`  
 **Source:** [v2/rules/github/org/push-protection-sa.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/push-protection-sa.yaml)  
 **Rego Source:** [push-protection-sa.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/push-protection-sa.rego)  
 **Labels:** GitHub, Organization  
 
-Verify `secret_scanning_push_protection` is enabled in the security and analysis settings of the GitHub organization.
+Verify `secret_scanning_push_protection` is configured in the GitHub repository.
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/push-protection-sa@v2
-
-## Usage example
-
-```yaml
-with: github/org/push-protection-sa@v2
 ```
 
 ## Mitigation  
 Ensure that secret scanning push protection is enabled to provide better security for secret scanning in the GitHub organization.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

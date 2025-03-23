@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/repository/ephemeral-runners-only@v2
-
-## Usage example
-
-```yaml
-with: github/repository/ephemeral-runners-only@v2
 ```
 
 ## Mitigation  
 Ensures that only ephemeral runners are used, reducing the risk of persistent runner vulnerabilities.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
-
 
 ## Evidence Requirements  
 | Field | Value |

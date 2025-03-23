@@ -34,7 +34,6 @@ uses: git/coding-permissions@v2
 Prevent unauthorized users from committing to the repository by restricting commit permissions to allowed users only.
 
 
-
 ## Description  
 This rule verifies that only allowed users have committed to the repository.
 It performs the following steps:
@@ -47,7 +46,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Git repository resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -5,7 +5,7 @@ path: require-sbom.rego
 
 description: Verify the SBOM exists as evidence.
 
-full-description: |  
+full-description: |-  
   This rule verifies the existence of an SBOM as evidence.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided in the CycloneDX JSON format.
 
-mitigation: >
+mitigation: >-
   Ensures that an SBOM is present, which is essential for tracking and managing software components and their dependencies.
 
 labels:

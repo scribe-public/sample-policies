@@ -28,12 +28,10 @@ uses: gitlab/project/approvals-policy-check@v2
 with:
   name: "All Members"
   approvals_required_min: 2
-  
 ```
 
 ## Mitigation  
 Ensure that the project's merge approval policy complies with requirements to prevent unauthorized merges.
-
 
 
 ## Description  
@@ -46,7 +44,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

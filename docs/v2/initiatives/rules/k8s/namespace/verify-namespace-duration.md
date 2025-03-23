@@ -33,7 +33,6 @@ with:
 Ensures that namespaces do not exceed their intended lifecycle, maintaining cluster hygiene and resource efficiency.
 
 
-
 ## Description  
 This rule verifies that the duration of namespaces in Kubernetes does not exceed the specified limit.
 It performs the following steps:
@@ -44,7 +43,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

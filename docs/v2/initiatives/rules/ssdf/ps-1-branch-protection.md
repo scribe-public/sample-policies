@@ -30,7 +30,6 @@ uses: ssdf/ps-1-branch-protection@v2
 Enforces branch protection policies to prevent unauthorized commits and maintain the integrity of critical code branches.
 
 
-
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|

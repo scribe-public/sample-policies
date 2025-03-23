@@ -34,7 +34,6 @@ with:
 Ensures that the default branch is protected, reducing the risk of unauthorized changes.
 
 
-
 ## Description  
 This rule ensures that the default branch protection is enabled in the Bitbucket repository.
 It performs the following steps:
@@ -44,7 +43,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket repository settings.
-
 
 ## Evidence Requirements  
 | Field | Value |

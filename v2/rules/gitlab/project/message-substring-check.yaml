@@ -5,7 +5,7 @@ path: message-substring-check.rego
 
 description: Verify a specific substring is not found in the message attribute of vulnerabilities for the GitLab project.
 
-full-description: |
+full-description: |-
   This rule ensures that a specific substring is not found in the message attribute of vulnerabilities for the GitLab project.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that the specified substring is not found in the message attribute of vulnerabilities for the GitLab project to prevent unauthorized changes.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: The pattern to search for in the message attribute of vulnerabilities.
     required: true
 
-input_example: |
+input_example: |-
   pattern: "(?i)dghd"
 
 labels:

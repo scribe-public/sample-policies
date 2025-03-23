@@ -28,11 +28,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: generic/artifact-signed@v2
-
-## Usage example
-
-```yaml
-with: generic/artifact-signed@v2
 ```
 
 ## Evidence Requirements  

@@ -42,7 +42,6 @@ with:
 Ensures that only container images with valid cryptographic signatures are deployed, mitigating the risk of tampering. By requiring evidence in the CycloneDX attest-cyclonedx-json format, this rule confirms that images have been signed by trusted entities.
 
 
-
 ## Description  
 This rule evaluates the evidence for a container image to determine if it is properly signed. It checks the 
 environment field in the evidence to verify that the `content_type` is set to "attest-cyclonedx-json". If the 
@@ -54,7 +53,6 @@ for images that do not require a signature. Otherwise, if the evidence does not 
 - Evidence must be provided in CycloneDX JSON format with a `content_body_type` of "cyclonedx-json".
 - The evidence environment must include a `content_type` field that indicates the report is signed (i.e., "attest-cyclonedx-json").
 - The `with.skip_image_regex` parameter allows specifying patterns (e.g., "alpine") to bypass the signature requirement for certain images. 
-
 
 ## Evidence Requirements  
 | Field | Value |

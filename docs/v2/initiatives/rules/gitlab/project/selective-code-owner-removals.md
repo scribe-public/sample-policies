@@ -27,12 +27,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: gitlab/project/selective-code-owner-removals@v2
 with:
   selective_code_owner_removals: true
-  
 ```
 
 ## Mitigation  
 Ensure that `selective_code_owner_removals` is set for the GitLab project to prevent unauthorized changes.
-
 
 
 ## Description  
@@ -44,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

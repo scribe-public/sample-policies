@@ -1,15 +1,15 @@
 ---
-sidebar_label: Verify Validity checks are configured and enabled in the GitHub organization.
-title: Verify Validity checks are configured and enabled in the GitHub organization.
+sidebar_label: Verify `secret_scanning_validity_checks` Setting in `security_and_analysis`
+title: Verify `secret_scanning_validity_checks` Setting in `security_and_analysis`
 ---  
-# Verify Validity checks are configured and enabled in the GitHub organization.  
+# Verify `secret_scanning_validity_checks` Setting in `security_and_analysis`  
 **Type:** Rule  
 **ID:** `github-org-validity-checks-sa`  
 **Source:** [v2/rules/github/org/validity-checks-sa.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/validity-checks-sa.yaml)  
 **Rego Source:** [validity-checks-sa.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/validity-checks-sa.rego)  
 **Labels:** GitHub, Organization  
 
-Verify Validity checks are configured and enabled in the GitHub organization.
+Verify `secret_scanning_validity_checks` is configured in the GitHub organization.
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/org/validity-checks-sa@v2
-
-## Usage example
-
-```yaml
-with: github/org/validity-checks-sa@v2
 ```
 
 ## Mitigation  
 Ensure that the Validity checks under GitHub organization setting is enabled to maintain the integrity of the organization’s repositories, preventing potential issues and vulnerabilities.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

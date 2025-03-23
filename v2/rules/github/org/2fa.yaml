@@ -5,14 +5,10 @@ path: 2fa.rego
 
 description: Verify `two_factor_requirement` is enabled in the GitHub organization.
 
-full-description: |  
+full-description: |-  
   This rule verifies that two-factor authentication (2FA) is enabled for the organization by examining the provided evidence.
   It checks the organization's details (retrieved from the SARIF or equivalent evidence) and compares the value of the 
   `organization_details.two_factor_requirement_enabled` field against the expected value.
-
-mitigation: >
-  Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access 
-  through compromised credentials.
   
   The rule iterates over the organization data in the evidence, and if the `two_factor_requirement_enabled` field does not match 
   the desired value, a violation is recorded. This ensures that all organizational accounts enforce 2FA, providing an additional 
@@ -22,6 +18,10 @@ mitigation: >
   - Evidence must include organization data with a field named `organization_details.two_factor_requirement_enabled`.
   - The data should come from a trusted source (e.g., a GitHub organization scan).
   - The evidence must clearly indicate whether 2FA is enabled.
+
+mitigation: >-
+  Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access 
+  through compromised credentials.
   
 labels:
   - GitHub

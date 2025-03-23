@@ -27,7 +27,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: bitbucket/project/long-live-tokens@v2
 with:
   max_days: 30
-  
 ```
 
 ## Mitigation  
@@ -43,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

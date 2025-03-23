@@ -5,7 +5,7 @@ path: signed-commits-list.rego
 
 description: Verify the selected commits are signed in the GitLab organization.
 
-input_example: |
+input_example: |-
   commit_id_list:
     - 'commit1'
     - 'commit2'

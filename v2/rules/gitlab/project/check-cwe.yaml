@@ -5,7 +5,7 @@ path: check-cwe.rego
 
 description: Verify that specified CWEs were not detected in the GitLab project.
 
-full-description: |
+full-description: |-
   This rule ensures that the specified CWEs were not detected in the GitLab project.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that the specified CWEs were not detected in the GitLab project to prevent vulnerabilities.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: The CWE value to check for.
     required: true
 
-input_example: |
+input_example: |-
   cwe_value: "89"
 
 labels:

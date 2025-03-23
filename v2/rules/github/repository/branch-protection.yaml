@@ -5,7 +5,7 @@ path: branch-protection.rego
 
 description: Verify branch protection is configured in the GitHub repository.
 
-full-description: |
+full-description: |-
   This rule ensures that branch protection is configured in the GitHub repository.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
 
-mitigation: >
+mitigation: >-
   Ensure branch protection settings are correctly configured to reduce the risk of unauthorized changes.
 
 inputs:
@@ -28,7 +28,7 @@ inputs:
     description: List of branches to be protected.
     required: false
 
-input_example: |
+input_example: |-
   desired_protected: true
   branches:
     - 'main'

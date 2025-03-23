@@ -7,7 +7,7 @@ title: Enforce SBOM Freshness
 **ID:** `fresh-sbom`  
 **Source:** [v2/rules/sbom/fresh-sbom.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/fresh-sbom.yaml)  
 **Rego Source:** [fresh-sbom.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/fresh-sbom.rego)  
-**Labels:** SBOM, Image, Git  
+**Labels:** SBOM  
 
 Verify the SBOM is not older than the specified duration.
 
@@ -36,7 +36,6 @@ with:
 Ensures that the SBOM is up-to-date, reducing the risk of outdated information and ensuring accurate tracking of components.
 
 
-
 ## Description  
 This rule inspects the CycloneDX SBOM evidence for the artifact to verify that it is not older than the specified duration.
 It performs the following steps:
@@ -48,7 +47,6 @@ It performs the following steps:
 **Evidence Requirements:**
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM must include a creation date.
-
 
 ## Evidence Requirements  
 | Field | Value |

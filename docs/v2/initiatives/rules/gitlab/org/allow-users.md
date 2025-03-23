@@ -30,12 +30,10 @@ with:
     - "user1"
     - "user2"
     - "user3"
-  
 ```
 
 ## Mitigation  
 Ensure that only users in the Allowed List have access to the GitLab organization to reduce the risk of unauthorized access.
-
 
 
 ## Description  
@@ -47,7 +45,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

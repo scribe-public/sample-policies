@@ -5,7 +5,7 @@ uses: github/org/max-admins@v2
 
 description: PS.1 Restrict the maximum number of organization admins
 
-mitigation: >
+mitigation: >-
   Limits the number of administrative accounts, minimizing the potential for abuse of elevated privileges.
 
 labels:

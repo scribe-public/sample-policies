@@ -30,7 +30,6 @@ uses: ssdf/ps-1-limit-admins@v2
 Limits the number of administrative accounts, minimizing the potential for abuse of elevated privileges.
 
 
-
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|

@@ -25,11 +25,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/commits-validated@v2
-
-## Usage example
-
-```yaml
-with: gitlab/project/commits-validated@v2
 ```
 
 ## Mitigation  
@@ -45,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

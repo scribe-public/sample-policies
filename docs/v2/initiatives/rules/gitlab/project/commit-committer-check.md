@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/commit-committer-check@v2
-
-## Usage example
-
-```yaml
-with: gitlab/project/commit-committer-check@v2
 ```
 
 ## Mitigation  
 Enable `commit_committer_check` in the GitLab project to prevent unauthorized changes.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

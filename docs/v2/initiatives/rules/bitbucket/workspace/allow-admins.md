@@ -30,12 +30,10 @@ with:
     - "user1"
     - "user2"
     - "user3"
-  
 ```
 
 ## Mitigation  
 Ensure that only users in the Allowed List have admin privileges in the Bitbucket workspace to reduce the risk of unauthorized changes.
-
 
 
 ## Description  
@@ -47,7 +45,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket workspace resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -16,7 +16,7 @@ controls:
     id: "CT-1"
     description: "Restrict administrative access to CI/CD tools"
     mitigation: "Limit administrative privileges to a minimal, controlled group to reduce the risk of unauthorized pipeline changes."
-    full-description: |
+    full-description: |-
       It's important to ensure that only authorized persons can make administrative changes to the CI/CD system. If an unauthorized person gains access, they could modify pipeline definitions and subvert other controls.
 
       Both host and application-layer access to CI/CD tools should be protected with multi-factor authentication.
@@ -35,7 +35,7 @@ controls:
     id: "CT-2"
     description: "The use of these two rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by Gitlab"
     mitigation: "Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications."
-    full-description: |
+    full-description: |-
       Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.
 
       > :skull: Attackers may exploit unsigned commits by stealing credentials or infecting developer machines, allowing them to inject malicious code.
@@ -51,7 +51,7 @@ controls:
     id: "CT-3"
     description: "Automation access keys expire automatically"
     mitigation: "Configure automation keys to expire automatically, limiting the window in which compromised keys can be exploited."
-    full-description: |
+    full-description: |-
       Ensuring that access keys used by automation expire periodically reduces the risk when keys are compromised.
 
       > :skull: Automated systems run continuously and are attractive targets; compromised keys with a short lifespan minimize potential damage.
@@ -65,7 +65,7 @@ controls:
     id: "CT-4"
     description: "Reduce automation access to read-only"
     mitigation: "Restrict automation accounts to read-only access, following the principle of least privilege to minimize potential damage."
-    full-description: |
+    full-description: |-
       CI systems should have read access only to source code repositories to limit the risk from compromised automation accounts.
 
       > :skull: Attackers who gain write access via automation credentials can bypass review processes; restricting access reduces this risk.
@@ -88,7 +88,7 @@ controls:
     id: "CT-6"
     description: "Any critical or high severity vulnerability breaks the build"
     mitigation: "Immediately fail the build when critical or high-severity vulnerabilities are detected, forcing prompt investigation and remediation."
-    full-description: |
+    full-description: |-
       Supply chain attacks may introduce code vulnerabilities. Using SAST and SCA to identify serious security issues and failing the build prevents insecure code from being merged.
 
       > NOTE: This control complements Control-4 by ensuring no critical vulnerabilities are ignored.
@@ -111,7 +111,7 @@ controls:
     id: "CT-8"
     description: "Validate artifact digest"
     mitigation: "Validate the artifact’s digest before deployment to ensure it has not been tampered with and maintains software integrity."
-    full-description: |
+    full-description: |-
       Before deployment, an artifact’s digest is checked against the expected value to confirm it has not been compromised.
 
       > :skull: Attackers often attempt to alter artifacts; validating the digest helps ensure integrity.
@@ -127,7 +127,7 @@ controls:
     id: "CT-9"
     description: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
     mitigation: "Enforce a review process requiring at least two reviewers and a passing build, ensuring thorough evaluation and testing before code is merged."
-    full-description: |
+    full-description: |-
       Requiring multiple code reviews and successful tests helps ensure that no changes are merged without proper oversight.
 
       > :skull: Without proper reviews, attackers can insert malicious changes; this control mitigates that risk.
@@ -141,7 +141,7 @@ controls:
     id: "CT-11"
     description: "Available container images don’t have any high or critical vulnerabilities"
     mitigation: "Continuously scan container images for vulnerabilities and ensure that only images without high or critical issues are deployed."
-    full-description: |
+    full-description: |-
       Container images must be scanned before deployment to prevent the inclusion of images with serious vulnerabilities.
 
       > :skull: Vulnerable containers can be a major attack vector; this control helps prevent their use.
@@ -160,7 +160,7 @@ controls:
     id: "CT-12"
     description: "Validate artifact signatures and digests"
     mitigation: "Ensure that artifacts are properly signed and their digests validated, confirming authenticity and preventing tampering."
-    full-description: |
+    full-description: |-
       Validating the signature and digest of an artifact ensures that it has not been altered between testing and deployment.
 
       > :skull: This control helps prevent the deployment of artifacts that may have been modified by attackers.
@@ -176,7 +176,7 @@ controls:
     id: "CT-13"
     description: "Scan deployed images in production"
     mitigation: "Continuously monitor and scan production images to ensure ongoing compliance with security standards."
-    full-description: |
+    full-description: |-
       Production images should be validated to ensure that controls enforced during earlier stages continue to be effective in production.
 
       > :skull: Ongoing monitoring helps detect any security issues that may emerge post-deployment.

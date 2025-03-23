@@ -38,7 +38,6 @@ with:
 Ensures that container images include all required metadata labels, which are essential for traceability, auditing, and enforcing compliance with security and operational standards.
 
 
-
 ## Description  
 This rule checks the CycloneDX SBOM evidence for the container image to verify that each required label 
 (as defined in the `with.labels` parameter) exists with the correct value.
@@ -52,7 +51,6 @@ This rule checks the CycloneDX SBOM evidence for the container image to verify t
 ### **Evidence Requirements**
 - Evidence must be provided in the `cyclonedx-json` format.
 - The SBOM should include a `metadata.component.properties` array that contains label information.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -28,12 +28,10 @@ uses: gitlab/project/committer-name-check@v2
 with:
   allowed_committers:
     - somename
-  
 ```
 
 ## Mitigation  
 Ensure that only users in the Allowed List commit by name in the GitLab project to prevent unauthorized changes.
-
 
 
 ## Description  
@@ -45,7 +43,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

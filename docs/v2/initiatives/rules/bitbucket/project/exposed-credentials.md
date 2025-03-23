@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: bitbucket/project/exposed-credentials@v2
-
-## Usage example
-
-```yaml
-with: bitbucket/project/exposed-credentials@v2
 ```
 
 ## Mitigation  
 Ensure that access to the Bitbucket project is blocked if exposed credentials are detected to prevent unauthorized access.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

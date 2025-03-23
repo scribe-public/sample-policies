@@ -28,11 +28,6 @@ Rule is scoped by product and target.
 
 ```yaml
 uses: git/no-commit-to-main@v2
-
-## Usage example
-
-```yaml
-with: git/no-commit-to-main@v2
 ```
 
 ## Mitigation  
@@ -49,7 +44,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Git repository resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

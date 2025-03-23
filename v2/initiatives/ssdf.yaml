@@ -16,7 +16,7 @@ defaults:
 controls:
   - name: "SSDF-IMAGE"
     description: "Ensures that container images are verifiable and that their build metadata is archived for supply chain integrity."
-    mitigation: >
+    mitigation: >-
       Mitigates the risk of deploying untrusted or compromised container images by enforcing rules 
       that verify image build integrity and preserve critical SBOM metadata.
     rules:
@@ -26,7 +26,7 @@ controls:
 
   - name: "SSDF-ORG"
     description: "Verifies that organizational security policies, such as multi-factor authentication and admin limitations, are enforced."
-    mitigation: >
+    mitigation: >-
       Reduces risks of unauthorized access and changes by ensuring strong organizational security practices 
       and process signoffs.
     rules:
@@ -38,7 +38,7 @@ controls:
 
   - name: "SSDF-REPO"
     description: "Ensures repository-level controls are in place, including branch protection, code archiving, and repository privacy."
-    mitigation: >
+    mitigation: >-
       Minimizes the risk of code tampering and unauthorized modifications by enforcing strict repository controls 
       and preserving code history.
     rules:

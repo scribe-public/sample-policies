@@ -1,9 +1,9 @@
 ---
-sidebar_label: Verify Secret Scanning Push Protection Enabled for New Repositories
+sidebar_label: Verify `secret_scanning_push_protection_enabled_for_new_repositories`
   Setting
-title: Verify Secret Scanning Push Protection Enabled for New Repositories Setting
+title: Verify `secret_scanning_push_protection_enabled_for_new_repositories` Setting
 ---  
-# Verify Secret Scanning Push Protection Enabled for New Repositories Setting  
+# Verify `secret_scanning_push_protection_enabled_for_new_repositories` Setting  
 **Type:** Rule  
 **ID:** `github-org-push-protection`  
 **Source:** [v2/rules/github/org/push-protection.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/push-protection.yaml)  
@@ -28,12 +28,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: github/org/push-protection@v2
 with:
   desired_value: true
-  
 ```
 
 ## Mitigation  
 Ensures that secret scanning push protection is enabled for new repositories in the GitHub organization, providing better security for secret scanning.
-
 
 
 ## Description  
@@ -45,7 +43,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

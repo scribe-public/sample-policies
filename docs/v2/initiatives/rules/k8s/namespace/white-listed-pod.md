@@ -29,11 +29,12 @@ with:
   white_listed_pod:
     - my-pod-1.*
     - my-pod-2.*
+  verify_namespaces:
+    - ",*"
 ```
 
 ## Mitigation  
 Ensures that only approved pods are running within the Kubernetes namespace, reducing the risk of unauthorized or misconfigured pods.
-
 
 
 ## Description  
@@ -46,7 +47,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
 
 ## Evidence Requirements  
 | Field | Value |
@@ -61,4 +61,5 @@ It performs the following steps:
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | white_listed_pod | array | True | A list of allowed pods (supports regex). |
+| verify_namespaces | array | False | A list of namespaces to verify. |
 

@@ -28,7 +28,6 @@ uses: gitlab/pipeline/verify-labels@v2
 with:
   labels:
     app.kubernetes.io/instance: "defaul1t"
-  
 ```
 
 ## Mitigation  
@@ -45,7 +44,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab pipeline resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

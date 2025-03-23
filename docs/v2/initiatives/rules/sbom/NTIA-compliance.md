@@ -51,12 +51,10 @@ with:
     email: "bob@company.com"
   required_supplier: 
     name: "alice"
-  
 ```
 
 ## Mitigation  
 Ensures that the SBOM metadata meets NTIA requirements, reducing the risk of incomplete or inaccurate information about authors and suppliers.
-
 
 
 ## Description  
@@ -71,7 +69,6 @@ It performs the following steps:
 **Evidence Requirements:**
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM must include metadata for authors and suppliers.
-
 
 ## Evidence Requirements  
 | Field | Value |

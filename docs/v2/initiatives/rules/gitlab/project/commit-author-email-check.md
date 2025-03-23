@@ -29,7 +29,6 @@ with:
   allowed_authors:
     - mail@example.com
     - mail2@example.com
-  
 ```
 
 ## Mitigation  
@@ -45,7 +44,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -27,7 +27,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: gitlab/project/reset-pprovals-on-push@v2
 with:
   reset_approvals_on_push: true
-  
 ```
 
 ## Mitigation  
@@ -43,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

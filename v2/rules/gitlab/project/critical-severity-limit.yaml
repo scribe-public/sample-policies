@@ -5,7 +5,7 @@ path: critical-severity-limit.rego
 
 description: Verify the maximum allowed critical severity alerts for the GitLab project.
 
-full-description: |
+full-description: |-
   This rule ensures that the maximum allowed critical severity alerts for the GitLab project is enforced.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
 
-mitigation: >
+mitigation: >-
   Ensure that the maximum allowed critical severity alerts for the GitLab project is enforced to prevent unauthorized changes.
 
 
@@ -26,7 +26,7 @@ inputs:
     description: Maximum allowed critical severity alerts for the GitLab project.
     required: false
 
-input_example: |
+input_example: |-
   max_allowed_vulnerability_count: 0
 
 labels:

@@ -5,7 +5,7 @@ path: branch-protection.rego
 
 description: "Verify GitHub branch protection rules"
 
-full-description: |
+full-description: |-
   # This ones needs a large details
   This rule ensures that the branch protection rules are configured in the GitHub repository.
   It performs the following steps:
@@ -30,7 +30,7 @@ full-description: |
   - Github API token must be provided to access the GitHub API.
   
 
-input_example: |
+input_example: |-
   owner: "my-org"
   repo: "my-repo"
   branch: "main"

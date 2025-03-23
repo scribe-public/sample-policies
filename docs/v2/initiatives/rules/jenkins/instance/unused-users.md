@@ -25,11 +25,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: jenkins/instance/unused-users@v2
-
-## Usage example
-
-```yaml
-with: jenkins/instance/unused-users@v2
 ```
 
 ## Mitigation  
@@ -45,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Jenkins instance resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

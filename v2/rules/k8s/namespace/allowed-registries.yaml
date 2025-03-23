@@ -5,7 +5,7 @@ path: allowed-registries.rego
 
 description: Verify container images in Kubernetes namespaces originate from registries in the Allowed List.
 
-full-description: |
+full-description: |-
   This rule ensures that only container images from specified registries are allowed within the Kubernetes namespace.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-mitigation: >
+mitigation: >-
   Ensures that only approved container registries are used within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
 
 inputs:
@@ -25,7 +25,7 @@ inputs:
     type: array
     required: false
 
-input_example: |
+input_example: |-
   allowed_registries:
     - docker.io/*
     - gcr.io/*

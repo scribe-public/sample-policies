@@ -30,12 +30,10 @@ with:
   branches:
     - 'main'
     - 'master'
-  
 ```
 
 ## Mitigation  
 Ensure branch protection settings are correctly configured to reduce the risk of unauthorized changes.
-
 
 
 ## Description  
@@ -47,7 +45,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -5,7 +5,7 @@ path: unused-tokens.rego
 
 description: Verify there are no unused GitLab organization tokens.
 
-full-description: |
+full-description: |-
   This rule ensures that no GitLab organization tokens are unused.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
 
-mitigation: >
+mitigation: >-
   Ensure that no GitLab organization tokens are unused to prevent service disruption.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: Number of days before a token is considered unused.
     required: false
 
-input_example: |
+input_example: |-
   unused_for_days: 90
 
 labels:

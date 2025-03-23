@@ -25,11 +25,13 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: k8s/namespace/white-listed-namespaces@v2
+with:
+  namespaces:
+    - default
 ```
 
 ## Mitigation  
 Ensures that only approved namespaces are allowed within the Kubernetes cluster, reducing the risk of unauthorized or misconfigured namespaces.
-
 
 
 ## Description  
@@ -42,7 +44,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

@@ -5,7 +5,7 @@ path: allowed-components.rego
 
 description: Verify the artifact contains only allowed components.
 
-full-description: |  
+full-description: |-  
   This rule inspects the CycloneDX SBOM evidence for the artifact to verify that it contains only allowed components.
   It performs the following steps:
   
@@ -18,7 +18,7 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a list of components with their types and names.
 
-mitigation: >
+mitigation: >-
   Ensures that only approved components are included in the SBOM, reducing the risk of introducing vulnerabilities
   or unapproved dependencies into the software supply chain.
 
@@ -35,7 +35,7 @@ inputs:
     type: array
     required: true
 
-input_example: |
+input_example: |-
   types:
     - library
     - operating-system

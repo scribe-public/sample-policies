@@ -5,7 +5,7 @@ path: signed-commits.rego
 
 description: Verify all commits are signed in a repository attestation.
 
-full-description: |
+full-description: |-
   This rule ensures that all commits in the GitHub repository are signed.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository commits.
 
-mitigation: >
+mitigation: >-
   Ensures that all commits are signed, reducing the risk of unauthorized changes.
 
 labels:

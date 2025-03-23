@@ -57,7 +57,6 @@ Both host and application-layer access to CI/CD tools should be protected with m
 
 > :skull: Instead of manipulating code, attackers may target the CI/CD pipeline itself, leading to undetected breaches and long-term damage.
 
-
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
@@ -77,7 +76,6 @@ Require all commits to be signed to improve accountability and reduce the risk o
 Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.
 
 > :skull: Attackers may exploit unsigned commits by stealing credentials or infecting developer machines, allowing them to inject malicious code.
-
 
 ### Rules
 
@@ -100,7 +98,6 @@ Ensuring that access keys used by automation expire periodically reduces the ris
 
 > :skull: Automated systems run continuously and are attractive targets; compromised keys with a short lifespan minimize potential damage.
 
-
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
@@ -120,7 +117,6 @@ Restrict automation accounts to read-only access, following the principle of lea
 CI systems should have read access only to source code repositories to limit the risk from compromised automation accounts.
 
 > :skull: Attackers who gain write access via automation credentials can bypass review processes; restricting access reduces this risk.
-
 
 ### Rules
 
@@ -146,7 +142,6 @@ Early detection reduces remediation costs, but also requires a well-defined vuln
 
 > :skull: Vulnerabilities, if undetected, can proliferate quickly and cause widespread damage.
 
-
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
@@ -167,12 +162,11 @@ Before deployment, an artifact’s digest is checked against the expected value 
 
 > :skull: Attackers often attempt to alter artifacts; validating the digest helps ensure integrity.
 
-
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
 |---------|-----------|------------------|
-| sbom/evidence-exists@v2 | sbom/evidence-exists@v2 |  |
+| [require-sbom](https://deploy-preview-299--scribe-security.netlify.app/docs/configuration/initiatives/rules/sbom/evidence-exists) | [Require SBOM Existence](rules/sbom/evidence-exists.md) | Verify the SBOM exists as evidence. |
 
 ## [CT-9] Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged
 
@@ -187,7 +181,6 @@ Enforce a review process requiring at least two reviewers and a passing build, e
 Requiring multiple code reviews and successful tests helps ensure that no changes are merged without proper oversight.
 
 > :skull: Without proper reviews, attackers can insert malicious changes; this control mitigates that risk.
-
 
 ### Rules
 
@@ -209,7 +202,6 @@ Container images must be scanned before deployment to prevent the inclusion of i
 
 > :skull: Vulnerable containers can be a major attack vector; this control helps prevent their use.
 
-
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
@@ -230,7 +222,6 @@ Validating the signature and digest of an artifact ensures that it has not been 
 
 > :skull: This control helps prevent the deployment of artifacts that may have been modified by attackers.
 
-
 ### Rules
 
 | Rule ID | Rule Name | Rule Description |
@@ -250,7 +241,6 @@ Continuously monitor and scan production images to ensure ongoing compliance wit
 Production images should be validated to ensure that controls enforced during earlier stages continue to be effective in production.
 
 > :skull: Ongoing monitoring helps detect any security issues that may emerge post-deployment.
-
 
 ### Rules
 

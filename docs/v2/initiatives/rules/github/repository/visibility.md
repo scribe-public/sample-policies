@@ -29,12 +29,10 @@ with:
   allowed_repo_names:
   - my-org/.*
   - my-org/my-repo.*
-  
 ```
 
 ## Mitigation  
 Ensures that only allowed repositories are public, reducing the risk of unauthorized access.
-
 
 
 ## Description  

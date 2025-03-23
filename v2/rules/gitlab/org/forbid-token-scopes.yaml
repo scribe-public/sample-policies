@@ -5,7 +5,7 @@ path: forbid-token-scopes.rego
 
 description: Verify no GitLab organization tokens have disallowed scopes.
 
-full-description: |
+full-description: |-
   This rule ensures that no GitLab organization tokens have disallowed scopes.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
 
-mitigation: >
+mitigation: >-
   Ensure that no GitLab organization tokens have disallowed scopes to prevent excessive permission.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: List of disallowed token scopes in the GitLab organization.
     required: false
 
-input_example: |
+input_example: |-
   project_scopes:
     - write_api
     - write_repository

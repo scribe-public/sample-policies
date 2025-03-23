@@ -6,7 +6,7 @@ path: "enforce-https-registry.rego"
 description: >
   Checks if the container's registry scheme is HTTPS
 
-full-description: |  
+full-description: |-  
   This rule examines the CycloneDX SBOM evidence for a container image to verify that the registry connection
   is secure. It does so by scanning the `metadata.component.properties` array for a property named 
   'registry_scheme'. If the value of this property is exactly 'https', the rule passes; otherwise, it fails,

@@ -6,7 +6,7 @@ path: "fresh-base-image.rego"
 description: >
   Verifies that each base image is not older than the specified threshold (max_days) from its creation date.
   
-full-description: |  
+full-description: |-  
   This rule processes the CycloneDX SBOM evidence for a container image to verify that its base image remains fresh. 
   It identifies base image components by locating properties whose names end with "isbaseimage" (case-insensitive) and have a value of "true". 
   The rule then extracts the "created" timestamp from these components and calculates the image’s age against the allowed threshold specified in `with.max_days`. 
@@ -16,7 +16,7 @@ full-description: |
   - Evidence must be provided in CycloneDX JSON format.
   - The SBOM should include a `metadata.component.properties` array with properties for base image identification and creation timestamp.
 
-mitigation: >
+mitigation: >-
   Ensures that container images are built on up-to-date base images, reducing the risk of deploying images with outdated layers
   that may contain unpatched vulnerabilities or deprecated components. This check prevents the use of stale base images, thereby
   enhancing overall container security.
@@ -27,7 +27,7 @@ inputs:
     type: integer
     required: true
 
-input_example: |
+input_example: |-
   max_days: 183
 
 labels:

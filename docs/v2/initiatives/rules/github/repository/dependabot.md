@@ -1,8 +1,8 @@
 ---
-sidebar_label: Verify Dependabot Security Updates Setting
-title: Verify Dependabot Security Updates Setting
+sidebar_label: Verify Dependabot security updates setting
+title: Verify Dependabot security updates setting
 ---  
-# Verify Dependabot Security Updates Setting  
+# Verify Dependabot security updates setting  
 **Type:** Rule  
 **ID:** `github-repo-dependabot`  
 **Source:** [v2/rules/github/repository/dependabot.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/repository/dependabot.yaml)  
@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/repository/dependabot@v2
-
-## Usage example
-
-```yaml
-with: github/repository/dependabot@v2
 ```
 
 ## Mitigation  
 Ensures that Dependabot security updates are enabled, reducing the risk of vulnerabilities in dependencies.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
-
 
 ## Evidence Requirements  
 | Field | Value |

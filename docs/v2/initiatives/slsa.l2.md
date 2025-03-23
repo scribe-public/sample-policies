@@ -16,7 +16,6 @@ Evaluate SLSA Level 2
 
 Evaluate SLSA L2 and ensure that provenance information is both recorded and authenticated. This helps protect against unauthorized modifications and ensures artifact integrity."
 
-
 ## Controls Overview
 
 | Control Name | Control Description | Mitigation |

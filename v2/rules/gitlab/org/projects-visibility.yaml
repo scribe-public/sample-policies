@@ -5,7 +5,7 @@ path: projects-visibility.rego
 
 description: Verify only allowed projects in the GitLab organization have public visibility.
 
-full-description: |
+full-description: |-
   This rule ensures that only allowed projects in the GitLab organization have public visibility.
   It performs the following steps:
   
@@ -21,7 +21,7 @@ inputs:
     description: List of projects allowed to have public visibility in the GitLab organization.
     required: false
 
-input_example: |
+input_example: |-
   allowed_public:
     - "Learn GitLab"
     - "Scribe Gitlab Test"

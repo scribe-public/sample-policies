@@ -37,7 +37,6 @@ with:
     max_file_size: 100
     commit_committer_name_check: "enabled"
     reject_unsigned_commits: "enabled"
-  
 ```
 
 ## Description  

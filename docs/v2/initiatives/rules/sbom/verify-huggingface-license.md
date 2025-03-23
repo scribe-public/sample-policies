@@ -7,12 +7,12 @@ title: Require Specified SBOM Licenses
 **ID:** `sbom-hf-license`  
 **Source:** [v2/rules/sbom/verify-huggingface-license.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/verify-huggingface-license.yaml)  
 **Rego Source:** [verify-hf-license.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/verify-hf-license.rego)  
-**Labels:** SBOM, Image, Git  
+**Labels:** SBOM, Image  
 
 Verify the artifact includes all specified licenses.
 
 :::note 
-This rule requires SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
+This rule requires Image SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
 ::: 
 :::note 
 Ensure that the SBOM includes all specified licenses to meet compliance requirements. This rule accesses the Hugging Face API to validate the licenses.  
@@ -41,7 +41,6 @@ with:
 Ensures that all specified licenses are included in the SBOM, reducing the risk of legal issues and ensuring compliance with open-source licenses.
 
 
-
 ## Description  
 This rule verifies that the artifact includes all specified licenses.
 It performs the following steps:
@@ -55,13 +54,13 @@ It performs the following steps:
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM must include a list of dependencies with their licenses.
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
 | filter-by | ['product', 'target'] |
 | signed | False |
 | content_body_type | cyclonedx-json |
+| target_type | container |
 
 ## Input Definitions  
 | Parameter | Type | Required | Description |

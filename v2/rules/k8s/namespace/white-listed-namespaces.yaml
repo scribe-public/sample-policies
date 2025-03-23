@@ -5,7 +5,7 @@ path: white-listed-namespaces.rego
 
 description: Verify only namespaces specified in the Allowed List are allowed within the cluster.
 
-full-description: |
+full-description: |-
   This rule ensures that only namespaces specified in the whitelist are allowed within the Kubernetes cluster.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-mitigation: >
+mitigation: >-
   Ensures that only approved namespaces are allowed within the Kubernetes cluster, reducing the risk of unauthorized or misconfigured namespaces.
 
 inputs:
@@ -25,7 +25,7 @@ inputs:
     type: array
     required: false
 
-input_example: |
+input_example: |-
   namespaces:
     - default
 

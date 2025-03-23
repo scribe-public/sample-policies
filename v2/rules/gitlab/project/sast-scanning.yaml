@@ -5,7 +5,7 @@ path: sast-scanning.rego
 
 description: Verify SAST scanning is performed for the GitLab project.
 
-full-description: |
+full-description: |-
   This rule ensures that SAST scanning is performed for the GitLab project.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that SAST scanning is performed for the GitLab project to prevent unauthorized changes.
 
 labels:

@@ -1,8 +1,8 @@
 ---
-sidebar_label: Verify Dependabot Security Updates Enabled for New Repositories Setting
-title: Verify Dependabot Security Updates Enabled for New Repositories Setting
+sidebar_label: Verify dependabot_security_updates_enabled_for_new_repositories setting
+title: Verify dependabot_security_updates_enabled_for_new_repositories setting
 ---  
-# Verify Dependabot Security Updates Enabled for New Repositories Setting  
+# Verify dependabot_security_updates_enabled_for_new_repositories setting  
 **Type:** Rule  
 **ID:** `github-org-dependabot-security-updates`  
 **Source:** [v2/rules/github/org/dependabot-security-updates.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/dependabot-security-updates.yaml)  
@@ -27,12 +27,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: github/org/dependabot-security-updates@v2
 with:
   desired_value: true
-  
 ```
 
 ## Mitigation  
 Ensures that Dependabot security updates are enabled for new repositories in the GitHub organization, reducing the risk of vulnerabilities in dependencies.
-
 
 
 ## Description  
@@ -44,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

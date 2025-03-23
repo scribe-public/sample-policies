@@ -31,7 +31,6 @@ uses: github/org/2fa@v2
 Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access  through compromised credentials.
 
 
-
 ## Description  
 This rule verifies that two-factor authentication (2FA) is enabled for the organization by examining the provided evidence.
 It checks the organization's details (retrieved from the SARIF or equivalent evidence) and compares the value of the 
@@ -46,7 +45,6 @@ layer of security against unauthorized access.
 - The data should come from a trusted source (e.g., a GitHub organization scan).
 - The evidence must clearly indicate whether 2FA is enabled.
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
@@ -59,5 +57,5 @@ layer of security against unauthorized access.
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| desired_value | False |
+| desired_value | True |
 

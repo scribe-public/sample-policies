@@ -31,7 +31,6 @@ uses: github/repository/branch-verification@v2
 Ensures that branch verification settings are correctly configured, reducing the risk of unauthorized changes.
 
 
-
 ## Description  
 This rule ensures that branch verification in the GitHub repository matches the value defined in the configuration file.
 It performs the following steps:
@@ -41,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
-
 
 ## Evidence Requirements  
 | Field | Value |
@@ -55,5 +53,5 @@ It performs the following steps:
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|
-| desired_verified | False |
+| desired_verified | True |
 

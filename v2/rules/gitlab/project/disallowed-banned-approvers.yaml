@@ -5,7 +5,7 @@ path: disallowed-banned-approvers.rego
 
 description: Verify approvers in the GitLab project are not on the banned list.
 
-full-description: |
+full-description: |-
   This rule ensures that approvers in the GitLab project are not on the banned list.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that approvers in the GitLab project are not on the banned list to prevent unauthorized approvals.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: List of users banned from approving in the GitLab project.
     required: false
 
-input_example: |
+input_example: |-
   banned_list:
     - user1
     - user2

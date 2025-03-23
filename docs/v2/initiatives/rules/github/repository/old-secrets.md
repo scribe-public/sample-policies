@@ -41,7 +41,6 @@ It performs the following steps:
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

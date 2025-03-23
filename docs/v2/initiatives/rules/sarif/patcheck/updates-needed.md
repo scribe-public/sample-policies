@@ -25,11 +25,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: sarif/patcheck/updates-needed@v2
-
-## Usage example
-
-```yaml
-with: sarif/patcheck/updates-needed@v2
 ```
 
 ## Evidence Requirements  

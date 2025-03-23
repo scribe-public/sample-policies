@@ -437,10 +437,6 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
         md.append("with:")
         for line in input_example.split('\n'):
             md.append(f"  {line}")
-    elif "with" not in rule_data:
-        md.append(f"\n## Usage example\n")
-        md.append("```yaml")
-        md.append(f"with: {filepath_to_uses(file_path)}")
     md.append("```")
 
     if mitigation:

@@ -44,7 +44,6 @@ with:
 Ensure that only Git artifacts with valid cryptographic signatures are deployed to prevent source code tampering.
 
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|

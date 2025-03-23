@@ -5,7 +5,7 @@ path: complete-licenses.rego
 
 description: Verify all dependencies in the artifact have a license.
 
-full-description: |  
+full-description: |-  
   This rule inspects the CycloneDX SBOM evidence for the artifact to verify that all dependencies have a complete set of licenses.
   It performs the following steps:
   
@@ -17,7 +17,7 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a list of dependencies with their licenses.
 
-mitigation: >
+mitigation: >-
   Ensures that all dependencies have a complete set of licenses, reducing the risk of legal issues and ensuring compliance with open-source licenses.
 
 labels:

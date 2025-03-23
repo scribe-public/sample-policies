@@ -5,7 +5,7 @@ path: banned-licenses.rego
 
 description: Verify the number of disallowed licenses in SBOM dependencies remains below the specified threshold.
 
-full-description: |  
+full-description: |-  
   This rule inspects the CycloneDX SBOM evidence for the artifact to verify that the number of components with disallowed licenses
   remains below the specified threshold. It performs the following steps:
   
@@ -18,7 +18,7 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a list of components with their licenses.
 
-mitigation: >
+mitigation: >-
   Ensures that the software components used in the artifact comply with organizational policies by restricting the use of disallowed licenses.
   This helps prevent legal and compliance issues that may arise from using components with incompatible or risky licenses.
 
@@ -32,7 +32,7 @@ inputs:
     type: integer
     required: false
 
-input_example: |
+input_example: |-
   blocklist:
     - "GPL-2.0"
     - "GPL-3.0"

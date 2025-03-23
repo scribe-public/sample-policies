@@ -1,15 +1,15 @@
 ---
-sidebar_label: Verify Repository Visibility Setting
-title: Verify Repository Visibility Setting
+sidebar_label: Verify Repo Visibility Setting
+title: Verify Repo Visibility Setting
 ---  
-# Verify Repository Visibility Setting  
+# Verify Repo Visibility Setting  
 **Type:** Rule  
 **ID:** `github-org-repo-visibility`  
 **Source:** [v2/rules/github/org/repo-visibility.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/repo-visibility.yaml)  
 **Rego Source:** [repo-visibility.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/github/org/repo-visibility.rego)  
 **Labels:** GitHub, Organization  
 
-Verify that the repository visibility setting is configured correctly in the GitHub organization.
+Verify only repositories in the Allowed List are public in the GitHub organization.
 
 :::note 
 This rule requires Github Organization Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#github-discovery) for more details.  
@@ -35,7 +35,6 @@ with:
 Ensure that the repository visibility setting is configured correctly to reduce the risk of unauthorized access to repositories.
 
 
-
 ## Description  
 This rule ensures that the repository visibility setting is configured correctly in the GitHub organization.
 It performs the following steps:
@@ -45,7 +44,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

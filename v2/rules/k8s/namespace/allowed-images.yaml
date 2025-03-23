@@ -5,7 +5,7 @@ path: blocked-images.rego
 
 description: Verify only container images specified in the Allowed List run within the Kubernetes namespace.
 
-full-description: |
+full-description: |-
   This rule ensures that only container images specified in the allowed list are running within the Kubernetes namespace.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-mitigation: >
+mitigation: >-
   Ensures that only approved container images are running within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
 
 inputs:
@@ -25,7 +25,7 @@ inputs:
     description: List of allowed container images.
     required: false
 
-input_example: |
+input_example: |-
   images_to_include:
     - docker.io/my_org/my_image1
     - docker.io/my_org/my_image2

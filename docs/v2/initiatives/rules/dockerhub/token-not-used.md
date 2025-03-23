@@ -25,11 +25,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: dockerhub/token-not-used@v2
-
-## Usage example
-
-```yaml
-with: dockerhub/token-not-used@v2
 ```
 
 ## Description  

@@ -29,7 +29,7 @@ controls:
       container images, such as vulnerabilities, misconfigurations, 
       and unauthorized images. The policies enforce CVE scanning, 
       mandatory security settings, and allow only trusted sources.
-    mitigation: >
+    mitigation: >-
       Ensures that all container images meet organizational security 
       policies before deployment. Helps reduce the attack surface by 
       blocking images with vulnerabilities, misconfigurations, or 
@@ -45,7 +45,7 @@ controls:
         description: >
           Ensures that images do not contain high-severity vulnerabilities.
           Blocks images if any CVEs exceed the defined severity threshold.
-        mitigation: >
+        mitigation: >-
           Prevents known exploitable vulnerabilities from being deployed 
           by blocking images with high CVSS scores.
         level: error
@@ -57,7 +57,7 @@ controls:
         description: >
           Blocks images that contain specific high-profile CVEs that are 
           actively exploited or widely known.
-        mitigation: >
+        mitigation: >-
           Prevents the deployment of images with critical vulnerabilities 
           that may be exploited in the wild.
         level: error
@@ -81,7 +81,7 @@ controls:
         uses: images/banned-users@v2
         description: >
           Ensures that containers do not run as the root user.
-        mitigation: >
+        mitigation: >-
           Prevents privilege escalation attacks and reduces the impact 
           of container breakouts.
         
@@ -90,7 +90,7 @@ controls:
         description: >
           Blocks images that expose SSH (port 22), which should not be 
           used in containerized applications.
-        mitigation: >
+        mitigation: >-
           Reduces the risk of unauthorized remote access and enforces 
           immutable container principles.
 
@@ -102,7 +102,7 @@ controls:
         description: >
           Ensures that container images include a HEALTHCHECK instruction 
           to monitor their runtime health.
-        mitigation: >
+        mitigation: >-
           Improves the resilience of applications by ensuring that unhealthy 
           containers are detected and restarted.
 
@@ -111,7 +111,7 @@ controls:
         description: >
           Enforces the presence of essential OpenContainers labels, such as 
           creation time, version, and source repository.
-        mitigation: >
+        mitigation: >-
           Ensures traceability and compliance with software supply chain 
           best practices.
         with:
@@ -129,7 +129,7 @@ controls:
         name: "4.1.5 Approved Source Base Images"
         description: >
           Ensures that base images originate from approved and trusted sources.
-        mitigation: >
+        mitigation: >-
           Reduces the risk of compromised or outdated base images 
           entering the supply chain.
         with:
@@ -141,7 +141,7 @@ controls:
         name: "4.1.5 Approved Source Images"
         description: >
           Ensures that application images are built from approved sources.
-        mitigation: >
+        mitigation: >-
           Blocks images from untrusted registries, reducing the risk of 
           using malicious or compromised images.
         with:
@@ -153,7 +153,7 @@ controls:
         name: "4.1.5 Signed Images"
         description: >
           Ensures that images are cryptographically signed before execution.
-        mitigation: >
+        mitigation: >-
           Verifies image authenticity and prevents tampering, ensuring 
           only trusted images are deployed.
 
@@ -166,7 +166,7 @@ controls:
       Implements controls to secure container image registries by enforcing 
       HTTPS connections, verifying image freshness, and preventing stale 
       images from being used.
-    mitigation: >
+    mitigation: >-
       Reduces risks associated with registry security, stale images, 
       and unauthorized image pulls. Ensures that images are kept up-to-date 
       and only retrieved from secure sources.
@@ -177,7 +177,7 @@ controls:
         uses: images/enforce-https-registry@v2
         description: >
           Ensures that images are only pulled from registries using HTTPS.
-        mitigation: >
+        mitigation: >-
           Prevents man-in-the-middle (MITM) attacks and data interception 
           when retrieving images.
 
@@ -185,7 +185,7 @@ controls:
         name: "4.2.2 Up-to-Date Base Images"
         description: >
           Ensures that base images are not older than a specified time limit.
-        mitigation: >
+        mitigation: >-
           Reduces the risk of using outdated base images that may contain 
           vulnerabilities or unsupported components.
         with:
@@ -195,7 +195,7 @@ controls:
         name: "4.2.2 Up-to-Date Derived Images"
         description: >
           Ensures that derived images are refreshed regularly and not outdated.
-        mitigation: >
+        mitigation: >-
           Reduces the risk of deploying stale application images with 
           outdated dependencies.
         with:

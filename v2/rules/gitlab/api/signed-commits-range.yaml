@@ -5,7 +5,7 @@ path: signed-commits-range.rego
 
 description: Verify the selected range of commits is signed via the GitLab API.
 
-full-description: |
+full-description: |-
   This rule ensures that the commits in the specified time range are signed in the GitLab repository.
   It performs the following steps:
 
@@ -17,7 +17,7 @@ full-description: |
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab repository resources.
   - GitLab API token must be provided to access the GitLab API.
 
-mitigation: >
+mitigation: >-
   Ensure that the commits in the specified time range are signed in the GitLab repository.
 
 inputs:
@@ -38,7 +38,7 @@ inputs:
     description: GitLab API access token.
     required: true
 
-input_example: |
+input_example: |-
   since: "2021-01-01T00:00:00Z"
   until: "2021-01-31T23:59:59Z"
   project_id: my_project_id

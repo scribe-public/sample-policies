@@ -28,7 +28,6 @@ with:
     - "22222225644ea629569e6a3c98c8375222222"
   access_token: '{{ .Args.Token }}'
   owner: my_owner
-  
 ```
 
 ## Description  

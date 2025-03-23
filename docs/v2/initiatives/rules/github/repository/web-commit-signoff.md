@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: github/repository/web-commit-signoff@v2
-
-## Usage example
-
-```yaml
-with: github/repository/web-commit-signoff@v2
 ```
 
 ## Mitigation  
 Ensure that the repository requires signoff on all commits made through the GitHub web interface, enhancing security and accountability.
-
 
 
 ## Description  

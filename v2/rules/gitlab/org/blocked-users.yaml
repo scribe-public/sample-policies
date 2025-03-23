@@ -5,7 +5,7 @@ path: blocked-users.rego
 
 description: Verify no users in the GitLab organization are on the block list.
 
-full-description: |
+full-description: |-
   This rule ensures that no users in the GitLab organization are on the block list.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
 
-mitigation: >
+mitigation: >-
   Ensure that no users are on the block list in the GitLab organization to reduce the risk of unauthorized access.
 
 
@@ -25,7 +25,7 @@ inputs:
     description: List of users blocked in the GitLab organization.
     required: false
 
-input_example: |
+input_example: |-
   blocked_users:
     - "user1"
     - "user2"

@@ -11,11 +11,8 @@ title: Verify No Critical or High Vulnerabilities
 
 Verify via Scribe API that there no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.).
 
-:::note 
-Rule Uses Scribe API to check for CVEs in the target artifact, Ensure usage of Scribe Token in the environment.  
-::: 
 :::tip 
-Rule requires the Scribe API to be enabled.  
+Rule requires the Scribe API to be enabled. Ensure that you provide the Scribe Token to the `valint` utility.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -44,7 +41,6 @@ Ensure that all critical or high severity vulnerabilities are addressed before d
 
 ## Description  
 This rule ensures that there are no critical or high severity vulnerabilities in any deliverable component of the product by verifying via the Scribe API.
-
 
 ## Evidence Requirements  
 | Field | Value |

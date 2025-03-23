@@ -5,7 +5,7 @@ path: description-substring-check.rego
 
 description: Verify a specific substring is not found in the description attribute of vulnerabilities for the GitLab project.
 
-full-description: |
+full-description: |-
   This rule ensures that a specific substring is not found in the description attribute of vulnerabilities for the GitLab project.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that the specified substring is not found in the description attribute of vulnerabilities to prevent unauthorized changes.
 
 inputs:
@@ -25,7 +25,7 @@ inputs:
     required: false
 
 
-input_example: |
+input_example: |-
   pattern: "(?i)insdput"
 
 labels:

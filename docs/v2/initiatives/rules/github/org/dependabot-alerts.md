@@ -27,12 +27,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: github/org/dependabot-alerts@v2
 with:
   desired_value: true
-  
 ```
 
 ## Mitigation  
 Ensures that Dependabot alerts are enabled for new repositories in the GitHub organization, helping to identify and address vulnerabilities in dependencies.
-
 
 
 ## Description  
@@ -45,7 +43,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization settings.
-
 
 ## Evidence Requirements  
 | Field | Value |

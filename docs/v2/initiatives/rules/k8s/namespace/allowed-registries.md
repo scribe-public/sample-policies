@@ -35,7 +35,6 @@ with:
 Ensures that only approved container registries are used within the Kubernetes namespace, reducing the risk of introducing vulnerabilities or unapproved software.
 
 
-
 ## Description  
 This rule ensures that only container images from specified registries are allowed within the Kubernetes namespace.
 It performs the following steps:
@@ -46,7 +45,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

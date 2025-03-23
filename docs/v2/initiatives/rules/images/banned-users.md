@@ -37,7 +37,6 @@ with:
 Prevents the execution of container images with default or disallowed user accounts reducing the risk of privilege escalation and ensuring that only secure, non-privileged user configurations are used.
 
 
-
 ## Description  
 This rule inspects the CycloneDX SBOM evidence for a container image to ensure that the image is not configured 
 to run with a banned default user. It does so by examining the `metadata.component.properties` array for a property 
@@ -50,7 +49,6 @@ a violation is recorded.
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM must include a `metadata.component.properties` array with an entry where the property name is "user".
 - The disallowed user list (e.g., ["root"]) must be provided in the `with.users` parameter.
-
 
 ## Evidence Requirements  
 | Field | Value |

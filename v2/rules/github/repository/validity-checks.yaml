@@ -5,7 +5,7 @@ path: validity-checks.rego
 
 description: Verify both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.
 
-full-description: |
+full-description: |-
   This rule ensures that both `secret_scanning_validity_checks` and `security_and_analysis` are set in GitHub organization and all the repositories.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
-mitigation: >
+mitigation: >-
   Ensure that the validity checks are set in the GitHub organization and all the repositories.
 
 labels:

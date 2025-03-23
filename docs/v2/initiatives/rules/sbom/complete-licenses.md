@@ -7,12 +7,12 @@ title: Enforce SBOM License Completeness
 **ID:** `sbom-require-complete-license-set`  
 **Source:** [v2/rules/sbom/complete-licenses.yaml](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/complete-licenses.yaml)  
 **Rego Source:** [complete-licenses.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sbom/complete-licenses.rego)  
-**Labels:** SBOM, Image, Git  
+**Labels:** SBOM, Image  
 
 Verify all dependencies in the artifact have a license.
 
 :::note 
-This rule requires SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
+This rule requires Image SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
 ::: 
 :::tip 
 Signed Evidence for this rule **IS NOT** required by default but is recommended.  
@@ -28,16 +28,10 @@ Rule is scoped by product and target.
 
 ```yaml
 uses: sbom/complete-licenses@v2
-
-## Usage example
-
-```yaml
-with: sbom/complete-licenses@v2
 ```
 
 ## Mitigation  
 Ensures that all dependencies have a complete set of licenses, reducing the risk of legal issues and ensuring compliance with open-source licenses.
-
 
 
 ## Description  
@@ -52,11 +46,11 @@ It performs the following steps:
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM must include a list of dependencies with their licenses.
 
-
 ## Evidence Requirements  
 | Field | Value |
 |-------|-------|
 | filter-by | ['product', 'target'] |
 | signed | False |
 | content_body_type | cyclonedx-json |
+| target_type | container |
 

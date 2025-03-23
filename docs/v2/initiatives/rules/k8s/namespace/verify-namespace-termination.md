@@ -34,7 +34,6 @@ with:
 Ensures that namespaces are terminated in a timely manner, preventing lingering resources and maintaining cluster hygiene.
 
 
-
 ## Description  
 This rule verifies that namespaces in Kubernetes are terminated properly within the specified time frame.
 It performs the following steps:
@@ -45,7 +44,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

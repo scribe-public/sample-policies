@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: k8s/pods/verify-pod-termination@v2
-
-## Usage example
-
-```yaml
-with: k8s/pods/verify-pod-termination@v2
 ```
 
 ## Mitigation  
 Ensures that pods are terminated in a timely manner, preventing lingering resources and maintaining cluster hygiene.
-
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

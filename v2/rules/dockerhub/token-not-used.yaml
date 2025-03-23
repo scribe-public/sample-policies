@@ -5,7 +5,7 @@ path: token-not-used.rego
 
 description: Verify that there are no unused Dockerhub.
 
-full-description: |
+full-description: |-
   This rule verifies that there are no unused Dockerhub.
   It performs the following steps:
   

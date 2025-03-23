@@ -5,7 +5,7 @@ path: dependency-graph.rego
 
 description: Verify `dependency_graph` is enabled for new repositories in the GitHub organization.
 
-full-description: |
+full-description: |-
   This rule ensures that the dependency graph is enabled in the GitHub organization.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
-mitigation: >
+mitigation: >-
   Ensures that the dependency graph is enabled in the GitHub organization, providing better visibility into dependencies and potential vulnerabilities.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: Indicates if the dependency graph is enabled.
     required: false
 
-input_example: |
+input_example: |-
   desired_value: true
 
 labels:

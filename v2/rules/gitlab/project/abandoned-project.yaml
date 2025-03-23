@@ -5,7 +5,7 @@ path: abandoned-project.rego
 
 description: Verify the GitLab project is active for a specified duration.
 
-full-description: |
+full-description: |-
   This rule ensures that the GitLab project is active for a specified duration.
   It performs the following steps:
   
@@ -15,7 +15,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
 
-mitigation: >
+mitigation: >-
   Ensure that the GitLab project is active for the specified duration to prevent project abandonment.
 
 inputs:
@@ -24,7 +24,7 @@ inputs:
     description: Number of days the project has been inactive.
     required: false
 
-input_example: |
+input_example: |-
   inactive_for_days: 30
 
 labels:

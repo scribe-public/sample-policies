@@ -28,7 +28,7 @@ uses: sarif/trivy/verify-trivy-attack-vector@v2
 with:
   attack_vectors:
     - "stack buffer overflow"
-  violations_threshold: 2
+  violations_threshold: 0
 ```
 
 ## Evidence Requirements  

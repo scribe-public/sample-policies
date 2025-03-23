@@ -78,7 +78,6 @@ It performs the following steps:
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
 - Github API token must be provided to access the GitHub API.
 
-
 ## Rule Parameters (`with`)  
 | Parameter | Default |
 |-----------|---------|

@@ -5,7 +5,7 @@ path: fresh-sbom.rego
 
 description: Verify the SBOM is not older than the specified duration.
 
-full-description: |  
+full-description: |-  
   This rule inspects the CycloneDX SBOM evidence for the artifact to verify that it is not older than the specified duration.
   It performs the following steps:
   
@@ -17,7 +17,7 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include a creation date.
 
-mitigation: >
+mitigation: >-
   Ensures that the SBOM is up-to-date, reducing the risk of outdated information and ensuring accurate tracking of components.
 
 inputs:
@@ -27,7 +27,7 @@ inputs:
     required: false
 
 
-input_example: |
+input_example: |-
   max_days: 30
 
 labels:

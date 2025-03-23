@@ -28,7 +28,6 @@ uses: gitlab/project/committer-email-check@v2
 with:
   allowed_committers:
     - mail@example.com
-  
 ```
 
 ## Mitigation  
@@ -44,7 +43,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

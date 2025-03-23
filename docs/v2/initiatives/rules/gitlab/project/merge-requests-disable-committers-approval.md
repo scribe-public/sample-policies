@@ -9,7 +9,7 @@ title: Disable Committers' Approval for Merge Requests in GitLab
 **Rego Source:** [merge-requests-disable-committers-approval.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/gitlab/project/merge-requests-disable-committers-approval.rego)  
 **Labels:** Gitlab, Project  
 
-Verify Merge Requests Disable Committers Approval is set for the GitLab project.
+Verify `merge_requests_disable_committers_approval` is set for the GitLab project.
 
 :::note 
 This rule requires Gitlab Project Discovery Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/platforms/discover#gitlab-discovery) for more details.  
@@ -27,7 +27,6 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: gitlab/project/merge-requests-disable-committers-approval@v2
 with:
   merge_requests_disable_committers_approval: false
-  
 ```
 
 ## Mitigation  
@@ -43,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

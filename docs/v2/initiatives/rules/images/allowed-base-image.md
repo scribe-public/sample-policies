@@ -42,7 +42,6 @@ with:
 Ensures that only trusted base images are used in container builds, reducing the risk of deploying compromised or outdated images. This check mitigates vulnerabilities by enforcing that each base image matches an approved source pattern.
 
 
-
 ## Description  
 This rule examines the SBOM evidence for a container image, focusing on components in the "container" group that represent base images.
 A base image is identified by the presence of a property whose name ends with "isbaseimage" (case-insensitive) and whose value is "true".
@@ -55,7 +54,6 @@ is found, a violation is recorded indicating that the necessary base image infor
 - The SBOM evidence must be provided in the `cyclonedx-json` format.
 - The SBOM should include a `metadata.component.properties` array containing properties that identify base images.
 - The approved source patterns must be specified in the `with.approved_sources` parameter.
-
 
 ## Evidence Requirements  
 | Field | Value |

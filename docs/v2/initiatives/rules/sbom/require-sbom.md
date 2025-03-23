@@ -31,16 +31,10 @@ Rule is scoped by product and target.
 
 ```yaml
 uses: sbom/require-sbom@v2
-
-## Usage example
-
-```yaml
-with: sbom/require-sbom@v2
 ```
 
 ## Mitigation  
 Ensures that an SBOM is present, which is essential for tracking and managing software components and their dependencies.
-
 
 
 ## Description  
@@ -52,7 +46,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided in the CycloneDX JSON format.
-
 
 ## Evidence Requirements  
 | Field | Value |

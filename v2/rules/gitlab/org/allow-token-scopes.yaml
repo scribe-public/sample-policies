@@ -5,7 +5,7 @@ path: allow-token-scopes.rego
 
 description: Verify all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.
 
-full-description: |
+full-description: |-
   This rule ensures that all tokens in the GitLab organization are restricted to allowed scopes to prevent excessive permission.
   It performs the following steps:
   
@@ -21,7 +21,7 @@ inputs:
     description: List of allowed token scopes in the GitLab organization.
     required: false
 
-input_example: |
+input_example: |-
   allowed_token_scopes:
     - api
     - read_api

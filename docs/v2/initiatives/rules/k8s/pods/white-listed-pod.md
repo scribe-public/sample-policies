@@ -37,7 +37,6 @@ with:
 Ensures that only approved pods are running within the Kubernetes cluster, reducing the risk of unauthorized or misconfigured pods.
 
 
-
 ## Description  
 This rule ensures that only pods specified in the whitelist are allowed to run within the Kubernetes cluster.
 It performs the following steps:
@@ -48,7 +47,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

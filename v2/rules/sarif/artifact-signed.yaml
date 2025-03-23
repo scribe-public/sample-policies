@@ -5,7 +5,7 @@ path: artifact-signed.rego
 
 description: Verify the artifact referenced in the SARIF report is signed to confirm its integrity.
 
-full-description: |
+full-description: |-
   This rule verifies that the artifact referenced in the SARIF report has been cryptographically signed.
   It uses the provided evidence (which must adhere to the SARIF 2.1.0 schema) to confirm that a valid signature exists.
   The rule checks that the evidence indicates the artifact is signed, ensuring that it has not been modified since its creation.
@@ -16,7 +16,7 @@ full-description: |
   - The SARIF report must indicate that the artifact is signed (i.e., the 'signed' flag is true).
   - The signer's identity should match one of the specified common names or emails in the configuration.
 
-mitigation: >
+mitigation: >-
   Ensures that the referenced artifact has a valid digital signature, confirming its integrity and authenticity.
   This prevents tampering and verifies that the artifact originates from a trusted source.
 

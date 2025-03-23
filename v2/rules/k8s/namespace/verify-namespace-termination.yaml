@@ -5,7 +5,7 @@ path: verify-namespace-termination.rego
 
 description: Verify Kubernetes namespaces are properly terminated to prevent lingering resources and maintain cluster hygiene.
 
-full-description: |
+full-description: |-
   This rule verifies that namespaces in Kubernetes are terminated properly within the specified time frame.
   It performs the following steps:
   
@@ -16,7 +16,7 @@ full-description: |
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
 
-mitigation: >
+mitigation: >-
   Ensures that namespaces are terminated in a timely manner, preventing lingering resources and maintaining cluster hygiene.
 
 inputs:
@@ -25,7 +25,7 @@ inputs:
     type: array
     required: false
 
-input_example: |
+input_example: |-
   namespaces:
     - ".*"
 

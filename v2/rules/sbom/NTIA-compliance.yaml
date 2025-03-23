@@ -6,7 +6,7 @@ path: "NTIA-compliance.rego"
 description: |
   Validates that SBOM metadata meets basic NTIA requirements for authors and supplier.
 
-full-description: |  
+full-description: |-  
   This rule validates that the SBOM metadata meets basic NTIA requirements for authors and suppliers.
   It performs the following steps:
   
@@ -19,7 +19,7 @@ full-description: |
   - Evidence must be provided in the CycloneDX JSON format.
   - The SBOM must include metadata for authors and suppliers.
 
-mitigation: >
+mitigation: >-
   Ensures that the SBOM metadata meets NTIA requirements, reducing the risk of incomplete or inaccurate information about authors and suppliers.
 
 notes:
@@ -48,7 +48,7 @@ inputs:
     type: object
     required: false
 
-input_example: |
+input_example: |-
   required_author: 
     name: "bom"
     email: "bob@company.com"

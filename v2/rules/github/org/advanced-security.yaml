@@ -1,11 +1,11 @@
 config-type: rule
 id: github-org-advanced-security
-name: Verify advanced_security_enabled_for_new_repositories setting
+name: Verify `advanced_security_enabled_for_new_repositories` setting
 path: advanced-security.rego
 
 description: Verify `advanced_security` is enabled for new repositories in the GitHub organization.
 
-full-description: |
+full-description: |-
   This rule verifies that advanced security is enabled for new repositories in the GitHub organization by examining the provided Discovery evidence.
   It checks the organization's details and compares the value of the 
   `organization_details.advanced_security_enabled_for_new_repositories` field against the expected value.
@@ -17,7 +17,7 @@ full-description: |
   ### **Evidence Requirements**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
 
-mitigation: >
+mitigation: >-
   Enforces advanced security for new repositories in the organization, significantly reducing the risk of introducing vulnerabilities or unapproved software.
 
 inputs:
@@ -26,7 +26,7 @@ inputs:
     description: Desired value for the advanced_security_enabled_for_new_repositories setting.
     required: false
 
-input_example: |
+input_example: |-
   desired_value: true
 
 labels:

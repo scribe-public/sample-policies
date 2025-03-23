@@ -5,10 +5,10 @@ path: artifact-signed.rego
 
 description: Verify the Git artifact is signed.
 
-mitigation: |
+mitigation: >-
   Ensure that only Git artifacts with valid cryptographic signatures are deployed to prevent source code tampering.
 
-input_example: |
+input_example: |-
   identity:
     emails:
       - bob@company.com

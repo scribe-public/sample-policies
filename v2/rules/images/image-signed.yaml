@@ -6,7 +6,7 @@ path: "image-signed.rego"
 description: |
   Enforces that container images (target_type=container) are cryptographically signed.
 
-full-description: |  
+full-description: |-  
   This rule evaluates the evidence for a container image to determine if it is properly signed. It checks the 
   environment field in the evidence to verify that the `content_type` is set to "attest-cyclonedx-json". If the 
   image name matches any pattern specified in `with.skip_image_regex`, the signature check is skipped, allowing flexibility 
@@ -18,7 +18,7 @@ full-description: |
   - The evidence environment must include a `content_type` field that indicates the report is signed (i.e., "attest-cyclonedx-json").
   - The `with.skip_image_regex` parameter allows specifying patterns (e.g., "alpine") to bypass the signature requirement for certain images. 
 
-mitigation: >
+mitigation: >-
   Ensures that only container images with valid cryptographic signatures are deployed, mitigating the risk of tampering.
   By requiring evidence in the CycloneDX attest-cyclonedx-json format, this rule confirms that images have been signed by trusted entities.
 
@@ -32,7 +32,7 @@ inputs:
     type: array
     required: false
 
-input_example: |
+input_example: |-
   identity:
     emails:
     - bob@company.com

@@ -9,7 +9,7 @@ title: Verify Rule Compliance in SARIF
 **Rego Source:** [verify-sarif.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/sarif/verify-sarif.rego)  
 **Labels:** SARIF  
 
-Verify the SARIF report complies with defined generic rules for compliance and security.
+Verify the SARIF report complies with defined generic rules for compliance and security. vulnerability profiles.
 
 :::note 
 This rule requires SARIF Evidence. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sarif) for more details.  
@@ -28,8 +28,7 @@ uses: sarif/verify-sarif@v2
 ```
 
 ## Mitigation  
-Ensures that the SARIF report adheres to the predefined generic compliance rules by validating  the vulnerability types, severity levels, and total number of findings. This verification helps maintain  a consistent security posture and prevents the use of images with unacceptable vulnerability profiles.
-
+Ensures that the SARIF report adheres to the predefined generic compliance rules by validating  the vulnerability types, severity levels, and total number of findings. This verification helps maintain  a consistent security posture and prevents the use of images with unacceptable
 
 
 ## Description  
@@ -49,7 +48,6 @@ severity, and the corresponding location in the artifact.
 - Evidence must be provided in a generic format that adheres to the SARIF 2.1.0 schema.
 - The SARIF report should include a structured list of vulnerability results, along with rule definitions and descriptions.
 - The evaluation uses the configuration parameters provided in the `with` section to guide the verification process.
-
 
 ## Evidence Requirements  
 | Field | Value |

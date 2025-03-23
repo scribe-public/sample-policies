@@ -43,7 +43,6 @@ with:
 Prevents deployment of container images that expose disallowed ports, reducing the risk of unauthorized network access  and potential exploitation. This check ensures that only images with approved port configurations are deployed.
 
 
-
 ## Description  
 This rule evaluates the CycloneDX SBOM evidence for a container image to verify that no disallowed ports are exposed.
 It performs the following steps:
@@ -58,7 +57,6 @@ It performs the following steps:
 
 - Evidence must be provided in the CycloneDX JSON format.
 - The SBOM must include a `metadata.component.properties` array with entries for exposed ports.
-
 
 ## Evidence Requirements  
 | Field | Value |

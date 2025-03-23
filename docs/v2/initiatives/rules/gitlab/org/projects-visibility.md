@@ -29,7 +29,6 @@ with:
   allowed_public:
     - "Learn GitLab"
     - "Scribe Gitlab Test"
-  
 ```
 
 ## Description  

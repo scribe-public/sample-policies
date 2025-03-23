@@ -25,16 +25,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: gitlab/project/sast-scanning@v2
-
-## Usage example
-
-```yaml
-with: gitlab/project/sast-scanning@v2
 ```
 
 ## Mitigation  
-Ensure that SAST scanning is performed for the GitLab project to prevent unauthorized changes.\
-
+Ensure that SAST scanning is performed for the GitLab project to prevent unauthorized changes.
 
 
 ## Description  
@@ -46,7 +40,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

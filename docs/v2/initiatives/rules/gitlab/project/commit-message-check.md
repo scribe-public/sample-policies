@@ -27,12 +27,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 uses: gitlab/project/commit-message-check@v2
 with:
   commit_message_regex: ".*JIRA-\\d+.*"
-  
 ```
 
 ## Mitigation  
 Ensure that commit messages adhere to the specified format template to maintain consistency and readability.
-
 
 
 ## Description  
@@ -44,7 +42,6 @@ It performs the following steps:
 
 **Evidence Requirements:**
 - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
-
 
 ## Evidence Requirements  
 | Field | Value |

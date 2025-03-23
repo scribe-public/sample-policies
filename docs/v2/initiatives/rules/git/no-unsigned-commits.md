@@ -28,11 +28,6 @@ Rule is scoped by product and target.
 
 ```yaml
 uses: git/no-unsigned-commits@v2
-
-## Usage example
-
-```yaml
-with: git/no-unsigned-commits@v2
 ```
 
 ## Mitigation  
@@ -50,7 +45,6 @@ It performs the following steps:
 - The Source SBOM evidence must be provided in the `cyclonedx-json` format.
 - The Source SBOM should include a `metadata.component.properties` array containing properties that identify base images.
 - The Source SBOM (Software Bill of Materials) must include the `PGPSignature` property for each commit Component.
-
 
 ## Evidence Requirements  
 | Field | Value |

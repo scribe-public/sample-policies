@@ -24,16 +24,10 @@ Rule requires evaluation with a target. Without one, it will be **disabled** unl
 
 ```yaml
 uses: ssdf/ps-2-image-verifiable@v2
-
-## Usage example
-
-```yaml
-with: ssdf/ps-2-image-verifiable@v2
 ```
 
 ## Mitigation  
 Ensures container images are cryptographically verifiable, preventing tampering and confirming their authenticity.
-
 
 
 ## Evidence Requirements  

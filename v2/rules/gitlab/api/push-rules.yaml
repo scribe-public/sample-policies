@@ -5,7 +5,7 @@ path: push-rules.rego
 
 description: Verify GitLab push rules are configured via the API.
 
-full-description: |
+full-description: |-
   This rule ensures that GitLab push rules are configured via the API.
   It performs the following steps:
 
@@ -38,7 +38,7 @@ inputs:
     description: GitLab push rules.
     required: true
 
-input_example: |
+input_example: |-
   api_token: '{{ .Args.Token }}'
   project: my_project
   push_rule:
