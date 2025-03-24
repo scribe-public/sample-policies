@@ -16,7 +16,6 @@ Evaluate PS rules from the SSDF initiative
 
 This initiative enforces key controls from the Secure Software Development Framework (SSDF) to ensure  the integrity and security of your software supply chain. It evaluates critical process (PS) rules  to detect vulnerabilities, enforce proper access and commit practices, and secure code repositories.
 
-
 ## Controls Overview
 
 | Control Name | Control Description | Mitigation |

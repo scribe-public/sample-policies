@@ -4,7 +4,7 @@ version: "1.0.0"
 name: "SLSA L1 Framework"
 description: "Evaluate SLSA Level 1"
 
-full-description: >
+full-description: >-
   This initiative ensures that every critical build artifact includes the
   minimum required provenance metadata as specified in SLSA Level 1. By recording
   detailed information about the build process—such as timestamps, authors, and build details—

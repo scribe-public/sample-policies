@@ -57,5 +57,5 @@ introducing vulnerabilities or unapproved software.
 ## Input Definitions  
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| desired_value | boolean | False | Desired value for the advanced_security_enabled_for_new_repositories setting. |
+| desired_value | boolean | False | Desired value for the `advanced_security_enabled_for_new_repositories` setting. |
 

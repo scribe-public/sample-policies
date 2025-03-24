@@ -3,7 +3,7 @@ id: "SSDF"
 version: "1.0.0"
 name: "SSDF Client Initiative"
 description: "Evaluate PS rules from the SSDF initiative"
-full-description: >
+full-description: >-
   This initiative enforces key controls from the Secure Software Development Framework (SSDF) to ensure 
   the integrity and security of your software supply chain. It evaluates critical process (PS) rules 
   to detect vulnerabilities, enforce proper access and commit practices, and secure code repositories.

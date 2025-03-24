@@ -2,7 +2,7 @@ config-type: initiative
 id: "SP-800-53"
 version: "1.0.0"
 name: "NIST Supply Chain Integrity Initiative"
-description: >
+description: >-
   This initiative enforces key supply chain requirements from NIST SP 800-53.
   It mandates that container builds include:
     - A Software Bill of Materials (SBOM) to ensure component inventory and traceability,
@@ -17,9 +17,9 @@ defaults:
     signed: false
 
 controls:
-  - name: "SBOM Requirement (SR-4 / CM-8)"
+  - name: "SBOM Requirement"
     id: SR4_CM8
-    description: >
+    description: >-
       Enforce that every container build includes a Software Bill of Materials (SBOM),
       ensuring that all components are inventoried and traceable.
       This requirement addresses both SR-4 and the component inventory aspects of CM-8.
@@ -33,7 +33,7 @@ controls:
       - uses: images/verify-labels@v2
         mitigation: "Reject images with missing or inconsistent supply chain metadata."
         name: "Verify Supply Chain Labels"
-        description: >
+        description: >-
           Confirm that container images include required `opencontainers` labels:
         with:
           labels:
@@ -45,7 +45,7 @@ controls:
 
       - uses: sbom/NTIA-compliance@v2
         name: "NTIA SBOM Compliance Check"
-        description: >
+        description: >-
           Verifies that the SBOM includes valid authors and supplier data
           following NTIA guidelines. Optionally enforces a required_author and
           required_supplier if provided.
@@ -54,9 +54,9 @@ controls:
           required_author: {}
           required_supplier: {}
 
-  - name: "Provenance Requirement (SA-8)"
+  - name: "Provenance Requirement"
     id: SA8
-    description: >
+    description: >-
       Enforce that every container build includes provenance data,
       supporting traceability within the security architecture as required by SA-8.
     mitigation: "Provides a clear audit trail of the build process, mitigating risks related to unidentified or untraceable changes."
@@ -66,9 +66,9 @@ controls:
         description: "Ensure provenance data is present for container builds."
         mitigation: "Reject container builds that do not include valid provenance information."
 
-  - name: "SBOM Signature Enforcement (SA-12)"
+  - name: "SBOM Signature Enforcement"
     id: SA12
-    description: >
+    description: >-
       Enforce that the SBOM is cryptographically signed to verify its integrity and authenticity,
       aligning with SA-12 requirements.
     mitigation: "Prevents unauthorized modifications by ensuring that only signed SBOMs are accepted."

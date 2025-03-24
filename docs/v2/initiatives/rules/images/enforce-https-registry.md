@@ -11,7 +11,6 @@ title: Registry Connection HTTPS
 
 Checks if the container's registry scheme is HTTPS
 
-
 :::note 
 This rule requires Image SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
 ::: 

@@ -23,7 +23,7 @@ mitigation: >-
 inputs:
   - name: desired_value
     type: boolean
-    description: Desired value for the advanced_security_enabled_for_new_repositories setting.
+    description: Desired value for the `advanced_security_enabled_for_new_repositories` setting.
     required: false
 
 input_example: |-

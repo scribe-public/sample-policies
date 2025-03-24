@@ -2,7 +2,7 @@ config-type: initiative
 id: "SP-800-190"
 version: "1.0.0"
 name: "NIST Application Container Security Initiative"
-description: >
+description: >-
   This initiative enforces container security controls as outlined in 
   NIST SP 800-190. It ensures that containerized applications follow 
   security best practices, including vulnerability scanning, trusted 
@@ -24,7 +24,7 @@ controls:
   ########################################################################
   - name: "4.1 IMAGE COUNTERMEASURES"
     id: "4.1"
-    description: >
+    description: >-
       Implements security controls to reduce risks associated with 
       container images, such as vulnerabilities, misconfigurations, 
       and unauthorized images. The policies enforce CVE scanning, 
@@ -42,7 +42,7 @@ controls:
       # ------------------------------------------------------------------
       - uses: sarif/trivy/verify-cve-severity@v2
         name: "4.1.1 Severity-Based Vulnerabilities (Trivy)"
-        description: >
+        description: >-
           Ensures that images do not contain high-severity vulnerabilities.
           Blocks images if any CVEs exceed the defined severity threshold.
         mitigation: >-
@@ -54,7 +54,7 @@ controls:
 
       - name: "4.1.1 High-Profile Vulnerabilities (Trivy)"
         uses: sarif/trivy/blocklist-cve@v2
-        description: >
+        description: >-
           Blocks images that contain specific high-profile CVEs that are 
           actively exploited or widely known.
         mitigation: >-
@@ -79,7 +79,7 @@ controls:
       # ------------------------------------------------------------------
       - name: "4.1.2 Default Non-Root User"
         uses: images/banned-users@v2
-        description: >
+        description: >-
           Ensures that containers do not run as the root user.
         mitigation: >-
           Prevents privilege escalation attacks and reduces the impact 
@@ -87,7 +87,7 @@ controls:
         
       - name: "4.1.2 Banned Open Port 22"
         uses: images/banned-ports@v2
-        description: >
+        description: >-
           Blocks images that expose SSH (port 22), which should not be 
           used in containerized applications.
         mitigation: >-
@@ -99,7 +99,7 @@ controls:
       # ------------------------------------------------------------------
       - name: "4.1.3 Set HEALTHCHECK Instruction"
         uses: images/require-healthcheck@v2
-        description: >
+        description: >-
           Ensures that container images include a HEALTHCHECK instruction 
           to monitor their runtime health.
         mitigation: >-
@@ -108,7 +108,7 @@ controls:
 
       - uses: images/verify-labels@v2
         name: "4.1.3 Verify Required Image Labels"
-        description: >
+        description: >-
           Enforces the presence of essential OpenContainers labels, such as 
           creation time, version, and source repository.
         mitigation: >-
@@ -127,7 +127,7 @@ controls:
       # ------------------------------------------------------------------
       - uses: images/allowed-base-image@v2
         name: "4.1.5 Approved Source Base Images"
-        description: >
+        description: >-
           Ensures that base images originate from approved and trusted sources.
         mitigation: >-
           Reduces the risk of compromised or outdated base images 
@@ -139,7 +139,7 @@ controls:
 
       - uses: images/allowed-image-source@v2
         name: "4.1.5 Approved Source Images"
-        description: >
+        description: >-
           Ensures that application images are built from approved sources.
         mitigation: >-
           Blocks images from untrusted registries, reducing the risk of 
@@ -151,7 +151,7 @@ controls:
 
       - uses: images/image-signed@v2
         name: "4.1.5 Signed Images"
-        description: >
+        description: >-
           Ensures that images are cryptographically signed before execution.
         mitigation: >-
           Verifies image authenticity and prevents tampering, ensuring 
@@ -162,7 +162,7 @@ controls:
   ########################################################################
   - name: "4.2 REGISTRY COUNTERMEASURES"
     id: "4.2"
-    description: >
+    description: >-
       Implements controls to secure container image registries by enforcing 
       HTTPS connections, verifying image freshness, and preventing stale 
       images from being used.
@@ -175,7 +175,7 @@ controls:
 
       - name: "4.2.1 Registry Connection Enforcement"
         uses: images/enforce-https-registry@v2
-        description: >
+        description: >-
           Ensures that images are only pulled from registries using HTTPS.
         mitigation: >-
           Prevents man-in-the-middle (MITM) attacks and data interception 
@@ -183,7 +183,7 @@ controls:
 
       - uses: images/fresh-base-image@v2
         name: "4.2.2 Up-to-Date Base Images"
-        description: >
+        description: >-
           Ensures that base images are not older than a specified time limit.
         mitigation: >-
           Reduces the risk of using outdated base images that may contain 
@@ -193,7 +193,7 @@ controls:
 
       - uses: images/fresh-image@v2
         name: "4.2.2 Up-to-Date Derived Images"
-        description: >
+        description: >-
           Ensures that derived images are refreshed regularly and not outdated.
         mitigation: >-
           Reduces the risk of deploying stale application images with 
