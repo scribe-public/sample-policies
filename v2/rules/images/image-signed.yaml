@@ -3,7 +3,7 @@ id: "images-require-signed-image"
 name: "Require Signed Container Image"
 path: "image-signed.rego"
 
-description: |
+description: >-
   Enforces that container images (target_type=container) are cryptographically signed.
 
 full-description: |-  

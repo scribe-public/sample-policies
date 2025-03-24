@@ -9,10 +9,7 @@ title: Banned Ports
 **Rego Source:** [banned-ports.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/banned-ports.rego)  
 **Labels:** SBOM, Images  
 
-Ensures that the container image does not expose ports that are disallowed by organizational policy.
-The rule examines properties in the SBOM metadata and checks each value (expected in the format "port/protocol") against a provided banned ports list.
-It fails if any banned port is exposed or if no banned ports list is provided.
-
+Ensures that the container image does not expose ports that are disallowed by organizational policy. The rule examines properties in the SBOM metadata and checks each value (expected in the format "port/protocol") against a provided banned ports list. It fails if any banned port is exposed or if no banned ports list is provided.
 
 :::note 
 This rule requires Image SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  

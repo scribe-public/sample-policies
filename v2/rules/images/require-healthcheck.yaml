@@ -3,7 +3,7 @@ id: "images-require-healthcheck"
 name: "Require Healthcheck"
 path: "require-healthcheck.rego"
 
-description: >
+description: >-
   Checks that the container image includes at least one healthcheck property.
 
 full-description: |-  

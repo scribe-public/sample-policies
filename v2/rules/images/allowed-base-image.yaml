@@ -3,7 +3,7 @@ id: "images-allowed-base-image"
 name: "Allowed Base Image"
 path: "allowed-base-image.rego"
 
-description: |
+description: >-
   Verifies that every base image is from an approved source. The rule returns a summary
   including the component names and versions of valid base images, or lists the invalid ones.
   This rule requires Dockerfile context; for example, run it with:

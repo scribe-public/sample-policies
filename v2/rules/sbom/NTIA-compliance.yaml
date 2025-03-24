@@ -3,7 +3,7 @@ id: "NTIA-compliance"
 name: "NTIA SBOM Compliance Check"
 path: "NTIA-compliance.rego"
 
-description: |
+description: >-
   Validates that SBOM metadata meets basic NTIA requirements for authors and supplier.
 
 full-description: |-  

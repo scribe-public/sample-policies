@@ -11,7 +11,6 @@ title: Allowed Main Image Source
 
 Ensures the main container image referenced in the SBOM is from an approved source.
 
-
 :::note 
 This rule requires Image SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
 ::: 

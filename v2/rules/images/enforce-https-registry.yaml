@@ -3,7 +3,7 @@ id: "images-registry-https-check"
 name: "Registry Connection HTTPS"
 path: "enforce-https-registry.rego"
 
-description: >
+description: >-
   Checks if the container's registry scheme is HTTPS
 
 full-description: |-  

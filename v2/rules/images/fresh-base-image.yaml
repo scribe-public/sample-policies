@@ -3,7 +3,7 @@ id: "images-fresh-base-image"
 name: "Fresh Base Image"
 path: "fresh-base-image.rego"
 
-description: >
+description: >-
   Verifies that each base image is not older than the specified threshold (max_days) from its creation date.
   
 full-description: |-  

@@ -9,11 +9,7 @@ title: Allowed Base Image
 **Rego Source:** [allowed-base-image.rego](https://github.com/scribe-public/sample-policies/blob/main/v2/rules/images/allowed-base-image.rego)  
 **Labels:** SBOM, Images  
 
-Verifies that every base image is from an approved source. The rule returns a summary
-including the component names and versions of valid base images, or lists the invalid ones.
-This rule requires Dockerfile context; for example, run it with:
-`valint my_image --base-image Dockerfile`.
-
+Verifies that every base image is from an approved source. The rule returns a summary including the component names and versions of valid base images, or lists the invalid ones. This rule requires Dockerfile context; for example, run it with: `valint my_image --base-image Dockerfile`.
 
 :::note 
 This rule requires Image SBOM. See [here](https://deploy-preview-299--scribe-security.netlify.app/docs/valint/sbom) for more details.  
