@@ -5,6 +5,28 @@ path: max-admins.rego
 
 description: Verify the maximum number of admins for the GitLab project is restricted.
 
+full-description: |-
+  This rule ensures that the maximum number of admins for the GitLab project is restricted.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab organization.
+  2. Verifies that the maximum number of admins is restricted.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
+mitigation: >-
+  Ensure that the maximum number of admins for the GitLab project is restricted to reduce the risk of unauthorized changes.
+
+inputs:
+  - name: max_admins
+    type: number
+    description: Maximum number of admins allowed in the GitLab organization.
+    required: false
+
+input_example: |-
+  max_admins: 0
+
 labels:
   - Blueprint
   - GitLab

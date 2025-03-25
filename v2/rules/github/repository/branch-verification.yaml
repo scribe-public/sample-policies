@@ -5,6 +5,19 @@ path: branch-verification.rego
 
 description: Verify branch verification in the GitHub repository matches the value defined in the configuration file.
 
+full-description: |-
+  This rule ensures that branch verification in the GitHub repository matches the value defined in the configuration file.
+  It performs the following steps:
+  
+  1. Checks the repository settings for branch verification.
+  2. Verifies that the verification setting matches the expected value.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+mitigation: >-
+  Ensures that branch verification settings are correctly configured, reducing the risk of unauthorized changes.
+
 labels:
   - GitHub
   - Repository
@@ -25,4 +38,4 @@ evidence:
       {{- end -}}
 
 with:
-  desired_verified: false
+  desired_verified: true

@@ -5,6 +5,31 @@ path: allow-admins.rego
 
 description: Verify only users in the Allowed List have admin privileges in the GitLab organization.
 
+full-description: |-
+  This rule ensures that only users in the Allowed List have admin privileges in the GitLab organization.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab organization.
+  2. Verifies that only users in the Allowed List have admin privileges.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab organization resources.
+
+mitigation: >-
+  Ensure that only users in the Allowed List have admin privileges in the GitLab organization to reduce the risk of unauthorized changes.
+
+inputs:
+  - name: allowed_admins
+    type: array
+    description: List of users allowed to have admin privileges in the GitLab organization.
+    required: false
+
+input_example: |-
+  allowed_admins:
+    - "user1"
+    - "user2"
+    - "user3"
+
 labels:
   - Gitlab
   - Organization

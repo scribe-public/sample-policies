@@ -9,4 +9,4 @@ labels:
   - SSDF
 
 with:
-  desired_value: false
+  desired_value: true

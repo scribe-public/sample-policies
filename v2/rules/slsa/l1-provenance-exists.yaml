@@ -2,8 +2,12 @@ config-type: rule
 id: "SLSA.L1"
 name: Verify Provenance Document Exists
 path: l1-provenance-exists.rego
+help: https://slsa.dev/spec/v1.0/requirements
 
 description: Verify that the Provenance document evidence exists.
+
+mitigation: Recording comprehensive provenance metadata allows organizations to verify the integrity
+        of the build process and ensures that only authorized and untampered artifacts are deployed.
 
 labels:
   - SLSA
@@ -16,3 +20,4 @@ evidence:
     - target
   signed: false
   content_body_type: slsa
+

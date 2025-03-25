@@ -5,6 +5,40 @@ path: push-access-level.rego
 
 description: Verify the GitLab project's push access level policy complies with requirements.
 
+full-description: |-
+  This rule ensures that the GitLab project's push access level complies with requirements.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. For scoped branchs, verifies that the push access level complies with the specified requirements.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.  
+
+mitigation: >-
+  Ensure that the GitLab project's push access level complies with requirements to prevent unauthorized changes.
+
+inputs:
+  - name: branch
+    type: string
+    description: The branch to enforce push access level policy.
+    required: false
+
+  - name: access_level
+    type: number
+    description: The access level to enforce for push access level policy.
+    required: false
+
+  - name: access_level_description
+    type: string
+    description: The access level description to enforce for push access level policy.
+    required: false
+
+input_example: |-
+  branch: "main"
+  access_level: 30
+  access_level_description: "Maintainers"
+
 labels:
   - Gitlab
   - Project

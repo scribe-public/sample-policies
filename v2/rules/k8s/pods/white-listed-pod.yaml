@@ -5,6 +5,37 @@ path: white-listed-pod.rego
 
 description: Verify only pods explicitly listed in the Allowed List are allowed to run.
 
+full-description: |-
+  This rule ensures that only pods specified in the whitelist are allowed to run within the Kubernetes cluster.
+  It performs the following steps:
+  
+  1. Iterates over the pods in the cluster.
+  2. Checks each pod against the whitelist specified in the `with.white_listed_pod` configuration.
+     - If a pod is not in the whitelist, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Kubernetes resources.
+
+mitigation: >-
+  Ensures that only approved pods are running within the Kubernetes cluster, reducing the risk of unauthorized or misconfigured pods.
+
+inputs:
+  - name: white_listed_pod
+    description: "A list of allowed pods (supports regex)."
+    type: array
+    required: true
+  - name: verify_namespaces
+    description: "A list of namespaces to verify (supports regex)."
+    type: array
+    required: true
+
+input_example: |-
+  white_listed_pod:
+    - my-pod-1.*
+    - my-pod-2.*
+  verify_namespaces:
+    - ".*"
+
 labels:
   - K8s
   - Pod
@@ -16,6 +47,7 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
     - "asset_type=pod"
+    - "platform=k8s"
 
 with:
   white_listed_pod: []

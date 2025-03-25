@@ -1,9 +1,22 @@
 config-type: rule
 id: github-org-push-protection-sa
-name: Verify Secret_Scanning_Push_Protection Setting
+name: Verify `secret_scanning_push_protection` Setting
 path: push-protection-sa.rego
 
 description: Verify `secret_scanning_push_protection` is configured in the GitHub repository.
+
+full-description: |-
+  This rule ensures that secret scanning push protection is enabled in the security and analysis settings of the GitHub organization.
+  It performs the following steps:
+
+  1. Checks the security and analysis settings of the GitHub organization.
+  2. Verifies that the secret scanning push protection setting is enabled.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >-
+  Ensure that secret scanning push protection is enabled to provide better security for secret scanning in the GitHub organization.
 
 labels:
   - GitHub
@@ -23,3 +36,4 @@ evidence:
       {{- else -}}
       {{- asset_on_target nil -}}
       {{- end -}}
+

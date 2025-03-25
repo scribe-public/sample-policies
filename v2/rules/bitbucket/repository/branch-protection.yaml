@@ -5,6 +5,29 @@ path: branch-protection.rego
 
 description: Verify the default branch protection is enabled in the Bitbucket repository.
 
+full-description: |-
+  This rule ensures that the default branch protection is enabled in the Bitbucket repository.
+  It performs the following steps:
+  
+  1. Checks the repository settings for default branch protection configuration.
+  2. Verifies that the configuration matches the expected settings.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Bitbucket repository settings.
+
+mitigation: >-
+  Ensures that the default branch is protected, reducing the risk of unauthorized changes.
+
+inputs:
+  - name: branches
+    type: array
+    description: List of branches to verify default branch protection.
+    required: false
+
+input_example: |-
+  branches:
+    - "main"
+
 labels:
   - Bitbucket
   - Repository
@@ -21,3 +44,4 @@ evidence:
 with:
   branches:
     - 'main'
+

@@ -5,7 +5,11 @@ path: evidence-exists.rego
 
 description: Verify required Git evidence exists.
 
+mitigation: >-
+  By confirming that all required evidence exists, this rule guarantees that a Source Code Bill of Materials (SBOM) is fully represented as evidence.
+
 labels:
+  - SBOM
   - Git
 
 fail-on-missing-evidence: true
@@ -17,3 +21,4 @@ evidence:
   signed: false
   content_body_type: cyclonedx-json
   target_type: git
+

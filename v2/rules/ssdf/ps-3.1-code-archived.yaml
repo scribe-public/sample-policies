@@ -3,9 +3,12 @@ id: "PS.3.1"
 name: Code archived
 uses: demodata/data@experimental
 
-description: |
+description: >-
   PS.3.1 Verify that the software release data is archived.
   We assume running in Github thus the code is allways stored in a repository
+
+mitigation: >-
+  Archives code changes to maintain a secure, immutable history for auditing and traceability.
 
 labels:
   - SSDF
