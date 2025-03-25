@@ -1,0 +1,4 @@
+# Ignore everything in the docs/ folder
+docs/*
+# Except for the gen_docs.py file
+!docs/gen_docs.py
