@@ -102,7 +102,7 @@ controls:
       Use cryptographic signatures to sign SBOMs and provide a way for users to verify these signatures.
       Regularly back up the repository to prevent data loss and ensure that SBOMs are preserved
       even in the event of a system failure.
-      Document the SBOM creation process and train personnel on its importance and
+      Document the SBOM creation process and train personnel on its importance and proper handling procedures.
     rules:
       - uses: sbom/artifact-signed@v2
         name: SBOM archived
