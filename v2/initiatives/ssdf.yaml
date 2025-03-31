@@ -11,7 +11,7 @@ defaults:
 
 controls:
   - name: Store all forms of code based on the principle of least privilege
-    id: PS.1.1
+    id: PS/PS.1/PS.1.1
     description: >
       Store all forms of code – including source code, executable code, and configuration-as-code –
       based on the principle of least privilege so that only authorized personnel, tools, services, etc. have access.
@@ -22,34 +22,39 @@ controls:
     rules:
       - uses: github/org/2fa@v2
         name: Enforce 2FA
+        id: 2fa
         description: PS.1 Require 2FA for accessing code
 
       - uses: github/org/max-admins@v2
         name: Limit admins
+        id: max-admins
         description: PS.1 Restrict the maximum number of organization admins
         with:
           max_admins: 3
 
       - uses: github/org/web-commit-signoff@v2
         name: Require signoff on web commits
+        id: web-commit-signoff
         description: PS.1 Require contributors to sign when committing to Github through the web interface
         with:
           desired_value: true
 
       - uses: github/repository/branch-protection@v2
         name: Branch protected
+        id: branch-protection
         description: PS.1 Require branch protection for the repository
         with:
           desired_protected: true
 
       - uses: github/repository/repo-private@v2
         name: Repo private
+        id: repo-is-private
         description: PS.1 Assure the repository is private
         with:
           desired_private: true
 
   - name: Make software integrity verification information available to software acquirers
-    id: PS.2.1
+    id: PS/PS.2/PS.2.1
     description: >
       Help software acquirers ensure that the software they acquire
       is legitimate and has not been tampered with.
@@ -61,12 +66,13 @@ controls:
     rules:
       - uses: sbom/artifact-signed@v2
         name: Image-verifiable
+        id: sbom-is-signed
         description: PS.2 Provide a mechanism to verify the integrity of the image
         evidence:
           target_type: container
 
   - name:  Securely archive the necessary files and supporting data to be retained for each software release
-    id: PS.3.1
+    id: PS/PS.3/PS.3.1
     description: >
       Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data)
       to be retained for each software release
@@ -79,12 +85,13 @@ controls:
     rules:
       - uses: slsa/l1-provenance-exists@v2
         name: Provenance exists
+        id: provenance-exists
         description: |
           PS.3 Provenance exists
           Ensure that provenance information is available for each software release
 
   - name: Collect, safeguard, maintain, and share provenance data for all components of each software release
-    id: PS.3.2
+    id: PS/PS.3/PS.3.2
     description: >
       Collect, safeguard, maintain, and share provenance data for all components of each software release (e.g., in a software bill of materials [SBOM])
     mitigation: >
@@ -99,4 +106,5 @@ controls:
     rules:
       - uses: sbom/artifact-signed@v2
         name: SBOM archived
+        id: sbom-is-signed
         description: PS.3 Archive SBOM
