@@ -5,6 +5,19 @@ path: web-commit-signoff.rego
 
 description: Verify contributors sign commits through the GitHub web interface.
 
+full-description: |-
+  This rule checks if the `web_commit_signoff` setting is enabled to ensure all web-based commits are signed off.
+  It performs the following steps:
+  
+  1. Checks the web commit signoff settings of the GitHub organization.
+  2. Verifies that the web commit signoff setting is enabled.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >-
+  Ensure that the Web Commit Signoff setting under the GitHub organization is enabled to require signoff on all web-based commits, enhancing security and accountability.
+
 labels:
   - GitHub
   - Organization

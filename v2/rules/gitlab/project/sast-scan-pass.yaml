@@ -5,6 +5,19 @@ path: sast-scan-pass.rego
 
 description: Verify SAST scanning is successful for the GitLab project.
 
+full-description: |-
+  This rule ensures that SAST scanning is successful for the GitLab project.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that SAST scanning is successful.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that SAST scanning is successful for the GitLab project to prevent unauthorized changes.
+
 labels:
   - Gitlab
   - Project
@@ -23,3 +36,4 @@ evidence:
       {{- else -}}
       {{- asset_on_target nil -}}
       {{- end -}}
+

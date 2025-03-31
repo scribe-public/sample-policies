@@ -15,3 +15,4 @@ evidence:
   content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/generic/v0.1
+

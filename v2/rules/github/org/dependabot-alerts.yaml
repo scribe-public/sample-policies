@@ -5,6 +5,29 @@ path: dependabot-alerts.rego
 
 description: Verify Dependabot alerts for new repositories are enabled in the GitHub organization.
 
+full-description: |-
+  This rule verifies that Dependabot alerts for new repositories are enabled in the GitHub organization.
+  It performs the following steps:
+  
+  1. Checks the organization's settings for the `dependabot_alerts_enabled_for_new_repositories` field.
+  2. Compares the value of this field against the desired value specified in the `with.desired_value` configuration.
+     - If the field does not match the desired value, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization settings.
+
+mitigation: >-
+  Ensures that Dependabot alerts are enabled for new repositories in the GitHub organization, helping to identify and address vulnerabilities in dependencies.
+
+inputs:
+  - name: desired_value
+    type: boolean
+    description: Desired value for the dependabot_alerts_enabled_for_new_repositories setting.
+    required: false
+
+input_example: |-
+  desired_value: true
+
 labels:
   - GitHub
   - Organization
@@ -25,4 +48,5 @@ evidence:
       {{- end -}}
 
 with:
-  desired_value: false
+  desired_value: true
+

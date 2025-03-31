@@ -5,6 +5,33 @@ path: allow-admins.rego
 
 description: Verify only users in the Allowed List have admin privileges in the GitHub organization.
 
+full-description: |-
+  This rule verifies that only users in the Allowed List have admin privileges in the GitHub organization.
+  It checks the organization's details and compares the value of the 
+  `organization_details.admins` field against the expected value.
+  
+  The rule iterates over the organization data in the evidence, and if the `admins` field does not match 
+  the desired value, a violation is recorded. This ensures that only users in the Allowed List have admin privileges in the GitHub organization.
+  
+  ### **Evidence Requirements**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >-
+  Ensures that only approved users have admin privileges in the GitHub organization, reducing the risk of unauthorized access 
+  through compromised credentials.
+
+inputs:
+  - name: allowed_admins
+    type: array
+    description: List of allowed GitHub organization admins.
+    required: false
+
+input_example: |-
+  allowed_admins:
+    - user1
+    - user2
+    - user3
+
 labels:
   - GitHub
   - Organization
@@ -26,3 +53,4 @@ evidence:
 
 with:
     allowed_admins: []
+

@@ -5,6 +5,30 @@ path: repo-visibility.rego
 
 description: Verify only repositories in the Allowed List are public in the GitHub organization.
 
+full-description: |-
+  This rule ensures that the repository visibility setting is configured correctly in the GitHub organization.
+  It performs the following steps:
+  
+  1. Checks the visibility settings of repositories in the GitHub organization.
+  2. Verifies that the visibility setting matches the value specified in the `with.desired_visibility` configuration.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >-
+  Ensure that the repository visibility setting is configured correctly to reduce the risk of unauthorized access to repositories.
+
+inputs:
+  - name: allowed_repo_names
+    type: array
+    description: List of repository pattern allowed to be visible.
+    required: false
+
+input_example: |-
+  allowed_repo_names:
+    - "my_org/.*"
+    - "my_org/my_repo/.*"
+
 labels:
   - GitHub
   - Organization
@@ -26,3 +50,4 @@ evidence:
 
 with:
   allowed_repo_names: []
+

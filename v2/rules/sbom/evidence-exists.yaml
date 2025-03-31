@@ -17,3 +17,4 @@ evidence:
     - target
   content_body_type: cyclonedx-json
   signed: false
+
