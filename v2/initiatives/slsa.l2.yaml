@@ -15,19 +15,19 @@ defaults:
     signed: false
 
 controls:
-  - id: "prov_authn"
+  - id: "provenance"
     name: "Provenance authenticated"
     description: "Ensure that provenance metadata for build artifacts is authenticated, confirming that it originates from a trusted source."
     mitigation: "Authentication of provenance data prevents attackers from forging or modifying build metadata, ensuring the integrity of the software supply chain."
     rules:
     - uses: slsa/l1-provenance-exists@v2
-      id: "prov_exists"
+      id: "provenance-exists"
       name: "Provenance exists"
       description: "Ensure that provenance metadata is present for each build artifact, enabling traceability and verification."
       mitigation: "Recording provenance metadata allows verification of artifact origins, reducing the risk of unauthorized or malicious builds."
  
     - uses: slsa/l2-provenance-authenticated@v2
-      id: "prov_authn"
+      id: "provenance-authn"
       name: "Provenance authenticated"
       description: "Verify that provenance metadata is cryptographically authenticated, ensuring it has not been tampered with."
       mitigation: "Cryptographic authentication of provenance metadata ensures that only trusted sources can generate valid build information, mitigating the risk of supply chain tampering."
