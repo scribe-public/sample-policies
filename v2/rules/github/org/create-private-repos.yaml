@@ -3,15 +3,16 @@ id: github-org-create-private-repos
 name: Verify that members can create private repositories setting is configured
 path: create-private-repos.rego
 
-description: Verify `members_can_create_private_repositories` is configured in the GitHub organization (supported only in GitHub Enterprise).
+description: Verify only allowed users can create private repositories in the GitHub organization.
 
 full-description: |-
-  This rule ensures that only users specified in the allowed list can create private repositories in the GitHub organization.
+  This rule ensures that only users specified in the allowed list can create private repositories in the GitHub organization 
+  Note: this setting is supported only in GitHub Enterprise.
   It performs the following steps:
   
   1. Iterates over the users in the GitHub organization.
-  2. Checks each user's permissions to create private repositories against the allowed list specified in the `with.allowed_users` configuration.
-     - If a user not in the allowed list has permissions to create private repositories, the rule flags it as a violation.
+  2. Checks users' permissions to create private repositories against the allowed list specified in the `with.allowed_users` configuration.
+     - If a user not on the allowed list has permission to create private repositories, the rule flags this as a violation.
 
   **Evidence Requirements:**
   - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
