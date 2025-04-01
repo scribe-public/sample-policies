@@ -3,7 +3,7 @@ id: github-org-pp-custom-link
 name: Verify `secret_scanning_push_protection_custom_link_enabled` Setting
 path: pp-custom-link.rego
 
-description: Verify `secret_scanning_push_protection_custom_link` is enabled in the GitHub organization.
+description: Verify secret scanning push protection custom link is enabled in the GitHub organization.
 
 labels:
   - GitHub
