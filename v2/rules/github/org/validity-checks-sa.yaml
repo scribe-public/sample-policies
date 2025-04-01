@@ -3,7 +3,7 @@ id: github-org-validity-checks-sa
 name: Verify `secret_scanning_validity_checks` Setting in `security_and_analysis`
 path: validity-checks-sa.rego
 
-description: Verify `secret_scanning_validity_checks` is configured in the GitHub organization.
+description: Verify secret scanning is configured for the GitHub organization.
 
 full-description: |-
   This rule checks if the `validity_checks` under GitHub organization setting is enabled to ensure the integrity of the organization’s repositories.
