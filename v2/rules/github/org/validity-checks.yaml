@@ -3,7 +3,7 @@ id: github-org-validity-checks
 name: Verify `secret_scanning_validity_checks_enabled` Setting
 path: validity-checks.rego
 
-description: Verify secret scanning is configured for the GitHub repository.
+description: Verify validity checks scanning is configured for the GitHub repository.
 
 labels:
   - GitHub
