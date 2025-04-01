@@ -3,7 +3,7 @@ id: github-org-2fa
 name: Verify Two-Factor Authentication (2FA) Requirement Enabled
 path: 2fa.rego
 
-description: Verify `two_factor_requirement` is enabled in the GitHub organization.
+description: Verify Two-factor Authentication is required in the GitHub organization.
 
 full-description: |-  
   This rule verifies that two-factor authentication (2FA) is enabled for the organization by examining the provided evidence.
