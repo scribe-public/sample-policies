@@ -46,19 +46,18 @@ get_field(result, field_name) := value {
     value := sprintf("%s not specifield", [field_name])
 }
 
-violations = j {
-	j := {r |
-        some result in input.evidence.predicate.content
-        filtered_result(result)
-        r = {
-            "title": get_field(result, "title"),
-            "severity": get_field(result, "severity"),
-            "cwe": get_field(result, "cwe"),
-            "description": get_field(result, "description"),
-            "component_name": get_field(result, "component_name"),
-        }
-	}
-}
+violations = [j |
+    some result in input.evidence.predicate.content
+    filtered_result(result)
+    j = {
+        "title": get_field(result, "title"),
+        "severity": get_field(result, "severity"),
+        "cwe": get_field(result, "cwe"),
+        "description": get_field(result, "description"),
+        "component_name": get_field(result, "component_name"),
+        "file_path": get_field(result, "file_path"),
+    }
+]
 
 severity_check(result, severities) {
     count(severities) == 0
