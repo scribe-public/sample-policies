@@ -11,8 +11,6 @@ DOCS_ROOT = "docs/v2"
 RULES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives", "rules")
 INITIATIVES_OUTDIR = os.path.join(DOCS_ROOT, "initiatives")
 SAMPLE_POLICIES_REPO = "https://github.com/scribe-public/sample-policies/"
-DOC_SITE_URL = "https://deploy-preview-299--scribe-security.netlify.app"
-DOC_SITE_BASE = f"{DOC_SITE_URL}/docs/configuration/initiatives"
 
 
 def parse_yaml(file_path):
@@ -181,26 +179,26 @@ def traverse_and_create_category_files():
 
 # https://deploy-preview-299--scribe-security.netlify.app/docs/guides/enforcing-sdlc-initiative/#sbom-1
 table = {
-    "SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#sbom-1 
-    "SARIF": f"{DOC_SITE_URL}/docs/valint/sarif", # docs/guides/enforcing-sdlc-initiative/#sarif-reports
-    "Statement": f"{DOC_SITE_URL}/docs/valint/generic",
-    "Image SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#images
-    "Git SBOM": f"{DOC_SITE_URL}/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#git
-    "SLSA Provenance": f"{DOC_SITE_URL}/docs/valint/help/valint_slsa", # docs/guides/enforcing-sdlc-initiative/#slsa
-    "Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover",
-    "SARIF Evidence": f"{DOC_SITE_URL}/docs/valint/sarif", # docs/guides/enforcing-sdlc-initiative/#sarif-reports
-    "Generic Statement": f"{DOC_SITE_URL}/docs/valint/generic",
-    "Dockerhub Project Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#dockerhub-discovery",
-    "Jenkins Instance Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#jenkins-discovery",
-    "K8s Namespace Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#k8s-discovery",
-    "K8s Pod Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#k8s-discovery",
-    "Gitlab Project Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#gitlab-discovery",
-    "Gitlab Organization Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#gitlab-discovery",
-    "Bitbucket Project Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#bitbucket-discovery",
-    "Bitbucket Repository Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#bitbucket-discovery",
-    "Bitbucket Workspace Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#bitbucket-discovery",
-    "Github Organization Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#github-discovery",
-    "Github Repository Discovery Evidence": f"{DOC_SITE_URL}/docs/platforms/discover#github-discovery",
+    "SBOM": f"/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#sbom-1
+    "SARIF": f"/docs/valint/sarif", # docs/guides/enforcing-sdlc-initiative/#sarif-reports
+    "Statement": f"/docs/valint/generic",
+    "Image SBOM": f"/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#images
+    "Git SBOM": f"/docs/valint/sbom", # docs/guides/enforcing-sdlc-initiative/#git
+    "SLSA Provenance": f"/docs/valint/help/valint_slsa", # docs/guides/enforcing-sdlc-initiative/#slsa
+    "Discovery Evidence": f"/docs/platforms/discover",
+    "SARIF Evidence": f"/docs/valint/sarif", # docs/guides/enforcing-sdlc-initiative/#sarif-reports
+    "Generic Statement": f"/docs/valint/generic",
+    "Dockerhub Project Discovery Evidence": f"/docs/platforms/discover#dockerhub-discovery",
+    "Jenkins Instance Discovery Evidence": f"/docs/platforms/discover#jenkins-discovery",
+    "K8s Namespace Discovery Evidence": f"/docs/platforms/discover#k8s-discovery",
+    "K8s Pod Discovery Evidence": f"/docs/platforms/discover#k8s-discovery",
+    "Gitlab Project Discovery Evidence": f"/docs/platforms/discover#gitlab-discovery",
+    "Gitlab Organization Discovery Evidence": f"/docs/platforms/discover#gitlab-discovery",
+    "Bitbucket Project Discovery Evidence": f"/docs/platforms/discover#bitbucket-discovery",
+    "Bitbucket Repository Discovery Evidence": f"/docs/platforms/discover#bitbucket-discovery",
+    "Bitbucket Workspace Discovery Evidence": f"/docs/platforms/discover#bitbucket-discovery",
+    "Github Organization Discovery Evidence": f"/docs/platforms/discover#github-discovery",
+    "Github Repository Discovery Evidence": f"/docs/platforms/discover#github-discovery",
 }
 
 high_priority = {
@@ -744,9 +742,8 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
                     if not final_r_desc:
                         final_r_desc = rule_yaml.get("description", "")
                     rel_path_from_initiatives = os.path.relpath(abs_rule_path, os.path.abspath(INITIATIVES_OUTDIR))
-                    doc_site_path = os.path.join(DOC_SITE_BASE, rel_path_from_initiatives.replace("../", "").replace("./", "")).strip(".md")
                     
-                    link_doc = f"[{final_r_id}]({doc_site_path})"
+                    link_doc = f"[{final_r_id}]({rel_path_from_initiatives})"
                     link_md = f"[{final_r_name}]({rel_path_from_initiatives})"
                 else:
                     link_md = r_uses
@@ -855,7 +852,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     md_lines.append("|------|-------------|")
     for doc in initiative_docs:
         # Build a link to the initiative doc at "docs/initiative/<file.md>"
-        link = f"[{doc['name']}]({DOC_SITE_BASE}/{doc['file'].strip('.md')})"
+        link = f"[{doc['name']}](/docs/configuration/initiatives/{doc['file']})"
         # Replace newlines in description with a space to avoid breaking the table.
         description = doc['description'].replace("\n", " ")
         md_lines.append(f"| {link} | {description} |")
@@ -876,7 +873,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
         # Get the relative path for the rule doc (e.g. "gitlab/org/max-admins.md")
         rel_path = doc_info["rel_path"]
         # Create a link to the rule doc relative to the initiatives folder.
-        rule_link = f"[{rule_name}]({DOC_SITE_BASE}/rules/{rel_path.replace('.md', '')})"
+        rule_link = f"[{rule_name}](/docs/configuration/initiatives/rules/{rel_path})"
         index_rows.append((evidence_type, rule_link, description, evidence_link))
     
     # Sort rules: prioritized groups first (using high_priority) then alphabetically.
