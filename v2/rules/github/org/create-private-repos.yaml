@@ -6,7 +6,7 @@ path: create-private-repos.rego
 description: Verify only allowed users can create private repositories in the GitHub organization.
 
 full-description: |-
-  This rule ensures that only users specified in the allowed list can create private repositories in the GitHub organization 
+  This rule ensures that only users specified in the allowed list can create private repositories in the GitHub organization.
   Note: this setting is supported only in GitHub Enterprise.
   It performs the following steps:
   
