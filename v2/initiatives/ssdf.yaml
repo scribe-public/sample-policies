@@ -12,10 +12,10 @@ defaults:
 controls:
   - name: Store all forms of code based on the principle of least privilege
     id: PS/PS.1/PS.1.1
-    description: >
+    description: >-
       Store all forms of code – including source code, executable code, and configuration-as-code –
       based on the principle of least privilege so that only authorized personnel, tools, services, etc. have access.
-    mitigation: >
+    mitigation: >-
       Implement strict access controls, enforce multi-factor authentication (MFA),
       and regularly audit access logs to ensure only authorized personnel can access and modify the code.
       Use branch protection rules, require signed commits, and make repositories private to prevent unauthorized access and tampering.
@@ -55,10 +55,10 @@ controls:
 
   - name: Make software integrity verification information available to software acquirers
     id: PS/PS.2/PS.2.1
-    description: >
+    description: >-
       Help software acquirers ensure that the software they acquire
       is legitimate and has not been tampered with.
-    mitigation: >
+    mitigation: >-
       Use cryptographic signatures to sign software releases and provide a way for users to verify these signatures.
       Ensure that the signing keys are stored securely and that access to them is restricted.
       Implement automated processes to sign releases and verify their integrity before distribution.
@@ -73,10 +73,10 @@ controls:
 
   - name:  Securely archive the necessary files and supporting data to be retained for each software release
     id: PS/PS.3/PS.3.1
-    description: >
+    description: >-
       Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data)
       to be retained for each software release
-    mitigation: >
+    mitigation: >-
       Use secure, version-controlled repositories to store software releases and their supporting data.
       Implement access controls to restrict who can modify or delete these repositories.
       Use cryptographic signatures to sign software releases and provide a way for users to verify these signatures.
@@ -92,9 +92,9 @@ controls:
 
   - name: Collect, safeguard, maintain, and share provenance data for all components of each software release
     id: PS/PS.3/PS.3.2
-    description: >
+    description: >-
       Collect, safeguard, maintain, and share provenance data for all components of each software release (e.g., in a software bill of materials [SBOM])
-    mitigation: >
+    mitigation: >-
       Use software bill of materials (SBOM) to document the provenance of each software release
       and its components. Store SBOMs in a secure, version-controlled repository
       to ensure they can be retrieved and analyzed in the future.
