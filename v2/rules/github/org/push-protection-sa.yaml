@@ -3,7 +3,7 @@ id: github-org-push-protection-sa
 name: Verify `secret_scanning_push_protection` Setting
 path: push-protection-sa.rego
 
-description: Verify `secret_scanning_push_protection` is configured in the GitHub repository.
+description: Verify secret scanning push protection is configured in the GitHub repository.
 
 full-description: |-
   This rule ensures that secret scanning push protection is enabled in the security and analysis settings of the GitHub organization.

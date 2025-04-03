@@ -3,7 +3,7 @@ id: github-org-push-protection
 name: Verify `secret_scanning_push_protection_enabled_for_new_repositories` Setting
 path: push-protection.rego
 
-description: Verify `secret_scanning_push_protection` is enabled for new repositories in the GitHub organization.
+description: Verify secret scanning push protection is enabled for new repositories in the GitHub organization.
 
 full-description: |-
   This rule ensures that secret scanning push protection is enabled for new repositories in the GitHub organization.

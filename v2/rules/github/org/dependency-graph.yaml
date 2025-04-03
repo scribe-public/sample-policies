@@ -3,7 +3,7 @@ id: github-org-dependency-graph
 name: Verify dependency_graph_enabled_for_new_repositories setting
 path: dependency-graph.rego
 
-description: Verify `dependency_graph` is enabled for new repositories in the GitHub organization.
+description: Verify dependency graph is enabled for new repositories in the GitHub organization.
 
 full-description: |-
   This rule ensures that the dependency graph is enabled in the GitHub organization.

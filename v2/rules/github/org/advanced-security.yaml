@@ -3,7 +3,7 @@ id: github-org-advanced-security
 name: Verify `advanced_security_enabled_for_new_repositories` setting
 path: advanced-security.rego
 
-description: Verify `advanced_security` is enabled for new repositories in the GitHub organization.
+description: Verify Advanced Security is enabled for new repositories in the GitHub organization.
 
 full-description: |-
   This rule verifies that advanced security is enabled for new repositories in the GitHub organization by examining the provided Discovery evidence.
