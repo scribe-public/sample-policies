@@ -1,0 +1,36 @@
+config-type: rule
+id: slsa-external-parameters
+name: SLSA External Parameters Match in Provenance Document
+path: verify-external-parameters.rego
+
+description: Verify the specified exterenal parameters value match in the provenance document.
+
+full-description: |-
+  This rule verifies that the specified external parameters value matches in the provenance document.
+  It checks if the external parameters field exists and if its value matches the expected value.
+  The parameters are passed as key-value pairs.
+
+mitigation: >-
+  Ensure that the external parameters field is present in the provenance document and that its value matches the expected value.
+  To add such field, pass it as `key=value` in the `--external` flag for `valint slsa` command.
+
+inputs:
+  - name: parameters
+    type: array
+    description: The expected external parameters to match in the provenance document.
+    required: false
+
+input_example: |-
+  parameters:
+    - "key": "value"
+
+labels:
+  - SLSA
+
+evidence:
+  signed: false
+  content_body_type: slsa
+
+with:
+  parameters: []
+  violations_threshold: 0

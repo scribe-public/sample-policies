@@ -1,0 +1,36 @@
+config-type: rule
+id: slsa-field-matches
+name: SLSA Field Value Matches in Provenance Document
+path: verify-custom-fields.rego
+
+description: Verify the specified field value matches in the provenance document.
+
+full-description: |-
+  This rule verifies that the specified field value matches in the provenance document.
+  It checks if the field exists and if its value matches the expected value.
+  The parameters are passed as key-value pairs.
+  The key must be a path within the Provenance document, and the value must be a string.
+
+mitigation: >-
+  Ensure that the field exists in the provenance document and that its value matches the expected value.
+
+inputs:
+  - name: fields
+    type: array
+    description: The expected field values to match in the provenance document.
+    required: false
+
+input_example: |-
+  fields:
+    "predicate/buildDefinition/externalParameters/key": "value"
+
+labels:
+  - SLSA
+
+evidence:
+  signed: false
+  content_body_type: slsa
+
+with:
+  fields: []
+  violations_threshold: 0
