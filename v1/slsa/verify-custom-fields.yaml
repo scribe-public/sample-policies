@@ -12,5 +12,5 @@ evidence:
   content_body_type: slsa
 
 with:
-  fields: []
+  fields: {}
   violations_threshold: 0
