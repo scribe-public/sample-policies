@@ -16,13 +16,13 @@ mitigation: >-
 
 inputs:
   - name: parameters
-    type: array
-    description: The expected external parameters to match in the provenance document.
+    type: object
+    description: The expected external parameters to match in the provenance document given as `key:value` map.
     required: false
 
 input_example: |-
   parameters:
-    - "key": "value"
+    "key": "value"
 
 labels:
   - SLSA
@@ -32,5 +32,5 @@ evidence:
   content_body_type: slsa
 
 with:
-  parameters: []
+  parameters: {}
   violations_threshold: 0

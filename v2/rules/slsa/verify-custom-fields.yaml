@@ -16,8 +16,8 @@ mitigation: >-
 
 inputs:
   - name: fields
-    type: array
-    description: The expected field values to match in the provenance document.
+    type: object
+    description: The expected field values to match in the provenance document given as a `key:value` map.
     required: false
 
 input_example: |-
@@ -32,5 +32,5 @@ evidence:
   content_body_type: slsa
 
 with:
-  fields: []
+  fields: {}
   violations_threshold: 0
