@@ -850,7 +850,7 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
     md_lines.append(f"<!-- START TABLE -->")
     md_lines.append("| Name | Description |")
     md_lines.append("|------|-------------|")
-    for doc in initiative_docs:
+    for doc in sorted(initiative_docs, key=lambda x: x['name']):
         # Build a link to the initiative doc at "docs/initiative/<file.md>"
         link = f"[{doc['name']}](/docs/configuration/initiatives/{doc['file']})"
         # Replace newlines in description with a space to avoid breaking the table.
@@ -902,12 +902,13 @@ def create_combined_index_md(initiative_docs, rule_docs_map):
         for rule_link, description, _ in rules:
             md_lines.append(f"| {rule_link} | {description} |")
         md_lines.append("")
+
+    md_lines.append(f"<!-- END TABLE -->")
     
     md_content = "\n".join(md_lines)
     with open(index_file_path, "w") as f:
         f.write(md_content)
     
-    md_lines.append(f"<!-- END TABLE -->")
     print(f"Created combined index at {index_file_path}")
 
 def main():
