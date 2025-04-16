@@ -12,5 +12,7 @@ evidence:
   content_body_type: slsa
 
 with:
-  parameters: {}
+  parameters: {
+  "bird":["Sparrow", "Duck", "Sandpiper"]
+  }
   violations_threshold: 0
