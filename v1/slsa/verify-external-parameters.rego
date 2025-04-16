@@ -5,7 +5,6 @@ import data.scribe as scribe
 
 default allow := false
 default violations := []
-default filtered := {"result": "couldn't perform scan"}
 
 external_parameters_path := ["predicate", "buildDefinition", "externalParameters"]
 
@@ -42,14 +41,50 @@ reason = v {
 violations = j {
 	j := {r |
 		some path in object.keys(input.config.args.parameters)
-		value := input.config.args.parameters[path]
+		required := input.config.args.parameters[path]
 		tokens := array.concat(external_parameters_path, split(path, "/"))
 		actual_value := object.get(input.evidence, tokens, "doesn't exist")
-		value != actual_value
+		not valid_value(required, actual_value)
 		r = {
 			"external_parameter_path": path,
-			"required_value": value,
-			"actual_value": actual_value,
+			"required": required,
+			"actual": actual_value,
 		}
 	}
+}
+
+valid_value(required, actual) {
+	is_number(required)
+	actual_num = to_number(actual)
+	required == actual_num
+}
+
+valid_value(required, actual) {
+	is_string(required)
+	required == actual
+}
+
+valid_value(required, actual) {
+	is_array(required)
+	actual_number := to_number(actual)
+	is_number(actual_number)
+	actual_number in required
+}
+
+valid_value(required, actual) {
+	is_array(required)
+	actual in required
+}
+
+valid_value(required, actual) {
+	is_object(required)
+	act_number = to_number(actual)
+	"min" in object.keys(required)
+	"max" in object.keys(required)
+	required["min"] <= act_number
+	required["max"] >= act_number
+}
+
+valid_value(required, actual) {
+	required == actual
 }
