@@ -1,0 +1,110 @@
+config-type: initiative
+id: "SSDF"
+version: "1.0.0"
+name: "SSDF Client Initiative"
+description: "Evaluate PS rules from the SSDF initiative"
+help: https://csrc.nist.gov/pubs/sp/800/218/final
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  - name: Store all forms of code based on the principle of least privilege
+    id: PS/PS.1/PS.1.1
+    description: >-
+      Store all forms of code – including source code, executable code, and configuration-as-code –
+      based on the principle of least privilege so that only authorized personnel, tools, services, etc. have access.
+    mitigation: >-
+      Implement strict access controls, enforce multi-factor authentication (MFA),
+      and regularly audit access logs to ensure only authorized personnel can access and modify the code.
+      Use branch protection rules, require signed commits, and make repositories private to prevent unauthorized access and tampering.
+    rules:
+      - uses: github/org/2fa@v2
+        name: Enforce 2FA
+        id: 2fa
+        description: PS.1 Require 2FA for accessing code
+
+      - uses: github/org/max-admins@v2
+        name: Limit admins
+        id: max-admins
+        description: PS.1 Restrict the maximum number of organization admins
+        with:
+          max_admins: 3
+
+      - uses: github/org/web-commit-signoff@v2
+        name: Require signoff on web commits
+        id: web-commit-signoff
+        description: PS.1 Require contributors to sign when committing to Github through the web interface
+        with:
+          desired_value: true
+
+      - uses: github/repository/branch-protection@v2
+        name: Branch protected
+        id: branch-protection
+        description: PS.1 Require branch protection for the repository
+        with:
+          desired_protected: true
+
+      - uses: github/repository/repo-private@v2
+        name: Repo private
+        id: repo-is-private
+        description: PS.1 Assure the repository is private
+        with:
+          desired_private: true
+
+  - name: Make software integrity verification information available to software acquirers
+    id: PS/PS.2/PS.2.1
+    description: >-
+      Help software acquirers ensure that the software they acquire
+      is legitimate and has not been tampered with.
+    mitigation: >-
+      Use cryptographic signatures to sign software releases and provide a way for users to verify these signatures.
+      Ensure that the signing keys are stored securely and that access to them is restricted.
+      Implement automated processes to sign releases and verify their integrity before distribution.
+      Regularly audit the signing process and keys to ensure their security and integrity.
+    rules:
+      - uses: sbom/artifact-signed@v2
+        name: Image-verifiable
+        id: sbom-is-signed
+        description: PS.2 Provide a mechanism to verify the integrity of the image
+        evidence:
+          target_type: container
+
+  - name:  Securely archive the necessary files and supporting data to be retained for each software release
+    id: PS/PS.3/PS.3.1
+    description: >-
+      Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data)
+      to be retained for each software release
+    mitigation: >-
+      Use secure, version-controlled repositories to store software releases and their supporting data.
+      Implement access controls to restrict who can modify or delete these repositories.
+      Use cryptographic signatures to sign software releases and provide a way for users to verify these signatures.
+      Regularly back up the repositories to prevent data loss and ensure that software releases are preserved
+      even in the event of a system failure.
+    rules:
+      - uses: slsa/l1-provenance-exists@v2
+        name: Provenance exists
+        id: provenance-exists
+        description: |
+          PS.3 Provenance exists
+          Ensure that provenance information is available for each software release
+
+  - name: Collect, safeguard, maintain, and share provenance data for all components of each software release
+    id: PS/PS.3/PS.3.2
+    description: >-
+      Collect, safeguard, maintain, and share provenance data for all components of each software release (e.g., in a software bill of materials [SBOM])
+    mitigation: >-
+      Use software bill of materials (SBOM) to document the provenance of each software release
+      and its components. Store SBOMs in a secure, version-controlled repository
+      to ensure they can be retrieved and analyzed in the future.
+      Implement access controls to restrict who can modify or delete SBOMs.
+      Use cryptographic signatures to sign SBOMs and provide a way for users to verify these signatures.
+      Regularly back up the repository to prevent data loss and ensure that SBOMs are preserved
+      even in the event of a system failure.
+      Document the SBOM creation process and train personnel on its importance and proper handling procedures.
+    rules:
+      - uses: sbom/artifact-signed@v2
+        name: SBOM archived
+        id: sbom-is-signed
+        description: PS.3 Archive SBOM

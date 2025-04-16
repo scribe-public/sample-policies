@@ -1,0 +1,25 @@
+config-type: rule
+id: scribe-published-policy
+name: Scribe Published Policy
+path: scribe-api-published.rego
+
+description: Verify image Scribe Publish flag is set for container image.
+
+full-description: |-
+  This rule ensures that the product is published only after all critical or high severity vulnerabilities are addressed.
+
+mitigation: Ensure that all critical or high severity vulnerabilities are addressed before delivering the product.
+
+labels:
+  - Scribe
+
+require-scribe-api: true
+
+evidence: 
+  signed: false
+  content_body_type: cyclonedx-json
+  # predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    published:

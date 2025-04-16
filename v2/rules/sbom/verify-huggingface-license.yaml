@@ -1,0 +1,53 @@
+config-type: rule
+id: sbom-hf-license
+name: Require Specified SBOM Licenses
+path: verify-hf-license.rego
+
+description: Verify the artifact includes all specified licenses.
+
+full-description: |-  
+  This rule verifies that the artifact includes all specified licenses.
+  It performs the following steps:
+  
+  1. Iterates over the dependencies listed in the SBOM.
+  2. Checks each dependency for the presence of the specified licenses in the `with.licenses` configuration.
+     - If a specified license is missing, the rule flags it as a violation.
+  3. Accesses the Hugging Face API to validate the licenses.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided in the CycloneDX JSON format.
+  - The SBOM must include a list of dependencies with their licenses.
+
+mitigation: >-
+  Ensures that all specified licenses are included in the SBOM, reducing the risk of legal issues and ensuring compliance with open-source licenses.
+
+notes:
+- Ensure that the SBOM includes all specified licenses to meet compliance requirements.
+  This rule accesses the Hugging Face API to validate the licenses.
+
+inputs:
+  - name: licenses
+    description: "A list of specified licenses."
+    type: array
+    required: true
+
+
+input_example: |-
+  licenses:
+    - "MIT"
+    - "Apache-2.0"
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  licenses: []
