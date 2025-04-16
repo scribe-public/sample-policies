@@ -13,6 +13,9 @@ evidence:
 
 with:
   parameters: {
-  "bird":["Sparrow", "Duck", "Sandpiper"]
-  }
+  "bird":
+    - "Sparrow"
+    - "Duck"
+    - "Sandpiper"
+    }
   violations_threshold: 0
