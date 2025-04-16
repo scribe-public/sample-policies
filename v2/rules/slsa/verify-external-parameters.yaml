@@ -3,16 +3,19 @@ id: slsa-external-parameters
 name: SLSA External Parameters Match in Provenance Document
 path: verify-external-parameters.rego
 
-description: Verify the specified exterenal parameters value match in the provenance document.
+description: Verify the specified external parameters value match in the provenance document.
 
 full-description: |-
   This rule verifies that the specified external parameters value matches in the provenance document.
   It checks if the external parameters field exists and if its value matches the expected value.
-  The parameters are passed as key-value pairs.
+  The allowed parameters values can be passed to the rule in the `key: value` format, where `value` can be:
+  - `string` or `number` -- requires a direct match
+  - `array` of `strings` or `numbers` -- requires the actual value to match one of the values in the array
+  - `object` with `min` and `max` -- requires the actual value to be a number between the min and max values
 
 mitigation: >-
   Ensure that the external parameters field is present in the provenance document and that its value matches the expected value.
-  To add such field, pass it as `key=value` in the `--external` flag for `valint slsa` command.
+  To add such a field, pass it as `key=value` in the `--external` flag for the `valint slsa` command.
 
 inputs:
   - name: parameters
@@ -22,7 +25,16 @@ inputs:
 
 input_example: |-
   parameters:
-    "key": "value"
+    "key_1": "value_1"  # match the value exactly
+    "key_2":            # match any of the values in the array
+      - "value_2"
+      - "value_3"
+    "key_3":            # match any of the values in the numeric array
+      - 4
+      - 5
+    "key_4":            # match a number between min and max
+      "min": 1
+      "max": 10
 
 labels:
   - SLSA
