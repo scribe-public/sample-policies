@@ -6,11 +6,11 @@ default allow := false
 
 default violations := []
 
-default desired_value := false
+# default exception := false
 
-desired_value {
-    input.config.args.desired_value
-} 
+exception := input.config.args.exception
+
+default desired_value := true
 
 verify = v {
 	v := {
@@ -28,17 +28,29 @@ verify = v {
 }
 
 allow {
+	not exception
 	count(violations) == 0
 }
 
+allow {
+	exception
+}
+
 reason = v {
+	not exception
 	allow
 	v := "2FA authentication is enabled"
 }
 
 reason = v {
+	not exception
 	not allow
 	v := "2FA authentication is NOT enabled"
+}
+
+reason = v {
+	exception
+	v := "The rule is set to exception"
 }
 
 violations = j {
@@ -56,6 +68,7 @@ violations = j {
 			"id": organization.id,
 			"query_id": organization.query_id,
             "organization_details": organization_details,
+			"exception": exception,
         }
 	]
 }
