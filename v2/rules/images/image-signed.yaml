@@ -55,8 +55,7 @@ evidence:
   content_body_type: cyclonedx-json
 
 with:
-  skip_image_regex:
-  - .*alpine.*
+  skip_image_regex: []
   identity:
     emails: []
     common-names: []

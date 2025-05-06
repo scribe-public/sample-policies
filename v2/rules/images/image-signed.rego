@@ -5,7 +5,7 @@ import future.keywords.in
 
 default allow := false
 default violations := []
-default reason := "Evidence is not in CycloneDX attest-cyclonedx-json format."
+default reason := "Evidence is not in CycloneDX attest-cyclonedx-json format"
 default asset := {}
 default env := {}
 default image_name := ""
@@ -54,19 +54,19 @@ allow {
 
 reason = r {
   skip_image
-  r := sprintf("Skipping image '%v' based on skip_image_regex.", [image_name])
+  r := sprintf("Skipping image '%v' based on skip_image_regex", [image_name])
 }
 
 reason = r {
   not skip_image
   env.content_type == "attest-cyclonedx-json"
-  r := "Evidence is properly signed (CycloneDX attest-cyclonedx-json)."
+  r := "Evidence is properly signed (CycloneDX attest-cyclonedx-json)"
 }
 
 reason = r {
   not skip_image
   env.content_type != "attest-cyclonedx-json"
-  r := "Evidence is not a signed evidence."
+  r := "Evidence is not a signed evidence"
 }
 
 ##########################################################################
@@ -75,7 +75,7 @@ reason = r {
 violations = v {
   not allow
   v = [{
-    "error": "CycloneDX attest-cyclonedx-json format required, but not found (and no skip)."
+    "error": "CycloneDX attest-cyclonedx-json format required, but not found (and no skip)"
   }]
 } else = v {
   v = []
