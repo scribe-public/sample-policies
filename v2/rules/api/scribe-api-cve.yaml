@@ -1,7 +1,7 @@
 config-type: rule
 id: scribe-cve
 name: Verify No Critical or High Vulnerabilities
-path: scribe-api.rego
+path: scribe-api-cve.rego
 
 description: Verify via Scribe API that there are no critical or high severity vulnerabilities in the target artifact (container image, folder, etc.).
 

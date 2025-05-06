@@ -1,7 +1,7 @@
 config-type: rule
 id: scribe-template
 name: Apply Scribe Template Policy
-# path: scribe-api.rego
+path: scribe-api.rego
 
 description: Verify XX using the Scribe API template rule.
 
@@ -11,18 +11,20 @@ labels:
 require-scribe-api: true
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
   content_body_type: cyclonedx-json
-  predicate_type: https://cyclonedx.org/bom
 
 with:
   superset:
-    # cve:
-    #  max: 0
-    #  severity: 6
-    # licences:
-    #   max: 500
-    # unmaintained:
-    #   max: 2000
-    # images:
-    #   max: 20
+    cve:
+     max: 0
+     severity: 6
+    licences:
+      max: 500
+    unmaintained:
+      max: 2000
+    images:
+      max: 20
