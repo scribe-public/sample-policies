@@ -1,0 +1,89 @@
+config-type: initiative
+id: "SP-800-53"
+version: "1.0.0"
+name: "NIST Supply Chain Integrity Initiative"
+description: >-
+  This initiative enforces key supply chain requirements from NIST SP 800-53.
+  It mandates that container builds include:
+    - A Software Bill of Materials (SBOM) to ensure component inventory and traceability,
+      addressing requirements from SR-4 and CM-8.
+    - Provenance data to support architectural traceability, as outlined in SA-8.
+  Both the SBOM and the provenance artifacts must be cryptographically signed
+  to meet integrity requirements specified in SA-12.
+help: "https://csrc.nist.gov/publications/detail/sp/800-53/rev-4/final"
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  - name: "SBOM Requirement"
+    id: SR4_CM8
+    description: >-
+      Enforce that every container build includes a Software Bill of Materials (SBOM),
+      ensuring that all components are inventoried and traceable.
+      This requirement addresses both SR-4 and the component inventory aspects of CM-8.
+    mitigation: "Ensures complete visibility into container components, reducing the risk of unvetted or vulnerable code entering the supply chain."
+    rules:
+      - uses: sbom/require-sbom@v2
+        name: "Require SBOM"
+        description: "Ensure an SBOM is provided for all container builds."
+        mitigation: "Reject container builds lacking a valid SBOM."
+
+      - uses: images/verify-labels@v2
+        mitigation: "Reject images with missing or inconsistent supply chain metadata."
+        name: "Verify Supply Chain Labels"
+        description: >-
+          Confirm that container images include required `opencontainers` labels:
+        with:
+          labels:
+            - org.opencontainers.image.created
+            - org.opencontainers.image.revision
+            - org.opencontainers.image.source
+            - org.opencontainers.image.version
+            - org.opencontainers.image.licenses
+
+      - uses: sbom/NTIA-compliance@v2
+        name: "NTIA SBOM Compliance Check"
+        description: >-
+          Verifies that the SBOM includes valid authors and supplier data
+          following NTIA guidelines. Optionally enforces a required_author and
+          required_supplier if provided.
+        mitigation: "Reject SBOM if authors or supplier metadata fails NTIA criteria."
+        with:
+          required_author: {}
+          required_supplier: {}
+
+  - name: "Provenance Requirement"
+    id: SA8
+    description: >-
+      Enforce that every container build includes provenance data,
+      supporting traceability within the security architecture as required by SA-8.
+    mitigation: "Provides a clear audit trail of the build process, mitigating risks related to unidentified or untraceable changes."
+    rules:
+      - uses: slsa/l1-provenance-exists@v2
+        name: "Require Provenance"
+        description: "Ensure provenance data is present for container builds."
+        mitigation: "Reject container builds that do not include valid provenance information."
+
+  - name: "SBOM Signature Enforcement"
+    id: SA12
+    description: >-
+      Enforce that the SBOM is cryptographically signed to verify its integrity and authenticity,
+      aligning with SA-12 requirements.
+    mitigation: "Prevents unauthorized modifications by ensuring that only signed SBOMs are accepted."
+    rules:
+      - uses: sbom/require-sbom@v2
+        name: "Signed SBOM Requirement"
+        description: "Validate that the SBOM is cryptographically signed."
+        mitigation: "Reject container builds if the SBOM is not signed."
+        evidence:
+          signed: true
+
+      - uses: slsa/l2-provenance-authenticated@v2
+        name: "Signed Provenance Requirement"
+        description: "Validate that the provenance data is cryptographically signed."
+        mitigation: "Reject container builds if the provenance data is not signed."
+        evidence:
+          signed: true
+

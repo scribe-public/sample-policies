@@ -1,0 +1,20 @@
+config-type: rule
+id: file-integrity
+name: Verify File Integrity
+path: files_integrity.rego
+
+description: Verify the checksum of each file in one SBOM matches the checksum in a second SBOM.
+
+labels:
+  - SBOM
+
+evidence:
+  signed: true
+  content_body_type: cyclonedx-json
+  target_type: container
+  labels:
+    - new_evidence
+
+with:
+  ref_sbom: '{{ .Env.REF_SBOM_DATA }}'
+  path_prefix: "pkg:file/"
