@@ -100,7 +100,7 @@ title_match_any(result, titles) {
 
 title_check(result, titles) {
     count(titles) != 0
-    result.severity
+    result.title
     title_match_any(result, titles)
 }
 
