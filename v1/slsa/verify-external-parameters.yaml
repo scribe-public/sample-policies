@@ -2,7 +2,7 @@ id: slsa-external-parameters
 name: SLSA External Parameters Match in Provenance Document
 path: verify-external-parameters.rego
 
-description: Verify the specified exterenal parameters value match in the provenance document
+description: Verify the specified external parameters value match in the provenance document
 
 labels:
   - SLSA
