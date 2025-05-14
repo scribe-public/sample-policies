@@ -6,6 +6,19 @@ default allow := false
 
 default violations := []
 
+default severities := []
+default titles := []
+default cwes := []
+default descriptions := []
+default descriptions_to_ignore := []
+default component_names := []
+
+severities = input.config.args.severities
+titles = input.config.args.titles
+cwes = input.config.args.cwes
+descriptions = input.config.args.descriptions
+descriptions_to_ignore = input.config.args.descriptions_to_ignore
+component_names = input.config.args.component_names
 
 short_description = "Verify 3rd party vulnerability scans"
 
@@ -87,7 +100,7 @@ title_match_any(result, titles) {
 
 title_check(result, titles) {
     count(titles) != 0
-    result.severity
+    result.title
     title_match_any(result, titles)
 }
 
@@ -129,6 +142,25 @@ description_check(result, descriptions) {
     description_match_any(result, descriptions)
 }
 
+ignored_description_check(result, descriptions_to_ignore) {
+    count(descriptions_to_ignore) == 0
+}
+
+ignored_description_check(result, descriptions_to_ignore) {
+    not result.description
+}
+
+ignored_description_match_any(result, descriptions_to_ignore) {
+    some description_regex in descriptions_to_ignore
+    regex.match(description_regex, result.description)
+}
+
+ignored_description_check(result, descriptions_to_ignore) {
+    count(descriptions_to_ignore) != 0
+    result.description
+    not ignored_description_match_any(result, descriptions_to_ignore)
+}
+
 component_name_check(result, component_names) {
     count(component_names) == 0
 }
@@ -149,9 +181,10 @@ component_name_check(result, component_names) {
 }
 
 filtered_result(result) {
-    severity_check(result, input.config.args.severities)
-    title_check(result, input.config.args.titles)
-    cwe_check(result, input.config.args.cwes)
-    description_check(result, input.config.args.descriptions)
-    component_name_check(result, input.config.args.component_names)
+    severity_check(result, severities)
+    title_check(result, titles)
+    cwe_check(result, cwes)
+    description_check(result, descriptions)
+    ignored_description_check(result, descriptions_to_ignore)
+    component_name_check(result, component_names)
 }
