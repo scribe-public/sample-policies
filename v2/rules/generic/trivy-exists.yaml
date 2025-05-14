@@ -1,0 +1,14 @@
+config-type: rule
+id: required-trivy-evidence
+name: Required Trivy Evidence Exists
+
+description: "Verify required Trivy evidence exists"
+
+labels:
+  - 3rd-party
+
+evidence:
+  content_body_type: generic
+  target_type: data
+  predicate_type: https://aquasecurity.github.io/trivy/v0.42/docs/configuration/reporting/#json
+
