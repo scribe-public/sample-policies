@@ -13,7 +13,7 @@ mitigation: Ensure that all findings reported by 3rd party tools are addressed b
 inputs:
   - name: superset
     type: object
-    description: "The superset of CVEs to check for, including the following format [cve: [max: int, severity: int]]"
+    description: "Filters for the findings. See usage example."
     required: false
 
 input_example: |-
