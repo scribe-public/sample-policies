@@ -1,0 +1,66 @@
+config-type: rule
+id: scribe-findings
+name: Verify No 3rd Party Findings via Scribe API
+path: scribe-api-findings.rego
+
+description: Verify via Scribe API that there are no findings reported by 3rd party tools in the target product.
+
+full-description: |-
+  This rule ensures that there are no findings, such as vulnerabilities, misconfigurations, or other issues reported by 3rd party tools, in any component of the product by verifying via the Scribe API.
+
+mitigation: Ensure that all findings reported by 3rd party tools are addressed before delivering the product.
+
+inputs:
+  - name: superset
+    type: object
+    description: "Filters for the findings. See usage example."
+    required: false
+
+input_example: |-
+  superset:
+    findings:
+      severities:
+        - Critical
+        - High
+      tools:
+        - Trivy
+        - Snyk
+      titles:
+        - "CVE-2023-1234"
+        - "CVE-2023-5678"
+        - "CVE-2025"
+      cwes:
+        - "CWE-123"
+        - "CWE-456"
+      descriptions:
+        - "Vulnerability in component X"
+        - "Misconfiguration in component Y"
+      descriptions_to_ignore:
+        - "False positive in component Z"
+        - "Known issue in component A"
+
+labels:
+  - SCA
+  - Blueprint
+  - Scribe
+
+require-scribe-api: true
+
+evidence:
+  filter-by:
+    - product
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/finding/v0.1
+
+with:
+  superset:
+    findings:
+      severities: []
+      tools: []
+      titles: []
+      cwes: []
+      descriptions: []
+      descriptions_to_ignore: []
+
