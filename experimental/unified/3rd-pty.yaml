@@ -19,4 +19,5 @@ with:
   titles: []
   cwes: []
   descriptions: []
+  descriptions_to_ignore: []
   component_names: []
