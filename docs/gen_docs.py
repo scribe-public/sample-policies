@@ -414,7 +414,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
             md.append(f"::: ")
 
     filter_by = rule_data.get("evidence", {}).get("filter-by", [])
-    if (not filter_by) or ("target" in [s.lower() for s in filter_by]):
+    if (not skip_evidence) and ((not filter_by) or ("target" in [s.lower() for s in filter_by])):
         md.append(f":::warning  ")
         md.append("Rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.")
         # This rule requires evaluation with a target. Without one, it will be **disabled** unless the `--all-evidence` flag is provided.
