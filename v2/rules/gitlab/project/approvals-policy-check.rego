@@ -13,6 +13,9 @@ asset := scribe.get_asset_data(input.evidence)
 
 name = input.config.args.name
 
+
+approvals_required_min = input.config.args.approvals_required_min
+
 verify = v {
 	v := {
 		"allow": allow,
