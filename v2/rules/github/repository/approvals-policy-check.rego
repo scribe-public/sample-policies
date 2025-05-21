@@ -16,7 +16,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "Missconfiguration",
+			"type": "Misconfiguration",
 			"details": violations,
 		},
 		"asset": asset,
