@@ -1,5 +1,5 @@
 config-type: rule
-id: github-project-pr-approval
+id: github-repo-pr-approval
 name: Pull request approval policy check for GitHub repository
 path: approvals-policy-check.rego
 
