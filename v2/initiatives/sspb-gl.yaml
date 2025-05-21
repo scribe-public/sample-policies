@@ -1,6 +1,6 @@
 config-type: initiative
 # required-valint-version: "2.0.0"
-id: "SSPB"
+id: "SSPB-GL"
 version: "1.0.0"
 name: "Secure Software Pipeline Blueprint"
 help: https://github.com/Venafi/blueprint-securesoftwarepipeline
