@@ -34,7 +34,7 @@ controls:
 
   - name: "Only accept commits signed with a developer GPG key"
     id: "CTL-2"
-    description: "The use of these two rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by Gitlab"
+    description: "The use of these rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by GitHub"
     mitigation: "Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications."
     full-description: |-
       Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.
