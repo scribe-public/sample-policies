@@ -56,7 +56,7 @@ violations = j {
         default_branch := project.repository.result_object.default_branch
         branches := project.branch
 		some branch in branches
-        # branch.name == default_branch
+        branch.name == default_branch
 		not secured_branch(branch)
 
 		r := {
@@ -75,17 +75,6 @@ get_required_approving_review_count(branch) = v {
 	branch.result_object.branch_protection["required_pull_request_reviews.required_approving_review_count"] != null
 	v := branch.result_object.branch_protection["required_pull_request_reviews.required_approving_review_count"]
 } else = 0
-
-# get_required_approving_review_count(branch) = v {
-# 	branch.result_object.branch_protection == null
-# 	v := 0
-# }
-
-# get_required_approving_review_count(branch) = v {
-# 	branch.result_object.branch_protection != null
-# 	branch.result_object.branch_protection["required_pull_request_reviews.required_approving_review_count"] == null
-# 	v := 0
-# }
 
 secured_branch(branch) = true {
 	branch.result_object.protected == true
