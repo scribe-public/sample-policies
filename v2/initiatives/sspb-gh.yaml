@@ -1,0 +1,257 @@
+config-type: initiative
+# required-valint-version: "2.0.0"
+id: "SSPB-GH"
+version: "1.0.0"
+name: "Secure Software Pipeline Blueprint"
+help: https://github.com/Venafi/blueprint-securesoftwarepipeline
+description: "Blueprint for secure pipelines - GitHub"
+full-description: "This initiative defines a set of best practices and technical guidelines designed to safeguard every stage of the software delivery process—from code development and build, to testing and production deployment. It emphasizes the importance of ensuring code integrity, authenticating build artifacts, and continuously monitoring system changes to mitigate the risk of supply chain attacks. The framework is adaptable to various environments and aligned with industry standards, providing organizations with actionable steps to enhance their overall security posture."
+
+defaults:
+  evidence:
+    signed: true
+
+controls:
+  - name: "Restrict administrative access to CI/CD tools"
+    id: "CTL-1"
+    description: "Restrict administrative access to CI/CD tools"
+    mitigation: "Limit administrative privileges to a minimal, controlled group to reduce the risk of unauthorized pipeline changes."
+    full-description: |-
+      It's important to ensure that only authorized persons can make administrative changes to the CI/CD system. If an unauthorized person gains access, they could modify pipeline definitions and subvert other controls.
+
+      Both host and application-layer access to CI/CD tools should be protected with multi-factor authentication.
+
+      > :skull: Instead of manipulating code, attackers may target the CI/CD pipeline itself, leading to undetected breaches and long-term damage.
+    when:
+      gate: Code
+    rules:
+      - uses: github/org/max-admins@v2
+        id: max-admins
+        level: error
+        with:
+          max_admins: 1
+
+
+  - name: "Only accept commits signed with a developer GPG key"
+    id: "CTL-2"
+    description: "The use of these rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by GitHub"
+    mitigation: "Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications."
+    full-description: |-
+      Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.
+
+      > :skull: Attackers may exploit unsigned commits by stealing credentials or infecting developer machines, allowing them to inject malicious code.
+    when:
+      gate: Code
+    rules:
+      - uses: github/repository/signed-commits@v2
+        id: disallow-committing-unsigned
+        level: error
+      - uses: github/repository/check-signed-commits@v2
+        id: all-commits-verified
+        level: error
+      - uses: github/repository/web-commit-signoff@v2
+        id: web-commit-signoff-required
+        level: error
+
+  - name: "Automation access keys expire automatically"
+    id: "CTL-3"
+    description: "Automation access keys expire automatically"
+    mitigation: "Configure automation keys to expire automatically, limiting the window in which compromised keys can be exploited."
+    full-description: |-
+      Ensuring that access keys used by automation expire periodically reduces the risk when keys are compromised.
+
+      > :skull: Automated systems run continuously and are attractive targets; compromised keys with a short lifespan minimize potential damage.
+    when:
+      gate: Code
+    rules:
+      - uses: demodata/data@experimental
+        id: token-excessive-lifespan
+        name: "Reduce automation access to read-only"
+        level: note
+        skip-evidence: true
+        with:
+          allow: false
+          short_description: ""
+          description: ""
+          reason: "Not supported by GitHub API"
+          violations:
+            - not_implemented: true
+
+  - name: "Reduce automation access to read-only"
+    id: "CTL-4"
+    description: "Reduce automation access to read-only"
+    mitigation: "Restrict automation accounts to read-only access, following the principle of least privilege to minimize potential damage."
+    full-description: |-
+      CI systems should have read access only to source code repositories to limit the risk from compromised automation accounts.
+
+      > :skull: Attackers who gain write access via automation credentials can bypass review processes; restricting access reduces this risk.
+    when:
+      gate: Code
+    rules:
+      - uses: demodata/data@experimental
+        id: disallowed-token-scope
+        name: "Reduce automation access to read-only"
+        level: note
+        skip-evidence: true
+        with:
+          allow: false
+          short_description: ""
+          description: ""
+          reason: "Not supported by GitHub API"
+          violations:
+            - not_implemented: true
+
+  - name: "Only dependencies from trusted registries can be used"
+    id: "CTL-5"
+    description: "Only dependencies from trusted registries can be used"
+    mitigation: "Restrict dependencies to trusted registries to prevent the introduction of malicious code through third-party packages."
+    full-description: |-
+      Modern software dependency managers, including `npm`, `maven`, `Nuget`, `pip`, and others, rely on declaring the dependencies required for the application and then fetching them at build time. By configuring the dependency manager to only allow connections to an authorized list of registries, these attacks can be blunted by keeping malicious packages in the public registries from entering the pipeline.
+
+      The trusted repository can also ensure that security policies are enforced on dependencies. For example, trusted repositories could ensure that only dependencies that are free of critical or high vulnerabilities are used. Implementing a control at the repository that returns an error when a component with known vulnerabilities is requested helps to reduce the chances of an attack against a known vulnerability downstream.
+
+      Teams should be aware of implicit runtime dependencies as well as explicit buildtime dependencies (see Control 14).
+
+      > :skull: 
+      > Attackers can quickly spread malicious code through dependencies. Attackers might insert malicious code that is then incorporated into the application’s manifest by stealing credentials en masse for sophisticated, targeted thefts.
+      > Hackers can also target mistakes and oversights through _typo-squatting_ and _dependency confusion_. Adversaries go to great ends to publish packages under a trusted name or even with common typos so that they are included in builds.
+      > All of the stakes are raised exponentially when public repositories are used.  
+    when:
+      gate: Code
+    rules:
+      - uses: demodata/data@experimental
+        id: disallowed-untrusted-registries
+        name: "Only dependencies from trusted registries can be used"
+        level: note
+        skip-evidence: true
+        with:
+          allow: false
+          short_description: ""
+          description: ""
+          reason: "Coming Soon"
+          violations:
+            - not_implemented: true
+
+  - name: "Any critical or high severity vulnerability breaks the build"
+    id: "CTL-6"
+    description: "Any critical or high severity vulnerability breaks the build"
+    mitigation: "Immediately fail the build when critical or high-severity vulnerabilities are detected, forcing prompt investigation and remediation."
+    full-description: |-
+      Supply chain attacks may introduce code vulnerabilities. Using SAST and SCA to identify serious security issues and failing the build prevents insecure code from being merged.
+
+      > NOTE: This control complements Control-4 by ensuring no critical vulnerabilities are ignored.
+      
+      Early detection reduces remediation costs, but also requires a well-defined vulnerability exception process.
+      
+      > :skull: Vulnerabilities, if undetected, can proliferate quickly and cause widespread damage.
+    when:
+      gate: Collaboration
+    rules:
+      - uses: api/scribe-api-cve@v2
+        id: stop-critical-or-high-vuln
+        level: error
+        with:
+          superset:
+            cve:
+              severity: 6
+              max: 0
+
+  - name: "Validate artifact digest"
+    id: "CTL-8"
+    description: "Validate artifact digest"
+    mitigation: "Validate the artifact’s digest before deployment to ensure it has not been tampered with and maintains software integrity."
+    full-description: |-
+      Before deployment, an artifact’s digest is checked against the expected value to confirm it has not been compromised.
+
+      > :skull: Attackers often attempt to alter artifacts; validating the digest helps ensure integrity.
+    when:
+      gate: Collaboration
+    rules:
+      - uses: sbom/evidence-exists@v2
+        level: error
+        evidence:
+          content_body_type: cyclonedx-json
+
+  - name: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
+    id: "CTL-9"
+    description: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
+    mitigation: "Enforce a review process requiring at least two reviewers and a passing build, ensuring thorough evaluation and testing before code is merged."
+    full-description: |-
+      Requiring multiple code reviews and successful tests helps ensure that no changes are merged without proper oversight.
+
+      > :skull: Without proper reviews, attackers can insert malicious changes; this control mitigates that risk.
+    when:
+      gate: Collaboration
+    rules:
+      - uses: github/repository/approvals-policy-check@v2
+        id: merge-approval
+        level: error
+
+  - name: "Available container images don’t have any high or critical vulnerabilities"
+    id: "CTL-11"
+    description: "Available container images don’t have any high or critical vulnerabilities"
+    mitigation: "Continuously scan container images for vulnerabilities and ensure that only images without high or critical issues are deployed."
+    full-description: |-
+      Container images must be scanned before deployment to prevent the inclusion of images with serious vulnerabilities.
+
+      > :skull: Vulnerable containers can be a major attack vector; this control helps prevent their use.
+    when:
+      gate: Staging
+    rules:
+      - uses: api/scribe-api-cve@v2
+        id: stop-critical-or-high-vuln
+        level: error
+        with:
+          superset:
+            cve:
+              severity: 6
+              max: 0
+
+  - name: "Validate artifact signatures and digests"
+    id: "CTL-12"
+    description: "Validate artifact signatures and digests"
+    mitigation: "Ensure that artifacts are properly signed and their digests validated, confirming authenticity and preventing tampering."
+    full-description: |-
+      Validating the signature and digest of an artifact ensures that it has not been altered between testing and deployment.
+
+      > :skull: This control helps prevent the deployment of artifacts that may have been modified by attackers.
+    when:
+      gate: Staging
+    rules:
+      - uses: sbom/artifact-signed@v2
+        id: sbom-is-signed
+        level: error
+        evidence:
+          content_body_type: cyclonedx-json
+
+  - name: "Scan deployed images in production"
+    id: "CTL-13"
+    description: "Scan deployed images in production"
+    mitigation: "Continuously monitor and scan production images to ensure ongoing compliance with security standards."
+    full-description: |-
+      Production images should be validated to ensure that controls enforced during earlier stages continue to be effective in production.
+
+      > :skull: Ongoing monitoring helps detect any security issues that may emerge post-deployment.
+    when:
+      gate: Staging
+    rules:
+      - uses: sbom/artifact-signed@v2
+        id: sbom-is-signed
+        level: error
+      - uses: sbom/blocklist-packages@v2
+        id: disallow-dependencies
+        level: error
+        with:
+          blocklist:
+            - "liblzma5@5.6.0"
+            - "liblzma5@5.6.1"
+            - "xz-utils@5.6.0"
+            - "xz-utils@5.6.1"
+      - uses: api/scribe-api-cve@v2
+        id: stop-critical-or-high-vuln
+        level: error
+        with:
+          superset:
+            cve:
+              severity: 6
+              max: 0
