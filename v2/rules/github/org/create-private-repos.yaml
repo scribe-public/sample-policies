@@ -1,0 +1,55 @@
+config-type: rule
+id: github-org-create-private-repos
+name: Verify that members can create private repositories setting is configured
+path: create-private-repos.rego
+
+description: Verify only allowed users can create private repositories in the GitHub organization.
+
+full-description: |-
+  This rule ensures that only users specified in the allowed list can create private repositories in the GitHub organization.
+  Note: this setting is supported only in GitHub Enterprise.
+  It performs the following steps:
+  
+  1. Iterates over the users in the GitHub organization.
+  2. Checks users' permissions to create private repositories against the allowed list specified in the `with.allowed_users` configuration.
+     - If a user not on the allowed list has permission to create private repositories, the rule flags this as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >-
+  Ensures that only approved users can create private repositories in the GitHub organization, reducing the risk of unauthorized repository creation.
+
+inputs:
+  - name: allowed_users
+    type: array
+    description: List of allowed users.
+    required: false
+
+input_example: |-
+  allowed_users:
+    - "user1"
+    - "user2"
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset_type") "organization" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_value: true
+

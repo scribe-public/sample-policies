@@ -1,0 +1,39 @@
+config-type: rule
+id: gitlab-project-signed-commits
+name: Ensure All Commits Are Signed in GitLab Project
+path: check-signed-commits.rego
+
+description: Verify all commits in the GitLab project are signed.
+
+full-description: |-
+  This rule ensures that all commits in the GitLab project are signed.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that all commits are signed.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that all commits in the GitLab project are signed to prevent unauthorized changes.
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+

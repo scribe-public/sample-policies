@@ -1,0 +1,50 @@
+config-type: rule
+id: gitlab-project-abandoned-project
+name: Verify Project Activity
+path: abandoned-project.rego
+
+description: Verify the GitLab project is active for a specified duration.
+
+full-description: |-
+  This rule ensures that the GitLab project is active for a specified duration.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the project has been active for the specified duration.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that the GitLab project is active for the specified duration to prevent project abandonment.
+
+inputs:
+  - name: inactive_for_days
+    type: number
+    description: Number of days the project has been inactive.
+    required: false
+
+input_example: |-
+  inactive_for_days: 30
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  inactive_for_days: 30

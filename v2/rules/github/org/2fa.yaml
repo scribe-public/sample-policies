@@ -1,0 +1,47 @@
+config-type: rule
+id: github-org-2fa
+name: Verify Two-Factor Authentication (2FA) Requirement Enabled
+path: 2fa.rego
+
+description: Verify Two-factor Authentication is required in the GitHub organization.
+
+full-description: |-  
+  This rule verifies that two-factor authentication (2FA) is enabled for the organization by examining the provided evidence.
+  It checks the organization's details (retrieved from the SARIF or equivalent evidence) and compares the value of the 
+  `organization_details.two_factor_requirement_enabled` field against the expected value.
+  
+  The rule iterates over the organization data in the evidence, and if the `two_factor_requirement_enabled` field does not match 
+  the desired value, a violation is recorded. This ensures that all organizational accounts enforce 2FA, providing an additional 
+  layer of security against unauthorized access.
+  
+  ### **Evidence Requirements**
+  - Evidence must include organization data with a field named `organization_details.two_factor_requirement_enabled`.
+  - The data should come from a trusted source (e.g., a GitHub organization scan).
+  - The evidence must clearly indicate whether 2FA is enabled.
+
+mitigation: >-
+  Enforces two-factor authentication (2FA) for organizational accounts, significantly reducing the risk of unauthorized access 
+  through compromised credentials.
+  
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset_type") "organization" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_value: true
+

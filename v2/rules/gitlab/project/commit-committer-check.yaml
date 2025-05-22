@@ -1,0 +1,39 @@
+config-type: rule
+id: gitlab-project-verify-commit_committer_check
+name: Enable Commit Committer Check in GitLab Project
+path: commit-committer-check.rego
+
+description: Verify `commit_committer_check` is enabled for the GitLab project.
+
+full-description: |-
+  This rule ensures that `commit_committer_check` is enabled for the GitLab project.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that `commit_committer_check` is enabled.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Enable `commit_committer_check` in the GitLab project to prevent unauthorized changes.
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+

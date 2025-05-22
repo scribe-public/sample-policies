@@ -1,0 +1,50 @@
+config-type: rule
+id: github-org-dependency-graph
+name: Verify dependency_graph_enabled_for_new_repositories setting
+path: dependency-graph.rego
+
+description: Verify dependency graph is enabled for new repositories in the GitHub organization.
+
+full-description: |-
+  This rule ensures that the dependency graph is enabled in the GitHub organization.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitHub organization.
+  2. Verifies that the dependency graph setting is enabled.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >-
+  Ensures that the dependency graph is enabled in the GitHub organization, providing better visibility into dependencies and potential vulnerabilities.
+
+inputs:
+  - name: desired_value
+    type: boolean
+    description: Indicates if the dependency graph is enabled.
+    required: false
+
+input_example: |-
+  desired_value: true
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset_type") "organization" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_value: true

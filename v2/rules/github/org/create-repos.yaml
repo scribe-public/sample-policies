@@ -1,0 +1,52 @@
+config-type: rule
+id: github-org-create-repos
+name: Verify members_can_create_repositories setting
+path: create-repos.rego
+
+description: Verify only allowed users can create repositories in the GitHub organization.
+
+full-description: |-
+  This rule ensures that only users specified in the allowed list can create repositories in the GitHub organization.
+  It performs the following steps:
+  
+  1. Iterates over the users in the GitHub organization.
+  2. Checks users' permissions to create repositories against the allowed list specified in the `with.allowed_users` configuration.
+     - If a user not in the allowed list has permission to create repositories, the rule flags it as a violation.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub organization resources.
+
+mitigation: >-
+  Ensures that only approved users can create repositories in the GitHub organization, reducing the risk of unauthorized repository creation.
+
+inputs:
+  - name: desired_value
+    type: boolean
+    description: "The desired value for the `members_can_create_repositories` setting."
+    required: false
+
+input_example: |-
+  desired_value: false
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset_type") "organization" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_value: false
+

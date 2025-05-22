@@ -1,0 +1,50 @@
+config-type: rule
+id: gitlab-project-merge-requests-disable-committers-approval
+name: Disable Committers' Approval for Merge Requests in GitLab
+path: merge-requests-disable-committers-approval.rego
+
+description: Verify `merge_requests_disable_committers_approval` is set for the GitLab project.
+
+full-description: |-
+  This rule ensures that the binary field Merge Requests Disable Committers Approval is set for the GitLab project.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the binary field `merge_requests_disable_committers_approval` is set.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that the binary Merge Requests Disable Committers Approval field is set for the GitLab project to prevent unauthorized approvals.
+
+inputs:
+  - name: merge_requests_disable_committers_approval
+    type: boolean
+    description: The binary field to enforce for merge requests committers' approval.
+    required: false
+
+input_example: |-
+  merge_requests_disable_committers_approval: false
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  merge_requests_disable_committers_approval: false

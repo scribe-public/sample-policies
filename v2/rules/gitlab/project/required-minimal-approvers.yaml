@@ -1,0 +1,39 @@
+config-type: rule
+id: gitlab-project-required-minimal-approvers
+name: Require Minimal Approvers in GitLab Project
+path: required-minimal-approvers.rego
+
+description: Verify the required number of approvers for the GitLab project is met.
+
+full-description: |-
+  This rule ensures that the required number of approvers for the GitLab project is met.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the required number of approvers is met.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that the required number of approvers for the GitLab project is met to prevent unauthorized changes.
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+

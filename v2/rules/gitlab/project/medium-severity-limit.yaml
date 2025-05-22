@@ -1,0 +1,50 @@
+config-type: rule
+id: gitlab-project-medium-severity-limit
+name: Enforce Medium Severity Limit
+path: medium-severity-limit.rego
+
+description: Verify the maximum allowed medium severity alerts for the GitLab project.
+
+full-description: |-
+  This rule ensures that the maximum allowed medium severity alerts for the GitLab project is enforced.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that the maximum allowed medium severity alerts is enforced.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that the maximum allowed medium severity alerts for the GitLab project is enforced to prevent unauthorized changes.
+
+inputs:
+  - name: max_allowed_specific_severity
+    type: number
+    description: Maximum allowed medium severity alerts for the GitLab project.
+    required: false
+
+input_example: |-
+  max_allowed_specific_severity: 0
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  max_allowed_specific_severity: 0

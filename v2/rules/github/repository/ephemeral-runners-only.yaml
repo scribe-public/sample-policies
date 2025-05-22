@@ -1,0 +1,39 @@
+config-type: rule
+id: github-repo-ephemeral-runners-only
+name: Verify Only Ephemeral Runners Exist in Repository
+path: ephemeral-runners-only.rego
+
+description: Verify self-hosted runners are disallowed in the GitHub repository.
+
+full-description: |-
+  This rule ensures that only ephemeral runners are used in the GitHub repository.
+  It performs the following steps:
+  
+  1. Checks the repository settings for runner configuration.
+  2. Verifies that only ephemeral runners are used.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+mitigation: >-
+  Ensures that only ephemeral runners are used, reducing the risk of persistent runner vulnerabilities.
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+    - >-
+      {{- if eq (index .Context "asset_type") "repository" "Repository" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
