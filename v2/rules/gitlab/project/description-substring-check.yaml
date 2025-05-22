@@ -41,7 +41,7 @@ evidence:
     - "platform=gitlab"
     - "asset_type=project"
     - >-
-      {{- if eq (index .Context "asset_type") "project" -}}
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
       {{- asset_on_target (index .Context "asset_name") -}}
       {{- else -}}
       {{- asset_on_target nil -}}
