@@ -1,0 +1,41 @@
+config-type: rule
+id: github-repo-branch-verification
+name: Verify Branch Verification Setting
+path: branch-verification.rego
+
+description: Verify branch verification in the GitHub repository matches the value defined in the configuration file.
+
+full-description: |-
+  This rule ensures that branch verification in the GitHub repository matches the value defined in the configuration file.
+  It performs the following steps:
+  
+  1. Checks the repository settings for branch verification.
+  2. Verifies that the verification setting matches the expected value.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+mitigation: >-
+  Ensures that branch verification settings are correctly configured, reducing the risk of unauthorized changes.
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+    - >-
+      {{- if eq (index .Context "asset_type") "repository" "Repository" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_verified: true

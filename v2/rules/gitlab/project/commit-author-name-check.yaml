@@ -1,0 +1,51 @@
+config-type: rule
+id: gitlab-project-allowed-commit-author-names
+name: Allowed Commit Authors in GitLab Project
+path: commit-author-name-check.rego
+
+description: Verify only users in the Allowed List author commits in the GitLab project.
+
+full-description: |-
+  This rule ensures that only users in the Allowed List author commits in the GitLab project.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that only users in the Allowed List author commits.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that only users in the Allowed List author commits in the GitLab project to prevent unauthorized changes.
+
+inputs:
+  - name: allowed_authors
+    type: array
+    description: List of users allowed to author commits in the GitLab project.
+    required: false
+
+input_example: |-
+  allowed_authors:
+    - examplename
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  allowed_authors: []

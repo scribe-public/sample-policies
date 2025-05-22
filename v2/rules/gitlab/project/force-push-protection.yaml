@@ -1,0 +1,50 @@
+config-type: rule
+id: gitlab-project-disallow-force-push
+name: Disallow Force Push in GitLab Project
+path: force-push-protection.rego
+
+description: Verify force pushes in the GitLab project are disallowed to maintain repository integrity.
+
+full-description: |-
+  This rule ensures that force pushes in the GitLab project are disallowed to maintain repository integrity.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that force pushes are disallowed.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that force pushes in the GitLab project are disallowed to maintain repository integrity.
+
+inputs:
+  - name: branch
+    type: string
+    description: The branch to disallow force pushes.
+    required: false
+
+input_example: |-
+  branch: "main"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  branch: "main"

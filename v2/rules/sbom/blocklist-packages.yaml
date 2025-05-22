@@ -1,0 +1,23 @@
+config-type: rule
+id: sbom-disallow-dependencies
+name: Restrict Disallowed Dependencies
+path: blocklist-packages.rego
+
+description: Verify the number of disallowed dependencies remains below the specified threshold.
+
+labels:
+  - SBOM
+  - Image
+  - Blueprint
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  blocklist: []
+  blocklisted_limit: 0

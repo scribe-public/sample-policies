@@ -8,3 +8,6 @@ initiatives:
 
 labels:
   - SSDF
+
+evidence:
+  target_type: container

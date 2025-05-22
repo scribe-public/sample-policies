@@ -41,13 +41,28 @@ violations = j {
 		comp.licenses != null
 		some j
 		l := comp[licenses][j]
-		some k
-		b := input.config.args.blocklist[k]
-		lname := l.license.name
-		startswith(lname, b)
+		bad_license(l.license)
 		r = {
 			"package": comp.purl,
-			"license": b,
+			"license": l.license,
 		}
 	}
+}
+
+bad_license(license) {
+	some k
+	blocked_license := input.config.args.blocklist[k]
+	startswith(license.name, blocked_license)
+}
+
+bad_license(license) {
+	some k
+	blocked_license := input.config.args.blocklist[k]
+	startswith(license.id, blocked_license)
+}
+
+bad_license(license) {
+	some k
+	blocked_license := input.config.args.blocklist[k]
+	startswith(license.expression, blocked_license)
 }

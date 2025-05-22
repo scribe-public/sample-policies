@@ -1,0 +1,40 @@
+config-type: rule
+id: github-repo-web-commit-signoff
+name: Verify Repository Requires Commit Signoff
+path: web-commit-signoff.rego
+
+description: Verify contributors sign off on commits to the GitHub repository through the GitHub web interface.
+
+full-description: |-
+  This rule checks if the repository requires signoff on all commits made through the GitHub web interface.
+  It performs the following steps:
+  
+  1. Checks the repository settings for commit signoff.
+  2. Verifies that the repository requires signoff on all commits made through the GitHub web interface.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+mitigation: >-
+  Ensure that the repository requires signoff on all commits made through the GitHub web interface, enhancing security and accountability.
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+    - >-
+      {{- if eq (index .Context "asset_type") "repository" "Repository" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
