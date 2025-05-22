@@ -32,7 +32,7 @@ evidence:
     - "platform=github"
     - "asset_type=repository"
     - >-
-      {{- if eq (index .Context "asset_type") "repository" "Repository" -}}
+      {{- if eq (index .Context "asset_type") "repository" "Repository" "repo" -}}
       {{- asset_on_target (index .Context "asset_name") -}}
       {{- else -}}
       {{- asset_on_target nil -}}
