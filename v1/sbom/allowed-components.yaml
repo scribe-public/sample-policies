@@ -8,6 +8,9 @@ initiatives:
   - bundle-rule
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
   content_body_type: cyclonedx-json
   target_type: container

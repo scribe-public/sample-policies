@@ -1,0 +1,43 @@
+config-type: rule
+id: jenkins-inactive-users
+name: Verify Inactive Users
+path: inactive-users.rego
+
+description: Verify there are no inactive users.
+
+full-description: |-
+  This rule ensures that no Jenkins instance users are inactive.
+  It performs the following steps:
+  
+  1. Checks the settings of the Jenkins instance.
+  2. Verifies that no users are inactive.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning Jenkins instance resources.
+
+mitigation: >-
+  Ensure that no Jenkins instance users are inactive to prevent service disruption.
+
+inputs:
+  - name: inactive_for_days
+    type: number
+    description: Number of days before a user is considered inactive.
+    required: false
+
+input_example: |-
+  inactive_for_days: 90
+
+labels:
+  - Jenkins
+  - Instance
+
+evidence:
+  signed: false
+  content_body_type: generic
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "asset_type=instance"
+    - "platform=jenkins"
+
+with:
+    inactive_for_days: 90

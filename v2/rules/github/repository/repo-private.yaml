@@ -1,0 +1,41 @@
+config-type: rule
+id: github-repo-private
+name: Verify Repository Is Private
+path: repo-private.rego
+
+description: Verify the GitHub repository is private.
+
+full-description: |-
+  This rule ensures that the GitHub repository is private.
+  It performs the following steps:
+  
+  1. Checks the repository settings for privacy.
+  2. Verifies that the repository is private.
+
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitHub repository settings.
+
+
+mitigation: >-
+  Ensures that the repository is private, reducing the risk of unauthorized access.
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=repository"
+    - >-
+      {{- if eq (index .Context "asset_type") "repository" "Repository" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:

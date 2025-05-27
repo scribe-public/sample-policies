@@ -1,0 +1,20 @@
+config-type: rule
+id: require-sbom
+name: Require SBOM Existence
+path: evidence-exists.rego
+
+description: Verify the SBOM exists as evidence.
+
+labels:
+  - SBOM
+  - Blueprint
+
+fail-on-missing-evidence: true
+
+evidence:
+  filter-by:
+    - product
+    - target
+  content_body_type: cyclonedx-json
+  signed: false
+
