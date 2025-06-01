@@ -28,6 +28,7 @@ labels:
   - Scribe
 
 require-scribe-api: true
+skip-evidence: true
 
 evidence:
   filter-by:
