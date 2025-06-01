@@ -1,4 +1,6 @@
-name: sonatype-nexus-disallowed-reasons
+config-type: rule
+id: sonatype-nexus-disallowed-reasons
+name: Verify No Violations with Nexus Disallowed Reasons
 path: nexus-disallowed-reasons.rego
 description: "Verify no violations with the specified reasons in Nexus policies "
 
