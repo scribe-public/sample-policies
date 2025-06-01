@@ -50,17 +50,21 @@ inputs:
 
 input_example: |-
   severities:
-    - HIGH
-    - CRITICAL
+    - Critical
+    - High
   titles:
-    - Vulnerability in library X
+    - "CVE-2023-1234"
+    - "CVE-2023-5678"
+    - "CVE-2025"
   cwes:
-    - "79"
-    - "89"
+    - "CWE-123"
+    - "CWE-456"
   descriptions:
-    - SQL Injection
-    - Cross-Site Scripting
-  descriptions_to_ignore: []
+    - "Vulnerability in component X"
+    - "Misconfiguration in component Y"
+  descriptions_to_ignore:
+    - "False positive in component Z"
+    - "Known issue in component A"
   component_names:
     - library-x
     - library-y
