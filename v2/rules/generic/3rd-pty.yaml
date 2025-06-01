@@ -1,0 +1,80 @@
+config-type: rule
+name: 3rd Party Scanner Violations
+id: 3rd-pty
+path: 3rd-pty.rego
+
+description: "Limit allowed violations in 3rd party scanner reports"
+
+full-description: |-
+  This rule verifies that the number and type of violations reported by third-party scanners are within allowed thresholds.
+  It checks the evidence for findings matching the specified severities, titles, CWEs, descriptions, and component names.
+  Violations are recorded if any findings exceed the configured limits or match blocklisted criteria.
+  
+  ### **Evidence Requirements**
+  - Evidence must be provided by a supported third-party scanner and formatted as generic findings (see the `--parser` flag in `valint`).
+
+mitigation: >-
+  Restricts the number and type of violations from third-party scanner reports, helping to enforce organizational security and compliance policies.
+
+labels:
+  - 3rd-pty
+  - SCA
+initiatives:
+  - Default
+
+inputs:
+  - name: severities
+    type: array
+    description: List of severities to filter by.
+    required: false
+  - name: titles
+    type: array
+    description: List of titles to filter by.
+    required: false
+  - name: cwes
+    type: array
+    description: List of CWE identifiers to filter by.
+    required: false
+  - name: descriptions
+    type: array
+    description: List of descriptions to filter by.
+    required: false
+  - name: descriptions_to_ignore
+    type: array
+    description: List of descriptions to ignore from findings.
+    required: false
+  - name: component_names
+    type: array
+    description: List of component names to filter by.
+    required: false
+
+input_example: |-
+  severities:
+    - HIGH
+    - CRITICAL
+  titles:
+    - Vulnerability in library X
+  cwes:
+    - "79"
+    - "89"
+  descriptions:
+    - SQL Injection
+    - Cross-Site Scripting
+  descriptions_to_ignore: []
+  component_names:
+    - library-x
+    - library-y
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/finding/v0.1
+
+with:
+  severities: []
+  titles: []
+  cwes: []
+  descriptions: []
+  descriptions_to_ignore: []
+  component_names: []
