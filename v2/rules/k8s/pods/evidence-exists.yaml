@@ -1,0 +1,27 @@
+config-type: rule
+id: k8s-pod-exists
+name: Require K8s Pod Discovery Evidence
+path: evidence-exists.rego
+
+description: Verify the K8s Pod exists as evidence.
+
+labels:
+  - K8s
+  - Pod
+
+fail-on-missing-evidence: true
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=k8s"
+    - "asset_type=pod"
+    - >-
+      {{- if eq (index .Context "asset-type") "pod" -}}
+      {{- asset_on_target (index .Context "asset-name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
