@@ -1,0 +1,52 @@
+config-type: rule
+id: gitlab-project-disallowed-banned-approvers
+name: Disallow Banned Approvers
+path: disallowed-banned-approvers.rego
+
+description: Verify approvers in the GitLab project are not on the banned list.
+
+full-description: |-
+  This rule ensures that approvers in the GitLab project are not on the banned list.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that approvers are not on the banned list.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that approvers in the GitLab project are not on the banned list to prevent unauthorized approvals.
+
+inputs:
+  - name: banned_list
+    type: array
+    description: List of users banned from approving in the GitLab project.
+    required: false
+
+input_example: |-
+  banned_list:
+    - user1
+    - user2
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  banned_list: []

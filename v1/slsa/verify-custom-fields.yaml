@@ -1,0 +1,16 @@
+id: slsa-field-matches
+name: SLSA Field Value Matches in Provenance Document
+path: verify-custom-fields.rego
+
+description: Verify the specified field value matches in the provenance document.
+
+labels:
+  - SLSA
+
+evidence:
+  signed: false
+  content_body_type: slsa
+
+with:
+  fields: {}
+  violations_threshold: 0

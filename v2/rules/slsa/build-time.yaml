@@ -1,0 +1,25 @@
+config-type: rule
+id: slsa-build-time
+name: Verify build time
+path: build-time.rego
+
+description: Verify the artifact was created within the specified time window.
+
+labels:
+  - SLSA
+  - Image
+
+evidence:
+  signed: false
+  content_body_type: slsa
+  target_type: container
+
+with:
+  start_hour: 8
+  end_hour: 20
+  workdays:
+    - "Sunday"
+    - "Monday"
+    - "Tuesday"
+    - "Wednesday"
+    - "Thursday"

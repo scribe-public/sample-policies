@@ -1,0 +1,28 @@
+config-type: rule
+id: github-org-pp-custom-link
+name: Verify `secret_scanning_push_protection_custom_link_enabled` Setting
+path: pp-custom-link.rego
+
+description: Verify secret scanning push protection custom link is enabled in the GitHub organization.
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset_type") "organization" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_value: true

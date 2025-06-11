@@ -1,4 +1,4 @@
-name: allowed-commit-autor-names
+name: allowed-commit-author-names
 path: commit-author-name-check.rego
 
 level: warning
@@ -11,10 +11,11 @@ description: "Verify that commit authors are included in the allowed list"
 
 evidence:
   signed: false
-  format-type: generic
+  content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
+    - "platform=gitlab"
     - "asset_type=project"
 
 with:

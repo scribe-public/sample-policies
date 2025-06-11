@@ -7,10 +7,11 @@ description: "A rule to verify that the binary field: secret_scanning_validity_c
 
 evidence:
   signed: false
-  format-type: generic
+  content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   labels:
+    - "platform=github"
     - "asset_type=organization"
 
 with:

@@ -1,0 +1,28 @@
+config-type: rule
+id: github-org-validity-checks
+name: Verify `secret_scanning_validity_checks_enabled` Setting
+path: validity-checks.rego
+
+description: Verify validity checks for secrets are configured for the GitHub repository.
+
+labels:
+  - GitHub
+  - Organization
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=github"
+    - "asset_type=organization"
+    - >-
+      {{- if eq (index .Context "asset_type") "organization" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  desired_value: true

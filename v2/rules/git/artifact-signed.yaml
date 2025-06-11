@@ -1,0 +1,34 @@
+config-type: rule
+id: git-artifact-signed
+name: Git Artifact Signed
+path: artifact-signed.rego
+
+description: Verify the Git artifact is signed.
+
+mitigation: >-
+  Ensure that only Git artifacts with valid cryptographic signatures are deployed to prevent source code tampering.
+
+input_example: |-
+  identity:
+    emails:
+      - bob@company.com
+      - alice@company.com
+
+labels:
+  - SBOM
+  - Git
+
+fail-on-missing-evidence: true
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: true
+  content_body_type: cyclonedx-json
+  target_type: git
+
+with:
+  identity:
+    common-names: []
+    emails: []

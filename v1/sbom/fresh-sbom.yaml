@@ -8,7 +8,10 @@ initiatives:
   - Default
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
-  format-type: cyclonedx-json
+  content_body_type: cyclonedx-json
 with:
   max_days : 30

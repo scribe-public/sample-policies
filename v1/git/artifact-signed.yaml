@@ -6,8 +6,11 @@ initiatives:
   - Default
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: true
-  format-type: cyclonedx-json
+  content_body_type: cyclonedx-json
   target_type: git
 
 with:
