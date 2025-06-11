@@ -1,0 +1,35 @@
+config-type: rule
+id: require-sbom
+name: Require SBOM Existence
+path: require-sbom.rego
+
+description: Verify the SBOM exists as evidence.
+
+full-description: |-  
+  This rule verifies the existence of an SBOM as evidence.
+  It performs the following steps:
+  
+  1. Checks for the presence of an SBOM.
+     - If the SBOM is missing, the rule flags it as a violation.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided in the CycloneDX JSON format.
+
+mitigation: >-
+  Ensures that an SBOM is present, which is essential for tracking and managing software components and their dependencies.
+
+labels:
+  - SBOM
+  - Blueprint
+  - Image
+  - Git
+
+fail-on-missing-evidence: true
+
+evidence:
+  filter-by:
+    - product
+    - target
+  content_body_type: cyclonedx-json
+  signed: false
+

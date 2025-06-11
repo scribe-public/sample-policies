@@ -1,0 +1,16 @@
+id: slsa-external-parameters
+name: SLSA External Parameters Match in Provenance Document
+path: verify-external-parameters.rego
+
+description: Verify the specified external parameters value match in the provenance document
+
+labels:
+  - SLSA
+
+evidence:
+  signed: false
+  content_body_type: slsa
+
+with:
+  parameters: {}
+  violations_threshold: 0

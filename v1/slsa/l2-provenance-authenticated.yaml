@@ -1,0 +1,16 @@
+name: "SLSA.L2 Provenance Authenticated"
+description: "Verify artifact is signed"
+labels:
+  - SLSA
+initiatives:
+  - SLSA
+
+evidence:
+  signed: true
+  content_body_type: slsa
+  target_type: container
+
+with:
+  identity:
+    common-names: []
+    emails: []

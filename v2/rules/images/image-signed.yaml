@@ -1,0 +1,62 @@
+config-type: rule
+id: "images-require-signed-image"
+name: "Require Signed Container Image"
+path: "image-signed.rego"
+
+description: >-
+  Enforces that container images (target_type=container) are cryptographically signed.
+
+full-description: |-  
+  This rule evaluates the evidence for a container image to determine if it is properly signed. It checks the 
+  environment field in the evidence to verify that the `content_type` is set to "attest-cyclonedx-json". If the 
+  image name matches any pattern specified in `with.skip_image_regex`, the signature check is skipped, allowing flexibility 
+  for images that do not require a signature. Otherwise, if the evidence does not indicate a valid signature, the rule fails.
+  
+  **Evidence Requirements:**
+  
+  - Evidence must be provided in CycloneDX JSON format with a `content_body_type` of "cyclonedx-json".
+  - The evidence environment must include a `content_type` field that indicates the report is signed (i.e., "attest-cyclonedx-json").
+  - The `with.skip_image_regex` parameter allows specifying patterns (e.g., "alpine") to bypass the signature requirement for certain images. 
+
+mitigation: >-
+  Ensures that only container images with valid cryptographic signatures are deployed, mitigating the risk of tampering.
+  By requiring evidence in the CycloneDX attest-cyclonedx-json format, this rule confirms that images have been signed by trusted entities.
+
+inputs:
+  - name: identity
+    description: "Identity information for the signers"
+    type: object
+    required: false
+  - name: skip_image_regex
+    description: "Patterns to bypass the signature requirement for certain images"
+    type: array
+    required: false
+
+input_example: |-
+  identity:
+    emails:
+    - bob@company.com
+    - alice@company.com
+  skip_image_regex:
+  - .*alpine.*
+
+labels:
+  - "Images"
+  - "Blueprint"
+
+fail-on-missing-evidence: false
+
+evidence:
+  target_type: container
+  signed: false # We want to gather both signed and unsigned evidence so we can skip `skip_image_regex`
+  filter-by:
+    - product
+    - target
+  content_body_type: cyclonedx-json
+
+with:
+  skip_image_regex: []
+  identity:
+    emails: []
+    common-names: []
+

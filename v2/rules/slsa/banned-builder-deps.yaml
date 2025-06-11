@@ -1,0 +1,18 @@
+config-type: rule
+id: slsa-builder-unallowed-dependencies
+name: Disallow dependencies in SLSA Provenance Document
+path: banned-builder-deps.rego
+
+description: Verify that dependencies in the block list do not appear in the SLSA Proveance document.
+
+labels:
+  - SLSA
+  - Image
+
+evidence:
+  signed: false
+  content_body_type: slsa
+  target_type: container
+
+with:
+  blocklist: []

@@ -1,0 +1,14 @@
+name: "PS.1 Require signoff on web commits"
+uses: github/org/web-commit-signoff@v1
+
+description: "PS.1 Require contributors to sign when committing to Github through the web interface"
+level: error
+
+initiatives: 
+  - SSDF
+
+labels:
+  - SSDF
+
+with:
+  desired_value: true

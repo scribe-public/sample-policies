@@ -1,4 +1,6 @@
-name: my-rule
+config-type: rule
+name: My Rule
+id: my-rule
 path: data.rego
 description: "my description"
 

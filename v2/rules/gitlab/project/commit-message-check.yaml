@@ -1,0 +1,50 @@
+config-type: rule
+id: gitlab-project-verify-commit_message_check
+name: Verify Commit Message Format
+path: commit-message-check.rego
+
+description: Verify that commit messages in the GitLab project adhere to the specified format template.
+
+full-description: |-
+  This rule ensures that commit messages in the GitLab project adhere to the specified format template.
+  It performs the following steps:
+  
+  1. Checks the settings of the GitLab project.
+  2. Verifies that commit messages adhere to the specified format template.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided by the Scribe Platform's CLI tool through scanning GitLab project resources.
+
+mitigation: >-
+  Ensure that commit messages adhere to the specified format template to maintain consistency and readability.
+
+inputs:
+  - name: commit_message_regex
+    type: string
+    description: The regular expression to match the commit message format.
+    required: true
+
+input_example: |-
+  commit_message_regex: ".*JIRA-\\d+.*"
+
+labels:
+  - Gitlab
+  - Project
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  labels:
+    - "platform=gitlab"
+    - "asset_type=project"
+    - >-
+      {{- if eq (index .Context "asset_type") "project" "repo" -}}
+      {{- asset_on_target (index .Context "asset_name") -}}
+      {{- else -}}
+      {{- asset_on_target nil -}}
+      {{- end -}}
+
+with:
+  commit_message_regex: ""

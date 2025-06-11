@@ -1,0 +1,24 @@
+config-type: rule
+id: sbom-signed
+name: Require SBOM Signature
+path: artifact-signed.rego
+
+description: Verify the SBOM is signed.
+
+labels:
+  - SBOM
+  - Blueprint
+
+fail-on-missing-evidence: true
+
+evidence:
+  filter-by:
+    - product
+    - target
+  content_body_type: cyclonedx-json
+  signed: true
+
+with:
+  identity:
+    common-names: []
+    emails: []
