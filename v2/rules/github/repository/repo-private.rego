@@ -6,8 +6,13 @@ import data.scribe as scribe
 default allow := false
 default violations := []
 default asset := {}
+default exception := false
 
 asset := scribe.get_asset_data(input.evidence)
+
+exception := {
+	input.config.args.exception
+}
 
 verify = v {
 	v := {
@@ -26,17 +31,29 @@ verify = v {
 }
 
 allow {
+	not exception
 	count(violations) == 0
 }
 
+allow {
+	exception
+}
+
 reason = v {
+	not exception
 	allow
 	v := "The repository is private"
 }
 
 reason = v {
+	not exception
 	not allow
 	v := "The repository is not private"
+}
+
+reason = v {
+	exception
+	v := "The rule is set to exception"
 }
 
 # j is now a list in order to make sure duplications are not lost
