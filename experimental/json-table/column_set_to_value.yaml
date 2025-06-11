@@ -1,4 +1,6 @@
-name: column_set_to_value
+config-type: rule
+id: column_set_to_value
+name: Column Set to Value
 description: "Verify that a column is set to a specific value"
 path: column_set_to_value.rego
 
