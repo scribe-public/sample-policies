@@ -8,6 +8,7 @@ default asset := {}
 default errors := []
 default approved_sources := []
 default found_base_image := false
+default fail_on_no_base_image := false
 default valid_base_images := []
 default invalid_base_images := []
 default violations := []
@@ -20,6 +21,10 @@ asset = scribe.get_asset_data(input.evidence)
 ##########################################################################
 approved_sources = input.config.args.approved_sources {
   input.config.args.approved_sources
+}
+
+fail_on_no_base_image = input.config.args.fail_on_no_base_image {
+  input.config.args.fail_on_no_base_image
 }
 
 ##########################################################################
@@ -70,6 +75,11 @@ violations = v {
     v = invalid_base_images
 } else = v {
     not found_base_image
+    not fail_on_no_base_image
+    v = []
+} else = v {
+    not found_base_image
+    fail_on_no_base_image
     v = [{ "error": "No base image data found." }]
 }
 
@@ -81,22 +91,30 @@ allow {
   count(invalid_base_images) == 0
 }
 
+allow {
+  not found_base_image
+  not fail_on_no_base_image
+}
+
 ##########################################################################
 # Reason for Summary
 ##########################################################################
 reason = msg {
     not found_base_image
-    msg := "Base image component not found."
-}
-reason = msg {
+    fail_on_no_base_image
+    msg := "Base image component not found"
+} else = msg {
+    not found_base_image
+    not fail_on_no_base_image
+    msg := "Base image component not found, skipping"
+} else = msg {
     found_base_image
     not allow
-    msg := sprintf("The following base images are not from an approved source: %v", [sprintf("%v", [invalid_base_images])])
-}
-reason = msg {
+    msg := "Some of the base images are not from an approved source"
+} else = msg {
     found_base_image
     allow
-    msg := sprintf("All base images (%v) are from an approved source.", [sprintf("%v", [valid_base_images])])
+    msg := "All base images are from an approved source"
 }
 
 ##########################################################################
