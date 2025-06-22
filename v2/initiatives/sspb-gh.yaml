@@ -349,7 +349,10 @@ controls:
         name: "Validate Kubernetes resource manifests integrity"
         level: error
         evidence:
-          target_type: data
+          filter-by:
+            - target
+            - product
+          target_type: file
 
   - name: "Ensure build environments are ephemeral and immutable"
     id: "CTL-15"
