@@ -74,7 +74,16 @@ controls:
         id: token-excessive-lifespan
         name: "Reduce automation access to read-only"
         level: note
-        skip-evidence: true
+        evidence:
+          labels:
+            - "platform=github"
+            - "asset_type=organization"
+            - >-
+              {{- if eq (index .Context "asset_type") "organization" -}}
+              {{- asset_on_target (index .Context "asset_name") -}}
+              {{- else -}}
+              {{- asset_on_target nil -}}
+              {{- end -}}
         with:
           allow: false
           short_description: ""
@@ -98,7 +107,16 @@ controls:
         id: disallowed-token-scope
         name: "Reduce automation access to read-only"
         level: note
-        skip-evidence: true
+        evidence:
+          labels:
+            - "platform=github"
+            - "asset_type=organization"
+            - >-
+              {{- if eq (index .Context "asset_type") "organization" -}}
+              {{- asset_on_target (index .Context "asset_name") -}}
+              {{- else -}}
+              {{- asset_on_target nil -}}
+              {{- end -}}
         with:
           allow: false
           short_description: ""
@@ -195,6 +213,7 @@ controls:
         level: error
         evidence:
           content_body_type: cyclonedx-json
+          target_type: container
 
   - name: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
     id: "CTL-9"
@@ -228,6 +247,7 @@ controls:
         level: error
         evidence:
           content_body_type: cyclonedx-json
+          target_type: container
       - uses: images/allowed-image-source@v2
         id: artifacts-stored-in-registries
         name: "Artifacts are stored in a repository"
@@ -275,6 +295,7 @@ controls:
         level: error
         evidence:
           content_body_type: cyclonedx-json
+          target_type: container
 
   - name: "Scan deployed images in production"
     id: "CTL-13"
@@ -290,9 +311,15 @@ controls:
       - uses: sbom/artifact-signed@v2
         id: sbom-is-signed
         level: error
+        evidence:
+          content_body_type: cyclonedx-json
+          target_type: container
       - uses: sbom/blocklist-packages@v2
         id: disallow-dependencies
         level: error
+        evidence:
+          content_body_type: cyclonedx-json
+          target_type: container
         with:
           blocklist:
             - "liblzma5@5.6.0"
@@ -307,6 +334,22 @@ controls:
             cve:
               severity: 6
               max: 0
+
+  - name: "Validate Kubernetes resource manifests"
+    id: "CTL-14"
+    description: "Validate Kubernetes resource manifests"
+    mitigation: "Ensure that Kubernetes manifests are validated to prevent misconfigurations and security vulnerabilities."
+    full-description: |-
+      The last line of defense is the _container orchestration layer_. Kubernetes is responsible for deploying the containers of the application into production, and if the resource manifests are tampered with, it could be tricked into deploying a container of the attacker’s choice. It is important to ensure that the Kubernetes resource manifests are controlled and validated just as the actual images are.
+    when:
+      gate: Staging
+    rules:
+      - uses: generic/evidence-exists@v2
+        id: k8s-manifests-integrity-validated
+        name: "Validate Kubernetes resource manifests integrity"
+        level: error
+        evidence:
+          target_type: data
 
   - name: "Ensure build environments are ephemeral and immutable"
     id: "CTL-15"
