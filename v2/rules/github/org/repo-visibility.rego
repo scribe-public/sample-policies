@@ -1,19 +1,16 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default allowed_repo_names := []
-default asset := {}
 
 
 allowed_repo_names = input.config.args.allowed_repo_names {
     input.config.args.allowed_repo_names
 }
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -22,7 +19,6 @@ verify = v {
 			"type": "Invalid repositories",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

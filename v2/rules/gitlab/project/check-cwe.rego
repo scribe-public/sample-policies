@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default cwe_value := "" 
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 # Looks in the .yaml file for max
 cwe_value := input.config.args.cwe_value {
@@ -24,7 +21,6 @@ verify = v {
             "type": "Verify that no specific CWEs are detected",
             "details": violations,
         },
-		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default threshold_date := "2021-01-01T00:00:00Z" # default date
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 threshold_date := input.config.args.threshold_date {
 	valid_input(input.config.args.threshold_date)
@@ -26,7 +23,6 @@ verify = v {
 			"type": "Long running namespace",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

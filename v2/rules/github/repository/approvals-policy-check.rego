@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
-default asset := {}
 default approvals_required_min := 1
 
-asset = scribe.get_asset_data(input.evidence)
 
 approvals_required_min = input.config.args.approvals_required_min
 
@@ -19,7 +16,6 @@ verify = v {
 			"type": "Misconfiguration",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

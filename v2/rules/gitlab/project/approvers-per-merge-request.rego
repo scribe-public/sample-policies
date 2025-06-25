@@ -2,14 +2,11 @@ package verify
 
 import future.keywords.in
 
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default disable_overriding_approvers_per_merge_request := false
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 disable_overriding_approvers_per_merge_request := input.config.args.disable_overriding_approvers_per_merge_request 
 
@@ -20,7 +17,6 @@ verify = v {
             "type": "Misconfiguration",
             "details": violations,
         },
-		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

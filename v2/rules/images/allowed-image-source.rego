@@ -1,16 +1,13 @@
 package verify
 
-import data.scribe as scribe
 import future.keywords.in
 
 default allow := false
 default violations := []
-default asset := {}
 default errors := []
 default approved_sources := []
 
 # Retrieve evidence (SBOM)
-asset = scribe.get_asset_data(input.evidence)
 
 # Extract main image information from metadata.component
 image_name   = input.evidence.predicate.bom.metadata.component.name
@@ -24,7 +21,6 @@ verify = v {
       "type": "Main Image Approved Source Check",
       "details": violations,
     },
-    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason,

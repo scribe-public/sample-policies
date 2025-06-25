@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default images_to_include := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 images_to_include = input.config.args.images_to_include {
 	input.config.args.images_to_include
@@ -21,7 +18,6 @@ verify = v {
 			"type": "A rule to verify that images are allowed",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

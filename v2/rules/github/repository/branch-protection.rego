@@ -1,13 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default desired_protected := true
 default branches := ["*"]
-default asset := {}
 
 desired_protected := input.config.args.desired_protected 
 
@@ -24,7 +22,6 @@ verify = v {
 			"type": "Missconfiguration",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

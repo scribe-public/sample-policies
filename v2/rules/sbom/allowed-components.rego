@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow = false
 default violations = []
 default package_types = []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 package_types = input.config.args.types {
 	input.config.args.types
@@ -21,7 +18,6 @@ verify = v {
 			"type": "Not Allowed Packages",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

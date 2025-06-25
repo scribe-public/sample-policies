@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default namespaces := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 namespaces = input.config.args.namespaces {
 	input.config.args.namespaces
@@ -21,7 +18,6 @@ verify = v {
 			"type": "A rule to verify that all namespace are allowed",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

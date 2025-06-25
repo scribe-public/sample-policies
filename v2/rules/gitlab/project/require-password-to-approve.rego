@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default require_password_to_approve := false
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 require_password_to_approve := input.config.args.require_password_to_approve 
 
@@ -19,7 +16,6 @@ verify = v {
             "type": "Misconfiguration",
             "details": violations,
         },
-		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

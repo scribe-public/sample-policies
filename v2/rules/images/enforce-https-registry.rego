@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default reason := "Registry scheme is not HTTPS."
-default asset  := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Check If Registry Scheme Is HTTPS
@@ -54,7 +51,6 @@ verify = output {
       "type": "RegistryHTTPSCheck",
       "details": violations
     },
-    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason

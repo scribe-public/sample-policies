@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default inactive_for_days := 30
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -17,7 +14,6 @@ verify = v {
 			"type": "last_activity",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

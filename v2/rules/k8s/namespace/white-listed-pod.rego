@@ -1,15 +1,12 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default white_listed_pod := []
 default verify_namespaces := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 white_listed_pod = input.config.args.white_listed_pod {
 	input.config.args.white_listed_pod
@@ -26,7 +23,6 @@ verify = v {
 			"type": "A rule to verify that all pod are allowed",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

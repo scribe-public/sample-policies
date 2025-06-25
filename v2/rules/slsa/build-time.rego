@@ -1,15 +1,12 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default created_str := "unknown"
 default created := 0
 default violations := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 short_description = "Verify that an image was created during working hours"
 
@@ -20,7 +17,6 @@ verify = v {
 			"type": "Image Creation Time",
 			"details": violations,
 		},
-		"asset": asset,
 		"short_description": short_description,
 		"summary": [{
 			"allow": allow,

@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow = false
 default branch = "wbr"
 default violations = []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -17,7 +14,6 @@ verify = v {
 			"type": "Commits to main branch",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

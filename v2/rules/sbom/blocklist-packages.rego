@@ -1,11 +1,9 @@
 package verify
 
-import data.scribe as scribe
 import future.keywords.in
 
 default allow = false
 default violations = []
-default asset := {}
 
 asset := scribe.get_asset_data(input.evidence)
 
@@ -16,7 +14,6 @@ verify = v {
 			"type": "Blocklisted Packages",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default max_allowed_vulnerability_count := 0 
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 # Looks in the .yaml file for max
 max_allowed_vulnerability_count := input.config.args.max_allowed_vulnerability_count {
@@ -25,7 +22,6 @@ verify = v {
             "type": "Max allowed of critical severity vulnerabilities have been passed",
             "details": violations,
         },
-		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

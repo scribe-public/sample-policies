@@ -1,17 +1,14 @@
 package verify
-import data.scribe as scribe
 
 import future.keywords.in
 
 default allow := false
 default violations := []
 default reason := "Evidence is not in CycloneDX attest-cyclonedx-json format"
-default asset := {}
 default env := {}
 default image_name := ""
 default skip_image := false
 
-asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Retrieve Evidence
@@ -91,7 +88,6 @@ verify = result {
       "type": "RequireCycloneDXAttest",
       "details": violations
     },
-    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason

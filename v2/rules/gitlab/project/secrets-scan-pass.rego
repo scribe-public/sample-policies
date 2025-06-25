@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 
 default allow := false
 default violations := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 job_name := "secret_detection"
 
@@ -20,7 +17,6 @@ verify = v {
             "type" : "Secret scanning was ran but not succesful",
             "details" : violations,
         },
-		"asset": asset,
         "summary" : [{
             "allow" : allow,
             "reason" : reason,

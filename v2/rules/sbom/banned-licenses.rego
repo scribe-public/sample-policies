@@ -1,13 +1,10 @@
 package verify
 
-import data.scribe as scribe
 import future.keywords.in
 
 default allow = false
 default violations = []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 short_description = "Verify if there are no packages with banned licenses in the image"
 
@@ -20,7 +17,6 @@ verify = v {
 			"type": "Banned Licenses",
 			"details": violations,
 		},
-		"asset": asset,
 		"short_description": short_description,
 		"description": description,
 		"summary": [{

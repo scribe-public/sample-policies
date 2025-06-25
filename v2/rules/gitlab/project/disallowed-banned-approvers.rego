@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default banned_list := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 banned_list = input.config.args.banned_list {
     input.config.args.banned_list
@@ -21,7 +18,6 @@ verify = v {
             "type": "Disallowed Approvers",
             "details": violations,
         },
-		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

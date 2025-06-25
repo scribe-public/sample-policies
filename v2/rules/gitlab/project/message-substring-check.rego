@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default pattern := "(?i)()"
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 # Gets from yaml file
 pattern := input.config.args.pattern {
@@ -23,7 +20,6 @@ verify = v {
             "type": "Verify that a substring is not found in the message attribute of the vulnerabilities",
             "details": violations,
         },
-		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

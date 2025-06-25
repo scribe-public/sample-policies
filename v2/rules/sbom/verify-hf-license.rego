@@ -1,12 +1,9 @@
 package verify
 
-import data.scribe as scribe
 
 default allow = false
 default violations = []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 short_description = "Verify that the Huggingface license is allowed"
 
@@ -17,7 +14,6 @@ verify = v {
 			"type": "Huggingface License Violation",
 			"details": violations,
 		},
-		"asset": asset,
 		"short_description": short_description,
 		"summary": [{
 			"allow": allow,

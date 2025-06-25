@@ -1,18 +1,15 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default max_secret_age := 12 
-default asset := {}
 
 max_secret_age = input.config.args.max_secret_age {
     input.config.args.max_secret_age
 }
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -21,7 +18,6 @@ verify = v {
 			"type": "Secret older than max_secret_age months",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

@@ -2,7 +2,6 @@ package verify
 
 import data.superset.policy as policy
 
-default asset := {}
 
 verify = v {
 	v := {

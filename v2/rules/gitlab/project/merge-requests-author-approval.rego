@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default merge_requests_author_approval := false
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 merge_requests_author_approval := input.config.args.merge_requests_author_approval 
 
@@ -19,7 +16,6 @@ verify = v {
             "type": "Misconfiguration",
             "details": violations,
         },
-		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

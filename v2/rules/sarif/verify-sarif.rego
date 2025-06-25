@@ -1,13 +1,10 @@
 package verify
 
 import data.sarif
-import data.scribe as scribe
 
 default allow := false
 default violations := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 short_description = "Verify type, level and number of vulnerabilities in SARIF report"
 
@@ -20,7 +17,6 @@ verify = v {
 			"type": "Invalid Sarif",
 			"details": violations,
 		},
-		"asset": asset,
 		"short_description": short_description,
 		"description": description,
 		"summary": [{

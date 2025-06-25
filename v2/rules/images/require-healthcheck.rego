@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
-default asset := {}
 default errors := []
 
-asset = scribe.get_asset_data(input.evidence)
 
 # Final Verify Object
 verify = result {
@@ -19,7 +16,6 @@ verify = result {
       "type": "Image Healthcheck Check",
       "details": violations
     },
-    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason,

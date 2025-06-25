@@ -1,10 +1,8 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
-default asset := {}
 default violations := []
 default admins := []
 default max_admins := 0
@@ -18,7 +16,6 @@ verify = v {
 			"type": "admins",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

@@ -1,15 +1,12 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default name = "main"
 default access_level_description := ""
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 name = input.config.args.branch
 
@@ -24,7 +21,6 @@ verify = v {
 			"type": "branches",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

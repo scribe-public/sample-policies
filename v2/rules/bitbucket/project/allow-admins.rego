@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default is_cloud := false
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -17,7 +14,6 @@ verify = v {
 			"type": "Not allowed admins",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

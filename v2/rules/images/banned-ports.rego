@@ -1,16 +1,13 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
-default asset := {}
 default errors := []
 default banned_ports := []
 default metadata := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Retrieve Evidence Metadata
@@ -38,7 +35,6 @@ verify = result {
       "type": "BannedPorts",
       "details": violations
     },
-    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason,

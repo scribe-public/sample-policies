@@ -1,19 +1,15 @@
 package verify
 
-import data.scribe as scribe
 import future.keywords.in
 
 default allow = false
 default exceeding = 0
 default violations = []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
 		"allow": allow,
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"violation": {

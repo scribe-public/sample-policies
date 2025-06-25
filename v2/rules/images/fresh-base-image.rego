@@ -1,16 +1,13 @@
 package verify
 
-import data.scribe as scribe
 import future.keywords.in
 
 default allow := false
-default asset := {}
 default errors := []
 default found_base_image := false
 default base_image_violations := []
 default valid_base_image_names := []
 
-asset = scribe.get_asset_data(input.evidence)
 
 ##########################################################################
 # Time Calculation
@@ -128,7 +125,6 @@ verify = result {
             "type": "Base Image Too Old",
             "details": violations
         },
-        "asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason,

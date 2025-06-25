@@ -1,19 +1,16 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default props := []
 default author := ""
-default asset := {}
 
 short_description = "Check if all commits were made by authorized authors"
 
 description = "This rule checks if all commits in the specified repo are made by authorized authors. It takes a list of authors and a list of files to be checked as an input and issues an error if any commit to specified files was made by anyone not matching the authors list."
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -24,7 +21,6 @@ verify = v {
 		},
 		"short_description": short_description,
 		"description": description,
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

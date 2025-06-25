@@ -1,6 +1,5 @@
 package verify
 
-import data.scribe as scribe
 import future.keywords.in
 
 ##########################################################################
@@ -8,13 +7,11 @@ import future.keywords.in
 ##########################################################################
 default allow := false
 default violations := []
-default asset := {}
 default errors := []
 
 ##########################################################################
 # Retrieve Evidence Metadata
 ##########################################################################
-asset = scribe.get_asset_data(input.evidence)
 
 metadata := input.evidence.predicate.bom.metadata
 
@@ -193,7 +190,6 @@ verify = result {
       "type": "NTIA SBOM Compliance Check",
       "details": final_violations
     },
-    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason,

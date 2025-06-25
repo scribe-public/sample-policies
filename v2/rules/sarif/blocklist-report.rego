@@ -1,15 +1,12 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
-default asset := {}
 default reason := "No blocklist violations detected."
 default violations_threshold := 0
 
 # Retrieve evidence (SARIF report) using our scribe helper
-asset = scribe.get_asset_data(input.evidence)
 
 # Override default threshold if provided
 violations_threshold = input.config.args.violations_threshold
@@ -24,7 +21,6 @@ verify = result {
       "type": "BlocklistViolation",
       "details": violations,
     },
-    "asset": asset,
     "summary": [{
       "allow": allow,
       "reason": reason,

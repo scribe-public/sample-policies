@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default author_email_regex := ""
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 author_email_regex = input.config.args.author_email_regex
 
@@ -19,7 +16,6 @@ verify = v {
 			"type": "admins",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

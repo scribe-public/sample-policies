@@ -1,13 +1,10 @@
 package verify
 
-import data.scribe as scribe
 
 default allow := false
 default size := 10000000000
 default violations := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -17,7 +14,6 @@ verify = v {
 			"type": "Too Large Image",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

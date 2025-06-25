@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow = false
 default violations = []
 default b = ""
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 short_description = "Verify that all required packages are present in the SBOM"
 
@@ -21,7 +18,6 @@ verify = v {
 			"type": "Required Packages",
 			"details": violations,
 		},
-		"asset": asset,
 		"short_description": short_description,
 		"description": description,
 		"summary": [{

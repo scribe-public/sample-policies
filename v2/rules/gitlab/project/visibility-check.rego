@@ -1,14 +1,11 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default visibility := "private"
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 visibility = input.config.args.visibility {
     input.config.args.visibility
@@ -21,7 +18,6 @@ verify = v {
 			"type": "admins",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

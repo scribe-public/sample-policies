@@ -1,7 +1,6 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
@@ -10,9 +9,7 @@ default property = {
 	"name": "",
 	"value": "",
 }
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 verify = v {
 	v := {
@@ -21,7 +18,6 @@ verify = v {
 			"type": "Missing Labels",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,

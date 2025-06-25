@@ -1,12 +1,9 @@
 package verify
 
-import data.scribe as scribe
 
 default allow := false
 default violations := []
-default asset := {}
 
-asset = scribe.get_asset_data(input.evidence)
 
 short_description = input.config.args.short_description
 description = input.config.args.description
@@ -23,7 +20,6 @@ verify = v {
         },
         "short_description": short_description,
         "description": description,
-		"asset": asset,
         "summary": [{
             "allow": allow,
             "reason": reason, 

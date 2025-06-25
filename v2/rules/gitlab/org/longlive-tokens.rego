@@ -1,12 +1,10 @@
 package verify
 
 import future.keywords.in
-import data.scribe as scribe
 
 default allow := false
 default violations := []
 default exiring_in_days := 30
-default asset := {}
 
 asset := scribe.get_asset_data(input.evidence)
 
@@ -17,7 +15,6 @@ verify = v {
 			"type": "admins",
 			"details": violations,
 		},
-		"asset": asset,
 		"summary": [{
 			"allow": allow,
 			"reason": reason,
