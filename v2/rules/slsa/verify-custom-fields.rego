@@ -15,7 +15,6 @@ verify = v {
 		"allow": allow,
 		"violation": {
 			"type": "Missing field",
-			"description": sprintf("provenance doesn't contain required fields: %s, max error threshold: %d", [violations, input.config.args.violations_threshold]),
 			"details": violations,
 		},
 		"asset": asset,
@@ -44,9 +43,9 @@ reason = v {
 violations = j {
 	j := {r |
 		some path in object.keys(input.config.args.fields)
-		value := input.config.args.fields[path]
+		value := sprintf("%v", [input.config.args.fields[path]])
 		tokens := split(path, "/")
-		actual_value := object.get(input.evidence, tokens, "doesn't exist")
+		actual_value := sprintf("%v", [object.get(input.evidence, tokens, "doesn't exist")])
 		value != actual_value
 		r = {
 			"path": path,

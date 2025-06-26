@@ -42,21 +42,28 @@ reason = v {
 violations = j {
 	j := {r |
 		some bp in input.config.args.byproducts
-		some byproduct in input.evidence.predicate.runDetails.byproducts
-		match = byproduct_match(byproduct, bp)
-		not match
-		r = {"byproduct": bp}
+		not find_byproduct(bp)
+		r = {"missing_byproduct": bp}
 	}
 }
 
+find_byproduct(bp) {
+	some byproduct in input.evidence.predicate.runDetails.byproducts
+	byproduct_match(byproduct, bp)
+}
+
 byproduct_match(byproduct, bp) {
+	byproduct.uri != null
 	contains(byproduct.uri, bp)
 }
 
 byproduct_match(byproduct, bp) {
-	contains(byproduct.digest[_], bp)
+	byproduct.digest != null
+	some digest in byproduct.digest
+	contains(digest, bp)
 }
 
 byproduct_match(byproduct, bp) {
+	byproduct.content != null
 	contains(byproduct.content, bp)
 }

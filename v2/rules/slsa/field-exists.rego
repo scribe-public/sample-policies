@@ -15,7 +15,6 @@ verify = v {
 		"allow": allow,
 		"violation": {
 			"type": "Missing field",
-			"description": sprintf("provenance doesn't contain required fields: %s, max error threshold: %d", [violations, input.config.args.violations_threshold]),
 			"details": violations,
 		},
 		"asset": asset,
@@ -44,11 +43,10 @@ reason = v {
 violations = j {
 	j := {r |
 		some field in input.config.args.paths
-		filtered := json.filter(input.evidence, [field])
-		count(filtered) == 0
+		parts := split(field, "/")
+		object.get(input.evidence, parts, "missing") == "missing"
 		r = {
 			"path": field,
-			"filtered": filtered,
 		}
 	}
 }
