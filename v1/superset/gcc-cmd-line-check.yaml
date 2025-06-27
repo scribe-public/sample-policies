@@ -1,0 +1,36 @@
+name: gcc Command Line Check
+path: gcc-cmd-line-check.rego
+
+description: "Verify that gcc command line is contains at least one secure flag"
+
+# ------------- Not sure if this is need ---------------------
+# labels:
+#   - scribe
+#   - ct-6
+#   - ct-13
+# initiatives:
+#   - bundle-rule
+
+require-scribe-api: true
+
+# ------------- Not sure if this is need ---------------------
+# evidence:
+#   signed: false
+#   format-type: cyclonedx-json
+#   # predicate_type: https://cyclonedx.org/bom
+
+with:
+  superset:
+    filters:
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+
+      # Need to implement a way for only the current pipelineRun to be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      
+      paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
+      executable_to_check_list: []      # list of strings for executables that will be checked
+
+  # Required for workflow    
+  pipelineRun: '{{ .Args.pipelineRun }}'
+
