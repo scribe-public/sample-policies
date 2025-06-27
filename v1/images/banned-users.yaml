@@ -1,0 +1,13 @@
+name: disallowed-users
+path: banned-users.rego
+
+description: "Don't allow specific users in an SBOM"
+
+evidence:
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  users:
+    - root

@@ -1,4 +1,4 @@
-name: trivy-iac-findings
+name: trivy-report-iac-findings
 path: ../report-iac-errors.rego
 
 description: "Verify number of IaC errors is below specified threshold"
