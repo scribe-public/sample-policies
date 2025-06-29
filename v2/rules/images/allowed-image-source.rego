@@ -54,17 +54,17 @@ allow {
 ##########################################################################
 reason = msg {
   count(approved_sources) == 0
-  msg := sprintf("Main image '%v' (version: %v) failed validation: no approved source patterns provided", [image_name, image_version])
+  msg := "Main image failed validation: no approved source patterns provided"
 }
 reason = msg {
   count(approved_sources) > 0
   allow
-  msg := sprintf("Main image '%v' (version: %v) is from an approved source", [image_name, image_version])
+  msg := "Main image is from an approved source"
 }
 reason = msg {
   count(approved_sources) > 0
   not allow
-  msg := sprintf("Main image '%v' (version: %v) is not from an approved source", [image_name, image_version])
+  msg := "Main image is not from an approved source"
 }
 
 ##########################################################################

@@ -30,11 +30,17 @@ controls:
         level: error
         with:
           max_admins: 1
+      - uses: gitlab/org/allow-admins@v2
+        id: allowed-admins
+        level: note
+        with:
+          allowed_admins:
+            - "admin"
 
 
   - name: "Only accept commits signed with a developer GPG key"
     id: "CTL-2"
-    description: "The use of these two rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by Gitlab"
+    description: "The use of these rules enables first measuring the adoption of commit signing without enforcement that could interfere with the developers work, and only when signed commits are well deployed to move to enforcement by Gitlab"
     mitigation: "Require all commits to be signed to improve accountability and reduce the risk of unauthorized code modifications."
     full-description: |-
       Unsigned code commits are difficult to trace and pose a risk to the integrity of the codebase. Requiring commits to be signed with a developer GPG key ensures nonrepudiation and increases the burden on attackers.
@@ -105,20 +111,16 @@ controls:
       > Hackers can also target mistakes and oversights through _typo-squatting_ and _dependency confusion_. Adversaries go to great ends to publish packages under a trusted name or even with common typos so that they are included in builds.
       > All of the stakes are raised exponentially when public repositories are used.  
     when:
-      gate: Code
+      gate: Collaboration
     rules:
-      - uses: demodata/data@experimental
-        id: disallowed-untrusted-registries
-        name: "Only dependencies from trusted registries can be used"
-        level: note
-        skip-evidence: true
+      - uses: images/allowed-base-image@v2
+        id: allowed-base-image
+        name: "Ensure that base images are from an approved source"
+        level: error
         with:
-          allow: false
-          short_description: ""
-          description: ""
-          reason: "Coming Soon"
-          violations:
-            - not_implemented: true
+          approved_sources:
+            - "index.docker.io/.*"
+            - "gcr.io/.*"
 
   - name: "Any critical or high severity vulnerability breaks the build"
     id: "CTL-6"
@@ -144,6 +146,28 @@ controls:
               severity: 6
               max: 0
 
+  - name: "Artifacts are stored in a repository in development, stage and production"
+    id: "CTL-7"
+    description: "Artifacts are stored in a repository in development, stage and production"
+    mitigation: "Store all artifacts in a repository at each stage of the build pipeline to ensure traceability and maintain immutability."
+    full-description: |-
+     All artifacts should be stored in a repository at each stage of the build pipeline so that there is clear traceability between the test results and the actual artifact that was tested. This control also helps to enforce the immutability of the artifacts, such that we can compare artifacts in the development, staging and production repositories and ensure that we maintain a chain of control.
+
+     Repositories for dev, stage and production should be segregated so that role-based access control can ensure least privilege at each stage, and so that more stringent policies (such as artifact signing) can be enforced in higher environments.
+
+     Artifacts should be promoted from repository to repository in accordance with the principle of immutability.
+    when:
+      gate: Collaboration
+    rules:
+      - uses: images/allowed-image-source@v2
+        id: artifacts-stored-in-registries
+        name: "Artifacts are stored in a repository"
+        level: error
+        with:
+          approved_sources:
+            - "index.docker.io/.*"
+            - "gcr.io/.*"
+
   - name: "Validate artifact digest"
     id: "CTL-8"
     description: "Validate artifact digest"
@@ -159,6 +183,7 @@ controls:
         level: error
         evidence:
           content_body_type: cyclonedx-json
+          target_type: container
 
   - name: "Pull-requests require two reviewers (including one default reviewer) and a passing build to be merged"
     id: "CTL-9"
@@ -174,6 +199,35 @@ controls:
       - uses: gitlab/project/approvals-policy-check@v2
         id: merge-approval
         level: error
+
+  - name: "Artifacts in higher repositories are signed"
+    id: "CTL-10"
+    description: "Artifacts in higher repositories are signed"
+    mitigation: "Require artifacts to be signed in higher repositories to ensure authenticity and prevent tampering."
+    full-description: |-
+     Requiring artifacts to be signed in a repository throughout the process ensures visibility and traceability for whatever is deployed to production. Requiring signed artifacts helps to ensure that untrusted binaries are not deployed to customer environments and allows validating the source of the binaries.
+
+     > :skull: 
+     > Through credential theft, vulnerability exploit, targeted attacks or more, attackers succeed in inserting their malicious code into pipelines and repositories. Code should be considered suspect and malicious.
+    when:
+      gate: Staging
+    rules:
+      - uses: sbom/artifact-signed@v2
+        id: sbom-is-signed
+        level: error
+        evidence:
+          content_body_type: cyclonedx-json
+          target_type: container
+      - uses: images/allowed-image-source@v2
+        id: artifacts-stored-in-registries
+        name: "Artifacts are stored in a repository"
+        level: error
+        evidence:
+          signed: true
+        with:
+          approved_sources:
+            - "index.docker.io/.*"
+            - "gcr.io/.*"
 
   - name: "Available container images don’t have any high or critical vulnerabilities"
     id: "CTL-11"
@@ -211,6 +265,7 @@ controls:
         level: error
         evidence:
           content_body_type: cyclonedx-json
+          target_type: container
 
   - name: "Scan deployed images in production"
     id: "CTL-13"
@@ -226,9 +281,15 @@ controls:
       - uses: sbom/artifact-signed@v2
         id: sbom-is-signed
         level: error
+        evidence:
+          content_body_type: cyclonedx-json
+          target_type: container
       - uses: sbom/blocklist-packages@v2
         id: disallow-dependencies
         level: error
+        evidence:
+          content_body_type: cyclonedx-json
+          target_type: container
         with:
           blocklist:
             - "liblzma5@5.6.0"
@@ -243,3 +304,56 @@ controls:
             cve:
               severity: 6
               max: 0
+
+  - name: "Validate Kubernetes resource manifests"
+    id: "CTL-14"
+    description: "Validate Kubernetes resource manifests"
+    mitigation: "Ensure that Kubernetes manifests are validated to prevent misconfigurations and security vulnerabilities."
+    full-description: |-
+      The last line of defense is the _container orchestration layer_. Kubernetes is responsible for deploying the containers of the application into production, and if the resource manifests are tampered with, it could be tricked into deploying a container of the attacker’s choice. It is important to ensure that the Kubernetes resource manifests are controlled and validated just as the actual images are.
+    when:
+      gate: Staging
+    rules:
+      - uses: generic/evidence-exists@v2
+        id: k8s-manifests-integrity-validated
+        name: "Validate Kubernetes resource manifests integrity"
+        level: error
+        evidence:
+          filter-by:
+            - target
+            - product
+          target_type: file
+
+  - name: "Ensure build environments are ephemeral and immutable"
+    id: "CTL-15"
+    description: "Ensure build environments are ephemeral and immutable"
+    mitigation: "Build environments should be defined in code with automated creation and teardown, and that a fresh environment is created for every build"
+    full-description: |
+      Build environments should be defined in code with automated creation and teardown, and that a fresh environment is created for every build. Build hosts should not be accessible using interactive logins.
+
+      > :skull: 
+      > Attackers who gain access to build environments are able to bypass controls implemented earlier in the build pipeline. Ensuring build environments are themselves defined as code and live only for the duration of a build prevents attackers from persisting in build infrastructures.
+    when:
+      gate: Production
+    rules:
+      - uses: demodata/data@experimental
+        id: ensure-ephemeral-runners
+        name: "Ensure build environments are ephemeral and immutable"
+        level: note
+        evidence:
+          labels:
+            - "platform=gitlab"
+            - "asset_type=project"
+            - >-
+              {{- if eq (index .Context "asset_type") "project" "repo" -}}
+              {{- asset_on_target (index .Context "asset_name") -}}
+              {{- else -}}
+              {{- asset_on_target nil -}}
+              {{- end -}}
+        with:
+          allow: false
+          short_description: ""
+          description: ""
+          reason: "Not supported by Gitlab API"
+          violations:
+            - not_implemented: true

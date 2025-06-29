@@ -29,7 +29,7 @@ verify = v {
 	}
 }
 
-created_str = input.evidence.predicate.buildDefinition.resolvedDependencies[i].annotations.created {
+created_str = input.evidence.predicate.buildDefinition.resolvedDependencies[i].annotations["SBOM_METADATA"].created {
 	some k
 	input.evidence.predicate.buildDefinition.resolvedDependencies[i].name == input.evidence.subject[k].name
 }
