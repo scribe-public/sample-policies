@@ -573,8 +573,15 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     source_link = os.path.join(base_source_git, file_path)
     md = []
 
+    # Workaround for SSPB-GL/SSPB-GH initiatives sidebar names
+    sidebar_name = name
+    if init_id.endswith("-GL"):
+        sidebar_name = f"{name} for Gitlab"
+    elif init_id.endswith("-GH"):
+        sidebar_name = f"{name} for GitHub"
+
     front_matter = {
-        'sidebar_label': name,
+        'sidebar_label': sidebar_name,
         'title': name
     }
     front_matter_yaml = yaml.dump(front_matter, default_flow_style=False).strip()
