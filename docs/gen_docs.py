@@ -718,6 +718,15 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
             md.append("_No rules defined for this control._\n")
             continue
 
+        # Filter out rules with id == "demodata/data@experimental"
+        # If control consists only of this rule, it means it's not supported yet
+        implemented_rules = [rule for rule in ctrl_rules if rule.get("uses", "") != "demodata/data@experimental"]
+        if not implemented_rules:
+            md.append(f":::warning  ")
+            md.append("This control is not supported yet.")
+            md.append(f"::: \n")
+            continue
+
         # Build a table for rules (Rule Name becomes clickable)
         md.append("### Rules\n")
         md.append("| Rule ID | Rule Name | Rule Description |")
