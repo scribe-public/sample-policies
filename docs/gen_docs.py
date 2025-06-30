@@ -723,7 +723,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         implemented_rules = [rule for rule in ctrl_rules if rule.get("uses", "") != "demodata/data@experimental"]
         if not implemented_rules:
             md.append(f":::warning  ")
-            md.append("This control is not supported yet.")
+            md.append("This control not currently supported on this platform.")
             md.append(f"::: \n")
             continue
 
