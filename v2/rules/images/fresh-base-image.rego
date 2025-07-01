@@ -108,6 +108,11 @@ allow {
     count(violations) == 0
 }
 
+allow {
+  not found_base_image
+  not fail_on_no_base_image
+}
+
 ##########################################################################
 # Reason for the Summary
 ##########################################################################
