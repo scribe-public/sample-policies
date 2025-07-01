@@ -43,5 +43,6 @@ evidence:
   - product
 
 with:
+  fail_on_no_base_image: false
   max_days: 183
 

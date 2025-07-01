@@ -7,10 +7,15 @@ default allow := false
 default asset := {}
 default errors := []
 default found_base_image := false
+default fail_on_no_base_image := false
 default base_image_violations := []
 default valid_base_image_names := []
 
 asset = scribe.get_asset_data(input.evidence)
+
+fail_on_no_base_image = input.config.args.fail_on_no_base_image {
+  input.config.args.fail_on_no_base_image
+}
 
 ##########################################################################
 # Time Calculation
@@ -71,6 +76,11 @@ violations = v {
     v = base_image_violations
 } else = v {
     not found_base_image
+    not fail_on_no_base_image
+    v = []
+} else = v {
+    not found_base_image
+    fail_on_no_base_image
     v = [{ "error": "No base image data found." }]
 }
 
@@ -103,7 +113,12 @@ allow {
 ##########################################################################
 reason = msg {
     not found_base_image
+    fail_on_no_base_image
     msg := "Base image component not found."
+} else = msg {
+    not found_base_image
+    not fail_on_no_base_image
+    msg := "Base image component not found, skipping."
 }
 reason = msg {
     found_base_image
@@ -114,7 +129,7 @@ reason = msg {
     found_base_image
     allow
     valid_names := sprintf("%v", [valid_base_image_names])
-    msg := sprintf("All base images %v are within the age limit of %v days.", [valid_names, input.config.args.max_days])
+    msg := sprintf("All base images are within the age limit of %v days.", [input.config.args.max_days])
 }
 
 ##########################################################################
