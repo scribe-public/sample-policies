@@ -49,11 +49,18 @@ controls:
           Prevents known exploitable vulnerabilities from being deployed 
           by blocking images with high CVSS scores.
         level: error
+        evidence:
+          tool: >-
+                {{- if not (index .Stores "scribe") -}}
+                {{- "Trivy Vulnerability Scanner" -}}
+                {{- else -}}
+                {{- "<no value>" -}}
+                {{- end -}}
         with:
           severity_threshold: 5.5
 
-      - name: "4.1.1 High-Profile Vulnerabilities (Trivy)"
-        uses: sarif/trivy/blocklist-cve@v2
+      - uses: sarif/trivy/blocklist-cve@v2
+        name: "4.1.1 High-Profile Vulnerabilities (Trivy)"
         description: >-
           Blocks images that contain specific high-profile CVEs that are 
           actively exploited or widely known.
@@ -61,6 +68,13 @@ controls:
           Prevents the deployment of images with critical vulnerabilities 
           that may be exploited in the wild.
         level: error
+        evidence:
+          tool: >-
+                {{- if not (index .Stores "scribe") -}}
+                {{- "Trivy Vulnerability Scanner" -}}
+                {{- else -}}
+                {{- "<no value>" -}}
+                {{- end -}}
         with:
           rule_ids:
           - CVE-2014-0160
@@ -73,6 +87,39 @@ controls:
           - CVE-2024-47175
           - CVE-2024-47177
           - CVE-2019-1549
+
+      - uses: api/scribe-api-cve@v2
+        name: "4.1.1 Scribe API CVE Check"
+        description: >-
+          Verifies that there are no critical or high severity vulnerabilities 
+          in the target artifact (container image, folder, etc.) via the Scribe API.
+        mitigation: >-
+          Ensures that all critical or high severity vulnerabilities are addressed 
+          before delivering the product.
+        level: error
+        evidence:
+          content_body_type: >-
+                {{- if (index .Stores "scribe") -}}
+                {{- "cyclonedx-json" -}}
+                {{- else -}}
+                {{- "<no value>" -}}
+                {{- end -}}
+        with:
+          superset:
+            cve:
+              max: 0
+              severity: 6
+              vulnerabilities:
+                - CVE-2014-0160
+                - CVE-2021-44228
+                - CVE-2023-38545
+                - CVE-2023-44487
+                - CVE-2024-3094
+                - CVE-2024-47176
+                - CVE-2024-47076
+                - CVE-2024-47175
+                - CVE-2024-47177
+                - CVE-2019-1549
 
       # ------------------------------------------------------------------
       # 4.1.2 Image Configuration Defects
