@@ -17,7 +17,6 @@ verify = result {
     "errors": errors,
     "violation": {
       "type": "Image Healthcheck Check",
-      "description": "Healthcheck property should be defined in the image component.",
       "details": violations
     },
     "asset": asset,
