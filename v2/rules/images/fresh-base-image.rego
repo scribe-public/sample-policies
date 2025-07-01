@@ -8,8 +8,10 @@ default asset := {}
 default errors := []
 default found_base_image := false
 default fail_on_no_base_image := false
+default component_base_image_violations := []
 default base_image_violations := []
 default valid_base_image_names := []
+default context_base_image_version := "unknown"
 
 asset = scribe.get_asset_data(input.evidence)
 
@@ -36,14 +38,22 @@ found_base_image {
     some p in c.properties
     endswith(lower(p.name), "isbaseimage")
     lower(p.value) == "true"
+} else {
+  input.evidence.predicate.environment.base_image_name != null
+  input.evidence.predicate.environment.base_image_name != ""
 }
+
+context_base_image_version = input.evidence.predicate.environment.base_image_version {
+  input.evidence.predicate.environment.base_image_version != null
+  input.evidence.predicate.environment.base_image_version != ""
+} else = "unknown"
 
 ##########################################################################
 # Outdated Base Images Violations
 ##########################################################################
 # For each base image, if the "created" timestamp is older than allowed,
 # record a violation including the component version.
-base_image_violations = [ v |
+component_base_image_violations = [ v |
     some c in input.evidence.predicate.bom.components
     c.group == "container"
     
@@ -67,6 +77,20 @@ base_image_violations = [ v |
          "max_days": input.config.args.max_days
     }
 ]
+
+base_image_violations = array.concat(
+    component_base_image_violations,
+    [ {
+        "name": input.evidence.predicate.environment.base_image_name,
+        "version": context_base_image_version,
+        "created": "unknown",
+        "max_days": input.config.args.max_days
+    } ]
+) {
+    input.evidence.predicate.environment.base_image_name != null
+    input.evidence.predicate.environment.base_image_name != ""
+    input.evidence.predicate.environment.base_image_name != "scratch"
+} else = component_base_image_violations
 
 ##########################################################################
 # Define Violations
