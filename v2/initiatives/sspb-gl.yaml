@@ -123,7 +123,7 @@ controls:
             - "gcr.io/.*"
       - uses: images/allowed-npm-registries@v2
         id: allowed-npm-registries
-        name: "Verify no 3rd party NPM packages were installed from untrusted registries"
+        name: "Verify NPM Packages Origin"
         level: error
         with:
           allowed_registries:
