@@ -17,7 +17,6 @@ verify = v {
 		"allow": allow,
 		"violation": {
 			"type": "Missing field",
-			"description": sprintf("provenance doesn't contain required fields: %s, max error threshold: %d", [violations, input.config.args.violations_threshold]),
 			"details": violations,
 		},
 		"asset": asset,
