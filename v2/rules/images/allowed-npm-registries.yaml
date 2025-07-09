@@ -10,7 +10,7 @@ full-description: |-
   It performs the following steps:
   
   1. Iterates over NPM components listed in the SBOM.
-  2. For remotely installed components, checks the `registryUrl` property to ensure it matches one of the allowed NPM registries specified in the `with.allowlist` configuration.
+  2. For remotely installed components, checks the `registryUrl` property to ensure it matches one of the allowed NPM registries specified in the `with.allowed_registries` configuration.
   
   **Evidence Requirements:**
   - Evidence must be provided in the CycloneDX JSON format.
