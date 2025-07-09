@@ -151,6 +151,13 @@ controls:
           approved_sources:
             - "index.docker.io/.*"
             - "gcr.io/.*"
+      - uses: images/allowed-npm-registries@v2
+        id: allowed-npm-registries
+        name: "Verify no 3rd party NPM packages were installed from untrusted registries"
+        level: error
+        with:
+          allowed_registries:
+            - "https://registry.npmjs.org/"
 
   - name: "Any critical or high severity vulnerability breaks the build"
     id: "CTL-6"

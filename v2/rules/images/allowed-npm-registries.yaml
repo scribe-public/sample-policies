@@ -1,0 +1,51 @@
+config-type: rule
+id: sbom-allowed-npm-registries
+name: Verify NPM Packages Origin
+path: allowed-npm-registries.rego
+
+description: Verify that the artifact contains only components from allowed NPM registries.
+
+full-description: |-  
+  This rule inspects the CycloneDX SBOM evidence for the artifact to verify that it contains only components from allowed registries.
+  It performs the following steps:
+  
+  1. Iterates over NPM components listed in the SBOM.
+  2. For remotely installed components, checks the `registryUrl` property to ensure it matches one of the allowed NPM registries specified in the `with.allowlist` configuration.
+  
+  **Evidence Requirements:**
+  - Evidence must be provided in the CycloneDX JSON format.
+  - The SBOM must include a list of components with their types and names.
+
+mitigation: >-
+  Ensures that only NPM components from approved registries are included in the SBOM, reducing the risk of introducing vulnerabilities
+  or unapproved dependencies into the software supply chain.
+
+notes: 
+- "Components type reference: https://cyclonedx.org/docs/1.6/json/#components_items_type"
+
+inputs:
+  - name: allowed_registries
+    description: "A list of allowed NPM registries."
+    type: array
+    required: false
+
+input_example: |-
+  types:
+    - library
+    - operating-system
+
+labels:
+  - SBOM
+  - Image
+
+evidence:
+  filter-by:
+    - product
+    - target
+  signed: false
+  content_body_type: cyclonedx-json
+  target_type: container
+
+with:
+  allowed_registries:
+    - "https://registry.npmjs.org/"
