@@ -61,7 +61,7 @@ valid_base_images = [ { "name": c.name, "version": c.version } |
 ##########################################################################
 # Invalid Base Images (as list of maps with name and version)
 ##########################################################################
-invalid_component_base_images = [ { "name": c.name, "version": c.version } |
+invalid_base_images = [ { "name": c.name, "version": c.version } |
     some c in input.evidence.predicate.bom.components
     c.group == "container"
     some p in c.properties
@@ -69,15 +69,6 @@ invalid_component_base_images = [ { "name": c.name, "version": c.version } |
     lower(p.value) == "true"
     not is_valid(c.name)
 ]
-
-invalid_base_images = array.concat(
-    invalid_component_base_images,
-    [ { "name": input.evidence.predicate.environment.base_image_name, "version": context_base_image_version } ]
-) {
-    input.evidence.predicate.environment.base_image_name != null
-    input.evidence.predicate.environment.base_image_name != ""
-    not is_valid(input.evidence.predicate.environment.base_image_name)
-} else = invalid_component_base_images
 
 ##########################################################################
 # Violations
