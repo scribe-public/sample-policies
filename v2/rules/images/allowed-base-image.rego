@@ -8,10 +8,11 @@ default asset := {}
 default errors := []
 default approved_sources := []
 default found_base_image := false
-default fail_on_no_base_image := false
 default valid_base_images := []
+default invalid_component_base_images := []
 default invalid_base_images := []
 default violations := []
+default context_base_image_version := "unknown"
 
 # Retrieve evidence (SBOM)
 asset = scribe.get_asset_data(input.evidence)
@@ -21,10 +22,6 @@ asset = scribe.get_asset_data(input.evidence)
 ##########################################################################
 approved_sources = input.config.args.approved_sources {
   input.config.args.approved_sources
-}
-
-fail_on_no_base_image = input.config.args.fail_on_no_base_image {
-  input.config.args.fail_on_no_base_image
 }
 
 ##########################################################################
@@ -39,7 +36,15 @@ found_base_image {
   some p in c.properties
   endswith(lower(p.name), "isbaseimage")
   lower(p.value) == "true"
+} else {
+  input.evidence.predicate.environment.base_image_name != null
+  input.evidence.predicate.environment.base_image_name != ""
 }
+
+context_base_image_version = input.evidence.predicate.environment.base_image_version {
+  input.evidence.predicate.environment.base_image_version != null
+  input.evidence.predicate.environment.base_image_version != ""
+} else = "unknown"
 
 ##########################################################################
 # Valid Base Images (as list of maps with name and version)
@@ -75,11 +80,6 @@ violations = v {
     v = invalid_base_images
 } else = v {
     not found_base_image
-    not fail_on_no_base_image
-    v = []
-} else = v {
-    not found_base_image
-    fail_on_no_base_image
     v = [{ "error": "No base image data found." }]
 }
 
@@ -91,22 +91,12 @@ allow {
   count(invalid_base_images) == 0
 }
 
-allow {
-  not found_base_image
-  not fail_on_no_base_image
-}
-
 ##########################################################################
 # Reason for Summary
 ##########################################################################
 reason = msg {
     not found_base_image
-    fail_on_no_base_image
     msg := "Base image component not found"
-} else = msg {
-    not found_base_image
-    not fail_on_no_base_image
-    msg := "Base image component not found, skipping"
 } else = msg {
     found_base_image
     not allow
@@ -141,4 +131,6 @@ is_valid(image) {
   count(approved_sources) > 0
   some pattern in approved_sources
   regex.match(sprintf("^%v$", [lower(pattern)]), lower(image))
+} else {
+  lower(image) == "scratch"  # Allow "scratch" as a valid base image
 }

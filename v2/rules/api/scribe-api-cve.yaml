@@ -35,7 +35,6 @@ evidence:
     - target
   signed: false
   content_body_type: cyclonedx-json
-  target_type: container
 
 with:
   superset:

@@ -7,6 +7,7 @@ default allow := false
 default asset := {}
 default errors := []
 default found_base_image := false
+default component_base_image_violations := []
 default base_image_violations := []
 default valid_base_image_names := []
 
@@ -114,7 +115,7 @@ reason = msg {
     found_base_image
     allow
     valid_names := sprintf("%v", [valid_base_image_names])
-    msg := sprintf("All base images %v are within the age limit of %v days.", [valid_names, input.config.args.max_days])
+    msg := sprintf("All base images are within the age limit of %v days.", [input.config.args.max_days])
 }
 
 ##########################################################################
