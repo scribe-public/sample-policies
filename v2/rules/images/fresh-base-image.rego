@@ -7,17 +7,11 @@ default allow := false
 default asset := {}
 default errors := []
 default found_base_image := false
-default fail_on_no_base_image := false
 default component_base_image_violations := []
 default base_image_violations := []
 default valid_base_image_names := []
-default context_base_image_version := "unknown"
 
 asset = scribe.get_asset_data(input.evidence)
-
-fail_on_no_base_image = input.config.args.fail_on_no_base_image {
-  input.config.args.fail_on_no_base_image
-}
 
 ##########################################################################
 # Time Calculation
@@ -38,22 +32,14 @@ found_base_image {
     some p in c.properties
     endswith(lower(p.name), "isbaseimage")
     lower(p.value) == "true"
-} else {
-  input.evidence.predicate.environment.base_image_name != null
-  input.evidence.predicate.environment.base_image_name != ""
 }
-
-context_base_image_version = input.evidence.predicate.environment.base_image_version {
-  input.evidence.predicate.environment.base_image_version != null
-  input.evidence.predicate.environment.base_image_version != ""
-} else = "unknown"
 
 ##########################################################################
 # Outdated Base Images Violations
 ##########################################################################
 # For each base image, if the "created" timestamp is older than allowed,
 # record a violation including the component version.
-component_base_image_violations = [ v |
+base_image_violations = [ v |
     some c in input.evidence.predicate.bom.components
     c.group == "container"
     
@@ -78,20 +64,6 @@ component_base_image_violations = [ v |
     }
 ]
 
-base_image_violations = array.concat(
-    component_base_image_violations,
-    [ {
-        "name": input.evidence.predicate.environment.base_image_name,
-        "version": context_base_image_version,
-        "created": "unknown",
-        "max_days": input.config.args.max_days
-    } ]
-) {
-    input.evidence.predicate.environment.base_image_name != null
-    input.evidence.predicate.environment.base_image_name != ""
-    input.evidence.predicate.environment.base_image_name != "scratch"
-} else = component_base_image_violations
-
 ##########################################################################
 # Define Violations
 ##########################################################################
@@ -100,11 +72,6 @@ violations = v {
     v = base_image_violations
 } else = v {
     not found_base_image
-    not fail_on_no_base_image
-    v = []
-} else = v {
-    not found_base_image
-    fail_on_no_base_image
     v = [{ "error": "No base image data found." }]
 }
 
@@ -132,22 +99,12 @@ allow {
     count(violations) == 0
 }
 
-allow {
-  not found_base_image
-  not fail_on_no_base_image
-}
-
 ##########################################################################
 # Reason for the Summary
 ##########################################################################
 reason = msg {
     not found_base_image
-    fail_on_no_base_image
     msg := "Base image component not found."
-} else = msg {
-    not found_base_image
-    not fail_on_no_base_image
-    msg := "Base image component not found, skipping."
 }
 reason = msg {
     found_base_image
