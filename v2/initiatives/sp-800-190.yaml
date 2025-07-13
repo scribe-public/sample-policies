@@ -244,8 +244,8 @@ controls:
           signed: true
         with:
           approved_sources: []
-            # - "index.docker.io/library/python.*slim"
-            # - "index.docker.io/library/my_company/base.*"
+            # - "index.docker.io/python.*slim"
+            # - "index.docker.io/my_company/base.*"
 
       - uses: images/allowed-image-source@v2
         name: "4.1.5 Approved Source Images"
@@ -258,9 +258,9 @@ controls:
         evidence:
           signed: true
         with:
-          approved_sources: []
-            # - "index.docker.io/library/nginx:.*"
-            # - "index.docker.io/library/my_company/.*"
+          approved_sources:
+            # - "index.docker.io/nginx:.*"
+            # - "index.docker.io/my_company/.*"
 
       - uses: images/image-signed@v2
         name: "4.1.5 Signed Images"

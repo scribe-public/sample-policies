@@ -34,8 +34,8 @@ inputs:
 
 input_example: |-
   approved_sources:
-    - "docker.io/library/"
-    - "docker.io/my_org/"
+    - "docker.io/.*"
+    - "docker.io/my_org/.*"
 
 labels:
   - "SBOM"

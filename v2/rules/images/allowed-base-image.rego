@@ -131,7 +131,7 @@ verify = result {
 is_valid(image) {
   count(approved_sources) > 0
   some pattern in approved_sources
-  startswith(lower(image), lower(pattern))
+  regex.match(sprintf("^%v$", [lower(pattern)]), lower(image))
 } else {
   lower(image) == "scratch"  # Allow "scratch" as a valid base image
 }
