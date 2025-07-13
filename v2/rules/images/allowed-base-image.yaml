@@ -28,18 +28,14 @@ mitigation: >-
 
 inputs:
   - name: approved_sources
-    description: "A list of approved base image  pattern."
+    description: "A list of approved base image registry URL prefixes."
     type: array
-    required: false
-  - name: fail_on_no_base_image
-    description: "Whether to fail the rule if no base image is found."
-    type: boolean
     required: false
 
 input_example: |-
   approved_sources:
-    - "docker.io/library/*"
-    - "docker.io/my_org/*"
+    - "docker.io/library/"
+    - "docker.io/my_org/"
 
 labels:
   - "SBOM"
@@ -54,6 +50,5 @@ evidence:
   - product
 
 with:
-  fail_on_no_base_image: false
   approved_sources: []
 
