@@ -52,7 +52,7 @@ controls:
         level: error
         evidence:
           tool: >-
-                {{- if not (index .Stores "scribe") -}}
+                {{- if not .ScribeEnabled -}}
                 {{- "Trivy Vulnerability Scanner" -}}
                 {{- else -}}
                 {{- "<no value>" -}}
@@ -72,7 +72,7 @@ controls:
         level: error
         evidence:
           tool: >-
-                {{- if not (index .Stores "scribe") -}}
+                {{- if not .ScribeEnabled -}}
                 {{- "Trivy Vulnerability Scanner" -}}
                 {{- else -}}
                 {{- "<no value>" -}}
@@ -102,7 +102,7 @@ controls:
         level: error
         evidence:
           content_body_type: >-
-                {{- if (index .Stores "scribe") -}}
+                {{- if .ScribeEnabled -}}
                 {{- "cyclonedx-json" -}}
                 {{- else -}}
                 {{- "<no value>" -}}
@@ -125,7 +125,7 @@ controls:
         level: error
         evidence:
           content_body_type: >-
-                {{- if (index .Stores "scribe") -}}
+                {{- if .ScribeEnabled -}}
                 {{- "cyclonedx-json" -}}
                 {{- else -}}
                 {{- "<no value>" -}}
