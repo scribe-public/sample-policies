@@ -41,7 +41,7 @@ controls:
       # 4.1.1 Image Vulnerabilities
       # ------------------------------------------------------------------
       - uses: sarif/trivy/verify-cve-severity@v2
-        name: "4.1.1 Severity-Based Vulnerabilities (Trivy)"
+        name: "4.1.1 Severity-Based Vulnerabilities"
         id: "4.1.1-trivy-verify-vulnerability-findings"
         description: >-
           Ensures that images do not contain high-severity vulnerabilities.
@@ -61,7 +61,7 @@ controls:
           severity_threshold: 5.5
 
       - uses: sarif/trivy/blocklist-cve@v2
-        name: "4.1.1 High-Profile Vulnerabilities (Trivy)"
+        name: "4.1.1 High-Profile Vulnerabilities"
         id: "4.1.1-trivy-blocklist-cve"
         description: >-
           Blocks images that contain specific high-profile CVEs that are 
@@ -91,14 +91,14 @@ controls:
           - CVE-2019-1549
 
       - uses: api/scribe-api-cve@v2
-        name: "4.1.1 Scribe API CVE Check"
-        id: "4.1.1-scribe-api-cve"
+        name: "4.1.1 Severity-Based Vulnerabilities"
+        id: "4.1.1-scribe-api-verify-vulnerability-findings"
         description: >-
-          Verifies that there are no critical or high severity vulnerabilities 
-          in the target artifact (container image, folder, etc.) via the Scribe API.
+          Ensures that images do not contain high-severity vulnerabilities.
+          Blocks images if any CVEs exceed the defined severity threshold.
         mitigation: >-
-          Ensures that all critical or high severity vulnerabilities are addressed 
-          before delivering the product.
+          Prevents known exploitable vulnerabilities from being deployed 
+          by blocking images with high CVSS scores.
         level: error
         evidence:
           content_body_type: >-
@@ -112,6 +112,30 @@ controls:
             cve:
               max: 0
               severity: 6
+
+      - uses: api/scribe-api-cve@v2
+        name: "4.1.1 High-Profile Vulnerabilities"
+        id: "4.1.1-scribe-api-blocklist-cve"
+        description: >-
+          Blocks images that contain specific high-profile CVEs that are 
+          actively exploited or widely known.
+        mitigation: >-
+          Prevents the deployment of images with critical vulnerabilities 
+          that may be exploited in the wild.
+        level: error
+        evidence:
+          content_body_type: >-
+                {{- if (index .Stores "scribe") -}}
+                {{- "cyclonedx-json" -}}
+                {{- else -}}
+                {{- "<no value>" -}}
+                {{- end -}}
+        with:
+          superset:
+            cve:
+              max: 0
+              severity: 6
+              has_kev: true
               vulnerabilities:
                 - CVE-2014-0160
                 - CVE-2021-44228
