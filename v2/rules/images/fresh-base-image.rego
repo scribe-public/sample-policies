@@ -6,10 +6,11 @@ import future.keywords.in
 default allow := false
 default asset := {}
 default errors := []
+default found_claim_base_image := false
 default found_base_image := false
 default component_base_image_violations := []
 default base_image_violations := []
-default valid_base_image_names := []
+default context_base_image_version := "unknown"
 
 asset = scribe.get_asset_data(input.evidence)
 
@@ -34,12 +35,24 @@ found_base_image {
     lower(p.value) == "true"
 }
 
+found_claim_base_image {
+    found_base_image
+} else {
+  input.evidence.predicate.environment.base_image_name != null
+  input.evidence.predicate.environment.base_image_name != ""
+}
+
+context_base_image_version = input.evidence.predicate.environment.base_image_version {
+  input.evidence.predicate.environment.base_image_version != null
+  input.evidence.predicate.environment.base_image_version != ""
+} else = "unknown"
+
 ##########################################################################
 # Outdated Base Images Violations
 ##########################################################################
 # For each base image, if the "created" timestamp is older than allowed,
 # record a violation including the component version.
-base_image_violations = [ v |
+component_base_image_violations = [ v |
     some c in input.evidence.predicate.bom.components
     c.group == "container"
     
@@ -64,14 +77,27 @@ base_image_violations = [ v |
     }
 ]
 
+base_image_violations = array.concat(
+    component_base_image_violations,
+    [ {
+        "name": input.evidence.predicate.environment.base_image_name,
+        "version": context_base_image_version,
+        "created": "unknown",
+        "max_days": input.config.args.max_days
+    } ]
+) {
+    not found_base_image
+    found_claim_base_image
+    input.evidence.predicate.environment.base_image_name != "scratch"
+} else = component_base_image_violations
+
 ##########################################################################
 # Define Violations
 ##########################################################################
 violations = v {
-    found_base_image
+    found_claim_base_image
     v = base_image_violations
 } else = v {
-    not found_base_image
     v = [{ "error": "No base image data found." }]
 }
 
@@ -95,7 +121,7 @@ valid_base_image_names = [ sprintf("%v (%v)", [c.name, c.version]) |
 # Decision Logic
 ##########################################################################
 allow {
-    found_base_image
+    found_claim_base_image
     count(violations) == 0
 }
 
@@ -103,18 +129,15 @@ allow {
 # Reason for the Summary
 ##########################################################################
 reason = msg {
-    not found_base_image
+    not found_claim_base_image
     msg := "Base image component not found."
-}
-reason = msg {
-    found_base_image
+} else = msg {
+    found_claim_base_image
     not allow
     msg := sprintf("One or more base images exceed the age limit of %v days.", [input.config.args.max_days])
-}
-reason = msg {
-    found_base_image
+} else = msg {
+    found_claim_base_image
     allow
-    valid_names := sprintf("%v", [valid_base_image_names])
     msg := sprintf("All base images are within the age limit of %v days.", [input.config.args.max_days])
 }
 
