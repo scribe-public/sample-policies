@@ -9,10 +9,8 @@ default errors := []
 default approved_sources := []
 default found_base_image := false
 default valid_base_images := []
-default invalid_component_base_images := []
 default invalid_base_images := []
 default violations := []
-default context_base_image_version := "unknown"
 
 # Retrieve evidence (SBOM)
 asset = scribe.get_asset_data(input.evidence)
@@ -36,15 +34,7 @@ found_base_image {
   some p in c.properties
   endswith(lower(p.name), "isbaseimage")
   lower(p.value) == "true"
-} else {
-  input.evidence.predicate.environment.base_image_name != null
-  input.evidence.predicate.environment.base_image_name != ""
 }
-
-context_base_image_version = input.evidence.predicate.environment.base_image_version {
-  input.evidence.predicate.environment.base_image_version != null
-  input.evidence.predicate.environment.base_image_version != ""
-} else = "unknown"
 
 ##########################################################################
 # Valid Base Images (as list of maps with name and version)
