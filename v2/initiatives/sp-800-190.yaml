@@ -111,7 +111,7 @@ controls:
           superset:
             cve:
               max: 0
-              severity: 6
+              severity: 0
 
       - uses: api/scribe-api-cve@v2
         name: "4.1.1 High-Profile Vulnerabilities"
