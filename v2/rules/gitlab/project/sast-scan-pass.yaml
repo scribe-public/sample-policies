@@ -29,7 +29,7 @@ evidence:
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1 
   labels:
     - "platform=gitlab"
-    - "asset_type=project"
+    - "asset_type=repo"
     - >-
       {{- if eq (index .Context "asset_type") "project" "repo" -}}
       {{- asset_on_target (index .Context "asset_name") -}}
