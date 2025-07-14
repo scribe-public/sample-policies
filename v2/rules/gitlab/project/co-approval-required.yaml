@@ -19,13 +19,15 @@ mitigation: >-
   Require code owner approval for specific branches in the GitLab project to prevent unauthorized changes.
 
 inputs:
-  - name: branch
-    type: string
+  - name: branches
+    type: array
     description: The branch to require code owner approval.
     required: true
 
 input_example: |-
-  branch: "main"
+  branches:
+    - "main"
+    - "master"
 
 labels:
   - Gitlab
@@ -47,4 +49,6 @@ evidence:
       {{- end -}}
 
 with:
-  branch: "main"
+  branches:
+    - "main"
+    - "master"
