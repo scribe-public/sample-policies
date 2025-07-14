@@ -68,7 +68,7 @@ co_approval_error() = v {
 co_approval_error() = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
-	branch.result_object.branch_protection.result_object.code_owner_approval_required == null
+	branch.result_object.branch_protection.code_owner_approval_required == null
 	v = {
 		"project": branch.name,
 		"description": "code_owner_approval_required is not set",
@@ -78,8 +78,8 @@ co_approval_error() = v {
 co_approval_error() = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
-	branch.result_object.branch_protection.result_object.code_owner_approval_required != null
-	branch.result_object.branch_protection.result_object.code_owner_approval_required != true
+	branch.result_object.branch_protection.code_owner_approval_required != null
+	branch.result_object.branch_protection.code_owner_approval_required != true
 	v = {
 		"project": branch.name,
 		"description": "code owner approval is not required",

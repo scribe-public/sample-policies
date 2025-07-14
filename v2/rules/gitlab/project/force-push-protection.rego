@@ -68,7 +68,7 @@ push_protection_error() = v {
 push_protection_error() = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
-	branch.result_object.branch_protection.result_object.allow_force_push == null
+	branch.result_object.branch_protection.allow_force_push == null
 	v = {
 		"project": branch.name,
 		"description": "allow_force_push is not set",
@@ -78,8 +78,8 @@ push_protection_error() = v {
 push_protection_error() = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
-	branch.result_object.branch_protection.result_object.allow_force_push != null
-	branch.result_object.branch_protection.result_object.allow_force_push == true
+	branch.result_object.branch_protection.allow_force_push != null
+	branch.result_object.branch_protection.allow_force_push == true
 	v = {
 		"project": branch.name,
 		"description": "force push is allowed",
