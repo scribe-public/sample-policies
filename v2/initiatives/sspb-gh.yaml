@@ -75,15 +75,14 @@ controls:
         name: "Reduce automation access to read-only"
         level: note
         evidence:
-          labels:
-            - "platform=github"
-            - "asset_type=organization"
-            - >-
-              {{- if eq (index .Context "asset_type") "organization" -}}
-              {{- asset_on_target (index .Context "asset_name") -}}
-              {{- else -}}
-              {{- asset_on_target nil -}}
-              {{- end -}}
+          asset_platform: github
+          asset_type: organization
+          asset_name: >-
+                      {{- if eq .Context.asset_type "organization" -}}
+                      {{- on_target .Context.asset_name -}}
+                      {{- else -}}
+                      {{- on_target nil -}}
+                      {{- end -}}
         with:
           allow: false
           short_description: ""
@@ -108,15 +107,14 @@ controls:
         name: "Reduce automation access to read-only"
         level: note
         evidence:
-          labels:
-            - "platform=github"
-            - "asset_type=organization"
-            - >-
-              {{- if eq (index .Context "asset_type") "organization" -}}
-              {{- asset_on_target (index .Context "asset_name") -}}
-              {{- else -}}
-              {{- asset_on_target nil -}}
-              {{- end -}}
+          asset_platform: github
+          asset_type: organization
+          asset_name: >-
+                      {{- if eq .Context.asset_type "organization" -}}
+                      {{- on_target .Context.asset_name -}}
+                      {{- else -}}
+                      {{- on_target nil -}}
+                      {{- end -}}
         with:
           allow: false
           short_description: ""
