@@ -1,0 +1,26 @@
+config-type: rule
+id: gitlab-pipeline-exists
+name: Require Gitlab Pipeline Discovery Evidence
+path: evidence-exists.rego
+
+description: Verify the Gitlab Pipeline exists as evidence.
+
+labels:
+  - Gitlab
+  - Pipeline
+
+fail-on-missing-evidence: true
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  asset_platform: gitlab
+  asset_type: pipeline
+  asset_name: >-
+              {{- if eq .Context.asset_type "pipeline" -}}
+              {{- on_target .Context.asset_name -}}
+              {{- else -}}
+              {{- on_target nil -}}
+              {{- end -}}
