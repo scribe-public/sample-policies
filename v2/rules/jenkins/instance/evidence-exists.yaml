@@ -16,12 +16,11 @@ evidence:
   content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
-  labels:
-    - "platform=jenkins"
-    - "asset_type=instance"
-    - >-
-      {{- if eq (index .Context "asset-type") "instance" -}}
-      {{- asset_on_target (index .Context "asset-name") -}}
-      {{- else -}}
-      {{- asset_on_target nil -}}
-      {{- end -}}
+  asset_platform: jenkins
+  asset_type: instance
+  asset_name: >-
+              {{- if eq .Context.asset_type "instance" -}}
+              {{- on_target .Context.asset_name -}}
+              {{- else -}}
+              {{- on_target nil -}}
+              {{- end -}}
