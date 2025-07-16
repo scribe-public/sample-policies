@@ -1,0 +1,26 @@
+config-type: rule
+id: bb-workspace-exists
+name: Require Bitbucket Workspace Discovery Evidence
+path: evidence-exists.rego
+
+description: Verify the Bitbucket Workspace exists as evidence.
+
+labels:
+  - Bitbucket
+  - Workspace
+
+fail-on-missing-evidence: true
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  asset_platform: bitbucket
+  asset_type: workspace
+  asset_name: >-
+              {{- if eq .Context.asset_type "workspace" -}}
+              {{- on_target .Context.asset_name -}}
+              {{- else -}}
+              {{- on_target nil -}}
+              {{- end -}}

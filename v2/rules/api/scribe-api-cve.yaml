@@ -13,7 +13,7 @@ mitigation: Ensure that all critical or high severity vulnerabilities are addres
 inputs:
   - name: superset
     type: object
-    description: "The superset of CVEs to check for, including the following format [cve: [max: int, severity: int]]"
+    description: "The superset of CVEs to check for, including the following format [cve: [max: int, severity: int], has_kev: bool, has_fix: bool]]."
     required: false
 
 input_example: |-
@@ -21,6 +21,8 @@ input_example: |-
     cve:
       max: 0
       severity: 6
+      has_kev: true
+      has_fix: false
 
 labels:
   - SCA
@@ -35,13 +37,14 @@ evidence:
     - target
   signed: false
   content_body_type: cyclonedx-json
-  target_type: container
 
 with:
   superset:
     cve:
       max: 0
       severity: 6
+      # has_kev: true
+      # has_fix: true
       # vulnerabilities: []
       # component_name: "liblzma5"
       # component_version: "5.6.0"

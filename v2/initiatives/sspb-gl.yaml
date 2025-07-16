@@ -121,6 +121,13 @@ controls:
           approved_sources:
             - "index.docker.io/.*"
             - "gcr.io/.*"
+      - uses: images/allowed-npm-registries@v2
+        id: allowed-npm-registries
+        name: "Verify NPM Packages Origin"
+        level: error
+        with:
+          allowed_registries:
+            - "https://registry.npmjs.org/"
 
   - name: "Any critical or high severity vulnerability breaks the build"
     id: "CTL-6"
@@ -341,15 +348,14 @@ controls:
         name: "Ensure build environments are ephemeral and immutable"
         level: note
         evidence:
-          labels:
-            - "platform=gitlab"
-            - "asset_type=project"
-            - >-
-              {{- if eq (index .Context "asset_type") "project" "repo" -}}
-              {{- asset_on_target (index .Context "asset_name") -}}
-              {{- else -}}
-              {{- asset_on_target nil -}}
-              {{- end -}}
+        asset_platform: gitlab
+        asset_type: repo
+        asset_name: >-
+                    {{- if eq .Context.asset_type "project" "repo" -}}
+                    {{- on_target .Context.asset_name -}}
+                    {{- else -}}
+                    {{- on_target nil -}}
+                    {{- end -}}
         with:
           allow: false
           short_description: ""
