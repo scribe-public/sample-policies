@@ -41,6 +41,10 @@ inputs:
     type: array
     description: List of rule IDs to check for in the SARIF report.
     required: false
+  - name: rule_names
+    type: array
+    description: List of rule names to check for in the SARIF report.
+    required: false
   - name: ignore
     type: array
     description: List of rule IDs to ignore in the SARIF report.
@@ -63,5 +67,6 @@ with:
   rule_level: []
   precision: []
   rule_ids: []
+  rule_names: []
   ignore: []
   max_allowed: 0
