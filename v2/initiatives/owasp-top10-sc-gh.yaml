@@ -304,11 +304,31 @@ controls:
   ########################################################################
   # CONTROL 8: CICD-SEC-8: Ungoverned Usage of 3rd Party Services
   ########################################################################
-  # - name: "Ungoverned Usage of 3rd Party Services"
-  #   id: CICD-SEC-8
-  #   description: >
-  #     Ensure that the CI/CD pipeline has mechanisms to prevent ungoverned usage of 3rd party services.
-  #   # Not supported
+  - name: "Ungoverned Usage of 3rd Party Services"
+    id: CICD-SEC-8
+    description: >
+      Ensure that the CI/CD pipeline has mechanisms to prevent ungoverned usage of 3rd party services.
+    rules:
+      - uses: demodata/data@experimental
+        id: prevent-ungoverned-3rd-party-services
+        name: "Prevent Ungoverned Usage of 3rd Party Services"
+        level: note
+        evidence:
+        asset_platform: github
+        asset_type: organization
+        asset_name: >-
+                      {{- if eq .Context.asset_type "organization" -}}
+                      {{- on_target .Context.asset_name -}}
+                      {{- else -}}
+                      {{- on_target nil -}}
+                      {{- end -}}
+        with:
+          allow: false
+          short_description: ""
+          description: ""
+          reason: "Not supported by the initiative."
+          violations:
+            - not_implemented: true
 
   ########################################################################
   # CONTROL 9: CICD-SEC-9: Improper Artifact Integrity Validation
