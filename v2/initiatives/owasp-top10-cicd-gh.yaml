@@ -1,7 +1,7 @@
 config-type: initiative
 # required-valint-version: "2.0.0"
-id: "OWASP-TOP10-SC-GH"
-name: "OWASP Top 10 Security Controls -- GitHub"
+id: "OWASP-TOP10-CICD-SC-GH"
+name: "OWASP Top 10 CI/CD Security Controls -- GitHub"
 description: >
   This initiative implements a policy to verify compliance with the OWASP Top 10 Security Controls.
 help: https://owasp.org/www-project-top-10-ci-cd-security-risks/
