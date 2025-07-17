@@ -1,5 +1,5 @@
 config-type: rule
-id: git-artifact-signed
+id: git-sbom-signed
 name: Git Artifact Signed
 path: artifact-signed.rego
 
@@ -24,9 +24,9 @@ evidence:
   filter-by:
     - product
     - target
-  signed: true
   content_body_type: cyclonedx-json
   target_type: git
+  signed: true
 
 with:
   identity:

@@ -5,13 +5,15 @@ import data.scribe as scribe
 
 default allow := false
 default violations := []
-default name = "main"
+default branches = ["main", "master"]
 default access_level_description := ""
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)
 
-name = input.config.args.branch
+branches = input.config.args.branches {
+	input.config.args.branches != null
+}
 
 access_level_description = input.config.args.access_level_description {
 	input.config.args.access_level_description != ""
@@ -39,17 +41,19 @@ allow {
 
 reason = v {
 	allow
-	v := "force push is not allowed for the specified branch"
+	v := "Force push is not allowed for the specified branches"
 }
 
 reason = v {
 	not allow
-	v := "force push check failed"
+	v := "Force push check failed"
 }
 
 violations = j {
 	j := {r |
-		r = push_protection_error()
+		some name in branches
+		push_protection_error(name)
+		r := push_protection_error(name)
 	}
 }
 
@@ -58,14 +62,7 @@ match_any_name(n) {
 	branch.name == n
 }
 
-push_protection_error() = v {
-	not match_any_name(name)
-	v = {
-		"branch_not_found": name,
-	}
-}
-
-push_protection_error() = v {
+push_protection_error(name) = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
 	branch.result_object.branch_protection.allow_force_push == null
@@ -73,9 +70,7 @@ push_protection_error() = v {
 		"project": branch.name,
 		"description": "allow_force_push is not set",
 	}
-}
-
-push_protection_error() = v {
+} else = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
 	branch.result_object.branch_protection.allow_force_push != null
