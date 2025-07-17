@@ -486,6 +486,7 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
 
     evidence = rule_data.get("evidence", {})
     if evidence:
+        templated_values = []
         md.append("## Evidence Requirements  ")
         md.append("| Field | Value |")
         md.append("|-------|-------|")
@@ -496,9 +497,22 @@ def generate_rule_markdown(rule_data, file_path, file_name, base_source_git):
                 # Create a list of labels
                 list_md = "<br/>".join([f"- {label}" for label in filtered_labels])
                 value = list_md
-
+            if isinstance(value, str) and value.startswith("{{"):
+                templated_values.append(value)
+                value = f"Template value (see below)"
             md.append(f"| {field} | {value} |")
         md.append("")
+        if len(templated_values) > 1:
+            md.append(
+                f"**Template Values** (see [here](/docs/valint/initiatives#template-arguments) for more details)\n")
+        elif len(templated_values) == 1:
+            md.append(
+                f"**Template Value** (see [here](/docs/valint/initiatives#template-arguments) for more details)\n")
+        for templated_value in templated_values:
+            md.append(f"```")
+            md.append(re.sub(r'}}\s+{{', '}}\n{{', templated_value))
+            md.append("```")
+            md.append("")
 
     # Generate the parameters table (extended or simple) using a helper function.
     parameters_table = generate_parameters_table(rule_data)
