@@ -190,10 +190,12 @@ table = {
     "Generic Statement": f"/docs/valint/generic",
     "Dockerhub Project Discovery Evidence": f"/docs/platforms/discover#dockerhub-discovery",
     "Jenkins Instance Discovery Evidence": f"/docs/platforms/discover#jenkins-discovery",
+    "Jenkins Folder Discovery Evidence": f"/docs/platforms/discover#jenkins-discovery",
     "K8s Namespace Discovery Evidence": f"/docs/platforms/discover#k8s-discovery",
     "K8s Pod Discovery Evidence": f"/docs/platforms/discover#k8s-discovery",
     "Gitlab Project Discovery Evidence": f"/docs/platforms/discover#gitlab-discovery",
     "Gitlab Organization Discovery Evidence": f"/docs/platforms/discover#gitlab-discovery",
+    "Gitlab Pipeline Discovery Evidence": f"/docs/platforms/discover#gitlab-discovery",
     "Bitbucket Project Discovery Evidence": f"/docs/platforms/discover#bitbucket-discovery",
     "Bitbucket Repository Discovery Evidence": f"/docs/platforms/discover#bitbucket-discovery",
     "Bitbucket Workspace Discovery Evidence": f"/docs/platforms/discover#bitbucket-discovery",
@@ -218,6 +220,40 @@ high_priority = {
 
 }
 
+def adjust_asset_type(platform, asset_type):
+    """
+    Adjusts the asset type based on the platform.
+    For Gitlab, 'project' is used instead of 'repo'.
+    """
+    if platform == None or asset_type == None:
+        return asset_type
+    match platform:
+        case "gitlab":
+            if asset_type == "repo":
+                return "project"
+            else:
+                return asset_type
+        case "github":
+            if asset_type == "repo":
+                return "repository"
+            else:
+                return asset_type
+        case "bitbucket":
+            if asset_type == "repo":
+                return "repository"
+            else:
+                return asset_type
+        case "dockerhub":
+            if asset_type == "registry":
+                return "namespace"
+            elif asset_type == "oci_repo":
+                return "project"
+            else:
+                return asset_type
+        case _:
+            return asset_type
+
+
 def get_evidence_type(evidence, file_name):
     signed = evidence.get("signed", False)
     content_body_type = evidence.get("content_body_type", "")
@@ -236,16 +272,12 @@ def get_evidence_type(evidence, file_name):
         evidence_type = "SLSA Provenance"
     elif content_body_type == "generic":
         if predicate_type == "http://scribesecurity.com/evidence/discovery/v0.1":
-            platform = None
-            asset_type = None
-            if labels:
-                for label in labels:
-                    if label.startswith("platform="):
-                        platform = label.split("=")[1]
-                    elif label.startswith("asset_type="):
-                        asset_type = label.split("=")[1]
+            platform = evidence.get("asset_platform", None)
+            asset_type = adjust_asset_type(platform, evidence.get("asset_type", None))
             if platform and asset_type:
                 evidence_type = f"{platform.capitalize()} {asset_type.capitalize()} Discovery Evidence"
+            elif platform:
+                evidence_type = f"{platform.capitalize()} Discovery Evidence"
             else:
                 evidence_type = "Discovery Evidence"
         elif predicate_type == "http://docs.oasis-open.org/sarif/sarif/2.1.0":
