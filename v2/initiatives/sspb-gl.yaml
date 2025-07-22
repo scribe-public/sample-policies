@@ -119,7 +119,7 @@ controls:
         level: error
         with:
           approved_sources:
-            - "index.docker.io/.*"
+            - "index.docker.io/library/.*"
             - "gcr.io/.*"
       - uses: images/allowed-npm-registries@v2
         id: allowed-npm-registries
@@ -172,7 +172,7 @@ controls:
         level: error
         with:
           approved_sources:
-            - "index.docker.io/.*"
+            - "index.docker.io/library/.*"
             - "gcr.io/.*"
 
   - name: "Validate artifact digest"
@@ -233,7 +233,7 @@ controls:
           signed: true
         with:
           approved_sources:
-            - "index.docker.io/.*"
+            - "index.docker.io/library/.*"
             - "gcr.io/.*"
 
   - name: "Available container images don’t have any high or critical vulnerabilities"

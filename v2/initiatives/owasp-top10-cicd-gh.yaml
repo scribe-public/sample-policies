@@ -147,7 +147,7 @@ controls:
         level: error
         with:
           approved_sources:
-            - "index.docker.io/.*"
+            - "index.docker.io/library/.*"
             - "gcr.io/.*"
 
       - uses: images/allowed-npm-registries@v2
