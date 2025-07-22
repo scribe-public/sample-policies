@@ -17,7 +17,7 @@ controls:
     id: CICD-SEC-1
     description: >
       Ensure that the CI/CD pipeline has sufficient flow control mechanisms 
-      to prevent unauthorized access to the push malicious code to artifacts.
+      to prevent unauthorized pushing of malicious code into artifacts.
     mitigation: >
       Implement branch protection rules to prevent unauthorized changes. 
       Require signed commits to maintain code integrity.
