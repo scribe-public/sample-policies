@@ -2,7 +2,7 @@ config-type: initiative
 # required-valint-version: "2.0.0"
 id: "OWASP-TOP10-CICD-SC-GH"
 name: "OWASP Top 10 CI/CD Security Controls -- GitHub"
-description: >
+description: >-
   This initiative implements a policy to verify compliance with the OWASP Top 10 Security Controls.
 help: https://owasp.org/www-project-top-10-ci-cd-security-risks/
 defaults:
@@ -15,18 +15,18 @@ controls:
   ########################################################################
   - name: "Insufficient Flow Control Mechanisms"
     id: CICD-SEC-1
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has sufficient flow control mechanisms 
       to prevent unauthorized pushing of malicious code into artifacts.
-    mitigation: >
+    mitigation: >-
       Implement branch protection rules to prevent unauthorized changes. 
       Require signed commits to maintain code integrity.
     rules:
       - uses: github/repository/branch-protection@v2
         name: Require Branch Protection
-        description: >
+        description: >-
           Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
-        mitigation: >
+        mitigation: >-
           Detect and prevent drifts and inconsistencies between code running in production and its CI/CD origin.
         with:
           branches:
@@ -35,9 +35,9 @@ controls:
 
       - uses: github/repository/approvals-policy-check@v2
         name: Pull request approval policy check
-        description: >
+        description: >-
           Ensure that the repository's PR approval policy requires a minimum number of approvals.
-        mitigation: >
+        mitigation: >-
           Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review
         with:
           approvals_required_min: 1
@@ -46,20 +46,20 @@ controls:
         name: Accept Signed Commits
         description:
           "Ensure all commits signing is required by branch protection, in order to maintain code integrity."
-        mitigation: >
+        mitigation: >-
           Detect and prevent drifts and inconsistencies between code running in production and its CI/CD origin.
 
       - uses: github/repository/web-commit-signoff@v2
         name: "Require Signoff on Web Commits"
-        description: >
+        description: >-
           Ensure that the GitHub repository requires signoff on web commits.
-        mitigation: >
+        mitigation: >-
           Detect and prevent drifts and inconsistencies between code running in production and its CI/CD origin.
 
       - uses: sbom/artifact-signed@v2
         name: "Require Image and Git SBOMs to be signed"
         description: "Verify images and git SBOMs are signed."
-        mitigation: >
+        mitigation: >-
           Detect and prevent drifts and inconsistencies between code running in production and its CI/CD origin.
 
   ########################################################################
@@ -67,10 +67,10 @@ controls:
   ########################################################################
   - name: "Inadequate Identity and Access Management"
     id: CICD-SEC-2
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has adequate identity and access management
       to prevent unauthorized access to the pipeline and artifacts.
-    mitigation: >
+    mitigation: >-
       Implement strong identity and access management practices.
       Enforce multi-factor authentication (MFA) for all users.
       Limit the number of administrators to the minimum required.
@@ -79,13 +79,13 @@ controls:
       - uses: github/org/2fa@v2
         name: "Enforce MFA"
         description: "Mandate multi-factor authentication."
-        mitigation: >
+        mitigation: >-
           Conduct a continuous analysis and mapping of all identities across all systems within the engineering ecosystem.
 
       - uses: github/org/max-admins@v2
         name: "Limit Admin Number"
         description: "Limit the number of admins to the minimum required."
-        mitigation: >
+        mitigation: >-
           Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
           Refrain from granting base permissions in a system to all users, and to large groups where user accounts are automatically assigned to.
         with:
@@ -94,7 +94,7 @@ controls:
       - uses: github/org/allow-admins@v2
         name: "Allowed GitHub Organization Admins"
         description: "Verify only users in the Allowed List have admin privileges."
-        mitigation: >
+        mitigation: >-
           Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
           Refrain from granting base permissions in a system to all users, and to large groups where user accounts are automatically assigned to.
         with:
@@ -103,7 +103,7 @@ controls:
       - uses: github/org/allow-users@v2
         name: "Allowed GitHub Organization Users"
         description: "Verify only users in the Allowed List have user access to the GitHub organization."
-        mitigation: >
+        mitigation: >-
           Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
           Refrain from granting base permissions in a system to all users, and to large groups where user accounts are automatically assigned to.
           Continuously map all external collaborators and ensure their identities are aligned with the principle of least privilege.
@@ -113,7 +113,7 @@ controls:
       - uses: github/org/create-repos@v2
         name: "'Create repositories' permissions check"
         description: "Ensure only allowed users can create repositories in the GitHub organization."
-        mitigation: >
+        mitigation: >-
           Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
           Refrain from granting base permissions in a system to all users, and to large groups where user accounts are automatically assigned to.
           Continuously map all external collaborators and ensure their identities are aligned with the principle of least privilege.
@@ -123,7 +123,7 @@ controls:
       - uses: github/org/repo-visibility@v2
         name: "Limit Public Repositories"
         description: "Verify only repositories in the Allowed List are public in the GitHub organization."
-        mitigation: >
+        mitigation: >-
           Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
         with:
           allowed_repo_names: []
@@ -133,15 +133,15 @@ controls:
   ########################################################################
   - name: "Dependency Chain Abuse"
     id: CICD-SEC-3
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has mechanisms to prevent dependency chain abuse.
     rules:
       - uses: images/allowed-base-image@v2
         id: allowed-base-image
         name: "Ensure that base images are from an approved source"
-        description: >
+        description: >-
           Verify that every base image is from an approved source.
-        mitigation: >
+        mitigation: >-
           Any client pulling code packages should not be allowed to fetch packages directly from the internet or untrusted sources.
           Ensure clients are forced to fetch packages that are under your organization’s scope solely from your internal registry.
         level: error
@@ -153,9 +153,9 @@ controls:
       - uses: images/allowed-npm-registries@v2
         id: allowed-npm-registries
         name: "Verify NPM Packages Origin"
-        description: >
+        description: >-
           Verify that NPM packages are pulled from an approved registry.
-        mitigation: >
+        mitigation: >-
           Any client pulling code packages should not be allowed to fetch packages directly from the internet or untrusted sources.
           Ensure clients are forced to fetch packages that are under your organization’s scope solely from your internal registry.
         level: error
@@ -168,16 +168,16 @@ controls:
   ########################################################################
   - name: "Poisoned Pipeline Execution"
     id: CICD-SEC-4
-    description: >
+    description: >-
       Ensure that the pipeline script cannot be tampered with
-    mitigation: >
+    mitigation: >-
       Restrict access to the pipeline script to prevent unauthorized modifications. 
       Implement strict permissions and review processes for any changes to the pipeline script.
     rules:
       - uses: git/coding-permissions@v2
         name: "Restrict Pipeline Script Modification"
         description: "Restrict access to the pipeline script to prevent tampering."
-        mitigation: >
+        mitigation: >-
           Remove permissions granted on the SCM repository from users that do not need them.
           Evaluate the need for triggering pipelines on public repositories from external contributors.
           Where possible, refrain from running pipelines originating from forks, and consider adding controls such as requiring manual approval for pipeline execution.
@@ -188,7 +188,7 @@ controls:
       - uses: github/repository/branch-protection@v2
         name: "Require Branch Protection"
         description: "Implement branch protection rules to prevent unauthorized changes."
-        mitigation: >
+        mitigation: >-
           For sensitive pipelines, for example those that are exposed to secrets, ensure that each branch that is configured
           to trigger a pipeline in the CI system has a correlating branch protection rule in the SCM.
         with:
@@ -206,7 +206,7 @@ controls:
   ########################################################################
   - name: "Insufficient Pipeline Access Controls"
     id: CICD-SEC-5
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has sufficient access controls to prevent unauthorized access to the pipeline and artifacts.
       Implement strict access controls for the CI/CD pipeline to prevent unauthorized access.
       Use ephemeral runners to ensure a clean environment for each pipeline run.
@@ -214,9 +214,9 @@ controls:
     rules:
       - uses: github/repository/ephemeral-runners-only@v2
         name: "Use Ephemeral GitHub Runner"
-        description: >
+        description: >-
           Use ephemeral runners to ensure a clean environment for each pipeline run.
-        mitigation: >
+        mitigation: >-
           Revert the execution node to its pristine state after each pipeline execution.
           Ensure network segmentation in the environment the job is running on is configured to allow
           the execution node to access only the resources it requires within the network.
@@ -224,9 +224,9 @@ controls:
 
       - uses: github/repository/no-org-secrets@v2
         name: "Separate Repo Secrets"
-        description: >
+        description: >-
           Avoid sharing the same set of credentials across multiple contexts.
-        mitigation: >
+        mitigation: >-
           Ensure secrets that are used in CI/CD systems are scoped in a manner that allows each pipeline and step to have access to only the secrets it requires.
         level: warning
 
@@ -235,15 +235,15 @@ controls:
   ########################################################################
   - name: "Insufficient Credential Hygiene"
     id: CICD-SEC-6
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has sufficient credential hygiene to prevent 
       unauthorized access to the pipeline and artifacts.
     rules:
       - uses: github/org/old-secrets@v2
         name: "Verify No Old Secrets Exist in Organization"
-        description: >
+        description: >-
           Verify secrets in the GitHub organization are not older than the specified threshold.
-        mitigation: >
+        mitigation: >-
           Prefer using temporary credentials over static credentials.
           In case static credentials need to be in use - establish a procedure to periodically rotate all static credentials and detect stale credentials.
         with:
@@ -251,9 +251,9 @@ controls:
 
       - uses: github/repository/old-secrets@v2
         name: "Verify No Old Secrets Exist in Repository"
-        description: >
+        description: >-
           Verify secrets in the GitHub repository are not older than the specified threshold.
-        mitigation: >
+        mitigation: >-
           Prefer using temporary credentials over static credentials.
           In case static credentials need to be in use - establish a procedure to periodically rotate all static credentials and detect stale credentials.
         with:
@@ -261,23 +261,23 @@ controls:
 
       - uses: github/repository/no-org-secrets@v2
         name: "Separate Repo Secrets"
-        description: >
+        description: >-
           Avoid sharing the same set of credentials across multiple contexts.
-        mitigation: >
+        mitigation: >-
           Avoid sharing the same set of credentials across multiple contexts.
 
       - uses: github/repository/secret-scanning@v2
         name: "Verify secret_scanning setting"
-        description: >
+        description: >-
           Detect secrets pushed to and stored on code repositories.
-        mitigation: >
+        mitigation: >-
           Enable automatic scanning upon each code push, and periodical scans on the repository and its past commits.
 
       - uses: sarif/trivy/verify-trivy-report@v2
         name: "Verify Trivy Report"
-        description: >
+        description: >-
           Verify the Trivy report for exposed secrets.
-        mitigation: >
+        mitigation: >-
           Verify that secrets are removed from any type of artifact, such as from layers of container images, binaries, or Helm charts.
         all-evidence: true
         with:
@@ -290,14 +290,14 @@ controls:
   ########################################################################
   - name: "Insecure System Configuration"
     id: CICD-SEC-7
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has secure system configuration to prevent unauthorized access to the pipeline and artifacts.
     rules:
       - uses: github/repository/ephemeral-runners-only@v2
         name: "Use Github Runner"
-        description: >
+        description: >-
           Use ephemeral runners to ensure a clean environment for each pipeline run.
-        mitigation: >
+        mitigation: >-
           Maintain an inventory of systems and versions in use, including mapping of a designated owner for each system.
 
   ########################################################################
@@ -305,7 +305,7 @@ controls:
   ########################################################################
   - name: "Ungoverned Usage of 3rd Party Services"
     id: CICD-SEC-8
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has mechanisms to prevent ungoverned usage of 3rd party services.
     rules:
       - uses: demodata/data@experimental
@@ -334,36 +334,36 @@ controls:
   ########################################################################
   - name: "Improper Artifact Integrity Validation"
     id: CICD-SEC-9
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has mechanisms to validate the integrity of artifacts.
-    mitigation: >
+    mitigation: >-
       Implement processes and technologies to validate the integrity of resources all the way from development to production.
     rules:
       - uses: sbom/artifact-signed@v2
         name: Artifact verification software (Image SBOM)
         description: Verify image SBOMs are signed.
-        mitigation: >
+        mitigation: >-
           Implement processes and technologies to validate the integrity of resources all the way from development to production.
           Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
 
       - uses: git/artifact-signed@v2
         name: Artifact verification software (Git SBOM)
         description: Verify Git SBOMs are signed.
-        mitigation: >
+        mitigation: >-
            Implement processes and technologies to validate the integrity of resources all the way from development to production.
            Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
 
       - uses: slsa/l2-provenance-authenticated@v2
         name: Artifact verification software (SLSA)
         description: Verify SLSA Provenance attestations are signed.
-        mitigation: >
+        mitigation: >-
            Implement processes and technologies to validate the integrity of resources all the way from development to production.
            Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
 
       - uses: git/no-unsigned-commits@v2
         name: Code signing (Git SBOM)
         description: Verify all commits are signed.
-        mitigation: >
+        mitigation: >-
            Implement processes and technologies to validate the integrity of resources all the way from development to production.
             SCM solutions provide the ability to sign commits using a unique key for each contributor.
             This measure can then be leveraged to prevent unsigned commits from flowing down the pipeline.
@@ -371,16 +371,16 @@ controls:
       - uses: github/repository/check-signed-commits@v2
         name: Code signing (GitHub repo)
         description: Verify all commits are verified on GitHub.
-        mitigation: >
+        mitigation: >-
            Implement processes and technologies to validate the integrity of resources all the way from development to production.
             SCM solutions provide the ability to sign commits using a unique key for each contributor.
             This measure can then be leveraged to prevent unsigned commits from flowing down the pipeline.
 
       - uses: github/repository/web-commit-signoff@v2
         name: "Verify GitHub Repository Requires Signoff on Web Commits"
-        description: >
+        description: >-
           Ensure that the GitHub repository requires signoff on web commits.
-        mitigation: >
+        mitigation: >-
           Implement processes and technologies to validate the integrity of resources all the way from development to production.
             SCM solutions provide the ability to sign commits using a unique key for each contributor.
             This measure can then be leveraged to prevent unsigned commits from flowing down the pipeline.
@@ -390,21 +390,23 @@ controls:
   ########################################################################
   - name: "Insufficient Logging and Visibility"
     id: CICD-SEC-10
-    description: >
+    description: >-
       Ensure that the CI/CD pipeline has sufficient logging and visibility to detect unauthorized access to the pipeline and artifacts.
-    mitigation: >
+    mitigation: >-
       Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
     rules:
-      - uses: github/org/evidence-exists@v2
-        name: "GitHub organization evidence"
-        description: >
-          Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
-        mitigation: >
-          Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
 
       - uses: github/repository/evidence-exists@v2
         name: "GitHub repository evidence"
-        description: >
+        description: >-
           Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
-        mitigation: >
+        mitigation: >-
           Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
+
+      - uses: github/repository/skip-workflows-check@v2
+        name: "Repo Pipelines Were Discovered"
+        description: >-
+          Repository workflows scan helps to keep track of the repo workflows, pipeline runs, run reasons, authors and other relevant information.
+        mitigation: >-
+          Shipping logs to a centralized location (e.g. SIEM), to support aggregation and correlation of logs between different systems for detection and investigation.
+          Ensure not to use the `--workflow.skip` flag when running the Scribe Platforms CLI tool for repository scans.
