@@ -1,7 +1,7 @@
 config-type: rule
 id: skip-pipelines-check
-name: Repo Pipelines Were Discovered
-path: skip-workflows-check.rego
+name: Repo Workflows and Pipelines Were Discovered
+path: workflows-discovered.rego
 
 description: Ensure that repository pipelines discovery was not skipped.
 
