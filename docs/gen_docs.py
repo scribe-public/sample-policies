@@ -622,9 +622,10 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
 
     # Workaround for SSPB-GL/SSPB-GH initiatives sidebar names
     sidebar_name = name
-    if init_id.endswith("-GL"):
+    lower_init_id = init_id.lower()
+    if lower_init_id.endswith("-gl"):
         sidebar_name = f"{name} for Gitlab"
-    elif init_id.endswith("-GH"):
+    elif lower_init_id.endswith("-gh"):
         sidebar_name = f"{name} for GitHub"
 
     front_matter = {
