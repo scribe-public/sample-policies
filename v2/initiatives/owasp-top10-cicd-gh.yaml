@@ -404,7 +404,7 @@ controls:
           Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
 
       - uses: github/repository/workflows-discovered@v2
-        name: "Repo Workflows and Pipelines Were Discovered"
+        name: "Repo Workflows and Pipelines Discovered"
         description: >-
           Repository workflows scan helps to keep track of the repo workflows, pipeline runs, run reasons, authors and other relevant information.
         mitigation: >-
