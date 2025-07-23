@@ -1,5 +1,5 @@
 config-type: rule
-id: skip-pipelines-check
+id: workflows-discovered
 name: Repo Workflows and Pipelines Discovered
 path: workflows-discovered.rego
 
