@@ -680,14 +680,22 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         return "\n".join(md)
 
     ev_list = {}
+    rule_inputs = {}
     default_signed = False
     if "evidence" in defaults:
         if "signed" in defaults["evidence"]:
             default_signed = defaults["evidence"].get("signed", False)
     for ctrl in controls:
+        ctrl_name = ctrl.get("name", "")
+        ctrl_id = ctrl.get("id", "")
+        if not ctrl_name:
+            ctrl_name = id_from_name(ctrl_id)
+        combined_control_name = f"[{ctrl_id}] {ctrl_name}"
+        rule_inputs[combined_control_name] = {}
         ctrl_rules = ctrl.get("rules", [])
         for rule_ref in ctrl_rules:
             r_uses = rule_ref.get("uses", "")
+            r_name = rule_ref.get("name", "")
             if r_uses:
                 # e.g. "gitlab/org/max-admins"
                 before_at = r_uses.split("@")[0]
@@ -708,6 +716,35 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
                         link = f"{table[evidence_type]}" if evidence_type in table else ""
                         ev_list[f"{signed_str}{evidence_type}"] = link
 
+                    if not r_name:
+                        r_name = rule_yaml.get("name", "")
+                    inputs_def = rule_yaml.get("inputs", [])
+                    rule_params = rule_ref.get("with", {})
+                    if rule_params and not r_name in rule_inputs[combined_control_name]:
+                        rule_inputs[combined_control_name][r_name] = []
+                    for param in rule_params:
+                        default_value = rule_params.get(param, "")
+                        if inputs_def:
+                            inp = next((inp for inp in inputs_def if inp.get("name") == param), None)
+                            if inp is not None:
+                                inp_type = inp.get("type", "")
+                                desc = inp.get("description", "")
+                                rule_inputs[combined_control_name][r_name].append({
+                                    "param": param,
+                                    "type": inp_type,
+                                    "description": desc,
+                                    "default": default_value
+                                })
+                        else:
+                            rule_inputs[combined_control_name][r_name].append({
+                                "param": param,
+                                "type": "",
+                                "description": "",
+                                "default": default_value
+                            })
+        if len(rule_inputs[combined_control_name]) == 0:
+            del rule_inputs[combined_control_name]
+
     def sort_key(item):
         # item is a tuple: (key, value)
         name = item[0]
@@ -721,7 +758,7 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         return (1, base_name, is_signed, name)
 
     if len(ev_list) > 0:
-        md.append("## Evidence Requirements\n")
+        md.append("## Required Evidence\n")
         md.append("This initiative requires the following evidence types:\n")
         for ev, link in sorted(ev_list.items(), key=sort_key):
             if link:
@@ -737,6 +774,27 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         md.append("|-------|-------|")
         for field, value in defaults["evidence"].items():
             md.append(f"| {field} | {value} |")
+        md.append("")
+
+    if len(rule_inputs) > 0:
+        md.append("## Rule Parameters")
+        md.append(f"To configure this initiative for your organization needs, the following parameters should be specified:\n")
+        for ctrl_name, rules in rule_inputs.items():
+            md.append(f"- **{ctrl_name}**")
+            for r_name, params in rules.items():
+                md.append(f"  - **{r_name}**")
+                for param in params:
+                    param_name = param.get("param", "")
+                    param_type = param.get("type", "")
+                    param_desc = param.get("description", "")
+                    default_value = param.get("default", "")
+                    # if not default_value:
+                    #     continue
+                    param_type_str = f"`{param_type}` - " if param_type else ""
+                    param_desc_str = f"{param_desc}" if param_desc else "."
+                    default_str = f"  \n      *Default:* `{default_value}`." if default_value else ""
+                    md.append(
+                        f"    - **`{param_name}`**: {param_type_str}{param_desc_str}{default_str}")
         md.append("")
     
 

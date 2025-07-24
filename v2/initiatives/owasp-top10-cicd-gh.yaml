@@ -6,43 +6,6 @@ description: >-
   OWASP Top 10 CI/CD Security Controls - GitHub
 full-description: >-
   This initiative provides a set of security controls for CI/CD pipelines implementing the OWASP Top 10 CI/CD Security Risks framework.
-  To adopt this initiative for a specific organization, the following parameters should be specified:
-
-
-  - **CICD-SEC-1**
-    - **Require Branch Protection**
-      - `branches`: list of branches to protect, default is `["main", "master"]`
-    - **Pull request approval policy check**
-      - `approvals_required_min`: minimum number of approvals required for a pull request
-  - **CICD-SEC-2**
-    - **Limit Admin Number**
-      - **`max_admins`**: maximum number of admins allowed in the organization
-    - **Allowed GitHub Organization Admins**
-      - **`allowed_admins`**: list of allowed GitHub organization admins
-    - **Allowed GitHub Organization Users**
-      - **`allowed_users`**: list of allowed GitHub organization users
-    - **Create repositories permissions check**
-      - **`allowed_users`**: list of users allowed to create repositories in the organization
-    - **Limit Public Repositories**
-      - **`allowed_repo_names`**: list of allowed public repositories in the organization
-      - If not specified, all repositories are considered private.
-  - **CICD-SEC-3**
-    - **Ensure that base images are from an approved source**
-      - **`approved_sources`**: list of approved base image sources, default is `["index.docker.io/library/.*", "gcr.io/.*"]`
-    - **Verify NPM Packages Origin**
-      - **`allowed_sources`**: list of allowed NPM package sources, default is `["registry.npmjs.org"]`
-  - **CICD-SEC-4**
-    - **Restrict Pipeline Script Modification**
-      - **`ids`**: list of allowed commit authors for modifying the pipeline script
-    - **Require Branch Protection**
-      - **`branches`**: list of branches to protect, default is `["main", "master"]`
-  - **CICD-SEC-6**
-    - **Verify No Old Secrets Exist in Organization**
-      - **`max_secret_age`**: maximum age of organization secrets in months, default is `6`
-    - **Verify No Old Secrets Exist in Repository**
-      - **`max_secret_age`**: maximum age of repository secrets in months, default is `6`
-    - **Verify Trivy Report**
-      - **`max_allowed`**: maximum number of allowed secrets in the Trivy report, default is `0`
 help: https://owasp.org/www-project-top-10-ci-cd-security-risks/
 defaults:
   evidence:
