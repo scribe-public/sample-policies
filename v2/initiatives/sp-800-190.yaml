@@ -184,8 +184,8 @@ controls:
           entering the supply chain.
         with:
           approved_sources: []
-            # - "index.docker.io/library/python.*slim"
-            # - "index.docker.io/library/my_company/base.*"
+            # - "index.docker.io/library/.*"
+            # - "index.docker.io/my_company/.*"
 
       - uses: images/fresh-base-image@v2
         name: "4.1.2 Up-to-Date Base Images"
@@ -244,8 +244,8 @@ controls:
           signed: true
         with:
           approved_sources: []
-            # - "index.docker.io/python.*slim"
-            # - "index.docker.io/my_company/base.*"
+            # - "index.docker.io/library/.*"
+            # - "index.docker.io/my_company/.*"
 
       - uses: images/allowed-image-source@v2
         name: "4.1.5 Approved Source Images"
@@ -259,7 +259,7 @@ controls:
           signed: true
         with:
           approved_sources:
-            # - "index.docker.io/nginx:.*"
+            # - "index.docker.io/library/.*"
             # - "index.docker.io/my_company/.*"
 
       - uses: images/image-signed@v2

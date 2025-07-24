@@ -1,0 +1,31 @@
+config-type: rule
+id: workflows-discovered
+name: Repo Workflows and Pipelines Discovered
+path: workflows-discovered.rego
+
+description: Ensure that repository pipelines discovery was not skipped.
+
+full-description: |-
+  This rule checks that the repository pipelines discovery was not skipped by verifying Scribe Platforms CLI tool configuration
+  used for the repository scan.
+
+mitigation: >-
+  Ensure not to use the `--workflow.skip` flag when running the Scribe Platforms CLI tool for repository scans.
+
+labels:
+  - GitHub
+  - Repository
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  asset_platform: github
+  asset_type: repo
+  asset_name: >-
+              {{- if eq .Context.asset_type "repo" -}}
+              {{- on_target .Context.asset_name -}}
+              {{- else -}}
+              {{- on_target nil -}}
+              {{- end -}}
