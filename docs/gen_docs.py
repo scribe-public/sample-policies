@@ -325,19 +325,20 @@ def generate_parameters_table(rule_data):
         """
         md_lines = []
         inputs_def = rule_data.get("inputs", [])
+        with_block = rule_data.get("with", {})
         if inputs_def:
             md_lines.append("## Input Definitions  ")
-            md_lines.append("| Parameter | Type | Required | Description |")
-            md_lines.append("|-----------|------|----------|-------------|")
+            md_lines.append("| Parameter | Type | Required | Description | Default |")
+            md_lines.append("|-----------|------|----------|-------------| --------|")
             for inp in inputs_def:
                 param = inp.get("name", "")
                 inp_type = inp.get("type", "")
                 required = inp.get("required", False)
                 desc = inp.get("description", "")
-                md_lines.append(f"| {param} | {inp_type} | {required} | {desc} |")
+                default_value = with_block.get(param, "")
+                md_lines.append(f"| {param} | {inp_type} | {required} | {desc} | {default_value} |")
             md_lines.append("")
         else:
-            with_block = rule_data.get("with", {})
             if with_block:
                 md_lines.append("## Rule Parameters (`with`)  ")
                 md_lines.append("| Parameter | Default |")
