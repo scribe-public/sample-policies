@@ -336,7 +336,7 @@ def generate_parameters_table(rule_data):
                 required = inp.get("required", False)
                 desc = inp.get("description", "")
                 default_value = with_block.get(param, "")
-                md_lines.append(f"| {param} | {inp_type} | {required} | {desc} | {default_value} |")
+                md_lines.append(f"| {param} | {inp_type} | {required} | {desc} | {escape_template(default_value)} |")
             md_lines.append("")
         else:
             if with_block:
