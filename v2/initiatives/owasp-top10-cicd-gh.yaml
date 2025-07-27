@@ -288,6 +288,8 @@ controls:
           Verify the Trivy report for exposed secrets.
         mitigation: >-
           Verify that secrets are removed from any type of artifact, such as from layers of container images, binaries, or Helm charts.
+        evidence:
+          tool: trivy
         all-evidence: true
         with:
           rule_names:
