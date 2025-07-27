@@ -322,14 +322,17 @@ controls:
         name: "Prevent Ungoverned Usage of 3rd Party Services"
         level: note
         evidence:
-        asset_platform: github
-        asset_type: organization
-        asset_name: >-
-                      {{- if eq .Context.asset_type "organization" -}}
-                      {{- on_target .Context.asset_name -}}
-                      {{- else -}}
-                      {{- on_target nil -}}
-                      {{- end -}}
+          content_body_type: generic
+          target_type: data
+          predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+          asset_platform: github
+          asset_type: organization
+          asset_name: >-
+                        {{- if eq .Context.asset_type "organization" -}}
+                        {{- on_target .Context.asset_name -}}
+                        {{- else -}}
+                        {{- on_target nil -}}
+                        {{- end -}}
         with:
           allow: false
           short_description: ""
