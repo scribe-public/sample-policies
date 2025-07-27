@@ -36,12 +36,12 @@ allow {
 
 reason = v {
 	allow
-	v := "All values of the binary field are properly set"
+	v := "Only allowed users can create repositories in the GitHub organization"
 }
 
 reason = v {
 	not allow
-	v := "There is at least one value of a binary field that is not properly set"
+	v := "Repository creation is not restricted to allowed users"
 }
 
 violations = j {
