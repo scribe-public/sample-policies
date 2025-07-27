@@ -283,7 +283,8 @@ controls:
           Enable automatic scanning upon each code push, and periodical scans on the repository and its past commits.
 
       - uses: sarif/trivy/verify-trivy-report@v2
-        name: "Verify Trivy Report"
+        id: trivy-secret-scan
+        name: "Verify Trivy Secret Scan Report"
         description: >-
           Verify the Trivy report for exposed secrets.
         mitigation: >-
