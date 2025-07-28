@@ -59,12 +59,12 @@ match_any_name(n) {
 }
 
 match_any_level(branch) {
-    some rule in branch.result_object.branch_protection.result_object.merge_access_levels
+    some rule in branch.result_object.branch_protection.merge_access_levels
 	rule.access_level == input.config.args.access_level
 }
 
 match_any_level_description(branch) {
-    some rule in branch.result_object.branch_protection.result_object.merge_access_levels
+    some rule in branch.result_object.branch_protection.merge_access_levels
 	rule.access_level_description == access_level_description
 }
 
@@ -78,7 +78,7 @@ merge_access_level_error() = v {
 merge_access_level_error() = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
-	branch.result_object.branch_protection.result_object.merge_access_levels == null
+	branch.result_object.branch_protection.merge_access_levels == null
 	v = {
 		"branch": branch.name,
 	}
@@ -88,11 +88,11 @@ merge_access_level_error() = v {
 	access_level_description == ""
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
-	branch.result_object.branch_protection.result_object.merge_access_levels != null
+	branch.result_object.branch_protection.merge_access_levels != null
 	not match_any_level(branch)
 	v = {
 		"project": branch.name,
-		"available_rules": branch.result_object.branch_protection.result_object.merge_access_levels,
+		"available_rules": branch.result_object.branch_protection.merge_access_levels,
 	}
 }
 
@@ -100,10 +100,10 @@ merge_access_level_error() = v {
 	access_level_description != ""
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
-	branch.result_object.branch_protection.result_object.merge_access_levels != null
+	branch.result_object.branch_protection.merge_access_levels != null
 	not match_any_level_description(branch)
 	v = {
 		"project": branch.name,
-		"available_rules": branch.result_object.branch_protection.result_object.merge_access_levels,
+		"available_rules": branch.result_object.branch_protection.merge_access_levels,
 	}
 }

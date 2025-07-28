@@ -1,0 +1,26 @@
+config-type: rule
+id: bb-project-exists
+name: Require Bitbucket Project Discovery Evidence
+path: evidence-exists.rego
+
+description: Verify the Bitbucket Project exists as evidence.
+
+labels:
+  - Bitbucket
+  - Project
+
+fail-on-missing-evidence: true
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  asset_platform: bitbucket
+  asset_type: project
+  asset_name: >-
+              {{- if eq .Context.asset_type "project" -}}
+              {{- on_target .Context.asset_name -}}
+              {{- else -}}
+              {{- on_target nil -}}
+              {{- end -}}

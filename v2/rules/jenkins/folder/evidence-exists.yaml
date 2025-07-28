@@ -1,0 +1,26 @@
+config-type: rule
+id: jenkins-folder-exists
+name: Require Jenkins Folder Discovery Evidence
+path: evidence-exists.rego
+
+description: Verify the Jenkins Folder exists as evidence.
+
+labels:
+  - Jenkins
+  - Folder
+
+fail-on-missing-evidence: true
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
+  asset_platform: jenkins
+  asset_type: folder
+  asset_name: >-
+              {{- if eq .Context.asset_type "folder" -}}
+              {{- on_target .Context.asset_name -}}
+              {{- else -}}
+              {{- on_target nil -}}
+              {{- end -}}

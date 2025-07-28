@@ -39,12 +39,12 @@ reason = v {
 	v := "Builder ID is *not* in the allowed list"
 }
 
-violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.run_id}] if {
-	not input.evidence.predicate.buildDefinition.internalParameters.context_type == "local"
-	not input.evidence.predicate.buildDefinition.internalParameters.run_id == input.config.args.id
+violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.context.run_id}] if {
+	not input.evidence.predicate.buildDefinition.internalParameters.context.context_type == "local"
+	not input.evidence.predicate.buildDefinition.internalParameters.context.run_id == input.config.args.id
 }
 
-violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.hostname}] if {
-	input.evidence.predicate.buildDefinition.internalParameters.context_type == "local"
-	not input.evidence.predicate.buildDefinition.internalParameters.hostname == input.config.args.id
+violations = [{"id": input.evidence.predicate.buildDefinition.internalParameters.context.hostname}] if {
+	input.evidence.predicate.buildDefinition.internalParameters.context.context_type == "local"
+	not input.evidence.predicate.buildDefinition.internalParameters.context.hostname == input.config.args.id
 }
