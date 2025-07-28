@@ -15,3 +15,5 @@ evidence:
     - "asset_type=repository"
 
 with:
+  exception: false
+  # If true - the whole rule is exceptioned but the rule result will appear. defaults to false
