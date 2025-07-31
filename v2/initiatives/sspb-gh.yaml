@@ -357,7 +357,7 @@ controls:
           filter-by:
             - target
             - product
-          target_type: file
+          target_type: data
 
   - name: "Ensure build environments are ephemeral and immutable"
     id: "CTL-15"
