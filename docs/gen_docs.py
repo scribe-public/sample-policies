@@ -207,7 +207,7 @@ high_priority = {
     "SBOM": 1,
     "Image SBOM": 2,
     "Git SBOM": 3,
-    "SLA Provenance": 4,
+    "SLSA Provenance": 4,
     "SARIF": 5,
     "SARIF Evidence": 6,
     "Generic Statement": 7,
@@ -325,19 +325,20 @@ def generate_parameters_table(rule_data):
         """
         md_lines = []
         inputs_def = rule_data.get("inputs", [])
+        with_block = rule_data.get("with", {})
         if inputs_def:
             md_lines.append("## Input Definitions  ")
-            md_lines.append("| Parameter | Type | Required | Description |")
-            md_lines.append("|-----------|------|----------|-------------|")
+            md_lines.append("| Parameter | Type | Required | Description | Default |")
+            md_lines.append("|-----------|------|----------|-------------| --------|")
             for inp in inputs_def:
                 param = inp.get("name", "")
                 inp_type = inp.get("type", "")
                 required = inp.get("required", False)
                 desc = inp.get("description", "")
-                md_lines.append(f"| {param} | {inp_type} | {required} | {desc} |")
+                default_value = with_block.get(param, "")
+                md_lines.append(f"| {param} | {inp_type} | {required} | {desc} | {escape_template(default_value)} |")
             md_lines.append("")
         else:
-            with_block = rule_data.get("with", {})
             if with_block:
                 md_lines.append("## Rule Parameters (`with`)  ")
                 md_lines.append("| Parameter | Default |")
@@ -616,14 +617,16 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     full_description = initiative_data.get("full-description", "")
     mitigation = initiative_data.get("mitigation", "")
     help_url = initiative_data.get("help", "")
+    defaults = initiative_data.get("defaults", {})
     source_link = os.path.join(base_source_git, file_path)
     md = []
 
     # Workaround for SSPB-GL/SSPB-GH initiatives sidebar names
     sidebar_name = name
-    if init_id.endswith("-GL"):
+    lower_init_id = init_id.lower()
+    if lower_init_id.endswith("-gl"):
         sidebar_name = f"{name} for Gitlab"
-    elif init_id.endswith("-GH"):
+    elif lower_init_id.endswith("-gh"):
         sidebar_name = f"{name} for GitHub"
 
     front_matter = {
@@ -665,7 +668,6 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     #     md.append(f"Evidence for this initiative **IS NOT** required by default but is recommended.  ")
     #     md.append(f":::  ")
 
-    
     if full_description:
         md.append(f"## **Description**\n")
         split_line = full_description.split("\n")
@@ -677,6 +679,124 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
     if not controls:
         md.append("_No controls defined._")
         return "\n".join(md)
+
+    ev_list = {}
+    rule_inputs = {}
+    default_signed = False
+    if "evidence" in defaults:
+        if "signed" in defaults["evidence"]:
+            default_signed = defaults["evidence"].get("signed", False)
+    for ctrl in controls:
+        ctrl_name = ctrl.get("name", "")
+        ctrl_id = ctrl.get("id", "")
+        if not ctrl_name:
+            ctrl_name = id_from_name(ctrl_id)
+        combined_control_name = f"[{ctrl_id}] {ctrl_name}"
+        rule_inputs[combined_control_name] = {}
+        ctrl_rules = ctrl.get("rules", [])
+        for rule_ref in ctrl_rules:
+            r_uses = rule_ref.get("uses", "")
+            r_name = rule_ref.get("name", "")
+            if r_uses:
+                # e.g. "gitlab/org/max-admins"
+                before_at = r_uses.split("@")[0]
+                subdirs, base_name = os.path.split(before_at)
+                key_for_map = os.path.join(
+                    subdirs, base_name) if subdirs else base_name
+
+                if key_for_map in rule_docs_map:
+                    rule_info = rule_docs_map[key_for_map]
+                    rule_yaml = rule_info["yaml_data"]
+                    skip_evidence = rule_yaml.get("skip-evidence", False)
+                    evidence_req = rule_yaml.get("evidence", {})
+                    if not skip_evidence:
+                        evidence_type, signed = get_evidence_type(evidence_req, "")
+                        if default_signed:
+                            signed = default_signed
+                        signed_str = "Signed " if signed else ""
+                        link = f"{table[evidence_type]}" if evidence_type in table else ""
+                        ev_list[f"{signed_str}{evidence_type}"] = link
+
+                    if not r_name:
+                        r_name = rule_yaml.get("name", "")
+                    inputs_def = rule_yaml.get("inputs", [])
+                    rule_params = rule_ref.get("with", {})
+                    if rule_params and not r_name in rule_inputs[combined_control_name]:
+                        rule_inputs[combined_control_name][r_name] = []
+                    for param in rule_params:
+                        default_value = rule_params.get(param, "")
+                        if inputs_def:
+                            inp = next((inp for inp in inputs_def if inp.get("name") == param), None)
+                            if inp is not None:
+                                inp_type = inp.get("type", "")
+                                desc = inp.get("description", "")
+                                rule_inputs[combined_control_name][r_name].append({
+                                    "param": param,
+                                    "type": inp_type,
+                                    "description": desc,
+                                    "default": default_value
+                                })
+                        else:
+                            rule_inputs[combined_control_name][r_name].append({
+                                "param": param,
+                                "type": "",
+                                "description": "",
+                                "default": default_value
+                            })
+        if len(rule_inputs[combined_control_name]) == 0:
+            del rule_inputs[combined_control_name]
+
+    def sort_key(item):
+        # item is a tuple: (key, value)
+        name = item[0]
+        is_signed = name.startswith("Signed ")
+        base_name = name.removeprefix("Signed ").strip()
+        priority = high_priority.get(base_name)
+        if priority is not None:
+            # Sort by priority, then unsigned before signed
+            return (0, priority, is_signed)
+        # Unknown values sorted after, by base_name, then unsigned before signed, then full name
+        return (1, base_name, is_signed, name)
+
+    if len(ev_list) > 0:
+        md.append("## Required Evidence\n")
+        md.append("This initiative requires the following evidence types:\n")
+        for ev, link in sorted(ev_list.items(), key=sort_key):
+            if link:
+                md.append(f"- [{ev}]({link})")
+            else:
+                md.append(f"- {ev}")
+        md.append("")
+
+    if defaults and "evidence" in defaults:
+        # Build default table for each field in "evidence"
+        md.append("## Evidence Defaults\n")
+        md.append("| Field | Value |")
+        md.append("|-------|-------|")
+        for field, value in defaults["evidence"].items():
+            md.append(f"| {field} | {value} |")
+        md.append("")
+
+    if len(rule_inputs) > 0:
+        md.append("## Rule Parameters")
+        md.append(f"To configure this initiative for your organization needs, the following parameters should be specified:\n")
+        for ctrl_name, rules in rule_inputs.items():
+            md.append(f"- **{ctrl_name}**")
+            for r_name, params in rules.items():
+                md.append(f"  - **{r_name}**")
+                for param in params:
+                    param_name = param.get("param", "")
+                    param_type = param.get("type", "")
+                    param_desc = param.get("description", "")
+                    default_value = param.get("default", "")
+                    # if not default_value:
+                    #     continue
+                    param_type_str = f"`{param_type}` - " if param_type else ""
+                    param_desc_str = f"{param_desc}" if param_desc else "."
+                    default_str = f"  \n      *Default:* `{default_value}`." if default_value else ""
+                    md.append(
+                        f"    - **`{param_name}`**: {param_type_str}{param_desc_str}{default_str}")
+        md.append("")
     
 
     # Controls Overview with Mitigation column
@@ -714,17 +834,6 @@ def generate_initiative_markdown(initiative_data, file_path, file_name, rule_doc
         ctrl_mitigation = ctrl.get("mitigation", "")
         md.append(f"| {link} | {ctrl_desc} | {ctrl_mitigation} |")
     md.append("")
-
-    defaults = initiative_data.get("defaults", {})
-    if defaults:
-        if "evidence" in defaults:
-            # Build default table for each field in "evidence"
-            md.append("## Evidence Defaults\n")
-            md.append("| Field | Value |")
-            md.append("|-------|-------|")
-            for field, value in defaults["evidence"].items():
-                md.append(f"| {field} | {value} |")
-            md.append("")
 
     # Detailed Controls
     md.append("---\n")

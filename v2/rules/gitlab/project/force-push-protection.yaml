@@ -19,13 +19,15 @@ mitigation: >-
   Ensure that force pushes in the GitLab project are disallowed to maintain repository integrity.
 
 inputs:
-  - name: branch
-    type: string
+  - name: branches
+    type: array
     description: The branch to disallow force pushes.
     required: false
 
 input_example: |-
-  branch: "main"
+  branches:
+    - "main"
+    - "master"
 
 labels:
   - Gitlab
@@ -46,4 +48,6 @@ evidence:
               {{- end -}}
 
 with:
-  branch: "main"
+  branches:
+    - "main"
+    - "master"

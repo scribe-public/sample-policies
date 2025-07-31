@@ -5,7 +5,10 @@ import data.scribe as scribe
 
 default allow := false
 default violations := []
+default filtered := {"result": "couldn't perform scan"}
 default asset := {}
+
+pipelines_check_field := "predicate/content/metadata/args/github/workflow/skip"
 
 asset = scribe.get_asset_data(input.evidence)
 
@@ -13,7 +16,7 @@ verify = v {
 	v := {
 		"allow": allow,
 		"violation": {
-			"type": "unsigned commits",
+			"type": "Missing field",
 			"details": violations,
 		},
 		"asset": asset,
@@ -31,29 +34,21 @@ allow {
 
 reason = v {
 	allow
-	v := "All commits are signed"
+	v := "Workflow scan was not skipped"
 }
 
 reason = v {
 	not allow
-	v := "Some commits are not signed"
+	v := "Workflow scan was skipped"
 }
 
 violations = j {
 	j := {r |
-        some commit in input.evidence.predicate.content[_].commit
-		bad_commit(commit)
-        r = {
-			"commit": commit.id,
-			"author": commit.result_object.author_email,
-        }
+		tokens := split(pipelines_check_field, "/")
+		actual_value := sprintf("%v", [object.get(input.evidence, tokens, "doesn't exist")])
+		actual_value != "false"
+		r = {
+			"workflow_skip": actual_value,
+		}
 	}
-}
-
-bad_commit(commit) {
-	not commit.result_object.verification
-}
-
-bad_commit(commit) {
-	commit.result_object.verification.verified != true
 }
