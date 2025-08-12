@@ -348,14 +348,11 @@ controls:
         name: "Ensure build environments are ephemeral and immutable"
         level: note
         evidence:
-        asset_platform: gitlab
-        asset_type: repo
-        asset_name: >-
-                    {{- if eq .Context.asset_type "project" "repo" -}}
-                    {{- on_target .Context.asset_name -}}
-                    {{- else -}}
-                    {{- on_target nil -}}
-                    {{- end -}}
+          filter-by:
+            - product
+            - target
+          asset_platform: gitlab
+          asset_type: repo
         with:
           allow: false
           short_description: ""

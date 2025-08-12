@@ -75,14 +75,11 @@ controls:
         name: "Reduce automation access to read-only"
         level: note
         evidence:
+          filter-by:
+            - product
+            - target
           asset_platform: github
           asset_type: organization
-          asset_name: >-
-                      {{- if eq .Context.asset_type "organization" -}}
-                      {{- on_target .Context.asset_name -}}
-                      {{- else -}}
-                      {{- on_target nil -}}
-                      {{- end -}}
         with:
           allow: false
           short_description: ""
@@ -107,14 +104,11 @@ controls:
         name: "Reduce automation access to read-only"
         level: note
         evidence:
+          filter-by:
+            - product
+            - target
           asset_platform: github
           asset_type: organization
-          asset_name: >-
-                      {{- if eq .Context.asset_type "organization" -}}
-                      {{- on_target .Context.asset_name -}}
-                      {{- else -}}
-                      {{- on_target nil -}}
-                      {{- end -}}
         with:
           allow: false
           short_description: ""
