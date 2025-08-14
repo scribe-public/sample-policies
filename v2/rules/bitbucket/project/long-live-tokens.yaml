@@ -32,17 +32,14 @@ labels:
   - Project
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
   content_body_type: generic
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   asset_platform: bitbucket
   asset_type: project
-  asset_name: >-
-              {{- if eq .Context.asset_type "project" -}}
-              {{- on_target .Context.asset_name -}}
-              {{- else -}}
-              {{- on_target nil -}}
-              {{- end -}}
   labels:
     - "platform_instance=bitbucket_dc"
 

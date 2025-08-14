@@ -23,16 +23,13 @@ labels:
   - Pod
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
   content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   asset_platform: k8s
   asset_type: pod
-  asset_name: >-
-              {{- if eq .Context.asset_type "pod" -}}
-              {{- on_target .Context.asset_name -}}
-              {{- else -}}
-              {{- on_target nil -}}
-              {{- end -}}
 
