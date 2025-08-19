@@ -65,6 +65,8 @@ controls:
         name: "Require Provenance"
         description: "Ensure provenance data is present for container builds."
         mitigation: "Reject container builds that do not include valid provenance information."
+        evidence:
+          target_type: container
 
   - name: "SBOM Signature Enforcement"
     id: SA12

@@ -41,18 +41,15 @@ labels:
   - Namespace
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
   content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   asset_platform: k8s
   asset_type: namespace
-  asset_name: >-
-              {{- if eq .Context.asset_type "namespace" -}}
-              {{- on_target .Context.asset_name -}}
-              {{- else -}}
-              {{- on_target nil -}}
-              {{- end -}}
 
 with:
   white_listed_pod: []

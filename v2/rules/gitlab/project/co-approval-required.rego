@@ -5,13 +5,15 @@ import data.scribe as scribe
 
 default allow := false
 default violations := []
-default name = "main"
+default branches = ["main", "master"]
 default access_level_description := ""
 default asset := {}
 
 asset = scribe.get_asset_data(input.evidence)
 
-name = input.config.args.branch
+branches = input.config.args.branches {
+	input.config.args.branches != null
+}
 
 access_level_description = input.config.args.access_level_description {
 	input.config.args.access_level_description != ""
@@ -39,17 +41,19 @@ allow {
 
 reason = v {
 	allow
-	v := "code owner approval is required for the specified branch"
+	v := "Code owner approval is required for the specified branch"
 }
 
 reason = v {
 	not allow
-	v := "code owner approval check failed"
+	v := "Code owner approval check failed"
 }
 
 violations = j {
 	j := {r |
-		r = co_approval_error()
+		some name in branches
+		co_approval_error(name)
+		r := co_approval_error(name)
 	}
 }
 
@@ -58,14 +62,7 @@ match_any_name(n) {
 	branch.name == n
 }
 
-co_approval_error() = v {
-	not match_any_name(name)
-	v = {
-		"branch_not_found": name,
-	}
-}
-
-co_approval_error() = v {
+co_approval_error(name) = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
 	branch.result_object.branch_protection.code_owner_approval_required == null
@@ -75,7 +72,7 @@ co_approval_error() = v {
 	}
 }
 
-co_approval_error() = v {
+co_approval_error(name) = v {
 	some branch in input.evidence.predicate.content[_].branch
 	branch.name == name
 	branch.result_object.branch_protection.code_owner_approval_required != null

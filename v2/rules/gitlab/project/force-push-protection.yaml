@@ -19,31 +19,32 @@ mitigation: >-
   Ensure that force pushes in the GitLab project are disallowed to maintain repository integrity.
 
 inputs:
-  - name: branch
-    type: string
+  - name: branches
+    type: array
     description: The branch to disallow force pushes.
     required: false
 
 input_example: |-
-  branch: "main"
+  branches:
+    - "main"
+    - "master"
 
 labels:
   - Gitlab
   - Project
 
 evidence:
+  filter-by:
+    - product
+    - target
   signed: false
   content_body_type: generic
   target_type: data
   predicate_type: http://scribesecurity.com/evidence/discovery/v0.1
   asset_platform: gitlab
   asset_type: repo
-  asset_name: >-
-              {{- if eq .Context.asset_type "project" "repo" -}}
-              {{- on_target .Context.asset_name -}}
-              {{- else -}}
-              {{- on_target nil -}}
-              {{- end -}}
 
 with:
-  branch: "main"
+  branches:
+    - "main"
+    - "master"

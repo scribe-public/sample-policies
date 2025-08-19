@@ -75,14 +75,11 @@ controls:
         name: "Reduce automation access to read-only"
         level: note
         evidence:
+          filter-by:
+            - product
+            - target
           asset_platform: github
           asset_type: organization
-          asset_name: >-
-                      {{- if eq .Context.asset_type "organization" -}}
-                      {{- on_target .Context.asset_name -}}
-                      {{- else -}}
-                      {{- on_target nil -}}
-                      {{- end -}}
         with:
           allow: false
           short_description: ""
@@ -107,14 +104,11 @@ controls:
         name: "Reduce automation access to read-only"
         level: note
         evidence:
+          filter-by:
+            - product
+            - target
           asset_platform: github
           asset_type: organization
-          asset_name: >-
-                      {{- if eq .Context.asset_type "organization" -}}
-                      {{- on_target .Context.asset_name -}}
-                      {{- else -}}
-                      {{- on_target nil -}}
-                      {{- end -}}
         with:
           allow: false
           short_description: ""
@@ -147,7 +141,7 @@ controls:
         level: error
         with:
           approved_sources:
-            - "index.docker.io/.*"
+            - "index.docker.io/library/.*"
             - "gcr.io/.*"
       - uses: images/allowed-npm-registries@v2
         id: allowed-npm-registries
@@ -200,7 +194,7 @@ controls:
         level: error
         with:
           approved_sources:
-            - "index.docker.io/.*"
+            - "index.docker.io/library/.*"
             - "gcr.io/.*"
 
   - name: "Validate artifact digest"
@@ -261,7 +255,7 @@ controls:
           signed: true
         with:
           approved_sources:
-            - "index.docker.io/.*"
+            - "index.docker.io/library/.*"
             - "gcr.io/.*"
 
   - name: "Available container images don’t have any high or critical vulnerabilities"
@@ -357,7 +351,7 @@ controls:
           filter-by:
             - target
             - product
-          target_type: file
+          target_type: data
 
   - name: "Ensure build environments are ephemeral and immutable"
     id: "CTL-15"
