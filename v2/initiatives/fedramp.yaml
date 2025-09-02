@@ -1,0 +1,71 @@
+config-type: initiative
+id: "Fedramp Vulnerability Scanning for Containers"
+version: "1.0.0"
+name: "Fedramp Vulnerability Scanning for Containers"
+description: "Implement vulnerability scanning for container images in accordance with FedRAMP requirements."
+
+full-description: >-
+  The FedRAMP Vulnerability Scanning Requirements for Containers bridges the vulnerability scanning
+  compliance gaps between traditional cloud systems and containerized cloud systems.
+
+help: https://www.fedramp.gov/resources/documents/Vulnerability_Scanning_Requirements_for_Containers.pdf
+
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  - id: "hardened-images"
+    name: "Hardened Images"
+    description: The CSP must only utilize containers where the image is “hardened".
+    mitigation: "Ensure that provenance metadata is present for critical build artifacts to support supply chain integrity."
+    rules:
+    - uses: git/coding-permissions@v2 # TODO: modify to accept file base name and/or regex
+    - uses: git/no-unsigned-commits@v2
+    - uses: github/repository/check-signed-commits@v2
+    - uses: github/repository/web-commit-signoff@v2
+
+  - id: "container-build-test-orchestration"
+    name: "Container Build, Test, and Orchestration Pipeline"
+    rules:
+      # - uses: git/file-exists@v2 # TODO: implement. Requires Git SBOM created with `--components files`
+      - uses: git/artifact-signed@v2
+      # - uses: github/repo/old-prs@v2 # TODO: implement discovery in Platforms
+      - uses: github/repository/approvals-policy-check@v2
+        evidence:
+          signed: true
+      - uses: k8s/namespace/evidence-exists@v2
+      - uses: sarif/evidence-exists@v2
+        evidence:
+          tool: trivy
+          filter-by:
+            - product
+            - target
+      - uses: slsa/l2-provenance-authenticated@v2
+      - uses: git/coding-permissions@v2 # TODO: implement to check all commits in the repo, regardless the files
+
+  - id: "vulnerability-scanning"
+    name: "Vulnerability Scanning for Container Images"
+    rules:
+      - uses: api/scribe-api-cve@v2
+      - uses: images/fresh-image@v2
+
+  - id: "security-sensors"
+    name: "Security Sensors"
+    rules:
+      # - uses: k8s/namespace/verify-pod-status@v2 # TODO: implement
+      # - uses: k8s/namespace/verify-pod-images@v2 # TODO: implement
+
+  - id: "registry-monitoring"
+    name: "Registry Monitoring"
+    rules:
+      - uses: images/fresh-image@v2
+      - uses: images/fresh-base-image@v2
+      - uses: images/allowed-image-source@v2
+
+  - id: "asset-management"
+    name: "Asset Management and Inventory Reporting for Deployed Containers"
+    rules:
+      - uses: k8s/namespace/evidence-exists@v2
+      # - uses: k8s/namespace/pods-scanned@v2 # TODO: implement
+      # - uses: k9s/namespace/images-scanned@v2 # TODO: implement
