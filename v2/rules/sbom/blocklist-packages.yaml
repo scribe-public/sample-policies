@@ -5,6 +5,23 @@ path: blocklist-packages.rego
 
 description: Verify the number of disallowed dependencies remains below the specified threshold.
 
+inputs:
+  - name: blocklist
+    description: "A list of blocklisted components, including package name and min/max blocked versions."
+    type: array
+    required: true
+  - name: blocklisted_limit
+    description: "The maximum number of blocklisted components allowed."
+    type: integer
+    required: false
+    default: 0
+
+input_example: |-
+  blocklist:
+    - name: "example-blocked-package"
+      min: "1.0.0"
+      max: "1.0.1"
+
 labels:
   - SBOM
   - Image
