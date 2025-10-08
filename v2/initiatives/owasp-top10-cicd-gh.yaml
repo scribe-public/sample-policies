@@ -294,6 +294,7 @@ controls:
           filter-by:
             - product
             - target
+        aggregate-results: true
         with:
           rule_names:
             - "Secret"

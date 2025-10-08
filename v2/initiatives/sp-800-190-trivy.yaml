@@ -52,6 +52,7 @@ controls:
         level: error
         evidence:
           tool: "Trivy Vulnerability Scanner"
+        aggregate-results: true
         with:
           severity_threshold: 5.5
 
@@ -67,6 +68,7 @@ controls:
         level: error
         evidence:
           tool: "Trivy Vulnerability Scanner"
+        aggregate-results: true
         with:
           rule_ids:
           - CVE-2014-0160
