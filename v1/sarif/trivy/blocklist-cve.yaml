@@ -1,10 +1,11 @@
-name: trivy-attack-vectors
-path: ../verify-attack-vector.rego
+name: trivy-blocklist-cve
+path: ../blocklist-report.rego
 
-description: "A rule to verify that no attack vector identified in a SARIF report exceeds the threshold"
+description: "Verify a CVE Blocklist against a SARIF report"
 labels:
   - SARIF
   - Trivy
+
 initiatives:
   - Default
 
@@ -13,7 +14,10 @@ evidence:
   content_body_type: generic
   target_type: data
   predicate_type: http://docs.oasis-open.org/sarif/sarif/2.1.0
-
+  parser: Sarif
+  tool: "Trivy Vulnerability Scanner"
+  filter-by:
+    - product
 with:
-  attack_vectors: []
+  rule_ids: []
   violations_threshold: 0
