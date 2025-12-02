@@ -1,0 +1,14 @@
+config-type: initiative 
+id: sonatype-nexus-threat-level-initiative
+name: nexus-threat-level
+description: description
+full-description: Evaluate Nexus report for violations of policies
+controls: 
+  - id: check-level
+    name: check-levels
+    rules: 
+      - uses: sonatype/nexus-threat-level@v2
+        name: Verify No Violations Above Specified Threat Level Nexus Policies
+        description: "Verify no violations above specified Threat Level Nexus policies"
+        with:
+          min_threat_level: 9

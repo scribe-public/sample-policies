@@ -1,0 +1,17 @@
+
+config-type: rule
+id: sonatype-nexus-disallowed-policies
+name: Verify No Violations of Nexus Policies
+path: nexus-disallowed-policies.rego
+description: "Verify no violations of the specified Nexus policies"
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  tool: sonatype
+
+
+with:
+  denied_policies:
+    - "License-Banned"

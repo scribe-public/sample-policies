@@ -1,0 +1,15 @@
+config-type: rule
+id: sonatype-nexus-threat-level
+name: Verify No Violations Above Specified Threat Level Nexus Policies
+path: nexus-threat-level.rego
+description: "Verify no violations above specified Threat Level Nexus policies"
+
+evidence:
+  signed: false
+  content_body_type: generic
+  target_type: data
+  tool: sonatype
+
+
+with:
+  min_threat_level: 9
