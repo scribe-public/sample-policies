@@ -1,5 +1,5 @@
 config-type: initiative
-required-valint-version: "2.0.0"
+# required-valint-version: "2.0.0"
 id: required-stages
 name: required-stages
 version: 1.0
