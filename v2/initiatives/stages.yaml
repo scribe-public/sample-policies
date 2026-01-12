@@ -1,0 +1,38 @@
+config-type: initiative
+required-valint-version: "2.0.0"
+id: required-stages
+name: required-stages
+version: 1.0
+description: Verify that all required stages have been attested to"
+help: https://github.com/scribe-public/demo-pipeline
+
+defaults:
+  evidence:
+    signed: false
+
+env:
+  <ENV_VAR_NAME>: <value>
+
+controls:
+    - name: verify-stages
+      id: verify-stages
+      rules: 
+        - uses: generic/evidence-exists@v2
+          name: Verify stage 1
+          id: verify-stage-1
+          evidence:
+            filter-by:
+              - product
+            labels:
+              - stage=stage_1
+
+        - uses: generic/evidence-exists@v2
+          name: Verify stage 2
+          id: verify-stage-2
+          evidence:
+            filter-by:
+              - product
+            labels:
+              - stage=stage_2
+
+            
