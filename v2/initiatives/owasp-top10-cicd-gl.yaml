@@ -1,0 +1,570 @@
+config-type: initiative
+# required-valint-version: "2.0.0"
+id: "OWASP-TOP10-CICD-SC-GL"
+name: "OWASP Top 10 CI/CD Security Controls -- Gitlab"
+description: >
+  This initiative implements a policy to verify compliance with the OWASP Top 10 Security Controls.
+help: https://owasp.org/www-project-top-10-ci-cd-security-risks/
+defaults:
+  evidence:
+    signed: false
+
+controls:
+  ########################################################################
+  # CONTROL 1: CICD-SEC-1: Insufficient Flow Control Mechanisms
+  ########################################################################
+  - name: "Insufficient Flow Control Mechanisms"
+    id: CICD-SEC-1
+    description: >
+      Ensure that the CI/CD pipeline has sufficient flow control mechanisms 
+      to prevent unauthorized access to the push malicious code to artifacts.
+    mitigation: >
+      Implement branch protection rules to prevent unauthorized changes. 
+      Require signed commits to maintain code integrity.
+    rules:
+      - uses: gitlab/project/push-rules-set@v2
+        name: Enforce push rules
+        description: >-
+          Ensure that push rules are set for the GitLab project to prevent unauthorized changes.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+
+      - uses: gitlab/project/push-access-level@v2
+        name: Verify push access level
+        description: >-
+          Ensure that the GitLab project's push access level complies with requirements to prevent unauthorized changes.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+        with:
+          branch: "main"
+          access_level: 30
+          access_level_description: "Maintainers"
+
+      - uses: gitlab/project/force-push-protection@v2
+        name: Disallow Force Push
+        description: >-
+          Ensure that force pushes in the GitLab project are disallowed to maintain repository integrity.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+        with:
+          branches:
+            - "main"
+            - "master"
+
+      - uses: gitlab/project/reset-pprovals-on-push@v2
+        name: Reset Approvals on Push
+        description: >-
+          Ensure that approvals are reset on push to prevent unauthorized changes.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          reset_approvals_on_push: true
+            
+      - uses: gitlab/project/approvals-policy-check@v2
+        name: Merge approval policy check
+        description: >-
+          Ensure that the project's merge approval policy complies with requirements to prevent unauthorized merges.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          name: "All Members"
+          approvals_required_min: 2
+      
+      - uses: gitlab/project/author-email-regex@v2
+        name: Verify Author Email Regex set by Push rules
+        description: >-
+          Ensure that the author email regex is set by push rules in the GitLab project.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          author_email_regex: ".*@.*"
+
+      - uses: gitlab/project/required-minimal-approvers@v2
+        name: Require Minimal Approvers
+        description: >
+          Ensure that each Merge Request is approved by the required number of approvers to prevent unauthorized changes.
+        mitigation: >
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review
+
+      - uses: gitlab/project/approvers-per-merge-request@v2
+        name: Restrict Overriding Approvers in a Merge Request
+        description: >-
+          Prevents overrides of approvers in a Merge Request.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          disable_overriding_approvers_per_merge_request: true
+
+      - uses: gitlab/project/merge-requests-author-approval@v2
+        name: Disable Authors self-approval for Merge Requests
+        description: >-
+          Ensure that authors are not allowed to approve their own merge requests to prevent unauthorized changes.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          merge_requests_author_approval: false
+
+      - uses: gitlab/project/merge-requests-disable-committers-approval@v2
+        name: Disable Committers' Approval for Merge Requests
+        description: >-
+          Ensure that users who commit on a Merge Request are not allowed to approve it.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          merge_requests_disable_committers_approval: true
+
+      - uses: gitlab/project/merge-access-level@v2
+        name: Enforce Merge Access Level Policy
+        description: >-
+          Ensure that the GitLab project's merge access level policy complies with requirements to prevent unauthorized changes.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          branch: "main"
+          access_level: 30
+          access_level_description: "Maintainers"
+
+      - uses: gitlab/project/disallowed-banned-approvers@v2
+        name: Disallow Banned Approvers
+        description: >-
+          Ensure that banned approvers are not allowed to approve merge requests in the GitLab project.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          banned_list: []
+
+      - uses: gitlab/project/co-approval-required@v2
+        name: Require Code Owner Approval
+        description: >-
+          Ensure that code owner approval is required for merge requests in the GitLab project.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          branches:
+            - "main"
+            - "master"
+
+      - uses: gitlab/project/require-password-to-approve@v2
+        name: Require Password for Approvals
+        description: >-
+          Ensure that approvals are required to authenticate with a password before adding the approval.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          require_password_to_approve: true
+
+      - uses: gitlab/project/commit-author-email-check@v2
+        name: Restrict Commit Authors by Email
+        description: >-
+          Ensure that only users in the Allowed List have commit author permissions in the GitLab project.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          allowed_authors: []
+
+      - uses: gitlab/project/commit-author-name-check@v2
+        name: Restrict Commit Authors by Name
+        description: >-
+          Ensure that only users in the Allowed List have commit author permissions in the GitLab project.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          allowed_authors: []
+
+      - uses: gitlab/project/committer-email-check@v2
+        name: Restrict Committers by Email
+        description: >-
+          Ensure that only users in the Allowed List are allowed to commit.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          allowed_committers: []
+
+      - uses: gitlab/project/committer-name-check@v2
+        name: Restrict Committers by Name
+        description: >-
+          Ensure that only users in the Allowed List are allowed to commit.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+        with:
+          allowed_committers: []
+
+      - uses: gitlab/project/member-check@v2
+        name: Enable Member Check
+        description: >-
+          Ensure that only members of the GitLab project are allowed to commit.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+
+      - uses: gitlab/project/commit-committer-check@v2
+        name: Enable Commit Committer Check is enabled
+        description: >-
+          Ensure that users can only push commits to the repository if the committer email is one of their own verified emails.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+
+      - uses: gitlab/project/reject-unsigned-commits@v2
+        name: Reject Unsigned Commits
+        description: >-
+          Ensure that unsigned commits are rejected in the GitLab project.
+        mitigation: >-
+          Configure branch protection rules on branches hosting code which is used in production and other sensitive systems.
+          Where applicable, prevent accounts from triggering production build and deployment pipelines without additional approval or review.
+
+      - uses: gitlab/project/check-signed-commits@v2
+        name: Accept Signed Commits
+        description:
+          "Ensure all commits signing is required by branch protection, in order to maintain code integrity."
+        mitigation: >
+          Detect and prevent drifts and inconsistencies between code running in production and its CI/CD origin.
+
+      - uses: sbom/artifact-signed@v2
+        name: "Require Image and Git SBOMs to be signed"
+        description: "Verify images and git SBOMs are signed."
+        mitigation: >
+          Detect and prevent drifts and inconsistencies between code running in production and its CI/CD origin.
+
+  # ########################################################################
+  # # CONTROL 2: CICD-SEC-2: Inadequate Identity and Access Management
+  # ########################################################################
+  # - name: "Inadequate Identity and Access Management"
+  #   id: CICD-SEC-2
+  #   description: >
+  #     Ensure that the CI/CD pipeline has adequate identity and access management
+  #     to prevent unauthorized access to the pipeline and artifacts.
+  #   mitigation: >
+  #     Implement strong identity and access management practices.
+  #     Enforce multi-factor authentication (MFA) for all users.
+  #     Limit the number of administrators to the minimum required.
+  #     Ensure repositories are private to prevent unauthorized access.
+
+  #   rules:
+  #     - uses: github/org/2fa@v2
+  #       name: "Enforce MFA"
+  #       description: "Mandate multi-factor authentication."
+  #       mitigation: >
+  #         Conduct a continuous analysis and mapping of all identities across all systems within the engineering ecosystem.
+
+  #     - uses: github/org/max-admins@v2
+  #       name: "Limit Admin Number"
+  #       description: "Limit the number of admins to the minimum required."
+  #       mitigation: >
+  #         Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
+  #         Refrain from granting base permissions in a system to all users, and to large groups where user accounts are automatically assigned to.
+  #       with:
+  #         max_admins: 4
+
+  #     - uses: github/org/allow-admins@v2
+  #       name: "Allowed GitHub Organization Admins"
+  #       description: "Verify only users in the Allowed List have admin privileges."
+  #       mitigation: >
+  #         Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
+  #         Refrain from granting base permissions in a system to all users, and to large groups where user accounts are automatically assigned to.
+  #       with:
+  #         allowed_admins: []
+
+  #     - uses: github/org/allow-users@v2
+  #       name: "Allowed GitHub Organization Users"
+  #       description: "Verify only users in the Allowed List have user access to the GitHub organization."
+  #       mitigation: >
+  #         Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
+  #         Refrain from granting base permissions in a system to all users, and to large groups where user accounts are automatically assigned to.
+  #         Continuously map all external collaborators and ensure their identities are aligned with the principle of least privilege.
+  #       with:
+  #         allowed_users: []
+
+  #     - uses: github/org/create-repos@v2
+  #       name: "'Create repositories' permissions check"
+  #       description: "Ensure only allowed users can create repositories in the GitHub organization."
+  #       mitigation: >
+  #         Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
+  #         Refrain from granting base permissions in a system to all users, and to large groups where user accounts are automatically assigned to.
+  #         Continuously map all external collaborators and ensure their identities are aligned with the principle of least privilege.
+  #       with:
+  #         allowed_users: []
+
+  #     - uses: github/org/repo-visibility@v2
+  #       name: "Limit Public Repositories"
+  #       description: "Verify only repositories in the Allowed List are public in the GitHub organization."
+  #       mitigation: >
+  #         Remove permissions not necessary for the ongoing work of each identity across the different systems in the environment.
+  #       with:
+  #         allowed_repo_names: []
+
+  # ########################################################################
+  # # CONTROL 3: CICD-SEC-3: Dependency Chain Abuse
+  # ########################################################################
+  # - name: "Dependency Chain Abuse"
+  #   id: CICD-SEC-3
+  #   description: >
+  #     Ensure that the CI/CD pipeline has mechanisms to prevent dependency chain abuse.
+  #   rules:
+  #     - uses: images/allowed-base-image@v2
+  #       id: allowed-base-image
+  #       name: "Ensure that base images are from an approved source"
+  #       description: >
+  #         Verify that every base image is from an approved source.
+  #       mitigation: >
+  #         Any client pulling code packages should not be allowed to fetch packages directly from the internet or untrusted sources.
+  #         Ensure clients are forced to fetch packages that are under your organization’s scope solely from your internal registry.
+  #       level: error
+  #       with:
+  #         approved_sources:
+  #           - "index.docker.io/.*"
+  #           - "gcr.io/.*"
+
+  #     - uses: images/allowed-npm-registries@v2
+  #       id: allowed-npm-registries
+  #       name: "Verify NPM Packages Origin"
+  #       description: >
+  #         Verify that NPM packages are pulled from an approved registry.
+  #       mitigation: >
+  #         Any client pulling code packages should not be allowed to fetch packages directly from the internet or untrusted sources.
+  #         Ensure clients are forced to fetch packages that are under your organization’s scope solely from your internal registry.
+  #       level: error
+  #       with:
+  #         allowed_registries:
+  #           - "https://registry.npmjs.org/"
+
+  # ########################################################################
+  # # CONTROL 4: CICD-SEC-4: Poisoned Pipeline Execution (PPE)
+  # ########################################################################
+  # - name: "Poisoned Pipeline Execution"
+  #   id: CICD-SEC-4
+  #   description: >
+  #     Ensure that the pipeline script cannot be tampered with
+  #   mitigation: >
+  #     Restrict access to the pipeline script to prevent unauthorized modifications. 
+  #     Implement strict permissions and review processes for any changes to the pipeline script.
+  #   rules:
+  #     - uses: git/coding-permissions@v2
+  #       name: "Restrict Pipeline Script Modification"
+  #       description: "Restrict access to the pipeline script to prevent tampering."
+  #       mitigation: >
+  #         Remove permissions granted on the SCM repository from users that do not need them.
+  #         Evaluate the need for triggering pipelines on public repositories from external contributors.
+  #         Where possible, refrain from running pipelines originating from forks, and consider adding controls such as requiring manual approval for pipeline execution.
+  #       with:
+  #         files: [".github/workflow/*.yml", ".github/workflow/*.yaml"]
+  #         ids: []
+
+  #     - uses: github/repository/branch-protection@v2
+  #       name: "Require Branch Protection"
+  #       description: "Implement branch protection rules to prevent unauthorized changes."
+  #       mitigation: >
+  #         For sensitive pipelines, for example those that are exposed to secrets, ensure that each branch that is configured
+  #         to trigger a pipeline in the CI system has a correlating branch protection rule in the SCM.
+  #       with:
+  #         desired_protected: true
+  #         branches: # use the value of "--rule-args branch=..." if provided, otherwise use the context git branch
+  #           - >-
+  #             {{- with .Args.branch -}}
+  #             {{.}}
+  #             {{- else -}}
+  #             {{- .Context.git_branch -}}
+  #             {{- end -}}
+
+  # ########################################################################
+  # # CONTROL 5: CICD-SEC-5: Insufficient PBAC (Pipeline-Based Access Controls)
+  # ########################################################################
+  # - name: "Insufficient Pipeline Access Controls"
+  #   id: CICD-SEC-5
+  #   description: >
+  #     Ensure that the CI/CD pipeline has sufficient access controls to prevent unauthorized access to the pipeline and artifacts.
+  #     Implement strict access controls for the CI/CD pipeline to prevent unauthorized access.
+  #     Use ephemeral runners to ensure a clean environment for each pipeline run.
+  #     Ensure that secrets are not shared across pipelines and are scoped to the minimum required.
+  #   rules:
+  #     - uses: github/repository/ephemeral-runners-only@v2
+  #       name: "Use Ephemeral GitHub Runner"
+  #       description: >
+  #         Use ephemeral runners to ensure a clean environment for each pipeline run.
+  #       mitigation: >
+  #         Revert the execution node to its pristine state after each pipeline execution.
+  #         Ensure network segmentation in the environment the job is running on is configured to allow
+  #         the execution node to access only the resources it requires within the network.
+  #         Where possible, refrain from granting unlimited access towards the internet to build nodes.
+
+  #     - uses: github/repository/no-org-secrets@v2
+  #       name: "Separate Repo Secrets"
+  #       description: >
+  #         Avoid sharing the same set of credentials across multiple contexts.
+  #       mitigation: >
+  #         Ensure secrets that are used in CI/CD systems are scoped in a manner that allows each pipeline and step to have access to only the secrets it requires.
+  #       level: warning
+
+  # ########################################################################
+  # # CONTROL 6: CICD-SEC-6: Insufficient Credential Hygiene
+  # ########################################################################
+  # - name: "Insufficient Credential Hygiene"
+  #   id: CICD-SEC-6
+  #   description: >
+  #     Ensure that the CI/CD pipeline has sufficient credential hygiene to prevent 
+  #     unauthorized access to the pipeline and artifacts.
+  #   rules:
+  #     - uses: github/org/old-secrets@v2
+  #       name: "Verify No Old Secrets Exist in Organization"
+  #       description: >
+  #         Verify secrets in the GitHub organization are not older than the specified threshold.
+  #       mitigation: >
+  #         Prefer using temporary credentials over static credentials.
+  #         In case static credentials need to be in use - establish a procedure to periodically rotate all static credentials and detect stale credentials.
+  #       with:
+  #         max_secret_age: 6 # number of months
+
+  #     - uses: github/repository/old-secrets@v2
+  #       name: "Verify No Old Secrets Exist in Repository"
+  #       description: >
+  #         Verify secrets in the GitHub repository are not older than the specified threshold.
+  #       mitigation: >
+  #         Prefer using temporary credentials over static credentials.
+  #         In case static credentials need to be in use - establish a procedure to periodically rotate all static credentials and detect stale credentials.
+  #       with:
+  #         max_secret_age: 6 # number of months
+
+  #     - uses: github/repository/no-org-secrets@v2
+  #       name: "Separate Repo Secrets"
+  #       description: >
+  #         Avoid sharing the same set of credentials across multiple contexts.
+  #       mitigation: >
+  #         Avoid sharing the same set of credentials across multiple contexts.
+
+  #     - uses: github/repository/secret-scanning@v2
+  #       name: "Verify secret_scanning setting"
+  #       description: >
+  #         Detect secrets pushed to and stored on code repositories.
+  #       mitigation: >
+  #         Enable automatic scanning upon each code push, and periodical scans on the repository and its past commits.
+
+  #     - uses: sarif/trivy/verify-trivy-report@v2
+  #       name: "Verify Trivy Report"
+  #       description: >
+  #         Verify the Trivy report for exposed secrets.
+  #       mitigation: >
+  #         Verify that secrets are removed from any type of artifact, such as from layers of container images, binaries, or Helm charts.
+  #       all-evidence: true
+  #       with:
+  #         rule_names:
+  #           - "Secret"
+  #         max_allowed: 0
+
+  # ########################################################################
+  # # CONTROL 7: CICD-SEC-7: Insecure System Configuration
+  # ########################################################################
+  # - name: "Insecure System Configuration"
+  #   id: CICD-SEC-7
+  #   description: >
+  #     Ensure that the CI/CD pipeline has secure system configuration to prevent unauthorized access to the pipeline and artifacts.
+  #   rules:
+  #     - uses: github/repository/ephemeral-runners-only@v2
+  #       name: "Use Github Runner"
+  #       description: >
+  #         Use ephemeral runners to ensure a clean environment for each pipeline run.
+  #       mitigation: >
+  #         Maintain an inventory of systems and versions in use, including mapping of a designated owner for each system.
+
+  # ########################################################################
+  # # CONTROL 8: CICD-SEC-8: Ungoverned Usage of 3rd Party Services
+  # ########################################################################
+  # # - name: "Ungoverned Usage of 3rd Party Services"
+  # #   id: CICD-SEC-8
+  # #   description: >
+  # #     Ensure that the CI/CD pipeline has mechanisms to prevent ungoverned usage of 3rd party services.
+  # #   # Not supported
+
+  # ########################################################################
+  # # CONTROL 9: CICD-SEC-9: Improper Artifact Integrity Validation
+  # ########################################################################
+  # - name: "Improper Artifact Integrity Validation"
+  #   id: CICD-SEC-9
+  #   description: >
+  #     Ensure that the CI/CD pipeline has mechanisms to validate the integrity of artifacts.
+  #   mitigation: >
+  #     Implement processes and technologies to validate the integrity of resources all the way from development to production.
+  #   rules:
+  #     - uses: sbom/artifact-signed@v2
+  #       name: Artifact verification software (Image SBOM)
+  #       description: Verify image SBOMs are signed.
+  #       mitigation: >
+  #         Implement processes and technologies to validate the integrity of resources all the way from development to production.
+  #         Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
+
+  #     - uses: git/artifact-signed@v2
+  #       name: Artifact verification software (Git SBOM)
+  #       description: Verify Git SBOMs are signed.
+  #       mitigation: >
+  #          Implement processes and technologies to validate the integrity of resources all the way from development to production.
+  #          Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
+
+  #     - uses: slsa/l2-provenance-authenticated@v2
+  #       name: Artifact verification software (SLSA)
+  #       description: Verify SLSA Provenance attestations are signed.
+  #       mitigation: >
+  #          Implement processes and technologies to validate the integrity of resources all the way from development to production.
+  #          Usage of tools for signing and verification of code and artifacts provide a way to prevent unverified software from being delivered down the pipeline.
+
+  #     - uses: git/no-unsigned-commits@v2
+  #       name: Code signing (Git SBOM)
+  #       description: Verify all commits are signed.
+  #       mitigation: >
+  #          Implement processes and technologies to validate the integrity of resources all the way from development to production.
+  #           SCM solutions provide the ability to sign commits using a unique key for each contributor.
+  #           This measure can then be leveraged to prevent unsigned commits from flowing down the pipeline.
+
+  #     - uses: github/repository/check-signed-commits@v2
+  #       name: Code signing (GitHub repo)
+  #       description: Verify all commits are verified on GitHub.
+  #       mitigation: >
+  #          Implement processes and technologies to validate the integrity of resources all the way from development to production.
+  #           SCM solutions provide the ability to sign commits using a unique key for each contributor.
+  #           This measure can then be leveraged to prevent unsigned commits from flowing down the pipeline.
+
+  #     - uses: github/repository/web-commit-signoff@v2
+  #       name: "Verify GitHub Repository Requires Signoff on Web Commits"
+  #       description: >
+  #         Ensure that the GitHub repository requires signoff on web commits.
+  #       mitigation: >
+  #         Implement processes and technologies to validate the integrity of resources all the way from development to production.
+  #           SCM solutions provide the ability to sign commits using a unique key for each contributor.
+  #           This measure can then be leveraged to prevent unsigned commits from flowing down the pipeline.
+
+  # ########################################################################
+  # # CONTROL 10: CICD-SEC-10: Insufficient Logging and Visibility
+  # ########################################################################
+  # - name: "Insufficient Logging and Visibility"
+  #   id: CICD-SEC-10
+  #   description: >
+  #     Ensure that the CI/CD pipeline has sufficient logging and visibility to detect unauthorized access to the pipeline and artifacts.
+  #   mitigation: >
+  #     Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
+  #   rules:
+  #     - uses: github/org/evidence-exists@v2
+  #       name: "GitHub organization evidence"
+  #       description: >
+  #         Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
+  #       mitigation: >
+  #         Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
+      
+  #     - uses: github/repository/evidence-exists@v2
+  #       name: "GitHub repository evidence"
+  #       description: >
+  #         Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
+  #       mitigation: >
+  #         Identify and build an inventory of all the systems in use within the organization, containing every instance of these systems.
