@@ -1,5 +1,5 @@
 name: scribe-cve-policy
-path: scribe-api.rego
+path: ../../experimental/internal/superset/superset_cve.rego
 
 description: "Verify no critical or high CVEs"
 
