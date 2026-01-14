@@ -1,0 +1,38 @@
+name: Prevent Modification of Source Files
+path: prevent-src-mod.rego
+
+description: "Verify that no entity modifies an source file."
+
+# ------------- Not sure if this is need ---------------------
+# labels:
+#   - scribe
+#   - ct-6
+#   - ct-13
+# initiatives:
+#   - bundle-rule
+
+require-scribe-api: true
+
+# ------------- Not sure if this is need ---------------------
+evidence:
+  predicate_type: "http://scribesecurity.com/evidence/generic_fs_tracker"
+  signed: false
+  content_body_type: generic
+
+with:
+  superset:
+    # Required Filters
+    allowed_executables:
+      - git
+      - make
+      - go
+      - gcc
+      - gpp
+      - link
+      
+    # Optional Filters
+    pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+    accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
+    accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
+    paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
+    

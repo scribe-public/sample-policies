@@ -723,3 +723,119 @@ with:
 ### Secrets check
 
 > The only available example has an empty list here, so not clear what to check yet.
+
+## FS Tracker
+
+### Using Superset Database 
+
+#### Prevent Modification of Executable Files
+
+This policy aims to ensure the integrity of executables by verifying that no unauthorized modifications occur during the pipeline execution. Use the optional filters to customize the scope of the checks according to your specific requirements.
+
+```yaml
+with:
+  superset:
+    filters:
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
+      accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
+      paths_to_exclude_regex_list: []   # list of strings for regexes of paths to exclude
+```
+
+`mainAttestation_list`: Only checks attestations inside the list. 
+
+`pipelineRun_list`: Only checks pipeline runs inside the list. 
+
+`accepted_exec_cmd_line_list`: Specifies command lines that are accepted and will not be checked for modifications.
+
+`accepted_output_cmd_line_list`: Specifies command lines whose outputs are accepted and will not be checked for modifications.
+
+`paths_to_exclude_regex_list`: Specifies the regexes for path to exclude when checking for modifications
+
+#### Prevent Modification of Source Files
+
+```yaml
+with:
+  superset:
+    # Required Filters
+    executable_1_list: []
+    not_executable_2_list: []
+      
+    # Optional Filters
+    mainAttestation_list: []          # list of strings for attestation that will be checked
+    pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+    accepted_exec_cmd_line_list: []   # list of strings for accepted command lines that will not be checked
+    accepted_output_cmd_line_list: [] # list of strings for accepted command lines that will not be checked
+    paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
+
+```
+
+`executable_1_list`: Only checks executable_1 inside the list.
+
+`not_executable_2_list`: Only checks executable_2 not inside the list.
+
+`mainAttestation_list`: Only checks attestations inside the list. 
+
+`pipelineRun_list`: Only checks pipeline runs inside the list. 
+
+`accepted_exec_cmd_line_list`: Specifies command lines that are accepted and will not be checked for modifications.
+
+`accepted_output_cmd_line_list`: Specifies command lines whose outputs are accepted and will not be checked for modifications.
+
+`paths_to_exclude_regex_list`: Specifies the regex for path to exclude when checking for modifications
+
+
+#### Command Line Input Check
+
+Verify that no specific command lines have been used. Outputs all events that uses the same command line provided in the list of command line to check `command_line_list` in the config file. 
+
+```yaml
+with:
+  superset:
+    filters:
+      # Required Filters
+      command_line_list: ["{docker,stop,fs-tracker-9730580849}"]             # list of strings for command lines that will be checked
+
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
+```
+
+
+#### Restricted Command Line Regex
+
+Verify that no restricted regex expression(s) is/are present in the command line. Outputs all executables that matches at least one regex pattern from `restricted_cmdLine_regex_list`.
+
+```yaml
+with:
+  superset:
+    filters:
+      # Required Filters
+      restricted_cmdLine_regex_list: ["tar"] # list of strings for restricted command line regex that will be checked
+      
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      executable_to_check_list: []      # list of strings for executables that will be checked
+```
+
+#### Required Command Line Regex
+
+Verify that all required regex expression(s) is/are present in the command line. Output all executables that does not match every regex patterns in `required_cmdLine_regex_list`.
+
+```yaml
+with:
+  superset:
+    filters:
+      # Required Filters
+      required_cmdLine_regex_list: []   # list of strings for required command line regex that will be checked
+
+      # Optional Filters
+      mainAttestation_list: []          # list of strings for attestation that will be checked
+      pipelineRun_list: []              # list of strings for pipelineRun that will be checked
+      paths_to_exclude_regex_list: []   # list of strings for regex of paths to exclude
+      executable_to_check_list: []      # list of strings for executables that will be checked
+```
